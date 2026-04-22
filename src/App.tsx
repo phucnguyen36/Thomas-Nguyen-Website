@@ -100,7 +100,7 @@ export default function App() {
                   Video Editor
                 </h2>
                 <p className="font-sans text-[11px] sm:text-xs leading-[1.6] text-white opacity-95 max-w-2xl px-6 drop-shadow-md">
-                  Professional Video Editor specialized in high-impact short-form content. 2+ years of experience, 500+ Reels delivered for global personal brands. Expert in DaVinci Resolve, Premiere Pro, and After Effects.
+                  Professional Video Editor specialized in high-impact short-form content. 2+ years of experience, 600+ Reels delivered for global personal brands. Expert in DaVinci Resolve, Premiere Pro, and After Effects.
                 </p>
               </div>
             </div>
@@ -171,14 +171,14 @@ export default function App() {
                     <div className="relative w-full h-full">
                       <iframe
                         src={`https://player.vimeo.com/video/${item.videoUrl}?autoplay=0&loop=0&background=0&title=0&byline=0&portrait=0&color=ffffff`}
-                        className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] scale-105 group-hover:scale-100 filter grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100"
+                        className="absolute inset-0 w-full h-full object-cover z-10"
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowFullScreen
                         loading="lazy"
                         title={`Video ${item.id}`}
                       />
-                      {/* Lớp Overlay che để dấu nút Play cho đến khi hover */}
-                      <div className="absolute inset-0 z-20 group-hover:hidden bg-transparent"></div>
+                      {/* Visual effect overlay */}
+                      <div className="absolute inset-0 z-0 bg-black/60 transition-all duration-700 group-hover:opacity-0 pointer-events-none" />
                     </div>
                   ) : (
                     <img 
