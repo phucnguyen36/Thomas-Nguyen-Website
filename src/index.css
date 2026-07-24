@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-primary: #FFFFFF;
+  --color-secondary: rgba(255, 255, 255, 0.65);
+  
+  --font-haas: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Neue Haas Grotesk Text", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  font-family: var(--font-haas);
+  color-scheme: dark;
+}
+
+/* Force 100% font synchronization across every single HTML element */
+html, body, *, ::before, ::after, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, div, a, li, th, td, code, kbd {
+  font-family: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  letter-spacing: -0.025em;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Deep Black & Sapphire Blue Spatial Background */
+.spatial-bg {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%),
+    url('/vision_pro_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Electric Sapphire Blue Edit Blur Spots */
+.bg-edit-blur-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 70%);
+  filter: blur(75px);
+  pointer-events: none;
+}
+
+.bg-edit-blur-2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 65%);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+/* Tactile Film Grain Noise Layer */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Dark Glass Cards & Components */
+.spatial-window {
+  background: rgba(14, 16, 22, 0.88);
+  backdrop-filter: blur(36px) saturate(150%);
+  -webkit-backdrop-filter: blur(36px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 30px 70px -15px rgba(0, 0, 0, 0.95),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+}
+
+.spatial-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 12px 30px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spatial-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 20px 40px -10px rgba(37, 99, 235, 0.2),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.spatial-search-input {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.spatial-search-input:focus-within {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
