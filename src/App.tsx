@@ -139,17 +139,17 @@ export default function App() {
             <div className="text-left text-xs font-mono">
               <span className="text-white font-bold block leading-tight">Thomas Nguyen</span>
               <a 
-                href="https://www.instagram.com/thomasvisualeditor/" 
+                href="https://thomasvisual.vercel.app" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-blue-400 hover:underline text-[11px] block leading-tight"
               >
-                @thomasvisualeditor
+                thomasvisual.vercel.app
               </a>
             </div>
           </div>
 
-          {/* HIGH-IMPACT KEY METRICS STRIP (ALL NUMBERS SYNCHRONIZED IN CRISP WHITE) */}
+          {/* HIGH-IMPACT KEY METRICS STRIP */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto pt-2">
             
             <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
