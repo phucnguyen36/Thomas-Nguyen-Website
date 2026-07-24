@@ -3,263 +3,346 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Nguyen — Instagram Carousel (Website Screenshots Embedded)</title>
+  <title>Thomas Nguyen — Instagram Carousel Download Hub (6 Slides)</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- html2canvas for 1-click downloading each slide as high-res PNG -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap');
+    
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      background-color: #0b0f19;
+      background-color: #090d16;
       color: #ffffff;
     }
-    .slide-box {
-      width: 540px;
-      height: 540px;
+
+    /* PERFECT 1:1 ASPECT RATIO SLIDE CONTAINER */
+    .slide-card {
+      width: 480px;
+      height: 480px;
       background: #ffffff;
       color: #0f172a;
+      border-radius: 20px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
-      border-radius: 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 32px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
       border: 1px solid #e2e8f0;
+      box-sizing: border-box;
     }
-    .blue-accent {
-      color: #2563eb;
-    }
-    .blue-bg {
-      background-color: #2563eb;
-      color: #ffffff;
-    }
+
     .browser-frame {
       background: #090a0f;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
-    .crop-container {
-      position: relative;
+
+    .crop-img {
       width: 100%;
-      overflow: hidden;
+      height: 140px;
+      object-fit: cover;
     }
   </style>
 </head>
 <body class="p-6 md:p-12 min-h-screen">
   
-  <header class="max-w-6xl mx-auto mb-10 text-center space-y-2">
-    <h1 class="text-3xl font-extrabold text-white uppercase tracking-tight">INSTAGRAM CAROUSEL (6 SLIDES)</h1>
-    <p class="text-blue-400 font-mono text-sm">Clean White &amp; Electric Sapphire Blue — Real Website Screenshots (thomasvisual.vercel.app)</p>
+  <header class="max-w-6xl mx-auto mb-12 text-center space-y-3">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold">
+      <span>INSTAGRAM CAROUSEL (6 SLIDES)</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">
+      Bộ Ảnh Carousel Cân Đối — 1-Click Tải Về
+    </h1>
+    <p class="text-slate-400 text-sm max-w-xl mx-auto font-light">
+      Mỗi slide được căn chỉnh chuẩn tỉ lệ vuông 1:1, chèn ảnh crop thực tế từ website <span class="text-blue-400 font-bold">thomasvisual.vercel.app</span>. Nhấn nút "Tải Slide PNG" để lưu ảnh về máy!
+    </p>
   </header>
 
-  <!-- CAROUSEL GRID CONTAINER -->
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+  <!-- CAROUSEL SLIDES GRID WITH AMPLE SPACING & DOWNLOAD BUTTONS -->
+  <div class="max-w-6xl mx-auto space-y-16 flex flex-col items-center">
 
-    <!-- SLIDE 1: COVER SLIDE WITH HERO SCREENSHOT -->
-    <div class="slide-box">
-      <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-        <div class="flex items-center gap-2 font-bold text-blue-600">
-          <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-          <span>@thomasvisualeditor</span>
+    <!-- ================= SLIDE 1 ================= -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-between w-[480px] px-2 text-xs font-mono">
+        <span class="text-blue-400 font-bold">SLIDE 01 — COVER PAGE</span>
+        <button onclick="downloadSlide('slide-1', 'Slide_1_Cover.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Tải Slide 1 (PNG)</span>
+        </button>
+      </div>
+
+      <div id="slide-1" class="slide-card">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+          <div class="flex items-center gap-2 font-bold text-blue-600">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+            <span>@thomasvisualeditor</span>
+          </div>
+          <span class="font-bold text-slate-400">01 / 06</span>
         </div>
-        <span class="font-bold">01 / 06</span>
-      </div>
 
-      <div class="my-auto space-y-2.5">
-        <span class="px-2.5 py-1 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-[10px] uppercase tracking-wider rounded">
-          PORTFOLIO SHOWCASE
-        </span>
-        <h2 class="text-3xl font-extrabold tracking-tight leading-none text-slate-900">
-          <span class="text-blue-600 block text-4xl font-black">7 SAI LẦM</span>
-          KHIẾN REELS CỦA BẠN MẤT 80% VIEW TRONG 3S.
-        </h2>
-        <p class="text-xs text-slate-600 font-medium">
-          Triết lý hậu kỳ short-form &amp; chiến lược thị giác giữ chân khán giả.
-        </p>
-      </div>
-
-      <!-- REAL CROPPED HERO SCREENSHOT FROM WEBSITE -->
-      <div class="browser-frame">
-        <div class="flex items-center gap-1.5 px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
-          <span class="w-2 h-2 rounded-full bg-red-500"></span>
-          <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
-          <span class="w-2 h-2 rounded-full bg-green-500"></span>
-          <span class="ml-2 font-bold text-blue-400">thomasvisual.vercel.app</span>
+        <div class="my-auto space-y-2.5">
+          <span class="px-2.5 py-1 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-[10px] uppercase tracking-wider rounded">
+            PORTFOLIO SHOWCASE
+          </span>
+          <h2 class="text-3xl font-extrabold tracking-tight leading-tight text-slate-900">
+            <span class="text-blue-600 block text-4xl font-black">7 SAI LẦM</span>
+            KHIẾN REELS CỦA BẠN MẤT 80% VIEW TRONG 3S.
+          </h2>
+          <p class="text-xs text-slate-600 font-medium">
+            Triết lý hậu kỳ short-form &amp; chiến lược thị giác giữ chân khán giả.
+          </p>
         </div>
-        <div class="crop-container h-28">
-          <img src="/screenshots/site_hero.png" alt="Website Hero" class="w-full object-cover object-top" />
-        </div>
-      </div>
-    </div>
 
-    <!-- SLIDE 2: [1] METRICS CROPPED FROM WEBSITE -->
-    <div class="slide-box">
-      <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-        <span class="px-2.5 py-1 blue-bg font-extrabold text-[12px] rounded-[4px] shadow-sm">[1]</span>
-        <span class="font-bold">02 / 06</span>
-      </div>
-
-      <div class="my-auto space-y-2">
-        <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-          KHÔNG CÓ HOOK THỊ GIÁC TỨC THÌ
-        </h3>
-        <p class="text-xs text-slate-600 font-normal leading-relaxed">
-          Khán giả lướt qua vì bạn mất quá nhiều thời gian chào hỏi thay vì cắt thẳng vào giá trị cốt lõi.
-        </p>
-      </div>
-
-      <!-- REAL CROPPED METRICS FROM WEBSITE -->
-      <div class="browser-frame">
-        <div class="flex items-center justify-between px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
-          <div class="flex items-center gap-1.5">
+        <!-- CROPPED HERO SCREENSHOT FROM WEBSITE -->
+        <div class="browser-frame">
+          <div class="flex items-center gap-1.5 px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
             <span class="w-2 h-2 rounded-full bg-red-500"></span>
             <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
             <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            <span class="ml-1 text-white font-bold">PERFORMANCE METRICS</span>
+            <span class="ml-2 font-bold text-blue-400">thomasvisual.vercel.app</span>
           </div>
-          <span class="text-blue-400">REC.709</span>
-        </div>
-        <div class="crop-container h-28 flex items-center justify-center bg-black">
-          <img src="/screenshots/site_hero.png" alt="Website Metrics" class="w-full object-cover object-bottom scale-110" />
+          <img src="/screenshots/site_hero.png" alt="Website Hero" class="crop-img object-top" />
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 3: [2] COMPARISON MATRIX FROM WEBSITE -->
-    <div class="slide-box">
-      <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-        <span class="px-2.5 py-1 blue-bg font-extrabold text-[12px] rounded-[4px] shadow-sm">[2]</span>
-        <span class="font-bold">03 / 06</span>
+
+    <!-- ================= SLIDE 2 ================= -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-between w-[480px] px-2 text-xs font-mono">
+        <span class="text-blue-400 font-bold">SLIDE 02 — [1] HOOK THỊ GIÁC</span>
+        <button onclick="downloadSlide('slide-2', 'Slide_2_Hook.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Tải Slide 2 (PNG)</span>
+        </button>
       </div>
 
-      <div class="my-auto space-y-2">
-        <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-          ĐỂ LẠI MICRO-PAUSES &amp; KHOẢNG CHẾT
-        </h3>
-        <p class="text-xs text-slate-600 font-normal leading-relaxed">
-          Khoảng lặng 0.2s cũng đủ làm gián đoạn cảm xúc khiến người xem thoát video.
-        </p>
-      </div>
-
-      <!-- REAL EDITING COMPARISON CARD -->
-      <div class="bg-slate-900 text-white rounded-xl p-3.5 border border-blue-500/30 space-y-2 shadow-md">
-        <div class="flex justify-between items-center text-[10px] font-mono border-b border-white/10 pb-1">
-          <span class="text-blue-400 font-bold uppercase">✔ NEURO-PACING METHODOLOGY</span>
-          <span class="text-emerald-400 font-bold">85%+ RETENTION</span>
+      <div id="slide-2" class="slide-card">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[1]</span>
+          <span class="font-bold text-slate-400">02 / 06</span>
         </div>
-        <p class="text-[11px] text-slate-300 font-light leading-snug">
-          Cắt sạch dead air, kết hợp After Effects keyframing độc bản loại bỏ cảm giác rập khuôn CapCut.
-        </p>
-      </div>
-    </div>
 
-    <!-- SLIDE 4: [3] 4 PILLARS OF METHODOLOGY -->
-    <div class="slide-box">
-      <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-        <span class="px-2.5 py-1 blue-bg font-extrabold text-[12px] rounded-[4px] shadow-sm">[3]</span>
-        <span class="font-bold">04 / 06</span>
-      </div>
-
-      <div class="my-auto space-y-2">
-        <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-          DÙNG TEMPLATE CAPCUT GIÁ RẺ TRÀN LAN
-        </h3>
-        <p class="text-xs text-slate-600 font-normal leading-relaxed">
-          Template rập khuôn làm giảm uy tín thương hiệu cá nhân của bạn.
-        </p>
-      </div>
-
-      <!-- 4 PILLARS VISUAL CARDS -->
-      <div class="grid grid-cols-2 gap-2 text-slate-900 text-[10px] font-bold">
-        <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200">
-          <span class="text-blue-600 block text-[9px] font-mono">01 PILLAR</span>
-          NEURO-PACING
+        <div class="my-auto space-y-2">
+          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
+            KHÔNG CÓ HOOK THỊ GIÁC TỨC THÌ
+          </h3>
+          <p class="text-xs text-slate-600 font-normal leading-relaxed">
+            Khán giả lướt qua vì bạn mất quá nhiều thời gian chào hỏi thay vì cắt thẳng vào giá trị cốt lõi.
+          </p>
         </div>
-        <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200">
-          <span class="text-blue-600 block text-[9px] font-mono">02 PILLAR</span>
-          BESPOKE MOTION
-        </div>
-        <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200">
-          <span class="text-blue-600 block text-[9px] font-mono">03 PILLAR</span>
-          VISUAL STRATEGY
-        </div>
-        <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200">
-          <span class="text-blue-600 block text-[9px] font-mono">04 PILLAR</span>
-          SOUND ARCHITECTURE
-        </div>
-      </div>
-    </div>
 
-    <!-- SLIDE 5: [4] REAL CROPPED SHORT-FORM REELS GRID FROM WEBSITE -->
-    <div class="slide-box">
-      <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-        <span class="px-2.5 py-1 blue-bg font-extrabold text-[12px] rounded-[4px] shadow-sm">[4]</span>
-        <span class="font-bold">05 / 06</span>
-      </div>
-
-      <div class="my-auto space-y-1.5">
-        <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-          THIẾU B-ROLL THỊ GIÁC CHẤT LƯỢNG CAO
-        </h3>
-        <p class="text-xs text-slate-600 font-normal">
-          Khán giả tin vào những gì họ ĐƯỢC THẤY trên màn hình.
-        </p>
-      </div>
-
-      <!-- REAL CROPPED SHORT-FORM REELS GRID SCREENSHOT FROM WEBSITE -->
-      <div class="browser-frame">
-        <div class="flex items-center justify-between px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-red-500"></span>
-            <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
-            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            <span class="ml-1 text-white font-bold">SHORT-FORM MASTERY</span>
+        <!-- CROPPED METRICS SCREENSHOT FROM WEBSITE -->
+        <div class="browser-frame">
+          <div class="flex items-center justify-between px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
+              <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+              <span class="w-2 h-2 rounded-full bg-green-500"></span>
+              <span class="ml-1 text-white font-bold">PERFORMANCE METRICS</span>
+            </div>
+            <span class="text-blue-400 font-bold">85%+ RETENTION</span>
           </div>
-          <span class="text-blue-400 font-bold">10 REELS</span>
-        </div>
-        <div class="crop-container h-32 bg-black">
-          <img src="/screenshots/site_reels.jpg" alt="Short-Form Reels Grid" class="w-full object-cover object-top scale-105" />
+          <img src="/screenshots/site_hero.png" alt="Metrics" class="crop-img object-bottom scale-110" />
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 6: [5] REAL AUDIT BANNER & CALL TO ACTION FROM WEBSITE -->
-    <div class="slide-box">
-      <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-        <span class="px-2.5 py-1 blue-bg font-extrabold text-[12px] rounded-[4px] shadow-sm">[5]</span>
-        <span class="font-bold">06 / 06</span>
+
+    <!-- ================= SLIDE 3 ================= -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-between w-[480px] px-2 text-xs font-mono">
+        <span class="text-blue-400 font-bold">SLIDE 03 — [2] NEURO-PACING</span>
+        <button onclick="downloadSlide('slide-3', 'Slide_3_Pacing.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Tải Slide 3 (PNG)</span>
+        </button>
       </div>
 
-      <div class="my-auto space-y-2 text-center">
-        <h3 class="text-2xl font-extrabold uppercase text-slate-900 leading-tight">
-          SẴN SÀNG ĐỘT PHÁ LƯỢNG VIEW?
-        </h3>
-        <p class="text-xs text-slate-600 font-medium">
-          Gửi 1 video thô của bạn, tôi sẽ tặng bạn bản 30-Second Retention Audit hoàn toàn miễn phí.
-        </p>
-      </div>
+      <div id="slide-3" class="slide-card">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[2]</span>
+          <span class="font-bold text-slate-400">03 / 06</span>
+        </div>
 
-      <!-- REAL CROPPED RETENTION AUDIT BANNER FROM WEBSITE -->
-      <div class="browser-frame">
-        <div class="crop-container h-24 bg-black flex items-center justify-center">
-          <img src="/screenshots/site_audit.png" alt="Retention Audit Offer" class="w-full object-cover object-top" />
+        <div class="my-auto space-y-2">
+          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
+            ĐỂ LẠI MICRO-PAUSES &amp; KHOẢNG CHẾT
+          </h3>
+          <p class="text-xs text-slate-600 font-normal leading-relaxed">
+            Khoảng lặng 0.2s cũng đủ làm gián đoạn cảm xúc khiến người xem thoát video.
+          </p>
+        </div>
+
+        <!-- EDITING COMPARISON MOCKUP CARD -->
+        <div class="bg-slate-900 text-white rounded-xl p-4 border border-blue-500/30 space-y-2 shadow-md">
+          <div class="flex justify-between items-center text-[10px] font-mono border-b border-white/10 pb-1.5">
+            <span class="text-blue-400 font-bold uppercase">✔ NEURO-PACING METHODOLOGY</span>
+            <span class="text-emerald-400 font-bold">85%+ RETENTION</span>
+          </div>
+          <p class="text-xs text-slate-300 font-light leading-relaxed">
+            Cắt sạch khoảng lặng dead air 0.2s, kết hợp After Effects keyframing độc bản loại bỏ hoàn toàn cảm giác rập khuôn CapCut.
+          </p>
         </div>
       </div>
+    </div>
 
-      <div class="pt-2 text-center">
-        <a href="https://calendly.com/thomasvisualeditor/30min" target="_blank" class="inline-block w-full py-3 blue-bg font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md hover:bg-blue-700 transition-all">
-          BOOK STRATEGY CALL NOW
-        </a>
-        <div class="mt-2 text-[10px] font-mono text-slate-500">
-          🌐 <span class="text-blue-600 font-bold">thomasvisual.vercel.app</span> | 📱 @thomasvisualeditor
+
+    <!-- ================= SLIDE 4 ================= -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-between w-[480px] px-2 text-xs font-mono">
+        <span class="text-blue-400 font-bold">SLIDE 04 — [3] 04 PILLARS</span>
+        <button onclick="downloadSlide('slide-4', 'Slide_4_Pillars.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Tải Slide 4 (PNG)</span>
+        </button>
+      </div>
+
+      <div id="slide-4" class="slide-card">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[3]</span>
+          <span class="font-bold text-slate-400">04 / 06</span>
+        </div>
+
+        <div class="my-auto space-y-2">
+          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
+            DÙNG TEMPLATE CAPCUT GIÁ RẺ TRÀN LAN
+          </h3>
+          <p class="text-xs text-slate-600 font-normal leading-relaxed">
+            Template rập khuôn làm giảm uy tín thương hiệu cá nhân của bạn.
+          </p>
+        </div>
+
+        <!-- 4 PILLARS VISUAL CARDS -->
+        <div class="grid grid-cols-2 gap-2.5 text-slate-900 text-[11px] font-bold">
+          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-600 block text-[9px] font-mono">01 PILLAR</span>
+            NEURO-PACING
+          </div>
+          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-600 block text-[9px] font-mono">02 PILLAR</span>
+            BESPOKE MOTION
+          </div>
+          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-600 block text-[9px] font-mono">03 PILLAR</span>
+            VISUAL STRATEGY
+          </div>
+          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
+            <span class="text-blue-600 block text-[9px] font-mono">04 PILLAR</span>
+            SOUND ARCHITECTURE
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ================= SLIDE 5 ================= -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-between w-[480px] px-2 text-xs font-mono">
+        <span class="text-blue-400 font-bold">SLIDE 05 — [4] 9:16 REELS GRID</span>
+        <button onclick="downloadSlide('slide-5', 'Slide_5_Reels.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Tải Slide 5 (PNG)</span>
+        </button>
+      </div>
+
+      <div id="slide-5" class="slide-card">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[4]</span>
+          <span class="font-bold text-slate-400">05 / 06</span>
+        </div>
+
+        <div class="my-auto space-y-1.5">
+          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
+            THIẾU B-ROLL THỊ GIÁC CHẤT LƯỢNG CAO
+          </h3>
+          <p class="text-xs text-slate-600 font-normal">
+            Khán giả tin vào những gì họ ĐƯỢC THẤY trên màn hình.
+          </p>
+        </div>
+
+        <!-- CROPPED SHORT-FORM REELS GRID SCREENSHOT FROM WEBSITE -->
+        <div class="browser-frame">
+          <div class="flex items-center justify-between px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
+              <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+              <span class="w-2 h-2 rounded-full bg-green-500"></span>
+              <span class="ml-1 text-white font-bold">SHORT-FORM MASTERY</span>
+            </div>
+            <span class="text-blue-400 font-bold">10 REELS</span>
+          </div>
+          <img src="/screenshots/site_reels.jpg" alt="Short-Form Reels Grid" class="crop-img object-top scale-105" />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ================= SLIDE 6 ================= -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-between w-[480px] px-2 text-xs font-mono">
+        <span class="text-blue-400 font-bold">SLIDE 06 — [5] RETENTION AUDIT CTA</span>
+        <button onclick="downloadSlide('slide-6', 'Slide_6_Audit_CTA.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Tải Slide 6 (PNG)</span>
+        </button>
+      </div>
+
+      <div id="slide-6" class="slide-card">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[5]</span>
+          <span class="font-bold text-slate-400">06 / 06</span>
+        </div>
+
+        <div class="my-auto space-y-2 text-center">
+          <h3 class="text-2xl font-extrabold uppercase text-slate-900 leading-tight">
+            SẴN SÀNG ĐỘT PHÁ LƯỢNG VIEW?
+          </h3>
+          <p class="text-xs text-slate-600 font-medium">
+            Gửi 1 video thô của bạn, tôi sẽ tặng bạn bản 30-Second Retention Audit hoàn toàn miễn phí.
+          </p>
+        </div>
+
+        <!-- CROPPED RETENTION AUDIT BANNER FROM WEBSITE -->
+        <div class="browser-frame">
+          <img src="/screenshots/site_audit.png" alt="Retention Audit Offer" class="crop-img object-top" />
+        </div>
+
+        <div class="pt-2 text-center">
+          <a href="https://calendly.com/thomasvisualeditor/30min" target="_blank" class="inline-block w-full py-3 bg-blue-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md hover:bg-blue-700 transition-all">
+            BOOK STRATEGY CALL NOW
+          </a>
+          <div class="mt-2 text-[10px] font-mono text-slate-500">
+            🌐 <span class="text-blue-600 font-bold">thomasvisual.vercel.app</span> | 📱 @thomasvisualeditor
+          </div>
         </div>
       </div>
     </div>
 
   </div>
+
+  <!-- SCRIPT FOR 1-CLICK DOWNLOADING EACH SLIDE AS HIGH-RES PNG -->
+  <script>
+    function downloadSlide(slideId, fileName) {
+      const slideElem = document.getElementById(slideId);
+      html2canvas(slideElem, {
+        scale: 3, // 3x ultra-high resolution export
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff'
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = fileName;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+  </script>
 
 </body>
 </html>
