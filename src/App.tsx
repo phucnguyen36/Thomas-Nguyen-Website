@@ -21,7 +21,11 @@ import {
   ArrowRight,
   Video,
   Award,
-  BarChart3
+  BarChart3,
+  Mail,
+  Linkedin,
+  Facebook,
+  Twitter
 } from 'lucide-react';
 
 export default function App() {
@@ -32,7 +36,7 @@ export default function App() {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  // 10 Vimeo Short-Form Videos Showcase (Displayed in Short-Form Mastery section)
+  // 10 Vimeo Short-Form Videos Showcase
   const shortFormVideos = [
     { id: "1212586126", tag: "FEATURED 01", title: "Visual Hook & Retention Engine" },
     { id: "1212585180", tag: "FEATURED 02", title: "Motion Pacing & Dynamic Edit" },
@@ -94,7 +98,7 @@ export default function App() {
             href="https://www.instagram.com/thomasvisualeditor/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hidden sm:flex px-3.5 py-1.5 rounded-[6px] bg-zinc-900 border border-zinc-700 text-xs text-zinc-300 hover:text-white items-center gap-2 transition-all"
+            className="hidden sm:flex px-3.5 py-1.5 rounded-[6px] bg-zinc-900 border border-zinc-700 text-xs text-zinc-200 hover:text-white items-center gap-2 transition-all"
           >
             <Instagram size={14} className="text-blue-400" />
             <span>@thomasvisualeditor</span>
@@ -112,7 +116,7 @@ export default function App() {
       {/* MAIN CONTENT AREA */}
       <main className="relative z-10 space-y-20 pb-20">
         
-        {/* 1. HERO SECTION (CLEAN, SPACIOUS, ULTRA-SLEEK WITHOUT THE HORIZONTAL VIDEO FRAME) */}
+        {/* 1. HERO SECTION */}
         <section id="hero" className="pt-12 md:pt-20 px-6 md:px-12 max-w-5xl mx-auto space-y-10 text-center">
           
           {/* Main Title & Subtitle */}
@@ -126,7 +130,7 @@ export default function App() {
           </div>
 
           {/* Official Creator Badge */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-700 backdrop-blur-md shadow-lg">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-zinc-900/90 border border-zinc-700 backdrop-blur-md shadow-lg">
             <img 
               src="/thomas_portrait.jpg" 
               alt="Thomas Nguyen" 
@@ -145,7 +149,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* HIGH-IMPACT KEY METRICS STRIP (REPLACING THE CROWDED VIDEO FRAME) */}
+          {/* HIGH-IMPACT KEY METRICS STRIP */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto pt-2">
             
             <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
@@ -153,7 +157,7 @@ export default function App() {
                 <Video size={18} />
               </div>
               <h3 className="text-3xl font-extrabold text-white tracking-tighter">600+</h3>
-              <p className="text-[11px] font-mono text-zinc-400 uppercase">Reels Delivered</p>
+              <p className="text-[11px] font-mono text-zinc-300 uppercase">Reels Delivered</p>
             </div>
 
             <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
@@ -161,7 +165,7 @@ export default function App() {
                 <BarChart3 size={18} />
               </div>
               <h3 className="text-3xl font-extrabold text-blue-400 tracking-tighter">85%+</h3>
-              <p className="text-[11px] font-mono text-zinc-400 uppercase">First 5S Retention</p>
+              <p className="text-[11px] font-mono text-zinc-300 uppercase">First 5S Retention</p>
             </div>
 
             <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
@@ -169,7 +173,7 @@ export default function App() {
                 <Award size={18} />
               </div>
               <h3 className="text-3xl font-extrabold text-white tracking-tighter">100%</h3>
-              <p className="text-[11px] font-mono text-zinc-400 uppercase">Rec.709 Standard</p>
+              <p className="text-[11px] font-mono text-zinc-300 uppercase">Rec.709 Standard</p>
             </div>
 
           </div>
@@ -186,7 +190,7 @@ export default function App() {
 
             <a 
               href="#mastery"
-              className="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 text-xs font-bold uppercase tracking-widest rounded-[6px] transition-all shadow-md inline-flex items-center gap-2"
+              className="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-100 text-xs font-bold uppercase tracking-widest rounded-[6px] transition-all shadow-md inline-flex items-center gap-2"
             >
               <span>EXPLORE SHORT-FORM WORK</span>
               <ArrowUpRight size={15} />
@@ -195,7 +199,7 @@ export default function App() {
 
         </section>
 
-        {/* 2. SHORT-FORM MASTERY SHOWCASE (ALL 10 VIMEO VIDEOS IN NATIVE 9:16 VERTICAL FRAMES) */}
+        {/* 2. SHORT-FORM MASTERY SHOWCASE */}
         <section id="mastery" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6 pt-6">
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-800 pb-4">
@@ -272,7 +276,7 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white uppercase tracking-wider">STANDARD CAPCUT EDITOR</h3>
-                  <p className="text-[11px] text-zinc-500 font-mono">Basic Assembly &amp; Template Packs</p>
+                  <p className="text-[11px] text-zinc-400 font-mono">Basic Assembly &amp; Template Packs</p>
                 </div>
               </div>
 
@@ -332,7 +336,7 @@ export default function App() {
                 THE SYSTEM
               </h2>
             </div>
-            <span className="text-xs text-zinc-500 font-mono uppercase">04 CORE PILLARS</span>
+            <span className="text-xs text-zinc-400 font-mono uppercase">04 CORE PILLARS</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -342,7 +346,7 @@ export default function App() {
                   <div className="w-8 h-8 rounded-[4px] bg-blue-600/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
                     <pillar.icon size={16} />
                   </div>
-                  <span className="text-xs font-mono text-zinc-500 font-bold">0{idx + 1}</span>
+                  <span className="text-xs font-mono text-zinc-400 font-bold">0{idx + 1}</span>
                 </div>
 
                 <div className="space-y-1.5">
@@ -446,24 +450,66 @@ export default function App() {
 
       </main>
 
-      {/* FOOTER */}
-      <footer className="border-t border-zinc-800 bg-black/90 py-10 px-6 md:px-12">
+      {/* HIGH-CONTRAST HIGH-ELEGANCE FOOTER */}
+      <footer className="border-t border-zinc-800 bg-[#08080a] py-12 px-6 md:px-12 relative z-20">
         <div className="max-w-[1750px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
+          <div className="space-y-1.5 text-center md:text-left">
             <h3 className="text-sm font-extrabold uppercase tracking-widest text-white">
-              THOMAS NGUYEN // PORTFOLIO
+              THOMAS NGUYEN // SHORT-FORM PORTFOLIO
             </h3>
-            <p className="text-xs text-zinc-500 font-mono">
+            <p className="text-xs text-zinc-300 font-mono">
               &copy; 2026 THOMAS NGUYEN. ALL RIGHTS RESERVED.
             </p>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-zinc-400 uppercase tracking-widest font-mono">
-            <a href="https://x.com/thomaseditor_vn" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">X</a>
-            <a href="https://www.instagram.com/thomasvisualeditor/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">INSTAGRAM</a>
-            <a href="https://www.facebook.com/profile.php?id=100063990921099" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">FACEBOOK</a>
-            <a href="https://www.linkedin.com/in/phucxuannguyen/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">LINKEDIN</a>
-            <a href="mailto:thomasnguyen.editor@gmail.com" className="hover:text-blue-400 transition-colors">EMAIL</a>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-mono uppercase tracking-wider">
+            <a 
+              href="https://x.com/thomaseditor_vn" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+            >
+              <Twitter size={14} className="text-blue-400" />
+              <span>X</span>
+            </a>
+
+            <a 
+              href="https://www.instagram.com/thomasvisualeditor/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+            >
+              <Instagram size={14} className="text-blue-400" />
+              <span>INSTAGRAM</span>
+            </a>
+
+            <a 
+              href="https://www.facebook.com/profile.php?id=100063990921099" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+            >
+              <Facebook size={14} className="text-blue-400" />
+              <span>FACEBOOK</span>
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/in/phucxuannguyen/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+            >
+              <Linkedin size={14} className="text-blue-400" />
+              <span>LINKEDIN</span>
+            </a>
+
+            <a 
+              href="mailto:thomasnguyen.editor@gmail.com" 
+              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+            >
+              <Mail size={14} className="text-blue-400" />
+              <span>EMAIL</span>
+            </a>
           </div>
         </div>
       </footer>
