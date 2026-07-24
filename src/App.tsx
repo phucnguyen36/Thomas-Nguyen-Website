@@ -149,7 +149,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* HIGH-IMPACT KEY METRICS STRIP */}
+          {/* HIGH-IMPACT KEY METRICS STRIP (ALL NUMBERS SYNCHRONIZED IN CRISP WHITE) */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto pt-2">
             
             <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
@@ -164,7 +164,7 @@ export default function App() {
               <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
                 <BarChart3 size={18} />
               </div>
-              <h3 className="text-3xl font-extrabold text-blue-400 tracking-tighter">85%+</h3>
+              <h3 className="text-3xl font-extrabold text-white tracking-tighter">85%+</h3>
               <p className="text-[11px] font-mono text-zinc-300 uppercase">First 5S Retention</p>
             </div>
 
@@ -450,7 +450,7 @@ export default function App() {
 
       </main>
 
-      {/* HIGH-CONTRAST HIGH-ELEGANCE FOOTER */}
+      {/* FOOTER */}
       <footer className="border-t border-zinc-800 bg-[#08080a] py-12 px-6 md:px-12 relative z-20">
         <div className="max-w-[1750px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center md:text-left">
