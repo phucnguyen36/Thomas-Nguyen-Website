@@ -3,52 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Nguyen — Instagram Carousel (8 Slides English - Balanced 1:1 Layout)</title>
+  <title>Thomas Nguyen — Typographic Instagram Carousel (8 Slides)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
     
-    /* UNIFIED 100% FONT SYNCHRONIZATION: Plus Jakarta Sans */
     * {
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
-      letter-spacing: -0.02em;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .font-serif-accent {
+      font-family: 'Playfair Display', Georgia, serif !important;
     }
 
     body {
-      background-color: #090d16;
+      background-color: #070a12;
       color: #ffffff;
     }
 
-    /* PERFECT 1:1 ASPECT RATIO SLIDE CARD (540px x 540px) */
+    /* PERFECT 1:1 SQUARE SLIDE CARD (540px x 540px) */
     .slide-card {
       width: 540px;
       height: 540px;
       background: #ffffff;
       color: #0f172a;
-      border-radius: 20px;
+      border-radius: 24px;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 36px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      align-items: center;
+      text-align: center;
+      padding: 32px;
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.75);
       border: 1px solid #e2e8f0;
       box-sizing: border-box;
     }
 
     .browser-frame {
       background: #090a0f;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      width: 100%;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
     }
 
     .crop-img {
       width: 100%;
-      height: 165px;
+      height: 155px;
       object-fit: cover;
     }
   </style>
@@ -57,23 +63,23 @@
   
   <header class="max-w-6xl mx-auto mb-12 text-center space-y-3">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold">
-      <span>INSTAGRAM CAROUSEL (EXACT 5 MISTAKES = 8 SLIDES)</span>
+      <span>DYNAMIC TYPOGRAPHY CAROUSEL (8 SLIDES)</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-tight">
-      Balanced Layout &amp; English Copy — 1-Click PNG Download
+      Balanced Typographic Graphics — 1-Click PNG Download
     </h1>
     <p class="text-slate-400 text-sm max-w-xl mx-auto font-light">
-      5 mistakes matched across 8 balanced 1:1 slides in 100% English. Real website screenshots from <span class="text-blue-400 font-bold">thomasvisual.vercel.app</span>.
+      Dynamic font sizes, centered layout, high-contrast serif &amp; sans-serif typography, embedded website screenshots from <span class="text-blue-400 font-bold">thomasvisual.vercel.app</span>.
     </p>
   </header>
 
   <!-- CAROUSEL SLIDES GRID CONTAINER -->
   <div class="max-w-6xl mx-auto space-y-16 flex flex-col items-center">
 
-    <!-- ================= SLIDE 1 ================= -->
+    <!-- ================= SLIDE 1: COVER ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
-        <span class="text-blue-400 font-bold">SLIDE 01 — COVER</span>
+        <span class="text-blue-400 font-bold">SLIDE 01 — COVER PAGE</span>
         <button onclick="downloadSlide('slide-1', 'Slide_1_Cover.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download Slide 1 (PNG)</span>
@@ -81,7 +87,8 @@
       </div>
 
       <div id="slide-1" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+        <!-- Top Bar -->
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
           <div class="flex items-center gap-2 font-bold text-blue-600">
             <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
             <span>@thomasvisualeditor</span>
@@ -89,26 +96,31 @@
           <span class="font-bold text-slate-400">01 / 08</span>
         </div>
 
-        <div class="my-auto space-y-2.5">
-          <span class="px-2.5 py-1 bg-blue-50 border border-blue-200 text-blue-700 font-bold text-[10px] uppercase tracking-wider rounded">
-            PORTFOLIO SHOWCASE
+        <!-- Center Stage Typographic Graphic -->
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 font-extrabold text-[10px] uppercase tracking-wider rounded-full inline-block mb-1">
+            PORTFOLIO BREAKDOWN
           </span>
-          <h2 class="text-3xl font-extrabold tracking-tight leading-tight text-slate-900">
-            <span class="text-blue-600 block text-4xl font-black">5 MISTAKES</span>
-            THAT KILL YOUR REELS RETENTION IN 3 SECONDS.
+
+          <h2 class="font-black text-slate-900 leading-none">
+            <span class="font-serif-accent text-5xl md:text-6xl text-blue-600 block font-black italic mb-1">5 MISTAKES</span>
+            <span class="text-2xl md:text-3xl font-black block tracking-tight text-slate-900 uppercase">THAT KILL YOUR REELS RETENTION</span>
           </h2>
-          <p class="text-xs text-slate-600 font-medium">
-            Short-form editing philosophy &amp; visual retention strategy.
-          </p>
+
+          <div class="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-extrabold tracking-widest uppercase rounded">
+            IN 3 SECONDS
+          </div>
         </div>
 
-        <!-- CROPPED HERO SCREENSHOT FROM WEBSITE -->
+        <!-- Bottom Crop Screenshot -->
         <div class="browser-frame">
-          <div class="flex items-center gap-1.5 px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
-            <span class="w-2 h-2 rounded-full bg-red-500"></span>
-            <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
-            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-            <span class="ml-2 font-bold text-blue-400">thomasvisual.vercel.app</span>
+          <div class="flex items-center justify-between px-3 py-1 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
+              <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+              <span class="w-2 h-2 rounded-full bg-green-500"></span>
+            </div>
+            <span class="font-bold text-blue-400">thomasvisual.vercel.app</span>
           </div>
           <img src="/screenshots/site_hero.png" alt="Website Hero" class="crop-img object-top" />
         </div>
@@ -116,7 +128,7 @@
     </div>
 
 
-    <!-- ================= SLIDE 2 ================= -->
+    <!-- ================= SLIDE 2: [1] NO VISUAL HOOK ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
         <span class="text-blue-400 font-bold">SLIDE 02 — [1] NO VISUAL HOOK</span>
@@ -127,29 +139,26 @@
       </div>
 
       <div id="slide-2" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[1]</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-black text-[13px] rounded-md shadow-sm">[1]</span>
           <span class="font-bold text-slate-400">02 / 08</span>
         </div>
 
-        <div class="my-auto space-y-2">
-          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-            NO IMMEDIATE VISUAL HOOK
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">MISTAKE 01</span>
+          <h3 class="leading-none">
+            <span class="text-2xl font-black text-slate-400 block uppercase">NO IMMEDIATE</span>
+            <span class="text-4xl md:text-5xl font-black text-blue-600 block uppercase tracking-tight mt-1">VISUAL HOOK.</span>
           </h3>
-          <p class="text-xs text-slate-600 font-normal leading-relaxed">
-            Viewers scroll past in 3 seconds because you spend time greeting instead of cutting straight to core value.
+          <p class="text-xs text-slate-600 max-w-sm mx-auto font-medium pt-1">
+            Viewers scroll past in 3 seconds when you greet instead of delivering core value immediately.
           </p>
         </div>
 
         <!-- CROPPED METRICS SCREENSHOT FROM WEBSITE -->
         <div class="browser-frame">
-          <div class="flex items-center justify-between px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-red-500"></span>
-              <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
-              <span class="w-2 h-2 rounded-full bg-green-500"></span>
-              <span class="ml-1 text-white font-bold">PERFORMANCE METRICS</span>
-            </div>
+          <div class="flex items-center justify-between px-3 py-1 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
+            <span class="text-white font-bold">PERFORMANCE METRICS</span>
             <span class="text-blue-400 font-bold">85%+ RETENTION</span>
           </div>
           <img src="/screenshots/site_hero.png" alt="Metrics" class="crop-img object-bottom scale-105" />
@@ -158,7 +167,7 @@
     </div>
 
 
-    <!-- ================= SLIDE 3 ================= -->
+    <!-- ================= SLIDE 3: [2] MICRO-PAUSES ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
         <span class="text-blue-400 font-bold">SLIDE 03 — [2] MICRO-PAUSES</span>
@@ -169,38 +178,37 @@
       </div>
 
       <div id="slide-3" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[2]</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-black text-[13px] rounded-md shadow-sm">[2]</span>
           <span class="font-bold text-slate-400">03 / 08</span>
         </div>
 
-        <div class="my-auto space-y-2">
-          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-            LEAVING MICRO-PAUSES &amp; DEAD AIR
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">MISTAKE 02</span>
+          <h3 class="leading-none">
+            <span class="text-4xl md:text-5xl font-black text-slate-900 block uppercase tracking-tight">MICRO-PAUSES</span>
+            <span class="font-serif-accent text-3xl md:text-4xl font-black text-blue-600 italic block mt-1">&amp; DEAD AIR.</span>
           </h3>
-          <p class="text-xs text-slate-600 font-normal leading-relaxed">
-            Even a 0.2s silence disrupts viewer momentum and triggers drop-off.
+          <p class="text-xs text-slate-600 max-w-sm mx-auto font-medium pt-1">
+            Even a 0.2s silence disrupts viewer momentum and triggers instant drop-off.
           </p>
         </div>
 
-        <!-- EDITING COMPARISON MOCKUP CARD -->
-        <div class="bg-slate-900 text-white rounded-xl p-4 border border-blue-500/30 space-y-2 shadow-md">
-          <div class="flex justify-between items-center text-[10px] font-mono border-b border-white/10 pb-1.5">
-            <span class="text-blue-400 font-bold uppercase">✔ NEURO-PACING METHODOLOGY</span>
-            <span class="text-emerald-400 font-bold">85%+ RETENTION</span>
-          </div>
-          <p class="text-xs text-slate-300 font-light leading-relaxed">
-            Eliminates all 0.2s micro-pauses. Hand-animated After Effects keyframing removes amateur template feel.
+        <!-- METHODOLOGY BANNER -->
+        <div class="w-full bg-slate-900 text-white rounded-xl p-3.5 border border-blue-500/30 text-center space-y-1 shadow-md">
+          <div class="text-[10px] font-mono text-blue-400 font-bold uppercase">✔ SOLUTION: NEURO-PACING METHODOLOGY</div>
+          <p class="text-xs text-slate-300 font-light leading-snug">
+            Cuts 100% of dead air &amp; applies custom keyframing for 85%+ retention.
           </p>
         </div>
       </div>
     </div>
 
 
-    <!-- ================= SLIDE 4 ================= -->
+    <!-- ================= SLIDE 4: [3] CAPCUT TEMPLATES ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
-        <span class="text-blue-400 font-bold">SLIDE 04 — [3] CHEAP CAPCUT TEMPLATES</span>
+        <span class="text-blue-400 font-bold">SLIDE 04 — [3] CHEAP TEMPLATES</span>
         <button onclick="downloadSlide('slide-4', 'Slide_4_Templates.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download Slide 4 (PNG)</span>
@@ -208,36 +216,38 @@
       </div>
 
       <div id="slide-4" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[3]</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-black text-[13px] rounded-md shadow-sm">[3]</span>
           <span class="font-bold text-slate-400">04 / 08</span>
         </div>
 
-        <div class="my-auto space-y-2">
-          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-            RELYING ON CHEAP CAPCUT TEMPLATES
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">MISTAKE 03</span>
+          <h3 class="leading-none">
+            <span class="text-2xl font-black text-slate-400 block uppercase">CHEAP CAPCUT</span>
+            <span class="text-4xl md:text-5xl font-black text-blue-600 block uppercase tracking-tight mt-1">TEMPLATES.</span>
           </h3>
-          <p class="text-xs text-slate-600 font-normal leading-relaxed">
+          <p class="text-xs text-slate-600 max-w-sm mx-auto font-medium pt-1">
             Repetitive template packs erode brand authority and make your content look amateur.
           </p>
         </div>
 
-        <!-- 4 PILLARS VISUAL CARDS -->
-        <div class="grid grid-cols-2 gap-2.5 text-slate-900 text-[11px] font-bold">
-          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
-            <span class="text-blue-600 block text-[9px] font-mono">01 PILLAR</span>
+        <!-- 4 PILLARS GRAPHIC GRID -->
+        <div class="w-full grid grid-cols-2 gap-2 text-slate-900 text-[10px] font-extrabold">
+          <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-center">
+            <span class="text-blue-600 block text-[8px] font-mono">01 PILLAR</span>
             NEURO-PACING
           </div>
-          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
-            <span class="text-blue-600 block text-[9px] font-mono">02 PILLAR</span>
+          <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-center">
+            <span class="text-blue-600 block text-[8px] font-mono">02 PILLAR</span>
             BESPOKE MOTION
           </div>
-          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
-            <span class="text-blue-600 block text-[9px] font-mono">03 PILLAR</span>
+          <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-center">
+            <span class="text-blue-600 block text-[8px] font-mono">03 PILLAR</span>
             VISUAL STRATEGY
           </div>
-          <div class="p-3 rounded-lg bg-blue-50 border border-blue-200">
-            <span class="text-blue-600 block text-[9px] font-mono">04 PILLAR</span>
+          <div class="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-center">
+            <span class="text-blue-600 block text-[8px] font-mono">04 PILLAR</span>
             SOUND ARCHITECTURE
           </div>
         </div>
@@ -245,10 +255,10 @@
     </div>
 
 
-    <!-- ================= SLIDE 5 ================= -->
+    <!-- ================= SLIDE 5: [4] NO B-ROLL STRATEGY ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
-        <span class="text-blue-400 font-bold">SLIDE 05 — [4] LACK OF B-ROLL STRATEGY</span>
+        <span class="text-blue-400 font-bold">SLIDE 05 — [4] B-ROLL STRATEGY</span>
         <button onclick="downloadSlide('slide-5', 'Slide_5_BRoll.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download Slide 5 (PNG)</span>
@@ -256,41 +266,38 @@
       </div>
 
       <div id="slide-5" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[4]</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-black text-[13px] rounded-md shadow-sm">[4]</span>
           <span class="font-bold text-slate-400">05 / 08</span>
         </div>
 
-        <div class="my-auto space-y-1.5">
-          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-            LACK OF HIGH-VALUE B-ROLL STRATEGY
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">MISTAKE 04</span>
+          <h3 class="leading-none">
+            <span class="text-2xl font-black text-slate-900 block uppercase">LACK OF HIGH-VALUE</span>
+            <span class="font-serif-accent text-3xl md:text-4xl font-black text-blue-600 italic block mt-1">B-ROLL STRATEGY.</span>
           </h3>
-          <p class="text-xs text-slate-600 font-normal">
-            Viewers remember 80% of what they SEE, but only 20% of what they hear.
-          </p>
+          <div class="inline-block px-3 py-1 bg-blue-50 border border-blue-200 text-blue-900 text-xs font-bold rounded-md mt-1">
+            "Viewers remember 80% of what they SEE, but 20% of what they hear."
+          </div>
         </div>
 
-        <!-- CROPPED SHORT-FORM REELS GRID SCREENSHOT FROM WEBSITE -->
+        <!-- CROPPED REELS GRID FROM WEBSITE -->
         <div class="browser-frame">
-          <div class="flex items-center justify-between px-3 py-1.5 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-red-500"></span>
-              <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
-              <span class="w-2 h-2 rounded-full bg-green-500"></span>
-              <span class="ml-1 text-white font-bold">SHORT-FORM MASTERY</span>
-            </div>
+          <div class="flex items-center justify-between px-3 py-1 bg-[#121620] border-b border-white/10 text-[9px] text-white/60 font-mono">
+            <span class="text-white font-bold">SHORT-FORM MASTERY</span>
             <span class="text-blue-400 font-bold">10 REELS</span>
           </div>
-          <img src="/screenshots/site_reels.jpg" alt="Short-Form Reels Grid" class="crop-img object-top scale-105" />
+          <img src="/screenshots/site_reels.jpg" alt="Reels Grid" class="crop-img object-top scale-105" />
         </div>
       </div>
     </div>
 
 
-    <!-- ================= SLIDE 6 ================= -->
+    <!-- ================= SLIDE 6: [5] WEAK SOUND ARCHITECTURE ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
-        <span class="text-blue-400 font-bold">SLIDE 06 — [5] WEAK SOUND ARCHITECTURE</span>
+        <span class="text-blue-400 font-bold">SLIDE 06 — [5] SOUND DESIGN</span>
         <button onclick="downloadSlide('slide-6', 'Slide_6_Sound.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download Slide 6 (PNG)</span>
@@ -298,35 +305,37 @@
       </div>
 
       <div id="slide-6" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[12px] rounded-[4px] shadow-sm">[5]</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-black text-[13px] rounded-md shadow-sm">[5]</span>
           <span class="font-bold text-slate-400">06 / 08</span>
         </div>
 
-        <div class="my-auto space-y-2">
-          <h3 class="text-xl font-extrabold uppercase text-slate-900 leading-tight">
-            WEAK &amp; MONOTONE SOUND ARCHITECTURE
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">MISTAKE 05</span>
+          <h3 class="leading-none">
+            <span class="text-2xl font-black text-slate-400 block uppercase">WEAK &amp; MONOTONE</span>
+            <span class="text-4xl md:text-5xl font-black text-blue-600 block uppercase tracking-tight mt-1">SOUND DESIGN.</span>
           </h3>
-          <p class="text-xs text-slate-600 font-normal leading-relaxed">
+          <p class="text-xs text-slate-600 max-w-sm mx-auto font-medium pt-1">
             Ignoring multi-layered SFX design leads to flat engagement and lost viewer focus.
           </p>
         </div>
 
-        <!-- SOUND DESIGN MOCKUP CARD -->
-        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-blue-900 space-y-1.5">
-          <div class="text-[10px] font-mono font-bold text-blue-600 uppercase">SOLUTION: MULTI-LAYERED SFX</div>
-          <p class="text-xs font-medium leading-relaxed">
-            Multi-layered sound design anchors subconscious attention and reinforces every visual keyframe transition.
+        <!-- SOUND DESIGN SOLUTION CARD -->
+        <div class="w-full bg-blue-50 border border-blue-200 rounded-xl p-3.5 text-center space-y-1">
+          <div class="text-[10px] font-mono text-blue-600 font-extrabold uppercase">SOLUTION: MULTI-LAYERED SFX ARCHITECTURE</div>
+          <p class="text-xs font-medium text-slate-800 leading-snug">
+            Multi-layered audio anchors subconscious attention and reinforces every keyframe transition.
           </p>
         </div>
       </div>
     </div>
 
 
-    <!-- ================= SLIDE 7 ================= -->
+    <!-- ================= SLIDE 7: 30S RETENTION AUDIT ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
-        <span class="text-blue-400 font-bold">SLIDE 07 — 30S RETENTION AUDIT</span>
+        <span class="text-blue-400 font-bold">SLIDE 07 — 30S AUDIT</span>
         <button onclick="downloadSlide('slide-7', 'Slide_7_Audit.png')" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download Slide 7 (PNG)</span>
@@ -334,29 +343,31 @@
       </div>
 
       <div id="slide-7" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[10px] uppercase rounded-[4px] shadow-sm">FREE AUDIT</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-extrabold text-[10px] uppercase rounded-md shadow-sm">FREE AUDIT</span>
           <span class="font-bold text-slate-400">07 / 08</span>
         </div>
 
-        <div class="my-auto space-y-2 text-center">
-          <h3 class="text-2xl font-extrabold uppercase text-slate-900 leading-tight">
-            30-SECOND RETENTION AUDIT
+        <div class="my-auto space-y-2 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">ZERO RISK OFFER</span>
+          <h3 class="leading-none">
+            <span class="font-serif-accent text-4xl md:text-5xl font-black text-slate-900 block italic">30-SECOND</span>
+            <span class="text-3xl md:text-4xl font-black text-blue-600 block uppercase tracking-tight mt-1">RETENTION AUDIT.</span>
           </h3>
-          <p class="text-xs text-slate-600 font-medium">
-            Send 1 raw footage file or draft. Receive a complimentary 30-second re-edit demonstrating optimized pacing.
+          <p class="text-xs text-slate-600 max-w-sm mx-auto font-medium pt-1">
+            Send 1 raw footage file. Receive a complimentary 30-second re-edit demonstrating optimized pacing.
           </p>
         </div>
 
-        <!-- CROPPED RETENTION AUDIT BANNER FROM WEBSITE -->
+        <!-- CROPPED RETENTION AUDIT SCREENSHOT FROM WEBSITE -->
         <div class="browser-frame">
-          <img src="/screenshots/site_audit.png" alt="Retention Audit Offer" class="crop-img object-top" />
+          <img src="/screenshots/site_audit.png" alt="Audit Offer" class="crop-img object-top" />
         </div>
       </div>
     </div>
 
 
-    <!-- ================= SLIDE 8 ================= -->
+    <!-- ================= SLIDE 8: OUTRO CTA ================= -->
     <div class="flex flex-col items-center gap-4">
       <div class="flex items-center justify-between w-[540px] px-2 text-xs font-mono">
         <span class="text-blue-400 font-bold">SLIDE 08 — OUTRO CTA</span>
@@ -367,27 +378,26 @@
       </div>
 
       <div id="slide-8" class="slide-card">
-        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
-          <span class="px-2.5 py-1 bg-blue-600 text-white font-extrabold text-[10px] uppercase rounded-[4px] shadow-sm">BOOK CALL</span>
+        <div class="w-full flex justify-between items-center text-xs font-mono text-slate-500">
+          <span class="px-3 py-1 bg-blue-600 text-white font-extrabold text-[10px] uppercase rounded-md shadow-sm">BOOK CALL</span>
           <span class="font-bold text-slate-400">08 / 08</span>
         </div>
 
-        <div class="my-auto space-y-3 text-center">
-          <h3 class="text-3xl font-extrabold uppercase text-slate-900 leading-tight">
-            READY TO TRANSCEND YOUR CONTENT?
+        <div class="my-auto space-y-3 text-center w-full px-2">
+          <span class="text-xs font-mono text-slate-400 uppercase font-bold tracking-widest">NEXT STEPS</span>
+          <h3 class="leading-none">
+            <span class="text-3xl font-black text-slate-900 block uppercase">READY TO</span>
+            <span class="text-4xl md:text-5xl font-black text-blue-600 block uppercase tracking-tight mt-1">TRANSCEND?</span>
           </h3>
-          <p class="text-xs text-slate-600 font-medium">
-            Transform raw footage into high-converting visual retention engines.
-          </p>
 
           <div class="pt-2">
-            <a href="https://calendly.com/thomasvisualeditor/30min" target="_blank" class="inline-block w-full py-3.5 bg-blue-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-md hover:bg-blue-700 transition-all">
-              BOOK STRATEGY CALL NOW
+            <a href="https://calendly.com/thomasvisualeditor/30min" target="_blank" class="inline-block w-full py-3.5 bg-blue-600 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-md hover:bg-blue-700 transition-all">
+              BOOK STRATEGY CALL NOW ➔
             </a>
           </div>
         </div>
 
-        <div class="text-center text-[11px] font-mono text-slate-500 border-t border-slate-200 pt-3">
+        <div class="w-full text-center text-[11px] font-mono text-slate-500 border-t border-slate-200 pt-3">
           🌐 <span class="text-blue-600 font-bold">thomasvisual.vercel.app</span> | 📱 @thomasvisualeditor
         </div>
       </div>
