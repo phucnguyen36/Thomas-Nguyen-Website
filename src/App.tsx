@@ -139,12 +139,12 @@ export default function App() {
             <div className="text-left text-xs font-mono">
               <span className="text-white font-bold block leading-tight">Thomas Nguyen</span>
               <a 
-                href="https://thomasvisual.vercel.app" 
+                href="https://thomasnguyen.online" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-blue-400 hover:underline text-[11px] block leading-tight"
               >
-                thomasvisual.vercel.app
+                thomasnguyen.online
               </a>
             </div>
           </div>
