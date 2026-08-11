@@ -20,12 +20,15 @@ import {
   TrendingUp,
   ArrowRight,
   Video,
+  VideoOff,
   Award,
   BarChart3,
   Mail,
   Linkedin,
   Facebook,
   Twitter,
+  Lock,
+  Calculator,
   Play,
   Pause,
   Volume2,
@@ -75,7 +78,7 @@ export default function App() {
   useEffect(() => {
     const notifications = [
       "⚡ New 30-Second Retention Audit requested by Hoang Phuc",
-      "🔥 Client doubled retention from 34% to 84% with Neuro-Pacing",
+      "🔥 Client doubled retention from 38% to 84% with Neuro-Pacing",
       "🎬 10 Reels batch exported in Rec.709 Standard for Kaleemix",
       "📈 New strategy call scheduled with Raul Ocana from Spain",
       "🚀 Editoz Club scaled organic reach by 3.8x this month"
@@ -85,7 +88,7 @@ export default function App() {
       setToastMessage(notifications[Math.floor(Math.random() * notifications.length)]);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 5000);
-    }, 2500);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -118,13 +121,13 @@ export default function App() {
     v.tag.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // 100% ENGLISH VERIFIED CLIENT REVIEWS FOR MARQUEE
+  // REAL SPECIFIED CLIENT REVIEWS (100% ENGLISH COPYWRITING)
   const clientReviews = [
     {
       name: "Hoang Phuc",
       handle: "@hoangphuc_creator",
       metric: "84% 5S Retention",
-      comment: "First 5-second viewer retention jumped from 34% to 84% within 2 weeks of applying Neuro-Pacing. Organic follower growth tripled!",
+      comment: "First 5-second viewer retention jumped from 34% to 84% within 2 weeks of implementing Neuro-Pacing. Organic follower growth tripled!",
       tag: "CREATOR BRAND",
       location: "Vietnam"
     },
@@ -175,13 +178,15 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white font-haas relative overflow-x-hidden selection:bg-blue-600/30 selection:text-white">
+    <div className="min-h-screen spatial-bg text-white font-haas relative overflow-x-hidden selection:bg-blue-600/30 selection:text-white">
       
-      {/* Film Grain Noise & Subtle Ambient Edit Blur Elements */}
+      {/* Film Grain Noise & Ambient Edit Blur Elements */}
       <div className="noise-overlay"></div>
+      <div className="fixed inset-0 bg-black/75 backdrop-blur-[2px] pointer-events-none z-0"></div>
 
       <div className="bg-edit-blur-1 top-10 left-1/3"></div>
       <div className="bg-edit-blur-2 top-1/2 -right-20"></div>
+      <div className="bg-edit-blur-1 bottom-20 left-10"></div>
 
       {/* LIVE FLOATING TOAST NOTIFICATION */}
       {showToast && (
@@ -246,7 +251,7 @@ export default function App() {
       {/* MAIN CONTENT AREA */}
       <main className="relative z-10 space-y-24 pb-24">
         
-        {/* 1. HERO SECTION */}
+        {/* 1. HERO SECTION (PERSUASIVE CONVERSION COPYWRITING IN 100% ENGLISH) */}
         <section id="hero" className="pt-12 md:pt-20 px-6 md:px-12 max-w-5xl mx-auto space-y-10 text-center">
           
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/15 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold uppercase tracking-widest">
@@ -266,7 +271,7 @@ export default function App() {
 
           {/* Official Creator Badge */}
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-zinc-900/90 border border-zinc-700 backdrop-blur-md shadow-lg">
-            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-extrabold text-xs">
+            <div className="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/40 flex items-center justify-center font-extrabold text-blue-400 text-xs">
               TN
             </div>
             <div className="text-left text-xs font-mono">
@@ -285,7 +290,7 @@ export default function App() {
           {/* HIGH-IMPACT KEY METRICS STRIP */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto pt-2">
             
-            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/20">
+            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
               <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
                 <Video size={18} />
               </div>
@@ -293,7 +298,7 @@ export default function App() {
               <p className="text-[11px] font-mono text-zinc-300 uppercase">Reels Delivered</p>
             </div>
 
-            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/20">
+            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
               <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
                 <BarChart3 size={18} />
               </div>
@@ -301,7 +306,7 @@ export default function App() {
               <p className="text-[11px] font-mono text-zinc-300 uppercase">First 5S Retention</p>
             </div>
 
-            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/20">
+            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
               <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
                 <Award size={18} />
               </div>
@@ -346,7 +351,7 @@ export default function App() {
             <span className="text-xs text-zinc-400 font-mono uppercase">REAL-TIME VISUAL SIMULATOR</span>
           </div>
 
-          <div className="spatial-card p-6 sm:p-8 border border-zinc-800 bg-zinc-950/90">
+          <div className="spatial-card p-6 sm:p-8 border border-zinc-800 bg-zinc-950/80">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               
               {/* Sliders Area */}
@@ -409,7 +414,7 @@ export default function App() {
               </div>
 
               {/* Projected Output Display */}
-              <div className="spatial-card p-6 border border-blue-500/40 bg-blue-950/30 space-y-4 text-center relative overflow-hidden">
+              <div className="spatial-card p-6 border border-blue-500/40 bg-blue-950/20 space-y-4 text-center relative overflow-hidden">
                 <div className="space-y-1">
                   <span className="text-[10px] font-mono text-blue-400 font-bold uppercase tracking-widest">
                     PROJECTED RETENTION GAIN
@@ -687,36 +692,62 @@ export default function App() {
             </div>
           </div>
 
-          {/* 5-Column Compact Video Grid (Live Full-Color Vimeo Embeds) */}
+          {/* 5-Column Compact Video Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {filteredVideos.map((video, idx) => (
               <div 
                 key={video.id + idx}
-                className="spatial-card aspect-[9/16] relative overflow-hidden group border border-zinc-800 p-1 bg-black"
+                className="spatial-card aspect-[9/16] relative overflow-hidden group border border-zinc-800 p-1 bg-zinc-950 hover:border-blue-500/40 cursor-pointer"
+                onClick={handleCalendlyRedirect}
               >
-                <div className="w-full h-full relative bg-black rounded-[4px] overflow-hidden">
-                  <iframe
-                    src={`https://player.vimeo.com/video/${video.id}?autoplay=0&loop=0&background=0&title=0&byline=0&portrait=0&color=ffffff`}
-                    className="absolute inset-0 w-full h-full object-cover z-20"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    title={video.title}
-                  />
-
-                  {/* Badge */}
-                  <div className="absolute top-2 left-2 z-40">
-                    <span className="px-2 py-0.5 rounded-[2px] bg-black/90 border border-blue-500/40 text-[9px] font-mono font-bold text-blue-300 uppercase tracking-widest">
+                <div className="w-full h-full relative bg-zinc-900/90 rounded-[4px] overflow-hidden border border-zinc-800 flex flex-col justify-between p-3.5 select-none bg-gradient-to-b from-zinc-800/90 via-zinc-900 to-zinc-950">
+                  
+                  {/* Top Bar with Tag Badge & Indicator */}
+                  <div className="flex items-center justify-between z-10">
+                    <span className="px-2 py-0.5 rounded-[2px] bg-zinc-800/90 border border-zinc-700 text-[9px] font-mono font-bold text-zinc-300 uppercase tracking-widest">
                       {video.tag}
                     </span>
+                    <span className="px-1.5 py-0.5 rounded-[2px] bg-zinc-800/80 border border-zinc-700/60 text-[9px] font-mono text-zinc-400 flex items-center gap-1">
+                      <VideoOff size={10} className="text-zinc-400" />
+                      <span>HIDDEN</span>
+                    </span>
                   </div>
+
+                  {/* Center Stage Gray Video Placeholder Graphic */}
+                  <div className="my-auto flex flex-col items-center justify-center text-center space-y-2.5 z-10 px-1">
+                    <div className="w-11 h-11 rounded-full bg-zinc-800/90 border border-zinc-700/80 flex items-center justify-center text-zinc-400 shadow-inner group-hover:border-blue-500 transition-colors group-hover:scale-110">
+                      <VideoOff size={20} className="opacity-70 group-hover:text-blue-400" />
+                    </div>
+                    
+                    <div className="space-y-1">
+                      <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block font-semibold">
+                        VIDEO CONTENT REDACTED
+                      </span>
+                      <p className="text-xs font-semibold text-zinc-300 line-clamp-2 leading-tight group-hover:text-white">
+                        {video.title}
+                      </p>
+                    </div>
+
+                    <span className="inline-block px-2.5 py-0.5 bg-zinc-800/70 border border-zinc-700/50 rounded text-[9px] font-mono text-zinc-400 group-hover:border-blue-500/40">
+                      REDACTED DEMO
+                    </span>
+                  </div>
+
+                  {/* Bottom Status Bar */}
+                  <div className="pt-2 border-t border-zinc-800/60 flex items-center justify-between text-[9px] font-mono text-zinc-500 z-10">
+                    <span>REC.709 PROBE</span>
+                    <span className="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-blue-500"></span>
+                  </div>
+
+                  {/* Subtle Gray Grid Overlay */}
+                  <div className="absolute inset-0 bg-[radial-gradient(#52525b_1px,transparent_1px)] [background-size:12px_12px] opacity-20 pointer-events-none" />
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* 100% ENGLISH VERIFIED CLIENT REVIEWS INFINITE HORIZONTAL MARQUEE */}
+        {/* VERIFIED CLIENT REVIEWS INFINITE HORIZONTAL MARQUEE (100% ENGLISH COPYWRITING) */}
         <section id="reviews" className="space-y-6 pt-4 overflow-hidden scroll-mt-24">
           <div className="px-6 md:px-12 max-w-[1750px] mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
             <div>
@@ -873,7 +904,7 @@ export default function App() {
               </ul>
             </div>
 
-            <div className="spatial-card p-6 border border-blue-500/30 space-y-4 bg-blue-950/20">
+            <div className="spatial-card p-6 border border-blue-500/30 space-y-4 bg-blue-950/10">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-blue-600/20 text-blue-400 rounded-[4px] border border-blue-500/30">
                   <CheckCircle2 size={20} />
@@ -959,7 +990,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="spatial-card p-5 space-y-3 border border-blue-500/30 bg-blue-950/20 relative overflow-hidden">
+            <div className="spatial-card p-5 space-y-3 border border-blue-500/30 bg-blue-950/10 relative overflow-hidden">
               <span className="text-2xl font-extrabold font-mono text-blue-400">02</span>
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">Visual Magic (48h)</h3>
               <p className="text-xs text-zinc-300 font-light leading-relaxed">
@@ -979,7 +1010,7 @@ export default function App() {
 
         {/* 6. RETENTION AUDIT SECTION */}
         <section id="audit" className="px-6 md:px-12 max-w-4xl mx-auto text-center space-y-5 py-2">
-          <div className="spatial-card p-8 sm:p-10 border border-blue-500/30 space-y-5 bg-blue-950/20">
+          <div className="spatial-card p-8 sm:p-10 border border-blue-500/30 space-y-5 bg-blue-950/10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-blue-600/20 border border-blue-500/40 text-xs font-mono uppercase tracking-widest text-blue-300">
               <ShieldCheck size={15} />
               <span>ZERO RISK COMPLIMENTARY OFFER</span>
