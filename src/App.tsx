@@ -60,10 +60,6 @@ export default function App() {
   // Simulated Pacing Tab
   const [pacingMode, setPacingMode] = useState<'standard' | 'pro'>('pro');
 
-  // Interactive Sound Layer Equalizer State
-  const [activeSoundLayer, setActiveSoundLayer] = useState<'all' | 'risers' | 'swishes' | 'clicks' | 'ambience'>('all');
-  const [isPlayingSFX, setIsPlayingSFX] = useState(true);
-
   // Live Toast Notification
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
@@ -103,7 +99,7 @@ export default function App() {
   const extraViews = Math.round(monthlyViews * ((projectedRetention - currentRetention) / 100) * 1.8);
   const extraLeads = Math.round(extraViews * 0.004);
 
-  // 10 Short-Form Videos Showcase
+  // 10 LIVE SHORT-FORM VIDEO CLIPS (RESTORED VIMEO EMBEDS)
   const shortFormVideos = [
     { id: "1212586126", tag: "FEATURED 01", title: "Visual Hook & Retention Engine" },
     { id: "1212585180", tag: "FEATURED 02", title: "Motion Pacing & Dynamic Edit" },
@@ -222,7 +218,6 @@ export default function App() {
           <a href="#hero" className="hover:text-blue-400 transition-colors">Intro</a>
           <a href="#calculator" className="hover:text-blue-400 transition-colors">ROI Calculator</a>
           <a href="#pacing-simulator" className="hover:text-blue-400 transition-colors">NLE Timeline GUI</a>
-          <a href="#audio-graphics" className="hover:text-blue-400 transition-colors">SFX Equalizer</a>
           <a href="#mastery" className="hover:text-blue-400 transition-colors">Short-Form Work</a>
           <a href="#reviews" className="hover:text-blue-400 transition-colors">Client Reviews</a>
           <a href="#comparison" className="hover:text-blue-400 transition-colors">Comparison</a>
@@ -522,7 +517,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* REALISTIC NLE TIMELINE GRAPHIC SIMULATOR */}
+            {/* HIGH-END NLE TIMELINE GRAPHIC SIMULATOR */}
             <div className="spatial-card p-5 border border-zinc-800 space-y-4 md:col-span-2 flex flex-col justify-between bg-[#0b0e14] shadow-2xl relative overflow-hidden">
               
               {/* NLE Toolbar Header */}
@@ -687,97 +682,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* FEATURE #3: INTERACTIVE SFX SOUND EQUALIZER GRAPHIC */}
-        <section id="audio-graphics" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
-            <div>
-              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
-                INTERACTIVE GRAPHICS // SOUND ARCHITECTURE
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
-                Multi-Track SFX Layering Visualizer
-              </h2>
-            </div>
-            <span className="text-xs text-zinc-400 font-mono uppercase">INTERACTIVE AUDIO GRAPHIC</span>
-          </div>
-
-          <div className="spatial-card p-6 sm:p-8 border border-zinc-800 bg-zinc-950/90 space-y-6">
-            
-            {/* Audio Control Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-4">
-              <div className="flex items-center gap-3">
-                <button 
-                  onClick={() => setIsPlayingSFX(!isPlayingSFX)}
-                  className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center transition-all cursor-pointer shadow-[0_0_15px_rgba(37,99,235,0.5)]"
-                >
-                  {isPlayingSFX ? <Pause size={18} /> : <Play size={18} className="ml-0.5" />}
-                </button>
-                <div>
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                    <span>SFX FREQUENCY MATRIX</span>
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                  </h3>
-                  <p className="text-[11px] font-mono text-zinc-400">Click layers below to isolate audio frequencies</p>
-                </div>
-              </div>
-
-              {/* Sound Layer Tabs */}
-              <div className="flex flex-wrap items-center gap-2">
-                {[
-                  { id: 'all', label: 'All 4 Tracks' },
-                  { id: 'risers', label: 'Sub-Bass Risers' },
-                  { id: 'swishes', label: 'Mechanical Swishes' },
-                  { id: 'clicks', label: 'Tactile Clicks' },
-                  { id: 'ambience', label: 'Rec.709 Ambience' },
-                ].map(layer => (
-                  <button
-                    key={layer.id}
-                    onClick={() => setActiveSoundLayer(layer.id as any)}
-                    className={`px-3 py-1.5 rounded text-xs font-mono font-bold uppercase transition-all cursor-pointer ${
-                      activeSoundLayer === layer.id
-                        ? 'bg-blue-600 text-white shadow-[0_0_12px_rgba(37,99,235,0.4)]'
-                        : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
-                    }`}
-                  >
-                    {layer.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Interactive Audio Frequency Equalizer Display */}
-            <div className="h-28 bg-black/80 rounded-xl border border-zinc-800 p-4 flex items-end justify-between gap-1 overflow-hidden relative">
-              {Array.from({ length: 64 }).map((_, i) => {
-                const height = isPlayingSFX
-                  ? Math.floor(Math.sin(i * 0.3) * 35 + 50) + (i % 4 === 0 ? 15 : 0)
-                  : 12;
-
-                return (
-                  <div
-                    key={i}
-                    style={{ height: `${height}%` }}
-                    className={`w-full rounded-t transition-all duration-150 ${
-                      activeSoundLayer === 'all'
-                        ? (i % 2 === 0 ? 'bg-blue-500 shadow-[0_0_6px_rgba(59,130,246,0.6)]' : 'bg-cyan-400')
-                        : activeSoundLayer === 'risers'
-                        ? 'bg-purple-500'
-                        : activeSoundLayer === 'swishes'
-                        ? 'bg-sky-400'
-                        : activeSoundLayer === 'clicks'
-                        ? 'bg-emerald-400'
-                        : 'bg-indigo-400'
-                    }`}
-                  />
-                );
-              })}
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            </div>
-
-          </div>
-        </section>
-
-        {/* 3. SHORT-FORM MASTERY SHOWCASE */}
+        {/* 3. SHORT-FORM MASTERY SHOWCASE (RESTORED LIVE 10 VIMEO VIDEO CLIPS) */}
         <section id="mastery" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6 pt-2">
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-800 pb-4">
@@ -801,55 +706,32 @@ export default function App() {
             </div>
           </div>
 
-          {/* 5-Column Compact Video Grid */}
+          {/* 5-Column Compact Video Grid (Live Vimeo Video Embeds) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {filteredVideos.map((video, idx) => (
               <div 
                 key={video.id + idx}
-                className="spatial-card aspect-[9/16] relative overflow-hidden group border border-zinc-800 p-1 bg-zinc-950 hover:border-blue-500/40 cursor-pointer"
-                onClick={handleCalendlyRedirect}
+                className="spatial-card aspect-[9/16] relative overflow-hidden group border border-zinc-800 p-1 bg-black hover:border-blue-500/50 transition-all shadow-xl"
               >
-                <div className="w-full h-full relative bg-zinc-900/90 rounded-[4px] overflow-hidden border border-zinc-800 flex flex-col justify-between p-3.5 select-none bg-gradient-to-b from-zinc-800/90 via-zinc-900 to-zinc-950">
-                  
-                  {/* Top Bar with Tag Badge & Indicator */}
-                  <div className="flex items-center justify-between z-10">
-                    <span className="px-2 py-0.5 rounded-[2px] bg-zinc-800/90 border border-zinc-700 text-[9px] font-mono font-bold text-zinc-300 uppercase tracking-widest">
+                <div className="w-full h-full relative bg-black rounded-[4px] overflow-hidden">
+                  <iframe
+                    src={`https://player.vimeo.com/video/${video.id}?autoplay=0&loop=0&background=0&title=0&byline=0&portrait=0&color=2563eb`}
+                    className="absolute inset-0 w-full h-full object-cover z-20"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    title={video.title}
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 z-30 bg-black/20 backdrop-blur-[1px] group-hover:opacity-0 transition-all duration-300 pointer-events-none" />
+
+                  {/* Badge */}
+                  <div className="absolute top-2 left-2 z-40">
+                    <span className="px-2 py-0.5 rounded-[2px] bg-black/90 border border-blue-500/40 text-[9px] font-mono font-bold text-blue-300 uppercase tracking-widest shadow-sm">
                       {video.tag}
                     </span>
-                    <span className="px-1.5 py-0.5 rounded-[2px] bg-zinc-800/80 border border-zinc-700/60 text-[9px] font-mono text-zinc-400 flex items-center gap-1">
-                      <VideoOff size={10} className="text-zinc-400" />
-                      <span>HIDDEN</span>
-                    </span>
                   </div>
-
-                  {/* Center Stage Gray Video Placeholder Graphic */}
-                  <div className="my-auto flex flex-col items-center justify-center text-center space-y-2.5 z-10 px-1">
-                    <div className="w-11 h-11 rounded-full bg-zinc-800/90 border border-zinc-700/80 flex items-center justify-center text-zinc-400 shadow-inner group-hover:border-blue-500 transition-colors group-hover:scale-110">
-                      <VideoOff size={20} className="opacity-70 group-hover:text-blue-400" />
-                    </div>
-                    
-                    <div className="space-y-1">
-                      <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest block font-semibold">
-                        VIDEO CONTENT REDACTED
-                      </span>
-                      <p className="text-xs font-semibold text-zinc-300 line-clamp-2 leading-tight group-hover:text-white">
-                        {video.title}
-                      </p>
-                    </div>
-
-                    <span className="inline-block px-2.5 py-0.5 bg-zinc-800/70 border border-zinc-700/50 rounded text-[9px] font-mono text-zinc-400 group-hover:border-blue-500/40">
-                      REDACTED DEMO
-                    </span>
-                  </div>
-
-                  {/* Bottom Status Bar */}
-                  <div className="pt-2 border-t border-zinc-800/60 flex items-center justify-between text-[9px] font-mono text-zinc-500 z-10">
-                    <span>REC.709 PROBE</span>
-                    <span className="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-blue-500"></span>
-                  </div>
-
-                  {/* Subtle Gray Grid Overlay */}
-                  <div className="absolute inset-0 bg-[radial-gradient(#52525b_1px,transparent_1px)] [background-size:12px_12px] opacity-20 pointer-events-none" />
                 </div>
               </div>
             ))}
