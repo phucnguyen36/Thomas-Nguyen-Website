@@ -1,4 +1,4 @@
-# Project Design Guidelines for Thomas Nguyen Portfolio
+# Project Design Guidelines for Demo Portfolio
 
 ## Design Philosophy: "The Strategic Minimalist" & "Sophisticated Dark"
 - **Color Palette:** Dominated by deep dark backgrounds (mostly `#061125` - Deep Navy/Black). All UI elements and text should contrast clearly with this base.
