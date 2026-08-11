@@ -15,27 +15,20 @@ import {
   TrendingUp,
   ArrowRight,
   Video,
-  VideoOff,
   Award,
   BarChart3,
   Mail,
   Linkedin,
   Facebook,
   Twitter,
-  Play,
-  Pause,
   X,
   Flame,
-  Star,
-  Film
+  Star
 } from 'lucide-react';
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  // Simulated Pacing Tab
-  const [pacingMode, setPacingMode] = useState<'standard' | 'pro'>('pro');
 
   // Live Toast Notification
   const [showToast, setShowToast] = useState(false);
@@ -188,7 +181,6 @@ export default function App() {
 
         <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-zinc-300 uppercase tracking-wider font-sans">
           <a href="#hero" className="hover:text-blue-400 transition-colors">Intro</a>
-          <a href="#pacing-simulator" className="hover:text-blue-400 transition-colors">NLE Timeline GUI</a>
           <a href="#mastery" className="hover:text-blue-400 transition-colors">Short-Form Work</a>
           <a href="#reviews" className="hover:text-blue-400 transition-colors">Client Reviews</a>
           <a href="#comparison" className="hover:text-blue-400 transition-colors">Comparison</a>
@@ -310,240 +302,7 @@ export default function App() {
 
         </section>
 
-        {/* FEATURE #2: REALISTIC NLE VIDEO EDITING TIMELINE GUI GRAPHIC SIMULATOR */}
-        <section id="pacing-simulator" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
-            <div>
-              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
-                INTERACTIVE GRAPHICS // NLE TIMELINE SIMULATOR
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
-                Why Viewers Scroll Away vs Stay Hooked
-              </h2>
-            </div>
-            
-            {/* Toggle Controls */}
-            <div className="flex items-center gap-2 bg-zinc-900 p-1 rounded-md border border-zinc-800">
-              <button 
-                onClick={() => setPacingMode('standard')}
-                className={`px-3 py-1.5 rounded text-xs font-mono font-bold uppercase transition-all cursor-pointer ${pacingMode === 'standard' ? 'bg-zinc-800 text-zinc-300 border border-zinc-700' : 'text-zinc-500 hover:text-zinc-300'}`}
-              >
-                CapCut Standard
-              </button>
-              <button 
-                onClick={() => setPacingMode('pro')}
-                className={`px-3 py-1.5 rounded text-xs font-mono font-bold uppercase transition-all cursor-pointer ${pacingMode === 'pro' ? 'bg-blue-600 text-white shadow-[0_0_12px_rgba(37,99,235,0.5)]' : 'text-zinc-500 hover:text-zinc-300'}`}
-              >
-                Pro Neuro-Pacing
-              </button>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div className="spatial-card p-6 border border-zinc-800 space-y-4 md:col-span-1">
-              <div className="space-y-2">
-                <span className={`px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider inline-block ${pacingMode === 'pro' ? 'bg-blue-600/20 text-blue-300 border border-blue-500/40' : 'bg-red-950/40 text-red-400 border border-red-800/40'}`}>
-                  {pacingMode === 'pro' ? 'PRO EDITING MECHANICS' : 'GENERIC CAPCUT EDIT'}
-                </span>
-                <h3 className="text-lg font-bold text-white uppercase tracking-tight">
-                  {pacingMode === 'pro' ? 'Continuous Attention Lock' : 'Micro-Pause Attention Leak'}
-                </h3>
-              </div>
-
-              <p className="text-xs text-zinc-300 font-light leading-relaxed">
-                {pacingMode === 'pro' 
-                  ? "Every frame has a visual purpose. Transitions land precisely on vocal stress points, supplemented with layered sound effects to keep the brain engaged."
-                  : "Silent dead air between phrases allows the viewer's thumb to scroll away. Stock templates feel repetitive and amateurish after 4 seconds."
-                }
-              </p>
-
-              <div className="space-y-2 pt-2 border-t border-zinc-800 text-xs font-mono">
-                <div className="flex justify-between">
-                  <span className="text-zinc-400">Dead Air Duration:</span>
-                  <span className={pacingMode === 'pro' ? 'text-emerald-400 font-bold' : 'text-red-400 font-bold'}>
-                    {pacingMode === 'pro' ? '0.00 Seconds' : '1.85 Seconds'}
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-zinc-400">Sound Layers:</span>
-                  <span className="text-white font-bold">{pacingMode === 'pro' ? '4 Audio Tracks' : '1 Basic Track'}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-zinc-400">Retention Score:</span>
-                  <span className={pacingMode === 'pro' ? 'text-blue-400 font-bold' : 'text-zinc-500 font-bold'}>
-                    {pacingMode === 'pro' ? '92 / 100' : '38 / 100'}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* HIGH-END NLE TIMELINE GRAPHIC SIMULATOR */}
-            <div className="spatial-card p-5 border border-zinc-800 space-y-4 md:col-span-2 flex flex-col justify-between bg-[#0b0e14] shadow-2xl relative overflow-hidden">
-              
-              {/* NLE Toolbar Header */}
-              <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3 text-xs font-mono">
-                <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700 text-zinc-300 text-[11px] font-bold">
-                    <Film size={12} className="text-blue-400" />
-                    <span>NLE TIMELINE SIMULATOR</span>
-                  </span>
-                  <span className="text-[10px] text-zinc-400 hidden sm:inline-block">60 FPS • Rec.709 4K</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <span className="text-[11px] font-mono text-blue-400 font-bold px-2 py-0.5 rounded bg-blue-950/60 border border-blue-500/30">
-                    TC: 00:00:03:14
-                  </span>
-                  <span className={pacingMode === 'pro' ? 'text-emerald-400 font-bold text-[10px] px-2 py-0.5 bg-emerald-950/40 border border-emerald-500/30 rounded' : 'text-zinc-500 font-bold text-[10px] px-2 py-0.5 bg-zinc-900 border border-zinc-800 rounded'}>
-                    {pacingMode === 'pro' ? '● PRO PACING (ACTIVE)' : '○ STANDARD PACING'}
-                  </span>
-                </div>
-              </div>
-
-              {/* Timeline Ruler & Playhead Needle Scale */}
-              <div className="space-y-1 relative">
-                <div className="flex justify-between text-[9px] font-mono text-zinc-500 border-b border-zinc-800/60 pb-1 px-1">
-                  <span>00:00</span>
-                  <span>00:02</span>
-                  <span className="text-blue-400 font-bold">00:04 (HOOK)</span>
-                  <span>00:06</span>
-                  <span>00:08</span>
-                  <span>00:10</span>
-                  <span>00:12</span>
-                  <span>00:15s</span>
-                </div>
-
-                {/* Dynamic Timeline Tracks Container */}
-                <div className="space-y-2 py-1 font-mono text-[10px] relative">
-                  
-                  {/* Red Playhead Vertical Needle */}
-                  <div className="absolute top-0 bottom-0 left-[28%] w-[2px] bg-red-500 z-30 shadow-[0_0_8px_rgba(239,68,68,0.8)] pointer-events-none">
-                    <div className="w-2.5 h-2.5 bg-red-500 -ml-[4px] -mt-1 rotate-45 rounded-[1px]" />
-                  </div>
-
-                  {/* TRACK V3: MOTION GRAPHICS & KEYFRAMES */}
-                  <div className="flex items-center gap-2">
-                    <span className="w-10 shrink-0 text-zinc-400 text-[10px] font-bold">V3 [VFX]</span>
-                    <div className="w-full h-7 bg-zinc-900/90 rounded border border-zinc-800 p-1 flex items-center gap-1.5 overflow-hidden">
-                      {pacingMode === 'pro' ? (
-                        <>
-                          <div className="h-full px-2 rounded bg-blue-600/30 border border-blue-500/50 text-blue-300 flex items-center gap-1 text-[9px] font-bold">
-                            <span>◆ Kinetic Text Pop</span>
-                          </div>
-                          <div className="h-full px-2 rounded bg-blue-600/40 border border-blue-500/60 text-blue-200 flex items-center gap-1 text-[9px] font-bold">
-                            <span>◆ Hook Animation</span>
-                          </div>
-                          <div className="h-full px-2 rounded bg-sky-600/30 border border-sky-500/50 text-sky-300 flex items-center gap-1 text-[9px] font-bold">
-                            <span>◆ Rec.709 Grade Probe</span>
-                          </div>
-                        </>
-                      ) : (
-                        <div className="h-full w-full bg-zinc-950/80 border border-zinc-800 text-zinc-600 flex items-center justify-center text-[9px]">
-                          [ No Custom Keyframing ]
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* TRACK V2: B-ROLL & VISUAL CUES */}
-                  <div className="flex items-center gap-2">
-                    <span className="w-10 shrink-0 text-zinc-400 text-[10px] font-bold">V2 [B-ROLL]</span>
-                    <div className="w-full h-7 bg-zinc-900/90 rounded border border-zinc-800 p-1 flex items-center gap-1.5 overflow-hidden">
-                      {pacingMode === 'pro' ? (
-                        <>
-                          <div className="h-full px-2 rounded bg-cyan-900/40 border border-cyan-500/40 text-cyan-300 flex items-center text-[9px]">
-                            [ Context B-Roll 01 ]
-                          </div>
-                          <div className="h-full px-2 rounded bg-cyan-900/40 border border-cyan-500/40 text-cyan-300 flex items-center text-[9px]">
-                            [ Proof Graph Visual ]
-                          </div>
-                        </>
-                      ) : (
-                        <div className="h-full w-[40%] bg-zinc-800 border border-zinc-700 text-zinc-500 flex items-center justify-center text-[9px]">
-                          [ Stock Template 01 ]
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* TRACK V1: MAIN TALKING HEAD (A-ROLL) */}
-                  <div className="flex items-center gap-2">
-                    <span className="w-10 shrink-0 text-zinc-400 text-[10px] font-bold">V1 [A-ROLL]</span>
-                    <div className="w-full h-7 bg-zinc-900/90 rounded border border-zinc-800 p-1 flex items-center gap-1 overflow-hidden">
-                      {pacingMode === 'pro' ? (
-                        <>
-                          <div className="h-full flex-1 bg-indigo-900/50 border border-indigo-500/40 text-indigo-200 flex items-center justify-center text-[9px] font-bold">
-                            Phrase 01 (Clipped)
-                          </div>
-                          <div className="h-full flex-1 bg-indigo-900/50 border border-indigo-500/40 text-indigo-200 flex items-center justify-center text-[9px] font-bold">
-                            Phrase 02 (Zero Gaps)
-                          </div>
-                          <div className="h-full flex-1 bg-indigo-900/50 border border-indigo-500/40 text-indigo-200 flex items-center justify-center text-[9px] font-bold">
-                            Phrase 03 (Paced)
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="h-full w-[35%] bg-zinc-800 border border-zinc-700 text-zinc-400 flex items-center justify-center text-[9px]">
-                            Phrase 01
-                          </div>
-                          <div className="h-full w-[25%] bg-red-950/60 border border-red-800/60 text-red-400 flex items-center justify-center text-[9px] font-bold">
-                            DEAD AIR 1.85s ⚠
-                          </div>
-                          <div className="h-full w-[35%] bg-zinc-800 border border-zinc-700 text-zinc-400 flex items-center justify-center text-[9px]">
-                            Phrase 02
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* TRACK A1 & A2: AUDIO VOCAL & MULTI-LAYERED SFX */}
-                  <div className="flex items-center gap-2">
-                    <span className="w-10 shrink-0 text-zinc-400 text-[10px] font-bold">A1 [SFX]</span>
-                    <div className="w-full h-7 bg-zinc-900/90 rounded border border-zinc-800 p-1 flex items-center gap-1 overflow-hidden">
-                      {pacingMode === 'pro' ? (
-                        <>
-                          <div className="h-full px-2 bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center text-[9px] font-bold">
-                            🔊 Sub-Riser
-                          </div>
-                          <div className="h-full px-2 bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center text-[9px] font-bold">
-                            ⚡ Whoosh
-                          </div>
-                          <div className="h-full px-2 bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 flex items-center text-[9px] font-bold">
-                            🎯 Impact Click
-                          </div>
-                        </>
-                      ) : (
-                        <div className="h-full w-full bg-zinc-950/90 border border-zinc-800 text-zinc-600 flex items-center justify-center text-[9px]">
-                          [ Single Unengineered Track ]
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Timeline Footer Stats */}
-              <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-400 pt-2 border-t border-zinc-800/80">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className={pacingMode === 'pro' ? 'text-blue-400' : 'text-zinc-600'} />
-                  <span>{pacingMode === 'pro' ? 'Zero Micro-Pause Dead Air' : '1.85s Attention Leak Point'}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={15} className={pacingMode === 'pro' ? 'text-blue-400' : 'text-zinc-600'} />
-                  <span>{pacingMode === 'pro' ? '4 Multi-Layered SFX Tracks' : 'Flat Single Audio Track'}</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* 3. SHORT-FORM MASTERY SHOWCASE (RESTORED LIVE 10 VIMEO VIDEO CLIPS) */}
+        {/* 2. SHORT-FORM MASTERY SHOWCASE (RESTORED LIVE 10 VIMEO VIDEO CLIPS) */}
         <section id="mastery" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6 pt-2">
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-800 pb-4">
@@ -715,7 +474,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. COMPARISON MODULE */}
+        {/* 3. COMPARISON MODULE */}
         <section id="comparison" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
             <div>
@@ -785,7 +544,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. THE SYSTEM */}
+        {/* 4. THE SYSTEM */}
         <section id="system" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
             <div>
@@ -860,7 +619,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. RETENTION AUDIT SECTION */}
+        {/* 5. RETENTION AUDIT SECTION */}
         <section id="audit" className="px-6 md:px-12 max-w-4xl mx-auto text-center space-y-5 py-2">
           <div className="spatial-card p-8 sm:p-10 border border-blue-500/30 space-y-5 bg-blue-950/10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-blue-600/20 border border-blue-500/40 text-xs font-mono uppercase tracking-widest text-blue-300">
@@ -888,7 +647,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. FAQS SECTION */}
+        {/* 6. FAQS SECTION */}
         <section id="faq" className="px-6 md:px-12 max-w-4xl mx-auto space-y-6">
           <div className="text-center space-y-1">
             <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 block">
