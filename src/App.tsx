@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Search, 
-  SlidersHorizontal, 
-  Home, 
   Plus, 
-  Heart, 
-  User, 
   ArrowUpRight, 
   Zap, 
   Layers, 
@@ -13,7 +9,6 @@ import {
   Music, 
   ShieldCheck, 
   Minus, 
-  ExternalLink,
   Instagram,
   CheckCircle2,
   XCircle,
@@ -27,35 +22,17 @@ import {
   Linkedin,
   Facebook,
   Twitter,
-  Lock,
-  Calculator,
   Play,
   Pause,
-  Volume2,
-  Check,
   X,
-  MessageSquare,
-  Clock,
-  Sparkle,
-  Sliders,
-  Send,
   Flame,
-  MousePointerClick,
   Star,
-  Quote,
-  Activity,
-  Headphones,
-  SlidersTrack,
   Film
 } from 'lucide-react';
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
-  // Interactive ROI Calculator State
-  const [monthlyViews, setMonthlyViews] = useState(100000);
-  const [currentRetention, setCurrentRetention] = useState(40);
 
   // Simulated Pacing Tab
   const [pacingMode, setPacingMode] = useState<'standard' | 'pro'>('pro');
@@ -93,11 +70,6 @@ export default function App() {
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
-
-  // Calculated ROI Metrics
-  const projectedRetention = Math.min(88, currentRetention + 35);
-  const extraViews = Math.round(monthlyViews * ((projectedRetention - currentRetention) / 100) * 1.8);
-  const extraLeads = Math.round(extraViews * 0.004);
 
   // 10 LIVE SHORT-FORM VIDEO CLIPS (RESTORED VIMEO EMBEDS)
   const shortFormVideos = [
@@ -216,7 +188,6 @@ export default function App() {
 
         <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-zinc-300 uppercase tracking-wider font-sans">
           <a href="#hero" className="hover:text-blue-400 transition-colors">Intro</a>
-          <a href="#calculator" className="hover:text-blue-400 transition-colors">ROI Calculator</a>
           <a href="#pacing-simulator" className="hover:text-blue-400 transition-colors">NLE Timeline GUI</a>
           <a href="#mastery" className="hover:text-blue-400 transition-colors">Short-Form Work</a>
           <a href="#reviews" className="hover:text-blue-400 transition-colors">Client Reviews</a>
@@ -337,116 +308,6 @@ export default function App() {
             </a>
           </div>
 
-        </section>
-
-        {/* FEATURE #1: INTERACTIVE RETENTION & REVENUE CALCULATOR */}
-        <section id="calculator" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
-            <div>
-              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
-                INTERACTIVE GRAPHICS &amp; SIMULATOR
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
-                Calculate Retention &amp; Growth Potential
-              </h2>
-            </div>
-            <span className="text-xs text-zinc-400 font-mono uppercase">REAL-TIME VISUAL SIMULATOR</span>
-          </div>
-
-          <div className="spatial-card p-6 sm:p-8 border border-zinc-800 bg-zinc-950/80">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-              
-              {/* Sliders Area */}
-              <div className="space-y-6 lg:col-span-2">
-                
-                {/* Slider 1: Monthly Views */}
-                <div className="space-y-2.5">
-                  <div className="flex justify-between items-center text-xs font-mono">
-                    <label className="text-zinc-300 uppercase font-bold flex items-center gap-2">
-                      <TrendingUp size={14} className="text-blue-400" />
-                      Monthly Organic Views:
-                    </label>
-                    <span className="text-white font-extrabold text-sm px-2.5 py-1 bg-zinc-900 rounded border border-zinc-800">
-                      {monthlyViews.toLocaleString()} views/mo
-                    </span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="10000" 
-                    max="1000000" 
-                    step="10000"
-                    value={monthlyViews}
-                    onChange={(e) => setMonthlyViews(Number(e.target.value))}
-                    className="w-full accent-blue-600 bg-zinc-800 h-2 rounded-lg cursor-pointer"
-                  />
-                  <div className="flex justify-between text-[10px] font-mono text-zinc-500">
-                    <span>10k Views</span>
-                    <span>500k Views</span>
-                    <span>1M+ Views</span>
-                  </div>
-                </div>
-
-                {/* Slider 2: Current Retention */}
-                <div className="space-y-2.5">
-                  <div className="flex justify-between items-center text-xs font-mono">
-                    <label className="text-zinc-300 uppercase font-bold flex items-center gap-2">
-                      <BarChart3 size={14} className="text-blue-400" />
-                      Current 5-Second Viewer Retention Rate:
-                    </label>
-                    <span className="text-white font-extrabold text-sm px-2.5 py-1 bg-zinc-900 rounded border border-zinc-800">
-                      {currentRetention}% Retention
-                    </span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="15" 
-                    max="65" 
-                    step="1"
-                    value={currentRetention}
-                    onChange={(e) => setCurrentRetention(Number(e.target.value))}
-                    className="w-full accent-blue-600 bg-zinc-800 h-2 rounded-lg cursor-pointer"
-                  />
-                  <div className="flex justify-between text-[10px] font-mono text-zinc-500">
-                    <span>15% (High Drop-off)</span>
-                    <span>40% (Average)</span>
-                    <span>65% (Good)</span>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Projected Output Display */}
-              <div className="spatial-card p-6 border border-blue-500/40 bg-blue-950/20 space-y-4 text-center relative overflow-hidden">
-                <div className="space-y-1">
-                  <span className="text-[10px] font-mono text-blue-400 font-bold uppercase tracking-widest">
-                    PROJECTED RETENTION GAIN
-                  </span>
-                  <h3 className="text-4xl font-extrabold text-white tracking-tight">
-                    {projectedRetention}% <span className="text-xs font-mono text-emerald-400">({`+${projectedRetention - currentRetention}%`})</span>
-                  </h3>
-                </div>
-
-                <div className="pt-2 border-t border-blue-500/20 space-y-2 text-xs font-mono">
-                  <div className="flex justify-between text-zinc-300">
-                    <span>Extra Monthly Organic Views:</span>
-                    <span className="text-white font-bold">+{extraViews.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between text-zinc-300">
-                    <span>Estimated Extra Inbound Leads:</span>
-                    <span className="text-emerald-400 font-bold">+{extraLeads} Leads/mo</span>
-                  </div>
-                </div>
-
-                <button 
-                  onClick={handleCalendlyRedirect}
-                  className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs uppercase tracking-widest rounded transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] cursor-pointer mt-2"
-                >
-                  UNLOCK THIS RETENTION RATE
-                </button>
-              </div>
-
-            </div>
-          </div>
         </section>
 
         {/* FEATURE #2: REALISTIC NLE VIDEO EDITING TIMELINE GUI GRAPHIC SIMULATOR */}
