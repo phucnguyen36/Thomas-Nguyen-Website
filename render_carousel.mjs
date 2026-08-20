@@ -10,7 +10,13 @@ if (!fs.existsSync(outDir2)) {
   fs.mkdirSync(outDir2, { recursive: true });
 }
 
-for (let i = 1; i <= 8; i++) {
+// Remove old slide_8 if present
+try {
+  if (fs.existsSync(path.join(outDir2, 'slide_8.png'))) fs.unlinkSync(path.join(outDir2, 'slide_8.png'));
+  if (fs.existsSync(path.join(outDir1, 'slide_8.png'))) fs.unlinkSync(path.join(outDir1, 'slide_8.png'));
+} catch (e) {}
+
+for (let i = 1; i <= 7; i++) {
   const outFile1 = path.join(outDir1, `slide_${i}.png`);
   const outFile2 = path.join(outDir2, `slide_${i}.png`);
   const url = `http://localhost:5173/carousel_maker.html?slide=${i}`;
@@ -19,4 +25,4 @@ for (let i = 1; i <= 8; i++) {
   execSync(cmd);
   fs.copyFileSync(outFile1, outFile2);
 }
-console.log('All 8 Impeccable clean slides rendered successfully!');
+console.log('All 7 Impeccable clean slides rendered successfully!');
