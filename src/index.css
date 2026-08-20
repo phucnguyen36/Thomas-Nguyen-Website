@@ -1,130 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;480;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Mercury Color Tokens */
-  --color-onyx-canvas: #171721;
-  --color-graphite-card: #1e1e2a;
-  --color-obsidian-button: #272735;
-  --color-slate-border: #363649;
-  --color-mist-border: rgba(226, 227, 237, 0.12);
-  --color-ash-text: #c3c3cc;
-  --color-ivory-text: #ededf3;
-  --color-cobalt: #5266eb;
-  --color-pure-white: #ffffff;
-
-  /* Typography */
-  --font-arcadia: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-arcadiadisplay: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Spacing */
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
-  --spacing-56: 56px;
-  --spacing-72: 72px;
-  --spacing-112: 112px;
-  --spacing-128: 128px;
-
-  /* Radius */
-  --radius-cards: 12px;
-  --radius-pills: 32px;
-  --radius-nav: 40px;
+  --color-canvas: #0e0e11;
+  --color-card: #15151a;
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-accent: #5266eb;
+  --color-accent-hover: #4356db;
+  --color-text-primary: #ededf3;
+  --color-text-muted: #9e9ea7;
+  --font-serif-italic: 'Instrument Serif', Georgia, serif;
 }
 
 :root {
-  font-family: var(--font-arcadia);
+  font-family: 'Inter', sans-serif;
   color-scheme: dark;
 }
 
-/* Force Mercury typography discipline: measured, restrained, calibrated */
-html, body, *, ::before, ::after, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, div, a, li, th, td, code, kbd {
-  font-family: var(--font-arcadia) !important;
-  letter-spacing: -0.012em;
-}
-
 body {
-  background-color: #171721;
+  background-color: #0e0e11;
   color: #ededf3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Mercury Alpine Observatory Canvas */
-.mercury-canvas {
-  background-color: #171721;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(82, 102, 235, 0.12) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(23, 23, 33, 0.6) 0%, rgba(23, 23, 33, 1) 100%),
-    url('/vision_pro_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.font-serif-italic {
+  font-family: 'Instrument Serif', Georgia, serif !important;
+  font-style: italic;
 }
 
-/* Mercury Graphite Card Surface (#1e1e2a) */
-.mercury-card {
-  background-color: #1e1e2a;
-  border-radius: 12px;
-  border: 1px solid rgba(226, 227, 237, 0.07);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+/* Kuldeep Framer Clean Card Surface */
+.kuldeep-card {
+  background: #15151a;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mercury-card:hover {
+.kuldeep-card:hover {
   border-color: rgba(82, 102, 235, 0.35);
   transform: translateY(-2px);
 }
 
-/* Mercury Pill Button / Input */
-.mercury-pill {
-  border-radius: 32px;
+/* Kuldeep Badge Pill */
+.kuldeep-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #c3c3cc;
 }
 
-.mercury-pill-nav {
-  border-radius: 40px;
-}
-
-/* Cobalt Primary Action */
-.btn-cobalt {
-  background-color: #5266eb;
+/* Primary Button */
+.btn-primary-kuldeep {
+  background: #5266eb;
   color: #ffffff;
-  border-radius: 32px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 24px rgba(82, 102, 235, 0.35);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(82, 102, 235, 0.3);
 }
 
-.btn-cobalt:hover {
-  background-color: #4356db;
-  box-shadow: 0 0 32px rgba(82, 102, 235, 0.5);
+.btn-primary-kuldeep:hover {
+  background: #4356db;
+  box-shadow: 0 6px 28px rgba(82, 102, 235, 0.45);
   transform: translateY(-1px);
 }
 
-/* Ghost Outline Button */
-.btn-ghost-mercury {
-  background-color: transparent;
-  border: 1px solid rgba(237, 237, 243, 0.3);
+/* Secondary Ghost Button */
+.btn-secondary-kuldeep {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ededf3;
-  border-radius: 40px;
+  border-radius: 9999px;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
-.btn-ghost-mercury:hover {
-  border-color: #ededf3;
-  background-color: rgba(237, 237, 243, 0.05);
-}
-
-/* Obsidian Pill Controls */
-.obsidian-pill {
-  background-color: #272735;
-  border: 1px solid rgba(226, 227, 237, 0.08);
-  border-radius: 32px;
-  color: #c3c3cc;
+.btn-secondary-kuldeep:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Tactile Film Grain Noise Layer */
@@ -136,16 +99,16 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.035;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #171721;
+  background: #0e0e11;
 }
 ::-webkit-scrollbar-thumb {
   background: #272735;
