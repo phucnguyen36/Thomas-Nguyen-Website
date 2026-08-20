@@ -1,24 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #0e0e11;
-  --color-card: #15151a;
+  --color-canvas: #0b0c10;
+  --color-card: #12141a;
   --color-card-border: rgba(255, 255, 255, 0.08);
-  --color-accent: #5266eb;
-  --color-accent-hover: #4356db;
+  --color-accent: #1591DC;
+  --color-accent-hover: #0f7bbd;
   --color-text-primary: #ededf3;
-  --color-text-muted: #9e9ea7;
+  --color-text-muted: #9496a1;
+  --font-haas: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif-italic: 'Instrument Serif', Georgia, serif;
 }
 
 :root {
-  font-family: 'Inter', sans-serif;
+  font-family: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   color-scheme: dark;
 }
 
+/* Swiss typography with tight, architectural tracking */
+html, body, *, ::before, ::after, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, div, a, li, th, td, code, kbd {
+  font-family: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  letter-spacing: -0.03em;
+}
+
 body {
-  background-color: #0e0e11;
+  background-color: #0b0c10;
   color: #ededf3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,18 +35,19 @@ body {
 .font-serif-italic {
   font-family: 'Instrument Serif', Georgia, serif !important;
   font-style: italic;
+  letter-spacing: -0.01em !important;
 }
 
 /* Kuldeep Framer Clean Card Surface */
 .kuldeep-card {
-  background: #15151a;
+  background: #12141a;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 16px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .kuldeep-card:hover {
-  border-color: rgba(82, 102, 235, 0.35);
+  border-color: rgba(21, 145, 220, 0.4);
   transform: translateY(-2px);
 }
 
@@ -53,25 +61,25 @@ body {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #c3c3cc;
 }
 
-/* Primary Button */
+/* Primary Button with brand color #1591DC */
 .btn-primary-kuldeep {
-  background: #5266eb;
+  background: #1591DC;
   color: #ffffff;
   border-radius: 9999px;
   font-weight: 600;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(82, 102, 235, 0.3);
+  box-shadow: 0 4px 20px rgba(21, 145, 220, 0.35);
 }
 
 .btn-primary-kuldeep:hover {
-  background: #4356db;
-  box-shadow: 0 6px 28px rgba(82, 102, 235, 0.45);
+  background: #0f7bbd;
+  box-shadow: 0 6px 28px rgba(21, 145, 220, 0.5);
   transform: translateY(-1px);
 }
 
@@ -90,6 +98,36 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Horizontal Scrollable Carousel Styling */
+.video-slider-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+}
+
+.video-slider-item {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .video-slider-item {
+    flex: 0 0 280px;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Tactile Film Grain Noise Layer */
 .noise-overlay {
   position: fixed;
@@ -106,12 +144,13 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0e0e11;
+  background: #0b0c10;
 }
 ::-webkit-scrollbar-thumb {
-  background: #272735;
+  background: #222530;
   border-radius: 4px;
 }
 
