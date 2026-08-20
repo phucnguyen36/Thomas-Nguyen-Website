@@ -9,21 +9,20 @@ import {
   Music, 
   ShieldCheck, 
   Minus, 
-  Instagram,
-  CheckCircle2,
-  XCircle,
-  TrendingUp,
-  ArrowRight,
-  Video,
-  Award,
-  BarChart3,
-  Mail,
-  Linkedin,
-  Facebook,
-  Twitter,
-  X,
-  Flame,
-  Star
+  Instagram, 
+  CheckCircle2, 
+  XCircle, 
+  ArrowRight, 
+  Video, 
+  Award, 
+  BarChart3, 
+  Mail, 
+  Linkedin, 
+  Facebook, 
+  Twitter, 
+  X, 
+  Flame, 
+  Star 
 } from 'lucide-react';
 
 export default function App() {
@@ -127,7 +126,6 @@ export default function App() {
     }
   ];
 
-  // Duplicate lists for continuous infinite loop marquee stream
   const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
   const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
 
@@ -140,67 +138,68 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen spatial-bg text-white font-haas relative overflow-x-hidden selection:bg-blue-600/30 selection:text-white">
+    <div className="min-h-screen bg-[#171721] text-[#ededf3] relative overflow-x-hidden selection:bg-[#5266eb]/30 selection:text-white">
       
-      {/* Film Grain Noise & Ambient Edit Blur Elements */}
+      {/* Tactile Noise Overlay */}
       <div className="noise-overlay"></div>
-      <div className="fixed inset-0 bg-black/75 backdrop-blur-[2px] pointer-events-none z-0"></div>
 
-      <div className="bg-edit-blur-1 top-10 left-1/3"></div>
-      <div className="bg-edit-blur-2 top-1/2 -right-20"></div>
-      <div className="bg-edit-blur-1 bottom-20 left-10"></div>
+      {/* Atmospheric Alpine Canvas Ambient Light */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-[#5266eb]/10 via-transparent to-transparent blur-[120px]"></div>
+        <div className="absolute bottom-1/3 -right-20 w-[600px] h-[600px] bg-[#5266eb]/5 blur-[140px]"></div>
+      </div>
 
       {/* LIVE FLOATING TOAST NOTIFICATION */}
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50 animate-bounce transition-all">
-          <div className="bg-zinc-900/95 border border-blue-500/40 px-4 py-3 rounded-lg shadow-2xl backdrop-blur-md flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping"></span>
-            <p className="text-xs font-mono text-zinc-200">{toastMessage}</p>
-            <button onClick={() => setShowToast(false)} className="text-zinc-500 hover:text-white ml-2">
+          <div className="bg-[#1e1e2a] border border-[#5266eb]/40 px-4 py-3 rounded-full shadow-2xl backdrop-blur-md flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-[#5266eb] animate-ping"></span>
+            <p className="text-xs text-[#ededf3] font-medium">{toastMessage}</p>
+            <button onClick={() => setShowToast(false)} className="text-[#c3c3cc] hover:text-white ml-2 cursor-pointer">
               <X size={14} />
             </button>
           </div>
         </div>
       )}
 
-      {/* TOP APEX-STYLE NAVIGATION BAR */}
-      <header className="sticky top-0 z-40 bg-black/90 backdrop-blur-xl border-b border-zinc-800 px-6 md:px-12 py-4 flex justify-between items-center">
+      {/* TOP APEX-STYLE NAVIGATION BAR (MERCURY ALPINE PILL HEADER) */}
+      <header className="sticky top-0 z-40 bg-[#171721]/80 backdrop-blur-xl border-b border-white/[0.06] px-6 md:px-12 py-3.5 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-[6px] bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)] flex items-center justify-center font-extrabold text-white text-sm tracking-tighter">
-            T
+          <div className="w-8 h-8 rounded-full bg-[#5266eb] shadow-[0_0_16px_rgba(82,102,235,0.4)] flex items-center justify-center font-bold text-white text-xs tracking-tight">
+            TN
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-sm md:text-base tracking-tight text-white font-haas uppercase">
+            <span className="font-semibold text-sm md:text-base tracking-tight text-[#ededf3] uppercase">
               THOMAS NGUYEN
             </span>
-            <span className="text-[9px] font-mono text-blue-400 font-semibold uppercase tracking-widest hidden sm:block">
+            <span className="text-[10px] text-[#c3c3cc] font-medium uppercase tracking-wider hidden sm:block">
               VISUAL RETENTION STUDIO
             </span>
           </div>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-zinc-300 uppercase tracking-wider font-sans">
-          <a href="#hero" className="hover:text-blue-400 transition-colors">Intro</a>
-          <a href="#mastery" className="hover:text-blue-400 transition-colors">Short-Form Work</a>
-          <a href="#process" className="hover:text-blue-400 transition-colors">Process</a>
-          <a href="#reviews" className="hover:text-blue-400 transition-colors">Client Reviews</a>
-          <a href="#comparison" className="hover:text-blue-400 transition-colors">Comparison</a>
-          <a href="#system" className="hover:text-blue-400 transition-colors">System</a>
-          <a href="#faq" className="hover:text-blue-400 transition-colors">FAQ</a>
+        <nav className="hidden lg:flex items-center gap-6 text-[13px] font-medium text-[#c3c3cc] uppercase tracking-wider">
+          <a href="#hero" className="hover:text-[#ededf3] transition-colors">Intro</a>
+          <a href="#mastery" className="hover:text-[#ededf3] transition-colors">Work</a>
+          <a href="#process" className="hover:text-[#ededf3] transition-colors">Process</a>
+          <a href="#reviews" className="hover:text-[#ededf3] transition-colors">Reviews</a>
+          <a href="#comparison" className="hover:text-[#ededf3] transition-colors">Comparison</a>
+          <a href="#system" className="hover:text-[#ededf3] transition-colors">System</a>
+          <a href="#faq" className="hover:text-[#ededf3] transition-colors">FAQ</a>
         </nav>
 
         <div className="flex items-center gap-3">
           <button 
             onClick={handleCalendlyRedirect}
-            className="hidden sm:flex px-3.5 py-1.5 rounded-[6px] bg-zinc-900 border border-zinc-700 text-xs text-zinc-300 hover:text-white items-center gap-2 transition-all cursor-pointer"
+            className="hidden sm:flex px-4 py-2 rounded-full bg-[#272735] border border-white/[0.08] text-xs text-[#ededf3] hover:border-[#5266eb]/50 hover:text-white items-center gap-2 transition-all cursor-pointer"
           >
-            <Instagram size={14} className="text-blue-400" />
+            <Instagram size={13} className="text-[#5266eb]" />
             <span>@thomasvisualeditor</span>
           </button>
 
           <button 
             onClick={handleCalendlyRedirect}
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs uppercase tracking-wider rounded-[6px] transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] cursor-pointer flex items-center gap-2"
+            className="px-5 py-2 btn-cobalt text-xs font-semibold uppercase tracking-wider cursor-pointer flex items-center gap-2"
           >
             <Sparkles size={13} />
             <span>BOOK STRATEGY CALL</span>
@@ -209,134 +208,134 @@ export default function App() {
       </header>
 
       {/* MAIN CONTENT AREA */}
-      <main className="relative z-10 space-y-24 pb-24">
+      <main className="relative z-10 space-y-28 pb-28 max-w-[1200px] mx-auto px-6">
         
-        {/* 1. HERO SECTION (PERSUASIVE CONVERSION COPYWRITING IN 100% ENGLISH) */}
-        <section id="hero" className="pt-12 md:pt-20 px-6 md:px-12 max-w-5xl mx-auto space-y-10 text-center">
+        {/* 1. HERO SECTION (MERCURY FULL-BLEED EDITORIAL HERO) */}
+        <section id="hero" className="pt-16 md:pt-24 space-y-8 text-center">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/15 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold uppercase tracking-widest">
-            <Flame size={14} className="text-blue-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#272735] border border-white/[0.08] text-[#c3c3cc] text-xs font-medium uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5266eb]"></span>
             <span>ATTENTION-ENGINEERED EDITING FOR CREATORS &amp; FOUNDERS</span>
           </div>
           
           {/* Main Title & Subtitle */}
-          <div className="space-y-4 max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-white uppercase leading-[1.08]">
-              Retain Viewer Attention From <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-300 bg-clip-text text-transparent">The Very First Frame</span>
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#ededf3] uppercase leading-[1.12]">
+              Retain Viewer Attention From <span className="text-[#5266eb]">The Very First Frame</span>
             </h1>
-            <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-light">
+            <p className="text-[#c3c3cc] text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal">
               High-impact short-form video editing and visual retention strategy for personal brands, founders, and content creators. Double viewer retention in 48 hours.
             </p>
           </div>
 
-          {/* Official Creator Badge With Real Avatar Photo */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-zinc-900/90 border border-zinc-700 backdrop-blur-md shadow-lg">
+          {/* Official Creator Badge With Portrait Avatar */}
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#1e1e2a] border border-white/[0.08] backdrop-blur-md shadow-sm">
             <img 
               src="/thomas_portrait.jpg" 
               alt="Thomas Nguyen" 
-              className="w-8 h-8 rounded-full object-cover grayscale border border-blue-500/50 shadow-sm"
+              className="w-8 h-8 rounded-full object-cover grayscale border border-[#5266eb]/60"
               onError={(e) => {
                 const target = e.target as HTMLElement;
                 target.style.display = 'none';
               }}
             />
-            <div className="text-left text-xs font-mono">
-              <span className="text-white font-bold block leading-tight">Thomas Nguyen</span>
+            <div className="text-left text-xs">
+              <span className="text-[#ededf3] font-semibold block leading-tight">Thomas Nguyen</span>
               <a 
                 href="https://thomasnguyen.online" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-blue-400 hover:underline text-[11px] block leading-tight"
+                className="text-[#c3c3cc] hover:text-[#5266eb] text-[11px] block leading-tight transition-colors"
               >
                 thomasnguyen.online
               </a>
             </div>
           </div>
 
-          {/* HIGH-IMPACT KEY METRICS STRIP */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto pt-2">
+          {/* HIGH-IMPACT KEY METRICS STRIP (GRAPHITE CARDS #1E1E2A) */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-2">
             
-            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
-              <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
-                <Video size={18} />
+            <div className="mercury-card p-6 text-center space-y-1">
+              <div className="w-8 h-8 rounded-full bg-[#272735] text-[#5266eb] flex items-center justify-center mx-auto mb-2">
+                <Video size={16} />
               </div>
-              <h3 className="text-3xl font-extrabold text-white tracking-tighter">600+</h3>
-              <p className="text-[11px] font-mono text-zinc-300 uppercase">Reels Delivered</p>
+              <h3 className="text-3xl font-semibold text-[#ededf3] tracking-tight">600+</h3>
+              <p className="text-xs text-[#c3c3cc] uppercase tracking-wide">Reels Delivered</p>
             </div>
 
-            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
-              <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
-                <BarChart3 size={18} />
+            <div className="mercury-card p-6 text-center space-y-1">
+              <div className="w-8 h-8 rounded-full bg-[#272735] text-[#5266eb] flex items-center justify-center mx-auto mb-2">
+                <BarChart3 size={16} />
               </div>
-              <h3 className="text-3xl font-extrabold text-white tracking-tighter">85%+</h3>
-              <p className="text-[11px] font-mono text-zinc-300 uppercase">First 5S Retention</p>
+              <h3 className="text-3xl font-semibold text-[#ededf3] tracking-tight">85%+</h3>
+              <p className="text-xs text-[#c3c3cc] uppercase tracking-wide">First 5S Retention</p>
             </div>
 
-            <div className="spatial-card p-5 text-center space-y-1 border border-blue-500/20 bg-blue-950/10">
-              <div className="w-8 h-8 rounded-[4px] bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center mx-auto mb-2">
-                <Award size={18} />
+            <div className="mercury-card p-6 text-center space-y-1">
+              <div className="w-8 h-8 rounded-full bg-[#272735] text-[#5266eb] flex items-center justify-center mx-auto mb-2">
+                <Award size={16} />
               </div>
-              <h3 className="text-3xl font-extrabold text-white tracking-tighter">100%</h3>
-              <p className="text-[11px] font-mono text-zinc-300 uppercase">Rec.709 Standard</p>
+              <h3 className="text-3xl font-semibold text-[#ededf3] tracking-tight">100%</h3>
+              <p className="text-xs text-[#c3c3cc] uppercase tracking-wide">Rec.709 Standard</p>
             </div>
 
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons (Cobalt Pill & Ghost Outline Pill) */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <button 
               onClick={handleCalendlyRedirect}
-              className="px-9 py-4 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs uppercase tracking-widest rounded-[6px] transition-all inline-flex items-center gap-3 shadow-[0_0_30px_rgba(37,99,235,0.4)] cursor-pointer hover:scale-105"
+              className="px-8 py-3.5 btn-cobalt text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2.5 cursor-pointer"
             >
               <span>BOOK STRATEGY CALL</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </button>
 
             <a 
               href="#mastery"
-              className="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-100 text-xs font-bold uppercase tracking-widest rounded-[6px] transition-all shadow-md inline-flex items-center gap-2"
+              className="px-8 py-3.5 btn-ghost-mercury text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2"
             >
-              <span>EXPLORE SHORT-FORM WORK</span>
-              <ArrowUpRight size={15} />
+              <span>EXPLORE WORK</span>
+              <ArrowUpRight size={14} />
             </a>
           </div>
 
         </section>
 
-        {/* 2. SHORT-FORM MASTERY SHOWCASE (RESTORED LIVE 10 VIMEO VIDEO CLIPS) */}
-        <section id="mastery" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6 pt-2">
+        {/* 2. SHORT-FORM MASTERY SHOWCASE (KULDEEP VIDEO WALL ON GRAPHITE CARDS) */}
+        <section id="mastery" className="space-y-6 pt-4 scroll-mt-20">
           
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-zinc-800 pb-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.06] pb-4">
             <div>
-              <span className="text-[11px] font-mono uppercase tracking-widest text-blue-400 block">PORTFOLIO Showcase</span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
+              <span className="text-xs uppercase tracking-widest text-[#5266eb] block font-semibold">PORTFOLIO SHOWCASE</span>
+              <h2 className="text-2xl sm:text-3xl font-semibold uppercase tracking-tight text-[#ededf3] mt-1">
                 SHORT-FORM MASTERY
               </h2>
             </div>
 
             {/* SEARCH INPUT */}
-            <div className="spatial-search-input p-2.5 px-4 flex items-center gap-3 w-full sm:w-80">
-              <Search size={15} className="text-zinc-400" />
+            <div className="bg-[#1e1e2a] border border-white/[0.08] rounded-full px-4 py-2 flex items-center gap-3 w-full sm:w-72 focus-within:border-[#5266eb]/50 transition-all">
+              <Search size={14} className="text-[#c3c3cc]" />
               <input 
                 type="text" 
                 placeholder="Search videos..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent border-none outline-none text-xs text-white placeholder:text-zinc-500 w-full"
+                className="bg-transparent border-none outline-none text-xs text-[#ededf3] placeholder:text-[#c3c3cc]/60 w-full"
               />
             </div>
           </div>
 
-          {/* 5-Column Compact Video Grid (Live Vimeo Video Embeds) */}
+          {/* 5-Column Video Grid with 12px Rounded Graphite Borders */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {filteredVideos.map((video, idx) => (
               <div 
                 key={video.id + idx}
-                className="spatial-card aspect-[9/16] relative overflow-hidden group border border-zinc-800 p-1 bg-black hover:border-blue-500/50 transition-all shadow-xl"
+                className="mercury-card aspect-[9/16] relative overflow-hidden group p-1 bg-[#1e1e2a]"
               >
-                <div className="w-full h-full relative bg-black rounded-[4px] overflow-hidden">
+                <div className="w-full h-full relative bg-[#171721] rounded-[8px] overflow-hidden">
                   <iframe
-                    src={`https://player.vimeo.com/video/${video.id}?autoplay=0&loop=0&background=0&title=0&byline=0&portrait=0&color=2563eb`}
+                    src={`https://player.vimeo.com/video/${video.id}?autoplay=0&loop=0&background=0&title=0&byline=0&portrait=0&color=5266eb`}
                     className="absolute inset-0 w-full h-full object-cover z-20"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowFullScreen
@@ -344,12 +343,12 @@ export default function App() {
                     title={video.title}
                   />
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 z-30 bg-black/20 backdrop-blur-[1px] group-hover:opacity-0 transition-all duration-300 pointer-events-none" />
+                  {/* Subtle Dark Vignette */}
+                  <div className="absolute inset-0 z-30 bg-black/15 group-hover:opacity-0 transition-all duration-300 pointer-events-none" />
 
-                  {/* Badge */}
-                  <div className="absolute top-2 left-2 z-40">
-                    <span className="px-2 py-0.5 rounded-[2px] bg-black/90 border border-blue-500/40 text-[9px] font-mono font-bold text-blue-300 uppercase tracking-widest shadow-sm">
+                  {/* Pill Badge */}
+                  <div className="absolute top-2.5 left-2.5 z-40">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#171721]/90 border border-white/[0.1] text-[9px] font-medium text-[#ededf3] uppercase tracking-wider">
                       {video.tag}
                     </span>
                   </div>
@@ -359,119 +358,119 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. HIGH-CONVERTING PROCESS / WORKFLOW SECTION (FRAMER-INSPIRED HIGH END DESIGN) */}
-        <section id="process" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-8 scroll-mt-24">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-4">
+        {/* 3. STREAMLINED 3-STEP PROCESS (KULDEEP WORKFLOW IN MERCURY GRAPHITE CARDS) */}
+        <section id="process" className="space-y-6 pt-4 scroll-mt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/[0.06] pb-4">
             <div>
-              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
-                STREAMLINED COLLABORATION // THE PROCESS
+              <span className="text-xs text-[#5266eb] uppercase tracking-widest block font-semibold">
+                COLLABORATION METHODOLOGY
               </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
-                From Raw Footage To High-Retention Polish
+              <h2 className="text-2xl sm:text-3xl font-semibold uppercase tracking-tight text-[#ededf3] mt-1">
+                The 3-Step Process
               </h2>
             </div>
-            <span className="text-xs text-zinc-400 font-mono uppercase">3-STEP FRICTIONLESS WORKFLOW</span>
+            <span className="text-xs text-[#c3c3cc] uppercase tracking-wide">FRICTIONLESS WORKFLOW</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Step 01 */}
-            <div className="spatial-card p-6 sm:p-8 border border-zinc-800 space-y-4 bg-zinc-950/80 hover:border-blue-500/40 transition-all flex flex-col justify-between group">
+            <div className="mercury-card p-8 space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-lg bg-blue-600/15 border border-blue-500/30 text-blue-400 flex items-center justify-center font-mono font-extrabold text-sm group-hover:bg-blue-600 group-hover:text-white transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                  <span className="w-9 h-9 rounded-full bg-[#272735] text-[#ededf3] flex items-center justify-center font-semibold text-xs border border-white/[0.06] group-hover:bg-[#5266eb] group-hover:text-white transition-all">
                     01
                   </span>
-                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 border border-zinc-800">
-                    STEP 01 // INTAKE
+                  <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider bg-[#272735] text-[#c3c3cc] border border-white/[0.06]">
+                    INTAKE
                   </span>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-lg font-semibold text-[#ededf3] uppercase tracking-tight group-hover:text-[#5266eb] transition-colors">
                     Upload &amp; Hook Alignment
                   </h3>
-                  <p className="text-xs text-zinc-300 font-light leading-relaxed">
-                    Drop raw A-roll clips into a shared Google Drive or Frame.io folder. We analyze your core message, identify vocal stress points, and craft a high-retention hook strategy.
+                  <p className="text-xs text-[#c3c3cc] leading-relaxed">
+                    Drop raw A-roll footage into a shared Google Drive or Frame.io folder. We analyze your core message, identify vocal stress points, and craft a high-retention hook strategy.
                   </p>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-zinc-800/80 space-y-2 text-[11px] font-mono text-zinc-400">
+              <div className="pt-4 border-t border-white/[0.06] space-y-2 text-xs text-[#c3c3cc]">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <CheckCircle2 size={13} className="text-[#5266eb] shrink-0" />
                   <span>Raw Footage &amp; Script Notes Analysis</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <CheckCircle2 size={13} className="text-[#5266eb] shrink-0" />
                   <span>First 3-Second Retention Plan</span>
                 </div>
               </div>
             </div>
 
             {/* Step 02 */}
-            <div className="spatial-card p-6 sm:p-8 border border-blue-500/30 space-y-4 bg-blue-950/15 hover:border-blue-500/60 transition-all flex flex-col justify-between group shadow-xl">
+            <div className="mercury-card p-8 space-y-4 border border-[#5266eb]/40 bg-[#1e1e2a] flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-mono font-extrabold text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+                  <span className="w-9 h-9 rounded-full bg-[#5266eb] text-white flex items-center justify-center font-semibold text-xs shadow-[0_0_16px_rgba(82,102,235,0.4)]">
                     02
                   </span>
-                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-blue-900/40 text-blue-300 border border-blue-500/30">
-                    STEP 02 // PRODUCTION (48H)
+                  <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider bg-[#5266eb]/20 text-[#ededf3] border border-[#5266eb]/40">
+                    PRODUCTION (48H)
                   </span>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight text-blue-400">
+                  <h3 className="text-lg font-semibold text-[#ededf3] uppercase tracking-tight">
                     Neuro-Pacing &amp; Visual VFX
                   </h3>
-                  <p className="text-xs text-zinc-200 font-light leading-relaxed">
+                  <p className="text-xs text-[#c3c3cc] leading-relaxed">
                     We eliminate dead air micro-pauses, engineer custom After Effects motion graphics, color grade to Rec.709 standards, and layer multi-track sound effects.
                   </p>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-blue-500/20 space-y-2 text-[11px] font-mono text-zinc-300">
+              <div className="pt-4 border-t border-white/[0.06] space-y-2 text-xs text-[#ededf3]">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <CheckCircle2 size={13} className="text-[#5266eb] shrink-0" />
                   <span>Bespoke After Effects Keyframing</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <CheckCircle2 size={13} className="text-[#5266eb] shrink-0" />
                   <span>Rec.709 Color &amp; Multi-Track SFX</span>
                 </div>
               </div>
             </div>
 
             {/* Step 03 */}
-            <div className="spatial-card p-6 sm:p-8 border border-zinc-800 space-y-4 bg-zinc-950/80 hover:border-blue-500/40 transition-all flex flex-col justify-between group">
+            <div className="mercury-card p-8 space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-lg bg-blue-600/15 border border-blue-500/30 text-blue-400 flex items-center justify-center font-mono font-extrabold text-sm group-hover:bg-blue-600 group-hover:text-white transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                  <span className="w-9 h-9 rounded-full bg-[#272735] text-[#ededf3] flex items-center justify-center font-semibold text-xs border border-white/[0.06] group-hover:bg-[#5266eb] group-hover:text-white transition-all">
                     03
                   </span>
-                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 border border-zinc-800">
-                    STEP 03 // DELIVERY
+                  <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider bg-[#272735] text-[#c3c3cc] border border-white/[0.06]">
+                    DELIVERY
                   </span>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-lg font-semibold text-[#ededf3] uppercase tracking-tight group-hover:text-[#5266eb] transition-colors">
                     Frame.io Review &amp; 4K Export
                   </h3>
-                  <p className="text-xs text-zinc-300 font-light leading-relaxed">
+                  <p className="text-xs text-[#c3c3cc] leading-relaxed">
                     Review drafts directly on Frame.io with precise timestamped comments. Get pristine 4K exports optimized for Instagram Reels, TikTok, and YouTube Shorts.
                   </p>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-zinc-800/80 space-y-2 text-[11px] font-mono text-zinc-400">
+              <div className="pt-4 border-t border-white/[0.06] space-y-2 text-xs text-[#c3c3cc]">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <CheckCircle2 size={13} className="text-[#5266eb] shrink-0" />
                   <span>Seamless Timestamp Revisions</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <CheckCircle2 size={13} className="text-[#5266eb] shrink-0" />
                   <span>4K Multi-Platform Export Package</span>
                 </div>
               </div>
@@ -480,185 +479,180 @@ export default function App() {
           </div>
         </section>
 
-        {/* VERIFIED CLIENT REVIEWS INFINITE HORIZONTAL MARQUEE (100% ENGLISH COPYWRITING) */}
-        <section id="reviews" className="space-y-6 pt-4 overflow-hidden scroll-mt-24">
-          <div className="px-6 md:px-12 max-w-[1750px] mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
+        {/* 4. VERIFIED CLIENT REVIEWS INFINITE HORIZONTAL MARQUEE */}
+        <section id="reviews" className="space-y-6 pt-4 overflow-hidden scroll-mt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/[0.06] pb-4">
             <div>
-              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
-                VERIFIED CLIENT REVIEWS &amp; TESTIMONIALS
+              <span className="text-xs text-[#5266eb] uppercase tracking-widest block font-semibold">
+                VERIFIED CLIENT REVIEWS
               </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
-                Trusted By Industry Creators &amp; Agencies
+              <h2 className="text-2xl sm:text-3xl font-semibold uppercase tracking-tight text-[#ededf3] mt-1">
+                Trusted By Industry Creators
               </h2>
             </div>
-            <span className="text-xs text-zinc-400 font-mono uppercase">HOVER TO PAUSE STREAM</span>
+            <span className="text-xs text-[#c3c3cc] uppercase tracking-wide">HOVER TO PAUSE STREAM</span>
           </div>
 
-          {/* Marquee Row 1 (Right to Left Stream) */}
+          {/* Marquee Row 1 */}
           <div className="relative w-full overflow-hidden py-1">
-            
-            {/* Fade Gradients at Left/Right Edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black via-black/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#171721] to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#171721] to-transparent z-20 pointer-events-none" />
 
             <div className="animate-marquee gap-5">
               {marqueeReviewsRow1.map((rev, i) => (
                 <div 
                   key={`r1-${i}`}
-                  className="spatial-card w-[340px] p-5 shrink-0 border border-zinc-800/90 hover:border-blue-500/40 bg-zinc-950/80 flex flex-col justify-between space-y-4 shadow-xl select-none"
+                  className="mercury-card w-[340px] p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-sm select-none"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1 text-amber-400">
                         {Array.from({ length: 5 }).map((_, s) => (
-                          <Star key={s} size={13} fill="currentColor" />
+                          <Star key={s} size={12} fill="currentColor" />
                         ))}
                       </div>
-                      <span className="px-2 py-0.5 rounded-[2px] bg-blue-950/60 border border-blue-500/30 text-[9px] font-mono font-bold text-blue-400 uppercase">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#5266eb]/15 border border-[#5266eb]/30 text-[10px] font-medium text-[#ededf3] uppercase">
                         {rev.metric}
                       </span>
                     </div>
 
-                    <p className="text-xs text-zinc-300 font-light leading-relaxed">
+                    <p className="text-xs text-[#ededf3] leading-relaxed">
                       "{rev.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-zinc-800/70 text-xs font-mono">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-[10px] font-extrabold text-blue-300">
+                  <div className="flex items-center justify-between pt-3 border-t border-white/[0.06] text-xs">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-7 h-7 rounded-full bg-[#272735] text-[#5266eb] flex items-center justify-center text-xs font-semibold">
                         {rev.name.charAt(0)}
                       </div>
                       <div>
-                        <span className="text-white font-bold block leading-none">{rev.name}</span>
-                        <span className="text-[10px] text-zinc-500">{rev.handle}</span>
+                        <span className="text-[#ededf3] font-medium block leading-none">{rev.name}</span>
+                        <span className="text-[11px] text-[#c3c3cc]">{rev.handle}</span>
                       </div>
                     </div>
 
-                    <span className="text-[9px] text-emerald-400 font-semibold flex items-center gap-1">
+                    <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
                       <CheckCircle2 size={11} /> VERIFIED
                     </span>
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
 
-          {/* Marquee Row 2 (Left to Right / Reverse Stream) */}
+          {/* Marquee Row 2 */}
           <div className="relative w-full overflow-hidden py-1">
-            
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black via-black/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#171721] to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#171721] to-transparent z-20 pointer-events-none" />
 
             <div className="animate-marquee-reverse gap-5">
               {marqueeReviewsRow2.map((rev, i) => (
                 <div 
                   key={`r2-${i}`}
-                  className="spatial-card w-[340px] p-5 shrink-0 border border-zinc-800/90 hover:border-blue-500/40 bg-zinc-950/80 flex flex-col justify-between space-y-4 shadow-xl select-none"
+                  className="mercury-card w-[340px] p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-sm select-none"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1 text-amber-400">
                         {Array.from({ length: 5 }).map((_, s) => (
-                          <Star key={s} size={13} fill="currentColor" />
+                          <Star key={s} size={12} fill="currentColor" />
                         ))}
                       </div>
-                      <span className="px-2 py-0.5 rounded-[2px] bg-emerald-950/60 border border-emerald-500/30 text-[9px] font-mono font-bold text-emerald-400 uppercase">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#272735] border border-white/[0.08] text-[10px] font-medium text-[#c3c3cc] uppercase">
                         {rev.tag}
                       </span>
                     </div>
 
-                    <p className="text-xs text-zinc-300 font-light leading-relaxed">
+                    <p className="text-xs text-[#ededf3] leading-relaxed">
                       "{rev.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-zinc-800/70 text-xs font-mono">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-[10px] font-extrabold text-emerald-300">
+                  <div className="flex items-center justify-between pt-3 border-t border-white/[0.06] text-xs">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-7 h-7 rounded-full bg-[#272735] text-[#5266eb] flex items-center justify-center text-xs font-semibold">
                         {rev.name.charAt(0)}
                       </div>
                       <div>
-                        <span className="text-white font-bold block leading-none">{rev.name}</span>
-                        <span className="text-[10px] text-zinc-500">{rev.handle}</span>
+                        <span className="text-[#ededf3] font-medium block leading-none">{rev.name}</span>
+                        <span className="text-[11px] text-[#c3c3cc]">{rev.handle}</span>
                       </div>
                     </div>
 
-                    <span className="text-[9px] text-blue-400 font-semibold flex items-center gap-1">
+                    <span className="text-[10px] text-[#5266eb] font-medium flex items-center gap-1">
                       <CheckCircle2 size={11} /> CLIENT
                     </span>
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
         </section>
 
-        {/* 4. COMPARISON MODULE */}
-        <section id="comparison" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
+        {/* 5. COMPARISON MODULE */}
+        <section id="comparison" className="space-y-6 pt-4 scroll-mt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/[0.06] pb-4">
             <div>
-              <span className="text-[11px] text-zinc-400 font-mono uppercase tracking-widest block">
+              <span className="text-xs text-[#c3c3cc] uppercase tracking-widest block font-semibold">
                 EDITING DIFFERENCE
               </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
+              <h2 className="text-2xl sm:text-3xl font-semibold uppercase tracking-tight text-[#ededf3] mt-1">
                 Standard Assembly vs Performance Editing
               </h2>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="spatial-card p-6 border border-zinc-800 space-y-4">
+            <div className="mercury-card p-8 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-zinc-900 text-zinc-400 rounded-[4px] border border-zinc-800">
-                  <XCircle size={20} />
+                <div className="w-8 h-8 rounded-full bg-[#272735] text-[#c3c3cc] flex items-center justify-center">
+                  <XCircle size={16} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider">STANDARD CAPCUT EDITOR</h3>
-                  <p className="text-[11px] text-zinc-400 font-mono">Basic Assembly &amp; Template Packs</p>
+                  <h3 className="text-sm font-semibold text-[#ededf3] uppercase tracking-wider">STANDARD CAPCUT EDITOR</h3>
+                  <p className="text-xs text-[#c3c3cc]">Basic Assembly &amp; Template Packs</p>
                 </div>
               </div>
 
-              <ul className="space-y-2.5 text-xs text-zinc-300 font-light">
-                <li className="flex items-start gap-2">
-                  <XCircle size={14} className="text-zinc-500 shrink-0 mt-0.5" />
+              <ul className="space-y-3 text-xs text-[#c3c3cc]">
+                <li className="flex items-start gap-2.5">
+                  <XCircle size={14} className="text-[#70707d] shrink-0 mt-0.5" />
                   <span>Relies on generic template packs and repetitive popups that look amateur.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <XCircle size={14} className="text-zinc-500 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-2.5">
+                  <XCircle size={14} className="text-[#70707d] shrink-0 mt-0.5" />
                   <span>Leaves dead air &amp; micro-pauses, causing viewers to scroll away in 3 seconds.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <XCircle size={14} className="text-zinc-500 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-2.5">
+                  <XCircle size={14} className="text-[#70707d] shrink-0 mt-0.5" />
                   <span>Zero visual strategy or hook mechanics — treats your content as basic labor.</span>
                 </li>
               </ul>
             </div>
 
-            <div className="spatial-card p-6 border border-blue-500/30 space-y-4 bg-blue-950/10">
+            <div className="mercury-card p-8 space-y-4 border border-[#5266eb]/30">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-600/20 text-blue-400 rounded-[4px] border border-blue-500/30">
-                  <CheckCircle2 size={20} />
+                <div className="w-8 h-8 rounded-full bg-[#5266eb]/20 text-[#5266eb] flex items-center justify-center">
+                  <CheckCircle2 size={16} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white uppercase tracking-wider">THOMAS NGUYEN (VISUAL PARTNER)</h3>
-                  <p className="text-[11px] text-blue-400 font-mono">Bespoke Motion &amp; Visual Strategy</p>
+                  <h3 className="text-sm font-semibold text-[#ededf3] uppercase tracking-wider">THOMAS NGUYEN (VISUAL PARTNER)</h3>
+                  <p className="text-xs text-[#5266eb]">Bespoke Motion &amp; Visual Strategy</p>
                 </div>
               </div>
 
-              <ul className="space-y-2.5 text-xs text-zinc-300 font-light">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
+              <ul className="space-y-3 text-xs text-[#ededf3]">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 size={14} className="text-[#5266eb] shrink-0 mt-0.5" />
                   <span>Bespoke After Effects keyframing and custom motion graphics unique to your brand.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 size={14} className="text-[#5266eb] shrink-0 mt-0.5" />
                   <span>Neuro-Pacing eliminates dead air, guaranteeing 85%+ retention past the first 5 seconds.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 size={14} className="text-blue-400 shrink-0 mt-0.5" />
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 size={14} className="text-[#5266eb] shrink-0 mt-0.5" />
                   <span>Curated B-roll &amp; multi-layered sound design engineered to lock in focus.</span>
                 </li>
               </ul>
@@ -666,35 +660,35 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. THE SYSTEM */}
-        <section id="system" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
+        {/* 6. THE SYSTEM (04 PILLARS) */}
+        <section id="system" className="space-y-6 pt-4 scroll-mt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/[0.06] pb-4">
             <div>
-              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
+              <span className="text-xs text-[#5266eb] uppercase tracking-widest block font-semibold">
                 SYSTEM METHODOLOGY
               </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
-                THE SYSTEM
+              <h2 className="text-2xl sm:text-3xl font-semibold uppercase tracking-tight text-[#ededf3] mt-1">
+                The System
               </h2>
             </div>
-            <span className="text-xs text-zinc-400 font-mono uppercase">04 CORE PILLARS</span>
+            <span className="text-xs text-[#c3c3cc] uppercase tracking-wide">04 CORE PILLARS</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {pillars.map((pillar, idx) => (
-              <div key={idx} className="spatial-card p-5 flex flex-col justify-between space-y-4">
+              <div key={idx} className="mercury-card p-6 flex flex-col justify-between space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-8 h-8 rounded-[4px] bg-blue-600/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
-                    <pillar.icon size={16} />
+                  <div className="w-8 h-8 rounded-full bg-[#272735] text-[#5266eb] flex items-center justify-center">
+                    <pillar.icon size={15} />
                   </div>
-                  <span className="text-xs font-mono text-zinc-400 font-bold">0{idx + 1}</span>
+                  <span className="text-xs text-[#c3c3cc] font-medium">0{idx + 1}</span>
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+                  <h3 className="text-xs font-semibold text-[#ededf3] uppercase tracking-wider">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs text-zinc-300 font-light leading-relaxed">
+                  <p className="text-xs text-[#c3c3cc] leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
@@ -703,26 +697,26 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. RETENTION AUDIT SECTION */}
-        <section id="audit" className="px-6 md:px-12 max-w-4xl mx-auto text-center space-y-5 py-2">
-          <div className="spatial-card p-8 sm:p-10 border border-blue-500/30 space-y-5 bg-blue-950/10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-blue-600/20 border border-blue-500/40 text-xs font-mono uppercase tracking-widest text-blue-300">
-              <ShieldCheck size={15} />
+        {/* 7. COMPLIMENTARY RETENTION AUDIT SECTION */}
+        <section id="audit" className="text-center space-y-5 pt-4">
+          <div className="mercury-card p-8 sm:p-12 border border-[#5266eb]/30 space-y-6 bg-[#1e1e2a] max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#272735] border border-white/[0.08] text-xs uppercase tracking-wider text-[#ededf3]">
+              <ShieldCheck size={14} className="text-[#5266eb]" />
               <span>ZERO RISK COMPLIMENTARY OFFER</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#ededf3] tracking-tight">
               Test Our Skills: Free 30-Second Retention Audit
             </h2>
 
-            <p className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed max-w-lg mx-auto">
+            <p className="text-xs sm:text-sm text-[#c3c3cc] leading-relaxed max-w-lg mx-auto">
               Send over one of your raw video clips or past Reels. We will edit the first 30 seconds for free, demonstrating custom pacing, visual hooks, and sound design.
             </p>
 
             <div>
               <button 
                 onClick={handleCalendlyRedirect}
-                className="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs uppercase tracking-widest rounded-[6px] transition-all inline-flex items-center gap-2 cursor-pointer shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:scale-105"
+                className="px-8 py-3.5 btn-cobalt text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>REQUEST FREE 30S AUDIT NOW</span>
                 <ArrowUpRight size={14} />
@@ -731,13 +725,13 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. FAQS SECTION */}
-        <section id="faq" className="px-6 md:px-12 max-w-4xl mx-auto space-y-6">
+        {/* 8. FAQS SECTION */}
+        <section id="faq" className="space-y-6 pt-4 max-w-3xl mx-auto scroll-mt-20">
           <div className="text-center space-y-1">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 block">
+            <span className="text-xs uppercase tracking-widest text-[#c3c3cc] block font-semibold">
               FAQS
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl font-semibold uppercase tracking-tight text-[#ededf3]">
               FREQUENTLY ASKED QUESTIONS
             </h2>
           </div>
@@ -769,18 +763,18 @@ export default function App() {
                 a: "A batch of premium short-form videos typically takes 48-72 hours from raw footage delivery to final export."
               }
             ].map((item, i) => (
-              <div key={i} className="spatial-card border border-zinc-800 transition-all">
+              <div key={i} className="mercury-card transition-all">
                 <button
                   onClick={() => toggleFaq(i)}
-                  className="w-full flex justify-between items-center p-4 text-left text-xs sm:text-sm font-bold uppercase tracking-wider text-white hover:text-blue-400 transition-colors cursor-pointer"
+                  className="w-full flex justify-between items-center p-5 text-left text-xs sm:text-sm font-medium uppercase tracking-wide text-[#ededf3] hover:text-[#5266eb] transition-colors cursor-pointer"
                 >
                   <span>{item.q}</span>
-                  <div className="p-1 rounded-[4px] bg-zinc-900 border border-zinc-700 text-zinc-400">
-                    {activeFaq === i ? <Minus size={13} /> : <Plus size={13} />}
+                  <div className="w-6 h-6 rounded-full bg-[#272735] text-[#c3c3cc] flex items-center justify-center">
+                    {activeFaq === i ? <Minus size={12} /> : <Plus size={12} />}
                   </div>
                 </button>
                 {activeFaq === i && (
-                  <div className="p-4 pt-0 border-t border-zinc-800 text-xs text-zinc-300 leading-relaxed font-light">
+                  <div className="p-5 pt-0 border-t border-white/[0.06] text-xs text-[#c3c3cc] leading-relaxed">
                     {item.a}
                   </div>
                 )}
@@ -792,25 +786,25 @@ export default function App() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-zinc-800 bg-[#08080a] py-12 px-6 md:px-12 relative z-20">
-        <div className="max-w-[1750px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1.5 text-center md:text-left">
-            <h3 className="text-sm font-extrabold uppercase tracking-widest text-white">
+      <footer className="border-t border-white/[0.06] bg-[#171721] py-12 px-6 md:px-12 relative z-20">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 text-center md:text-left">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-[#ededf3]">
               THOMAS NGUYEN // SHORT-FORM PORTFOLIO
             </h3>
-            <p className="text-xs text-zinc-300 font-mono">
+            <p className="text-[11px] text-[#c3c3cc]">
               &copy; 2026 THOMAS NGUYEN. ALL RIGHTS RESERVED.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-mono uppercase tracking-wider">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs">
             <a 
               href="https://x.com/thomaseditor_vn" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+              className="px-4 py-2 rounded-full bg-[#1e1e2a] border border-white/[0.08] text-[#c3c3cc] hover:text-[#ededf3] hover:border-[#5266eb]/50 transition-all flex items-center gap-2"
             >
-              <Twitter size={14} className="text-blue-400" />
+              <Twitter size={13} className="text-[#5266eb]" />
               <span>X</span>
             </a>
 
@@ -818,9 +812,9 @@ export default function App() {
               href="https://www.instagram.com/thomasvisualeditor/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+              className="px-4 py-2 rounded-full bg-[#1e1e2a] border border-white/[0.08] text-[#c3c3cc] hover:text-[#ededf3] hover:border-[#5266eb]/50 transition-all flex items-center gap-2"
             >
-              <Instagram size={14} className="text-blue-400" />
+              <Instagram size={13} className="text-[#5266eb]" />
               <span>INSTAGRAM</span>
             </a>
 
@@ -828,9 +822,9 @@ export default function App() {
               href="https://www.facebook.com/profile.php?id=100063990921099" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+              className="px-4 py-2 rounded-full bg-[#1e1e2a] border border-white/[0.08] text-[#c3c3cc] hover:text-[#ededf3] hover:border-[#5266eb]/50 transition-all flex items-center gap-2"
             >
-              <Facebook size={14} className="text-blue-400" />
+              <Facebook size={13} className="text-[#5266eb]" />
               <span>FACEBOOK</span>
             </a>
 
@@ -838,17 +832,17 @@ export default function App() {
               href="https://www.linkedin.com/in/phucxuannguyen/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+              className="px-4 py-2 rounded-full bg-[#1e1e2a] border border-white/[0.08] text-[#c3c3cc] hover:text-[#ededf3] hover:border-[#5266eb]/50 transition-all flex items-center gap-2"
             >
-              <Linkedin size={14} className="text-blue-400" />
+              <Linkedin size={13} className="text-[#5266eb]" />
               <span>LINKEDIN</span>
             </a>
 
             <a 
               href="mailto:thomasnguyen.editor@gmail.com" 
-              className="px-3.5 py-2 rounded-[6px] bg-zinc-900/90 border border-zinc-700 text-zinc-200 hover:text-white hover:border-blue-500/50 hover:bg-zinc-800 transition-all flex items-center gap-2 font-bold shadow-sm"
+              className="px-4 py-2 rounded-full bg-[#1e1e2a] border border-white/[0.08] text-[#c3c3cc] hover:text-[#ededf3] hover:border-[#5266eb]/50 transition-all flex items-center gap-2"
             >
-              <Mail size={14} className="text-blue-400" />
+              <Mail size={13} className="text-[#5266eb]" />
               <span>EMAIL</span>
             </a>
           </div>

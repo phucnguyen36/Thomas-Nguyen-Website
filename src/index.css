@@ -1,64 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;480;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
-  --color-primary: #FFFFFF;
-  --color-secondary: rgba(255, 255, 255, 0.65);
-  
-  --font-haas: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: "Neue Haas Grotesk Text", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Mercury Color Tokens */
+  --color-onyx-canvas: #171721;
+  --color-graphite-card: #1e1e2a;
+  --color-obsidian-button: #272735;
+  --color-slate-border: #363649;
+  --color-mist-border: rgba(226, 227, 237, 0.12);
+  --color-ash-text: #c3c3cc;
+  --color-ivory-text: #ededf3;
+  --color-cobalt: #5266eb;
+  --color-pure-white: #ffffff;
+
+  /* Typography */
+  --font-arcadia: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arcadiadisplay: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-56: 56px;
+  --spacing-72: 72px;
+  --spacing-112: 112px;
+  --spacing-128: 128px;
+
+  /* Radius */
+  --radius-cards: 12px;
+  --radius-pills: 32px;
+  --radius-nav: 40px;
 }
 
 :root {
-  font-family: var(--font-haas);
+  font-family: var(--font-arcadia);
   color-scheme: dark;
 }
 
-/* Force 100% font synchronization across every single HTML element */
+/* Force Mercury typography discipline: measured, restrained, calibrated */
 html, body, *, ::before, ::after, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, div, a, li, th, td, code, kbd {
-  font-family: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
-  letter-spacing: -0.025em;
+  font-family: var(--font-arcadia) !important;
+  letter-spacing: -0.012em;
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #171721;
+  color: #ededf3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Deep Black & Sapphire Blue Spatial Background */
-.spatial-bg {
+/* Mercury Alpine Observatory Canvas */
+.mercury-canvas {
+  background-color: #171721;
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%),
+    radial-gradient(circle at 50% 0%, rgba(82, 102, 235, 0.12) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(23, 23, 33, 0.6) 0%, rgba(23, 23, 33, 1) 100%),
     url('/vision_pro_bg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* Electric Sapphire Blue Edit Blur Spots */
-.bg-edit-blur-1 {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 70%);
-  filter: blur(75px);
-  pointer-events: none;
+/* Mercury Graphite Card Surface (#1e1e2a) */
+.mercury-card {
+  background-color: #1e1e2a;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 227, 237, 0.07);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bg-edit-blur-2 {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 65%);
-  filter: blur(85px);
-  pointer-events: none;
+.mercury-card:hover {
+  border-color: rgba(82, 102, 235, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Mercury Pill Button / Input */
+.mercury-pill {
+  border-radius: 32px;
+}
+
+.mercury-pill-nav {
+  border-radius: 40px;
+}
+
+/* Cobalt Primary Action */
+.btn-cobalt {
+  background-color: #5266eb;
+  color: #ffffff;
+  border-radius: 32px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 24px rgba(82, 102, 235, 0.35);
+}
+
+.btn-cobalt:hover {
+  background-color: #4356db;
+  box-shadow: 0 0 32px rgba(82, 102, 235, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Ghost Outline Button */
+.btn-ghost-mercury {
+  background-color: transparent;
+  border: 1px solid rgba(237, 237, 243, 0.3);
+  color: #ededf3;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost-mercury:hover {
+  border-color: #ededf3;
+  background-color: rgba(237, 237, 243, 0.05);
+}
+
+/* Obsidian Pill Controls */
+.obsidian-pill {
+  background-color: #272735;
+  border: 1px solid rgba(226, 227, 237, 0.08);
+  border-radius: 32px;
+  color: #c3c3cc;
 }
 
 /* Tactile Film Grain Noise Layer */
@@ -70,56 +136,8 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.05;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Dark Glass Cards & Components */
-.spatial-window {
-  background: rgba(14, 16, 22, 0.88);
-  backdrop-filter: blur(36px) saturate(150%);
-  -webkit-backdrop-filter: blur(36px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    0 30px 70px -15px rgba(0, 0, 0, 0.95),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-}
-
-.spatial-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 12px 30px -10px rgba(0, 0, 0, 0.6),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.spatial-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 
-    0 20px 40px -10px rgba(37, 99, 235, 0.2),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
-}
-
-.spatial-search-input {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  color: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.spatial-search-input:focus-within {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(59, 130, 246, 0.5);
 }
 
 /* Scrollbar styling */
@@ -127,10 +145,11 @@ body {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #171721;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #272735;
+  border-radius: 4px;
 }
 
 /* Infinite Horizontal Marquee Keyframes */
