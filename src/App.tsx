@@ -39,7 +39,6 @@ export default function App() {
   const [budgetRange, setBudgetRange] = useState('$500-$1000');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [needsActivation, setNeedsActivation] = useState(false);
 
   // Live Toast Notification
   const [showToast, setShowToast] = useState(false);
@@ -67,8 +66,6 @@ export default function App() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setNeedsActivation(false);
-
     try {
       const response = await fetch('https://formsubmit.co/ajax/thomasnguyen.editor@gmail.com', {
         method: 'POST',
@@ -88,17 +85,10 @@ export default function App() {
         })
       });
 
-      const resData = await response.json();
-
-      if (resData.message && resData.message.toLowerCase().includes('activation')) {
-        setNeedsActivation(true);
-        setFormSubmitted(true);
-      } else if (response.ok || resData.success === 'true' || resData.success === true) {
-        setFormSubmitted(true);
+      if (response.ok) {
         setFormData({ name: '', email: '', message: '' });
-      } else {
-        setFormSubmitted(true);
       }
+      setFormSubmitted(true);
     } catch {
       // Direct email client fallback
       window.location.href = `mailto:thomasnguyen.editor@gmail.com?subject=Project Inquiry from ${encodeURIComponent(formData.name)}&body=Name: ${encodeURIComponent(formData.name)}%0D%0AEmail: ${encodeURIComponent(formData.email)}%0D%0AType: ${encodeURIComponent(videoType)}%0D%0ABudget: ${encodeURIComponent(budgetRange)}%0D%0ANotes: ${encodeURIComponent(formData.message)}`;
@@ -854,12 +844,12 @@ export default function App() {
                 {isSubmitting ? (
                   <>
                     <Loader2 size={15} className="animate-spin" />
-                    <span>Sending to Thomas Nguyen...</span>
+                    <span>Sending...</span>
                   </>
                 ) : formSubmitted ? (
                   <>
                     <Check size={15} />
-                    <span>Inquiry Sent! Check your email for reply</span>
+                    <span>Inquiry Sent! We'll reply within 24 hours</span>
                   </>
                 ) : (
                   <>
@@ -868,35 +858,6 @@ export default function App() {
                   </>
                 )}
               </button>
-
-              {formSubmitted && (
-                <div className="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs text-center space-y-2">
-                  {needsActivation ? (
-                    <div className="space-y-1 text-amber-300">
-                      <div className="flex items-center justify-center gap-1.5 font-semibold">
-                        <AlertCircle size={15} />
-                        <span>Kích hoạt FormSubmit (Chỉ 1 lần đầu duy nhất)</span>
-                      </div>
-                      <p className="text-[11px] text-zinc-300">
-                        FormSubmit đã gửi 1 email xác nhận tới <strong>thomasnguyen.editor@gmail.com</strong>. Bạn hãy mở Gmail (kiểm tra cả mục Spam/Thư rác) và bấm nút <strong>"Activate Form"</strong> là từ đó mọi khách điền sẽ bay thẳng về email!
-                      </p>
-                    </div>
-                  ) : (
-                    <p className="font-semibold">✓ Your project details have been emailed directly to Thomas!</p>
-                  )}
-                  
-                  <p className="text-[11px] text-zinc-300">
-                    Want to discuss right away?{' '}
-                    <button 
-                      type="button" 
-                      onClick={handleCalendlyRedirect} 
-                      className="text-[#1591DC] underline font-semibold cursor-pointer"
-                    >
-                      Click here to book a 15-min call on Calendly
-                    </button>
-                  </p>
-                </div>
-              )}
             </form>
           </div>
         </section>
