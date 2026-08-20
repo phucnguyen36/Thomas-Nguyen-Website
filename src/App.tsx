@@ -223,19 +223,19 @@ export default function App() {
       )}
 
       {/* KULDEEP CLEAN FLOATING HEADER WITH PORTRAIT LOGO */}
-      <header className="sticky top-0 z-40 bg-[#0b0c10]/85 backdrop-blur-xl border-b border-white/[0.06] px-6 md:px-12 py-3 flex justify-between items-center max-w-[1240px] mx-auto">
+      <header className="sticky top-0 z-40 bg-[#0b0c10]/85 backdrop-blur-xl border-b border-white/[0.06] px-6 md:px-12 py-3.5 flex justify-between items-center max-w-[1240px] mx-auto">
         <a href="#hero" className="flex items-center gap-3 text-decoration-none group">
           <img 
             src="/thomas_portrait.jpg" 
             alt="Thomas Nguyen Logo" 
             className="w-8 h-8 rounded-full object-cover border border-[#1591DC] shadow-[0_0_12px_rgba(21,145,220,0.5)] group-hover:scale-105 transition-transform"
           />
-          <span className="font-bold text-sm md:text-base tracking-tighter text-white">
+          <span className="font-semibold text-sm md:text-base tracking-tight text-white">
             Thomas Nguyen
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-6 text-xs font-semibold text-[#9496a1] tracking-tight">
+        <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-[#9496a1] tracking-tight">
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#work" className="hover:text-white transition-colors">Work</a>
           <a href="#process" className="hover:text-white transition-colors">Process</a>
@@ -262,36 +262,36 @@ export default function App() {
         <section id="hero" className="pt-14 md:pt-20 space-y-7 text-center">
           
           {/* Availability Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-xs text-[#ededf3] font-semibold tracking-tight shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-xs text-[#ededf3] font-medium tracking-tight shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>3 Spots Available for this month</span>
           </div>
           
-          {/* Main Title - Swiss Neue Haas Grotesk with Tight Letter Spacing & Accent Italic */}
+          {/* Main Title - Balanced Weight with Bold Italic Accent */}
           <div className="space-y-3.5 max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] text-white leading-[1.05]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.08]">
               Every Great Story <br className="hidden sm:block" />
-              Deserves a <span className="font-serif-italic font-normal text-[#1591DC]">Great Editor.</span>
+              Deserves a <span className="font-serif-italic font-bold text-[#1591DC]">Great Editor.</span>
             </h1>
-            <p className="text-[#9496a1] text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal tracking-tight">
+            <p className="text-[#9496a1] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal tracking-tight">
               High-impact short-form video editing and visual retention strategy for personal brands, founders, and content creators. Double viewer retention in 48 hours.
             </p>
           </div>
 
           {/* Official Creator Badge With Portrait Avatar */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#12141a] border border-white/[0.08] backdrop-blur-md shadow-sm">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] backdrop-blur-md shadow-sm">
             <img 
               src="/thomas_portrait.jpg" 
               alt="Thomas Nguyen" 
-              className="w-7 h-7 rounded-full object-cover border border-[#1591DC]"
+              className="w-6 h-6 rounded-full object-cover border border-[#1591DC]"
             />
             <div className="text-left text-xs">
-              <span className="text-[#ededf3] font-semibold block leading-tight">Thomas Nguyen</span>
+              <span className="text-[#ededf3] font-medium block leading-tight">Thomas Nguyen</span>
               <a 
                 href="https://thomasnguyen.online" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-[#9496a1] hover:text-[#1591DC] text-[11px] block leading-tight transition-colors font-medium"
+                className="text-[#9496a1] hover:text-[#1591DC] text-[11px] block leading-tight transition-colors"
               >
                 thomasnguyen.online
               </a>
@@ -310,7 +310,7 @@ export default function App() {
 
             <a 
               href="#process"
-              className="px-7 py-3 btn-secondary-kuldeep text-xs tracking-tight inline-flex items-center gap-2 cursor-pointer font-semibold"
+              className="px-7 py-3 btn-secondary-kuldeep text-xs tracking-tight inline-flex items-center gap-2 cursor-pointer font-medium"
             >
               <span>How it works</span>
             </a>
@@ -325,7 +325,7 @@ export default function App() {
               <div className="w-7 h-7 rounded-full border-2 border-[#0b0c10] bg-gradient-to-tr from-cyan-600 to-[#1591DC] flex items-center justify-center text-[10px] font-bold text-white">RO</div>
               <div className="w-7 h-7 rounded-full border-2 border-[#0b0c10] bg-gradient-to-tr from-blue-700 to-teal-600 flex items-center justify-center text-[10px] font-bold text-white">EC</div>
             </div>
-            <div className="flex items-center gap-2 text-[#ededf3] font-semibold tracking-tight">
+            <div className="flex items-center gap-2 text-[#ededf3] font-medium tracking-tight">
               <div className="flex text-amber-400">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={12} fill="currentColor" />
@@ -338,43 +338,43 @@ export default function App() {
           {/* 3 Metric Cards Strip (800+ REELS DELIVERED) */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto pt-4">
             <div className="kuldeep-card p-5 text-center space-y-0.5">
-              <h3 className="text-3xl font-bold text-white tracking-tighter">800+</h3>
-              <p className="text-xs text-[#9496a1] uppercase font-semibold tracking-tight">Reels Delivered</p>
+              <h3 className="text-3xl font-semibold text-white tracking-tight">800+</h3>
+              <p className="text-xs text-[#9496a1] uppercase font-medium tracking-tight">Reels Delivered</p>
             </div>
 
             <div className="kuldeep-card p-5 text-center space-y-0.5">
-              <h3 className="text-3xl font-bold text-white tracking-tighter">85%+</h3>
-              <p className="text-xs text-[#9496a1] uppercase font-semibold tracking-tight">First 5S Retention</p>
+              <h3 className="text-3xl font-semibold text-white tracking-tight">85%+</h3>
+              <p className="text-xs text-[#9496a1] uppercase font-medium tracking-tight">First 5S Retention</p>
             </div>
 
             <div className="kuldeep-card p-5 text-center space-y-0.5">
-              <h3 className="text-3xl font-bold text-white tracking-tighter">100%</h3>
-              <p className="text-xs text-[#9496a1] uppercase font-semibold tracking-tight">Rec.709 Standard</p>
+              <h3 className="text-3xl font-semibold text-white tracking-tight">100%</h3>
+              <p className="text-xs text-[#9496a1] uppercase font-medium tracking-tight">Rec.709 Standard</p>
             </div>
           </div>
 
         </section>
 
-        {/* 2. ARTISTIC VERTICAL PORTRAIT SPOTLIGHT (SEAMLESS CLEAN LAYOUT - NO OUTER BOX) */}
-        <section id="about" className="pt-2 scroll-mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 items-center">
+        {/* 2. ARTISTIC VERTICAL PORTRAIT SPOTLIGHT (COMPACT, CLOSE SPACING) */}
+        <section id="about" className="pt-2 scroll-mt-20 max-w-[980px] mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-7 md:gap-10">
             
-            {/* Studio Portrait Art Block - Vertical Tall Frame with Soft Rounded Corners */}
-            <div className="md:col-span-5 relative group flex justify-center md:justify-start">
-              <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/[0.12] shadow-[0_20px_50px_rgba(0,0,0,0.85)] bg-[#0b0c10]">
+            {/* Studio Portrait Art Block */}
+            <div className="shrink-0 w-full md:w-[290px] flex justify-center">
+              <div className="relative w-full max-w-[290px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/[0.12] shadow-[0_16px_40px_rgba(0,0,0,0.85)] bg-[#0b0c10]">
                 <img 
                   src="/thomas_portrait.jpg" 
                   alt="Thomas Nguyen - Short-Form Video Editor & Retention Strategist" 
-                  className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale contrast-125 hover:scale-105 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Floating Tag at Bottom of Portrait */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-semibold">
-                  <span className="px-3.5 py-1.5 rounded-full bg-black/85 border border-white/[0.15] text-[#ededf3] backdrop-blur-md">
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-black/85 border border-white/[0.15] text-[#ededf3] backdrop-blur-md text-[11px]">
                     Thomas Nguyen
                   </span>
-                  <span className="px-3.5 py-1.5 rounded-full bg-[#1591DC]/20 border border-[#1591DC]/40 text-[#1591DC] backdrop-blur-md flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-[#1591DC]/20 border border-[#1591DC]/40 text-[#1591DC] backdrop-blur-md flex items-center gap-1.5 text-[11px]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC] animate-ping"></span>
                     Available
                   </span>
@@ -383,33 +383,33 @@ export default function App() {
             </div>
 
             {/* Bio & Philosophy Block */}
-            <div className="md:col-span-7 space-y-5 text-left">
+            <div className="space-y-4 text-left flex-1">
               <span className="kuldeep-badge">About The Editor</span>
               
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
                 Engineering Viewer Attention With <br />
-                <span className="font-serif-italic font-normal text-[#1591DC]">Cinematic Precision.</span>
+                <span className="font-serif-italic font-bold text-[#1591DC]">Cinematic Precision.</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-[#9496a1] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#9496a1] leading-relaxed">
                 I specialize in performance-driven short-form editing for founders, personal brands, and high-growth creators. By blending psychological pacing, bespoke After Effects motion design, and immersive sound engineering, I turn ordinary raw footage into magnetic video assets that command attention.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div className="flex items-start gap-2 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={15} className="text-[#1591DC] shrink-0 mt-0.5" />
                   <span>800+ Reels delivered for creators</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={15} className="text-[#1591DC] shrink-0 mt-0.5" />
                   <span>Neuro-Pacing to eliminate dead air</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={15} className="text-[#1591DC] shrink-0 mt-0.5" />
                   <span>Rec.709 studio color calibration</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={15} className="text-[#1591DC] shrink-0 mt-0.5" />
                   <span>Frame.io collaborative workflow</span>
                 </div>
               </div>
@@ -417,10 +417,10 @@ export default function App() {
               <div className="pt-2">
                 <button 
                   onClick={handleCalendlyRedirect}
-                  className="px-7 py-3 btn-primary-kuldeep text-xs font-semibold tracking-tight cursor-pointer inline-flex items-center gap-2"
+                  className="px-6 py-2.5 btn-primary-kuldeep text-xs font-semibold tracking-tight cursor-pointer inline-flex items-center gap-2"
                 >
                   <span>Work With Thomas</span>
-                  <ArrowUpRight size={14} />
+                  <ArrowUpRight size={13} />
                 </button>
               </div>
 
@@ -434,8 +434,8 @@ export default function App() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.06] pb-4">
             <div className="space-y-1">
               <span className="kuldeep-badge">Editing Work</span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Explore our video editing work &amp; <span className="font-serif-italic font-normal text-[#1591DC]">projects</span>
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+                Explore our video editing work &amp; <span className="font-serif-italic font-bold text-[#1591DC]">projects</span>
               </h2>
             </div>
 
@@ -494,7 +494,7 @@ export default function App() {
                   <div className="absolute inset-0 z-30 bg-black/10 group-hover:opacity-0 transition-all duration-300 pointer-events-none" />
 
                   <div className="absolute top-2.5 left-2.5 z-40">
-                    <span className="px-2.5 py-0.5 rounded-full bg-black/80 border border-white/[0.1] text-[9px] font-semibold text-white uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 rounded-full bg-black/80 border border-white/[0.1] text-[9px] font-medium text-white uppercase tracking-wider">
                       {video.tag}
                     </span>
                   </div>
@@ -505,7 +505,7 @@ export default function App() {
 
           <div className="flex items-center justify-between text-xs text-[#9496a1] pt-1">
             <span>← Scroll horizontally to explore all 10 Reels</span>
-            <span className="font-semibold text-[#1591DC]">10 Projects Live</span>
+            <span className="font-medium text-[#1591DC]">10 Projects Live</span>
           </div>
         </section>
 
@@ -513,8 +513,8 @@ export default function App() {
         <section id="process" className="space-y-6 pt-4 scroll-mt-20">
           <div className="text-center space-y-1.5 max-w-2xl mx-auto">
             <span className="kuldeep-badge">Process</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              How our video editing service <span className="font-serif-italic font-normal text-[#1591DC]">works for you</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+              How our video editing service <span className="font-serif-italic font-bold text-[#1591DC]">works for you</span>
             </h2>
           </div>
 
@@ -531,7 +531,7 @@ export default function App() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#1591DC] transition-colors">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-[#1591DC] transition-colors">
                     Submit Request
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
@@ -559,7 +559,7 @@ export default function App() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-lg font-semibold text-white">
                     Video Editing
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
@@ -587,7 +587,7 @@ export default function App() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#1591DC] transition-colors">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-[#1591DC] transition-colors">
                     Final Delivery
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
@@ -611,8 +611,8 @@ export default function App() {
         <section id="testimonial" className="space-y-6 pt-4 overflow-hidden scroll-mt-20">
           <div className="text-center space-y-1.5 max-w-2xl mx-auto">
             <span className="kuldeep-badge">Testimonial</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              What our premium clients are <span className="font-serif-italic font-normal text-[#1591DC]">saying about us</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+              What our premium clients are <span className="font-serif-italic font-bold text-[#1591DC]">saying about us</span>
             </h2>
           </div>
 
@@ -650,12 +650,12 @@ export default function App() {
                         {rev.name.charAt(0)}
                       </div>
                       <div>
-                        <span className="text-white font-semibold block leading-none">{rev.name}</span>
+                        <span className="text-white font-medium block leading-none">{rev.name}</span>
                         <span className="text-[11px] text-[#9496a1]">{rev.handle}</span>
                       </div>
                     </div>
 
-                    <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
+                    <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
                       <CheckCircle2 size={11} /> VERIFIED
                     </span>
                   </div>
@@ -698,12 +698,12 @@ export default function App() {
                         {rev.name.charAt(0)}
                       </div>
                       <div>
-                        <span className="text-white font-semibold block leading-none">{rev.name}</span>
+                        <span className="text-white font-medium block leading-none">{rev.name}</span>
                         <span className="text-[11px] text-[#9496a1]">{rev.handle}</span>
                       </div>
                     </div>
 
-                    <span className="text-[10px] text-[#1591DC] font-semibold flex items-center gap-1">
+                    <span className="text-[10px] text-[#1591DC] font-medium flex items-center gap-1">
                       <CheckCircle2 size={11} /> CLIENT
                     </span>
                   </div>
@@ -718,11 +718,11 @@ export default function App() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/[0.06] pb-4">
             <div className="space-y-1">
               <span className="kuldeep-badge">Services</span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                Core Editing <span className="font-serif-italic font-normal text-[#1591DC]">Capabilities</span>
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+                Core Editing <span className="font-serif-italic font-bold text-[#1591DC]">Capabilities</span>
               </h2>
             </div>
-            <span className="text-xs text-[#9496a1] uppercase font-semibold">04 CORE PILLARS</span>
+            <span className="text-xs text-[#9496a1] uppercase font-medium">04 CORE PILLARS</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -736,7 +736,7 @@ export default function App() {
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-white uppercase tracking-tight">
+                  <h3 className="text-sm font-semibold text-white uppercase tracking-tight">
                     {pillar.title}
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
@@ -752,18 +752,18 @@ export default function App() {
         <section id="contact" className="space-y-6 pt-4 max-w-2xl mx-auto scroll-mt-20">
           <div className="text-center space-y-1.5">
             <span className="kuldeep-badge">Contact</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Contact us for amazing <span className="font-serif-italic font-normal text-[#1591DC]">video editing projects</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+              Contact us for amazing <span className="font-serif-italic font-bold text-[#1591DC]">video editing projects</span>
             </h2>
             <p className="text-xs text-[#9496a1]">
-              Inquiries are delivered directly to <span className="text-[#1591DC] font-semibold">thomasnguyen.editor@gmail.com</span>
+              Inquiries are delivered directly to <span className="text-[#1591DC] font-medium">thomasnguyen.editor@gmail.com</span>
             </p>
           </div>
 
           <div className="kuldeep-card p-7 sm:p-9 space-y-5 border border-white/[0.08]">
             <form onSubmit={handleFormSubmit} className="space-y-4">
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#ededf3] block">Name</label>
+                <label className="text-xs font-medium text-[#ededf3] block">Name</label>
                 <input 
                   type="text" 
                   required
@@ -775,7 +775,7 @@ export default function App() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#ededf3] block">Email</label>
+                <label className="text-xs font-medium text-[#ededf3] block">Email</label>
                 <input 
                   type="email" 
                   required
@@ -788,14 +788,14 @@ export default function App() {
 
               {/* Video Type Selection Pills */}
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#ededf3] block">What Kind of Video Do You Need?</label>
+                <label className="text-xs font-medium text-[#ededf3] block">What Kind of Video Do You Need?</label>
                 <div className="flex flex-wrap gap-2">
                   {['Short Form Videos', 'Motion Graphics / VSL', 'Long Form Videos'].map(type => (
                     <button
                       type="button"
                       key={type}
                       onClick={() => setVideoType(type)}
-                      className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                         videoType === type 
                           ? 'bg-[#1591DC] text-white shadow-[0_0_12px_rgba(21,145,220,0.4)]' 
                           : 'bg-[#0b0c10] border border-white/[0.08] text-[#9496a1] hover:text-white'
@@ -809,14 +809,14 @@ export default function App() {
 
               {/* Budget Range Pills */}
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#ededf3] block">What’s Your Budget Range?</label>
+                <label className="text-xs font-medium text-[#ededf3] block">What’s Your Budget Range?</label>
                 <div className="flex flex-wrap gap-2">
                   {['Under $500', '$500-$1000', '$1000-$2000', '$2000-$5000'].map(b => (
                     <button
                       type="button"
                       key={b}
                       onClick={() => setBudgetRange(b)}
-                      className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                         budgetRange === b 
                           ? 'bg-[#1591DC] text-white shadow-[0_0_12px_rgba(21,145,220,0.4)]' 
                           : 'bg-[#0b0c10] border border-white/[0.08] text-[#9496a1] hover:text-white'
@@ -829,7 +829,7 @@ export default function App() {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#ededf3] block">Share Your Vision</label>
+                <label className="text-xs font-medium text-[#ededf3] block">Share Your Vision</label>
                 <textarea 
                   rows={3}
                   placeholder="Tell us about your content, goals, reference links or vision..."
@@ -885,8 +885,8 @@ export default function App() {
         <section id="faq" className="space-y-6 pt-4 scroll-mt-20">
           <div className="text-center space-y-1.5 max-w-2xl mx-auto">
             <span className="kuldeep-badge">FAQ</span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Frequently asked questions <span className="font-serif-italic font-normal text-[#1591DC]">about us</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+              Frequently asked questions <span className="font-serif-italic font-bold text-[#1591DC]">about us</span>
             </h2>
           </div>
 
@@ -898,9 +898,9 @@ export default function App() {
                 <Calendar size={17} />
               </div>
               <div className="space-y-1.5">
-                <h3 className="text-lg font-bold text-white leading-tight">
+                <h3 className="text-lg font-semibold text-white leading-tight">
                   Have a question? <br />
-                  <span className="font-serif-italic font-normal text-[#1591DC]">Let’s discuss it now!</span>
+                  <span className="font-serif-italic font-bold text-[#1591DC]">Let’s discuss it now!</span>
                 </h3>
                 <p className="text-xs text-[#9496a1] leading-relaxed">
                   Book a quick 15-minute alignment call directly on our calendar.
@@ -945,7 +945,7 @@ export default function App() {
                 <div key={i} className="kuldeep-card transition-all">
                   <button
                     onClick={() => toggleFaq(i)}
-                    className="w-full flex justify-between items-center p-4 sm:p-4.5 text-left text-xs sm:text-sm font-semibold text-white hover:text-[#1591DC] transition-colors cursor-pointer"
+                    className="w-full flex justify-between items-center p-4 sm:p-4.5 text-left text-xs sm:text-sm font-medium text-white hover:text-[#1591DC] transition-colors cursor-pointer"
                   >
                     <span>{item.q}</span>
                     <div className="w-6 h-6 rounded-full bg-white/[0.04] text-[#9496a1] flex items-center justify-center">
@@ -966,65 +966,60 @@ export default function App() {
 
       </main>
 
-      {/* KULDEEP FOOTER */}
-      <footer className="border-t border-white/[0.06] bg-[#0b0c10] py-10 px-6 md:px-12 relative z-20">
-        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-          <div className="space-y-0.5 text-center md:text-left">
-            <h3 className="text-xs font-bold tracking-tight text-white">
-              Thomas Nguyen // Short-Form Visual Retention Studio
-            </h3>
-            <p className="text-[11px] text-[#9496a1]">
-              &copy; 2026 THOMAS NGUYEN. ALL RIGHTS RESERVED.
-            </p>
-          </div>
+      {/* MINIMAL CLEAN FOOTER */}
+      <footer className="border-t border-white/[0.06] bg-[#0b0c10] py-8 px-6 md:px-12 relative z-20">
+        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-[#9496a1]">
+            &copy; 2026 Thomas Nguyen. All rights reserved.
+          </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
+          <div className="flex items-center gap-2">
             <a 
               href="https://x.com/thomaseditor_vn" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-white hover:border-[#1591DC]/50 transition-all flex items-center gap-2"
+              className="w-8 h-8 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-[#1591DC] hover:border-[#1591DC]/50 transition-all flex items-center justify-center"
+              title="X / Twitter"
             >
-              <Twitter size={13} className="text-[#1591DC]" />
-              <span>X</span>
+              <Twitter size={14} />
             </a>
 
             <a 
               href="https://www.instagram.com/thomasvisualeditor/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-white hover:border-[#1591DC]/50 transition-all flex items-center gap-2"
+              className="w-8 h-8 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-[#1591DC] hover:border-[#1591DC]/50 transition-all flex items-center justify-center"
+              title="Instagram"
             >
-              <Instagram size={13} className="text-[#1591DC]" />
-              <span>INSTAGRAM</span>
+              <Instagram size={14} />
             </a>
 
             <a 
               href="https://www.facebook.com/profile.php?id=100063990921099" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-white hover:border-[#1591DC]/50 transition-all flex items-center gap-2"
+              className="w-8 h-8 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-[#1591DC] hover:border-[#1591DC]/50 transition-all flex items-center justify-center"
+              title="Facebook"
             >
-              <Facebook size={13} className="text-[#1591DC]" />
-              <span>FACEBOOK</span>
+              <Facebook size={14} />
             </a>
 
             <a 
               href="https://www.linkedin.com/in/phucxuannguyen/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-white hover:border-[#1591DC]/50 transition-all flex items-center gap-2"
+              className="w-8 h-8 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-[#1591DC] hover:border-[#1591DC]/50 transition-all flex items-center justify-center"
+              title="LinkedIn"
             >
-              <Linkedin size={13} className="text-[#1591DC]" />
-              <span>LINKEDIN</span>
+              <Linkedin size={14} />
             </a>
 
             <a 
               href="mailto:thomasnguyen.editor@gmail.com" 
-              className="px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-white hover:border-[#1591DC]/50 transition-all flex items-center gap-2"
+              className="w-8 h-8 rounded-full bg-[#12141a] border border-white/[0.08] text-[#9496a1] hover:text-[#1591DC] hover:border-[#1591DC]/50 transition-all flex items-center justify-center"
+              title="Email"
             >
-              <Mail size={13} className="text-[#1591DC]" />
-              <span>EMAIL</span>
+              <Mail size={14} />
             </a>
           </div>
         </div>

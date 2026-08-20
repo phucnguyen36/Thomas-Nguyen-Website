@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -18,10 +18,10 @@
   color-scheme: dark;
 }
 
-/* Swiss typography with tight, architectural tracking */
+/* Swiss typography with balanced moderate weight & tight architectural tracking */
 html, body, *, ::before, ::after, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, div, a, li, th, td, code, kbd {
   font-family: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 body {
@@ -32,10 +32,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Punchy bold italic serif accent */
 .font-serif-italic {
   font-family: 'Instrument Serif', Georgia, serif !important;
   font-style: italic;
+  font-weight: 600 !important;
   letter-spacing: -0.01em !important;
+  text-shadow: 0 0 16px rgba(21, 145, 220, 0.25);
 }
 
 /* Kuldeep Framer Clean Card Surface */
@@ -56,12 +59,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 5px 13px;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #c3c3cc;
