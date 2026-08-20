@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instagram Carousel 1:1 - Unified Swiss Font - No Italics</title>
+  <title>Instagram Carousel 1:1 - Pure Swiss Font - 8 Harmonious Slides</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -102,7 +102,7 @@
       z-index: 10;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 22px;
     }
     .slide-footer {
       position: relative;
@@ -129,7 +129,7 @@
       background: #12141a;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 20px;
-      padding: 24px 28px;
+      padding: 22px 26px;
     }
     .badge-pill {
       display: inline-flex;
@@ -147,6 +147,13 @@
       background: rgba(21,145,220,0.15);
       border-color: rgba(21,145,220,0.4);
       color: #1591DC;
+    }
+    .mosaic-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #000;
+      position: relative;
     }
   </style>
   <script>
@@ -169,7 +176,7 @@
 </head>
 <body>
 
-  <!-- SLIDE 1: HOOK (CLEAN SWISS - NO ITALIC) -->
+  <!-- SLIDE 1: HOOK -->
   <div class="slide" id="slide-1">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -179,7 +186,7 @@
         <img src="/thomas_portrait.jpg" alt="Thomas">
         <span>Thomas Nguyen // Video Editor</span>
       </div>
-      <div class="slide-num">01 / 07</div>
+      <div class="slide-num">01 / 08</div>
     </div>
 
     <div class="slide-content">
@@ -206,12 +213,12 @@
     </div>
 
     <div class="slide-footer">
-      <span>Giải pháp thiết kế portfolio</span>
+      <span>Xem toàn cảnh website</span>
       <div class="swipe-indicator">Trượt tiếp ➔</div>
     </div>
   </div>
 
-  <!-- SLIDE 2: MULTI-ANGLE SYSTEM OVERVIEW (HARMONIOUS CARDS) -->
+  <!-- SLIDE 2: TOÀN CẢNH CROP CÁC PHÂN ĐOẠN CỦA WEBSITE TRONG 1 ÁNH NHÌN (NEW MOSAIC SHOWCASE) -->
   <div class="slide" id="slide-2">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -219,9 +226,98 @@
     <div class="slide-header">
       <div class="brand-tag">
         <img src="/thomas_portrait.jpg" alt="Thomas">
-        <span>Tổng quan hệ thống</span>
+        <span>Toàn cảnh website</span>
       </div>
-      <div class="slide-num">02 / 07</div>
+      <div class="slide-num">02 / 08</div>
+    </div>
+
+    <div class="slide-content">
+      <div>
+        <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+          Toàn bộ Website <span style="color: #1591DC;">trong 1 ánh nhìn</span>
+        </h2>
+        <p style="font-size: 16px; color: #9496a1; margin-top: 4px;">
+          Giải phẫu 5 phân đoạn được tối ưu hóa tỷ lệ chuyển đổi từ Hero đến Form nhận Brief.
+        </p>
+      </div>
+
+      <!-- Clean Visual Mosaic Grid of Website Sections -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; height: 420px;">
+        
+        <!-- Module 1: Hero & Metric Card -->
+        <div class="card-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(21,145,220,0.35);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 11px; font-weight: 700; color: #1591DC; font-family: monospace;">01. HERO & METRICS</span>
+            <span style="font-size: 10px; color: #9496a1;">FIRST IMPRESSION</span>
+          </div>
+          <div style="font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3;">
+            "Every Great Story Deserves a <span style="color: #1591DC;">Great Editor</span>"
+          </div>
+          <div style="display: flex; gap: 8px; font-size: 11px;">
+            <span style="background: rgba(255,255,255,0.06); padding: 4px 8px; border-radius: 6px; color: #fff; font-weight: 700;">800+ Reels</span>
+            <span style="background: rgba(21,145,220,0.15); padding: 4px 8px; border-radius: 6px; color: #1591DC; font-weight: 700;">85%+ Retention</span>
+          </div>
+        </div>
+
+        <!-- Module 2: About Portrait Spotlight -->
+        <div class="card-box" style="padding: 16px; display: flex; gap: 14px; align-items: center;">
+          <img src="/thomas_portrait.jpg" style="width: 70px; height: 90px; border-radius: 10px; object-fit: cover; filter: grayscale(100%) contrast(125%); border: 1px solid rgba(255,255,255,0.15);">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 11px; font-weight: 700; color: #1591DC; font-family: monospace;">02. ABOUT SPOTLIGHT</span>
+            <div style="font-size: 14px; font-weight: 700; color: #fff;">Chân Dung Studio</div>
+            <div style="font-size: 11px; color: #9496a1;">Tạo dựng niềm tin cá nhân vững chắc</div>
+          </div>
+        </div>
+
+        <!-- Module 3: 9:16 Video Showcase Slider -->
+        <div class="card-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 11px; font-weight: 700; color: #1591DC; font-family: monospace;">03. REELS 9:16 SHOWCASE</span>
+            <span style="font-size: 10px; color: #4ade80;">10 REELS LIVE</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <img src="/reel_thumb_1.jpg" style="width: 48px; height: 64px; border-radius: 6px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1);">
+            <img src="/reel_thumb_2.jpg" style="width: 48px; height: 64px; border-radius: 6px; object-fit: cover; border: 1px solid #1591DC;">
+            <img src="/reel_thumb_3.jpg" style="width: 48px; height: 64px; border-radius: 6px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1);">
+          </div>
+          <div style="font-size: 11px; color: #9496a1;">Xem ngay 1 click, không độ trễ</div>
+        </div>
+
+        <!-- Module 4: 3-Step Process & Intake Form -->
+        <div class="card-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 11px; font-weight: 700; color: #1591DC; font-family: monospace;">04. PROCESS & FUNNEL</span>
+            <span style="font-size: 10px; color: #9496a1;">48H DELIVERY</span>
+          </div>
+          <div style="font-size: 12px; color: #ededf3; line-height: 1.4;">
+            • Tiến độ 48H trên Frame.io <br>
+            • Form gửi Brief tự động về Gmail
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <span style="font-size: 10px; background: #1591DC; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Calendly Sync</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>Trải nghiệm đa thiết bị</span>
+      <div class="swipe-indicator">Trượt tiếp ➔</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: MULTI-ANGLE SYSTEM OVERVIEW -->
+  <div class="slide" id="slide-3">
+    <div class="glow-top"></div>
+    <div class="glow-bottom"></div>
+    
+    <div class="slide-header">
+      <div class="brand-tag">
+        <img src="/thomas_portrait.jpg" alt="Thomas">
+        <span>Giao diện thực tế</span>
+      </div>
+      <div class="slide-num">03 / 08</div>
     </div>
 
     <div class="slide-content">
@@ -234,7 +330,6 @@
         </p>
       </div>
 
-      <!-- Balanced UI Preview Grid -->
       <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px;">
         
         <!-- Desktop UI Mockup Box -->
@@ -320,8 +415,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 3: POSITIONING & REAL STUDIO PORTRAIT -->
-  <div class="slide" id="slide-3">
+  <!-- SLIDE 4: POSITIONING & REAL STUDIO PORTRAIT -->
+  <div class="slide" id="slide-4">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
     
@@ -330,7 +425,7 @@
         <img src="/thomas_portrait.jpg" alt="Thomas">
         <span>Định vị chuyên gia</span>
       </div>
-      <div class="slide-num">03 / 07</div>
+      <div class="slide-num">04 / 08</div>
     </div>
 
     <div class="slide-content">
@@ -345,8 +440,6 @@
       </div>
 
       <div style="display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: center;">
-        
-        <!-- Portrait Card -->
         <div style="position: relative; aspect-ratio: 3/4; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 16px 36px rgba(0,0,0,0.8);">
           <img src="/thomas_portrait.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(125%);">
           <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #fff; text-align: center;">
@@ -354,7 +447,6 @@
           </div>
         </div>
 
-        <!-- Credentials List -->
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <div class="card-box" style="padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
             <div style="width: 8px; height: 8px; border-radius: 50%; background: #1591DC;"></div>
@@ -380,7 +472,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -390,8 +481,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: VIDEO SHOWCASE (3 CLEAN 9:16 CARDS) -->
-  <div class="slide" id="slide-4">
+  <!-- SLIDE 5: VIDEO SHOWCASE WITH REAL THUMBS -->
+  <div class="slide" id="slide-5">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
     
@@ -400,7 +491,7 @@
         <img src="/thomas_portrait.jpg" alt="Thomas">
         <span>Trình diễn sản phẩm</span>
       </div>
-      <div class="slide-num">04 / 07</div>
+      <div class="slide-num">05 / 08</div>
     </div>
 
     <div class="slide-content">
@@ -413,9 +504,7 @@
         </p>
       </div>
 
-      <!-- 3 Vertical Video Cards with Real Reels Images -->
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;">
-        
         <!-- Card 1 -->
         <div class="card-box" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between; height: 410px;">
           <div style="aspect-ratio: 9/13; border-radius: 12px; background: #000; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden;">
@@ -460,7 +549,6 @@
             <div style="font-size: 12px; color: #9496a1; margin-top: 2px;">Multi-layer Audio SFX</div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -470,8 +558,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: 3-STEP PROCESS -->
-  <div class="slide" id="slide-5">
+  <!-- SLIDE 6: 3-STEP PROCESS -->
+  <div class="slide" id="slide-6">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
     
@@ -480,7 +568,7 @@
         <img src="/thomas_portrait.jpg" alt="Thomas">
         <span>Quy trình làm việc</span>
       </div>
-      <div class="slide-num">05 / 07</div>
+      <div class="slide-num">06 / 08</div>
     </div>
 
     <div class="slide-content">
@@ -494,7 +582,6 @@
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 14px;">
-        
         <div class="card-box" style="display: flex; align-items: center; gap: 24px; padding: 22px 28px;">
           <div style="font-size: 28px; font-weight: 800; color: #1591DC; font-family: monospace;">01</div>
           <div style="flex: 1;">
@@ -533,7 +620,6 @@
             </p>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -543,8 +629,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: CONVERSION FUNNEL (INTAKE & CALENDLY) -->
-  <div class="slide" id="slide-6">
+  <!-- SLIDE 7: CONVERSION FUNNEL -->
+  <div class="slide" id="slide-7">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
     
@@ -553,7 +639,7 @@
         <img src="/thomas_portrait.jpg" alt="Thomas">
         <span>Phễu chuyển đổi</span>
       </div>
-      <div class="slide-num">06 / 07</div>
+      <div class="slide-num">07 / 08</div>
     </div>
 
     <div class="slide-content">
@@ -567,7 +653,6 @@
       </div>
 
       <div class="card-box" style="padding: 28px; display: flex; flex-direction: column; gap: 20px;">
-        
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div style="font-size: 14px; font-weight: 600; color: #ffffff;">Phân khúc ngân sách dự án:</div>
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -591,7 +676,6 @@
           <div><strong style="color: #1591DC;">✓</strong> Thông tin yêu cầu tự động gửi thẳng về Gmail cá nhân trong vài giây</div>
           <div><strong style="color: #1591DC;">✓</strong> Nút đặt lịch <strong>Calendly 15 phút</strong> trao đổi trực tiếp không cần nhắn tin qua lại</div>
         </div>
-
       </div>
     </div>
 
@@ -601,8 +685,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 7: SUMMARY & CTA -->
-  <div class="slide" id="slide-7">
+  <!-- SLIDE 8: SUMMARY & ULTRA-ELEGANT CTA BUTTON -->
+  <div class="slide" id="slide-8">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
     
@@ -611,36 +695,39 @@
         <img src="/thomas_portrait.jpg" alt="Thomas">
         <span>Thomas Nguyen // Video Editor</span>
       </div>
-      <div class="slide-num">07 / 07</div>
+      <div class="slide-num">08 / 08</div>
     </div>
 
-    <div class="slide-content" style="gap: 22px;">
+    <div class="slide-content" style="gap: 24px;">
       <h2 style="font-size: 46px; line-height: 1.18; font-weight: 700; color: #ffffff;">
         Biến Portfolio thành <br>
         <span style="color: #1591DC;">cỗ máy chốt khách High-Ticket</span>
       </h2>
 
-      <div class="card-box" style="padding: 26px 32px; display: flex; flex-direction: column; gap: 14px;">
-        <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
+      <div class="card-box" style="padding: 24px 30px; display: flex; flex-direction: column; gap: 13px;">
+        <div style="font-size: 15px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
           <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Ảnh chân dung thực tế:</strong> Xây dựng niềm tin cá nhân vững chắc</span>
         </div>
-        <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 15px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
           <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Hero định vị kết quả:</strong> Nhấn mạnh 85%+ 5-Second Retention Score</span>
         </div>
-        <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 15px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
           <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Showcase chuẩn 9:16:</strong> Trải nghiệm xem tức thì không gián đoạn</span>
         </div>
-        <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 15px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
           <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Form Brief & Calendly:</strong> Rút ngắn chu kỳ chốt hợp đồng</span>
         </div>
       </div>
 
-      <div style="background: rgba(21,145,220,0.1); border: 1px solid rgba(21,145,220,0.35); border-radius: 18px; padding: 22px 24px; text-align: center;">
-        <div style="font-size: 15px; font-weight: 500; color: #9496a1; margin-bottom: 4px;">
-          Trải nghiệm trực tiếp Website tại:
-        </div>
-        <div style="font-size: 24px; font-weight: 800; color: #1591DC;">
-          thomasnguyen.online
+      <!-- ULTRA-ELEGANT REFINED CTA BUTTON -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 4px;">
+        <span style="font-size: 13px; color: #9496a1; font-weight: 500; letter-spacing: 0.02em;">
+          Trải nghiệm trực tiếp toàn bộ Website tại:
+        </span>
+        
+        <div style="display: inline-flex; align-items: center; gap: 12px; padding: 14px 36px; border-radius: 999px; background: #1591DC; color: #ffffff; font-size: 17px; font-weight: 700; box-shadow: 0 8px 25px rgba(21,145,220,0.4); border: 1px solid rgba(255,255,255,0.25); cursor: pointer;">
+          <span>thomasnguyen.online</span>
+          <span style="font-size: 15px; font-weight: 800;">↗</span>
         </div>
       </div>
     </div>
