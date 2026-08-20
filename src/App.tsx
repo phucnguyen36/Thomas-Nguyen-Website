@@ -16,7 +16,11 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
-  Sparkle
+  Mail,
+  Linkedin,
+  Facebook,
+  Twitter,
+  X
 } from 'lucide-react';
 
 export default function App() {
