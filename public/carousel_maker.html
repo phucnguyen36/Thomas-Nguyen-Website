@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instagram Carousel 1:1 - Pure Swiss Font & Multi-Angle Showcase</title>
+  <title>Instagram Carousel 1:1 - Unified Swiss Font - No Italics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-style: normal !important;
       letter-spacing: -0.03em;
     }
     body {
@@ -33,7 +34,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 72px 76px 64px 76px;
+      padding: 76px 80px 68px 80px;
       box-shadow: 0 30px 70px rgba(0,0,0,0.85);
       border: 1px solid rgba(255,255,255,0.08);
     }
@@ -47,7 +48,7 @@
       transform: translateX(-50%);
       width: 850px;
       height: 420px;
-      background: radial-gradient(circle, rgba(21,145,220,0.16) 0%, rgba(21,145,220,0) 70%);
+      background: radial-gradient(circle, rgba(21,145,220,0.15) 0%, rgba(21,145,220,0) 70%);
       pointer-events-none;
     }
     .glow-bottom {
@@ -101,7 +102,7 @@
       z-index: 10;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 24px;
     }
     .slide-footer {
       position: relative;
@@ -127,15 +128,25 @@
     .card-box {
       background: #12141a;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 24px 28px;
     }
-    .screenshot-frame {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.7);
-      background: #000;
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #9496a1;
+    }
+    .badge-pill.active {
+      background: rgba(21,145,220,0.15);
+      border-color: rgba(21,145,220,0.4);
+      color: #1591DC;
     }
   </style>
   <script>
@@ -158,7 +169,7 @@
 </head>
 <body>
 
-  <!-- SLIDE 1: HOOK (SWISS PURE TYPOGRAPHY) -->
+  <!-- SLIDE 1: HOOK (CLEAN SWISS - NO ITALIC) -->
   <div class="slide" id="slide-1">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -172,9 +183,9 @@
     </div>
 
     <div class="slide-content">
-      <h1 style="font-size: 56px; line-height: 1.15; font-weight: 700; color: #ffffff;">
+      <h1 style="font-size: 54px; line-height: 1.15; font-weight: 700; color: #ffffff;">
         Tại sao 95% Video Editor <br>
-        <span style="color: #1591DC; font-style: italic;">thất bại khi gửi link Drive</span> <br>
+        <span style="color: #1591DC;">thất bại khi chỉ gửi link Drive</span> <br>
         thay vì sở hữu Website riêng?
       </h1>
       
@@ -190,17 +201,17 @@
             <div style="font-size: 14px; color: #9496a1; margin-top: 2px;">Short-Form Visual Retention Studio</div>
           </div>
         </div>
-        <div style="font-size: 22px; font-weight: 700; color: #1591DC; font-family: monospace;">800+ REELS</div>
+        <div style="font-size: 20px; font-weight: 700; color: #1591DC; font-family: monospace;">800+ REELS</div>
       </div>
     </div>
 
     <div class="slide-footer">
-      <span>Xem giải phẫu website đa góc độ</span>
+      <span>Giải pháp thiết kế portfolio</span>
       <div class="swipe-indicator">Trượt tiếp ➔</div>
     </div>
   </div>
 
-  <!-- SLIDE 2: MULTI-ANGLE SHOWCASE (DESKTOP + MOBILE) -->
+  <!-- SLIDE 2: MULTI-ANGLE SYSTEM OVERVIEW (HARMONIOUS CARDS) -->
   <div class="slide" id="slide-2">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -213,55 +224,103 @@
       <div class="slide-num">02 / 07</div>
     </div>
 
-    <div class="slide-content" style="gap: 18px;">
+    <div class="slide-content">
       <div>
-        <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2;">
-          Hệ thống Website <span style="color: #1591DC; font-style: italic;">đa góc độ</span>
+        <h2 style="font-size: 42px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+          Hệ thống Website <span style="color: #1591DC;">chuẩn đa thiết bị</span>
         </h2>
-        <p style="font-size: 16px; color: #9496a1; margin-top: 4px;">
-          Tối ưu hóa toàn diện trên cả Desktop màn hình lớn lẫn giao diện Mobile trực quan.
+        <p style="font-size: 17px; color: #9496a1; margin-top: 4px;">
+          Trải nghiệm đồng bộ hoàn hảo giữa Desktop màn hình rộng và Mobile tiện lợi.
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; align-items: stretch;">
-        <div class="screenshot-frame" style="position: relative; height: 420px; background: #0b0c10;">
-          <img src="/shot_desktop_full.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center 3%;">
-          <div style="position: absolute; bottom: 12px; left: 14px; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; color: #fff;">
-            Desktop View · 1440px
+      <!-- Balanced UI Preview Grid -->
+      <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px;">
+        
+        <!-- Desktop UI Mockup Box -->
+        <div class="card-box" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(21,145,220,0.3);">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></span>
+            </div>
+            <span style="font-size: 12px; color: #9496a1; font-family: monospace;">DESKTOP VIEW · 1440PX</span>
+          </div>
+
+          <div style="padding: 16px 0; display: flex; flex-direction: column; gap: 10px;">
+            <div style="font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">
+              Every Great Story <br>
+              Deserves a <span style="color: #1591DC;">Great Editor.</span>
+            </div>
+            <div style="font-size: 13px; color: #9496a1;">
+              Double viewer retention in 48 hours with high-impact short-form editing.
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;">
+            <div style="text-align: center;">
+              <div style="font-size: 16px; font-weight: 700; color: #fff;">800+</div>
+              <div style="font-size: 10px; color: #9496a1;">REELS</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 16px; font-weight: 700; color: #1591DC;">85%+</div>
+              <div style="font-size: 10px; color: #9496a1;">RETENTION</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 16px; font-weight: 700; color: #fff;">48H</div>
+              <div style="font-size: 10px; color: #9496a1;">DELIVERY</div>
+            </div>
           </div>
         </div>
 
-        <div class="screenshot-frame" style="position: relative; height: 420px; background: #0b0c10;">
-          <img src="/shot_mobile.png" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
-          <div style="position: absolute; bottom: 12px; left: 14px; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; color: #1591DC;">
-            Mobile View · 430px
+        <!-- Mobile UI Mockup Box -->
+        <div class="card-box" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 12px;">
+            <span style="font-size: 12px; color: #1591DC; font-weight: 600;">MOBILE VIEW</span>
+            <span style="font-size: 11px; color: #9496a1;">430PX</span>
+          </div>
+
+          <div style="padding: 12px 0; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,0.05); font-size: 11px; color: #ededf3;">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #4ade80;"></span>
+              <span>3 Spots Available</span>
+            </div>
+            <div style="font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.3;">
+              Visual Retention <br>for Creators
+            </div>
+          </div>
+
+          <div style="background: #1591DC; color: #fff; text-align: center; padding: 10px; border-radius: 12px; font-size: 12px; font-weight: 700;">
+            Book a Call ➔
           </div>
         </div>
+
       </div>
 
-      <div style="display: flex; gap: 14px;">
-        <div class="card-box" style="flex: 1; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
-          <span style="font-size: 18px; font-weight: 700; color: #1591DC;">✓</span>
+      <div style="display: flex; gap: 12px;">
+        <div class="card-box" style="flex: 1; padding: 14px 18px; display: flex; align-items: center; gap: 10px;">
+          <span style="color: #1591DC; font-weight: 700;">✓</span>
           <span style="font-size: 14px; color: #ededf3;">Tương thích mọi thiết bị</span>
         </div>
-        <div class="card-box" style="flex: 1; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
-          <span style="font-size: 18px; font-weight: 700; color: #1591DC;">✓</span>
-          <span style="font-size: 14px; color: #ededf3;">Tốc độ tải trang dưới 1 giây</span>
+        <div class="card-box" style="flex: 1; padding: 14px 18px; display: flex; align-items: center; gap: 10px;">
+          <span style="color: #1591DC; font-weight: 700;">✓</span>
+          <span style="font-size: 14px; color: #ededf3;">Tốc độ tải dưới 1 giây</span>
         </div>
-        <div class="card-box" style="flex: 1; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
-          <span style="font-size: 18px; font-weight: 700; color: #1591DC;">✓</span>
+        <div class="card-box" style="flex: 1; padding: 14px 18px; display: flex; align-items: center; gap: 10px;">
+          <span style="color: #1591DC; font-weight: 700;">✓</span>
           <span style="font-size: 14px; color: #ededf3;">Chuẩn màu Rec.709</span>
         </div>
       </div>
     </div>
 
     <div class="slide-footer">
-      <span>Điểm chạm đầu tiên</span>
+      <span>Định vị chuyên gia</span>
       <div class="swipe-indicator">Trượt tiếp ➔</div>
     </div>
   </div>
 
-  <!-- SLIDE 3: 1ST VIEWPORT HERO & ABOUT SECTION -->
+  <!-- SLIDE 3: POSITIONING & REAL STUDIO PORTRAIT -->
   <div class="slide" id="slide-3">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -274,27 +333,54 @@
       <div class="slide-num">03 / 07</div>
     </div>
 
-    <div class="slide-content" style="gap: 18px;">
+    <div class="slide-content">
       <div>
-        <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2;">
-          Định vị trong <span style="color: #1591DC; font-style: italic;">3 giây đầu</span>
+        <h2 style="font-size: 42px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+          Bán kết quả giữ chân, <br>
+          <span style="color: #1591DC;">không bán kỹ năng phần mềm</span>
         </h2>
-        <p style="font-size: 16px; color: #9496a1; margin-top: 4px;">
-          Ảnh chân dung nghệ thuật thực tế + cam kết giữ chân người xem 85%+.
+        <p style="font-size: 17px; color: #9496a1; margin-top: 4px;">
+          Khách hàng High-Ticket tìm đối tác giải quyết bài toán Retention và doanh số.
         </p>
       </div>
 
-      <!-- About Section Crop Image -->
-      <div class="screenshot-frame" style="height: 380px; position: relative;">
-        <img src="/shot_desktop_full.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
-      </div>
-
-      <div class="card-box" style="padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="font-size: 15px; font-weight: 700; color: #ffffff;">Thông điệp: "Engineering Viewer Attention With Cinematic Precision."</div>
-          <div style="font-size: 13px; color: #9496a1; margin-top: 2px;">Tạo dựng uy tín cá nhân vượt trội so với link Drive ẩn danh.</div>
+      <div style="display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: center;">
+        
+        <!-- Portrait Card -->
+        <div style="position: relative; aspect-ratio: 3/4; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 16px 36px rgba(0,0,0,0.8);">
+          <img src="/thomas_portrait.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(125%);">
+          <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #fff; text-align: center;">
+            Thomas Nguyen
+          </div>
         </div>
-        <span style="font-size: 14px; font-weight: 700; color: #1591DC;">PRO ATHLETE</span>
+
+        <!-- Credentials List -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="card-box" style="padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #1591DC;"></div>
+            <div>
+              <div style="font-size: 15px; font-weight: 700; color: #ffffff;">800+ Reels bàn giao thực tế</div>
+              <div style="font-size: 13px; color: #9496a1;">Kinh nghiệm thực chiến cùng nhiều creator lớn</div>
+            </div>
+          </div>
+
+          <div class="card-box" style="padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #1591DC;"></div>
+            <div>
+              <div style="font-size: 15px; font-weight: 700; color: #ffffff;">Neuro-Pacing loại bỏ dead-air</div>
+              <div style="font-size: 13px; color: #9496a1;">Tối ưu hóa nhịp cắt giữ chân trong 3 giây đầu</div>
+            </div>
+          </div>
+
+          <div class="card-box" style="padding: 16px 20px; display: flex; align-items: center; gap: 14px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: #1591DC;"></div>
+            <div>
+              <div style="font-size: 15px; font-weight: 700; color: #ffffff;">Quy trình Frame.io chuyên nghiệp</div>
+              <div style="font-size: 13px; color: #9496a1;">Feedback trực tiếp từng timestamp chuẩn xác</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -304,7 +390,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: VIDEO SHOWCASE SECTION -->
+  <!-- SLIDE 4: VIDEO SHOWCASE (3 CLEAN 9:16 CARDS) -->
   <div class="slide" id="slide-4">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -317,30 +403,58 @@
       <div class="slide-num">04 / 07</div>
     </div>
 
-    <div class="slide-content" style="gap: 18px;">
+    <div class="slide-content">
       <div>
-        <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2;">
-          Showcase Reels 9:16 <span style="color: #1591DC; font-style: italic;">trực tiếp</span>
+        <h2 style="font-size: 42px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+          Showcase Reels 9:16 <span style="color: #1591DC;">trực tiếp trong 1-Click</span>
         </h2>
-        <p style="font-size: 16px; color: #9496a1; margin-top: 4px;">
-          Khách lướt và xem mượt mà trong 1 click với thanh trượt ngang tương tác.
+        <p style="font-size: 17px; color: #9496a1; margin-top: 4px;">
+          Khách lướt và xem mượt mà, phân loại kỹ năng rõ ràng thay vì tải file Drive.
         </p>
       </div>
 
-      <!-- Work Section Screenshot -->
-      <div class="screenshot-frame" style="height: 380px; position: relative;">
-        <img src="/shot_desktop_full.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center 44%;">
-      </div>
+      <!-- 3 Vertical Video Cards -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        
+        <div class="card-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between; height: 380px;">
+          <div style="aspect-ratio: 9/12; border-radius: 12px; background: #000; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <span style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.15); padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; color: #fff;">
+              FEATURED 01
+            </span>
+            <span style="font-size: 28px; color: #1591DC;">▶</span>
+          </div>
+          <div style="margin-top: 10px;">
+            <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Visual Hook Engine</div>
+            <div style="font-size: 12px; color: #9496a1; margin-top: 2px;">Giữ chân 85%+ 5s đầu</div>
+          </div>
+        </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-        <div class="card-box" style="padding: 16px 20px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1591DC;">Tỷ lệ dọc 9:16 chuẩn Reels</div>
-          <div style="font-size: 13px; color: #9496a1; margin-top: 2px;">Trải nghiệm tự nhiên như trên điện thoại</div>
+        <div class="card-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between; height: 380px; border-color: rgba(21,145,220,0.4); background: #151821;">
+          <div style="aspect-ratio: 9/12; border-radius: 12px; background: #000; border: 1px solid rgba(21,145,220,0.3); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <span style="position: absolute; top: 10px; left: 10px; background: rgba(21,145,220,0.2); border: 1px solid rgba(21,145,220,0.4); padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; color: #1591DC;">
+              FEATURED 02
+            </span>
+            <span style="font-size: 28px; color: #1591DC;">▶</span>
+          </div>
+          <div style="margin-top: 10px;">
+            <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Bespoke Motion VFX</div>
+            <div style="font-size: 12px; color: #1591DC; margin-top: 2px;">After Effects Keyframing</div>
+          </div>
         </div>
-        <div class="card-box" style="padding: 16px 20px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1591DC;">10 Video tuyển chọn trực tiếp</div>
-          <div style="font-size: 13px; color: #9496a1; margin-top: 2px;">Không cần tải file rời rạc từ Drive</div>
+
+        <div class="card-box" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between; height: 380px;">
+          <div style="aspect-ratio: 9/12; border-radius: 12px; background: #000; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <span style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.15); padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; color: #fff;">
+              FEATURED 03
+            </span>
+            <span style="font-size: 28px; color: #1591DC;">▶</span>
+          </div>
+          <div style="margin-top: 10px;">
+            <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Sound Architecture</div>
+            <div style="font-size: 12px; color: #9496a1; margin-top: 2px;">Multi-layer Audio SFX</div>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -350,7 +464,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: 3-STEP PROCESS SECTION -->
+  <!-- SLIDE 5: 3-STEP PROCESS -->
   <div class="slide" id="slide-5">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -363,26 +477,57 @@
       <div class="slide-num">05 / 07</div>
     </div>
 
-    <div class="slide-content" style="gap: 18px;">
+    <div class="slide-content">
       <div>
-        <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2;">
-          Quy trình 3 bước <span style="color: #1591DC; font-style: italic;">48 Giờ</span>
+        <h2 style="font-size: 42px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+          Quy trình 3 bước <span style="color: #1591DC;">48 Giờ rõ ràng</span>
         </h2>
-        <p style="font-size: 16px; color: #9496a1; margin-top: 4px;">
-          Minh bạch tiến độ làm việc giúp khách hàng yên tâm giao phó dự án quan trọng.
+        <p style="font-size: 17px; color: #9496a1; margin-top: 4px;">
+          Minh bạch tiến độ giúp xóa tan hoàn toàn nỗi sợ trễ deadline của khách hàng.
         </p>
       </div>
 
-      <!-- Process Section Screenshot -->
-      <div class="screenshot-frame" style="height: 380px; position: relative;">
-        <img src="/shot_desktop_full.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center 58%;">
-      </div>
-
-      <div class="card-box" style="padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="font-size: 14px; color: #ededf3;">
-          <strong>01. Gửi Brief</strong> ➔ <strong>02. Dựng phim 48H</strong> ➔ <strong>03. Bàn giao 4K</strong>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        
+        <div class="card-box" style="display: flex; align-items: center; gap: 24px; padding: 22px 28px;">
+          <div style="font-size: 28px; font-weight: 800; color: #1591DC; font-family: monospace;">01</div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 18px; font-weight: 700; color: #ffffff;">Gửi Brief & Footage (Intake)</span>
+              <span class="badge-pill">BƯỚC 1</span>
+            </div>
+            <p style="font-size: 14px; color: #9496a1; margin-top: 4px; line-height: 1.4;">
+              Drop A-roll vào Google Drive hoặc Frame.io kèm ghi chú góc quay và định hướng nội dung.
+            </p>
+          </div>
         </div>
-        <span style="font-size: 13px; color: #1591DC; font-weight: 700; font-family: monospace;">FRAME.IO WORKFLOW</span>
+
+        <div class="card-box" style="display: flex; align-items: center; gap: 24px; padding: 22px 28px; border-color: rgba(21,145,220,0.4); background: #151821;">
+          <div style="font-size: 28px; font-weight: 800; color: #1591DC; font-family: monospace;">02</div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 18px; font-weight: 700; color: #ffffff;">Dựng phim giữ chân trong 48H</span>
+              <span class="badge-pill active">48H TURNAROUND</span>
+            </div>
+            <p style="font-size: 14px; color: #9496a1; margin-top: 4px; line-height: 1.4;">
+              Cắt dead-air, After Effects keyframing, chỉnh màu chuẩn Rec.709 và thiết kế âm thanh đa tầng.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-box" style="display: flex; align-items: center; gap: 24px; padding: 22px 28px;">
+          <div style="font-size: 28px; font-weight: 800; color: #1591DC; font-family: monospace;">03</div>
+          <div style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 18px; font-weight: 700; color: #ffffff;">Bàn giao 4K & Chỉnh sửa không giới hạn</span>
+              <span class="badge-pill">BƯỚC 3</span>
+            </div>
+            <p style="font-size: 14px; color: #9496a1; margin-top: 4px; line-height: 1.4;">
+              Feedback trực tiếp từng timestamp trên Frame.io mượt mà cho đến khi hoàn toàn ưng ý.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -392,7 +537,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: DIRECT INTAKE FORM & CALENDLY -->
+  <!-- SLIDE 6: CONVERSION FUNNEL (INTAKE & CALENDLY) -->
   <div class="slide" id="slide-6">
     <div class="glow-top"></div>
     <div class="glow-bottom"></div>
@@ -405,26 +550,42 @@
       <div class="slide-num">06 / 07</div>
     </div>
 
-    <div class="slide-content" style="gap: 18px;">
+    <div class="slide-content">
       <div>
-        <h2 style="font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1.2;">
-          Form nhận Brief <span style="color: #1591DC; font-style: italic;">tự động về Gmail</span>
+        <h2 style="font-size: 42px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+          Tự động nhận Brief & <span style="color: #1591DC;">chốt lịch tư vấn</span>
         </h2>
-        <p style="font-size: 16px; color: #9496a1; margin-top: 4px;">
-          Lọc ngân sách ($500 - $5,000+) và tích hợp đặt lịch hẹn trực tiếp trong 1 click.
+        <p style="font-size: 17px; color: #9496a1; margin-top: 4px;">
+          Bộ lọc phân khúc ngân sách và đặt lịch trực tiếp chỉ với một cú nhấp.
         </p>
       </div>
 
-      <!-- Contact Section Screenshot -->
-      <div class="screenshot-frame" style="height: 380px; position: relative;">
-        <img src="/shot_desktop_full.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom;">
-      </div>
-
-      <div class="card-box" style="padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="font-size: 14px; color: #ededf3;">
-          Nhận email thông báo khách hàng ngay khi điền Form
+      <div class="card-box" style="padding: 28px; display: flex; flex-direction: column; gap: 20px;">
+        
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 14px; font-weight: 600; color: #ffffff;">Phân khúc ngân sách dự án:</div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span class="badge-pill">Under $500</span>
+            <span class="badge-pill active" style="font-weight: 700;">$500 — $1,000</span>
+            <span class="badge-pill">$1,000 — $2,000</span>
+            <span class="badge-pill">$2,000 — $5,000+</span>
+          </div>
         </div>
-        <span style="font-size: 13px; color: #1591DC; font-weight: 700;">Calendly Sync</span>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 14px; font-weight: 600; color: #ffffff;">Thể loại video cần dựng:</div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span class="badge-pill active" style="font-weight: 700;">Short Form Reels / TikTok</span>
+            <span class="badge-pill">Motion Graphics / VSL</span>
+            <span class="badge-pill">Long Form YouTube</span>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #9496a1; line-height: 1.5;">
+          <div><strong style="color: #1591DC;">✓</strong> Thông tin yêu cầu tự động gửi thẳng về Gmail cá nhân trong vài giây</div>
+          <div><strong style="color: #1591DC;">✓</strong> Nút đặt lịch <strong>Calendly 15 phút</strong> trao đổi trực tiếp không cần nhắn tin qua lại</div>
+        </div>
+
       </div>
     </div>
 
@@ -448,9 +609,9 @@
     </div>
 
     <div class="slide-content" style="gap: 22px;">
-      <h2 style="font-size: 48px; line-height: 1.18; font-weight: 700; color: #ffffff;">
+      <h2 style="font-size: 46px; line-height: 1.18; font-weight: 700; color: #ffffff;">
         Biến Portfolio thành <br>
-        <span style="color: #1591DC; font-style: italic;">cỗ máy chốt khách High-Ticket</span>
+        <span style="color: #1591DC;">cỗ máy chốt khách High-Ticket</span>
       </h2>
 
       <div class="card-box" style="padding: 26px 32px; display: flex; flex-direction: column; gap: 14px;">
@@ -458,13 +619,13 @@
           <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Ảnh chân dung thực tế:</strong> Xây dựng niềm tin cá nhân vững chắc</span>
         </div>
         <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
-          <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Hero Section định vị:</strong> Tập trung vào kết quả giữ chân người xem</span>
+          <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Hero định vị kết quả:</strong> Nhấn mạnh 85%+ 5-Second Retention Score</span>
         </div>
         <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
-          <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Showcase chuẩn 9:16:</strong> Trải nghiệm xem tức thì mượt mà</span>
+          <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Showcase chuẩn 9:16:</strong> Trải nghiệm xem tức thì không gián đoạn</span>
         </div>
         <div style="font-size: 16px; color: #ededf3; display: flex; align-items: center; gap: 12px;">
-          <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Form & Calendly:</strong> Rút ngắn chu kỳ chốt hợp đồng</span>
+          <span style="color: #1591DC; font-weight: 700;">✓</span> <span><strong>Form Brief & Calendly:</strong> Rút ngắn chu kỳ chốt hợp đồng</span>
         </div>
       </div>
 
