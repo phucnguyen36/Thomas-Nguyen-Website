@@ -182,6 +182,7 @@ export default function App() {
         <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-zinc-300 uppercase tracking-wider font-sans">
           <a href="#hero" className="hover:text-blue-400 transition-colors">Intro</a>
           <a href="#mastery" className="hover:text-blue-400 transition-colors">Short-Form Work</a>
+          <a href="#process" className="hover:text-blue-400 transition-colors">Process</a>
           <a href="#reviews" className="hover:text-blue-400 transition-colors">Client Reviews</a>
           <a href="#comparison" className="hover:text-blue-400 transition-colors">Comparison</a>
           <a href="#system" className="hover:text-blue-400 transition-colors">System</a>
@@ -358,6 +359,127 @@ export default function App() {
           </div>
         </section>
 
+        {/* 3. HIGH-CONVERTING PROCESS / WORKFLOW SECTION (FRAMER-INSPIRED HIGH END DESIGN) */}
+        <section id="process" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-8 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-4">
+            <div>
+              <span className="text-[11px] text-blue-400 font-mono uppercase tracking-widest block">
+                STREAMLINED COLLABORATION // THE PROCESS
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white mt-0.5">
+                From Raw Footage To High-Retention Polish
+              </h2>
+            </div>
+            <span className="text-xs text-zinc-400 font-mono uppercase">3-STEP FRICTIONLESS WORKFLOW</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Step 01 */}
+            <div className="spatial-card p-6 sm:p-8 border border-zinc-800 space-y-4 bg-zinc-950/80 hover:border-blue-500/40 transition-all flex flex-col justify-between group">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="w-10 h-10 rounded-lg bg-blue-600/15 border border-blue-500/30 text-blue-400 flex items-center justify-center font-mono font-extrabold text-sm group-hover:bg-blue-600 group-hover:text-white transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                    01
+                  </span>
+                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 border border-zinc-800">
+                    STEP 01 // INTAKE
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-blue-400 transition-colors">
+                    Upload &amp; Hook Alignment
+                  </h3>
+                  <p className="text-xs text-zinc-300 font-light leading-relaxed">
+                    Drop raw A-roll clips into a shared Google Drive or Frame.io folder. We analyze your core message, identify vocal stress points, and craft a high-retention hook strategy.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-800/80 space-y-2 text-[11px] font-mono text-zinc-400">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <span>Raw Footage &amp; Script Notes Analysis</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <span>First 3-Second Retention Plan</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 02 */}
+            <div className="spatial-card p-6 sm:p-8 border border-blue-500/30 space-y-4 bg-blue-950/15 hover:border-blue-500/60 transition-all flex flex-col justify-between group shadow-xl">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-mono font-extrabold text-sm shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+                    02
+                  </span>
+                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-blue-900/40 text-blue-300 border border-blue-500/30">
+                    STEP 02 // PRODUCTION (48H)
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-white uppercase tracking-tight text-blue-400">
+                    Neuro-Pacing &amp; Visual VFX
+                  </h3>
+                  <p className="text-xs text-zinc-200 font-light leading-relaxed">
+                    We eliminate dead air micro-pauses, engineer custom After Effects motion graphics, color grade to Rec.709 standards, and layer multi-track sound effects.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-blue-500/20 space-y-2 text-[11px] font-mono text-zinc-300">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <span>Bespoke After Effects Keyframing</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <span>Rec.709 Color &amp; Multi-Track SFX</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 03 */}
+            <div className="spatial-card p-6 sm:p-8 border border-zinc-800 space-y-4 bg-zinc-950/80 hover:border-blue-500/40 transition-all flex flex-col justify-between group">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="w-10 h-10 rounded-lg bg-blue-600/15 border border-blue-500/30 text-blue-400 flex items-center justify-center font-mono font-extrabold text-sm group-hover:bg-blue-600 group-hover:text-white transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                    03
+                  </span>
+                  <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-zinc-900 text-zinc-400 border border-zinc-800">
+                    STEP 03 // DELIVERY
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-white uppercase tracking-tight group-hover:text-blue-400 transition-colors">
+                    Frame.io Review &amp; 4K Export
+                  </h3>
+                  <p className="text-xs text-zinc-300 font-light leading-relaxed">
+                    Review drafts directly on Frame.io with precise timestamped comments. Get pristine 4K exports optimized for Instagram Reels, TikTok, and YouTube Shorts.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-800/80 space-y-2 text-[11px] font-mono text-zinc-400">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <span>Seamless Timestamp Revisions</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-400 shrink-0" />
+                  <span>4K Multi-Platform Export Package</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
         {/* VERIFIED CLIENT REVIEWS INFINITE HORIZONTAL MARQUEE (100% ENGLISH COPYWRITING) */}
         <section id="reviews" className="space-y-6 pt-4 overflow-hidden scroll-mt-24">
           <div className="px-6 md:px-12 max-w-[1750px] mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
@@ -474,7 +596,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. COMPARISON MODULE */}
+        {/* 4. COMPARISON MODULE */}
         <section id="comparison" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
             <div>
@@ -544,7 +666,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. THE SYSTEM */}
+        {/* 5. THE SYSTEM */}
         <section id="system" className="px-6 md:px-12 max-w-[1750px] mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-800 pb-3">
             <div>
@@ -581,45 +703,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* WORKFLOW SECTION */}
-        <section id="workflow" className="px-6 md:px-12 max-w-4xl mx-auto space-y-6">
-          <div className="text-center space-y-1">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 block">
-              EFFORTLESS COLLABORATION
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
-              From Raw Video To Viral Polish In 3 Steps
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="spatial-card p-5 space-y-3 border border-zinc-800 relative overflow-hidden">
-              <span className="text-2xl font-extrabold font-mono text-blue-400">01</span>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white">Drop Raw Footage</h3>
-              <p className="text-xs text-zinc-400 font-light leading-relaxed">
-                Upload raw A-roll clips to a shared Google Drive or Frame.io folder with your talking points or script notes.
-              </p>
-            </div>
-
-            <div className="spatial-card p-5 space-y-3 border border-blue-500/30 bg-blue-950/10 relative overflow-hidden">
-              <span className="text-2xl font-extrabold font-mono text-blue-400">02</span>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white">Visual Magic (48h)</h3>
-              <p className="text-xs text-zinc-300 font-light leading-relaxed">
-                We cut dead air, design custom motion graphics, color grade to Rec.709, and layer SFX for maximum retention.
-              </p>
-            </div>
-
-            <div className="spatial-card p-5 space-y-3 border border-zinc-800 relative overflow-hidden">
-              <span className="text-2xl font-extrabold font-mono text-blue-400">03</span>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white">Review &amp; Scale</h3>
-              <p className="text-xs text-zinc-400 font-light leading-relaxed">
-                Receive 4K exports optimized for Instagram, TikTok, &amp; YouTube Shorts with unlimited minor revisions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 5. RETENTION AUDIT SECTION */}
+        {/* 6. RETENTION AUDIT SECTION */}
         <section id="audit" className="px-6 md:px-12 max-w-4xl mx-auto text-center space-y-5 py-2">
           <div className="spatial-card p-8 sm:p-10 border border-blue-500/30 space-y-5 bg-blue-950/10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-blue-600/20 border border-blue-500/40 text-xs font-mono uppercase tracking-widest text-blue-300">
@@ -647,7 +731,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. FAQS SECTION */}
+        {/* 7. FAQS SECTION */}
         <section id="faq" className="px-6 md:px-12 max-w-4xl mx-auto space-y-6">
           <div className="text-center space-y-1">
             <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-400 block">
