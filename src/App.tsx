@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Search, 
   Plus, 
@@ -20,9 +20,7 @@ import {
   Linkedin, 
   Facebook, 
   Twitter, 
-  X,
-  Loader2,
-  AlertCircle
+  Loader2
 } from 'lucide-react';
 
 export default function App() {
@@ -39,10 +37,6 @@ export default function App() {
   const [budgetRange, setBudgetRange] = useState('$500-$1000');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-
-  // Live Toast Notification
-  const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
 
   // Horizontal Video Slider Ref
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -97,24 +91,6 @@ export default function App() {
       setIsSubmitting(false);
     }
   };
-
-  useEffect(() => {
-    const notifications = [
-      "⚡ New 30-Second Retention Audit requested by Hoang Phuc",
-      "🔥 Client doubled retention from 38% to 84% with Neuro-Pacing",
-      "🎬 10 Reels batch exported in Rec.709 Standard for Kaleemix",
-      "📈 New strategy call scheduled with Raul Ocana from Spain",
-      "🚀 Editoz Club scaled organic reach by 3.8x this month"
-    ];
-
-    const timer = setTimeout(() => {
-      setToastMessage(notifications[Math.floor(Math.random() * notifications.length)]);
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 5000);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -188,57 +164,60 @@ export default function App() {
 
   // 4 Pillars of Strategy
   const pillars = [
-    { title: "Neuro-Pacing", description: "Precision micro-cuts engineered to erase dead air, eliminating viewer drop-off points within the first 3 seconds.", icon: Zap },
-    { title: "Bespoke Motion VFX", description: "Hand-crafted After Effects keyframes built to match your brand colors and authority level.", icon: Layers },
-    { title: "Psychological B-Roll", description: "Context-relevant visual cues replacing low-effort stock clips with high-conversion visual storytelling.", icon: Sparkles },
-    { title: "Sound Architecture", description: "Multi-track audio engineering with custom risers, drops, and impact SFX that sub-consciously anchor engagement.", icon: Music }
+    { 
+      title: "Neuro-Pacing", 
+      description: "Precision micro-cuts engineered to erase dead air, eliminating viewer drop-off points within the first 3 critical seconds.", 
+      icon: Zap 
+    },
+    { 
+      title: "Bespoke Motion VFX", 
+      description: "Hand-crafted After Effects keyframes built to match your brand palette and establish unshakeable authority.", 
+      icon: Layers 
+    },
+    { 
+      title: "Psychological B-Roll", 
+      description: "Context-relevant visual cues that replace low-effort stock clips with high-conversion visual storytelling.", 
+      icon: Sparkles 
+    },
+    { 
+      title: "Sound Architecture", 
+      description: "Multi-track audio engineering with custom risers, drops, and impact SFX that sub-consciously anchor engagement.", 
+      icon: Music 
+    }
   ];
 
   return (
     <div className="min-h-screen bg-[#0b0c10] text-[#ededf3] relative overflow-x-hidden selection:bg-[#1591DC]/30 selection:text-white">
       
       {/* Film Grain Noise Overlay */}
-      <div className="noise-overlay"></div>
+      <div className="noise-overlay" aria-hidden="true"></div>
 
-      {/* Atmospheric Ambient Glow with #1591DC */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#1591DC]/15 via-[#1591DC]/5 to-transparent blur-[120px]"></div>
-        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-[#1591DC]/6 blur-[130px]"></div>
+      {/* Atmospheric Ambient Glow */}
+      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#1591DC]/12 via-[#1591DC]/4 to-transparent blur-[120px]"></div>
+        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-[#1591DC]/5 blur-[130px]"></div>
       </div>
 
-      {/* LIVE FLOATING TOAST NOTIFICATION */}
-      {showToast && (
-        <div className="fixed bottom-6 right-6 z-50 animate-bounce transition-all">
-          <div className="bg-[#12141a] border border-[#1591DC]/40 px-4 py-3 rounded-full shadow-2xl backdrop-blur-md flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#1591DC] animate-ping"></span>
-            <p className="text-xs text-[#ededf3] font-medium tracking-tight">{toastMessage}</p>
-            <button onClick={() => setShowToast(false)} className="text-[#9496a1] hover:text-white ml-2 cursor-pointer">
-              <X size={14} />
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* KULDEEP CLEAN FLOATING HEADER WITH PORTRAIT LOGO */}
-      <header className="sticky top-0 z-40 bg-[#0b0c10]/85 backdrop-blur-xl border-b border-white/[0.06] px-6 md:px-12 py-3.5 flex justify-between items-center max-w-[1240px] mx-auto">
+      {/* CLEAN STICKY HEADER */}
+      <header className="sticky top-0 z-40 bg-[#0b0c10]/90 backdrop-blur-xl border-b border-white/[0.06] px-6 md:px-12 py-3.5 flex justify-between items-center max-w-[1240px] mx-auto">
         <a href="#hero" className="flex items-center gap-3 text-decoration-none group">
           <img 
             src="/thomas_portrait.jpg" 
-            alt="Thomas Nguyen Logo" 
-            className="w-8 h-8 rounded-full object-cover border border-[#1591DC] shadow-[0_0_12px_rgba(21,145,220,0.5)] group-hover:scale-105 transition-transform"
+            alt="Thomas Nguyen" 
+            className="w-8 h-8 rounded-full object-cover border border-[#1591DC] shadow-[0_0_12px_rgba(21,145,220,0.4)] group-hover:scale-105 transition-transform"
           />
           <span className="font-semibold text-sm md:text-base tracking-tight text-white">
             Thomas Nguyen
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-[#9496a1] tracking-tight">
+        <nav className="hidden md:flex items-center gap-7 text-xs font-medium text-[#9496a1] tracking-tight">
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#work" className="hover:text-white transition-colors">Work</a>
           <a href="#process" className="hover:text-white transition-colors">Process</a>
           <a href="#services" className="hover:text-white transition-colors">Services</a>
           <a href="#testimonial" className="hover:text-white transition-colors">Testimonial</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contact us</a>
+          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -252,11 +231,11 @@ export default function App() {
         </div>
       </header>
 
-      {/* MAIN CONTENT AREA */}
-      <main className="relative z-10 space-y-24 md:space-y-32 pb-28 max-w-[1200px] mx-auto px-6">
+      {/* MAIN CONTENT */}
+      <main className="relative z-10 space-y-28 md:space-y-36 pb-28 max-w-[1160px] mx-auto px-6">
         
         {/* 1. HERO SECTION */}
-        <section id="hero" className="pt-14 md:pt-20 space-y-7 text-center">
+        <section id="hero" className="pt-16 md:pt-22 space-y-7 text-center">
           
           {/* Availability Status Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-xs text-[#ededf3] font-medium tracking-tight shadow-sm">
@@ -264,39 +243,19 @@ export default function App() {
             <span>3 Spots Available for this month</span>
           </div>
           
-          {/* Main Title - Balanced Weight with Bold Italic Accent */}
-          <div className="space-y-3.5 max-w-3xl mx-auto">
+          {/* Main Title */}
+          <div className="space-y-4 max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.08]">
               Every Great Story <br className="hidden sm:block" />
               Deserves a <span className="font-serif-italic font-bold text-[#1591DC]">Great Editor.</span>
             </h1>
             <p className="text-[#9496a1] text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal tracking-tight">
-              High-impact short-form video editing and visual retention strategy for personal brands, founders, and content creators. Double viewer retention in 48 hours.
+              High-impact short-form video editing and visual retention strategy for personal brands, founders, and creators. Double viewer retention in 48 hours.
             </p>
           </div>
 
-          {/* Official Creator Badge With Portrait Avatar */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] backdrop-blur-md shadow-sm">
-            <img 
-              src="/thomas_portrait.jpg" 
-              alt="Thomas Nguyen" 
-              className="w-6 h-6 rounded-full object-cover border border-[#1591DC]"
-            />
-            <div className="text-left text-xs">
-              <span className="text-[#ededf3] font-medium block leading-tight">Thomas Nguyen</span>
-              <a 
-                href="https://thomasnguyen.online" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-[#9496a1] hover:text-[#1591DC] text-[11px] block leading-tight transition-colors"
-              >
-                thomasnguyen.online
-              </a>
-            </div>
-          </div>
-
           {/* Action Button Group */}
-          <div className="pt-1 flex flex-wrap items-center justify-center gap-3">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <a 
               href="#work"
               className="px-7 py-3 btn-primary-kuldeep text-xs tracking-tight inline-flex items-center gap-2 cursor-pointer font-semibold"
@@ -314,7 +273,7 @@ export default function App() {
           </div>
 
           {/* Social Proof Strip */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5 text-xs text-[#9496a1]">
+          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3.5 text-xs text-[#9496a1]">
             <div className="flex items-center -space-x-2">
               <img src="/thomas_portrait.jpg" alt="Thomas" className="w-7 h-7 rounded-full border-2 border-[#0b0c10] object-cover" />
               <div className="w-7 h-7 rounded-full border-2 border-[#0b0c10] bg-gradient-to-tr from-[#1591DC] to-blue-700 flex items-center justify-center text-[10px] font-bold text-white">HP</div>
@@ -332,7 +291,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* 3 Metric Cards Strip (800+ REELS DELIVERED) */}
+          {/* 3 Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto pt-4">
             <div className="kuldeep-card p-5 text-center space-y-0.5">
               <h3 className="text-3xl font-semibold text-white tracking-tight">800+</h3>
@@ -352,9 +311,9 @@ export default function App() {
 
         </section>
 
-        {/* 2. ARTISTIC VERTICAL PORTRAIT SPOTLIGHT (COMPACT, CLOSE SPACING) */}
+        {/* 2. ABOUT THE EDITOR SPOTLIGHT */}
         <section id="about" className="pt-2 scroll-mt-20 max-w-[980px] mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-7 md:gap-10">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-11">
             
             {/* Studio Portrait Art Block */}
             <div className="shrink-0 w-full md:w-[290px] flex justify-center">
@@ -379,10 +338,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* Bio & Philosophy Block */}
+            {/* Bio & Craft */}
             <div className="space-y-4 text-left flex-1">
-              <span className="kuldeep-badge">About The Editor</span>
-              
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
                 Engineering Viewer Attention With <br />
                 <span className="font-serif-italic font-bold text-[#1591DC]">Cinematic Precision.</span>
@@ -426,14 +383,14 @@ export default function App() {
           </div>
         </section>
 
-        {/* 3. KULDEEP HORIZONTAL SLIDABLE SHOWCASE SECTION */}
+        {/* 3. HORIZONTAL SLIDABLE SHOWCASE */}
         <section id="work" className="space-y-5 pt-2 scroll-mt-20">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.06] pb-4">
             <div className="space-y-1">
-              <span className="kuldeep-badge">Editing Work</span>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-                Explore our video editing work &amp; <span className="font-serif-italic font-bold text-[#1591DC]">projects</span>
+                Featured Work &amp; <span className="font-serif-italic font-bold text-[#1591DC]">Projects</span>
               </h2>
+              <p className="text-xs text-[#9496a1]">Selected client reels engineered for high retention and engagement</p>
             </div>
 
             {/* Slider Controls & Search */}
@@ -506,13 +463,13 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. KULDEEP 3-STEP PROCESS SECTION */}
+        {/* 4. WORKFLOW & 3-STEP PROCESS */}
         <section id="process" className="space-y-6 pt-4 scroll-mt-20">
           <div className="text-center space-y-1.5 max-w-2xl mx-auto">
-            <span className="kuldeep-badge">Process</span>
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-              How our video editing service <span className="font-serif-italic font-bold text-[#1591DC]">works for you</span>
+              How the Service <span className="font-serif-italic font-bold text-[#1591DC]">Works For You</span>
             </h2>
+            <p className="text-xs text-[#9496a1]">From raw footage to high-converting 4K delivery in 3 seamless steps</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -532,7 +489,7 @@ export default function App() {
                     Submit Request
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
-                    Share your raw video needs and project details. Drop A-roll clips into Google Drive or Frame.io to get started.
+                    Share your raw footage and goals. Drop A-roll clips into Google Drive, Dropbox, or Frame.io to get started.
                   </p>
                 </div>
               </div>
@@ -540,7 +497,7 @@ export default function App() {
               <div className="pt-3.5 border-t border-white/[0.06] space-y-1.5 text-xs text-[#9496a1]">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
-                  <span>Hook &amp; Script Notes Alignment</span>
+                  <span>Hook &amp; Script Alignment</span>
                 </div>
               </div>
             </div>
@@ -560,7 +517,7 @@ export default function App() {
                     Video Editing
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
-                    Our team edits, cuts dead air, builds bespoke After Effects motion graphics, color grades Rec.709 &amp; layers sound effects.
+                    We cut dead air, build bespoke After Effects motion graphics, color grade in Rec.709 &amp; engineer layered sound effects.
                   </p>
                 </div>
               </div>
@@ -588,7 +545,7 @@ export default function App() {
                     Final Delivery
                   </h3>
                   <p className="text-xs text-[#9496a1] leading-relaxed">
-                    Receive the final 4K video with all necessary adjustments, ready for Instagram Reels, TikTok, and YouTube Shorts.
+                    Receive the final 4K video ready for Instagram Reels, TikTok, and YouTube Shorts with revisions on Frame.io.
                   </p>
                 </div>
               </div>
@@ -604,13 +561,13 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. KULDEEP TESTIMONIAL MARQUEE SECTION */}
+        {/* 5. VERIFIED CLIENT TESTIMONIALS */}
         <section id="testimonial" className="space-y-6 pt-4 overflow-hidden scroll-mt-20">
           <div className="text-center space-y-1.5 max-w-2xl mx-auto">
-            <span className="kuldeep-badge">Testimonial</span>
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-              What our premium clients are <span className="font-serif-italic font-bold text-[#1591DC]">saying about us</span>
+              What Creators <span className="font-serif-italic font-bold text-[#1591DC]">Say About The Work</span>
             </h2>
+            <p className="text-xs text-[#9496a1]">Real feedback from verified clients and content creators worldwide</p>
           </div>
 
           {/* Marquee Row 1 */}
@@ -710,16 +667,16 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. EDITING SERVICES & SYSTEM PILLARS */}
+        {/* 6. CORE CAPABILITIES */}
         <section id="services" className="space-y-6 pt-4 scroll-mt-20">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/[0.06] pb-4">
             <div className="space-y-1">
-              <span className="kuldeep-badge">Services</span>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
                 Core Editing <span className="font-serif-italic font-bold text-[#1591DC]">Capabilities</span>
               </h2>
+              <p className="text-xs text-[#9496a1]">The 4 foundational pillars behind every high-retention edit</p>
             </div>
-            <span className="text-xs text-[#9496a1] uppercase font-medium">04 CORE PILLARS</span>
+            <span className="text-xs text-[#9496a1] uppercase font-medium">04 PILLARS</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -745,15 +702,14 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. KULDEEP DIRECT INTAKE FORM (SUBMITS DIRECTLY TO GMAIL) */}
+        {/* 7. PROJECT INTAKE FORM */}
         <section id="contact" className="space-y-6 pt-4 max-w-2xl mx-auto scroll-mt-20">
           <div className="text-center space-y-1.5">
-            <span className="kuldeep-badge">Contact</span>
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-              Contact us for amazing <span className="font-serif-italic font-bold text-[#1591DC]">video editing projects</span>
+              Start Your <span className="font-serif-italic font-bold text-[#1591DC]">Next Project</span>
             </h2>
             <p className="text-xs text-[#9496a1]">
-              Inquiries are delivered directly to <span className="text-[#1591DC] font-medium">thomasnguyen.editor@gmail.com</span>
+              Submit your project details below. Inquiries are sent directly to <span className="text-[#1591DC] font-medium">thomasnguyen.editor@gmail.com</span>
             </p>
           </div>
 
@@ -862,18 +818,18 @@ export default function App() {
           </div>
         </section>
 
-        {/* 8. KULDEEP FAQ SECTION */}
+        {/* 8. FAQ */}
         <section id="faq" className="space-y-6 pt-4 scroll-mt-20">
           <div className="text-center space-y-1.5 max-w-2xl mx-auto">
-            <span className="kuldeep-badge">FAQ</span>
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
-              Frequently asked questions <span className="font-serif-italic font-bold text-[#1591DC]">about us</span>
+              Frequently Asked <span className="font-serif-italic font-bold text-[#1591DC]">Questions</span>
             </h2>
+            <p className="text-xs text-[#9496a1]">Everything you need to know about our workflow and terms</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-start">
             
-            {/* Book an appointment side card */}
+            {/* Direct Booking Card */}
             <div className="kuldeep-card p-7 space-y-4 lg:col-span-1">
               <div className="w-9 h-9 rounded-full bg-[#1591DC]/15 text-[#1591DC] flex items-center justify-center">
                 <Calendar size={17} />
@@ -949,7 +905,7 @@ export default function App() {
 
       {/* MINIMAL CLEAN FOOTER */}
       <footer className="border-t border-white/[0.06] bg-[#0b0c10] py-8 px-6 md:px-12 relative z-20">
-        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1160px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#9496a1]">
             &copy; 2026 Thomas Nguyen. All rights reserved.
           </p>
