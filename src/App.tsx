@@ -180,13 +180,13 @@ export default function App() {
         </div>
       )}
 
-      {/* KULDEEP CLEAN FLOATING HEADER WITH AVATAR */}
+      {/* KULDEEP CLEAN FLOATING HEADER WITH PORTRAIT LOGO */}
       <header className="sticky top-0 z-40 bg-[#0b0c10]/85 backdrop-blur-xl border-b border-white/[0.06] px-6 md:px-12 py-3 flex justify-between items-center max-w-[1240px] mx-auto">
         <a href="#hero" className="flex items-center gap-3 text-decoration-none group">
           <img 
             src="/thomas_portrait.jpg" 
-            alt="Thomas Nguyen" 
-            className="w-8 h-8 rounded-full object-cover border border-[#1591DC]/80 shadow-[0_0_12px_rgba(21,145,220,0.4)]"
+            alt="Thomas Nguyen Logo" 
+            className="w-8 h-8 rounded-full object-cover border border-[#1591DC] shadow-[0_0_12px_rgba(21,145,220,0.5)] group-hover:scale-105 transition-transform"
           />
           <span className="font-bold text-sm md:text-base tracking-tighter text-white">
             Thomas Nguyen
@@ -293,10 +293,10 @@ export default function App() {
             </div>
           </div>
 
-          {/* 3 Metric Cards Strip */}
+          {/* 3 Metric Cards Strip (800+ REELS DELIVERED) */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto pt-4">
             <div className="kuldeep-card p-5 text-center space-y-0.5">
-              <h3 className="text-3xl font-bold text-white tracking-tighter">600+</h3>
+              <h3 className="text-3xl font-bold text-white tracking-tighter">800+</h3>
               <p className="text-xs text-[#9496a1] uppercase font-semibold tracking-tight">Reels Delivered</p>
             </div>
 
@@ -313,27 +313,27 @@ export default function App() {
 
         </section>
 
-        {/* 2. ARTISTIC BLACK & WHITE SPOTLIGHT SECTION (ABOUT THE EDITOR) */}
+        {/* 2. ARTISTIC VERTICAL PORTRAIT SPOTLIGHT (ABOUT THE EDITOR) */}
         <section id="about" className="space-y-6 pt-4 scroll-mt-20">
           <div className="kuldeep-card p-8 sm:p-12 border border-white/[0.08] bg-[#12141a] overflow-hidden relative">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               
-              {/* Studio Portrait Art Block */}
-              <div className="md:col-span-5 relative group">
-                <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/[0.1] shadow-2xl bg-black">
+              {/* Studio Portrait Art Block - Vertical Aspect Ratio with Elegant Rounded Corners */}
+              <div className="md:col-span-5 relative group flex justify-center">
+                <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/[0.12] shadow-[0_10px_40px_rgba(0,0,0,0.8)] bg-black">
                   <img 
                     src="/thomas_portrait.jpg" 
                     alt="Thomas Nguyen - Short-Form Video Editor & Retention Strategist" 
                     className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
                   
-                  {/* Floating Tag */}
+                  {/* Floating Tag at Bottom of Portrait */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-semibold">
-                    <span className="px-3 py-1 rounded-full bg-black/80 border border-white/[0.15] text-[#ededf3] backdrop-blur-md">
+                    <span className="px-3.5 py-1.5 rounded-full bg-black/85 border border-white/[0.15] text-[#ededf3] backdrop-blur-md">
                       Thomas Nguyen
                     </span>
-                    <span className="px-3 py-1 rounded-full bg-[#1591DC]/20 border border-[#1591DC]/40 text-[#1591DC] backdrop-blur-md flex items-center gap-1.5">
+                    <span className="px-3.5 py-1.5 rounded-full bg-[#1591DC]/20 border border-[#1591DC]/40 text-[#1591DC] backdrop-blur-md flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC] animate-ping"></span>
                       Available
                     </span>
@@ -357,15 +357,15 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
                     <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                    <span>800+ Reels delivered for creators</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
+                    <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
                     <span>Neuro-Pacing to eliminate dead air</span>
                   </div>
                   <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
                     <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
                     <span>Rec.709 studio color calibration</span>
-                  </div>
-                  <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                    <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
-                    <span>Bespoke After Effects keyframing</span>
                   </div>
                   <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
                     <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
