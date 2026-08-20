@@ -21,11 +21,7 @@ import {
   Facebook, 
   Twitter, 
   X,
-  Award,
-  Video,
-  BarChart3,
-  Flame,
-  ShieldCheck
+  Loader2
 } from 'lucide-react';
 
 export default function App() {
@@ -33,8 +29,14 @@ export default function App() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   // Form State
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
   const [videoType, setVideoType] = useState('Short Form Videos');
   const [budgetRange, setBudgetRange] = useState('$500-$1000');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   // Live Toast Notification
@@ -57,6 +59,46 @@ export default function App() {
   const handleCalendlyRedirect = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
     window.open(calendlyBookingUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  // Contact Form Submission Direct to Gmail
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/thomasnguyen.editor@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Email: formData.email,
+          'Video Type': videoType,
+          'Budget Range': budgetRange,
+          'Vision & Notes': formData.message || 'No additional notes provided.',
+          _subject: `⚡ New Project Inquiry from ${formData.name} (${budgetRange})`,
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        // Fallback to mailto link
+        window.location.href = `mailto:thomasnguyen.editor@gmail.com?subject=Project Inquiry from ${encodeURIComponent(formData.name)}&body=Name: ${encodeURIComponent(formData.name)}%0D%0AEmail: ${encodeURIComponent(formData.email)}%0D%0AType: ${encodeURIComponent(videoType)}%0D%0ABudget: ${encodeURIComponent(budgetRange)}%0D%0ANotes: ${encodeURIComponent(formData.message)}`;
+        setFormSubmitted(true);
+      }
+    } catch {
+      // Direct email client fallback
+      window.location.href = `mailto:thomasnguyen.editor@gmail.com?subject=Project Inquiry from ${encodeURIComponent(formData.name)}&body=Name: ${encodeURIComponent(formData.name)}%0D%0AEmail: ${encodeURIComponent(formData.email)}%0D%0AType: ${encodeURIComponent(videoType)}%0D%0ABudget: ${encodeURIComponent(budgetRange)}%0D%0ANotes: ${encodeURIComponent(formData.message)}`;
+      setFormSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -214,10 +256,10 @@ export default function App() {
       </header>
 
       {/* MAIN CONTENT AREA */}
-      <main className="relative z-10 space-y-24 md:space-y-28 pb-28 max-w-[1200px] mx-auto px-6">
+      <main className="relative z-10 space-y-24 md:space-y-32 pb-28 max-w-[1200px] mx-auto px-6">
         
         {/* 1. HERO SECTION */}
-        <section id="hero" className="pt-14 md:pt-18 space-y-7 text-center">
+        <section id="hero" className="pt-14 md:pt-20 space-y-7 text-center">
           
           {/* Availability Status Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12141a] border border-white/[0.08] text-xs text-[#ededf3] font-semibold tracking-tight shadow-sm">
@@ -313,79 +355,77 @@ export default function App() {
 
         </section>
 
-        {/* 2. ARTISTIC VERTICAL PORTRAIT SPOTLIGHT (ABOUT THE EDITOR) */}
-        <section id="about" className="space-y-6 pt-4 scroll-mt-20">
-          <div className="kuldeep-card p-8 sm:p-12 border border-white/[0.08] bg-[#12141a] overflow-hidden relative">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        {/* 2. ARTISTIC VERTICAL PORTRAIT SPOTLIGHT (SEAMLESS CLEAN LAYOUT - NO OUTER BOX) */}
+        <section id="about" className="pt-2 scroll-mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 items-center">
+            
+            {/* Studio Portrait Art Block - Vertical Tall Frame with Soft Rounded Corners */}
+            <div className="md:col-span-5 relative group flex justify-center md:justify-start">
+              <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/[0.12] shadow-[0_20px_50px_rgba(0,0,0,0.85)] bg-[#0b0c10]">
+                <img 
+                  src="/thomas_portrait.jpg" 
+                  alt="Thomas Nguyen - Short-Form Video Editor & Retention Strategist" 
+                  className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Floating Tag at Bottom of Portrait */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-semibold">
+                  <span className="px-3.5 py-1.5 rounded-full bg-black/85 border border-white/[0.15] text-[#ededf3] backdrop-blur-md">
+                    Thomas Nguyen
+                  </span>
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#1591DC]/20 border border-[#1591DC]/40 text-[#1591DC] backdrop-blur-md flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC] animate-ping"></span>
+                    Available
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bio & Philosophy Block */}
+            <div className="md:col-span-7 space-y-5 text-left">
+              <span className="kuldeep-badge">About The Editor</span>
               
-              {/* Studio Portrait Art Block - Vertical Aspect Ratio with Elegant Rounded Corners */}
-              <div className="md:col-span-5 relative group flex justify-center">
-                <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-3xl overflow-hidden border border-white/[0.12] shadow-[0_10px_40px_rgba(0,0,0,0.8)] bg-black">
-                  <img 
-                    src="/thomas_portrait.jpg" 
-                    alt="Thomas Nguyen - Short-Form Video Editor & Retention Strategist" 
-                    className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-all duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
-                  
-                  {/* Floating Tag at Bottom of Portrait */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-semibold">
-                    <span className="px-3.5 py-1.5 rounded-full bg-black/85 border border-white/[0.15] text-[#ededf3] backdrop-blur-md">
-                      Thomas Nguyen
-                    </span>
-                    <span className="px-3.5 py-1.5 rounded-full bg-[#1591DC]/20 border border-[#1591DC]/40 text-[#1591DC] backdrop-blur-md flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC] animate-ping"></span>
-                      Available
-                    </span>
-                  </div>
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+                Engineering Viewer Attention With <br />
+                <span className="font-serif-italic font-normal text-[#1591DC]">Cinematic Precision.</span>
+              </h2>
+
+              <p className="text-sm sm:text-base text-[#9496a1] leading-relaxed">
+                I specialize in performance-driven short-form editing for founders, personal brands, and high-growth creators. By blending psychological pacing, bespoke After Effects motion design, and immersive sound engineering, I turn ordinary raw footage into magnetic video assets that command attention.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                  <span>800+ Reels delivered for creators</span>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                  <span>Neuro-Pacing to eliminate dead air</span>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                  <span>Rec.709 studio color calibration</span>
+                </div>
+                <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
+                  <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
+                  <span>Frame.io collaborative workflow</span>
                 </div>
               </div>
 
-              {/* Bio & Philosophy Block */}
-              <div className="md:col-span-7 space-y-5 text-left">
-                <span className="kuldeep-badge">About The Editor</span>
-                
-                <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
-                  Engineering Viewer Attention With <br />
-                  <span className="font-serif-italic font-normal text-[#1591DC]">Cinematic Precision.</span>
-                </h2>
-
-                <p className="text-xs sm:text-sm text-[#9496a1] leading-relaxed">
-                  I specialize in performance-driven short-form editing for founders, personal brands, and high-growth creators. By blending psychological pacing, bespoke After Effects motion design, and immersive sound engineering, I turn ordinary raw footage into magnetic video assets that command attention.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                    <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
-                    <span>800+ Reels delivered for creators</span>
-                  </div>
-                  <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                    <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
-                    <span>Neuro-Pacing to eliminate dead air</span>
-                  </div>
-                  <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                    <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
-                    <span>Rec.709 studio color calibration</span>
-                  </div>
-                  <div className="flex items-start gap-2.5 text-xs text-[#ededf3]">
-                    <CheckCircle2 size={16} className="text-[#1591DC] shrink-0 mt-0.5" />
-                    <span>Frame.io collaborative workflow</span>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <button 
-                    onClick={handleCalendlyRedirect}
-                    className="px-6 py-2.5 btn-primary-kuldeep text-xs font-semibold tracking-tight cursor-pointer inline-flex items-center gap-2"
-                  >
-                    <span>Work With Thomas</span>
-                    <ArrowUpRight size={13} />
-                  </button>
-                </div>
-
+              <div className="pt-2">
+                <button 
+                  onClick={handleCalendlyRedirect}
+                  className="px-7 py-3 btn-primary-kuldeep text-xs font-semibold tracking-tight cursor-pointer inline-flex items-center gap-2"
+                >
+                  <span>Work With Thomas</span>
+                  <ArrowUpRight size={14} />
+                </button>
               </div>
 
             </div>
+
           </div>
         </section>
 
@@ -708,30 +748,28 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. KULDEEP INTERACTIVE CONTACT INTAKE FORM */}
+        {/* 7. KULDEEP DIRECT INTAKE FORM (SUBMITS DIRECTLY TO GMAIL) */}
         <section id="contact" className="space-y-6 pt-4 max-w-2xl mx-auto scroll-mt-20">
           <div className="text-center space-y-1.5">
             <span className="kuldeep-badge">Contact</span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Contact us for amazing <span className="font-serif-italic font-normal text-[#1591DC]">video editing projects</span>
             </h2>
+            <p className="text-xs text-[#9496a1]">
+              Inquiries are delivered directly to <span className="text-[#1591DC] font-semibold">thomasnguyen.editor@gmail.com</span>
+            </p>
           </div>
 
           <div className="kuldeep-card p-7 sm:p-9 space-y-5 border border-white/[0.08]">
-            <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                setFormSubmitted(true);
-                setTimeout(() => setFormSubmitted(false), 6000);
-              }} 
-              className="space-y-4"
-            >
+            <form onSubmit={handleFormSubmit} className="space-y-4">
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#ededf3] block">Name</label>
                 <input 
                   type="text" 
                   required
                   placeholder="Your full name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-[#0b0c10] border border-white/[0.08] rounded-xl px-4 py-2.5 text-xs text-white placeholder:text-[#9496a1]/60 focus:outline-none focus:border-[#1591DC] transition-all"
                 />
               </div>
@@ -742,6 +780,8 @@ export default function App() {
                   type="email" 
                   required
                   placeholder="your.email@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-[#0b0c10] border border-white/[0.08] rounded-xl px-4 py-2.5 text-xs text-white placeholder:text-[#9496a1]/60 focus:outline-none focus:border-[#1591DC] transition-all"
                 />
               </div>
@@ -793,18 +833,26 @@ export default function App() {
                 <textarea 
                   rows={3}
                   placeholder="Tell us about your content, goals, reference links or vision..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-[#0b0c10] border border-white/[0.08] rounded-xl px-4 py-2.5 text-xs text-white placeholder:text-[#9496a1]/60 focus:outline-none focus:border-[#1591DC] transition-all resize-none"
                 ></textarea>
               </div>
 
               <button 
                 type="submit"
-                className="w-full py-3 btn-primary-kuldeep text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full py-3 btn-primary-kuldeep text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
-                {formSubmitted ? (
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={15} className="animate-spin" />
+                    <span>Sending to Thomas Nguyen...</span>
+                  </>
+                ) : formSubmitted ? (
                   <>
                     <Check size={15} />
-                    <span>Request Sent! We'll reply within 24 hours</span>
+                    <span>Inquiry Sent! Check your email for reply</span>
                   </>
                 ) : (
                   <>
@@ -813,6 +861,22 @@ export default function App() {
                   </>
                 )}
               </button>
+
+              {formSubmitted && (
+                <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs text-center space-y-1">
+                  <p className="font-semibold">✓ Your project details have been emailed directly to Thomas!</p>
+                  <p className="text-[11px] text-zinc-300">
+                    Want to discuss right away?{' '}
+                    <button 
+                      type="button" 
+                      onClick={handleCalendlyRedirect} 
+                      className="text-[#1591DC] underline font-semibold cursor-pointer"
+                    >
+                      Click here to book a 15-min call on Calendly
+                    </button>
+                  </p>
+                </div>
+              )}
             </form>
           </div>
         </section>
