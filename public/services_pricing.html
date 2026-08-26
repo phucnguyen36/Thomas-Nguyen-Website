@@ -25,11 +25,15 @@
       padding: 30px 0;
     }
     
-    /* 3:4 PORTRAIT RATE CARD (1080 x 1440) */
+    /* 3:4 PORTRAIT RATE CARD (1080 x 1440) - 100% Seamless Atmospheric Gradient */
     .ratecard-portrait {
       width: 1080px;
       height: 1440px;
       background-color: #0b0c10;
+      background-image: 
+        radial-gradient(ellipse 90% 55% at 50% 0%, rgba(21, 145, 220, 0.16) 0%, rgba(11, 12, 16, 0) 100%),
+        radial-gradient(circle 700px at 100% 100%, rgba(21, 145, 220, 0.12) 0%, rgba(11, 12, 16, 0) 100%),
+        radial-gradient(circle 500px at 0% 50%, rgba(21, 145, 220, 0.04) 0%, rgba(11, 12, 16, 0) 100%);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -40,11 +44,15 @@
       border: 1px solid rgba(255,255,255,0.08);
     }
     
-    /* 16:9 LANDSCAPE RATE CARD (1920 x 1080) */
+    /* 16:9 LANDSCAPE RATE CARD (1920 x 1080) - 100% Seamless Atmospheric Gradient */
     .ratecard-landscape {
       width: 1920px;
       height: 1080px;
       background-color: #0b0c10;
+      background-image: 
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(21, 145, 220, 0.16) 0%, rgba(11, 12, 16, 0) 100%),
+        radial-gradient(circle 900px at 100% 100%, rgba(21, 145, 220, 0.12) 0%, rgba(11, 12, 16, 0) 100%),
+        radial-gradient(circle 600px at 0% 50%, rgba(21, 145, 220, 0.05) 0%, rgba(11, 12, 16, 0) 100%);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -53,26 +61,6 @@
       padding: 60px 80px;
       box-shadow: 0 40px 100px rgba(0,0,0,0.95);
       border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .glow-cyan-top {
-      position: absolute;
-      top: -160px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(21,145,220,0.18) 0%, rgba(21,145,220,0) 70%);
-      pointer-events-none;
-    }
-    .glow-cyan-bottom {
-      position: absolute;
-      bottom: -150px;
-      right: -80px;
-      width: 700px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(21,145,220,0.12) 0%, rgba(21,145,220,0) 70%);
-      pointer-events-none;
     }
 
     .brand-tag {
@@ -209,8 +197,6 @@
   <!-- 1. PORTRAIT 3:4 RATE CARD (1080 x 1440)    -->
   <!-- ========================================== -->
   <div class="ratecard-portrait" id="card-portrait">
-    <div class="glow-cyan-top"></div>
-    <div class="glow-cyan-bottom"></div>
 
     <!-- Header Area -->
     <div style="position: relative; z-index: 10;">
@@ -430,8 +416,6 @@
   <!-- 2. LANDSCAPE 16:9 RATE CARD (1920 x 1080)    -->
   <!-- ============================================= -->
   <div class="ratecard-landscape" id="card-landscape">
-    <div class="glow-cyan-top"></div>
-    <div class="glow-cyan-bottom"></div>
 
     <!-- Header Row -->
     <div style="position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center;">

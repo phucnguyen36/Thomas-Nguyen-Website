@@ -25,11 +25,13 @@ for (const t of tasks) {
   const outFile1 = path.join(outDir1, t.file);
   const outFile2 = path.join(outDir2, t.file);
   const url = `http://localhost:5173/services_pricing.html?mode=${t.mode}`;
-  console.log(`Rendering ${t.mode.toUpperCase()} Rate Card (${t.w}x${t.h})...`);
-  const cmd = `"${edgePath}" --headless --disable-gpu --window-size=${t.w},${t.h} --screenshot="${outFile1}" "${url}"`;
+  console.log(`Rendering 2K Ultra HD ${t.mode.toUpperCase()} Rate Card (Scale Factor 2x)...`);
+  
+  // --force-device-scale-factor=2 renders true 2K/4K high-density pixels
+  const cmd = `"${edgePath}" --headless --disable-gpu --force-device-scale-factor=2 --window-size=${t.w},${t.h} --screenshot="${outFile1}" "${url}"`;
   execSync(cmd);
   fs.copyFileSync(outFile1, outFile2);
-  console.log(`Saved ${outFile2}`);
+  console.log(`Saved 2K Ultra HD: ${outFile2}`);
 }
 
-console.log('All Services & Pricing Rate Cards rendered successfully!');
+console.log('All 2K Rate Cards rendered successfully!');
