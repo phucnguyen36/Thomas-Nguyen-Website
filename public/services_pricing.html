@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Nguyen — Services & Pricing Rate Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.025em;
+    }
+    body {
+      background-color: #050608;
+      color: #ededf3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 30px 0;
+    }
+    .font-serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif !important;
+      font-style: italic !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.01em !important;
+      color: #ffffff;
+    }
+    
+    /* 3:4 PORTRAIT RATE CARD (1080 x 1440) */
+    .ratecard-portrait {
+      width: 1080px;
+      height: 1440px;
+      background-color: #0b0c10;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 65px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.95);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    /* 16:9 LANDSCAPE RATE CARD (1920 x 1080) */
+    .ratecard-landscape {
+      width: 1920px;
+      height: 1080px;
+      background-color: #0b0c10;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 80px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.95);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .glow-cyan-top {
+      position: absolute;
+      top: -160px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(21,145,220,0.18) 0%, rgba(21,145,220,0) 70%);
+      pointer-events-none;
+    }
+    .glow-cyan-bottom {
+      position: absolute;
+      bottom: -150px;
+      right: -80px;
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(21,145,220,0.12) 0%, rgba(21,145,220,0) 70%);
+      pointer-events-none;
+    }
+
+    .brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #ededf3;
+    }
+    .brand-tag img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid #1591DC;
+    }
+
+    .rate-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1591DC;
+      font-family: monospace;
+      background: rgba(21,145,220,0.12);
+      border: 1px solid rgba(21,145,220,0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .service-card {
+      background: #12141a;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 24px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .service-card.highlight {
+      background: #151822;
+      border-color: rgba(21,145,220,0.5);
+      box-shadow: 0 0 35px rgba(21,145,220,0.15);
+    }
+
+    .pill-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .pill-tag.normal {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #9496a1;
+    }
+    .pill-tag.cyan {
+      background: rgba(21,145,220,0.2);
+      border: 1px solid rgba(21,145,220,0.45);
+      color: #1591DC;
+    }
+    .pill-tag.amber {
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.4);
+      color: #fbbf24;
+    }
+
+    .price-tag {
+      font-size: 38px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .price-tag span {
+      font-size: 15px;
+      font-weight: 500;
+      color: #9496a1;
+      letter-spacing: normal;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin: 16px 0 0 0;
+    }
+    .feature-item {
+      font-size: 13px;
+      color: #c5c7d0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .feature-item svg {
+      width: 14px;
+      height: 14px;
+      color: #1591DC;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const mode = params.get('mode');
+      if (mode === 'landscape') {
+        document.getElementById('card-portrait').style.display = 'none';
+        document.getElementById('card-landscape').style.display = 'flex';
+      } else if (mode === 'portrait') {
+        document.getElementById('card-landscape').style.display = 'none';
+        document.getElementById('card-portrait').style.display = 'flex';
+      }
+      if (mode) {
+        document.body.style.padding = '0';
+        document.body.style.margin = '0';
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- 1. PORTRAIT 3:4 RATE CARD (1080 x 1440)    -->
+  <!-- ========================================== -->
+  <div class="ratecard-portrait" id="card-portrait">
+    <div class="glow-cyan-top"></div>
+    <div class="glow-cyan-bottom"></div>
+
+    <!-- Header Area -->
+    <div style="position: relative; z-index: 10;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div class="brand-tag">
+          <img src="/thomas_portrait.jpg" alt="Thomas">
+          <span>Thomas Nguyen // Video Editor</span>
+        </div>
+        <div class="rate-badge">SERVICES &amp; RATE CARD</div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h1 style="font-size: 46px; font-weight: 700; color: #ffffff; line-height: 1.15;">
+            Production <span class="font-serif-italic">Services</span> &amp; Rates
+          </h1>
+          <p style="font-size: 16px; color: #9496a1; margin-top: 6px;">
+            Engineered for Founders, Creators &amp; Brands demanding 85%+ Viewer Retention.
+          </p>
+        </div>
+        <div style="text-align: right; font-family: monospace; font-size: 12px; color: #9496a1;">
+          <span style="color: #4ade80;">●</span> 3 SPOTS AVAILABLE
+        </div>
+      </div>
+    </div>
+
+    <!-- 2x2 Services Grid -->
+    <div style="position: relative; z-index: 10; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 18px 0;">
+      
+      <!-- 01: Short-Form Standard -->
+      <div class="service-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="pill-tag normal">STANDARD SHORT-FORM</span>
+            <span style="font-family: monospace; font-size: 12px; color: #9496a1;">01</span>
+          </div>
+          <div style="font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Short-Form Essential</div>
+          <div style="font-size: 12px; color: #9496a1; line-height: 1.35;">
+            Clean, high-frequency cuts for daily TikTok, Reels &amp; Shorts volume.
+          </div>
+          <div class="price-tag" style="margin-top: 14px;">
+            $30 <span style="font-size: 14px;">/ video</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Precision dead-air micro-cuts</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Dynamic subtitle styling &amp; emoji cues</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Essential SFX &amp; background audio mix</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>24-48h Delivery · 2 Revisions</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 02: Short-Form Premium (Retention Master) - Highlighted -->
+      <div class="service-card highlight">
+        <div style="position: absolute; top: -10px; right: 20px; background: #1591DC; color: #fff; font-size: 10px; font-weight: 800; padding: 3px 12px; border-radius: 999px; letter-spacing: 0.05em; box-shadow: 0 4px 14px rgba(21,145,220,0.5);">
+          MOST POPULAR
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="pill-tag cyan">⭐ HIGH-RETENTION MASTER</span>
+            <span style="font-family: monospace; font-size: 12px; color: #1591DC;">02</span>
+          </div>
+          <div style="font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Short-Form Retention Pro</div>
+          <div style="font-size: 12px; color: #9496a1; line-height: 1.35;">
+            Flagship visual retention editing to build authority and stop the scroll.
+          </div>
+          <div class="price-tag" style="margin-top: 14px; color: #1591DC;">
+            $50 — $70 <span style="font-size: 14px; color: #9496a1;">/ video</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color: #ffffff; font-weight: 600;">Neuro-Pacing (85%+ first 5s retention)</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Bespoke After Effects motion keyframing</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Multi-layered cinema sound architecture</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Studio Rec.709 color grade · Unlimited revisions</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 03: Long-Form Video -->
+      <div class="service-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="pill-tag normal">YOUTUBE / PODCAST</span>
+            <span style="font-family: monospace; font-size: 12px; color: #9496a1;">03</span>
+          </div>
+          <div style="font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Long-Form Mastery</div>
+          <div style="font-size: 12px; color: #9496a1; line-height: 1.35;">
+            Dynamic storytelling for YouTube essays, podcasts, and masterclasses.
+          </div>
+          <div class="price-tag" style="margin-top: 14px;">
+            $15 <span style="font-size: 14px;">/ finished minute</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Strategic B-Roll research &amp; pattern interrupts</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Dynamic multi-cam zooms &amp; visual pacing</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Chapter typography, graphics &amp; sound polish</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Frame.io timestamp feedback workflow</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 04: VSL / Motion Sales Letter -->
+      <div class="service-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span class="pill-tag amber">HIGH-CONVERTING SALES</span>
+            <span style="font-family: monospace; font-size: 12px; color: #fbbf24;">04</span>
+          </div>
+          <div style="font-size: 20px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Motion VSL / Sales Letter</div>
+          <div style="font-size: 12px; color: #9496a1; line-height: 1.35;">
+            Direct-response video assets built to convert cold traffic into clients.
+          </div>
+          <div class="price-tag" style="margin-top: 14px;">
+            $200 <span style="font-size: 14px;">/ video asset</span>
+          </div>
+        </div>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>100% custom kinetic typography &amp; AE scenes</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Psychological narrative pacing for high AOV</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Custom illustration &amp; visual metaphor animation</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Full commercial audio &amp; impact sound design</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Guarantee & Direct Booking CTA -->
+    <div style="position: relative; z-index: 10; display: flex; flex-direction: column; gap: 16px;">
+      
+      <!-- 3 Trust Metrics Bar -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 14px; text-align: center;">
+          <div style="font-size: 11px; color: #9496a1; font-weight: 600;">TURNAROUND</div>
+          <div style="font-size: 14px; font-weight: 700; color: #fff;">48 Hours Fast</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 14px; text-align: center;">
+          <div style="font-size: 11px; color: #9496a1; font-weight: 600;">COLLABORATION</div>
+          <div style="font-size: 14px; font-weight: 700; color: #1591DC;">Frame.io Accurate</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 14px; text-align: center;">
+          <div style="font-size: 11px; color: #9496a1; font-weight: 600;">DELIVERY STANDARD</div>
+          <div style="font-size: 14px; font-weight: 700; color: #fff;">4K Rec.709 Color</div>
+        </div>
+      </div>
+
+      <!-- Action Footer -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 13px; color: #9496a1;">Portfolio &amp; Work Showcase:</span>
+          <span style="font-size: 18px; font-weight: 800; color: #ffffff;">thomasnguyen.online</span>
+        </div>
+
+        <div style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 28px; border-radius: 999px; background: #1591DC; color: #ffffff; font-size: 15px; font-weight: 700; box-shadow: 0 4px 20px rgba(21,145,220,0.4); border: 1px solid rgba(255,255,255,0.2);">
+          <span>BOOK A CALL / DM FOR SAMPLE</span>
+          <span style="font-size: 14px;">➔</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================= -->
+  <!-- 2. LANDSCAPE 16:9 RATE CARD (1920 x 1080)    -->
+  <!-- ============================================= -->
+  <div class="ratecard-landscape" id="card-landscape">
+    <div class="glow-cyan-top"></div>
+    <div class="glow-cyan-bottom"></div>
+
+    <!-- Header Row -->
+    <div style="position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div class="brand-tag">
+          <img src="/thomas_portrait.jpg" alt="Thomas">
+          <span style="font-size: 16px;">Thomas Nguyen // Video Editor</span>
+        </div>
+        <div class="rate-badge" style="font-size: 14px; padding: 8px 18px;">SERVICES &amp; RATE CARD · 2026</div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <div style="font-family: monospace; font-size: 14px; color: #9496a1;">
+          <span style="color: #4ade80;">●</span> 3 SPOTS AVAILABLE
+        </div>
+        <div style="font-size: 18px; font-weight: 700; color: #ffffff;">thomasnguyen.online</div>
+      </div>
+    </div>
+
+    <!-- Title Subtitle -->
+    <div style="position: relative; z-index: 10; margin: 15px 0 25px 0;">
+      <h1 style="font-size: 56px; font-weight: 700; color: #ffffff; line-height: 1.1;">
+        Production <span class="font-serif-italic">Services</span> &amp; Transparent Rates
+      </h1>
+      <p style="font-size: 20px; color: #9496a1; margin-top: 6px;">
+        Engineered for Founders, Personal Brands &amp; Creators who demand 85%+ viewer retention and real business growth.
+      </p>
+    </div>
+
+    <!-- 4 Horizontal Cards Grid -->
+    <div style="position: relative; z-index: 10; display: grid; grid-template-columns: 1fr 1.15fr 1fr 1fr; gap: 20px; flex: 1; align-items: stretch; margin-bottom: 20px;">
+      
+      <!-- Card 01 -->
+      <div class="service-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="pill-tag normal">STANDARD</span>
+            <span style="font-family: monospace; font-size: 13px; color: #9496a1;">01</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Short-Form Essential</div>
+          <div style="font-size: 13px; color: #9496a1; line-height: 1.4;">
+            Clean cuts for high-frequency TikTok &amp; Reels volume.
+          </div>
+          <div class="price-tag" style="margin-top: 18px;">
+            $30 <span style="font-size: 15px;">/ video</span>
+          </div>
+        </div>
+
+        <ul class="feature-list" style="margin-top: 20px;">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Micro-cuts &amp; dead-air removal</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Dynamic captions &amp; emoji cues</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>SFX &amp; background audio mix</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>24-48h Delivery · 2 Revisions</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 02 (Premium) -->
+      <div class="service-card highlight">
+        <div style="position: absolute; top: -12px; right: 24px; background: #1591DC; color: #fff; font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 999px; letter-spacing: 0.05em; box-shadow: 0 4px 18px rgba(21,145,220,0.5);">
+          ⭐ MOST POPULAR
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="pill-tag cyan">⭐ RETENTION MASTER</span>
+            <span style="font-family: monospace; font-size: 13px; color: #1591DC;">02</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Short-Form Retention Pro</div>
+          <div style="font-size: 13px; color: #9496a1; line-height: 1.4;">
+            Flagship retention editing to build authority &amp; scale personal brands.
+          </div>
+          <div class="price-tag" style="margin-top: 18px; color: #1591DC;">
+            $50 — $70 <span style="font-size: 15px; color: #9496a1;">/ video</span>
+          </div>
+        </div>
+
+        <ul class="feature-list" style="margin-top: 20px;">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color: #ffffff; font-weight: 700;">Neuro-Pacing (85%+ first 5s)</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Bespoke AE motion keyframing</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Multi-layered audio architecture</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Rec.709 Cinema Color · Unlimited revisions</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="service-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="pill-tag normal">LONG-FORM</span>
+            <span style="font-family: monospace; font-size: 13px; color: #9496a1;">03</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Long-Form Mastery</div>
+          <div style="font-size: 13px; color: #9496a1; line-height: 1.4;">
+            Dynamic storytelling for YouTube essays &amp; podcasts.
+          </div>
+          <div class="price-tag" style="margin-top: 18px;">
+            $15 <span style="font-size: 15px;">/ min</span>
+          </div>
+        </div>
+
+        <ul class="feature-list" style="margin-top: 20px;">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>B-Roll research &amp; pattern interrupts</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Dynamic zooms &amp; visual pacing</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Chapter graphics &amp; sound polish</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Frame.io timestamp feedback</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="service-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="pill-tag amber">CONVERSION</span>
+            <span style="font-family: monospace; font-size: 13px; color: #fbbf24;">04</span>
+          </div>
+          <div style="font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Motion VSL</div>
+          <div style="font-size: 13px; color: #9496a1; line-height: 1.4;">
+            High-converting sales letters to turn viewers into buyers.
+          </div>
+          <div class="price-tag" style="margin-top: 18px;">
+            $200 <span style="font-size: 15px;">/ asset</span>
+          </div>
+        </div>
+
+        <ul class="feature-list" style="margin-top: 20px;">
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>100% custom kinetic typography</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Psychological narrative pacing</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Custom illustration &amp; motion VFX</span>
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Full commercial audio engineering</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer Row -->
+    <div style="position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+      <div style="display: flex; gap: 30px; font-size: 15px; color: #9496a1;">
+        <div><strong style="color: #fff;">⚡ 48H Turnaround</strong> on all edits</div>
+        <div><strong style="color: #1591DC;">🎯 Frame.io</strong> Timestamp Collaboration</div>
+        <div><strong style="color: #fff;">💎 4K ProRes &amp; Rec.709</strong> Cinema Standard</div>
+      </div>
+
+      <div style="display: inline-flex; align-items: center; gap: 14px; padding: 14px 36px; border-radius: 999px; background: #1591DC; color: #ffffff; font-size: 16px; font-weight: 700; box-shadow: 0 4px 24px rgba(21,145,220,0.4); border: 1px solid rgba(255,255,255,0.25);">
+        <span>BOOK A 15-MIN CALL / REQUEST SAMPLE EDIT</span>
+        <span style="font-size: 15px;">➔</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
