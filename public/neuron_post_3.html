@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 3 — Perfection vs Continuity</title>
+  <title>Post 3 — Perfection vs Continuity (Alpine)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -37,11 +37,29 @@
       align-items: center;
       padding: 100px 70px;
     }
+    /* Separate Background Layer with Grayscale & Contrast */
+    .bg-layer {
+      position: absolute;
+      inset: 0;
+      background-image: url('mountain_stars.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      filter: grayscale(1) contrast(1.3) brightness(0.6);
+      pointer-events-none;
+    }
+    .vignette-layer {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at center, rgba(4, 5, 8, 0.4) 0%, rgba(4, 5, 8, 0.9) 85%),
+        linear-gradient(180deg, rgba(4, 5, 8, 0.85) 0%, rgba(4, 5, 8, 0.2) 35%, rgba(4, 5, 8, 0.2) 65%, rgba(4, 5, 8, 0.95) 100%);
+      pointer-events-none;
+    }
     /* Film Grain Overlay */
     .grain {
       position: absolute;
       inset: 0;
-      opacity: 0.055;
+      opacity: 0.06;
       pointer-events-none;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
@@ -49,10 +67,11 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.28em;
-      color: #383b48;
+      color: #9da0b2;
       text-transform: uppercase;
       position: relative;
       z-index: 10;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
     .circle-card {
       position: relative;
@@ -72,15 +91,18 @@
       position: relative;
       z-index: 5;
       text-align: center;
-      font-size: 20px;
+      font-size: 21px;
       line-height: 1.45;
       font-weight: 500;
       letter-spacing: -0.01em;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.95);
     }
   </style>
 </head>
 <body>
   <div class="canvas">
+    <div class="bg-layer"></div>
+    <div class="vignette-layer"></div>
     <div class="grain"></div>
 
     <!-- Top Watermark -->
@@ -92,60 +114,54 @@
       <!-- Left Circle: Not about perfection -->
       <div class="circle-card">
         <svg class="circle-svg" viewBox="0 0 440 440">
-          <!-- Arc starting at (50, 220), looping up, right, down, and ending at (175, 375) -->
           <!-- Incomplete circle arc with gap -->
           <path d="M 55 220 A 165 165 0 1 1 190 382" 
-                fill="none" stroke="#5d606f" stroke-width="2.2" stroke-linecap="round"/>
+                fill="none" stroke="#7e8194" stroke-width="2.4" stroke-linecap="round"
+                style="filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));"/>
           
           <!-- Start dot on left -->
-          <circle cx="55" cy="220" r="6" fill="#ffffff"/>
+          <circle cx="55" cy="220" r="6" fill="#ffffff" style="filter: drop-shadow(0 0 8px #ffffff);"/>
           <!-- End dot on bottom -->
-          <circle cx="190" cy="382" r="5" fill="#5d606f"/>
+          <circle cx="190" cy="382" r="5" fill="#7e8194"/>
         </svg>
-        <div class="circle-text" style="color: #9295a5;">
+        <div class="circle-text" style="color: #c0c3d4;">
           Discipline is not<br>
           about perfection
         </div>
       </div>
 
-      <!-- Right Circle: About continuity -->
+      <!-- Right Circle: About continuity (Vibrant Electric Cyan) -->
       <div class="circle-card">
         <svg class="circle-svg" viewBox="0 0 440 440">
-          <defs>
-            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1591DC"/>
-            </marker>
-          </defs>
-
           <!-- Dashed continuous loop with cyan glow -->
           <circle cx="220" cy="220" r="165" 
-                  fill="none" stroke="#1591DC" stroke-width="2.5" 
+                  fill="none" stroke="#1591DC" stroke-width="2.8" 
                   stroke-dasharray="14 10"
-                  style="filter: drop-shadow(0 0 12px rgba(21,145,220,0.65));"/>
+                  style="filter: drop-shadow(0 0 14px rgba(21,145,220,0.9)) drop-shadow(0 0 4px #1591DC);"/>
           
           <!-- Directional Arrow indicators along the circle -->
-          <!-- Arrow at Top (pointing right): 220, 55 -->
-          <polygon points="215,50 230,55 215,60" fill="#1591DC" style="filter: drop-shadow(0 0 6px #1591DC);"/>
-          <!-- Arrow at Right (pointing down): 385, 220 -->
-          <polygon points="380,215 385,230 390,215" fill="#1591DC" style="filter: drop-shadow(0 0 6px #1591DC);"/>
-          <!-- Arrow at Bottom (pointing left): 220, 385 -->
-          <polygon points="225,380 210,385 225,390" fill="#1591DC" style="filter: drop-shadow(0 0 6px #1591DC);"/>
-          <!-- Arrow at Left (pointing up): 55, 220 -->
-          <polygon points="50,225 55,210 60,225" fill="#1591DC" style="filter: drop-shadow(0 0 6px #1591DC);"/>
+          <!-- Top (pointing right) -->
+          <polygon points="215,50 230,55 215,60" fill="#1591DC" style="filter: drop-shadow(0 0 8px #1591DC);"/>
+          <!-- Right (pointing down) -->
+          <polygon points="380,215 385,230 390,215" fill="#1591DC" style="filter: drop-shadow(0 0 8px #1591DC);"/>
+          <!-- Bottom (pointing left) -->
+          <polygon points="225,380 210,385 225,390" fill="#1591DC" style="filter: drop-shadow(0 0 8px #1591DC);"/>
+          <!-- Left (pointing up) -->
+          <polygon points="50,225 55,210 60,225" fill="#1591DC" style="filter: drop-shadow(0 0 8px #1591DC);"/>
           
-          <!-- Little glowing node in circle -->
-          <circle cx="55" cy="220" r="6" fill="#ffffff" stroke="#1591DC" stroke-width="2" style="filter: drop-shadow(0 0 10px #1591DC);"/>
+          <!-- Glowing node in circle -->
+          <circle cx="55" cy="220" r="6.5" fill="#ffffff" stroke="#1591DC" stroke-width="2.5" style="filter: drop-shadow(0 0 12px #1591DC);"/>
         </svg>
         <div class="circle-text" style="color: #ffffff;">
           Discipline is<br>
-          about <span style="color: #1591DC; font-weight: 700; text-shadow: 0 0 20px rgba(21,145,220,0.8);">continuity</span>
+          about <span style="color: #1591DC; font-weight: 700; text-shadow: 0 0 25px rgba(21,145,220,1);">continuity</span>
         </div>
       </div>
 
     </div>
 
     <!-- Bottom Footer Watermark -->
-    <div style="display: flex; justify-content: space-between; width: 100%; font-size: 13px; color: #383b48; letter-spacing: 0.16em; position: relative; z-index: 10;" class="mono">
+    <div style="display: flex; justify-content: space-between; width: 100%; font-size: 13px; color: #828698; letter-spacing: 0.16em; position: relative; z-index: 10;" class="mono">
       <span>00:00:00:00</span>
       <span style="letter-spacing: 0.24em; font-weight: 600;">THOMASNGUYEN.ONLINE</span>
       <span>01:24:16:12</span>
