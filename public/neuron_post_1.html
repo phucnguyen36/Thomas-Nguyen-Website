@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 1 — Rely on Discipline (Stoic)</title>
+  <title>Post 1 — The Timeline (Amateur vs Retention)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -28,26 +28,20 @@
     .canvas {
       width: 1080px;
       height: 1350px;
-      background-color: #040507;
-      background-image: 
-        radial-gradient(circle at center, rgba(4, 5, 8, 0.45) 0%, rgba(4, 5, 8, 0.92) 85%),
-        linear-gradient(180deg, rgba(4, 5, 8, 0.8) 0%, rgba(4, 5, 8, 0.25) 30%, rgba(4, 5, 8, 0.25) 70%, rgba(4, 5, 8, 0.9) 100%),
-        url('statue_stoic.jpg');
-      background-size: cover;
-      background-position: center;
+      background-color: #050608;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 100px 90px;
+      padding: 95px 85px;
     }
     /* Tactile Grain Overlay */
     .grain {
       position: absolute;
       inset: 0;
-      opacity: 0.06;
+      opacity: 0.055;
       pointer-events-none;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
@@ -55,19 +49,39 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.28em;
-      color: #9da0b0;
+      color: #4b4e5e;
       text-transform: uppercase;
       position: relative;
       z-index: 10;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
-    .label {
-      font-size: 18px;
+    .track-container {
+      width: 100%;
+      background: rgba(14, 16, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .track-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .track-title {
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      text-align: center;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+    }
+    .track-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
     }
   </style>
 </head>
@@ -76,79 +90,139 @@
     <div class="grain"></div>
 
     <!-- Top Watermark -->
-    <div class="watermark">@THOMASVISUALEDITOR</div>
+    <div class="watermark mono">@THOMASVISUALEDITOR</div>
 
-    <!-- Main Visual Container -->
-    <div style="width: 100%; max-width: 840px; display: flex; flex-direction: column; gap: 150px; margin: auto 0; position: relative; z-index: 10;">
+    <!-- Main Content: The Two Timelines -->
+    <div style="width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 70px; margin: auto 0; position: relative; z-index: 10;">
       
-      <!-- Top Section: Don't Rely on Motivation -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 35px; width: 100%;">
-        <div class="label" style="color: #9295a6;">DON'T RELY ON MOTIVATION</div>
-        
-        <div style="width: 100%; display: flex; justify-content: center;">
-          <svg width="780" height="130" viewBox="0 0 780 130" fill="none" style="overflow: visible;">
-            <!-- Baseline -->
-            <line x1="20" y1="110" x2="760" y2="110" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-            
-            <!-- Decaying Bounces -->
-            <path d="M 40 110 Q 155 -15 270 110" stroke="#b0b3c2" stroke-width="2.6" fill="none" style="filter: drop-shadow(0 0 6px rgba(0,0,0,0.8));"/>
-            <path d="M 270 110 Q 360 30 450 110" stroke="#7e8192" stroke-width="2.2" fill="none"/>
-            <path d="M 450 110 Q 515 65 580 110" stroke="#565968" stroke-width="2" fill="none"/>
-            <path d="M 580 110 Q 620 88 660 110" stroke="#3d404d" stroke-width="1.8" fill="none"/>
-            
-            <!-- Flat dotted line fizzling out -->
-            <line x1="660" y1="110" x2="750" y2="110" stroke="#3d404d" stroke-width="2" stroke-dasharray="4 6"/>
-            
-            <!-- Starting node -->
-            <circle cx="40" cy="110" r="5.5" fill="#ffffff" style="filter: drop-shadow(0 0 8px #ffffff);"/>
-            <!-- Ending dead node -->
-            <circle cx="750" cy="110" r="4" fill="#3d404d"/>
-          </svg>
+      <!-- TIMELINE 01: AMATEUR (MOTIVATION ONLY) -->
+      <div class="track-container">
+        <div class="track-header">
+          <div class="track-title" style="color: #7b7e8f;">
+            <span class="mono" style="color: #e05252;">01.</span> THE MOTIVATION TIMELINE
+          </div>
+          <div class="track-pill mono" style="background: rgba(224, 82, 82, 0.12); color: #e05252; border: 1px solid rgba(224, 82, 82, 0.3);">
+            32% RETENTION // SWIPED AWAY
+          </div>
+        </div>
+
+        <!-- SVG Visual Timeline: Cluttered, Gaps, Dead Air, Halts -->
+        <svg viewBox="0 0 840 100" style="width: 100%; height: 95px; overflow: visible;">
+          <!-- Track lane V1 -->
+          <rect x="0" y="5" width="840" height="38" rx="6" fill="#0d0e14" stroke="rgba(255,255,255,0.05)"/>
+          <text x="12" y="28" fill="#444654" font-size="11" font-family="'JetBrains Mono'" font-weight="700">V1</text>
+          
+          <!-- Clip 1: Raw Footage (Overly long) -->
+          <rect x="42" y="9" width="180" height="30" rx="4" fill="#1c1e28" stroke="#333644"/>
+          <text x="56" y="28" fill="#888c9f" font-size="11" font-family="'JetBrains Mono'">RAW_TAKE_01.MP4</text>
+
+          <!-- DEAD AIR GAP -->
+          <rect x="226" y="9" width="170" height="30" rx="4" fill="rgba(224, 82, 82, 0.06)" stroke="#e05252" stroke-dasharray="4 4"/>
+          <text x="252" y="28" fill="#e05252" font-size="10" font-family="'JetBrains Mono'" font-weight="700">DEAD AIR (NO CUTS)</text>
+
+          <!-- Clip 2: Unfinished clip -->
+          <rect x="400" y="9" width="110" height="30" rx="4" fill="#181a24" stroke="#2a2c38"/>
+          <text x="412" y="28" fill="#585b6c" font-size="10" font-family="'JetBrains Mono'">TAKE_02</text>
+
+          <!-- Stopped playhead at 00:00:14 -->
+          <line x1="510" y1="0" x2="510" y2="90" stroke="#e05252" stroke-width="2.5"/>
+          <polygon points="503,0 517,0 510,12" fill="#e05252"/>
+          <circle cx="510" cy="45" r="5" fill="#e05252" style="filter: drop-shadow(0 0 8px #e05252);"/>
+
+          <!-- Track lane A1 (Audio spikes/irregular) -->
+          <rect x="0" y="48" width="840" height="38" rx="6" fill="#0b0c12" stroke="rgba(255,255,255,0.04)"/>
+          <text x="12" y="71" fill="#444654" font-size="11" font-family="'JetBrains Mono'" font-weight="700">A1</text>
+          
+          <!-- Audio waveform dying out -->
+          <path d="M 45 67 L 70 58 L 90 75 L 120 60 L 150 72 L 180 63 L 220 67 L 390 67 L 420 62 L 460 71 L 510 67 L 830 67" 
+                fill="none" stroke="#383a48" stroke-width="1.8"/>
+
+          <!-- Dropped Out Tag -->
+          <text x="525" y="49" fill="#7b7e90" font-size="11" font-family="'JetBrains Mono'">00:00:14:18 // PROJECT ABANDONED</text>
+        </svg>
+
+        <div style="font-size: 13px; color: #6a6d7f; line-height: 1.4;">
+          Starts with burst of excitement. Zero pacing strategy. Loses motivation when the rough cut gets messy.
         </div>
       </div>
 
-      <!-- Bottom Section: Rely on Discipline -->
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 35px; width: 100%;">
-        <div class="label" style="color: #ffffff;">
-          RELY ON <span style="color: #1591DC; text-shadow: 0 0 25px rgba(21,145,220,0.9);">DISCIPLINE</span>
+      <!-- CENTER DIVIDER WITH PHILOSOPHY -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px;">
+        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.08);"></div>
+        <div class="mono" style="font-size: 12px; font-weight: 700; letter-spacing: 0.25em; color: #1591DC; text-transform: uppercase;">
+          THE CRAFT IS BUILT ON CUTS
+        </div>
+        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.08);"></div>
+      </div>
+
+      <!-- TIMELINE 02: PRO (DISCIPLINE & RETENTION) -->
+      <div class="track-container" style="border-color: rgba(21, 145, 220, 0.35); background: rgba(14, 20, 32, 0.75); box-shadow: 0 0 35px rgba(21, 145, 220, 0.1);">
+        <div class="track-header">
+          <div class="track-title" style="color: #ffffff;">
+            <span class="mono" style="color: #1591DC;">02.</span> THE DISCIPLINE TIMELINE
+          </div>
+          <div class="track-pill mono" style="background: rgba(21, 145, 220, 0.15); color: #1591DC; border: 1px solid rgba(21, 145, 220, 0.4); box-shadow: 0 0 14px rgba(21, 145, 220, 0.3);">
+            85%+ RETENTION // EXPORT COMPLETE
+          </div>
         </div>
 
-        <div style="width: 100%; display: flex; justify-content: center;">
-          <svg width="780" height="130" viewBox="0 0 780 130" fill="none" style="overflow: visible;">
-            <!-- Baseline -->
-            <line x1="20" y1="110" x2="760" y2="110" stroke="rgba(21,145,220,0.18)" stroke-width="1.5"/>
+        <!-- SVG Visual Timeline: Surgical, Tight, Color-Coded, Continuous Waveform -->
+        <svg viewBox="0 0 840 100" style="width: 100%; height: 95px; overflow: visible;">
+          <!-- Track lane V1 -->
+          <rect x="0" y="5" width="840" height="38" rx="6" fill="#0a0f18" stroke="rgba(21, 145, 220, 0.15)"/>
+          <text x="12" y="28" fill="#1591DC" font-size="11" font-family="'JetBrains Mono'" font-weight="700">V1</text>
+          
+          <!-- Surgical Clustered Cuts (Hook -> Visual Twist -> Graphic -> Climax) -->
+          <!-- Clip 1: 3s Hook Engine -->
+          <rect x="42" y="9" width="130" height="30" rx="4" fill="#1591DC" fill-opacity="0.2" stroke="#1591DC" stroke-width="1.5"/>
+          <text x="52" y="28" fill="#ffffff" font-size="10" font-family="'JetBrains Mono'" font-weight="700">01_HOOK [3S]</text>
 
-            <!-- Continuous Rhythmic Arcs (all identical, disciplined cadence) -->
-            <path d="M 40 110 
-                     Q 70 55 100 110 
-                     Q 130 55 160 110 
-                     Q 190 55 220 110 
-                     Q 250 55 280 110 
-                     Q 310 55 340 110 
-                     Q 370 55 400 110 
-                     Q 430 55 460 110 
-                     Q 490 55 520 110 
-                     Q 550 55 580 110 
-                     Q 610 55 640 110 
-                     Q 670 55 700 110 
-                     Q 730 55 760 110" 
-                  stroke="#1591DC" stroke-width="2.8" fill="none"
-                  style="filter: drop-shadow(0 0 12px rgba(21,145,220,0.85));"/>
+          <!-- Cut 2: Pattern Interrupt -->
+          <rect x="176" y="9" width="115" height="30" rx="4" fill="#1c2438" stroke="rgba(21, 145, 220, 0.4)"/>
+          <text x="186" y="28" fill="#c4c9dc" font-size="10" font-family="'JetBrains Mono'">INTERRUPT</text>
 
-            <!-- Starting Node -->
-            <circle cx="40" cy="110" r="5.5" fill="#ffffff" style="filter: drop-shadow(0 0 8px #ffffff);"/>
+          <!-- Cut 3: Neuro-Pacing -->
+          <rect x="295" y="9" width="145" height="30" rx="4" fill="#172033" stroke="rgba(21, 145, 220, 0.4)"/>
+          <text x="306" y="28" fill="#c4c9dc" font-size="10" font-family="'JetBrains Mono'">NEURO_PACE</text>
 
-            <!-- Glowing Terminal Node -->
-            <circle cx="760" cy="110" r="7" fill="#ffffff" stroke="#1591DC" stroke-width="3"
-                    style="filter: drop-shadow(0 0 16px #1591DC);"/>
-          </svg>
+          <!-- Cut 4: B-Roll & SFX -->
+          <rect x="444" y="9" width="125" height="30" rx="4" fill="#1c2438" stroke="rgba(21, 145, 220, 0.4)"/>
+          <text x="456" y="28" fill="#c4c9dc" font-size="10" font-family="'JetBrains Mono'">B_ROLL_VFX</text>
+
+          <!-- Cut 5: Loop Hook -->
+          <rect x="573" y="9" width="180" height="30" rx="4" fill="#1591DC" fill-opacity="0.25" stroke="#1591DC" stroke-width="1.5"/>
+          <text x="588" y="28" fill="#ffffff" font-size="10" font-family="'JetBrains Mono'" font-weight="700">VIRAL_LOOP_CTA</text>
+
+          <!-- Track lane A1 (Layered Sound Design: Woosh, Riser, Impact) -->
+          <rect x="0" y="48" width="840" height="38" rx="6" fill="#080c14" stroke="rgba(21, 145, 220, 0.1)"/>
+          <text x="12" y="71" fill="#1591DC" font-size="11" font-family="'JetBrains Mono'" font-weight="700">A1</text>
+          
+          <!-- Rhythmic High-Energy Waveform -->
+          <path d="M 45 67 Q 60 52 75 67 Q 90 82 105 67 Q 120 54 135 67 Q 150 80 165 67 
+                   Q 180 52 195 67 Q 210 82 225 67 Q 240 54 255 67 Q 270 80 285 67
+                   Q 300 52 315 67 Q 330 82 345 67 Q 360 54 375 67 Q 390 80 405 67
+                   Q 420 52 435 67 Q 450 82 465 67 Q 480 54 495 67 Q 510 80 525 67
+                   Q 540 52 555 67 Q 570 82 585 67 Q 600 54 615 67 Q 630 80 645 67
+                   Q 660 52 675 67 Q 690 82 705 67 Q 720 54 735 67 L 755 67" 
+                fill="none" stroke="#1591DC" stroke-width="2" style="filter: drop-shadow(0 0 6px rgba(21,145,220,0.6));"/>
+
+          <!-- The Playhead at Final Export with Cyan Glow -->
+          <line x1="755" y1="0" x2="755" y2="90" stroke="#1591DC" stroke-width="2.5" style="filter: drop-shadow(0 0 8px #1591DC);"/>
+          <polygon points="748,0 762,0 755,12" fill="#1591DC"/>
+          <circle cx="755" cy="45" r="5.5" fill="#ffffff" stroke="#1591DC" stroke-width="2" style="filter: drop-shadow(0 0 10px #1591DC);"/>
+
+          <text x="765" y="49" fill="#1591DC" font-size="11" font-family="'JetBrains Mono'" font-weight="700">01:00:00 [EXPORTED]</text>
+        </svg>
+
+        <div style="font-size: 13px; color: #a4a9bd; line-height: 1.4;">
+          Zero dead air. Ripple deletes every wasted second. Shows up 16 hours a day until the export is razor sharp.
         </div>
       </div>
 
     </div>
 
     <!-- Bottom Footer Watermark -->
-    <div style="display: flex; justify-content: space-between; width: 100%; font-size: 13px; color: #828698; letter-spacing: 0.16em; position: relative; z-index: 10;" class="mono">
+    <div style="display: flex; justify-content: space-between; width: 100%; font-size: 13px; color: #434656; letter-spacing: 0.16em; position: relative; z-index: 10;" class="mono">
       <span>00:00:00:00</span>
       <span style="letter-spacing: 0.24em; font-weight: 600;">THOMASNGUYEN.ONLINE</span>
       <span>01:24:16:12</span>

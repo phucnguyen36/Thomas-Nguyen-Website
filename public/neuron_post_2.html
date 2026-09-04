@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 2 — One Day or Day One (Summit)</title>
+  <title>Post 2 — The 02:14 AM Suite (One Day or Day One)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -28,10 +28,7 @@
     .canvas {
       width: 1080px;
       height: 1350px;
-      background-color: #050608;
-      background-image: url('cliff_summit.jpg');
-      background-size: cover;
-      background-position: center;
+      background-color: #040508;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -40,123 +37,233 @@
       align-items: center;
       padding: 85px 80px;
     }
-    /* Subtle dark vignette overlay */
-    .vignette {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.6) 100%),
-                  linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.02) 25%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0.85) 100%);
-      pointer-events-none;
-    }
-    /* Tactile Grain */
+    /* Film Grain Noise */
     .grain {
       position: absolute;
       inset: 0;
-      opacity: 0.07;
+      opacity: 0.055;
       pointer-events-none;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* iOS Toggles Container */
-    .toggle-section {
-      position: absolute;
-      top: 460px;
-      left: 50%;
-      transform: translateX(-50%);
+    /* iOS Minimal Toggle */
+    .toggle-group {
       display: flex;
       flex-direction: column;
-      gap: 22px;
-      z-index: 10;
+      gap: 20px;
+      position: relative;
+      z-index: 20;
     }
     .toggle-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 270px;
+      width: 320px;
+      padding: 12px 22px;
+      background: rgba(14, 16, 24, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
     }
     .toggle-label {
-      font-size: 23px;
-      font-weight: 500;
+      font-size: 19px;
+      font-weight: 600;
       letter-spacing: -0.01em;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.95);
     }
     .switch {
-      width: 62px;
-      height: 36px;
+      width: 56px;
+      height: 32px;
       border-radius: 999px;
       padding: 3px;
       display: flex;
       align-items: center;
-      transition: all 0.3s ease;
     }
     .switch.off {
-      background: #4a4d58;
+      background: #2a2c38;
       justify-content: flex-start;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.6);
     }
     .switch.on {
       background: #1591DC;
       justify-content: flex-end;
-      box-shadow: 0 0 25px rgba(21, 145, 220, 0.9), 0 0 10px rgba(21, 145, 220, 1);
+      box-shadow: 0 0 22px rgba(21, 145, 220, 0.85);
     }
     .thumb {
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    }
-
-    /* Quote Callout */
-    .quote-box {
-      position: absolute;
-      left: 95px;
-      top: 860px;
-      z-index: 10;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.95);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
   <div class="canvas">
-    <div class="vignette"></div>
     <div class="grain"></div>
 
     <!-- Top Watermark -->
-    <div style="position: relative; z-index: 10; font-size: 13px; font-weight: 700; letter-spacing: 0.28em; color: #8c90a2; text-transform: uppercase;">
+    <div style="position: relative; z-index: 10; font-size: 13px; font-weight: 700; letter-spacing: 0.28em; color: #484b5c; text-transform: uppercase;" class="mono">
       @THOMASVISUALEDITOR
     </div>
 
-    <!-- iOS Toggles floating on the night sky -->
-    <div class="toggle-section">
-      <div class="toggle-row">
-        <span class="toggle-label" style="color: #afb3c4;">Motivation</span>
-        <div class="switch off"><div class="thumb"></div></div>
+    <!-- CENTER VISUAL: THE 02:14 AM VIDEO EDITING WORKSPACE -->
+    <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 40px; width: 100%;">
+      
+      <!-- iOS Toggles floating above the monitor -->
+      <div class="toggle-group">
+        <div class="toggle-row">
+          <span class="toggle-label" style="color: #6a6d80;">Motivation</span>
+          <div class="switch off"><div class="thumb"></div></div>
+        </div>
+        <div class="toggle-row" style="border-color: rgba(21, 145, 220, 0.4); box-shadow: 0 0 30px rgba(21, 145, 220, 0.2);">
+          <span class="toggle-label" style="color: #ffffff;">Discipline</span>
+          <div class="switch on"><div class="thumb"></div></div>
+        </div>
       </div>
-      <div class="toggle-row">
-        <span class="toggle-label" style="color: #ffffff;">Discipline</span>
-        <div class="switch on"><div class="thumb"></div></div>
-      </div>
-    </div>
 
-    <!-- "one day or day one." text near the horizon -->
-    <div class="quote-box">
-      <div style="color: #9da0b2;">one day.</div>
-      <div style="color: #6a6d7f;">or</div>
-      <div style="color: #ffffff; font-weight: 700;">day one.</div>
-      <div class="mono" style="font-size: 12px; color: #1591DC; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; font-weight: 600;">
-        02:14 AM // TIMELINE ACTIVE
+      <!-- Ultrawide Curved Monitor glowing at 2 AM -->
+      <div style="width: 100%; max-width: 900px; height: 480px; background: #07090e; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; position: relative; overflow: hidden; box-shadow: 0 20px 80px rgba(0,0,0,0.9), 0 0 60px rgba(21, 145, 220, 0.12);">
+        
+        <!-- Monitor Screen Glow (Soft Cyan Ambient Backlight) -->
+        <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 60%, rgba(21, 145, 220, 0.08) 0%, transparent 70%);"></div>
+
+        <!-- Premiere Pro Top Bar -->
+        <div style="height: 34px; background: #0e111a; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; padding: 0 18px;" class="mono">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #e05252;"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #e5a93c;"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #3ec46d;"></div>
+            <span style="font-size: 11px; color: #787c90; margin-left: 10px;">Adobe Premiere Pro 2025 — July_Milestone_Master.prproj</span>
+          </div>
+          <div style="font-size: 11px; color: #1591DC; font-weight: 700;">
+            ● 02:14:38:12 // RENDER COMPLETE
+          </div>
+        </div>
+
+        <!-- Upper Workspace (Left: Project Panel / Right: 9:16 Preview Monitor) -->
+        <div style="display: flex; height: 260px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          
+          <!-- Project & Scope Panel -->
+          <div style="width: 320px; border-right: 1px solid rgba(255,255,255,0.06); padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="mono" style="font-size: 11px; color: #5a5d70; text-transform: uppercase; font-weight: 700;">PROJECT ASSETS [4K PRORES]</div>
+              <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 8px;" class="mono">
+                <div style="font-size: 11px; color: #8e92a8; display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #1591DC;">▶</span> 01_Hook_Retention_A.mov
+                </div>
+                <div style="font-size: 11px; color: #8e92a8; display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #1591DC;">▶</span> 02_NeuroPacing_SFX.wav
+                </div>
+                <div style="font-size: 11px; color: #8e92a8; display: flex; align-items: center; gap: 8px;">
+                  <span style="color: #1591DC;">▶</span> 03_ColorGrade_Rec709.cube
+                </div>
+                <div style="font-size: 11px; color: #1591DC; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  <span>✓</span> Final_Master_Export.mp4
+                </div>
+              </div>
+            </div>
+
+            <!-- Retention Metric Badge -->
+            <div style="background: rgba(21, 145, 220, 0.08); border: 1px solid rgba(21, 145, 220, 0.3); border-radius: 10px; padding: 10px 14px;" class="mono">
+              <div style="font-size: 10px; color: #7a7e94; text-transform: uppercase;">RETENTION BENCHMARK</div>
+              <div style="font-size: 18px; font-weight: 800; color: #ffffff; margin-top: 2px;">
+                85.4% <span style="font-size: 11px; color: #1591DC; font-weight: 600;">(Top 1% Creator Score)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center/Right: 9:16 Vertical Video Preview Window -->
+          <div style="flex: 1; display: flex; justify-content: center; align-items: center; background: #040508; position: relative;">
+            <!-- Vertical 9:16 Safe Frame Guides -->
+            <div style="width: 120px; height: 213px; border: 1px dashed rgba(21, 145, 220, 0.4); border-radius: 8px; position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 12px; background: rgba(21, 145, 220, 0.03);">
+              <div class="mono" style="font-size: 9px; color: #1591DC; font-weight: 700;">SAFE AREA</div>
+              <div style="text-align: center;">
+                <div style="font-size: 11px; font-weight: 800; color: #ffffff;">DAY ONE</div>
+                <div style="font-size: 9px; color: #6a6d80;" class="mono">02:14 AM</div>
+              </div>
+              <div class="mono" style="font-size: 8px; color: #5a5e72;">9:16 REEL</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Lower Workspace: Multi-Track Timeline (V3, V2, V1, A1, A2) -->
+        <div style="height: 186px; background: #0a0c12; padding: 12px 18px; display: flex; flex-direction: column; gap: 6px; position: relative;">
+          
+          <!-- Timeline Ruler -->
+          <div style="height: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; font-size: 9px; color: #4f5264;" class="mono">
+            <span>00:00:00:00</span>
+            <span>00:15:00:00</span>
+            <span>00:30:00:00</span>
+            <span>00:45:00:00</span>
+            <span style="color: #1591DC;">01:00:00:00</span>
+          </div>
+
+          <!-- Video Tracks -->
+          <div style="display: flex; gap: 8px; height: 26px; align-items: center;">
+            <span class="mono" style="font-size: 10px; color: #55586b; width: 24px;">V3</span>
+            <div style="flex: 1; height: 100%; display: flex; gap: 4px;">
+              <div style="width: 180px; background: rgba(224, 82, 82, 0.2); border: 1px solid #e05252; border-radius: 4px;"></div>
+              <div style="width: 240px; background: rgba(21, 145, 220, 0.2); border: 1px solid #1591DC; border-radius: 4px;"></div>
+              <div style="width: 320px; background: rgba(62, 196, 109, 0.2); border: 1px solid #3ec46d; border-radius: 4px;"></div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px; height: 26px; align-items: center;">
+            <span class="mono" style="font-size: 10px; color: #55586b; width: 24px;">V2</span>
+            <div style="flex: 1; height: 100%; display: flex; gap: 6px;">
+              <div style="width: 120px; background: #181d2c; border: 1px solid rgba(21, 145, 220, 0.3); border-radius: 4px;"></div>
+              <div style="width: 140px; background: #181d2c; border: 1px solid rgba(21, 145, 220, 0.3); border-radius: 4px;"></div>
+              <div style="width: 160px; background: #181d2c; border: 1px solid rgba(21, 145, 220, 0.3); border-radius: 4px;"></div>
+              <div style="width: 200px; background: #181d2c; border: 1px solid rgba(21, 145, 220, 0.3); border-radius: 4px;"></div>
+            </div>
+          </div>
+
+          <!-- Audio Track A1 (SFX / Voiceover) -->
+          <div style="display: flex; gap: 8px; height: 26px; align-items: center;">
+            <span class="mono" style="font-size: 10px; color: #1591DC; width: 24px; font-weight: 700;">A1</span>
+            <div style="flex: 1; height: 100%; background: #0d121c; border: 1px solid rgba(21, 145, 220, 0.2); border-radius: 4px; display: flex; align-items: center; padding: 0 10px;">
+              <svg width="100%" height="16" viewBox="0 0 600 16">
+                <path d="M 0 8 Q 15 2 30 8 Q 45 14 60 8 Q 75 2 90 8 Q 105 14 120 8 Q 135 2 150 8 Q 165 14 180 8 Q 195 2 210 8 Q 225 14 240 8 Q 255 2 270 8 Q 285 14 300 8 Q 315 2 330 8 Q 345 14 360 8 Q 375 2 390 8 Q 405 14 420 8 Q 435 2 450 8 Q 465 14 480 8 Q 495 2 510 8 Q 525 14 540 8 L 600 8" 
+                      fill="none" stroke="#1591DC" stroke-width="1.8"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Active Playhead Indicator slicing down -->
+          <div style="position: absolute; left: 620px; top: 0; bottom: 0; width: 2px; background: #1591DC; box-shadow: 0 0 12px #1591DC; pointer-events-none;">
+            <div style="width: 10px; height: 10px; background: #1591DC; border-radius: 50%; transform: translate(-4px, 0); box-shadow: 0 0 8px #ffffff;"></div>
+          </div>
+
+        </div>
+
       </div>
+
+      <!-- Quote Callout below monitor -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; max-width: 880px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-size: 26px; font-weight: 700; color: #8a8d9e; letter-spacing: -0.02em;">
+            one day. <span style="color: #55586a;">or</span> <span style="color: #ffffff;">day one.</span>
+          </div>
+          <div class="mono" style="font-size: 12px; color: #1591DC; letter-spacing: 0.12em; font-weight: 700;">
+            16 HOURS ON PREMIERE PRO // 0 EXCUSES
+          </div>
+        </div>
+
+        <div class="mono" style="font-size: 12px; color: #626578; letter-spacing: 0.15em; text-align: right;">
+          RENDER QUEUE // PRORES 422 HQ<br>
+          <span style="color: #3ec46d;">STATUS: 100% COMPLETE</span>
+        </div>
+      </div>
+
     </div>
 
     <!-- Bottom Watermark -->
-    <div style="position: relative; z-index: 10; font-size: 12px; font-weight: 600; color: #727688; letter-spacing: 0.25em;" class="mono">
-      THOMASNGUYEN.ONLINE
+    <div style="position: relative; z-index: 10; font-size: 13px; font-weight: 600; color: #484b5c; letter-spacing: 0.22em;" class="mono">
+      <span>00:00:00:00</span>
+      <span style="margin: 0 30px; letter-spacing: 0.28em;">THOMASNGUYEN.ONLINE</span>
+      <span>01:24:16:12</span>
     </div>
+
   </div>
 </body>
 </html>
