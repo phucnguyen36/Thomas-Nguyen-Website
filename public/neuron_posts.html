@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Nguyen — Minimalist Dark Visuals for Instagram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      letter-spacing: -0.025em;
+    }
+    .mono {
+      font-family: 'JetBrains Mono', monospace !important;
+      letter-spacing: -0.01em;
+    }
+    body {
+      background-color: #030406;
+      color: #ededf3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+
+    /* Instagram Native Portrait 4:5 Ratio (1080 x 1350) */
+    .ig-canvas {
+      width: 1080px;
+      height: 1350px;
+      background-color: #08090c;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 70px 75px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.95);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Tactile Fine Noise Pattern */
+    .noise-layer {
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      pointer-events-none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Subtle radial center glow */
+    .cyan-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(21, 145, 220, 0.08) 0%, rgba(8, 9, 12, 0) 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events-none;
+    }
+
+    /* Header & Footer */
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    .brand-id {
+      font-size: 14px;
+      font-weight: 700;
+      color: #9496a1;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-id span {
+      color: #ffffff;
+    }
+    .tag-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #71737e;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 25px;
+    }
+    .footer-left {
+      font-size: 13px;
+      color: #555762;
+      font-family: 'JetBrains Mono', monospace !important;
+    }
+    .footer-right {
+      font-size: 13px;
+      font-weight: 700;
+      color: #71737e;
+    }
+
+    /* iOS Style Toggle Switch */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 320px;
+      padding: 12px 18px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+    }
+    .toggle-switch {
+      width: 50px;
+      height: 28px;
+      border-radius: 999px;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .toggle-switch.off {
+      background: #23252d;
+      justify-content: flex-start;
+    }
+    .toggle-switch.on {
+      background: #1591DC;
+      justify-content: flex-end;
+      box-shadow: 0 0 16px rgba(21,145,220,0.5);
+    }
+    .toggle-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const post = params.get('post');
+      ['post-1', 'post-2', 'post-3'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      if (post && document.getElementById(post)) {
+        document.getElementById(post).style.display = 'flex';
+        document.body.style.padding = '0';
+        document.body.style.margin = '0';
+      } else {
+        document.getElementById('post-1').style.display = 'flex';
+        document.getElementById('post-2').style.display = 'flex';
+        document.getElementById('post-3').style.display = 'flex';
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- ======================================================= -->
+  <!-- POST 1: TIMELINE VS MOTIVATION                          -->
+  <!-- ======================================================= -->
+  <div class="ig-canvas" id="post-1">
+    <div class="noise-layer"></div>
+    <div class="cyan-glow"></div>
+
+    <div class="post-header">
+      <div class="brand-id">
+        <span class="mono" style="color: #1591DC;">●</span>
+        <span>@thomasvisualeditor</span>
+      </div>
+      <div class="tag-pill mono">DISCIPLINE // TIMELINE</div>
+    </div>
+
+    <!-- Center Graphic: Two Motion Tracks & Toggle Switch -->
+    <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 45px; width: 100%;">
+      
+      <!-- Graphic Comparison Box -->
+      <div style="width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 32px;">
+        
+        <!-- Track 1: Motivation -->
+        <div style="background: #0d0f14; border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 26px 30px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span style="font-size: 13px; font-weight: 700; color: #71737e; letter-spacing: 0.08em; text-transform: uppercase;">01. Motivation</span>
+            <span class="mono" style="font-size: 12px; color: #ff5555; background: rgba(255,85,85,0.1); padding: 4px 10px; border-radius: 999px;">Fades after 48h</span>
+          </div>
+
+          <!-- Bouncing Arcs dying out -->
+          <svg viewBox="0 0 740 60" style="width: 100%; height: 50px; overflow: visible;">
+            <path d="M 20 50 Q 80 -10 140 50 Q 190 10 240 50 Q 280 25 320 50 Q 350 38 380 50" fill="none" stroke="#555762" stroke-width="2"/>
+            <line x1="380" y1="50" x2="720" y2="50" stroke="#333642" stroke-width="2" stroke-dasharray="6 6"/>
+            <circle cx="20" cy="50" r="4" fill="#ffffff"/>
+            <circle cx="380" cy="50" r="4" fill="#555762"/>
+          </svg>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: #555762; margin-top: 10px;" class="mono">
+            <span>START (Day 1)</span>
+            <span>GIVES UP (Week 2)</span>
+          </div>
+        </div>
+
+        <!-- Track 2: Discipline / Timeline Keyframes -->
+        <div style="background: #0f121a; border: 1px solid rgba(21,145,220,0.4); border-radius: 18px; padding: 26px 30px; box-shadow: 0 0 30px rgba(21,145,220,0.08);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span style="font-size: 13px; font-weight: 800; color: #1591DC; letter-spacing: 0.08em; text-transform: uppercase;">02. Discipline</span>
+            <span class="mono" style="font-size: 12px; color: #1591DC; background: rgba(21,145,220,0.15); padding: 4px 10px; border-radius: 999px;">Persistent Reps</span>
+          </div>
+
+          <!-- Steady Keyframe Pulses -->
+          <svg viewBox="0 0 740 60" style="width: 100%; height: 50px; overflow: visible;">
+            <!-- Continuous uniform waves -->
+            <path d="M 20 50 
+                     Q 45 20 70 50 Q 95 20 120 50 Q 145 20 170 50 Q 195 20 220 50 
+                     Q 245 20 270 50 Q 295 20 320 50 Q 345 20 370 50 Q 395 20 420 50 
+                     Q 445 20 470 50 Q 495 20 520 50 Q 545 20 570 50 Q 595 20 620 50 
+                     Q 645 20 670 50 Q 695 20 720 50" 
+                  fill="none" stroke="#1591DC" stroke-width="2.5"/>
+            <circle cx="20" cy="50" r="4" fill="#ffffff"/>
+            <circle cx="720" cy="50" r="6" fill="#1591DC" style="filter: drop-shadow(0 0 8px #1591DC);"/>
+          </svg>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: #1591DC; margin-top: 10px;" class="mono">
+            <span>00:00:00:00</span>
+            <span>RENDER COMPLETE [EXPORT]</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Center Headline Text -->
+      <div style="text-align: center; margin-top: 10px;">
+        <h2 style="font-size: 40px; font-weight: 800; color: #ffffff; line-height: 1.25; letter-spacing: -0.035em;">
+          Motivation starts the project. <br>
+          <span style="color: #1591DC;">Discipline hits Export.</span>
+        </h2>
+        <p style="font-size: 17px; color: #71737e; margin-top: 12px; font-weight: 500;">
+          The timeline doesn't care how you feel. It only measures what you cut.
+        </p>
+      </div>
+
+      <!-- iOS Toggle Switch Bar -->
+      <div style="display: flex; gap: 16px;">
+        <div class="toggle-row">
+          <span style="font-size: 14px; font-weight: 600; color: #71737e;">Motivation</span>
+          <div class="toggle-switch off"><div class="toggle-thumb"></div></div>
+        </div>
+        <div class="toggle-row" style="border-color: rgba(21,145,220,0.3); background: rgba(21,145,220,0.04);">
+          <span style="font-size: 14px; font-weight: 700; color: #ffffff;">Discipline</span>
+          <div class="toggle-switch on"><div class="toggle-thumb"></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="post-footer">
+      <div class="footer-left">FRAME 1,420 // NO SHORTCUTS</div>
+      <div class="footer-right">thomasnguyen.online</div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================= -->
+  <!-- POST 2: THE RETENTION CURVE OF YOUR CAREER              -->
+  <!-- ======================================================= -->
+  <div class="ig-canvas" id="post-2">
+    <div class="noise-layer"></div>
+    <div class="cyan-glow"></div>
+
+    <div class="post-header">
+      <div class="brand-id">
+        <span class="mono" style="color: #1591DC;">●</span>
+        <span>@thomasvisualeditor</span>
+      </div>
+      <div class="tag-pill mono">ANALYTICS // COMPOUNDING</div>
+    </div>
+
+    <!-- Center Graphic: Retention Graph Comparison -->
+    <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 35px; width: 100%;">
+      
+      <div style="text-align: center;">
+        <div class="tag-pill mono" style="display: inline-block; margin-bottom: 14px; color: #1591DC; border-color: rgba(21,145,220,0.3);">
+          AUDIENCE RETENTION METRIC
+        </div>
+        <h2 style="font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.2; letter-spacing: -0.035em;">
+          The Retention Curve <br>
+          <span style="color: #1591DC;">Of Your Career</span>
+        </h2>
+      </div>
+
+      <!-- Graph Surface Card -->
+      <div style="width: 100%; max-width: 840px; background: #0c0e14; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 34px 38px;">
+        
+        <!-- Y-Axis + Graph -->
+        <div style="display: flex; gap: 18px;">
+          
+          <!-- Y Axis Labels -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; font-size: 11px; color: #555762; height: 260px; text-align: right;" class="mono">
+            <span>100%</span>
+            <span>75%</span>
+            <span>50%</span>
+            <span>25%</span>
+            <span>0%</span>
+          </div>
+
+          <!-- SVG Chart Area -->
+          <div style="flex: 1; height: 260px; position: relative; border-left: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+            
+            <!-- Horizontal Grid lines -->
+            <div style="position: absolute; top: 0%; left: 0; right: 0; border-top: 1px dashed rgba(255,255,255,0.05);"></div>
+            <div style="position: absolute; top: 25%; left: 0; right: 0; border-top: 1px dashed rgba(255,255,255,0.05);"></div>
+            <div style="position: absolute; top: 50%; left: 0; right: 0; border-top: 1px dashed rgba(255,255,255,0.05);"></div>
+            <div style="position: absolute; top: 75%; left: 0; right: 0; border-top: 1px dashed rgba(255,255,255,0.05);"></div>
+
+            <svg viewBox="0 0 680 260" style="width: 100%; height: 100%; overflow: visible;">
+              
+              <!-- Curve A: 95% Drop-off (Grey Dashed) -->
+              <path d="M 0 30 C 60 180, 120 235, 200 240 L 400 245" 
+                    fill="none" stroke="#444754" stroke-width="2.5" stroke-dasharray="6 6"/>
+              <circle cx="200" cy="240" r="5" fill="#ff5555"/>
+              
+              <!-- Curve B: The 1% Editor (Electric Cyan Solid Glow) -->
+              <path d="M 0 30 C 180 35, 340 50, 440 60 C 520 70, 580 30, 680 15" 
+                    fill="none" stroke="#1591DC" stroke-width="3.5" style="filter: drop-shadow(0 0 10px rgba(21,145,220,0.6));"/>
+              <circle cx="680" cy="15" r="7" fill="#ffffff" stroke="#1591DC" stroke-width="3"/>
+            </svg>
+
+            <!-- Annotation A (Drop off) -->
+            <div style="position: absolute; bottom: 20px; left: 160px; background: rgba(255,85,85,0.1); border: 1px solid rgba(255,85,85,0.3); padding: 6px 12px; border-radius: 8px; font-size: 11px; color: #ff9999; line-height: 1.3;" class="mono">
+              <strong>95% DROP-OFF:</strong><br>Quits at Month 3 ($0 views, $0 clients)
+            </div>
+
+            <!-- Annotation B (Compounding) -->
+            <div style="position: absolute; top: 10px; right: 20px; background: rgba(21,145,220,0.15); border: 1px solid rgba(21,145,220,0.4); padding: 8px 14px; border-radius: 8px; font-size: 11px; color: #ffffff; line-height: 1.35; text-align: right;" class="mono">
+              <strong style="color: #1591DC;">THE 1% COMPOUND:</strong><br>1,000 hours in the dark before asking for $1,000
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- X Axis Labels -->
+        <div style="display: flex; justify-content: space-between; margin-left: 45px; margin-top: 14px; font-size: 11px; color: #555762;" class="mono">
+          <span>DAY 0</span>
+          <span>MONTH 3 (Doubt)</span>
+          <span>MONTH 9 (First $30)</span>
+          <span>YEAR 2 (High-Ticket)</span>
+        </div>
+
+      </div>
+
+      <!-- Takeaway statement -->
+      <p style="font-size: 18px; color: #9496a1; text-align: center; max-width: 680px; font-weight: 500; line-height: 1.45;">
+        The initial drop-off isn’t a sign of failure. <br>
+        <strong style="color: #ffffff;">It’s the algorithm filtering out everyone who quits too early.</strong>
+      </p>
+
+    </div>
+
+    <div class="post-footer">
+      <div class="footer-left">85%+ RETENTION STANDARD</div>
+      <div class="footer-right">thomasnguyen.online</div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================= -->
+  <!-- POST 3: THE HARDEST CUT (NIGHT SKYSCRAPER & RAZOR TOOL)  -->
+  <!-- ======================================================= -->
+  <div class="ig-canvas" id="post-3">
+    <div class="noise-layer"></div>
+
+    <div class="post-header">
+      <div class="brand-id">
+        <span class="mono" style="color: #1591DC;">●</span>
+        <span>@thomasvisualeditor</span>
+      </div>
+      <div class="tag-pill mono">KEYBOARD SHORTCUT // [C]</div>
+    </div>
+
+    <!-- Center Graphic: Night Skyscraper with 1 Lit Window & Razor Cut -->
+    <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 32px; width: 100%;">
+      
+      <!-- Skyscraper Vector Illustration -->
+      <div style="width: 100%; max-width: 820px; height: 360px; background: #040507; border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: flex-end;">
+        
+        <!-- Dark Architectural Facade Grids -->
+        <div style="width: 320px; height: 360px; background: #0a0c10; border-left: 1px solid rgba(255,255,255,0.08); border-right: 1px solid rgba(255,255,255,0.08); display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(8, 1fr); gap: 10px; padding: 20px;">
+          
+          <!-- Dim/Dark Windows -->
+          <div style="background: #11131a; border-radius: 4px;"></div>
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+          <div style="background: #0e1017; border-radius: 4px;"></div>
+          <div style="background: #101218; border-radius: 4px;"></div>
+
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+          <div style="background: #11131a; border-radius: 4px;"></div>
+          <div style="background: #0e1017; border-radius: 4px;"></div>
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+
+          <div style="background: #101218; border-radius: 4px;"></div>
+          
+          <!-- The ONLY Lit Room at 2 AM (Thomas's Studio) -->
+          <div style="background: #ffffff; border-radius: 4px; box-shadow: 0 0 25px 8px rgba(255,255,255,0.8), 0 0 60px 15px rgba(21,145,220,0.5); position: relative; z-index: 2;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, #fff 0%, #1591DC 100%);"></div>
+          </div>
+          
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+          <div style="background: #11131a; border-radius: 4px;"></div>
+
+          <div style="background: #0e1017; border-radius: 4px;"></div>
+          <div style="background: #101218; border-radius: 4px;"></div>
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+          <div style="background: #0e1017; border-radius: 4px;"></div>
+
+          <div style="background: #11131a; border-radius: 4px;"></div>
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+          <div style="background: #101218; border-radius: 4px;"></div>
+          <div style="background: #0d0f14; border-radius: 4px;"></div>
+        </div>
+
+        <!-- Annotation on the lit room -->
+        <div style="position: absolute; right: 80px; top: 110px; background: rgba(21,145,220,0.12); border: 1px solid rgba(21,145,220,0.35); padding: 8px 16px; border-radius: 8px; font-size: 12px; color: #ffffff;" class="mono">
+          <span style="color: #1591DC;">02:14 AM</span> · Timeline playhead active
+        </div>
+
+        <!-- Floating Razor Tool Badge -->
+        <div style="position: absolute; left: 70px; bottom: 40px; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 999px;">
+          <span class="mono" style="color: #1591DC; font-weight: 700;">[C] RAZOR TOOL</span>
+          <span style="color: #71737e; font-size: 12px;">Ripple Delete Dead Air</span>
+        </div>
+
+      </div>
+
+      <!-- Timeline Split Visual -->
+      <div style="width: 100%; max-width: 820px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;">
+        
+        <!-- Left Clip -->
+        <div style="background: #12141a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px 20px; text-align: center;">
+          <div style="font-size: 11px; color: #71737e; font-weight: 700; text-transform: uppercase;" class="mono">OLD CLIP (00:00:00)</div>
+          <div style="font-size: 15px; font-weight: 700; color: #888b97; margin-top: 4px;">10 PM Overtime &amp; Spreadsheets</div>
+        </div>
+
+        <!-- Slicing Icon -->
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: #1591DC; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; font-weight: 800; box-shadow: 0 0 20px rgba(21,145,220,0.6);">
+          ✂
+        </div>
+
+        <!-- Right Clip -->
+        <div style="background: #151822; border: 1px solid rgba(21,145,220,0.4); border-radius: 12px; padding: 16px 20px; text-align: center; box-shadow: 0 0 20px rgba(21,145,220,0.1);">
+          <div style="font-size: 11px; color: #1591DC; font-weight: 700; text-transform: uppercase;" class="mono">NEW CLIP (RENDER)</div>
+          <div style="font-size: 15px; font-weight: 700; color: #ffffff; margin-top: 4px;">16h Timeline · Total Freedom</div>
+        </div>
+
+      </div>
+
+      <!-- Headline -->
+      <div style="text-align: center;">
+        <h2 style="font-size: 38px; font-weight: 800; color: #ffffff; line-height: 1.25; letter-spacing: -0.035em;">
+          The hardest cut isn’t on Premiere. <br>
+          <span style="color: #1591DC;">It’s cutting your safety net.</span>
+        </h2>
+      </div>
+
+      <!-- One day or day one toggle -->
+      <div style="display: flex; gap: 16px;">
+        <div class="toggle-row" style="width: 220px;">
+          <span style="font-size: 13px; font-weight: 600; color: #71737e;">One day</span>
+          <div class="toggle-switch off"><div class="toggle-thumb"></div></div>
+        </div>
+        <div class="toggle-row" style="width: 220px; border-color: rgba(21,145,220,0.3); background: rgba(21,145,220,0.05);">
+          <span style="font-size: 13px; font-weight: 700; color: #ffffff;">Day one</span>
+          <div class="toggle-switch on"><div class="toggle-thumb"></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="post-footer">
+      <div class="footer-left">CTRL + K // RIPPLE DELETE THE EXCUSES</div>
+      <div class="footer-right">thomasnguyen.online</div>
+    </div>
+  </div>
+
+</body>
+</html>
