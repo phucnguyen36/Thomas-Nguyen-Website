@@ -3,27 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 3 — Decision Tree (3:4 Minimal)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Post 3 — Editor Decision Tree (Neue Haas Grotesk)</title>
   <style>
+    @font-face {
+      font-family: 'Neue Haas Grotesk';
+      src: url('fonts/NeueHaasGrotDisp-45Light-Trial.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Neue Haas Grotesk';
+      src: url('fonts/NeueHaasGrotDisp-55Roman-Trial.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Neue Haas Grotesk';
+      src: url('fonts/NeueHaasGrotDisp-65Medium-Trial.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Neue Haas Grotesk';
+      src: url('fonts/NeueHaasGrotDisp-65Medium-Trial.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Neue Haas Grotesk';
+      src: url('fonts/NeueHaasGrotDisp-65Medium-Trial.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Neue Haas Grotesk', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
     body {
       background-color: #000000;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
     }
-    .mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
+
     /* 3:4 Aspect Ratio (1080 x 1440) */
     .canvas {
       width: 1080px;
@@ -35,15 +64,16 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 120px 80px 80px;
+      padding: 100px 70px 80px;
     }
+
     .grain {
       position: absolute;
       inset: 0;
-      opacity: 0.06;
+      opacity: 0.055;
       pointer-events-none;
       z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
     .main-container {
@@ -56,45 +86,65 @@
       width: 100%;
       height: 100%;
       margin: auto 0;
+      gap: 50px;
     }
 
     .tree-svg {
-      width: 820px;
+      width: 940px;
       height: 520px;
     }
 
-    /* Node Text Styles */
+    /* Node Text Styles in Neue Haas Grotesk */
     .node-root {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 600;
       fill: #ffffff;
       letter-spacing: -0.01em;
     }
     .node-mid {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 500;
       fill: #c6c9d6;
     }
     .node-mid-dim {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 24px;
-      font-weight: 500;
-      fill: #727688;
+      font-size: 22px;
+      font-weight: 400;
+      fill: #6e7284;
     }
     .node-win {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 26px;
-      font-weight: 700;
+      font-size: 24px;
+      font-weight: 600;
       fill: #1591DC;
       filter: drop-shadow(0 0 14px rgba(21, 145, 220, 0.7));
     }
+    .node-sub {
+      font-size: 22px;
+      font-weight: 400;
+      fill: #9ea2b4;
+    }
     .node-lose {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 24px;
-      font-weight: 500;
-      fill: #5a5e70;
+      font-size: 22px;
+      font-weight: 400;
+      fill: #55596b;
+    }
+
+    .tag-note {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .punchline {
+      font-size: 19px;
+      font-weight: 400;
+      color: #8c90a2;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+    .punchline strong {
+      color: #ffffff;
+      font-weight: 600;
     }
 
     /* Watermark */
@@ -102,9 +152,9 @@
       position: relative;
       z-index: 10;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 400;
       color: rgba(255, 255, 255, 0.38);
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: lowercase;
     }
   </style>
@@ -114,48 +164,57 @@
     <div class="grain"></div>
 
     <div class="main-container">
-      <svg class="tree-svg" viewBox="0 0 760 460">
-        <!-- Connecting Lines -->
-        <!-- Root to Mid Branch -->
-        <path d="M 120 230 L 220 230 C 240 230, 240 125, 260 125 L 340 125" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.2" />
-        <path d="M 120 230 L 220 230 C 240 230, 240 335, 260 335 L 340 335" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2.2" />
+      <svg class="tree-svg" viewBox="0 0 960 480">
+        <!-- Connecting Curves -->
+        <!-- Root to Mid Branch 1 (Open Timeline) -->
+        <path d="M 130 240 L 210 240 C 235 240, 235 130, 260 130 L 450 130" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.2" />
+        
+        <!-- Root to Mid Branch 2 (Wait for Inspiration) -->
+        <path d="M 130 240 L 210 240 C 235 240, 235 350, 260 350 L 460 350" fill="none" stroke="rgba(255, 255, 255, 0.18)" stroke-width="2" />
 
-        <!-- Mid Try to Win / Lose Branches -->
-        <path d="M 400 125 L 470 125 C 490 125, 490 65, 510 65 L 580 65" fill="none" stroke="#1591DC" stroke-width="2.5" />
-        <path d="M 400 125 L 470 125 C 490 125, 490 185, 510 185 L 580 185" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="2" />
+        <!-- Open Timeline to Master Cut (Cyan #1591DC) -->
+        <path d="M 450 130 L 500 130 C 525 130, 525 70, 550 70 L 620 70" fill="none" stroke="#1591DC" stroke-width="2.6" />
+        
+        <!-- Open Timeline to Rough Cut -->
+        <path d="M 450 130 L 500 130 C 525 130, 525 190, 550 190 L 620 190" fill="none" stroke="rgba(255, 255, 255, 0.22)" stroke-width="2" />
 
-        <!-- Mid Don't Try to Lose Branch -->
-        <path d="M 470 335 L 580 335" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" />
+        <!-- Wait for Inspiration to Zero Exports -->
+        <path d="M 460 350 L 620 350" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" />
 
         <!-- Nodes -->
         <!-- Root -->
-        <circle cx="120" cy="230" r="4.5" fill="#ffffff" />
-        <text x="30" y="238" class="node-root">If you</text>
+        <circle cx="130" cy="240" r="4.5" fill="#ffffff" />
+        <text x="45" y="247" class="node-root">If you</text>
 
-        <!-- Mid 1: Try -->
-        <circle cx="340" cy="125" r="4" fill="#ffffff" />
-        <text x="355" y="133" class="node-mid">Try</text>
+        <!-- Mid 1: Open Timeline -->
+        <circle cx="450" cy="130" r="4" fill="#ffffff" />
+        <text x="260" y="120" class="node-mid">Sit at the timeline</text>
 
-        <!-- Mid 2: Don't try -->
-        <circle cx="340" cy="335" r="4" fill="#606475" />
-        <text x="355" y="343" class="node-mid-dim">Don't try</text>
+        <!-- Mid 2: Wait for Inspiration -->
+        <circle cx="460" cy="350" r="4" fill="#606475" />
+        <text x="260" y="340" class="node-mid-dim">Wait for inspiration</text>
 
         <!-- Leaves -->
-        <!-- Win -->
-        <circle cx="580" cy="65" r="5" fill="#1591DC" filter="drop-shadow(0 0 8px #1591DC)" />
-        <text x="605" y="74" class="node-win">Win</text>
+        <!-- Master Cut (Win) -->
+        <circle cx="620" cy="70" r="5" fill="#1591DC" filter="drop-shadow(0 0 8px #1591DC)" />
+        <text x="645" y="77" class="node-win">Master Cut <tspan class="tag-note" fill="#1591DC" dx="6">(WIN)</tspan></text>
 
-        <!-- Lose (from Try) -->
-        <circle cx="580" cy="185" r="4" fill="#5a5e70" />
-        <text x="605" y="193" class="node-lose">Lose</text>
+        <!-- Rough Cut (Progress) -->
+        <circle cx="620" cy="190" r="4" fill="#7a7e90" />
+        <text x="645" y="197" class="node-sub">Rough Cut <tspan class="tag-note" fill="#7a7e90" dx="6">(PROGRESS)</tspan></text>
 
-        <!-- Lose (from Don't try) -->
-        <circle cx="580" cy="335" r="4" fill="#484c5c" />
-        <text x="605" y="343" class="node-lose">Lose</text>
+        <!-- Zero Exports (Lose) -->
+        <circle cx="620" cy="350" r="4" fill="#464a59" />
+        <text x="645" y="357" class="node-lose">0 Exports <tspan class="tag-note" fill="#464a59" dx="6">(LOSE)</tspan></text>
       </svg>
+
+      <div class="punchline">
+        Inspiration doesn't start the edit.<br>
+        <strong>The edit creates inspiration.</strong>
+      </div>
     </div>
 
-    <!-- Bottom Watermark (Strictly Lowercase) -->
+    <!-- Bottom Watermark -->
     <div class="watermark">
       thomasvisualeditor
     </div>
