@@ -7,26 +7,20 @@
   <style>
     @font-face {
       font-family: 'Neue Haas Grotesk';
-      src: url('fonts/NeueHaasGrotDisp-45Light-Trial.otf') format('opentype');
+      src: url('fonts/NeueHaasGrotDisp-35Thin-Trial.otf') format('opentype');
       font-weight: 300;
       font-style: normal;
     }
     @font-face {
       font-family: 'Neue Haas Grotesk';
-      src: url('fonts/NeueHaasGrotDisp-55Roman-Trial.otf') format('opentype');
+      src: url('fonts/NeueHaasGrotDisp-45Light-Trial.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
     }
     @font-face {
       font-family: 'Neue Haas Grotesk';
-      src: url('fonts/NeueHaasGrotDisp-65Medium-Trial.otf') format('opentype');
+      src: url('fonts/NeueHaasGrotDisp-55Roman-Trial.otf') format('opentype');
       font-weight: 500;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Neue Haas Grotesk';
-      src: url('fonts/NeueHaasGrotDisp-65Medium-Trial.otf') format('opentype');
-      font-weight: 600;
       font-style: normal;
     }
     @font-face {
@@ -54,97 +48,273 @@
       overflow: hidden;
     }
 
-    /* 3:4 Aspect Ratio Canvas (1080 x 1440) */
+    /* 3:4 Aspect Ratio Canvas (1080 x 1440) - Pure Obsidian Poster */
     .canvas {
       width: 1080px;
       height: 1440px;
-      background-color: #020305;
+      background-color: #000000;
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 44px 56px 36px 56px;
       color: #ededf3;
     }
 
-    /* Accent color: Electric Mint / Neon Emerald */
     :root {
       --accent: #00e676;
-      --accent-glow: rgba(0, 230, 118, 0.16);
+      --accent-dim: rgba(0, 230, 118, 0.15);
+      --card-bg: linear-gradient(160deg, rgba(18, 22, 28, 0.90) 0%, rgba(8, 10, 14, 0.95) 100%);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-highlight: rgba(255, 255, 255, 0.20);
     }
 
     /* Subtle Film Grain Noise */
     .noise-layer {
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
       background-size: 24px 24px;
       pointer-events-none;
       z-index: 1;
-      opacity: 0.65;
+      opacity: 0.5;
     }
 
-    /* Atmospheric Studio Spotlight Behind Subject */
-    .studio-spotlight {
+    /* Dramatic Studio Spotlight Behind Subject's Head */
+    .studio-glow {
       position: absolute;
-      top: 210px;
-      left: 50%;
+      top: 190px;
+      left: 54%;
       transform: translateX(-50%);
-      width: 960px;
-      height: 960px;
-      background: radial-gradient(circle at 53% 42%, rgba(255, 255, 255, 0.1) 0%, rgba(0, 230, 118, 0.04) 38%, transparent 72%);
+      width: 820px;
+      height: 820px;
+      background: radial-gradient(circle at 48% 46%, rgba(255, 255, 255, 0.07) 0%, rgba(0, 230, 118, 0.015) 38%, transparent 70%);
       pointer-events-none;
       z-index: 2;
     }
 
-    /* HERO PORTRAIT: Centered & Large Movie-Poster Composition */
-    .hero-portrait-container {
+    /* HERO PORTRAIT: Monumental Poster Subject Centered & Seamlessly Blended */
+    .hero-portrait {
       position: absolute;
-      top: 190px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1080px;
-      height: 1040px;
+      top: 170px;
+      left: 54%;
+      transform: translateX(-42%);
+      width: 920px;
+      height: 1270px;
       z-index: 3;
       pointer-events-none;
     }
 
-    .hero-portrait-img {
+    .hero-portrait img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 46% 8%;
-      transform: translateX(115px) scale(1.26);
-      transform-origin: 50% 25%;
-      filter: grayscale(100%) contrast(138%) brightness(96%);
-      mask-image: radial-gradient(ellipse 70% 64% at 43% 38%, black 42%, rgba(0,0,0,0.85) 60%, transparent 95%),
-                  linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.5) 68%, transparent 84%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 64% at 43% 38%, black 42%, rgba(0,0,0,0.85) 60%, transparent 95%),
-                          linear-gradient(to bottom, black 0%, black 50%, rgba(0,0,0,0.5) 68%, transparent 84%);
-      opacity: 0.96;
+      object-position: 50% 8%;
+      filter: grayscale(100%) contrast(118%) brightness(101%);
+      mask-image: radial-gradient(ellipse 400px 540px at 50% 45%, black 35%, rgba(0,0,0,0.65) 65%, transparent 92%),
+                  linear-gradient(to bottom, black 0%, black 82%, rgba(0,0,0,0.4) 94%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 400px 540px at 50% 45%, black 35%, rgba(0,0,0,0.65) 65%, transparent 92%),
+                          linear-gradient(to bottom, black 0%, black 82%, rgba(0,0,0,0.4) 94%, transparent 100%);
+      opacity: 0.98;
     }
 
-    /* TOP HEADER BAR */
-    .header-bar {
-      position: relative;
+    /* TOP-LEFT IDENTITY: EXACT MUHAMMAD ABBAS ARCHITECTURE */
+    .masthead {
+      position: absolute;
+      top: 50px;
+      left: 56px;
+      z-index: 10;
+    }
+
+    .masthead-outline {
+      font-size: 78px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      line-height: 0.88;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.42);
+      color: transparent;
+      display: block;
+    }
+
+    .masthead-solid {
+      font-size: 90px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 0.88;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .masthead-role {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #8c909e;
+      margin-top: 14px;
+    }
+
+    /* TOP-RIGHT SECTION: CLIENT MARKETS (MIRRORING ABBAS EDUCATION) */
+    .top-right-section {
+      position: absolute;
+      top: 54px;
+      right: 56px;
+      z-index: 10;
+      text-align: left;
+    }
+
+    .top-right-heading {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .top-right-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .top-right-item {
+      font-size: 12px;
+      font-weight: 500;
+      color: #9da2af;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-right-item::before {
+      content: "-";
+      color: #6c7280;
+    }
+
+    /* MID-RIGHT FLOATING CORE PILLARS (MIRRORING ABBAS SKILL LEVEL) */
+    .floating-pillars {
+      position: absolute;
+      top: 240px;
+      right: 56px;
+      width: 250px;
       z-index: 10;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 14px;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .header-brand {
+    .section-accent-title {
       font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.22em;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.55);
+      color: var(--accent);
+      margin-bottom: 2px;
     }
 
-    .header-status {
+    .pillar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .pillar-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .pillar-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: monospace !important;
+    }
+
+    .pillar-desc {
+      font-size: 11px;
+      color: #8c909e;
+      line-height: 1.45;
+      padding-left: 18px;
+    }
+
+    /* LEFT COLUMN: 3 TACTILE FLOATING CARDS (EXACT ABBAS LEFT RAIL) */
+    .left-column {
+      position: absolute;
+      top: 240px;
+      left: 56px;
+      width: 270px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .widget-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-top: 1px solid var(--card-highlight);
+      border-radius: 16px;
+      padding: 18px 18px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    /* Widget 1: Creative Journey */
+    .journey-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .journey-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .journey-role {
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+    }
+
+    .journey-company {
+      font-size: 11px;
+      color: #8c909e;
+    }
+
+    /* Widget 2: Portfolio & Connect */
+    .connect-widget {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .connect-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+
+    .connect-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .connect-status {
       display: flex;
       align-items: center;
       gap: 7px;
@@ -152,167 +322,37 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.88);
+      color: #9da2af;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .status-dot {
+    .connect-status .status-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: var(--accent);
+      background: var(--accent);
       box-shadow: 0 0 10px var(--accent);
     }
 
-    /* TOP CENTER MASTHEAD TYPOGRAPHY */
-    .top-editorial-name {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      margin-top: 14px;
-    }
-
-    .ghost-title {
-      font-size: 78px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      line-height: 0.88;
-      text-transform: uppercase;
-      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
-      color: transparent;
-      display: block;
-    }
-
-    .solid-title {
-      font-size: 90px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      line-height: 0.88;
-      text-transform: uppercase;
-      color: #ffffff;
-      margin-top: 4px;
-      display: block;
-    }
-
-    .role-badge {
-      display: inline-flex;
-      align-items: center;
+    /* Widget 3: Primary Tools */
+    .tools-grid {
+      display: flex;
       gap: 10px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: #9da2b0;
-      margin-top: 12px;
-      padding: 6px 20px;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 9999px;
-      backdrop-filter: blur(16px);
     }
 
-    .role-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: var(--accent);
-    }
-
-    /* MAIN EDITORIAL 3-COLUMN FOUNDATION DOCKED AT BOTTOM */
-    .editorial-layout {
-      position: absolute;
-      bottom: 76px;
-      left: 56px;
-      right: 56px;
-      z-index: 10;
-      display: grid;
-      grid-template-columns: 270px 1.15fr 330px;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    /* LEFT WING: TACTILE CARDS */
-    .left-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    /* Tactile Frost Card Style */
-    .tactile-card {
-      background: linear-gradient(145deg, rgba(20, 24, 32, 0.85) 0%, rgba(10, 12, 16, 0.9) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 16px;
-      padding: 20px 18px;
-      backdrop-filter: blur(28px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Client Markets */
-    .market-list {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .market-entry {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-    }
-
-    .market-name {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #ffffff;
-    }
-
-    .market-code {
-      font-size: 9px;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-glow);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    /* Tools */
-    .tools-list {
-      display: flex;
-      gap: 8px;
-    }
-
-    .tool-entry {
+    .tool-tile {
       flex: 1;
       display: flex;
       align-items: center;
-      gap: 9px;
-      padding: 11px 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
+      gap: 10px;
+      padding: 10px 10px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
     }
 
-    .app-icon {
+    .app-badge {
       width: 28px;
       height: 28px;
       border-radius: 6px;
@@ -321,77 +361,80 @@
       justify-content: center;
       font-weight: 800;
       font-size: 12px;
-      letter-spacing: -0.02em;
+      flex-shrink: 0;
     }
 
-    .app-ae {
+    .badge-ae {
       background: #00005b;
       color: #9999ff;
       border: 1px solid rgba(153, 153, 255, 0.4);
     }
 
-    .app-pr {
+    .badge-pr {
       background: #000055;
       color: #ea77ff;
       border: 1px solid rgba(234, 119, 255, 0.4);
     }
 
-    .tool-title {
+    .tool-info-title {
       font-size: 11px;
       font-weight: 600;
       color: #ffffff;
       line-height: 1.2;
     }
 
-    .tool-desc {
+    .tool-info-sub {
       font-size: 9px;
       color: #8c909e;
     }
 
-    /* CENTER FLOATING SLAB: CREATIVE DNA (Over chest) */
-    .center-glass-slab {
-      background: linear-gradient(135deg, rgba(22, 27, 36, 0.86) 0%, rgba(10, 13, 18, 0.92) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-top: 1px solid rgba(255, 255, 255, 0.32);
+    /* FLOATING SIGNATURE CARD ON CHEST: CREATIVE DNA (ON RIGHT CHEST/SHOULDER) */
+    .chest-dna-card {
+      position: absolute;
+      top: 790px;
+      right: 56px;
+      width: 430px;
+      z-index: 12;
+      background: rgba(18, 24, 34, 0.58);
+      backdrop-filter: blur(28px) saturate(130%);
+      -webkit-backdrop-filter: blur(28px) saturate(130%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
       border-radius: 20px;
-      padding: 24px 24px 22px 24px;
-      backdrop-filter: blur(36px);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), inset 0 1px 2px rgba(255, 255, 255, 0.25);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 24px 24px 20px 24px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.88), inset 0 1px 2px rgba(255, 255, 255, 0.22);
     }
 
-    .dna-stats-row {
+    .dna-stats-line {
       display: flex;
-      gap: 24px;
+      gap: 32px;
       margin-bottom: 14px;
       padding-bottom: 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .dna-stat-val {
-      font-size: 42px;
+    .stat-box-val {
+      font-size: 40px;
       font-weight: 700;
       color: #ffffff;
       letter-spacing: -0.04em;
       line-height: 1;
     }
 
-    .dna-stat-val span.accent-char {
+    .stat-box-val span {
       color: var(--accent);
     }
 
-    .dna-stat-lbl {
+    .stat-box-lbl {
       font-size: 9px;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #8c909e;
       margin-top: 5px;
     }
 
-    .dna-text {
+    .dna-body-text {
       font-size: 12px;
       font-weight: 400;
       line-height: 1.65;
@@ -399,9 +442,9 @@
       letter-spacing: -0.01em;
     }
 
-    .dna-footer {
-      margin-top: 16px;
-      padding-top: 12px;
+    .dna-card-footer {
+      margin-top: 14px;
+      padding-top: 10px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       display: flex;
       justify-content: space-between;
@@ -411,259 +454,171 @@
       text-transform: uppercase;
     }
 
-    .dna-footer .tag-left {
+    .dna-card-footer .tag-left {
       color: var(--accent);
       font-weight: 700;
     }
 
-    .dna-footer .tag-right {
+    .dna-card-footer .tag-right {
       color: #8c909e;
-    }
-
-    /* RIGHT WING: FLOATING IN NEGATIVE SPACE (NO BOX CONTAINMENT!) */
-    .right-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-bottom: 6px;
-    }
-
-    .floating-pillars-group {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-    }
-
-    .pillar-row {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding-bottom: 11px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .pillar-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .p-title-row {
-      display: flex;
-      align-items: baseline;
-      gap: 7px;
-    }
-
-    .p-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent);
-      font-family: monospace !important;
-    }
-
-    .p-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-    }
-
-    .p-desc {
-      font-size: 11px;
-      font-weight: 400;
-      color: #8c909e;
-      line-height: 1.45;
-      padding-left: 20px;
-    }
-
-    /* FOOTER BAR */
-    .footer-bar {
-      position: absolute;
-      bottom: 28px;
-      left: 56px;
-      right: 56px;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 14px;
-      font-size: 11px;
-      color: #8c909e;
-      letter-spacing: 0.04em;
-    }
-
-    .footer-domain {
-      font-weight: 600;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .footer-dot {
-      color: var(--accent);
-    }
-
-    .footer-handle {
-      color: rgba(255, 255, 255, 0.65);
-      font-weight: 500;
     }
   </style>
 </head>
 <body>
 
   <div class="canvas">
-    <!-- Film Grain Overlay -->
+    <!-- Subtle Film Grain -->
     <div class="noise-layer"></div>
 
-    <!-- Atmospheric Studio Spotlight -->
-    <div class="studio-spotlight"></div>
+    <!-- Atmospheric Studio Spotlight Behind Subject -->
+    <div class="studio-glow"></div>
 
-    <!-- HERO PORTRAIT: Centered & Large Movie-Poster Composition -->
-    <div class="hero-portrait-container">
-      <img src="thomas_portrait.jpg" alt="Thomas Nguyen" class="hero-portrait-img">
+    <!-- HERO PORTRAIT: Monumental Poster Subject Centered & Proportional -->
+    <div class="hero-portrait">
+      <img src="thomas_portrait.jpg" alt="Thomas Nguyen">
     </div>
 
-    <!-- TOP BAR -->
-    <div class="header-bar">
-      <div class="header-brand">THOMAS NGUYEN • ARCHIVE 2026</div>
-      <div class="header-status">
-        <span class="status-dot"></span>
-        <span>OPEN FOR SELECT PROJECTS</span>
+    <!-- TOP-LEFT IDENTITY (MUHAMMAD ABBAS STYLE) -->
+    <div class="masthead">
+      <span class="masthead-outline">THOMAS</span>
+      <span class="masthead-solid">NGUYEN</span>
+      <div class="masthead-role">SHORT-FORM VIDEO EDITOR &bull; STRATEGIST</div>
+    </div>
+
+    <!-- TOP-RIGHT: CLIENT MARKETS (MIRRORING ABBAS EDUCATION) -->
+    <div class="top-right-section">
+      <div class="top-right-heading">CLIENT MARKETS</div>
+      <ul class="top-right-list">
+        <li class="top-right-item">United States (USA)</li>
+        <li class="top-right-item">United Kingdom (UK)</li>
+        <li class="top-right-item">Global Remote Production</li>
+      </ul>
+    </div>
+
+    <!-- MID-RIGHT: FLOATING CORE PILLARS (MIRRORING ABBAS SKILL LEVEL) -->
+    <div class="floating-pillars">
+      <div class="section-accent-title">CORE PILLARS</div>
+
+      <div class="pillar-item">
+        <div class="pillar-title">
+          <span class="pillar-num">01</span>
+          <span>Nhịp Dựng Cuốn (Pacing)</span>
+        </div>
+        <div class="pillar-desc">Cắt gọt từng frame, xóa 0.2s chết, neo giữ người xem ngay 3s đầu.</div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-title">
+          <span class="pillar-num">02</span>
+          <span>Hiệu Ứng May Đo (Motion)</span>
+        </div>
+        <div class="pillar-desc">Motion graphics độc bản theo phong cách riêng, không template đại trà.</div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-title">
+          <span class="pillar-num">03</span>
+          <span>Kể Chuyện Thị Giác (B-Roll)</span>
+        </div>
+        <div class="pillar-desc">Chọn lọc tư liệu đắt giá chạm cảm xúc, thay thế video chèn bừa.</div>
+      </div>
+
+      <div class="pillar-item">
+        <div class="pillar-title">
+          <span class="pillar-num">04</span>
+          <span>Âm Thanh Đa Tầng (Sound)</span>
+        </div>
+        <div class="pillar-desc">Phối âm chi tiết (SFX, risers, drops) kích thích sự tập trung tối đa.</div>
       </div>
     </div>
 
-    <!-- TOP EDITORIAL IDENTITY: CENTERED POSTER MASTHEAD -->
-    <div class="top-editorial-name">
-      <span class="ghost-title">THOMAS</span>
-      <span class="solid-title">NGUYEN</span>
-      <div class="role-badge">
-        <span class="role-dot"></span>
-        <span class="role-text">SHORT-FORM VIDEO EDITOR &bull; STRATEGIST</span>
-        <span class="role-dot"></span>
-      </div>
-    </div>
+    <!-- LEFT COLUMN: 3 STACKED FLOATING CARDS -->
+    <div class="left-column">
 
-    <!-- MAIN EDITORIAL 3-COLUMN COMPOSITION (Over Lower Chest) -->
-    <div class="editorial-layout">
-
-      <!-- LEFT WING: TACTILE FROST CARDS -->
-      <div class="left-column">
-        <!-- Client Markets (Countries only) -->
-        <div class="tactile-card">
-          <div class="section-label">CLIENT MARKETS</div>
-          <div class="market-list">
-            <div class="market-entry">
-              <span class="market-name">UNITED STATES</span>
-              <span class="market-code">USA</span>
-            </div>
-            <div class="market-entry">
-              <span class="market-name">UNITED KINGDOM</span>
-              <span class="market-code">UK</span>
-            </div>
+      <!-- Card 1: Creative Journey -->
+      <div class="widget-card">
+        <div class="section-accent-title" style="margin-bottom: 12px;">CREATIVE JOURNEY</div>
+        <div class="journey-list">
+          <div class="journey-entry">
+            <div class="journey-role">Lead Video Editor</div>
+            <div class="journey-company">Short-Form Visuals &bull; Direct-Response</div>
           </div>
-        </div>
-
-        <!-- Primary Toolset (Ae & Pr only) -->
-        <div class="tactile-card">
-          <div class="section-label">PRIMARY TOOLS</div>
-          <div class="tools-list">
-            <div class="tool-entry">
-              <div class="app-icon app-ae">Ae</div>
-              <div>
-                <div class="tool-title">After Effects</div>
-                <div class="tool-desc">Motion &amp; VFX</div>
-              </div>
-            </div>
-            <div class="tool-entry">
-              <div class="app-icon app-pr">Pr</div>
-              <div>
-                <div class="tool-title">Premiere Pro</div>
-                <div class="tool-desc">Pacing &amp; Cut</div>
-              </div>
-            </div>
+          <div class="journey-entry">
+            <div class="journey-role">Retention Strategist</div>
+            <div class="journey-company">High-Growth Creator Brands</div>
+          </div>
+          <div class="journey-entry">
+            <div class="journey-role">Motion &amp; Sound Architect</div>
+            <div class="journey-company">Custom Motion VFX &bull; Multi-Track Audio</div>
+          </div>
+          <div class="journey-entry">
+            <div class="journey-role">800+ Reels Delivered</div>
+            <div class="journey-company">US &amp; UK International Standard</div>
           </div>
         </div>
       </div>
 
-      <!-- CENTER: PHYSICAL FROSTED SLAB ON CHEST (THE SIGNATURE MOVE) -->
-      <div class="center-glass-slab">
-        <div class="section-label">CREATIVE DNA</div>
-
-        <!-- 2 Metrics Only -->
-        <div class="dna-stats-row">
-          <div>
-            <div class="dna-stat-val">800<span class="accent-char">+</span></div>
-            <div class="dna-stat-lbl">Reels Delivered</div>
+      <!-- Card 2: Portfolio & Connect -->
+      <div class="widget-card">
+        <div class="section-accent-title" style="margin-bottom: 10px;">PORTFOLIO &bull; CONNECT</div>
+        <div class="connect-widget">
+          <div class="connect-brand">thomasnguyen.online</div>
+          <div class="connect-link">@thomasvisualeditor</div>
+          <div class="connect-status">
+            <span class="status-dot"></span>
+            <span>OPEN FOR SELECT PROJECTS</span>
           </div>
-          <div>
-            <div class="dna-stat-val">85<span class="accent-char">%+</span></div>
-            <div class="dna-stat-lbl">5S Retention Rate</div>
-          </div>
-        </div>
-
-        <!-- High-Impact Manifesto -->
-        <p class="dna-text">
-          Biến những thước phim thô của nhà sáng lập thành tài sản thị giác có sức hút cao. 
-          Mọi nhát cắt đều có chủ đích, loại bỏ triệt để nhịp chết và neo giữ trọn vẹn sự chú ý của người xem.
-        </p>
-
-        <div class="dna-footer">
-          <span class="tag-left">THE STANDARD</span>
-          <span class="tag-right">Zero AI Slop • Pure Human Craft</span>
         </div>
       </div>
 
-      <!-- RIGHT WING: FLOATING IN NEGATIVE SPACE (NO BOX CONTAINMENT!) -->
-      <div class="right-column">
-        <div class="floating-pillars-group">
-          <div class="section-label">CORE PILLARS</div>
-
-          <div class="pillar-row">
-            <div class="p-title-row">
-              <span class="p-num">01</span>
-              <span class="p-name">Nhịp Dựng Cuốn (Pacing)</span>
+      <!-- Card 3: Primary Tools -->
+      <div class="widget-card">
+        <div class="section-accent-title" style="margin-bottom: 12px;">PRIMARY TOOLS</div>
+        <div class="tools-grid">
+          <div class="tool-tile">
+            <div class="app-badge badge-ae">Ae</div>
+            <div>
+              <div class="tool-info-title">After Effects</div>
+              <div class="tool-info-sub">Motion &amp; VFX</div>
             </div>
-            <div class="p-desc">Cắt gọt từng frame, xóa 0.2s chết, neo giữ người xem ngay 3 giây đầu.</div>
           </div>
-
-          <div class="pillar-row">
-            <div class="p-title-row">
-              <span class="p-num">02</span>
-              <span class="p-name">Hiệu Ứng May Đo (Motion)</span>
+          <div class="tool-tile">
+            <div class="app-badge badge-pr">Pr</div>
+            <div>
+              <div class="tool-info-title">Premiere Pro</div>
+              <div class="tool-info-sub">Pacing &amp; Cut</div>
             </div>
-            <div class="p-desc">Motion graphics độc bản theo phong cách riêng, không dùng template đại trà.</div>
-          </div>
-
-          <div class="pillar-row">
-            <div class="p-title-row">
-              <span class="p-num">03</span>
-              <span class="p-name">Kể Chuyện Thị Giác (B-Roll)</span>
-            </div>
-            <div class="p-desc">Chọn lọc tư liệu đắt giá chạm cảm xúc, thay thế video chèn bừa vô nghĩa.</div>
-          </div>
-
-          <div class="pillar-row">
-            <div class="p-title-row">
-              <span class="p-num">04</span>
-              <span class="p-name">Âm Thanh Đa Tầng (Sound)</span>
-            </div>
-            <div class="p-desc">Phối âm thanh chi tiết (SFX, risers, drops) kích thích sự tập trung tối đa.</div>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- FOOTER BAR -->
-    <div class="footer-bar">
-      <div class="footer-domain">
-        <span>thomasnguyen.online</span>
-        <span class="footer-dot">•</span>
-        <span style="color: #8c909e; font-weight: 400;">Based in Vietnam • Working Globally</span>
+    <!-- FLOATING SIGNATURE CARD ON CHEST: CREATIVE DNA (PLACED ON RIGHT CHEST/SHOULDER) -->
+    <div class="chest-dna-card">
+      <div class="section-accent-title" style="margin-bottom: 14px;">CREATIVE DNA</div>
+
+      <!-- 2 Key Metrics -->
+      <div class="dna-stats-line">
+        <div>
+          <div class="stat-box-val">800<span>+</span></div>
+          <div class="stat-box-lbl">Reels Delivered</div>
+        </div>
+        <div>
+          <div class="stat-box-val">85<span>%+</span></div>
+          <div class="stat-box-lbl">5S Retention Rate</div>
+        </div>
       </div>
-      <div class="footer-handle">
-        @thomasvisualeditor
+
+      <!-- High-Impact Manifesto -->
+      <p class="dna-body-text">
+        Biến những thước phim thô của nhà sáng lập thành tài sản thị giác có sức hút cao. 
+        Mọi nhát cắt đều có chủ đích, loại bỏ triệt để nhịp chết và neo giữ trọn vẹn sự chú ý của người xem.
+      </p>
+
+      <div class="dna-card-footer">
+        <span class="tag-left">THE STANDARD</span>
+        <span class="tag-right">Zero AI Slop &bull; Pure Human Craft</span>
       </div>
     </div>
 
