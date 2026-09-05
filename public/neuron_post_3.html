@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 3 — The Speed Graph (Linear vs Easy Ease)</title>
+  <title>Post 3 — Don't Rely on Motivation / Rely on Discipline</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,208 +28,157 @@
     .canvas {
       width: 1080px;
       height: 1350px;
-      background-color: #040508;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 95px 85px;
+      padding: 85px 80px;
+      background-color: #050608;
+    }
+    /* Photographic Background Layer */
+    .bg-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('bg_post_3.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.42) contrast(1.3) grayscale(40%);
+      z-index: 1;
+    }
+    /* Dark Vignette */
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(4, 5, 8, 0.35) 0%, rgba(4, 5, 8, 0.85) 75%, rgba(4, 5, 8, 0.98) 100%),
+                  linear-gradient(180deg, rgba(4, 5, 8, 0.85) 0%, transparent 25%, transparent 75%, rgba(4, 5, 8, 0.95) 100%);
+      z-index: 2;
     }
     /* Film Grain Noise */
     .grain {
       position: absolute;
       inset: 0;
-      opacity: 0.055;
+      opacity: 0.085;
       pointer-events-none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      z-index: 3;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-    .card {
+    .content {
+      position: relative;
+      z-index: 10;
       width: 100%;
-      background: rgba(14, 16, 24, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 18px;
-      padding: 26px 30px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-    }
-    .card-header {
-      display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .card-title {
-      font-size: 15px;
+    .watermark {
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.3em;
+      color: rgba(255, 255, 255, 0.45);
       text-transform: uppercase;
+    }
+    .curve-card {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: column;
+      gap: 50px;
+      width: 100%;
+      max-width: 700px;
     }
-    .pill {
-      font-size: 11px;
+    .curve-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+    .curve-title {
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.1em;
-      padding: 5px 14px;
-      border-radius: 999px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
-    .graph-box {
+    .footer {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-      height: 135px;
-      background: #080a10;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      position: relative;
-      overflow: hidden;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.2em;
     }
   </style>
 </head>
 <body>
   <div class="canvas">
+    <div class="bg-photo"></div>
+    <div class="vignette"></div>
     <div class="grain"></div>
 
-    <!-- Top Watermark -->
-    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.28em; color: #484b5c; text-transform: uppercase; position: relative; z-index: 10;" class="mono">
-      @THOMASVISUALEDITOR
-    </div>
+    <div class="content">
+      <!-- Top Watermark -->
+      <div class="watermark mono">@THOMASVISUALEDITOR</div>
 
-    <!-- MAIN GRAPH EDITOR COMPARISON -->
-    <div style="width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 50px; margin: auto 0; position: relative; z-index: 10;">
-      
-      <!-- CARD 01: LINEAR KEYFRAMES (AMATEUR) -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title" style="color: #7a7d90;">
-            <span class="mono" style="color: #e05252;">01.</span>
-            <span>LINEAR KEYFRAMES // DEFAULT CUT</span>
+      <!-- Main Focus: Don't Rely on Motivation / Rely on Discipline -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 60px; margin: auto 0; width: 100%;">
+        
+        <div class="curve-card">
+          <!-- TOP: MOTIVATION (FADES OUT) -->
+          <div class="curve-row">
+            <div class="curve-title mono" style="color: rgba(255, 255, 255, 0.45);">
+              DON'T RELY ON MOTIVATION
+            </div>
+            <svg viewBox="0 0 700 80" style="width: 100%; height: 75px; overflow: visible;">
+              <!-- Base line -->
+              <line x1="0" y1="70" x2="700" y2="70" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+              <!-- Dying bounces -->
+              <path d="M 0 70 Q 70 -10 140 70 Q 190 20 240 70 Q 275 45 310 70" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.5"/>
+              <!-- Flat dotted line dying out -->
+              <line x1="310" y1="70" x2="650" y2="70" stroke="rgba(255, 255, 255, 0.25)" stroke-width="2" stroke-dasharray="4 6"/>
+              <!-- Start / dying dots -->
+              <circle cx="0" cy="70" r="4" fill="rgba(255, 255, 255, 0.5)"/>
+              <circle cx="310" cy="70" r="4" fill="rgba(255, 255, 255, 0.35)"/>
+            </svg>
           </div>
-          <div class="pill mono" style="background: rgba(224, 82, 82, 0.12); color: #e05252; border: 1px solid rgba(224, 82, 82, 0.3);">
-            STIFF & MECHANICAL
+
+          <!-- BOTTOM: DISCIPLINE (CONTINUOUS RHYTHM IN #1591DC) -->
+          <div class="curve-row">
+            <div class="curve-title mono" style="color: #1591DC; font-weight: 800;">
+              RELY ON DISCIPLINE
+            </div>
+            <svg viewBox="0 0 700 80" style="width: 100%; height: 75px; overflow: visible; filter: drop-shadow(0 0 15px rgba(21, 145, 220, 0.35));">
+              <!-- Base line -->
+              <line x1="0" y1="70" x2="700" y2="70" stroke="rgba(21, 145, 220, 0.25)" stroke-width="1.5"/>
+              <!-- Continuous rhythmic bounces -->
+              <path d="M 0 70 Q 30 25 60 70 Q 90 25 120 70 Q 150 25 180 70 Q 210 25 240 70 Q 270 25 300 70 Q 330 25 360 70 Q 390 25 420 70 Q 450 25 480 70 Q 510 25 540 70 Q 570 25 600 70 Q 630 25 660 70 L 685 70" 
+                    fill="none" stroke="#1591DC" stroke-width="3"/>
+              <!-- Glowing active playhead / leading dot -->
+              <circle cx="660" cy="70" r="6" fill="#ffffff" stroke="#1591DC" stroke-width="2.5" style="filter: drop-shadow(0 0 10px #1591DC);"/>
+            </svg>
           </div>
         </div>
 
-        <!-- Graph Box: Linear Speed -->
-        <div class="graph-box">
-          <svg viewBox="0 0 840 135" style="width: 100%; height: 100%;">
-            <!-- Grid lines -->
-            <line x1="50" y1="25" x2="800" y2="25" stroke="rgba(255,255,255,0.03)" stroke-dasharray="3 3"/>
-            <line x1="50" y1="68" x2="800" y2="68" stroke="rgba(255,255,255,0.03)" stroke-dasharray="3 3"/>
-            <line x1="50" y1="110" x2="800" y2="110" stroke="rgba(255,255,255,0.05)"/>
-
-            <line x1="237" y1="15" x2="237" y2="115" stroke="rgba(255,255,255,0.03)" stroke-dasharray="3 3"/>
-            <line x1="425" y1="15" x2="425" y2="115" stroke="rgba(255,255,255,0.03)" stroke-dasharray="3 3"/>
-            <line x1="612" y1="15" x2="612" y2="115" stroke="rgba(255,255,255,0.03)" stroke-dasharray="3 3"/>
-
-            <!-- Flat Linear Speed Line -->
-            <line x1="120" y1="68" x2="720" y2="68" stroke="#e05252" stroke-width="2.5"/>
-
-            <!-- Diamond Linear Keyframes ◆ -->
-            <g transform="translate(120, 68)">
-              <polygon points="0,-7 7,0 0,7 -7,0" fill="#e05252" stroke="#ffffff" stroke-width="1.5"/>
-            </g>
-            <g transform="translate(720, 68)">
-              <polygon points="0,-7 7,0 0,7 -7,0" fill="#e05252" stroke="#ffffff" stroke-width="1.5"/>
-            </g>
-
-            <!-- Metrics Labels -->
-            <text x="50" y="22" fill="#444654" font-size="10" font-family="'JetBrains Mono'">1000 px/s</text>
-            <text x="145" y="52" fill="#e05252" font-size="10" font-family="'JetBrains Mono'" font-weight="700">CONSTANT VELOCITY (0% FLOW)</text>
-            <text x="50" y="125" fill="#444654" font-size="10" font-family="'JetBrains Mono'">0 px/s</text>
-            <text x="735" y="72" fill="#787c90" font-size="10" font-family="'JetBrains Mono'">DROP OFF</text>
-          </svg>
+        <!-- Single Core Punchline -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center;">
+          <div style="font-size: 32px; line-height: 1.25; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; text-shadow: 0 4px 20px rgba(0,0,0,0.95);">
+            Amateurs wait for inspiration.<br>
+            Editors sit at the timeline.
+          </div>
+          <div class="mono" style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #1591DC; text-transform: uppercase; background: rgba(21, 145, 220, 0.12); padding: 6px 18px; border-radius: 999px; border: 1px solid rgba(21, 145, 220, 0.3);">
+            KEYFRAME: EASY EASE [F9] // 85%+ RETENTION
+          </div>
         </div>
 
-        <div style="font-size: 13px; color: #6a6d80; line-height: 1.45;">
-          Rigid transitions with zero acceleration curve. Feels like a PowerPoint slideshow. The viewer's subconscious gets tired and swipes away within 3 seconds.
-        </div>
       </div>
 
-      <!-- CENTER DIVIDER WITH STATEMENT -->
-      <div style="display: flex; align-items: center; justify-content: center; gap: 24px;">
-        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.08);"></div>
-        <div class="mono" style="font-size: 12px; font-weight: 700; letter-spacing: 0.25em; color: #1591DC; text-transform: uppercase;">
-          AMATEURS MAKE CUTS. EDITORS SHAPE RHYTHM.
-        </div>
-        <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.08);"></div>
+      <!-- Bottom Footer -->
+      <div class="footer mono">
+        <span>00:00:00:00</span>
+        <span style="letter-spacing: 0.28em; font-weight: 600;">THOMASNGUYEN.ONLINE</span>
+        <span>RHYTHM > LUCK</span>
       </div>
-
-      <!-- CARD 02: EASY EASE [F9] + SPEED GRAPH (PRO / THOMAS CRAFT) -->
-      <div class="card" style="border-color: rgba(21, 145, 220, 0.4); background: rgba(12, 19, 32, 0.8); box-shadow: 0 0 35px rgba(21, 145, 220, 0.1);">
-        <div class="card-header">
-          <div class="card-title" style="color: #ffffff;">
-            <span class="mono" style="color: #1591DC;">02.</span>
-            <span>BEZIER SPEED GRAPH // EASY EASE [F9]</span>
-          </div>
-          <div class="pill mono" style="background: rgba(21, 145, 220, 0.18); color: #1591DC; border: 1px solid rgba(21, 145, 220, 0.4); box-shadow: 0 0 14px rgba(21, 145, 220, 0.3);">
-            85%+ RETENTION FLOW
-          </div>
-        </div>
-
-        <!-- Graph Box: High-Tech Bezier Velocity Curve -->
-        <div class="graph-box" style="border-color: rgba(21, 145, 220, 0.15);">
-          <svg viewBox="0 0 840 135" style="width: 100%; height: 100%; overflow: visible;">
-            <defs>
-              <linearGradient id="curveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#1591DC" stop-opacity="0.35"/>
-                <stop offset="100%" stop-color="#1591DC" stop-opacity="0.0"/>
-              </linearGradient>
-            </defs>
-
-            <!-- Grid lines -->
-            <line x1="50" y1="20" x2="800" y2="20" stroke="rgba(21,145,220,0.08)" stroke-dasharray="3 3"/>
-            <line x1="50" y1="65" x2="800" y2="65" stroke="rgba(21,145,220,0.05)" stroke-dasharray="3 3"/>
-            <line x1="50" y1="110" x2="800" y2="110" stroke="rgba(255,255,255,0.08)"/>
-
-            <!-- Area under velocity curve -->
-            <path d="M 120 110 C 200 110, 240 18, 380 18 C 520 18, 580 110, 720 110 Z" fill="url(#curveGradient)"/>
-
-            <!-- Bezier Speed Curve -->
-            <path d="M 120 110 C 200 110, 240 18, 380 18 C 520 18, 580 110, 720 110" 
-                  fill="none" stroke="#1591DC" stroke-width="3" style="filter: drop-shadow(0 0 8px #1591DC);"/>
-
-            <!-- Tangent Handles & Bezier Points -->
-            <!-- Left point -->
-            <circle cx="120" cy="110" r="4.5" fill="#ffffff" stroke="#1591DC" stroke-width="2"/>
-            <line x1="120" y1="110" x2="200" y2="110" stroke="#1591DC" stroke-width="1.5" stroke-dasharray="2 2"/>
-            <circle cx="200" cy="110" r="3" fill="#1591DC"/>
-
-            <!-- Apex Velocity Point: Frame 12 Whip -->
-            <circle cx="380" cy="18" r="6" fill="#ffffff" stroke="#1591DC" stroke-width="2.5" style="filter: drop-shadow(0 0 10px #1591DC);"/>
-            <line x1="320" y1="18" x2="440" y2="18" stroke="#1591DC" stroke-width="1.5"/>
-            <circle cx="320" cy="18" r="3" fill="#1591DC"/>
-            <circle cx="440" cy="18" r="3" fill="#1591DC"/>
-
-            <!-- Right Point (Smooth Decel) -->
-            <circle cx="720" cy="110" r="4.5" fill="#ffffff" stroke="#1591DC" stroke-width="2"/>
-            <line x1="640" y1="110" x2="720" y2="110" stroke="#1591DC" stroke-width="1.5" stroke-dasharray="2 2"/>
-            <circle cx="640" cy="110" r="3" fill="#1591DC"/>
-
-            <!-- Speed annotations -->
-            <text x="50" y="22" fill="#1591DC" font-size="10" font-family="'JetBrains Mono'" font-weight="700">3850 px/s (PEAK WHIP)</text>
-            <text x="455" y="22" fill="#ffffff" font-size="10" font-family="'JetBrains Mono'" font-weight="700">NEURO-SNAP // INFLUENCE 78%</text>
-            <text x="50" y="125" fill="#444654" font-size="10" font-family="'JetBrains Mono'">0 px/s</text>
-            <text x="735" y="114" fill="#1591DC" font-size="10" font-family="'JetBrains Mono'" font-weight="700">SMOOTH LOOP</text>
-          </svg>
-        </div>
-
-        <div style="font-size: 13px; color: #a4a9bd; line-height: 1.45;">
-          Custom velocity curves on every transition, whip zoom, and text pop. The cut is invisible. The viewer is hooked until the last frame.
-        </div>
-      </div>
-
     </div>
-
-    <!-- Bottom Footer Watermark -->
-    <div style="display: flex; justify-content: space-between; width: 100%; font-size: 13px; color: #434656; letter-spacing: 0.16em; position: relative; z-index: 10;" class="mono">
-      <span>VELOCITY CURVES</span>
-      <span style="letter-spacing: 0.24em; font-weight: 600;">THOMASNGUYEN.ONLINE</span>
-      <span>AFTER EFFECTS // PREMIERE</span>
-    </div>
-
   </div>
 </body>
 </html>
