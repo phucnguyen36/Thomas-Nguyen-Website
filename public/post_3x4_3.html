@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 3 — The Professional Standard (Neue Haas Grotesk)</title>
+  <title>Post 3 — Editor Standard (Clean 3:4 Minimal)</title>
   <style>
     @font-face {
       font-family: 'Neue Haas Grotesk';
@@ -64,7 +64,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 100px 40px 80px;
+      padding: 120px 40px 80px;
     }
 
     .grain {
@@ -86,50 +86,50 @@
       width: 100%;
       height: 100%;
       margin: auto 0;
-      gap: 55px;
+      gap: 60px;
     }
 
     .tree-svg {
-      width: 1000px;
-      height: 520px;
+      width: 960px;
+      height: 480px;
     }
 
-    /* Node Text Styles in Neue Haas Grotesk */
+    /* Node Text Styles */
     .node-root {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 600;
       fill: #ffffff;
       letter-spacing: -0.01em;
       text-anchor: end;
     }
-    .node-mid-dim {
-      font-size: 20px;
+    .node-mid {
+      font-size: 22px;
       font-weight: 500;
-      fill: #6e7284;
+      fill: #d2d5e2;
     }
-    .node-mid-bright {
-      font-size: 21px;
-      font-weight: 600;
-      fill: #ffffff;
-    }
-    .leaf-text {
-      font-size: 18px;
+    .node-mid-dim {
+      font-size: 22px;
       font-weight: 400;
-      fill: #a2a6b8;
+      fill: #686c7d;
     }
-    .leaf-text-dim {
-      font-size: 18px;
-      font-weight: 400;
-      fill: #5b6072;
-    }
-    .leaf-win {
-      font-size: 19px;
+    .node-win {
+      font-size: 23px;
       font-weight: 600;
       fill: #1591DC;
-      filter: drop-shadow(0 0 14px rgba(21, 145, 220, 0.7));
+      filter: drop-shadow(0 0 14px rgba(21, 145, 220, 0.75));
+    }
+    .node-sub {
+      font-size: 21px;
+      font-weight: 400;
+      fill: #9498a9;
+    }
+    .node-lose {
+      font-size: 21px;
+      font-weight: 400;
+      fill: #4c5060;
     }
 
-    .outcome-tag {
+    .tag-note {
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -141,7 +141,7 @@
       font-weight: 400;
       color: #8c90a2;
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.55;
       letter-spacing: -0.01em;
     }
     .punchline strong {
@@ -166,54 +166,48 @@
     <div class="grain"></div>
 
     <div class="main-container">
-      <svg class="tree-svg" viewBox="0 0 1020 520">
-        <!-- Connecting Curves -->
-        <!-- Root to Top Mid (Amateur trap) -->
-        <path d="M 140 260 L 210 260 C 230 260, 230 140, 250 140 L 360 140" fill="none" stroke="rgba(255, 255, 255, 0.18)" stroke-width="2" />
+      <svg class="tree-svg" viewBox="0 0 980 460">
+        <!-- Connecting Lines -->
+        <!-- Root to Branch 1 (Commit & Adapt) -->
+        <path d="M 150 230 L 220 230 C 240 230, 240 130, 260 130 L 280 130" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.2" />
         
-        <!-- Root to Bottom Mid (Professional standard) -->
-        <path d="M 140 260 L 210 260 C 230 260, 230 380, 250 380 L 380 380" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.2" />
+        <!-- Root to Branch 2 (Copy & Settle) -->
+        <path d="M 150 230 L 220 230 C 240 230, 240 330, 260 330 L 280 330" fill="none" stroke="rgba(255, 255, 255, 0.18)" stroke-width="2" />
 
-        <!-- Top Mid to Leaf 1 (Doubt choices) -->
-        <path d="M 360 140 L 410 140 C 430 140, 430 80, 450 80 L 490 80" fill="none" stroke="rgba(255, 255, 255, 0.14)" stroke-width="2" />
+        <!-- Branch 1 to Win (Mastery) in Electric Cyan #1591DC -->
+        <path d="M 535 130 L 590 130 C 615 130, 615 70, 640 70 L 685 70" fill="none" stroke="#1591DC" stroke-width="2.6" />
         
-        <!-- Top Mid to Leaf 2 (Resist change) -->
-        <path d="M 360 140 L 410 140 C 430 140, 430 200, 450 200 L 490 200" fill="none" stroke="rgba(255, 255, 255, 0.14)" stroke-width="2" />
+        <!-- Branch 1 to Progress (Growth) -->
+        <path d="M 535 130 L 590 130 C 615 130, 615 190, 640 190 L 685 190" fill="none" stroke="rgba(255, 255, 255, 0.22)" stroke-width="2" />
 
-        <!-- Bottom Mid to Leaf 3 (Commit to your cut) -->
-        <path d="M 380 380 L 430 380 C 450 380, 450 320, 470 320 L 510 320" fill="none" stroke="rgba(255, 255, 255, 0.28)" stroke-width="2.2" />
-        
-        <!-- Bottom Mid to Leaf 4 (Adapt & learn daily - Cyan Glow) -->
-        <path d="M 380 380 L 430 380 C 450 380, 450 440, 470 440 L 510 440" fill="none" stroke="#1591DC" stroke-width="2.6" />
+        <!-- Branch 2 to Lose (Stagnation) -->
+        <path d="M 525 330 L 685 330" fill="none" stroke="rgba(255, 255, 255, 0.14)" stroke-width="2" />
 
-        <!-- Nodes & Labels -->
+        <!-- Nodes & Clean Text Labels -->
         <!-- Root -->
-        <circle cx="140" cy="260" r="4.5" fill="#ffffff" />
-        <text x="120" y="267" class="node-root">The craft</text>
+        <circle cx="150" cy="230" r="4.5" fill="#ffffff" />
+        <text x="130" y="238" class="node-root">If you</text>
 
-        <!-- Top Mid: Amateur Trap -->
-        <circle cx="360" cy="140" r="4" fill="#585c6d" />
-        <text x="210" y="130" class="node-mid-dim">Amateur mindset</text>
+        <!-- Mid 1: Commit & Learn -->
+        <circle cx="280" cy="130" r="4" fill="#ffffff" />
+        <text x="300" y="137" class="node-mid">Commit & learn daily</text>
 
-        <!-- Leaf 1: Doubt choices & copy trends -->
-        <circle cx="490" cy="80" r="4" fill="#424654" />
-        <text x="515" y="86" class="leaf-text-dim">Doubt choices & copy trends <tspan class="outcome-tag" fill="#424654" dx="10">→ LOST IDENTITY</tspan></text>
+        <!-- Mid 2: Copy & Settle -->
+        <circle cx="280" cy="330" r="4" fill="#5a5e70" />
+        <text x="300" y="337" class="node-mid-dim">Copy & doubt choices</text>
 
-        <!-- Leaf 2: Resist change & stop learning -->
-        <circle cx="490" cy="200" r="4" fill="#424654" />
-        <text x="515" y="206" class="leaf-text-dim">Resist change & stop learning <tspan class="outcome-tag" fill="#424654" dx="10">→ STAGNANT SKILLS</tspan></text>
+        <!-- Leaves -->
+        <!-- Mastery (WIN) -->
+        <circle cx="685" cy="70" r="5" fill="#1591DC" filter="drop-shadow(0 0 8px #1591DC)" />
+        <text x="710" y="77" class="node-win">Mastery <tspan class="tag-note" fill="#1591DC" dx="6">(WIN)</tspan></text>
 
-        <!-- Bottom Mid: Professional Standard -->
-        <circle cx="380" cy="380" r="4.5" fill="#ffffff" />
-        <text x="180" y="370" class="node-mid-bright">Professional standard</text>
+        <!-- Growth (PROGRESS) -->
+        <circle cx="685" cy="190" r="4" fill="#888c9e" />
+        <text x="710" y="197" class="node-sub">Growth <tspan class="tag-note" fill="#888c9e" dx="6">(PROGRESS)</tspan></text>
 
-        <!-- Leaf 3: Commit to your creative cut -->
-        <circle cx="510" cy="320" r="4" fill="#a2a6b8" />
-        <text x="535" y="326" class="leaf-text">Commit to your creative cut <tspan class="outcome-tag" fill="#a2a6b8" dx="10">→ SIGNATURE VOICE</tspan></text>
-
-        <!-- Leaf 4: Adapt & learn every day -->
-        <circle cx="510" cy="440" r="5.5" fill="#1591DC" filter="drop-shadow(0 0 8px #1591DC)" />
-        <text x="535" y="446" class="leaf-win">Adapt & learn every day <tspan class="outcome-tag" fill="#1591DC" dx="10">→ IRREPLACEABLE (WIN)</tspan></text>
+        <!-- Stagnation (LOSE) -->
+        <circle cx="685" cy="330" r="4" fill="#444756" />
+        <text x="710" y="337" class="node-lose">Stagnation <tspan class="tag-note" fill="#444756" dx="6">(LOSE)</tspan></text>
       </svg>
 
       <div class="punchline">
