@@ -58,291 +58,207 @@
     .canvas {
       width: 1080px;
       height: 1440px;
-      background-color: #040507;
+      background-color: #020305;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 48px 52px 40px 52px;
+      padding: 46px 56px 40px 56px;
       color: #ededf3;
     }
 
-    /* Subtle Grid Overlay */
-    .grid-lines {
-      position: absolute;
-      inset: 0;
-      background-size: 72px 72px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-      pointer-events-none;
-      z-index: 1;
+    /* Accent color: Electric Mint / Neon Emerald like Muhammad Abbas */
+    :root {
+      --accent: #00e676;
+      --accent-glow: rgba(0, 230, 118, 0.15);
     }
 
-    /* Cinematic Center Glow */
-    .ambient-glow {
+    /* Subtle Film Grain Noise */
+    .noise-layer {
       position: absolute;
-      top: 100px;
-      left: 50%;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+      pointer-events-none;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    /* Soft Studio Spotlight Behind Subject */
+    .studio-spotlight {
+      position: absolute;
+      top: 140px;
+      left: 52%;
       transform: translateX(-50%);
-      width: 680px;
-      height: 680px;
-      background: radial-gradient(circle, rgba(21, 145, 220, 0.16) 0%, rgba(21, 145, 220, 0.02) 55%, transparent 75%);
+      width: 800px;
+      height: 900px;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.06) 0%, rgba(0, 230, 118, 0.025) 35%, transparent 70%);
       pointer-events-none;
       z-index: 2;
     }
 
-    /* Studio Portrait Background Integration */
-    .portrait-wrap {
+    /* HERO PORTRAIT: Shifted slightly right to give title 100% clean negative space */
+    .hero-portrait-container {
       position: absolute;
-      top: 60px;
+      top: 40px;
       left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 780px;
+      transform: translateX(-34%);
+      width: 880px;
+      height: 1080px;
       z-index: 3;
       pointer-events-none;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
     }
 
-    .portrait-img {
+    .hero-portrait-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 22%;
-      filter: grayscale(100%) contrast(130%) brightness(98%);
-      mask-image: linear-gradient(to bottom, black 0%, black 52%, rgba(0,0,0,0.5) 72%, transparent 92%);
-      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 52%, rgba(0,0,0,0.5) 72%, transparent 92%);
-      opacity: 0.94;
+      object-position: center 18%;
+      filter: grayscale(100%) contrast(135%) brightness(96%);
+      mask-image: linear-gradient(to bottom, black 0%, black 58%, rgba(0,0,0,0.6) 78%, transparent 95%),
+                  radial-gradient(ellipse at 50% 40%, black 45%, rgba(0,0,0,0.7) 70%, transparent 85%);
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, rgba(0,0,0,0.6) 78%, transparent 95%);
+      opacity: 0.96;
     }
 
-    /* Header Bar */
+    /* TOP HEADER BAR */
     .header-bar {
       position: relative;
       z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 14px;
     }
 
-    .brand-mark {
-      font-size: 12px;
+    .header-brand {
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .header-status {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-
-    .brand-mark span.accent {
-      color: #1591DC;
-      font-weight: 700;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
       gap: 7px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: rgba(14, 17, 23, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
       font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #ededf3;
+      color: rgba(255, 255, 255, 0.85);
     }
 
     .status-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: #10b981;
-      box-shadow: 0 0 8px #10b981;
+      background-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
     }
 
-    /* TOP ASYMMETRIC ROW: Name on Left, Metrics on Right */
-    .top-hero-row {
+    /* TOP SECTION: Massive Outline + Solid Name on Pitch Black */
+    .top-editorial-name {
       position: relative;
       z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 24px;
+      margin-top: 28px;
+      max-width: 420px;
     }
 
-    /* Left Title Block */
-    .title-block {
-      max-width: 380px;
-    }
-
-    .first-name {
-      font-size: 58px;
-      font-weight: 300;
-      letter-spacing: -0.03em;
-      line-height: 0.9;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .last-name {
-      font-size: 72px;
+    .ghost-title {
+      font-size: 78px;
       font-weight: 700;
       letter-spacing: -0.04em;
-      line-height: 0.9;
+      line-height: 0.88;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
+      color: transparent;
+      display: block;
+    }
+
+    .solid-title {
+      font-size: 90px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
       text-transform: uppercase;
       color: #ffffff;
       margin-top: 4px;
+      display: block;
     }
 
-    .title-role {
-      font-size: 12px;
+    .role-stamp {
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #1591DC;
-      margin-top: 14px;
-      line-height: 1.4;
+      color: #8c909e;
+      margin-top: 18px;
     }
 
-    .title-desc {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #9496a1;
-      margin-top: 2px;
-    }
-
-    /* Right Top: Proven Impact Card */
-    .top-stats-card {
-      width: 300px;
-      background: rgba(10, 12, 16, 0.68);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 16px;
-      padding: 18px 22px;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-    }
-
-    .card-tag {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #1591DC;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-
-    .card-tag::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      background-color: #1591DC;
-      border-radius: 50%;
-    }
-
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .stat-unit .val {
-      font-size: 38px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
-      letter-spacing: -0.04em;
-    }
-
-    .stat-unit .val span.cyan {
-      color: #1591DC;
-    }
-
-    .stat-unit .lbl {
-      font-size: 10px;
-      font-weight: 500;
-      color: #9496a1;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-top: 6px;
-      line-height: 1.25;
-    }
-
-    /* LOWER THREE-COLUMN GRID */
-    .bottom-content-grid {
+    /* MAIN MIDDLE & LOWER COMPOSITION */
+    .editorial-layout {
       position: relative;
       z-index: 10;
       display: grid;
-      grid-template-columns: 1fr 1.05fr 1fr;
-      gap: 16px;
-      margin-top: 250px; /* Perfectly frames the face */
+      grid-template-columns: 270px 1.15fr 330px;
+      gap: 20px;
+      margin-top: 170px; /* Ample breathing room for portrait */
       align-items: stretch;
     }
 
-    /* Universal Frosted Glass Card */
-    .glass-box {
-      background: rgba(8, 10, 14, 0.74);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 18px;
-      padding: 20px 20px;
-      backdrop-filter: blur(24px);
-      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7);
+    /* LEFT WING: TACTILE CARDS */
+    .left-column {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 16px;
     }
 
-    /* Left Modules */
-    .left-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    /* Client Markets (Countries only) */
-    .market-box {
-      background: rgba(8, 10, 14, 0.74);
+    /* Tactile Frost Card Style */
+    .tactile-card {
+      background: linear-gradient(145deg, rgba(20, 24, 32, 0.85) 0%, rgba(10, 12, 16, 0.9) 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 18px;
-      padding: 18px 20px;
-      backdrop-filter: blur(24px);
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 16px;
+      padding: 20px 18px;
+      backdrop-filter: blur(28px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
-    .country-pills {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .country-item {
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 9px 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
+      gap: 6px;
     }
 
-    .country-name {
+    /* Client Markets */
+    .market-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .market-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+    }
+
+    .market-name {
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.06em;
@@ -350,46 +266,36 @@
       color: #ffffff;
     }
 
-    .country-tag {
+    .market-code {
       font-size: 9px;
       font-weight: 700;
-      color: #1591DC;
-      background: rgba(21, 145, 220, 0.15);
+      color: var(--accent);
+      background: var(--accent-glow);
       padding: 2px 6px;
       border-radius: 4px;
     }
 
-    /* Primary Toolset (Ae & Pr) */
-    .tools-box {
-      background: rgba(8, 10, 14, 0.74);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-top: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 18px;
-      padding: 18px 20px;
-      backdrop-filter: blur(24px);
-    }
-
-    .tools-grid {
+    /* Tools */
+    .tools-list {
       display: flex;
       gap: 8px;
-      margin-top: 4px;
     }
 
-    .tool-item {
+    .tool-entry {
       flex: 1;
       display: flex;
       align-items: center;
       gap: 9px;
-      padding: 10px 10px;
+      padding: 11px 10px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
-    .app-badge {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
+    .app-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -398,170 +304,181 @@
       letter-spacing: -0.02em;
     }
 
-    .badge-ae {
+    .app-ae {
       background: #00005b;
       color: #9999ff;
-      border: 1px solid rgba(153, 153, 255, 0.35);
+      border: 1px solid rgba(153, 153, 255, 0.4);
     }
 
-    .badge-pr {
+    .app-pr {
       background: #000055;
       color: #ea77ff;
-      border: 1px solid rgba(234, 119, 255, 0.35);
+      border: 1px solid rgba(234, 119, 255, 0.4);
     }
 
-    .tool-meta .t-name {
+    .tool-title {
       font-size: 11px;
       font-weight: 600;
       color: #ffffff;
       line-height: 1.2;
     }
 
-    .tool-meta .t-sub {
+    .tool-desc {
       font-size: 9px;
-      color: #9496a1;
-      line-height: 1.2;
+      color: #8c909e;
     }
 
-    /* Center Module: Creative Manifesto */
-    .center-manifesto {
+    /* CENTER FLOATING SLAB: CREATIVE DNA (Over chest) */
+    .center-glass-slab {
+      background: linear-gradient(135deg, rgba(22, 27, 36, 0.84) 0%, rgba(10, 13, 18, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 24px 24px 22px 24px;
+      backdrop-filter: blur(36px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), inset 0 1px 2px rgba(255, 255, 255, 0.25);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .manifesto-body {
+    .dna-stats-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dna-stat-val {
+      font-size: 42px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .dna-stat-val span.accent-char {
+      color: var(--accent);
+    }
+
+    .dna-stat-lbl {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8c909e;
+      margin-top: 5px;
+    }
+
+    .dna-text {
       font-size: 12px;
       font-weight: 400;
       line-height: 1.65;
-      color: rgba(237, 237, 243, 0.88);
+      color: rgba(237, 237, 243, 0.92);
       letter-spacing: -0.01em;
-      margin-top: 6px;
     }
 
-    .specialties-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 14px;
-      padding: 10px 12px;
-      background: rgba(255, 255, 255, 0.025);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .spec-item {
-      font-size: 10px;
-      color: #ededf3;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .spec-item span.dot {
-      color: #1591DC;
-      font-size: 12px;
-    }
-
-    .craft-seal {
-      margin-top: 14px;
+    .dna-footer {
+      margin-top: 16px;
       padding-top: 12px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .seal-title {
       font-size: 9px;
-      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #1591DC;
     }
 
-    .seal-desc {
-      font-size: 10px;
-      color: #9496a1;
-      letter-spacing: 0.02em;
+    .dna-footer .tag-left {
+      color: var(--accent);
+      font-weight: 700;
     }
 
-    /* Right Column: 4 Friendly Pillars */
-    .pillars-box {
-      grid-column: span 1;
+    .dna-footer .tag-right {
+      color: #8c909e;
     }
 
-    .pillar-stack {
+    /* RIGHT WING: FLOATING IN NEGATIVE SPACE (NO BOX CONTAINMENT!) */
+    .right-column {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      justify-content: space-between;
+      padding-bottom: 6px;
+    }
+
+    .floating-pillars-group {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
     }
 
     .pillar-row {
       display: flex;
       flex-direction: column;
       gap: 3px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding-bottom: 11px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .pillar-row:last-child {
-      padding-bottom: 0;
       border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .p-head {
+    .p-title-row {
       display: flex;
       align-items: baseline;
-      gap: 6px;
+      gap: 7px;
     }
 
-    .p-idx {
-      font-size: 10px;
+    .p-num {
+      font-size: 11px;
       font-weight: 700;
-      color: #1591DC;
+      color: var(--accent);
       font-family: monospace !important;
     }
 
     .p-name {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       color: #ffffff;
       letter-spacing: -0.01em;
     }
 
-    .p-text {
-      font-size: 10px;
+    .p-desc {
+      font-size: 11px;
       font-weight: 400;
-      color: #9496a1;
+      color: #8c909e;
       line-height: 1.45;
-      padding-left: 18px;
+      padding-left: 20px;
     }
 
-    /* Footer Bar */
+    /* FOOTER BAR */
     .footer-bar {
       position: relative;
       z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 16px;
       font-size: 11px;
-      color: #9496a1;
+      color: #8c909e;
       letter-spacing: 0.04em;
     }
 
-    .footer-web {
+    .footer-domain {
       font-weight: 600;
       color: #ffffff;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .footer-web span.dot {
-      color: #1591DC;
+    .footer-dot {
+      color: var(--accent);
     }
 
     .footer-handle {
@@ -573,160 +490,138 @@
 <body>
 
   <div class="canvas">
-    <!-- Grid Overlay -->
-    <div class="grid-lines"></div>
+    <!-- Film Grain Overlay -->
+    <div class="noise-layer"></div>
 
-    <!-- Ambient Glow Behind Portrait -->
-    <div class="ambient-glow"></div>
+    <!-- Atmospheric Studio Spotlight -->
+    <div class="studio-spotlight"></div>
 
-    <!-- Studio Portrait Background Integration -->
-    <div class="portrait-wrap">
-      <img src="thomas_portrait.jpg" alt="Thomas Nguyen" class="portrait-img">
+    <!-- HERO PORTRAIT: 70% HEIGHT PRESENCE -->
+    <div class="hero-portrait-container">
+      <img src="thomas_portrait.jpg" alt="Thomas Nguyen" class="hero-portrait-img">
     </div>
 
     <!-- TOP BAR -->
     <div class="header-bar">
-      <div class="brand-mark">
-        <span>THOMAS NGUYEN</span>
-        <span class="accent">•</span>
-        <span>VISUAL IDENTITY 2026</span>
-      </div>
-      <div class="status-badge">
+      <div class="header-brand">THOMAS NGUYEN • ARCHIVE 2026</div>
+      <div class="header-status">
         <span class="status-dot"></span>
         <span>OPEN FOR SELECT PROJECTS</span>
       </div>
     </div>
 
-    <!-- TOP HERO ROW: Name & Role on Left, Metrics on Right -->
-    <div class="top-hero-row">
-      <!-- Left: Clean Swiss Name -->
-      <div class="title-block">
-        <div class="first-name">THOMAS</div>
-        <div class="last-name">NGUYEN</div>
-        <div class="title-role">SHORT-FORM VIDEO EDITOR</div>
-        <div class="title-desc">VISUAL RETENTION STRATEGIST</div>
-      </div>
-
-      <!-- Right: Proven Impact (2 Metrics Only) -->
-      <div class="top-stats-card">
-        <div class="card-tag">PROVEN IMPACT</div>
-        <div class="stat-row">
-          <div class="stat-unit">
-            <div class="val">800<span class="cyan">+</span></div>
-            <div class="lbl">Reels Delivered</div>
-          </div>
-          <div class="stat-unit">
-            <div class="val">85<span class="cyan">%+</span></div>
-            <div class="lbl">5S Retention Rate</div>
-          </div>
-        </div>
-      </div>
+    <!-- TOP EDITORIAL IDENTITY: OUTLINE + SOLID CONTRAST -->
+    <div class="top-editorial-name">
+      <span class="ghost-title">THOMAS</span>
+      <span class="solid-title">NGUYEN</span>
+      <div class="role-stamp">SHORT-FORM VIDEO EDITOR &amp; STRATEGIST</div>
     </div>
 
-    <!-- LOWER 3-COLUMN STRUCTURE -->
-    <div class="bottom-content-grid">
-      
-      <!-- COLUMN 1: Markets & Tools -->
-      <div class="left-stack">
+    <!-- MAIN EDITORIAL ASYMMETRIC LAYOUT -->
+    <div class="editorial-layout">
+
+      <!-- LEFT WING: TACTILE FROST CARDS -->
+      <div class="left-column">
         <!-- Client Markets (Countries only) -->
-        <div class="market-box">
-          <div class="card-tag">CLIENT MARKETS</div>
-          <div class="country-pills">
-            <div class="country-item">
-              <span class="country-name">UNITED STATES</span>
-              <span class="country-tag">USA</span>
+        <div class="tactile-card">
+          <div class="section-label">CLIENT MARKETS</div>
+          <div class="market-list">
+            <div class="market-entry">
+              <span class="market-name">UNITED STATES</span>
+              <span class="market-code">USA</span>
             </div>
-            <div class="country-item">
-              <span class="country-name">UNITED KINGDOM</span>
-              <span class="country-tag">UK</span>
+            <div class="market-entry">
+              <span class="market-name">UNITED KINGDOM</span>
+              <span class="market-code">UK</span>
             </div>
           </div>
         </div>
 
         <!-- Primary Toolset (Ae & Pr only) -->
-        <div class="tools-box">
-          <div class="card-tag">PRIMARY TOOLSET</div>
-          <div class="tools-grid">
-            <div class="tool-item">
-              <div class="app-badge badge-ae">Ae</div>
-              <div class="tool-meta">
-                <div class="t-name">After Effects</div>
-                <div class="t-sub">Motion & VFX</div>
+        <div class="tactile-card">
+          <div class="section-label">PRIMARY TOOLS</div>
+          <div class="tools-list">
+            <div class="tool-entry">
+              <div class="app-icon app-ae">Ae</div>
+              <div>
+                <div class="tool-title">After Effects</div>
+                <div class="tool-desc">Motion &amp; VFX</div>
               </div>
             </div>
-            <div class="tool-item">
-              <div class="app-badge badge-pr">Pr</div>
-              <div class="tool-meta">
-                <div class="t-name">Premiere Pro</div>
-                <div class="t-sub">Pacing & Cut</div>
+            <div class="tool-entry">
+              <div class="app-icon app-pr">Pr</div>
+              <div>
+                <div class="tool-title">Premiere Pro</div>
+                <div class="tool-desc">Pacing &amp; Cut</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- COLUMN 2: Creative Manifesto (Center, rests on chest) -->
-      <div class="glass-box center-manifesto">
-        <div>
-          <div class="card-tag">CREATIVE DNA</div>
-          <p class="manifesto-body">
-            Biến những thước phim thô của nhà sáng lập thành tài sản nội dung có sức hút cao. 
-            Mọi nhát cắt đều có chủ đích, loại bỏ triệt để nhịp chết và neo giữ trọn vẹn sự chú ý của người xem.
-          </p>
-          
-          <div class="specialties-grid">
-            <div class="spec-item"><span class="dot">•</span> Pacing Mastery</div>
-            <div class="spec-item"><span class="dot">•</span> Sound Architecture</div>
-            <div class="spec-item"><span class="dot">•</span> Bespoke VFX</div>
-            <div class="spec-item"><span class="dot">•</span> Retention Design</div>
+      <!-- CENTER: PHYSICAL FROSTED SLAB ON CHEST (THE SIGNATURE MOVE) -->
+      <div class="center-glass-slab">
+        <div class="section-label">CREATIVE DNA</div>
+
+        <!-- 2 Metrics Only -->
+        <div class="dna-stats-row">
+          <div>
+            <div class="dna-stat-val">800<span class="accent-char">+</span></div>
+            <div class="dna-stat-lbl">Reels Delivered</div>
+          </div>
+          <div>
+            <div class="dna-stat-val">85<span class="accent-char">%+</span></div>
+            <div class="dna-stat-lbl">5S Retention Rate</div>
           </div>
         </div>
 
-        <div class="craft-seal">
-          <span class="seal-title">CRAFT STANDARD</span>
-          <span class="seal-desc">Hand-Crafted • Zero AI Slop</span>
+        <!-- High-Impact Manifesto -->
+        <p class="dna-text">
+          Biến những thước phim thô của nhà sáng lập thành tài sản thị giác có sức hút cao. 
+          Mọi nhát cắt đều có chủ đích, loại bỏ triệt để nhịp chết và neo giữ trọn vẹn sự chú ý của người xem.
+        </p>
+
+        <div class="dna-footer">
+          <span class="tag-left">THE STANDARD</span>
+          <span class="tag-right">Zero AI Slop • Pure Human Craft</span>
         </div>
       </div>
 
-      <!-- COLUMN 3: 4 Friendly Pillars -->
-      <div class="glass-box pillars-box">
-        <div>
-          <div class="card-tag">CREATIVE PILLARS</div>
-          
-          <div class="pillar-stack">
-            
-            <div class="pillar-row">
-              <div class="p-head">
-                <span class="p-idx">01</span>
-                <span class="p-name">Nhịp Dựng Cuốn (Pacing)</span>
-              </div>
-              <div class="p-text">Cắt gọt từng frame, xóa 0.2s chết, neo giữ người xem ngay 3 giây đầu.</div>
-            </div>
+      <!-- RIGHT WING: FLOATING IN NEGATIVE SPACE (NO BOX CONTAINMENT!) -->
+      <div class="right-column">
+        <div class="floating-pillars-group">
+          <div class="section-label">CORE PILLARS</div>
 
-            <div class="pillar-row">
-              <div class="p-head">
-                <span class="p-idx">02</span>
-                <span class="p-name">Hiệu Ứng May Đo (Motion)</span>
-              </div>
-              <div class="p-text">Motion graphics độc bản theo phong cách riêng, không dùng template đại trà.</div>
+          <div class="pillar-row">
+            <div class="p-title-row">
+              <span class="p-num">01</span>
+              <span class="p-name">Nhịp Dựng Cuốn (Pacing)</span>
             </div>
+            <div class="p-desc">Cắt gọt từng frame, xóa 0.2s chết, neo giữ người xem ngay 3 giây đầu.</div>
+          </div>
 
-            <div class="pillar-row">
-              <div class="p-head">
-                <span class="p-idx">03</span>
-                <span class="p-name">Kể Chuyện Thị Giác (B-Roll)</span>
-              </div>
-              <div class="p-text">Chọn lọc tư liệu đắt giá chạm cảm xúc, thay thế video chèn bừa vô nghĩa.</div>
+          <div class="pillar-row">
+            <div class="p-title-row">
+              <span class="p-num">02</span>
+              <span class="p-name">Hiệu Ứng May Đo (Motion)</span>
             </div>
+            <div class="p-desc">Motion graphics độc bản theo phong cách riêng, không dùng template đại trà.</div>
+          </div>
 
-            <div class="pillar-row">
-              <div class="p-head">
-                <span class="p-idx">04</span>
-                <span class="p-name">Âm Thanh Đa Tầng (Sound)</span>
-              </div>
-              <div class="p-text">Phối âm thanh chi tiết (SFX, risers, drops) kích thích sự tập trung tối đa.</div>
+          <div class="pillar-row">
+            <div class="p-title-row">
+              <span class="p-num">03</span>
+              <span class="p-name">Kể Chuyện Thị Giác (B-Roll)</span>
             </div>
+            <div class="p-desc">Chọn lọc tư liệu đắt giá chạm cảm xúc, thay thế video chèn bừa vô nghĩa.</div>
+          </div>
 
+          <div class="pillar-row">
+            <div class="p-title-row">
+              <span class="p-num">04</span>
+              <span class="p-name">Âm Thanh Đa Tầng (Sound)</span>
+            </div>
+            <div class="p-desc">Phối âm thanh chi tiết (SFX, risers, drops) kích thích sự tập trung tối đa.</div>
           </div>
         </div>
       </div>
@@ -735,10 +630,10 @@
 
     <!-- FOOTER BAR -->
     <div class="footer-bar">
-      <div class="footer-web">
+      <div class="footer-domain">
         <span>thomasnguyen.online</span>
-        <span class="dot">•</span>
-        <span style="color: #9496a1; font-weight: 400;">Based in Vietnam • Working Globally</span>
+        <span class="footer-dot">•</span>
+        <span style="color: #8c909e; font-weight: 400;">Based in Vietnam • Working Globally</span>
       </div>
       <div class="footer-handle">
         @thomasvisualeditor
