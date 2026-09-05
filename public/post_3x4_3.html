@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post 3 — Editor Decision Tree (Neue Haas Grotesk)</title>
+  <title>Post 3 — The Professional Standard (Neue Haas Grotesk)</title>
   <style>
     @font-face {
       font-family: 'Neue Haas Grotesk';
@@ -64,7 +64,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 100px 70px 80px;
+      padding: 100px 40px 80px;
     }
 
     .grain {
@@ -86,60 +86,62 @@
       width: 100%;
       height: 100%;
       margin: auto 0;
-      gap: 50px;
+      gap: 55px;
     }
 
     .tree-svg {
-      width: 940px;
+      width: 1000px;
       height: 520px;
     }
 
     /* Node Text Styles in Neue Haas Grotesk */
     .node-root {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 600;
       fill: #ffffff;
       letter-spacing: -0.01em;
-    }
-    .node-mid {
-      font-size: 22px;
-      font-weight: 500;
-      fill: #c6c9d6;
+      text-anchor: end;
     }
     .node-mid-dim {
-      font-size: 22px;
-      font-weight: 400;
+      font-size: 20px;
+      font-weight: 500;
       fill: #6e7284;
     }
-    .node-win {
-      font-size: 24px;
+    .node-mid-bright {
+      font-size: 21px;
+      font-weight: 600;
+      fill: #ffffff;
+    }
+    .leaf-text {
+      font-size: 18px;
+      font-weight: 400;
+      fill: #a2a6b8;
+    }
+    .leaf-text-dim {
+      font-size: 18px;
+      font-weight: 400;
+      fill: #5b6072;
+    }
+    .leaf-win {
+      font-size: 19px;
       font-weight: 600;
       fill: #1591DC;
       filter: drop-shadow(0 0 14px rgba(21, 145, 220, 0.7));
     }
-    .node-sub {
-      font-size: 22px;
-      font-weight: 400;
-      fill: #9ea2b4;
-    }
-    .node-lose {
-      font-size: 22px;
-      font-weight: 400;
-      fill: #55596b;
-    }
 
-    .tag-note {
+    .outcome-tag {
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
     .punchline {
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 400;
       color: #8c90a2;
       text-align: center;
+      line-height: 1.5;
       letter-spacing: -0.01em;
     }
     .punchline strong {
@@ -164,53 +166,59 @@
     <div class="grain"></div>
 
     <div class="main-container">
-      <svg class="tree-svg" viewBox="0 0 960 480">
+      <svg class="tree-svg" viewBox="0 0 1020 520">
         <!-- Connecting Curves -->
-        <!-- Root to Mid Branch 1 (Open Timeline) -->
-        <path d="M 130 240 L 210 240 C 235 240, 235 130, 260 130 L 450 130" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.2" />
+        <!-- Root to Top Mid (Amateur trap) -->
+        <path d="M 140 260 L 210 260 C 230 260, 230 140, 250 140 L 360 140" fill="none" stroke="rgba(255, 255, 255, 0.18)" stroke-width="2" />
         
-        <!-- Root to Mid Branch 2 (Wait for Inspiration) -->
-        <path d="M 130 240 L 210 240 C 235 240, 235 350, 260 350 L 460 350" fill="none" stroke="rgba(255, 255, 255, 0.18)" stroke-width="2" />
+        <!-- Root to Bottom Mid (Professional standard) -->
+        <path d="M 140 260 L 210 260 C 230 260, 230 380, 250 380 L 380 380" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="2.2" />
 
-        <!-- Open Timeline to Master Cut (Cyan #1591DC) -->
-        <path d="M 450 130 L 500 130 C 525 130, 525 70, 550 70 L 620 70" fill="none" stroke="#1591DC" stroke-width="2.6" />
+        <!-- Top Mid to Leaf 1 (Doubt choices) -->
+        <path d="M 360 140 L 410 140 C 430 140, 430 80, 450 80 L 490 80" fill="none" stroke="rgba(255, 255, 255, 0.14)" stroke-width="2" />
         
-        <!-- Open Timeline to Rough Cut -->
-        <path d="M 450 130 L 500 130 C 525 130, 525 190, 550 190 L 620 190" fill="none" stroke="rgba(255, 255, 255, 0.22)" stroke-width="2" />
+        <!-- Top Mid to Leaf 2 (Resist change) -->
+        <path d="M 360 140 L 410 140 C 430 140, 430 200, 450 200 L 490 200" fill="none" stroke="rgba(255, 255, 255, 0.14)" stroke-width="2" />
 
-        <!-- Wait for Inspiration to Zero Exports -->
-        <path d="M 460 350 L 620 350" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" />
+        <!-- Bottom Mid to Leaf 3 (Commit to your cut) -->
+        <path d="M 380 380 L 430 380 C 450 380, 450 320, 470 320 L 510 320" fill="none" stroke="rgba(255, 255, 255, 0.28)" stroke-width="2.2" />
+        
+        <!-- Bottom Mid to Leaf 4 (Adapt & learn daily - Cyan Glow) -->
+        <path d="M 380 380 L 430 380 C 450 380, 450 440, 470 440 L 510 440" fill="none" stroke="#1591DC" stroke-width="2.6" />
 
-        <!-- Nodes -->
+        <!-- Nodes & Labels -->
         <!-- Root -->
-        <circle cx="130" cy="240" r="4.5" fill="#ffffff" />
-        <text x="45" y="247" class="node-root">If you</text>
+        <circle cx="140" cy="260" r="4.5" fill="#ffffff" />
+        <text x="120" y="267" class="node-root">The craft</text>
 
-        <!-- Mid 1: Open Timeline -->
-        <circle cx="450" cy="130" r="4" fill="#ffffff" />
-        <text x="260" y="120" class="node-mid">Sit at the timeline</text>
+        <!-- Top Mid: Amateur Trap -->
+        <circle cx="360" cy="140" r="4" fill="#585c6d" />
+        <text x="210" y="130" class="node-mid-dim">Amateur mindset</text>
 
-        <!-- Mid 2: Wait for Inspiration -->
-        <circle cx="460" cy="350" r="4" fill="#606475" />
-        <text x="260" y="340" class="node-mid-dim">Wait for inspiration</text>
+        <!-- Leaf 1: Doubt choices & copy trends -->
+        <circle cx="490" cy="80" r="4" fill="#424654" />
+        <text x="515" y="86" class="leaf-text-dim">Doubt choices & copy trends <tspan class="outcome-tag" fill="#424654" dx="10">→ LOST IDENTITY</tspan></text>
 
-        <!-- Leaves -->
-        <!-- Master Cut (Win) -->
-        <circle cx="620" cy="70" r="5" fill="#1591DC" filter="drop-shadow(0 0 8px #1591DC)" />
-        <text x="645" y="77" class="node-win">Master Cut <tspan class="tag-note" fill="#1591DC" dx="6">(WIN)</tspan></text>
+        <!-- Leaf 2: Resist change & stop learning -->
+        <circle cx="490" cy="200" r="4" fill="#424654" />
+        <text x="515" y="206" class="leaf-text-dim">Resist change & stop learning <tspan class="outcome-tag" fill="#424654" dx="10">→ STAGNANT SKILLS</tspan></text>
 
-        <!-- Rough Cut (Progress) -->
-        <circle cx="620" cy="190" r="4" fill="#7a7e90" />
-        <text x="645" y="197" class="node-sub">Rough Cut <tspan class="tag-note" fill="#7a7e90" dx="6">(PROGRESS)</tspan></text>
+        <!-- Bottom Mid: Professional Standard -->
+        <circle cx="380" cy="380" r="4.5" fill="#ffffff" />
+        <text x="180" y="370" class="node-mid-bright">Professional standard</text>
 
-        <!-- Zero Exports (Lose) -->
-        <circle cx="620" cy="350" r="4" fill="#464a59" />
-        <text x="645" y="357" class="node-lose">0 Exports <tspan class="tag-note" fill="#464a59" dx="6">(LOSE)</tspan></text>
+        <!-- Leaf 3: Commit to your creative cut -->
+        <circle cx="510" cy="320" r="4" fill="#a2a6b8" />
+        <text x="535" y="326" class="leaf-text">Commit to your creative cut <tspan class="outcome-tag" fill="#a2a6b8" dx="10">→ SIGNATURE VOICE</tspan></text>
+
+        <!-- Leaf 4: Adapt & learn every day -->
+        <circle cx="510" cy="440" r="5.5" fill="#1591DC" filter="drop-shadow(0 0 8px #1591DC)" />
+        <text x="535" y="446" class="leaf-win">Adapt & learn every day <tspan class="outcome-tag" fill="#1591DC" dx="10">→ IRREPLACEABLE (WIN)</tspan></text>
       </svg>
 
       <div class="punchline">
-        Inspiration doesn't start the edit.<br>
-        <strong>The edit creates inspiration.</strong>
+        Clients don't hire software operators.<br>
+        <strong>They hire editors with standards.</strong>
       </div>
     </div>
 
