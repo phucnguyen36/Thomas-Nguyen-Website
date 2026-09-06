@@ -1,4 +1,4 @@
-﻿import fs from 'fs';
+import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
@@ -16,7 +16,7 @@ const fileUrl = `file:///${htmlPath}`;
 
 console.log(`Rendering ${fileUrl} to 2K Retina...`);
 // 1080 x 1440 at scale factor 2 = 2160 x 2880
-const cmd = `"${edgePath}" --headless --disable-gpu --force-device-scale-factor=2 --window-size=1080,1440 --screenshot="${outFilePublic}" "${fileUrl}"`;
+const cmd = `"${edgePath}" --headless=new --hide-scrollbars --disable-gpu --force-device-scale-factor=2 --window-size=1080,1440 --screenshot="${outFilePublic}" "${fileUrl}"`;
 execSync(cmd);
 
 fs.copyFileSync(outFilePublic, outFileBrain);
