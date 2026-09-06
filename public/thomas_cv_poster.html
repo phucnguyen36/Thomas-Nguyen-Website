@@ -59,92 +59,140 @@
     }
 
     :root {
-      --accent: #00e676; /* Signature Electric Emerald from Muhammad Abbas */
-      --accent-dim: rgba(0, 230, 118, 0.15);
-      
-      /* TACTILE DARK CARD FOR LEFT COLUMN */
-      --card-bg: linear-gradient(160deg, rgba(18, 22, 28, 0.92) 0%, rgba(8, 10, 14, 0.96) 100%);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-highlight: rgba(255, 255, 255, 0.18);
+      /* Thomas Nguyen Signature Electric Blue */
+      --accent: #1591DC;
+      --accent-light: #38bdf8;
+      --accent-glow: rgba(21, 145, 220, 0.45);
+      --accent-dim: rgba(21, 145, 220, 0.15);
 
-      /* HERO FROSTED ACRYLIC GLASS ON CHEST */
-      --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%), rgba(16, 22, 32, 0.60);
-      --glass-border: rgba(255, 255, 255, 0.14);
-      --glass-highlight: rgba(255, 255, 255, 0.38);
-      --glass-shadow: 0 30px 70px rgba(0, 0, 0, 0.88), inset 0 1px 2px rgba(255, 255, 255, 0.22);
-      --glass-blur: blur(28px) saturate(140%);
+      /* UNIFIED LUXURY FROSTED GLASS CARDS */
+      --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.085) 0%, rgba(255, 255, 255, 0.018) 100%), rgba(10, 14, 22, 0.76);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-highlight: rgba(255, 255, 255, 0.35);
+      --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.88), inset 0 1px 1.5px rgba(255, 255, 255, 0.25);
+      --glass-blur: blur(28px) saturate(160%);
     }
 
-    /* Subtle Film Grain Noise */
+    /* Film Grain Noise */
     .noise-layer {
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
-      background-size: 24px 24px;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
+      background-size: 20px 20px;
       pointer-events-none;
       z-index: 1;
-      opacity: 0.55;
+      opacity: 0.6;
     }
 
-    /* Studio Ambient Spotlight Behind Center Subject */
-    .studio-glow {
+    /* Ambient Brand Blue Studio Lighting */
+    .studio-glow-head {
       position: absolute;
-      top: 180px;
-      left: 54%;
+      top: 140px;
+      left: 56%;
       transform: translateX(-50%);
       width: 860px;
       height: 860px;
-      background: radial-gradient(circle at 48% 46%, rgba(255, 255, 255, 0.075) 0%, rgba(0, 230, 118, 0.015) 38%, transparent 70%);
+      background: radial-gradient(circle at 48% 44%, rgba(21, 145, 220, 0.09) 0%, rgba(255, 255, 255, 0.04) 36%, transparent 70%);
       pointer-events-none;
       z-index: 2;
     }
 
-    /* HERO PORTRAIT: Monumental Poster Subject Centered */
+    .studio-glow-torso {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 960px;
+      height: 640px;
+      background: radial-gradient(ellipse at 50% 60%, rgba(21, 145, 220, 0.065) 0%, transparent 70%);
+      pointer-events-none;
+      z-index: 2;
+    }
+
+    /* CENTER HERO PORTRAIT: Perfectly Positioned in the Middle Gap */
     .hero-portrait {
       position: absolute;
-      top: 150px;
-      left: 54%;
-      transform: translateX(-40%);
-      width: 940px;
-      height: 1290px;
+      top: 110px;
+      left: 58%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 1320px;
       z-index: 3;
       pointer-events-none;
+      display: flex;
+      justify-content: center;
     }
 
     .hero-portrait img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 8%;
-      filter: grayscale(100%) contrast(118%) brightness(101%);
-      mask-image: radial-gradient(ellipse 420px 560px at 50% 45%, black 38%, rgba(0,0,0,0.7) 66%, transparent 92%),
-                  linear-gradient(to bottom, black 0%, black 84%, rgba(0,0,0,0.4) 95%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 420px 560px at 50% 45%, black 38%, rgba(0,0,0,0.7) 66%, transparent 92%),
-                          linear-gradient(to bottom, black 0%, black 84%, rgba(0,0,0,0.4) 95%, transparent 100%);
+      object-position: 50% 5%;
+      filter: grayscale(100%) contrast(118%) brightness(103%);
+      mask-image: radial-gradient(ellipse 460px 650px at 48% 38%, black 50%, rgba(0,0,0,0.85) 75%, transparent 98%),
+                  linear-gradient(to bottom, black 0%, black 88%, rgba(0,0,0,0.3) 97%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 460px 650px at 48% 38%, black 50%, rgba(0,0,0,0.85) 75%, transparent 98%),
+                          linear-gradient(to bottom, black 0%, black 88%, rgba(0,0,0,0.3) 97%, transparent 100%);
       opacity: 0.98;
     }
 
-    /* TOP-LEFT IDENTITY: EXACT MUHAMMAD ABBAS MASTHEAD */
+    /* UNIFIED FROSTED GLASS CARD BASE */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-top: 1px solid var(--glass-highlight);
+      border-radius: 20px;
+      box-shadow: var(--glass-shadow);
+      position: absolute;
+    }
+
+    /* CARD TITLE WITH SIGNATURE BLUE ACCENT */
+    .card-accent-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .card-accent-title::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 7px var(--accent);
+    }
+
+    /* ==========================================================
+       TOP IDENTITY: MASTHEAD (LEFT) & EDUCATION CARD (RIGHT)
+       ========================================================== */
     .masthead {
       position: absolute;
-      top: 48px;
-      left: 56px;
+      top: 50px;
+      left: 52px;
       z-index: 10;
     }
 
     .masthead-outline {
-      font-size: 82px;
+      font-size: 76px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       line-height: 0.88;
       text-transform: uppercase;
-      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.44);
       color: transparent;
       display: block;
     }
 
     .masthead-solid {
-      font-size: 94px;
+      font-size: 88px;
       font-weight: 700;
       letter-spacing: 0.03em;
       line-height: 0.88;
@@ -155,45 +203,41 @@
     }
 
     .masthead-role {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: #8c909e;
-      margin-top: 14px;
+      color: #94a3b8;
+      margin-top: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* TOP-RIGHT SECTION: EDUCATION (EXACT ABBAS FORMAT - FLOATING SWISS TYPOGRAPHY) */
-    .education-section {
-      position: absolute;
-      top: 52px;
-      right: 56px;
+    .masthead-role span {
+      color: var(--accent);
+    }
+
+    /* TOP-RIGHT: EDUCATION GLASS CARD */
+    .education-card {
+      top: 50px;
+      right: 52px;
+      width: 325px;
+      padding: 16px 20px;
       z-index: 10;
-      text-align: left;
-      width: 320px;
-    }
-
-    .education-heading {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #ffffff;
-      margin-bottom: 9px;
     }
 
     .education-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
     }
 
     .education-item {
-      font-size: 11.5px;
+      font-size: 10.5px;
       font-weight: 500;
       color: #9da2af;
-      letter-spacing: 0.01em;
       line-height: 1.4;
       display: flex;
       align-items: baseline;
@@ -201,64 +245,103 @@
     }
 
     .education-item::before {
-      content: "-";
-      color: #6c7280;
+      content: "—";
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 10px;
     }
 
     .education-item strong {
-      color: #e2e8f0;
+      color: #f1f5f9;
       font-weight: 600;
     }
 
-    /* LEFT COLUMN: 3 TACTILE CARDS (EXACT MUHAMMAD ABBAS LEFT RAIL) */
-    .left-column {
-      position: absolute;
-      top: 235px;
-      left: 56px;
-      width: 290px;
+    /* ==========================================================
+       LEFT COLUMN CARDS (y: 236px -> 1335px)
+       ========================================================== */
+
+    /* Card L1: CREATIVE JOURNEY (All 7 Roles from DCF Vietnam) */
+    .journey-card {
+      top: 236px;
+      left: 52px;
+      width: 315px;
+      height: 480px;
+      padding: 20px 20px 18px 20px;
       z-index: 10;
+    }
+
+    .journey-header {
       display: flex;
-      flex-direction: column;
-      gap: 14px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
     }
 
-    .left-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-top: 1px solid var(--card-highlight);
-      border-radius: 16px;
-      padding: 18px 18px;
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.14);
-    }
-
-    .section-accent-title {
-      font-size: 11px;
+    .journey-badge {
+      font-size: 8px;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      padding: 3px 7px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(21, 145, 220, 0.3);
+      border-radius: 4px;
       color: var(--accent);
-      margin-bottom: 12px;
     }
 
-    /* Card 1: Creative Journey (Dense 7 Entries from DCF Vietnam to Global) */
     .journey-list {
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 12px;
+      position: relative;
     }
 
-    .journey-entry {
+    /* Vertical subtle connecting line */
+    .journey-list::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      bottom: 14px;
+      left: 3px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent) 0%, rgba(21, 145, 220, 0.4) 30%, rgba(255, 255, 255, 0.1) 100%);
+      z-index: 1;
+    }
+
+    .journey-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      position: relative;
+      z-index: 2;
+    }
+
+    .journey-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .journey-dot.past {
+      background: #475569;
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .journey-content {
       display: flex;
       flex-direction: column;
       gap: 1px;
     }
 
     .journey-company {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 500;
-      color: #8c909e;
+      color: #94a3b8;
       letter-spacing: 0.02em;
     }
 
@@ -269,44 +352,149 @@
       letter-spacing: 0.01em;
     }
 
-    /* Card 2: Portfolio & Connect (Behance / Web Style) */
-    .portfolio-card {
-      padding: 14px 18px;
+    /* Card L2: GLOBAL MARKETS & CLIENT BENCHMARKS */
+    .markets-card {
+      top: 732px;
+      left: 52px;
+      width: 315px;
+      height: 295px;
+      padding: 20px 20px;
+      z-index: 10;
     }
 
-    .portfolio-brand {
-      font-size: 14px;
+    .markets-pills {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .market-pill {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: #e2e8f0;
+    }
+
+    .standards-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .standard-item {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .standard-item::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 10px;
+    }
+
+    .standard-item strong {
+      color: #f1f5f9;
+    }
+
+    /* Card L3: DIRECT ACCESS & PORTFOLIO (Anchoring Bottom Left) */
+    .connect-card {
+      top: 1043px;
+      left: 52px;
+      width: 315px;
+      height: 292px;
+      padding: 22px 20px;
+      z-index: 10;
+    }
+
+    .connect-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .connect-url {
+      font-size: 17px;
       font-weight: 700;
       color: #ffffff;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.02em;
     }
 
-    .portfolio-link {
+    .connect-url span {
+      color: var(--accent);
+    }
+
+    .arrow-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid rgba(21, 145, 220, 0.35);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .connect-subhead {
+      font-size: 10px;
+      color: #94a3b8;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .connect-handle {
       font-size: 11.5px;
       font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.03em;
-      margin-top: 2px;
-    }
-
-    .portfolio-handle {
-      font-size: 10.5px;
-      color: #94a3b8;
-      margin-top: 2px;
-    }
-
-    .portfolio-status {
+      color: #e2e8f0;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 7px;
+    }
+
+    .connect-handle span {
+      color: var(--accent);
+    }
+
+    .connect-tier {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8c909e;
+      line-height: 1.4;
+      margin-bottom: 14px;
+      padding: 8px 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .connect-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-size: 9.5px;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #9da2af;
-      margin-top: 8px;
-      padding-top: 6px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .status-dot {
@@ -314,104 +502,84 @@
       height: 6px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
+      box-shadow: 0 0 10px var(--accent);
     }
 
-    /* Card 3: Featured Markets & Tools (Mega Clients Style) */
-    .meta-card {
-      padding: 14px 18px;
-    }
+    /* ==========================================================
+       RIGHT COLUMN CARDS (y: 236px -> 1335px)
+       ========================================================== */
 
-    .meta-markets {
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #cbd5e1;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .tools-pills {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tool-pill {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      padding: 4px 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 6px;
-      color: #e2e8f0;
-    }
-
-    .tool-pill.certified {
-      border-color: rgba(0, 230, 118, 0.4);
-      color: var(--accent);
-    }
-
-    /* MID-RIGHT FLOATING SKILL LEVEL (EXACT ABBAS FORMAT - NO CARD BOX!) */
-    .floating-skills {
-      position: absolute;
-      top: 235px;
-      right: 56px;
-      width: 250px;
+    /* Card R1: CORE ARSENAL & SKILLS (Mid-Right) */
+    .skills-card {
+      top: 236px;
+      right: 52px;
+      width: 325px;
+      height: 480px;
+      padding: 20px 20px 18px 20px;
       z-index: 10;
+    }
+
+    .skill-category {
+      margin-bottom: 14px;
+    }
+
+    .skill-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-label {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 7px;
+    }
+
+    .pills-wrap {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 6px;
     }
 
-    .skills-heading {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .skill-line {
-      font-size: 11.5px;
+    .skill-pill {
+      font-size: 9.5px;
       font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 5px 9px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 6px;
       color: #cbd5e1;
-      letter-spacing: 0.01em;
-      line-height: 1.5;
     }
 
-    /* LOWER-RIGHT CHEST CARD: CREATIVE DNA (THE HERO FROSTED GLASS CARD ON BODY) */
-    .chest-dna-card {
-      position: absolute;
-      top: 730px;
-      right: 56px;
-      width: 440px;
+    .skill-pill.highlight {
+      background: var(--accent-dim);
+      border-color: rgba(21, 145, 220, 0.35);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Card R2: HERO CREATIVE DNA & MANIFESTO (Monumental Glass Card on Lower Right Chest) */
+    .hero-dna-card {
+      top: 732px;
+      right: 52px;
+      width: 485px;
+      height: 603px;
+      padding: 26px 26px 22px 26px;
       z-index: 12;
-      background: var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--glass-border);
-      border-top: 1px solid var(--glass-highlight);
-      border-radius: 20px;
-      padding: 24px 24px 20px 24px;
-      box-shadow: var(--glass-shadow);
     }
 
     .dna-stats-row {
       display: flex;
-      gap: 28px;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
+      gap: 30px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .dna-stat-val {
-      font-size: 34px;
+      font-size: 38px;
       font-weight: 700;
       color: #ffffff;
       letter-spacing: -0.04em;
@@ -428,26 +596,58 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #8c909e;
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .dna-body-text {
       font-size: 12px;
       font-weight: 400;
-      line-height: 1.65;
+      line-height: 1.7;
       color: rgba(237, 237, 243, 0.92);
       letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    /* 3 Pillars Framework in Hero Card */
+    .framework-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px 14px;
+      background: rgba(0, 0, 0, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    .pillar-item {
+      font-size: 10px;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .pillar-num {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      background: var(--accent-dim);
+      padding: 2px 5px;
+      border-radius: 4px;
+      border: 1px solid rgba(21, 145, 220, 0.25);
     }
 
     .dna-card-footer {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 9px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
@@ -467,121 +667,195 @@
     <!-- Subtle Film Grain -->
     <div class="noise-layer"></div>
 
-    <!-- Atmospheric Studio Spotlight Behind Subject -->
-    <div class="studio-glow"></div>
+    <!-- Atmospheric Brand Blue Studio Spotlights -->
+    <div class="studio-glow-head"></div>
+    <div class="studio-glow-torso"></div>
 
-    <!-- HERO PORTRAIT: Monumental Poster Subject Centered & Proportional -->
+    <!-- HERO PORTRAIT: Perfectly Positioned & Framed in Center -->
     <div class="hero-portrait">
       <img src="thomas_portrait.jpg" alt="Thomas Nguyen">
     </div>
 
-    <!-- TOP-LEFT IDENTITY: EXACT MUHAMMAD ABBAS MASTHEAD -->
+    <!-- TOP-LEFT IDENTITY: MASTHEAD -->
     <div class="masthead">
       <span class="masthead-outline">THOMAS</span>
       <span class="masthead-solid">NGUYEN</span>
-      <div class="masthead-role">VIDEO EDITOR &bull; ATTENTION STRATEGIST</div>
+      <div class="masthead-role">VIDEO EDITOR <span>&bull;</span> ATTENTION STRATEGIST</div>
     </div>
 
-    <!-- TOP-RIGHT: EDUCATION (MIRRORING ABBAS EDUCATION - FLOATING TEXT) -->
-    <div class="education-section">
-      <div class="education-heading">EDUCATION</div>
+    <!-- TOP-RIGHT: EDUCATION GLASS CARD -->
+    <div class="glass-card education-card">
+      <div class="card-accent-title" style="margin-bottom: 8px;">EDUCATION</div>
       <ul class="education-list">
         <li class="education-item">
-          <strong>Economics &amp; Finance,</strong> UEH (2021&ndash;2025)
+          <div><strong>Economics &amp; Finance</strong>, UEH (2021&ndash;2025)</div>
         </li>
         <li class="education-item">
-          <strong>Nguyen Du High School</strong> for The Gifted
+          <div><strong>Nguyen Du High School</strong> for The Gifted</div>
         </li>
         <li class="education-item">
-          <strong>Blackmagic Design Certified</strong>: DaVinci Resolve 18
+          <div><strong>Blackmagic Design Certified</strong>: DaVinci Resolve 18</div>
         </li>
       </ul>
     </div>
 
-    <!-- MID-RIGHT: FLOATING SKILL LEVEL (MIRRORING ABBAS SKILL LEVEL - FLOATING TEXT) -->
-    <div class="floating-skills">
-      <div class="skills-heading">Skill Level</div>
-      <div class="skill-line">Retention Strategy</div>
-      <div class="skill-line">Talking Head Video Mastery</div>
-      <div class="skill-line">Motion Graphics &amp; 3D</div>
-      <div class="skill-line">Cinematic Sound Design</div>
-      <div class="skill-line">Sales-Conversion Pacing</div>
-      <div class="skill-line">DaVinci Resolve 18 (Certified)</div>
-      <div class="skill-line">Adobe After Effects</div>
-      <div class="skill-line">Adobe Premiere Pro</div>
-      <div class="skill-line">Visual Hook Engineering</div>
-      <div class="skill-line">Ai Editing Workflows</div>
-      <div class="skill-line">Color Grading &amp; Finishing</div>
-    </div>
+    <!-- ==========================================================
+         LEFT COLUMN (3 SYNCHRONIZED GLASS CARDS SPANNING Y: 236px to 1335px)
+         ========================================================== -->
 
-    <!-- LEFT COLUMN: 3 TACTILE CARDS (EXACT ABBAS LEFT RAIL) -->
-    <div class="left-column">
+    <!-- Card L1: CREATIVE JOURNEY (All 7 Roles from DCF Vietnam) -->
+    <div class="glass-card journey-card">
+      <div class="journey-header">
+        <div class="card-accent-title" style="margin-bottom: 0;">CREATIVE JOURNEY</div>
+        <span class="journey-badge">2021 &mdash; PRESENT</span>
+      </div>
 
-      <!-- Card 1: Creative Journey (All 7 Real Roles from DCF Vietnam to Global) -->
-      <div class="left-card">
-        <div class="section-accent-title">CREATIVE JOURNEY</div>
-        <div class="journey-list">
-          <div class="journey-entry">
+      <div class="journey-list">
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
             <div class="journey-company">Editoz Club (Australia)</div>
             <div class="journey-role">Video Editor</div>
           </div>
-          <div class="journey-entry">
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
             <div class="journey-company">Create More Production (USA)</div>
-            <div class="journey-role">Video Editor &bull; Createmore.us</div>
+            <div class="journey-role">Video Editor</div>
           </div>
-          <div class="journey-entry">
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-dot past"></div>
+          <div class="journey-content">
             <div class="journey-company">Kaleemix Media (Montana, USA)</div>
             <div class="journey-role">Video Editing Partner</div>
           </div>
-          <div class="journey-entry">
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-dot past"></div>
+          <div class="journey-content">
             <div class="journey-company">Raúl Ocaña Team (Spain)</div>
             <div class="journey-role">Video Partner &bull; 2M+ Creator</div>
           </div>
-          <div class="journey-entry">
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-dot past"></div>
+          <div class="journey-content">
             <div class="journey-company">Theflashcut.com</div>
             <div class="journey-role">Motion Graphics Video Editor</div>
           </div>
-          <div class="journey-entry">
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-dot past"></div>
+          <div class="journey-content">
             <div class="journey-company">Upwork Freelancer</div>
             <div class="journey-role">Freelance Video Editor (800+ Reels)</div>
           </div>
-          <div class="journey-entry">
+        </div>
+
+        <div class="journey-item">
+          <div class="journey-dot past"></div>
+          <div class="journey-content">
             <div class="journey-company">DCF Vietnam Corporation</div>
             <div class="journey-role">Valuation &amp; Market Research</div>
           </div>
         </div>
       </div>
-
-      <!-- Card 2: Portfolio & Connect -->
-      <div class="left-card portfolio-card">
-        <div class="portfolio-brand">PORTFOLIO &bull; CONNECT</div>
-        <div class="portfolio-link">thomasvisual.vercel.app</div>
-        <div class="portfolio-handle">@thomasvisualeditor</div>
-        <div class="portfolio-status">
-          <span class="status-dot"></span>
-          <span>OPEN FOR SELECT PROJECTS</span>
-        </div>
-      </div>
-
-      <!-- Card 3: Featured Markets & Tools (Mega Clients Style) -->
-      <div class="left-card meta-card">
-        <div class="section-accent-title" style="margin-bottom: 8px;">GLOBAL CLIENTS &amp; TOOLS</div>
-        <div class="meta-markets">USA &bull; UK &bull; SPAIN &bull; AUSTRALIA</div>
-        <div class="tools-pills">
-          <span class="tool-pill certified">DaVinci 18 Cert</span>
-          <span class="tool-pill">After Effects</span>
-          <span class="tool-pill">Premiere Pro</span>
-          <span class="tool-pill">800+ Delivered</span>
-        </div>
-      </div>
-
     </div>
 
-    <!-- LOWER-RIGHT CHEST CARD: CREATIVE DNA (HERO FROSTED ACRYLIC GLASS ON CHEST) -->
-    <div class="chest-dna-card">
-      <div class="section-accent-title" style="margin-bottom: 12px;">CREATIVE DNA</div>
+    <!-- Card L2: GLOBAL MARKETS & CLIENT BENCHMARKS -->
+    <div class="glass-card markets-card">
+      <div class="card-accent-title">GLOBAL MARKETS</div>
+      <div class="markets-pills">
+        <span class="market-pill">USA</span>
+        <span class="market-pill">UK</span>
+        <span class="market-pill">Spain</span>
+        <span class="market-pill">Australia</span>
+      </div>
+      <ul class="standards-list">
+        <li class="standard-item">
+          <strong>800+ Reels Delivered</strong> across 4 continents
+        </li>
+        <li class="standard-item">
+          <strong>48-Hour Turnaround</strong> on client sprints
+        </li>
+        <li class="standard-item">
+          <strong>Retention-First Pacing</strong> for 9:16 virality
+        </li>
+        <li class="standard-item">
+          <strong>Broadcast Rec.709</strong> mastering standards
+        </li>
+      </ul>
+    </div>
 
-      <!-- 2 Key Metrics with Authority -->
+    <!-- Card L3: DIRECT ACCESS & PORTFOLIO (Anchoring Bottom Left) -->
+    <div class="glass-card connect-card">
+      <div class="card-accent-title" style="margin-bottom: 8px;">DIRECT ACCESS</div>
+      <div class="connect-header">
+        <div class="connect-url">thomasnguyen<span>.online</span></div>
+        <div class="arrow-badge">&nearr;</div>
+      </div>
+      <div class="connect-subhead">Founder &amp; Creator Video Systems</div>
+      <div class="connect-handle">Instagram: <span>@thomasvisualeditor</span></div>
+      
+      <div class="connect-tier">
+        High-Ticket Creators &bull; Tech Founders &bull; Media Agencies
+      </div>
+
+      <div class="connect-status">
+        <span class="status-dot"></span>
+        <span>OPEN FOR SELECT PROJECTS</span>
+      </div>
+    </div>
+
+    <!-- ==========================================================
+         RIGHT COLUMN CARDS (y: 236px to 1335px)
+         ========================================================== -->
+
+    <!-- Card R1: CORE ARSENAL & SKILLS (Mid-Right) -->
+    <div class="glass-card skills-card">
+      <div class="card-accent-title">CORE ARSENAL &amp; SKILLS</div>
+
+      <div class="skill-category">
+        <div class="category-label">Retention &amp; Attention Strategy</div>
+        <div class="pills-wrap">
+          <span class="skill-pill highlight">Retention Hook Strategy</span>
+          <span class="skill-pill">Talking Head Mastery</span>
+          <span class="skill-pill">Sales-Conversion Pacing</span>
+          <span class="skill-pill">Cinematic Sound Design</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="category-label">Production Software Suite</div>
+        <div class="pills-wrap">
+          <span class="skill-pill highlight">DaVinci Resolve 18 (Cert)</span>
+          <span class="skill-pill">Adobe Premiere Pro</span>
+          <span class="skill-pill">Adobe After Effects</span>
+          <span class="skill-pill">Motion Graphics &amp; 3D</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="category-label">Finishing &amp; Visual Mastery</div>
+        <div class="pills-wrap">
+          <span class="skill-pill">Visual Hook Engineering</span>
+          <span class="skill-pill">Rec.709 Color Grading</span>
+          <span class="skill-pill">AI Editing Workflows</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card R2: HERO CREATIVE DNA & MANIFESTO (Monumental Glass Card on Lower Right Chest) -->
+    <div class="glass-card hero-dna-card">
+      <div class="card-accent-title">CREATIVE DNA &amp; MANIFESTO</div>
+
       <div class="dna-stats-row">
         <div>
           <div class="dna-stat-val">800<span>+</span></div>
@@ -593,11 +867,25 @@
         </div>
       </div>
 
-      <!-- High-Impact Manifesto -->
       <p class="dna-body-text">
-        Business mind meets artist's eye. Transforming raw founder footage into high-retention visual assets. 
-        Engineering visual hooks, advanced motion graphics, and precision pacing to turn passive scrollers into loyal clients.
+        Business mind meets artist's eye. Rooted in finance and high-growth markets, I bridge the divide between aesthetic storytelling and hard conversion metrics. Transforming raw founder footage into high-retention visual assets.
       </p>
+
+      <!-- 3 Pillars Framework in Hero Card -->
+      <div class="framework-pillars">
+        <div class="pillar-item">
+          <span class="pillar-num">01</span>
+          <span><strong>Hook Architecture</strong> &mdash; 3-second visual pattern disruption</span>
+        </div>
+        <div class="pillar-item">
+          <span class="pillar-num">02</span>
+          <span><strong>Cognitive Retention</strong> &mdash; Rhythmic pacing preventing swipe-away</span>
+        </div>
+        <div class="pillar-item">
+          <span class="pillar-num">03</span>
+          <span><strong>Conversion Momentum</strong> &mdash; Compelling visual call-to-action</span>
+        </div>
+      </div>
 
       <div class="dna-card-footer">
         <span class="tag-left">THE STANDARD</span>
