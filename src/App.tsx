@@ -850,42 +850,111 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 4. WORKFLOW & 3-STEP PROCESS                                              */}
+        {/* 4. WORKFLOW TIMELINE (HOW WE GET YOU THERE - MATCHING USER REFERENCE IMAGE) */}
         {/* ========================================================================= */}
-        <section id="process" className="space-y-6 pt-4 scroll-mt-20">
-          <div className="text-center space-y-1 max-w-xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-              How It Works
+        <section id="process" className="space-y-12 pt-6 scroll-mt-20 max-w-4xl mx-auto">
+          
+          <div className="text-center space-y-3 max-w-xl mx-auto">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
+              The Process
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+              How We Get You There
             </h2>
-            <p className="text-xs sm:text-sm text-[#8e909a]">
-              A streamlined 48-hour delivery system designed for busy founders
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {/* Staggered Alternating Timeline */}
+          <div className="space-y-10 sm:space-y-14 py-4 max-w-3xl mx-auto">
             
-            <div className="bg-[#0e1017] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-              <span className="text-xs font-mono font-semibold text-[#1591DC]">01 / INTAKE</span>
-              <h3 className="text-base font-semibold text-white">Submit Footage</h3>
-              <p className="text-xs text-[#8e909a] leading-relaxed">
-                Drop raw footage clips into a shared Google Drive, Dropbox, or Frame.io project folder with your key talking points.
-              </p>
+            {/* STEP 01: Left-Aligned */}
+            <div className="flex justify-start w-full">
+              <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
+                {/* Badge 01 + Dotted Line Down */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                    01
+                  </div>
+                  <div className="w-px h-16 sm:h-20 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
+                </div>
+
+                {/* Content */}
+                <div className="pt-0.5 text-left space-y-1.5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                    Audit Your Content and Offer
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
+                    We review your niche, your offer, and what's already working, to find the fastest path to attention.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-[#0e1017] border border-[#1591DC]/40 rounded-2xl p-6 space-y-3">
-              <span className="text-xs font-mono font-semibold text-[#1591DC]">02 / 48H EDIT</span>
-              <h3 className="text-base font-semibold text-white">Precision Editing</h3>
-              <p className="text-xs text-[#8e909a] leading-relaxed">
-                We cut dead air, design custom motion graphics, color grade in Rec.709, and master layered sound effects.
-              </p>
+            {/* STEP 02: Right-Aligned */}
+            <div className="flex justify-end w-full">
+              <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
+                {/* Content */}
+                <div className="pt-0.5 flex-1 space-y-1.5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                    Build Your Content Engine
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
+                    We build your content system, the formats, hooks, and filming process, tailored to your niche.
+                  </p>
+                </div>
+
+                {/* Badge 02 + Dotted Line Down */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                    02
+                  </div>
+                  <div className="w-px h-16 sm:h-20 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-[#0e1017] border border-white/[0.08] rounded-2xl p-6 space-y-3">
-              <span className="text-xs font-mono font-semibold text-[#1591DC]">03 / DELIVERY</span>
-              <h3 className="text-base font-semibold text-white">Review &amp; Scale</h3>
-              <p className="text-xs text-[#8e909a] leading-relaxed">
-                Receive final 4K masters ready for Reels, TikTok, and Shorts. Timestamp revisions handled smoothly on Frame.io.
-              </p>
+            {/* STEP 03: Left-Aligned */}
+            <div className="flex justify-start w-full">
+              <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
+                {/* Badge 03 + Dotted Line Down */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                    03
+                  </div>
+                  <div className="w-px h-16 sm:h-20 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
+                </div>
+
+                {/* Content */}
+                <div className="pt-0.5 text-left space-y-1.5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                    Launch, Test and Guide
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
+                    We launch consistently, review performance together, and double down on what's driving results.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* STEP 04: Right-Aligned */}
+            <div className="flex justify-end w-full">
+              <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
+                {/* Content */}
+                <div className="pt-0.5 flex-1 space-y-1.5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                    Guaranteed Growth
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
+                    1M+ views in 90 days, or your money back. Tracked together every month.
+                  </p>
+                </div>
+
+                {/* Badge 04 */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                    04
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
