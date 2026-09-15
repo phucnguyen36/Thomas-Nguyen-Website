@@ -154,7 +154,7 @@ export default function App() {
       company: "CREATIVE PRODUCTION",
       metric: "1.4M Organic Reach",
       thumbnail: "/thumbnails/1190211907.jpg",
-      avatar: "/clients/hoang_phuc.jpg"
+      avatar: "/clients/raul_ocana.jpg"
     },
     { 
       id: "1185562812", 
@@ -165,7 +165,7 @@ export default function App() {
       company: "EDITOZ GLOBAL",
       metric: "3.8x Engagement Lift",
       thumbnail: "/thumbnails/1185562812.jpg",
-      avatar: "/clients/kaleemix.jpg"
+      avatar: "/clients/editoz.jpg"
     },
     { 
       id: "1185562961", 
@@ -277,7 +277,7 @@ export default function App() {
       name: "Raul Ocana",
       handle: "@raulocana_video",
       role: "Commercial Producer",
-      avatar: "/clients/hoang_phuc.jpg",
+      avatar: "/clients/raul_ocana.jpg",
       metric: "1.4M Organic Reach",
       comment: "Flawless 48-hour turnaround with cinema-grade Rec.709 color grading and multi-layered sound design. The most reliable editor we have worked with.",
       stars: 5,
@@ -287,7 +287,7 @@ export default function App() {
       name: "Editoz Club",
       handle: "@editoz_club",
       role: "Media Community",
-      avatar: "/clients/kaleemix.jpg",
+      avatar: "/clients/editoz.jpg",
       metric: "3.8x Engagement Lift",
       comment: "Bespoke motion graphics built from scratch — zero CapCut template packs used. Our brand authority doubled in 30 days.",
       stars: 5,
