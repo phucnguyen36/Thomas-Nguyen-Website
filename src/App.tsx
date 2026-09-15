@@ -411,23 +411,33 @@ export default function App() {
             </a>
           </div>
 
-          {/* Clean Metric Row */}
-          <div className="pt-8 border-t border-white/[0.06] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center max-w-2xl mx-auto">
-            <div>
-              <div className="text-2xl font-semibold text-white tracking-tight">800+</div>
-              <div className="text-[11px] text-[#8e909a] uppercase tracking-wider mt-0.5">Reels Edited</div>
-            </div>
-            <div>
-              <div className="text-2xl font-semibold text-white tracking-tight">85%+</div>
-              <div className="text-[11px] text-[#8e909a] uppercase tracking-wider mt-0.5">Avg. 5S Retention</div>
-            </div>
-            <div>
-              <div className="text-2xl font-semibold text-white tracking-tight">48H</div>
-              <div className="text-[11px] text-[#8e909a] uppercase tracking-wider mt-0.5">Turnaround</div>
-            </div>
-            <div>
-              <div className="text-2xl font-semibold text-[#60b6ee] tracking-tight">100%</div>
-              <div className="text-[11px] text-[#8e909a] uppercase tracking-wider mt-0.5">Money Back</div>
+          {/* 3-Column Divided Achievement Metric Banner (Matching User Reference Image) */}
+          <div className="pt-6 max-w-3xl mx-auto">
+            <div className="bg-[#0e1017]/90 border border-white/[0.08] rounded-2xl py-6 sm:py-8 px-4 grid grid-cols-3 divide-x divide-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
+              <div className="text-center px-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1591DC] tracking-tight">
+                  20+
+                </div>
+                <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#8e909a] uppercase tracking-wider mt-1.5">
+                  Clients
+                </div>
+              </div>
+              <div className="text-center px-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1591DC] tracking-tight">
+                  800+
+                </div>
+                <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#8e909a] uppercase tracking-wider mt-1.5">
+                  Reels Edited
+                </div>
+              </div>
+              <div className="text-center px-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1591DC] tracking-tight">
+                  48H
+                </div>
+                <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#8e909a] uppercase tracking-wider mt-1.5">
+                  Turnaround
+                </div>
+              </div>
             </div>
           </div>
 
