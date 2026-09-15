@@ -7,7 +7,7 @@ import {
   Sparkles, 
   Music, 
   Minus, 
-  Plus,
+  Plus, 
   Instagram, 
   CheckCircle2, 
   Star, 
@@ -174,45 +174,72 @@ export default function App() {
 
   const displayedVideos = showAllVideos ? filteredVideos : filteredVideos.slice(0, 4);
 
-  // AUTHENTIC CLIENT REVIEWS
-  const clientTestimonials = [
+  // AUTHENTIC CLIENT REVIEWS FOR THE DUAL-DIRECTION SLIDING MARQUEE
+  const clientReviews = [
     {
       name: "Via Masi",
       handle: "@viamasi_media",
-      role: "Creator & Media Agency Founder",
+      role: "Creator & Agency Founder",
       avatar: "/clients/via_masi.jpg",
-      metric: "+210% Inbound Inquiries",
-      comment: "Thomas completely transformed our short-form pacing. We went from burning cash on views that went nowhere to generating qualified inbound calls every single week. His 48-hour delivery timeline is unmatched.",
-      stars: 5
+      metric: "+210% Inbound Leads",
+      comment: "Thomas completely transformed our short-form pacing. We went from burning cash on views that went nowhere to generating qualified inbound calls every week. His 48-hour delivery timeline is unmatched.",
+      stars: 5,
+      location: "United States"
     },
     {
       name: "Vlady",
       handle: "@vlady_official",
-      role: "Digital Course Creator & Personal Brand",
+      role: "Digital Course Creator & Brand",
       avatar: "/clients/vlady.jpg",
-      metric: "3.2x Digital Product Sales",
-      comment: "The retention on our reels doubled within the first 10 days of working with Thomas. He understands buyer psychology, not just flashy cuts. He helped me sell out my launch completely organically.",
-      stars: 5
+      metric: "3.2x Product Sales",
+      comment: "The retention on our reels doubled within the first 10 days of working with Thomas. He understands buyer psychology, not just flashy cuts. He helped me sell out my digital product launch organically.",
+      stars: 5,
+      location: "Global"
     },
     {
       name: "Hoang Phuc",
       handle: "@hoangphuc_creator",
       role: "Tech Creator & Educator",
       avatar: "/clients/hoang_phuc.jpg",
-      metric: "84% 5S Retention Score",
-      comment: "First 5-second viewer retention jumped from 34% to 84% within 2 weeks of implementing his visual pacing framework. Organic follower growth tripled.",
-      stars: 5
+      metric: "84% 5S Retention",
+      comment: "First 5-second viewer retention jumped from 34% to 84% within 2 weeks of implementing his visual pacing framework. Organic follower growth tripled and Frame.io review was effortless.",
+      stars: 5,
+      location: "Vietnam"
     },
     {
       name: "Kaleemix",
       handle: "@kaleemix_official",
       role: "B2B Media Agency",
       avatar: "/clients/kaleemix.jpg",
-      metric: "+160% Inbound Leads",
-      comment: "Visual hooks and bespoke After Effects keyframing turned our content into an automated client acquisition engine. Zero template slop — everything is tailor-made.",
-      stars: 5
+      metric: "1.8M Monthly Views",
+      comment: "Visual hooks and bespoke After Effects keyframing turned our content into an automated client acquisition engine. Zero template slop — everything is tailor-made for high conversion.",
+      stars: 5,
+      location: "United Kingdom"
+    },
+    {
+      name: "Raul Ocana",
+      handle: "@raulocana_video",
+      role: "Commercial Producer",
+      avatar: "/clients/hoang_phuc.jpg",
+      metric: "1.4M Organic Reach",
+      comment: "Flawless 48-hour turnaround with cinema-grade Rec.709 color grading and multi-layered sound design. The most reliable editor we have worked with.",
+      stars: 5,
+      location: "Spain"
+    },
+    {
+      name: "Editoz Club",
+      handle: "@editoz_club",
+      role: "Media Community",
+      avatar: "/clients/kaleemix.jpg",
+      metric: "3.8x Engagement Lift",
+      comment: "Bespoke motion graphics built from scratch — zero CapCut template packs used. Our brand authority doubled in 30 days.",
+      stars: 5,
+      location: "United Kingdom"
     }
   ];
+
+  const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
+  const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
 
   // Core Pillars
   const pillars = [
@@ -287,7 +314,7 @@ export default function App() {
       <main className="relative z-10 space-y-28 md:space-y-36 pb-28 max-w-[1120px] mx-auto px-6">
         
         {/* ========================================================================= */}
-        {/* 1. CLEAN HERO SECTION (CALM, POWERFUL, ZERO CLUTTER)                     */}
+        {/* 1. CLEAN HERO SECTION                                                     */}
         {/* ========================================================================= */}
         <section id="hero" className="pt-20 md:pt-28 text-center max-w-3xl mx-auto space-y-7">
           
@@ -453,60 +480,120 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 3. VERIFIED CLIENT PROOF (EDITORIAL & SOPHISTICATED)                      */}
+        {/* 3. DUAL-DIRECTION CONTINUOUS SLIDING FEEDBACK MARQUEE (RESTORED)          */}
         {/* ========================================================================= */}
-        <section id="results" className="space-y-6 pt-4 scroll-mt-20">
+        <section id="results" className="space-y-6 pt-4 scroll-mt-20 overflow-hidden">
           <div className="text-center space-y-1 max-w-xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-              Client Outcomes
+              Client Feedback
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              Results from creators and founders who upgraded their video retention systems.
+              What creators and founders say about our visual pacing and 48-hour delivery
             </p>
           </div>
 
-          {/* Testimonial Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-            {clientTestimonials.map((testimonial, idx) => (
-              <div 
-                key={idx} 
-                className="bg-[#0e1017] border border-white/[0.08] rounded-2xl p-6 flex flex-col justify-between space-y-5"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex text-amber-400 gap-0.5">
-                      {Array.from({ length: testimonial.stars }).map((_, s) => (
-                        <Star key={s} size={13} fill="currentColor" />
-                      ))}
+          {/* Marquee Row 1 (Left Scroll) */}
+          <div className="relative w-full overflow-hidden py-1">
+            {/* Edge Fade Gradients */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
+
+            <div className="animate-marquee gap-4">
+              {marqueeReviewsRow1.map((rev, i) => (
+                <div 
+                  key={`r1-${i}`}
+                  className="bg-[#0e1017] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl w-[340px] md:w-[380px] p-5 md:p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-sm select-none transition-colors"
+                >
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-0.5 text-amber-400">
+                        {Array.from({ length: rev.stars }).map((_, s) => (
+                          <Star key={s} size={13} fill="currentColor" />
+                        ))}
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-[10px] font-semibold text-[#60b6ee]">
+                        {rev.metric}
+                      </span>
                     </div>
-                    <span className="text-xs font-semibold text-[#60b6ee]">
-                      {testimonial.metric}
-                    </span>
-                  </div>
 
-                  <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed">
-                    "{testimonial.comment}"
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover border border-white/10"
-                  />
-                  <div>
-                    <h4 className="text-xs font-semibold text-white leading-tight">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-[11px] text-[#8e909a] mt-0.5">
-                      {testimonial.role}
+                    <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed">
+                      "{rev.comment}"
                     </p>
                   </div>
+
+                  <div className="flex items-center justify-between pt-3.5 border-t border-white/[0.06] text-xs">
+                    <div className="flex items-center gap-2.5">
+                      <img 
+                        src={rev.avatar} 
+                        alt={rev.name}
+                        className="w-8 h-8 rounded-full object-cover border border-white/10"
+                      />
+                      <div>
+                        <span className="text-white font-medium block leading-tight">{rev.name}</span>
+                        <span className="text-[11px] text-[#8e909a]">{rev.handle}</span>
+                      </div>
+                    </div>
+
+                    <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
+                      <CheckCircle2 size={11} /> Verified
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Marquee Row 2 (Right / Reverse Scroll) */}
+          <div className="relative w-full overflow-hidden py-1">
+            {/* Edge Fade Gradients */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
+
+            <div className="animate-marquee-reverse gap-4">
+              {marqueeReviewsRow2.map((rev, i) => (
+                <div 
+                  key={`r2-${i}`}
+                  className="bg-[#0e1017] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl w-[340px] md:w-[380px] p-5 md:p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-sm select-none transition-colors"
+                >
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-0.5 text-amber-400">
+                        {Array.from({ length: rev.stars }).map((_, s) => (
+                          <Star key={s} size={13} fill="currentColor" />
+                        ))}
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-[10px] font-semibold text-[#60b6ee]">
+                        {rev.metric}
+                      </span>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed">
+                      "{rev.comment}"
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-3.5 border-t border-white/[0.06] text-xs">
+                    <div className="flex items-center gap-2.5">
+                      <img 
+                        src={rev.avatar} 
+                        alt={rev.name}
+                        className="w-8 h-8 rounded-full object-cover border border-white/10"
+                      />
+                      <div>
+                        <span className="text-white font-medium block leading-tight">{rev.name}</span>
+                        <span className="text-[11px] text-[#8e909a]">{rev.handle}</span>
+                      </div>
+                    </div>
+
+                    <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
+                      <CheckCircle2 size={11} /> Verified
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </section>
 
         {/* ========================================================================= */}
