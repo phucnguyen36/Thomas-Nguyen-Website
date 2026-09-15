@@ -416,7 +416,7 @@ export default function App() {
                 Engineered For Retention. <span className="font-serif-italic font-bold text-[#1591DC]">Built For Conversion.</span>
               </h2>
               <p className="text-xs text-[#9496a1]">
-                Dàn thành 2 cột trực quan (2 hàng đầu tiên) để bạn dễ dàng bao quát và đánh giá chất lượng dựng
+                Curated client reels engineered for peak 3-second hook retention and audience conversion.
               </p>
             </div>
 
