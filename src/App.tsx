@@ -514,23 +514,19 @@ export default function App() {
               <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#07080b] to-transparent z-30 pointer-events-none hidden sm:block" />
               <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#07080b] to-transparent z-30 pointer-events-none hidden sm:block" />
 
-              {/* 5-Card Layered Flex Container */}
+              {/* 5-Card Layered Flex Container with Center-Locked Order */}
               <div className="flex items-center justify-center gap-3 sm:gap-5 md:gap-6 min-h-[540px] sm:min-h-[580px] overflow-hidden px-4">
-                {showcaseVideos.map((video, idx) => {
+                {[-2, -1, 0, 1, 2].map((diff) => {
                   const len = showcaseVideos.length;
-                  let diff = (idx - activeVideoIndex) % len;
-                  if (diff > len / 2) diff -= len;
-                  if (diff < -len / 2) diff += len;
-
-                  // Render only [-2, -1, 0, 1, 2]
-                  if (Math.abs(diff) > 2) return null;
+                  const idx = (activeVideoIndex + diff + len) % len;
+                  const video = showcaseVideos[idx];
 
                   const isCenter = diff === 0;
                   const isNeighbor = Math.abs(diff) === 1;
 
                   return (
                     <div
-                      key={video.id}
+                      key={`slot-${diff}-${video.id}`}
                       onClick={() => {
                         if (!isCenter) {
                           setPlayingVideoId(null);
