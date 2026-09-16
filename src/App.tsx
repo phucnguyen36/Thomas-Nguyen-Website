@@ -472,21 +472,20 @@ export default function App() {
             <span>Only 2 Spots Remaining • 48-Hour Turnaround</span>
           </div>
           
-          {/* Main Headline (White & Blue Only - Cohesive Phrasing) */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.2] max-w-4xl mx-auto [text-wrap:balance]">
+          {/* Main Headline (Swiss Contrast - White Primary, Blue Engine Accent) */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto [text-wrap:balance]">
             <span className="text-white block">
-              <span className="inline-block">Stop Editing Your Own Content.</span>{' '}
-              <span className="inline-block">Start Closing Deals.</span>
+              <span className="block">You Close The Deals.</span>
+              <span className="block mt-1">We Drive The Retention.</span>
             </span>
-            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold">
-              <span className="inline-block">20+ High-Converting Reels Every Month.</span>{' '}
-              <span className="inline-block">Zero Headaches.</span>
+            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-bold">
+              A Complete Monthly Short-Form Engine. Fully Automated.
             </span>
           </h1>
 
-          {/* Subtitle / Paragraph */}
+          {/* Subtitle / Paragraph (Leverage & Guarantee) */}
           <p className="text-[#8e909a] text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal">
-            You hit record for 60 minutes. We handle the scripting hooks, pacing, bespoke motion design, and 4K masters. If we don't save you 20+ hours and elevate your brand within 30 days, you get a 100% full refund.
+            Hit record for 60 minutes. We handle scripting hooks, bespoke motion graphics, and delivery. Guaranteed ROI or full refund.
           </p>
 
           {/* Action Buttons */}
@@ -1440,21 +1439,20 @@ export default function App() {
             </div>
           </div>
 
-          {/* Headline trắng & Subheadline xanh - White & Blue Only */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-extrabold tracking-tight leading-[1.2] max-w-4xl mx-auto [text-wrap:balance]">
+          {/* Headline trắng & Subheadline xanh - Swiss Contrast */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto [text-wrap:balance]">
             <span className="text-white block">
-              <span className="inline-block">Stop Editing Your Own Content.</span>{' '}
-              <span className="inline-block">Start Closing Deals.</span>
+              <span className="block">You Close The Deals.</span>
+              <span className="block mt-1">We Drive The Retention.</span>
             </span>
-            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-bold">
-              <span className="inline-block">20+ High-Converting Reels Every Month.</span>{' '}
-              <span className="inline-block">Zero Headaches.</span>
+            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold">
+              A Complete Monthly Short-Form Engine. Fully Automated.
             </span>
           </h2>
 
-          {/* Paragraph */}
-          <p className="text-[#8e909a] text-base sm:text-lg leading-relaxed max-w-xl mx-auto font-normal">
-            You hit record for 60 minutes. We handle the scripting hooks, pacing, bespoke motion design, and 4K masters. If we don't save you 20+ hours and elevate your brand within 30 days, you get a 100% full refund.
+          {/* Paragraph (Leverage & Guarantee) */}
+          <p className="text-[#8e909a] text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal">
+            Hit record for 60 minutes. We handle scripting hooks, bespoke motion graphics, and delivery. Guaranteed ROI or full refund.
           </p>
 
           {/* Nút CTA */}
