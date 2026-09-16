@@ -446,7 +446,7 @@ export default function App() {
         {/* ========================================================================= */}
         {/* 1. HERO SECTION (ALEX HORMOZI GRAND SLAM OFFER COPYWRITING)               */}
         {/* ========================================================================= */}
-        <section id="hero" className="pt-16 md:pt-24 text-center max-w-3xl mx-auto space-y-7">
+        <section id="hero" className="pt-16 md:pt-24 text-center max-w-4xl mx-auto space-y-7">
           
           {/* Availability Indicator */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
@@ -454,15 +454,15 @@ export default function App() {
             <span>Only 2 Spots Remaining • 48-Hour Turnaround</span>
           </div>
           
-          {/* Main Headline (Hormozi Formula) */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.15]">
-            Stop Editing Your Own Content.<br className="hidden sm:block" />
-            <span> Start Closing Deals.</span>
-            <span className="block text-[#1591DC] mt-2 sm:mt-3">
-              20+ High-Converting Reels Every Month.
+          {/* Main Headline (White & Blue Only - Cohesive Phrasing) */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.2] max-w-4xl mx-auto [text-wrap:balance]">
+            <span className="text-white block">
+              <span className="inline-block">Stop Editing Your Own Content.</span>{' '}
+              <span className="inline-block">Start Closing Deals.</span>
             </span>
-            <span className="block text-emerald-400 mt-1 sm:mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold">
-              Zero Headaches.
+            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold">
+              <span className="inline-block">20+ High-Converting Reels Every Month.</span>{' '}
+              <span className="inline-block">Zero Headaches.</span>
             </span>
           </h1>
 
@@ -1412,7 +1412,7 @@ export default function App() {
         {/* ========================================================================= */}
         {/* 10. FINAL GRAND SLAM OFFER (AFTER FAQ - CLOSING SECTION)                  */}
         {/* ========================================================================= */}
-        <section className="pt-12 pb-6 scroll-mt-20 text-center max-w-3xl mx-auto space-y-7 border-t border-white/[0.06]">
+        <section className="pt-12 pb-6 scroll-mt-20 text-center max-w-4xl mx-auto space-y-7 border-t border-white/[0.06]">
           
           {/* Pill Badge */}
           <div>
@@ -1422,15 +1422,15 @@ export default function App() {
             </div>
           </div>
 
-          {/* Headline trắng & Subheadline xanh & Zero Headaches đổi màu */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15]">
-            Stop Editing Your Own Content.<br className="hidden sm:block" />
-            <span> Start Closing Deals.</span>
-            <span className="block text-[#1591DC] mt-2 sm:mt-3">
-              20+ High-Converting Reels Every Month.
+          {/* Headline trắng & Subheadline xanh - White & Blue Only */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-extrabold tracking-tight leading-[1.2] max-w-4xl mx-auto [text-wrap:balance]">
+            <span className="text-white block">
+              <span className="inline-block">Stop Editing Your Own Content.</span>{' '}
+              <span className="inline-block">Start Closing Deals.</span>
             </span>
-            <span className="block text-emerald-400 mt-1 sm:mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold">
-              Zero Headaches.
+            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-bold">
+              <span className="inline-block">20+ High-Converting Reels Every Month.</span>{' '}
+              <span className="inline-block">Zero Headaches.</span>
             </span>
           </h2>
 
