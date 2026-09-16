@@ -448,20 +448,20 @@ export default function App() {
         <section id="hero" className="pt-16 md:pt-24 text-center max-w-3xl mx-auto space-y-7">
           
           {/* Availability Indicator */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs text-[#a0a3af] font-medium tracking-tight">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Accepting 2 Creator Partnerships This Month · 100% Guaranteed ROI</span>
+            <span>Only 2 Spots Remaining • 48-Hour Turnaround</span>
           </div>
           
           {/* Main Headline (Hormozi Formula) */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.12]">
-            Turn Raw Footage Into Scalable Inbound Sales.<br className="hidden sm:block" />
-            <span className="text-[#1591DC]">1M+ Views in 90 Days Or Your Money Back.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+            Stop Editing Your Own Content. Start Closing Deals.<br className="hidden sm:block" />
+            <span className="text-[#1591DC]">20+ High-Converting Reels Every Month. Zero Headaches.</span>
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle / Paragraph */}
           <p className="text-[#8e909a] text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal">
-            We engineer high-retention short-form video systems with neuro-pacing, bespoke VFX, and sound design. If we don't hit your retention and growth benchmarks, you get a 100% full refund. Zero risk. 48-hour delivery.
+            You hit record for 60 minutes. We handle the scripting hooks, pacing, bespoke motion design, and 4K masters. If we don't save you 20+ hours and elevate your brand within 30 days, you get a 100% full refund.
           </p>
 
           {/* Action Buttons */}
@@ -470,7 +470,7 @@ export default function App() {
               onClick={handleCalendlyRedirect}
               className="px-7 py-3.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 transition-all shadow-[0_4px_20px_rgba(21,145,220,0.35)] hover:shadow-[0_6px_28px_rgba(21,145,220,0.5)] cursor-pointer"
             >
-              <span>Claim Your Offer &amp; Book a Call</span>
+              <span>Book a 15-Min Strategy Call</span>
               <ArrowRight size={15} />
             </button>
 
@@ -1420,6 +1420,79 @@ export default function App() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* 10. FINAL GRAND SLAM OFFER (AFTER FAQ - CLOSING SECTION)                  */}
+        {/* ========================================================================= */}
+        <section className="pt-12 pb-6 scroll-mt-20 text-center max-w-3xl mx-auto space-y-7 border-t border-white/[0.06]">
+          
+          {/* Pill Badge */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Only 2 Spots Remaining • 48-Hour Turnaround</span>
+            </div>
+          </div>
+
+          {/* Headline trắng & Subheadline xanh */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15]">
+            Stop Editing Your Own Content. Start Closing Deals.<br className="hidden sm:block" />
+            <span className="text-[#1591DC]">20+ High-Converting Reels Every Month. Zero Headaches.</span>
+          </h2>
+
+          {/* Paragraph */}
+          <p className="text-[#8e909a] text-base sm:text-lg leading-relaxed max-w-xl mx-auto font-normal">
+            You hit record for 60 minutes. We handle the scripting hooks, pacing, bespoke motion design, and 4K masters. If we don't save you 20+ hours and elevate your brand within 30 days, you get a 100% full refund.
+          </p>
+
+          {/* Nút CTA */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <button 
+              onClick={handleCalendlyRedirect}
+              className="px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm sm:text-base font-semibold rounded-full tracking-tight inline-flex items-center gap-2.5 shadow-[0_6px_30px_rgba(21,145,220,0.4)] hover:shadow-[0_8px_40px_rgba(21,145,220,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
+            >
+              <span>Book a 15-Min Strategy Call</span>
+              <ArrowRight size={17} />
+            </button>
+
+            <a 
+              href="#work"
+              className="px-6 py-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-white text-sm sm:text-base font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
+            >
+              <span>Watch The Work ↓</span>
+            </a>
+          </div>
+
+          {/* Overlapping Client Avatars & Social Proof */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex items-center -space-x-2.5">
+              <img 
+                src="/clients/via_masi.jpg" 
+                alt="Via Masi" 
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+              <img 
+                src="/clients/vlady.jpg" 
+                alt="Vlady" 
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+              <img 
+                src="/clients/hoang_phuc.jpg" 
+                alt="Hoang Phuc" 
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+              <img 
+                src="/clients/kaleemix.jpg" 
+                alt="Kaleemix" 
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+            </div>
+            <p className="text-xs sm:text-sm text-[#8e909a]">
+              Trusted by <strong className="text-white font-medium">Via Masi</strong>, <strong className="text-white font-medium">Vlady</strong>, <strong className="text-white font-medium">Hoang Phuc</strong>, and 20+ founders worldwide.
+            </p>
+          </div>
+
         </section>
 
       </main>
