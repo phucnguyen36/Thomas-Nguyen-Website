@@ -223,6 +223,77 @@ export default function App() {
     setActiveVideoIndex((prev) => (prev === showcaseVideos.length - 1 ? 0 : prev + 1));
   };
 
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    if (deltaX > 40) {
+      handlePrevVideo();
+    } else if (deltaX < -40) {
+      handleNextVideo();
+    }
+    setTouchStartX(null);
+  };
+
+  const getCardTransform = (diff: number) => {
+    if (diff === 0) {
+      return {
+        transform: 'translateX(-50%) scale(1)',
+        zIndex: 30,
+        opacity: 1,
+        pointerEvents: 'auto' as const,
+        filter: 'brightness(1)'
+      };
+    }
+    if (diff === -1) {
+      return {
+        transform: 'translateX(calc(-50% - min(35vw, 290px))) scale(0.88)',
+        zIndex: 20,
+        opacity: 0.75,
+        pointerEvents: 'auto' as const,
+        filter: 'brightness(0.85)'
+      };
+    }
+    if (diff === 1) {
+      return {
+        transform: 'translateX(calc(-50% + min(35vw, 290px))) scale(0.88)',
+        zIndex: 20,
+        opacity: 0.75,
+        pointerEvents: 'auto' as const,
+        filter: 'brightness(0.85)'
+      };
+    }
+    if (diff === -2) {
+      return {
+        transform: 'translateX(calc(-50% - min(65vw, 500px))) scale(0.76)',
+        zIndex: 10,
+        opacity: 0.35,
+        pointerEvents: 'auto' as const,
+        filter: 'brightness(0.65)'
+      };
+    }
+    if (diff === 2) {
+      return {
+        transform: 'translateX(calc(-50% + min(65vw, 500px))) scale(0.76)',
+        zIndex: 10,
+        opacity: 0.35,
+        pointerEvents: 'auto' as const,
+        filter: 'brightness(0.65)'
+      };
+    }
+    return {
+      transform: `translateX(calc(-50% + ${diff > 0 ? '800px' : '-800px'})) scale(0.5)`,
+      zIndex: 0,
+      opacity: 0,
+      pointerEvents: 'none' as const
+    };
+  };
+
   const filteredVideos = showcaseVideos.filter(v => 
     v.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     v.tag.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -514,38 +585,38 @@ export default function App() {
               <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#07080b] to-transparent z-30 pointer-events-none hidden sm:block" />
               <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#07080b] to-transparent z-30 pointer-events-none hidden sm:block" />
 
-              {/* 5-Card Layered Flex Container with Center-Locked Order */}
-              <div className="flex items-center justify-center gap-3 sm:gap-5 md:gap-6 min-h-[540px] sm:min-h-[580px] overflow-hidden px-4">
-                {[-2, -1, 0, 1, 2].map((diff) => {
+              {/* Centered Absolute Stage Container with Touch Support */}
+              <div 
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                className="relative w-full h-[560px] sm:h-[620px] md:h-[670px] overflow-hidden"
+              >
+                {showcaseVideos.map((video, idx) => {
                   const len = showcaseVideos.length;
-                  const idx = (activeVideoIndex + diff + len) % len;
-                  const video = showcaseVideos[idx];
+                  let diff = (idx - activeVideoIndex) % len;
+                  if (diff > len / 2) diff -= len;
+                  if (diff < -len / 2) diff += len;
 
                   const isCenter = diff === 0;
-                  const isNeighbor = Math.abs(diff) === 1;
+                  const style = getCardTransform(diff);
 
                   return (
                     <div
-                      key={`slot-${diff}-${video.id}`}
+                      key={video.id}
                       onClick={() => {
                         if (!isCenter) {
                           setPlayingVideoId(null);
                           setActiveVideoIndex(idx);
                         }
                       }}
-                      className={`transition-all duration-500 ease-out flex flex-col items-center shrink-0 cursor-pointer ${
-                        isCenter
-                          ? 'z-30 scale-100 opacity-100 w-[270px] sm:w-[310px] md:w-[330px]'
-                          : isNeighbor
-                          ? 'z-20 scale-[0.88] opacity-75 hover:opacity-90 w-[220px] sm:w-[250px] md:w-[270px]'
-                          : 'z-10 scale-[0.76] opacity-30 hover:opacity-50 w-[180px] sm:w-[210px] hidden md:flex'
-                      }`}
+                      style={style}
+                      className="absolute top-0 left-1/2 transition-all duration-500 ease-out flex flex-col items-center shrink-0 cursor-pointer w-[250px] sm:w-[280px] md:w-[320px]"
                     >
                       {/* 9:16 Video Poster Card */}
                       <div className={`w-full aspect-[9/16] relative rounded-2xl sm:rounded-3xl overflow-hidden bg-black transition-all duration-300 ${
                         isCenter 
                           ? 'border-2 border-white/40 shadow-[0_12px_45px_rgba(21,145,220,0.35)]' 
-                          : 'border border-white/10 shadow-lg'
+                          : 'border border-white/10 shadow-lg hover:border-white/20'
                       }`}>
                         
                         {/* If this video is currently playing */}
