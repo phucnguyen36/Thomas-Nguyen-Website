@@ -23,6 +23,7 @@ import {
   Loader2,
   ChevronDown,
   LayoutGrid,
+  Film,
   X
 } from 'lucide-react';
 
@@ -369,27 +370,27 @@ export default function App() {
   const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
   const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
 
-  // Core Pillars
+  // Core Production Stack (PR, AE, Sound, Color) - Human Craftsmanship
   const pillars = [
     { 
-      title: "Neuro-Pacing", 
-      description: "Eliminate dead air and micro-hesitations within the first 3 critical seconds, locking attention before the drop-off point.", 
-      icon: Zap 
+      title: "Premiere Pro (Pacing & Cut)", 
+      description: "Frame-by-frame narrative cuts that eliminate awkward pauses, breath gaps, and filler words. Pacing built to keep viewers watching till the last second.", 
+      icon: Film 
     },
     { 
-      title: "Bespoke Motion VFX", 
-      description: "Handcrafted After Effects graphics tailored to your visual identity, establishing immediate authority without cheap template packs.", 
+      title: "After Effects (Motion VFX)", 
+      description: "Custom keyframed graphics, bespoke kinetic typography, and motion overlays built from scratch. Zero cheap template packs.", 
       icon: Layers 
     },
     { 
-      title: "Conversion B-Roll", 
-      description: "Context-relevant visual proof replacing generic stock footage with intentional scenes that reinforce your core offer.", 
-      icon: Sparkles 
+      title: "Punchy Sound Design", 
+      description: "Multi-track audio engineering with vocal leveling, custom swooshes, hits, and tempo-matched beats that punch through mobile speakers.", 
+      icon: Music 
     },
     { 
-      title: "Sound Architecture", 
-      description: "Multi-layered audio design with bespoke risers, drops, and impact SFX engineered to hold subconscious engagement.", 
-      icon: Music 
+      title: "Studio Color & 4K Export", 
+      description: "Clean Rec.709 color correction, natural skin tones, and optimal bitrate compression so your video stays crystal-clear on Instagram & TikTok.", 
+      icon: Sparkles 
     }
   ];
 
@@ -423,7 +424,7 @@ export default function App() {
           <a href="#work" className="hover:text-white transition-colors">Work</a>
           <a href="#results" className="hover:text-white transition-colors">Proof</a>
           <a href="#process" className="hover:text-white transition-colors">Process</a>
-          <a href="#guarantee" className="hover:text-white transition-colors">Guarantee</a>
+          <a href="#services" className="hover:text-white transition-colors">Stack</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#booking" className="hover:text-white transition-colors">Book Call</a>
         </nav>
@@ -455,8 +456,14 @@ export default function App() {
           
           {/* Main Headline (Hormozi Formula) */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.15]">
-            Stop Editing Your Own Content. Start Closing Deals.<br className="hidden sm:block" />
-            <span className="text-[#1591DC]">20+ High-Converting Reels Every Month. Zero Headaches.</span>
+            Stop Editing Your Own Content.<br className="hidden sm:block" />
+            <span> Start Closing Deals.</span>
+            <span className="block text-[#1591DC] mt-2 sm:mt-3">
+              20+ High-Converting Reels Every Month.
+            </span>
+            <span className="block text-emerald-400 mt-1 sm:mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold">
+              Zero Headaches.
+            </span>
           </h1>
 
           {/* Subtitle / Paragraph */}
@@ -724,6 +731,18 @@ export default function App() {
                 ))}
               </div>
 
+              {/* Mid-Page Call CTA */}
+              <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+                <span className="text-xs sm:text-sm text-[#8e909a]">Ready to turn your raw footage into high-converting reels?</span>
+                <button 
+                  onClick={handleCalendlyRedirect}
+                  className="px-5 py-2 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full tracking-tight inline-flex items-center gap-1.5 shadow-[0_2px_15px_rgba(21,145,220,0.35)] transition-all cursor-pointer"
+                >
+                  <span>Book a 15-Min Call</span>
+                  <ArrowRight size={13} />
+                </button>
+              </div>
+
             </div>
           )}
 
@@ -914,6 +933,17 @@ export default function App() {
             </div>
           </div>
 
+          {/* Marquee CTA */}
+          <div className="pt-6 flex justify-center">
+            <button 
+              onClick={handleCalendlyRedirect}
+              className="px-6 py-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.12] hover:border-[#1591DC]/50 text-white text-xs font-semibold rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
+            >
+              <span>Join 20+ High-Growth Creators — Book Call</span>
+              <ArrowRight size={13} className="text-[#1591DC]" />
+            </button>
+          </div>
+
         </section>
 
         {/* ========================================================================= */}
@@ -1024,19 +1054,30 @@ export default function App() {
               </div>
             </div>
 
+            {/* Process CTA Button */}
+            <div className="pt-8 flex justify-center w-full">
+              <button 
+                onClick={handleCalendlyRedirect}
+                className="px-7 py-3 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_28px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
+              >
+                <span>Start Your Project · Book a 15-Min Call</span>
+                <ArrowRight size={14} />
+              </button>
+            </div>
+
           </div>
         </section>
 
         {/* ========================================================================= */}
-        {/* 5. CORE CAPABILITIES (4 PILLARS)                                          */}
+        {/* 5. EDITING TOOLKIT & PRODUCTION STACK (PR, AE, SOUND, COLOR)              */}
         {/* ========================================================================= */}
         <section id="services" className="space-y-6 pt-4 scroll-mt-20">
           <div className="border-b border-white/[0.06] pb-4">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-              Retention Pillars
+              The Production Stack
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              The core principles behind our high-converting edits
+              Handcrafted in Premiere Pro &amp; After Effects. No generic CapCut templates.
             </p>
           </div>
 
@@ -1056,6 +1097,17 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Stack CTA Button */}
+          <div className="pt-2 flex justify-center">
+            <button 
+              onClick={handleCalendlyRedirect}
+              className="px-5 py-2 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-xs font-medium text-[#d4d6e0] hover:text-white rounded-full inline-flex items-center gap-2 transition-colors cursor-pointer"
+            >
+              <span>Need custom editing or motion graphics? Book a call</span>
+              <ArrowRight size={12} className="text-[#1591DC]" />
+            </button>
           </div>
         </section>
 
@@ -1112,80 +1164,15 @@ export default function App() {
               <div className="pt-2">
                 <button 
                   onClick={handleCalendlyRedirect}
-                  className="px-6 py-2.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full tracking-tight inline-flex items-center gap-2 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.35)] transition-all cursor-pointer"
                 >
-                  <span>Work With Thomas</span>
-                  <ArrowRight size={13} />
+                  <span>Book a 15-Min Call With Thomas</span>
+                  <ArrowRight size={14} />
                 </button>
               </div>
             </div>
 
           </div>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* 7. HORMOZI GRAND SLAM OFFER & GUARANTEE SECTION (MATCHING IMAGE 2)        */}
-        {/* ========================================================================= */}
-        <section id="guarantee" className="pt-12 pb-6 scroll-mt-20 text-center max-w-3xl mx-auto space-y-7">
-          
-          {/* Top Pill Badge (Exact Image 2) */}
-          <div>
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              Guarantee
-            </div>
-          </div>
-
-          {/* Big Bold Headline (Exact Image 2) */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.12]">
-            1M+ Views in 90 Days.<br />
-            <span className="text-[#1591DC]">Or Your Money Back.</span>
-          </h2>
-
-          {/* Body Paragraph (Hormozi Copywriting From Image 2) */}
-          <p className="text-[#8e909a] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto font-normal">
-            Not a marketing line, a commitment. If we don't hit it, you get your money back. Tracked together every month, so you always know exactly where you stand.
-          </p>
-
-          {/* Action Button (Exact Image 2) */}
-          <div className="pt-2 flex justify-center">
-            <button 
-              onClick={handleCalendlyRedirect}
-              className="px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm sm:text-base font-semibold rounded-full tracking-tight inline-flex items-center gap-2.5 shadow-[0_6px_30px_rgba(21,145,220,0.4)] hover:shadow-[0_8px_40px_rgba(21,145,220,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
-            >
-              <span>Book a Call</span>
-              <ArrowRight size={17} />
-            </button>
-          </div>
-
-          {/* Overlapping Client Avatars & Proof Text (Exact Image 2) */}
-          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <div className="flex items-center -space-x-2.5">
-              <img 
-                src="/clients/via_masi.jpg" 
-                alt="Via Masi" 
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
-              />
-              <img 
-                src="/clients/vlady.jpg" 
-                alt="Vlady" 
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
-              />
-              <img 
-                src="/clients/hoang_phuc.jpg" 
-                alt="Hoang Phuc" 
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
-              />
-              <img 
-                src="/clients/kaleemix.jpg" 
-                alt="Kaleemix" 
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
-              />
-            </div>
-            <p className="text-xs sm:text-sm text-[#8e909a]">
-              Used by <strong className="text-white font-medium">Via Masi</strong>, <strong className="text-white font-medium">Vlady</strong>, <strong className="text-white font-medium">Hoang Phuc</strong>, and many others.
-            </p>
-          </div>
-
         </section>
 
         {/* ========================================================================= */}
@@ -1435,10 +1422,16 @@ export default function App() {
             </div>
           </div>
 
-          {/* Headline trắng & Subheadline xanh */}
+          {/* Headline trắng & Subheadline xanh & Zero Headaches đổi màu */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.15]">
-            Stop Editing Your Own Content. Start Closing Deals.<br className="hidden sm:block" />
-            <span className="text-[#1591DC]">20+ High-Converting Reels Every Month. Zero Headaches.</span>
+            Stop Editing Your Own Content.<br className="hidden sm:block" />
+            <span> Start Closing Deals.</span>
+            <span className="block text-[#1591DC] mt-2 sm:mt-3">
+              20+ High-Converting Reels Every Month.
+            </span>
+            <span className="block text-emerald-400 mt-1 sm:mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold">
+              Zero Headaches.
+            </span>
           </h2>
 
           {/* Paragraph */}
