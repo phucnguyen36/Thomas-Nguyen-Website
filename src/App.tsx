@@ -55,8 +55,20 @@ export default function App() {
   // Official Calendly Booking URL
   const calendlyBookingUrl = "https://calendly.com/thomasvisualeditor/30min";
 
+  // Meta Pixel Event Tracking Helper
+  const trackMetaEvent = (eventName: string, params?: Record<string, any>) => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      if (params) {
+        (window as any).fbq('trackCustom', eventName, params);
+      } else {
+        (window as any).fbq('track', eventName);
+      }
+    }
+  };
+
   const handleCalendlyRedirect = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
+    trackMetaEvent('Schedule');
     const bookingSection = document.getElementById('booking');
     if (bookingSection) {
       bookingSection.scrollIntoView({ behavior: 'smooth' });
@@ -70,6 +82,7 @@ export default function App() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    trackMetaEvent('Lead', { budget: budgetRange, type: videoType });
     try {
       const response = await fetch('https://formsubmit.co/ajax/thomasnguyen.editor@gmail.com', {
         method: 'POST',
