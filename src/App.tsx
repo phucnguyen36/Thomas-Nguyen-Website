@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import { 
   Search, 
   ArrowUpRight, 
-  ArrowRight,
+  ArrowRight, 
   ArrowLeft,
-  Play,
+  Play, 
   Zap, 
-  Layers, 
-  Sparkles, 
-  Music, 
   Minus, 
   Plus, 
   Instagram, 
@@ -22,7 +19,6 @@ import {
   Loader2,
   ChevronDown,
   LayoutGrid,
-  Film,
   X
 } from 'lucide-react';
 
@@ -47,7 +43,7 @@ export default function App() {
     email: '',
     message: ''
   });
-  const [videoType, setVideoType] = useState('Short Form Videos');
+  const [videoType, setVideoType] = useState('Short-Form Premium');
   const [budgetRange, setBudgetRange] = useState('$500-$1000');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -388,30 +384,6 @@ export default function App() {
   const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
   const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
 
-  // Core Production Stack (PR, AE, Sound, Color) - Human Craftsmanship
-  const pillars = [
-    { 
-      title: "Premiere Pro (Pacing & Cut)", 
-      description: "Frame-by-frame narrative cuts that eliminate awkward pauses, breath gaps, and filler words. Pacing built to keep viewers watching till the last second.", 
-      icon: Film 
-    },
-    { 
-      title: "After Effects (Motion VFX)", 
-      description: "Custom keyframed graphics, bespoke kinetic typography, and motion overlays built from scratch. Zero cheap template packs.", 
-      icon: Layers 
-    },
-    { 
-      title: "Punchy Sound Design", 
-      description: "Multi-track audio engineering with vocal leveling, custom swooshes, hits, and tempo-matched beats that punch through mobile speakers.", 
-      icon: Music 
-    },
-    { 
-      title: "Studio Color & 4K Export", 
-      description: "Clean Rec.709 color correction, natural skin tones, and optimal bitrate compression so your video stays crystal-clear on Instagram & TikTok.", 
-      icon: Sparkles 
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-[#07080b] text-[#f1f2f6] relative selection:bg-[#1591DC]/30 selection:text-white">
       
@@ -442,7 +414,7 @@ export default function App() {
           <a href="#work" className="hover:text-white transition-colors">Work</a>
           <a href="#results" className="hover:text-white transition-colors">Proof</a>
           <a href="#process" className="hover:text-white transition-colors">Process</a>
-          <a href="#services" className="hover:text-white transition-colors">Stack</a>
+          <a href="#pricing" className="hover:text-white transition-colors">Rates</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#booking" className="hover:text-white transition-colors">Book Call</a>
         </nav>
@@ -964,23 +936,26 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 4. WORKFLOW TIMELINE (HOW WE GET YOU THERE - MATCHING USER REFERENCE IMAGE) */}
+        {/* 4. THE 3-PHASE RETENTION ENGINE (PROPRIETARY FRAMEWORK)                   */}
         {/* ========================================================================= */}
         <section id="process" className="space-y-12 pt-6 scroll-mt-20 max-w-4xl mx-auto">
           
-          <div className="text-center space-y-3 max-w-xl mx-auto">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              The Process
+              The 3-Phase Retention Engine
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
-              How We Get You There
+              How We Transform Raw Footage Into Inbound Assets
             </h2>
+            <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed max-w-xl mx-auto">
+              Most editors cut blindly without understanding drop-off curves. We run every frame through a 3-phase retention framework engineered to stop the scroll, hold attention, and turn viewers into paying clients.
+            </p>
           </div>
 
-          {/* Staggered Alternating Timeline */}
+          {/* Staggered Alternating 3-Phase Engine */}
           <div className="space-y-10 sm:space-y-14 py-4 max-w-3xl mx-auto">
             
-            {/* STEP 01: Left-Aligned */}
+            {/* PHASE 01: Left-Aligned */}
             <div className="flex justify-start w-full">
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
                 {/* Badge 01 + Dotted Line Down */}
@@ -988,32 +963,66 @@ export default function App() {
                   <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     01
                   </div>
-                  <div className="w-px h-16 sm:h-20 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
+                  <div className="w-px h-24 sm:h-28 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
                 </div>
 
                 {/* Content */}
-                <div className="pt-0.5 text-left space-y-1.5">
+                <div className="pt-0.5 text-left space-y-2">
+                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#60b6ee]">
+                    Phase 01 · Neuro-Pacing
+                  </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                    Audit Your Content and Offer
+                    Hook &amp; Neuro-Pacing Architecture
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                    We review your niche, your offer, and what's already working, to find the fastest path to attention.
+                    Tight narrative cuts eliminating dead air, breath pauses, and micro-hesitations within the first 3 critical seconds to lock viewers past the 5-second mark.
                   </p>
+                  <div className="space-y-1 pt-1 text-xs text-[#d4d6e0]">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                      <span>Zero dead air trimming (&lt;0.1s threshold)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                      <span>High-contrast pattern interrupt in seconds 0–2</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                      <span>Rhythm sync preventing subconscious cognitive fatigue</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* STEP 02: Right-Aligned */}
+            {/* PHASE 02: Right-Aligned */}
             <div className="flex justify-end w-full">
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
                 {/* Content */}
-                <div className="pt-0.5 flex-1 space-y-1.5">
+                <div className="pt-0.5 flex-1 space-y-2">
+                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#60b6ee]">
+                    Phase 02 · Bespoke Visuals
+                  </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                    Build Your Content Engine
+                    Bespoke Motion Graphics &amp; Sound Mastery
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                    We build your content system, the formats, hooks, and filming process, tailored to your niche.
+                    Handcrafted keyframing in After Effects, kinetic typography, HUD accents, and multi-track audio design (risers, hits, voice leveling). Zero generic CapCut presets.
                   </p>
+                  <div className="space-y-1 pt-1 text-xs text-[#d4d6e0] flex flex-col items-end">
+                    <div className="flex items-center gap-2">
+                      <span>100% custom kinetic typography &amp; HUD graphics</span>
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>Multi-track sound design (risers, whooshes, vocal punch)</span>
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>Visual metaphors that anchor complex ideas instantly</span>
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Badge 02 + Dotted Line Down */}
@@ -1021,51 +1030,45 @@ export default function App() {
                   <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     02
                   </div>
-                  <div className="w-px h-16 sm:h-20 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
+                  <div className="w-px h-24 sm:h-28 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
                 </div>
               </div>
             </div>
 
-            {/* STEP 03: Left-Aligned */}
+            {/* PHASE 03: Left-Aligned */}
             <div className="flex justify-start w-full">
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
-                {/* Badge 03 + Dotted Line Down */}
+                {/* Badge 03 */}
                 <div className="flex flex-col items-center shrink-0">
                   <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     03
                   </div>
-                  <div className="w-px h-16 sm:h-20 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
                 </div>
 
                 {/* Content */}
-                <div className="pt-0.5 text-left space-y-1.5">
+                <div className="pt-0.5 text-left space-y-2">
+                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#60b6ee]">
+                    Phase 03 · Studio Delivery
+                  </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                    Launch, Test and Guide
+                    4K Studio Delivery &amp; Conversion Tracking
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                    We launch consistently, review performance together, and double down on what's driving results.
+                    Studio Rec.709 color grading, 4K bitrate optimization, 48-hour delivery via Frame.io, and continuous monthly ROI retention tracking.
                   </p>
-                </div>
-              </div>
-            </div>
-
-            {/* STEP 04: Right-Aligned */}
-            <div className="flex justify-end w-full">
-              <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
-                {/* Content */}
-                <div className="pt-0.5 flex-1 space-y-1.5">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
-                    Guaranteed Growth
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                    1M+ views in 90 days, or your money back. Tracked together every month.
-                  </p>
-                </div>
-
-                {/* Badge 04 */}
-                <div className="flex flex-col items-center shrink-0">
-                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
-                    04
+                  <div className="space-y-1 pt-1 text-xs text-[#d4d6e0]">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                      <span>48-hour turnaround via Frame.io timestamp review</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                      <span>Calibrated Rec.709 studio color &amp; optimal 4K bitrate</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                      <span>Retention curve analytics &amp; continuous conversion feedback</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1077,7 +1080,7 @@ export default function App() {
                 onClick={handleCalendlyRedirect}
                 className="px-7 py-3 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_28px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
               >
-                <span>Start Your Project · Book a 15-Min Call</span>
+                <span>Lock In Your Retention Engine · Book a Call</span>
                 <ArrowRight size={14} />
               </button>
             </div>
@@ -1086,50 +1089,342 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 5. EDITING TOOLKIT & PRODUCTION STACK (PR, AE, SOUND, COLOR)              */}
+        {/* 5. SERVICES & PRICING (MATCHING USER RATE CARD SPECIFICATION)             */}
         {/* ========================================================================= */}
-        <section id="services" className="space-y-6 pt-4 scroll-mt-20">
-          <div className="border-b border-white/[0.06] pb-4">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-              The Production Stack
-            </h2>
-            <p className="text-xs sm:text-sm text-[#8e909a]">
-              Handcrafted in Premiere Pro &amp; After Effects. No generic CapCut templates.
-            </p>
+        <section id="pricing" className="space-y-8 pt-4 scroll-mt-20 max-w-5xl mx-auto">
+          <span id="services" className="sr-only">Services &amp; Rates</span>
+
+          {/* Rate Card Header Row */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
+            <div className="space-y-2 text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.1] text-[11px] font-medium text-white/90">
+                <img 
+                  src="/thomas_portrait.jpg" 
+                  alt="Thomas Nguyen" 
+                  className="w-4 h-4 rounded-full object-cover grayscale contrast-125 border border-white/20" 
+                />
+                <span>Thomas Nguyen // Video Editor</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+                Services &amp; Pricing
+              </h2>
+              <p className="text-xs sm:text-sm text-[#8e909a]">
+                High-retention video editing for founders, creators, and brands.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:items-end gap-2.5 shrink-0">
+              <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-[11px] font-bold tracking-wider uppercase text-[#60b6ee]">
+                SERVICES &amp; RATES
+              </div>
+              <div className="flex items-center gap-2 text-xs text-[#8e909a]">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="font-semibold tracking-wider text-emerald-400 text-[11px] uppercase">3 SPOTS AVAILABLE</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {pillars.map((pillar, idx) => (
-              <div key={idx} className="bg-[#0e1017] border border-white/[0.08] rounded-2xl p-6 space-y-3 flex flex-col justify-between">
-                <div className="w-8 h-8 rounded-full bg-white/[0.04] text-[#1591DC] flex items-center justify-center">
-                  <pillar.icon size={15} />
+          {/* 4 Cards (2x2 Grid) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+            
+            {/* CARD 01: Short-Form Standard */}
+            <div className="bg-[#0b0c10] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
+              <div className="space-y-4">
+                {/* Header Badge & Index */}
+                <div className="flex items-center justify-between">
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-bold tracking-wider uppercase text-[#8e909a]">
+                    STANDARD
+                  </span>
+                  <span className="text-xs font-mono font-bold text-[#8e909a]/70">01</span>
                 </div>
+
+                {/* Title & Subtitle */}
                 <div className="space-y-1">
-                  <h3 className="text-xs font-semibold text-white uppercase tracking-wider">
-                    {pillar.title}
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    Short-Form Standard
                   </h3>
                   <p className="text-xs text-[#8e909a] leading-relaxed">
-                    {pillar.description}
+                    Clean, fast-paced edits for daily Reels, TikTok &amp; YouTube Shorts.
                   </p>
                 </div>
+
+                {/* Price */}
+                <div className="pt-2 pb-1 border-y border-white/[0.06]">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">$30</span>
+                    <span className="text-xs text-[#8e909a]">/ video</span>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Tight micro-cuts (zero dead air)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Clean animated captions &amp; emojis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Sound effects &amp; background music</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>24–48h delivery · 2 revisions</span>
+                  </li>
+                </ul>
               </div>
-            ))}
+
+              <div className="pt-6">
+                <button
+                  onClick={() => {
+                    setVideoType('Short-Form Standard');
+                    handleCalendlyRedirect();
+                  }}
+                  className="w-full py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] text-xs font-semibold text-white tracking-tight transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <span>Select Standard</span>
+                  <ArrowRight size={13} className="text-[#8e909a]" />
+                </button>
+              </div>
+            </div>
+
+            {/* CARD 02: Short-Form Premium (MOST POPULAR) */}
+            <div className="relative bg-[#090d15] border border-[#1591DC]/60 hover:border-[#1591DC] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group shadow-[0_0_35px_rgba(21,145,220,0.18)] ring-1 ring-[#1591DC]/30">
+              
+              {/* Floating MOST POPULAR Badge */}
+              <div className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-[#1591DC] to-[#0ea5e9] text-white text-[10px] font-extrabold tracking-wider uppercase shadow-[0_2px_12px_rgba(21,145,220,0.5)]">
+                MOST POPULAR
+              </div>
+
+              <div className="space-y-4">
+                {/* Header Badge & Index */}
+                <div className="flex items-center justify-between">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/40 text-[10px] font-bold tracking-wider uppercase text-[#60b6ee] flex items-center gap-1">
+                    <span>★</span> HIGH-RETENTION
+                  </span>
+                  <span className="text-xs font-mono font-bold text-[#1591DC]">02</span>
+                </div>
+
+                {/* Title & Subtitle */}
+                <div className="space-y-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    Short-Form Premium
+                  </h3>
+                  <p className="text-xs text-[#8e909a] leading-relaxed">
+                    Custom high-retention edits built to stop the scroll and build authority.
+                  </p>
+                </div>
+
+                {/* Price */}
+                <div className="pt-2 pb-1 border-y border-[#1591DC]/20">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-[#38bdf8] tracking-tight">$50 — $70</span>
+                    <span className="text-xs text-[#8e909a]">/ video</span>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
+                    <span className="font-bold text-white">Engineered for 85%+ 5s retention</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
+                    <span>Custom After Effects motion graphics</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
+                    <span>Layered cinematic sound design</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
+                    <span>Pro color grade · Unlimited revisions</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-6">
+                <button
+                  onClick={() => {
+                    setVideoType('Short-Form Premium');
+                    handleCalendlyRedirect();
+                  }}
+                  className="w-full py-2.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-xs font-semibold text-white tracking-tight transition-all flex items-center justify-center gap-1.5 shadow-[0_2px_15px_rgba(21,145,220,0.4)] cursor-pointer"
+                >
+                  <span>Select Premium (Recommended)</span>
+                  <ArrowRight size={13} />
+                </button>
+              </div>
+            </div>
+
+            {/* CARD 03: Long-Form Editing */}
+            <div className="bg-[#0b0c10] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
+              <div className="space-y-4">
+                {/* Header Badge & Index */}
+                <div className="flex items-center justify-between">
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-bold tracking-wider uppercase text-[#8e909a]">
+                    YOUTUBE / PODCAST
+                  </span>
+                  <span className="text-xs font-mono font-bold text-[#8e909a]/70">03</span>
+                </div>
+
+                {/* Title & Subtitle */}
+                <div className="space-y-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    Long-Form Editing
+                  </h3>
+                  <p className="text-xs text-[#8e909a] leading-relaxed">
+                    Engaging storytelling for YouTube videos, podcasts, and interviews.
+                  </p>
+                </div>
+
+                {/* Price */}
+                <div className="pt-2 pb-1 border-y border-white/[0.06]">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">$15</span>
+                    <span className="text-xs text-[#8e909a]">/ finished minute</span>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Curated B-roll &amp; pattern interrupts</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Dynamic zoom cuts &amp; camera switching</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Custom chapters, titles &amp; sound mix</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
+                    <span>Frame.io timestamp review included</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-6">
+                <button
+                  onClick={() => {
+                    setVideoType('Long-Form Editing');
+                    handleCalendlyRedirect();
+                  }}
+                  className="w-full py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] text-xs font-semibold text-white tracking-tight transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <span>Select Long-Form</span>
+                  <ArrowRight size={13} className="text-[#8e909a]" />
+                </button>
+              </div>
+            </div>
+
+            {/* CARD 04: Video Sales Letter (VSL) */}
+            <div className="bg-[#0b0c10] border border-white/[0.08] hover:border-amber-500/40 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
+              <div className="space-y-4">
+                {/* Header Badge & Index */}
+                <div className="flex items-center justify-between">
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-bold tracking-wider uppercase text-amber-400">
+                    HIGH CONVERSION
+                  </span>
+                  <span className="text-xs font-mono font-bold text-amber-400/80">04</span>
+                </div>
+
+                {/* Title & Subtitle */}
+                <div className="space-y-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    Video Sales Letter (VSL)
+                  </h3>
+                  <p className="text-xs text-[#8e909a] leading-relaxed">
+                    Direct-response video assets designed to convert viewers into paying clients.
+                  </p>
+                </div>
+
+                {/* Price */}
+                <div className="pt-2 pb-1 border-y border-white/[0.06]">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">$200</span>
+                    <span className="text-xs text-[#8e909a]">/ video asset</span>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-amber-400 shrink-0 stroke-[2.5]" />
+                    <span>100% custom kinetic typography</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-amber-400 shrink-0 stroke-[2.5]" />
+                    <span>Story-driven pacing to boost sales</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-amber-400 shrink-0 stroke-[2.5]" />
+                    <span>Custom graphics &amp; visual metaphors</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check size={14} className="text-amber-400 shrink-0 stroke-[2.5]" />
+                    <span>Full commercial audio &amp; SFX mix</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-6">
+                <button
+                  onClick={() => {
+                    setVideoType('Video Sales Letter (VSL)');
+                    handleCalendlyRedirect();
+                  }}
+                  className="w-full py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] text-xs font-semibold text-white tracking-tight transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <span>Select VSL</span>
+                  <ArrowRight size={13} className="text-[#8e909a]" />
+                </button>
+              </div>
+            </div>
+
           </div>
 
-          {/* Stack CTA Button */}
-          <div className="pt-2 flex justify-center">
-            <button 
+          {/* Bottom 3-Pillar Bar */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <div className="bg-[#0b0c10] border border-white/[0.06] rounded-xl py-3.5 px-4 text-center">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-semibold">DELIVERY</div>
+              <div className="text-xs sm:text-sm font-bold text-white mt-0.5">48 Hours Fast</div>
+            </div>
+            <div className="bg-[#0b0c10] border border-[#1591DC]/30 rounded-xl py-3.5 px-4 text-center">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-semibold">REVISIONS</div>
+              <div className="text-xs sm:text-sm font-bold text-[#38bdf8] mt-0.5">Frame.io Accurate</div>
+            </div>
+            <div className="bg-[#0b0c10] border border-white/[0.06] rounded-xl py-3.5 px-4 text-center">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-semibold">QUALITY</div>
+              <div className="text-xs sm:text-sm font-bold text-white mt-0.5">4K Rec.709 Color</div>
+            </div>
+          </div>
+
+          {/* Bottom Bar Action */}
+          <div className="bg-[#0b0c10]/90 border border-white/[0.08] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-left space-y-0.5">
+              <div className="text-xs text-[#8e909a]">Portfolio &amp; Live Showcase:</div>
+              <div className="text-sm sm:text-base font-bold text-white tracking-tight">thomasnguyen.online</div>
+            </div>
+            <button
               onClick={handleCalendlyRedirect}
-              className="px-5 py-2 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-xs font-medium text-[#d4d6e0] hover:text-white rounded-full inline-flex items-center gap-2 transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-bold tracking-tight shadow-[0_4px_24px_rgba(21,145,220,0.45)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.65)] transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span>Need custom editing or motion graphics? Book a call</span>
-              <ArrowRight size={12} className="text-[#1591DC]" />
+              <span>BOOK A CALL / ORDER SAMPLE</span>
+              <ArrowRight size={14} />
             </button>
           </div>
         </section>
 
         {/* ========================================================================= */}
-        {/* 6. FOUNDER STORY (AUTHENTIC PORTRAIT & PHILOSOPHY)                        */}
+        {/* 6. FOUNDER STORY (AUTHENTIC PORTRAIT & TRENCHES CRAFTSMANSHIP)            */}
         {/* ========================================================================= */}
         <section id="about" className="pt-4 scroll-mt-20 max-w-[880px] mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -1147,22 +1442,30 @@ export default function App() {
 
             {/* Bio & Craft */}
             <div className="space-y-4 text-left flex-1">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-[11px] font-semibold uppercase tracking-wider text-[#60b6ee]">
+                Behind The Craft
+              </div>
+
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight">
-                Craftsmanship Behind 800+ Reels.
+                3 Years in the Trenches. 800+ Reels Crafted Frame by Frame.
               </h2>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                Hi, I'm Thomas — a video editor and visual retention strategist partnering with high-ticket creators and founders worldwide.
+                Hi, I'm Thomas — a visual retention strategist and high-ticket video editor partnering with founders, executive coaches, and creators worldwide.
               </p>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                Most editors focus solely on adding random flashy transitions. I focus on viewer psychology: why someone stops scrolling, why they watch past the 5-second mark, and how visual pacing leads directly to client conversion.
+                I spent 3 years in the editing trenches, analyzing viewer drop-off curves at 2 a.m. and testing hundreds of hook variations. I realized most creators lose 60% of their audience in the first 3 seconds not because their message is bad, but because generic editing kills momentum.
+              </p>
+
+              <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
+                I don't use generic CapCut presets or flashy filler. I treat every video as a high-converting inbound asset — engineering the pacing, sound architecture, and motion graphics to turn passive scrollers into paying clients.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-[#d4d6e0]">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={14} className="text-[#1591DC] shrink-0" />
-                  <span>800+ Reels edited for founders</span>
+                  <span>800+ Reels crafted frame by frame</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 size={14} className="text-[#1591DC] shrink-0" />
@@ -1183,7 +1486,7 @@ export default function App() {
                   onClick={handleCalendlyRedirect}
                   className="px-6 py-2.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.35)] transition-all cursor-pointer"
                 >
-                  <span>Book a 15-Min Call With Thomas</span>
+                  <span>Book a 15-Min Strategy Call</span>
                   <ArrowRight size={14} />
                 </button>
               </div>
@@ -1291,7 +1594,7 @@ export default function App() {
                 <div className="space-y-1">
                   <label className="text-xs font-medium text-[#d4d6e0] block">Video Format</label>
                   <div className="flex flex-wrap gap-2">
-                    {['Short Form Videos', 'Motion Graphics', 'Long Form'].map(type => (
+                    {['Short-Form Standard', 'Short-Form Premium', 'Long-Form Editing', 'Video Sales Letter (VSL)'].map(type => (
                       <button
                         type="button"
                         key={type}
