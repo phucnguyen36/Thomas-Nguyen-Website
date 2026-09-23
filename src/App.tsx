@@ -355,7 +355,7 @@ export default function App() {
       role: "B2B Media Agency",
       avatar: "/clients/kaleemix.jpg",
       metric: "1.8M Monthly Views",
-      comment: "Visual hooks and bespoke After Effects keyframing turned our content into an automated client acquisition engine. Zero template slop — everything is tailor-made for high conversion.",
+      comment: "Visual hooks and bespoke After Effects keyframing turned our content into an automated client acquisition engine. Zero template slop. Everything is tailor-made for high conversion.",
       stars: 5,
       location: "United Kingdom"
     },
@@ -375,7 +375,7 @@ export default function App() {
       role: "Media Community",
       avatar: "/clients/editoz.jpg",
       metric: "3.8x Engagement Lift",
-      comment: "Bespoke motion graphics built from scratch — zero CapCut template packs used. Our brand authority doubled in 30 days.",
+      comment: "Bespoke motion graphics built from scratch. Zero CapCut template packs used. Our brand authority doubled in 30 days.",
       stars: 5,
       location: "United Kingdom"
     }
@@ -584,7 +584,7 @@ export default function App() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
               Testimonials
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
               In Their Own Words
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
@@ -751,7 +751,7 @@ export default function App() {
 
                       {/* Author & Info Below Card (Matching Image 1 Layout) */}
                       <div className="mt-3.5 text-center px-2 space-y-1">
-                        <h3 className={`font-bold tracking-tight text-white leading-tight ${
+                        <h3 className={`font-medium tracking-tight text-white leading-tight ${
                           isCenter ? 'text-base sm:text-lg' : 'text-xs sm:text-sm'
                         }`}>
                           {video.author}
@@ -879,7 +879,7 @@ export default function App() {
         {/* ========================================================================= */}
         <section id="results" className="space-y-6 pt-4 scroll-mt-20 overflow-hidden">
           <div className="text-center space-y-1 max-w-xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl font-normal sm:font-medium tracking-tight text-white">
               Client Feedback
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
@@ -993,7 +993,7 @@ export default function App() {
               onClick={handleCalendlyRedirect}
               className="px-6 py-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.12] hover:border-[#1591DC]/50 text-white text-xs font-semibold rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
             >
-              <span>Join 20+ High-Growth Creators — Book Call</span>
+              <span>Join 20+ High-Growth Creators · Book a Call</span>
               <ArrowRight size={13} className="text-[#1591DC]" />
             </button>
           </div>
@@ -1009,7 +1009,7 @@ export default function App() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
               The 3-Phase Retention Engine
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
               How We Transform Raw Footage Into Inbound Assets
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed max-w-xl mx-auto">
@@ -1025,7 +1025,7 @@ export default function App() {
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
                 {/* Badge 01 + Dotted Line Down */}
                 <div className="flex flex-col items-center shrink-0">
-                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-medium text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     01
                   </div>
                   <div className="w-px h-24 sm:h-28 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
@@ -1033,10 +1033,10 @@ export default function App() {
 
                 {/* Content */}
                 <div className="pt-0.5 text-left space-y-2">
-                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#60b6ee]">
+                  <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
                     Phase 01 · Neuro-Pacing
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
                     Hook &amp; Neuro-Pacing Architecture
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
@@ -1049,7 +1049,7 @@ export default function App() {
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
-                      <span>High-contrast pattern interrupt in seconds 0–2</span>
+                      <span>High-contrast pattern interrupt within the first 2 seconds</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
@@ -1065,10 +1065,10 @@ export default function App() {
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
                 {/* Content */}
                 <div className="pt-0.5 flex-1 space-y-2">
-                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#60b6ee]">
+                  <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
                     Phase 02 · Bespoke Visuals
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
                     Bespoke Motion Graphics &amp; Sound Mastery
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
@@ -1092,7 +1092,7 @@ export default function App() {
 
                 {/* Badge 02 + Dotted Line Down */}
                 <div className="flex flex-col items-center shrink-0">
-                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-medium text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     02
                   </div>
                   <div className="w-px h-24 sm:h-28 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
@@ -1105,17 +1105,17 @@ export default function App() {
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
                 {/* Badge 03 */}
                 <div className="flex flex-col items-center shrink-0">
-                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-medium text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     03
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="pt-0.5 text-left space-y-2">
-                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#60b6ee]">
+                  <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
                     Phase 03 · Studio Delivery
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
                     4K Studio Delivery &amp; Conversion Tracking
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
@@ -1170,7 +1170,7 @@ export default function App() {
                 />
                 <span>Thomas Nguyen // Video Editor</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
                 Services &amp; Pricing
               </h2>
               <p className="text-xs sm:text-sm text-[#8e909a]">
@@ -1179,7 +1179,7 @@ export default function App() {
             </div>
 
             <div className="flex flex-col sm:items-end gap-2.5 shrink-0">
-              <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-[11px] font-bold tracking-wider uppercase text-[#60b6ee]">
+              <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-[11px] font-semibold tracking-wider uppercase text-[#60b6ee]">
                 SERVICES &amp; RATES
               </div>
               <div className="flex items-center gap-2 text-xs text-[#8e909a]">
@@ -1197,15 +1197,15 @@ export default function App() {
               <div className="space-y-4">
                 {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-bold tracking-wider uppercase text-[#8e909a]">
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-semibold tracking-wider uppercase text-[#8e909a]">
                     STANDARD
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#8e909a]/70">01</span>
+                  <span className="text-xs font-mono font-semibold text-[#8e909a]/70">01</span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="space-y-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Short-Form Standard
                   </h3>
                   <p className="text-xs text-[#8e909a] leading-relaxed">
@@ -1216,7 +1216,7 @@ export default function App() {
                 {/* Price */}
                 <div className="pt-2 pb-1 border-y border-white/[0.06]">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">$30</span>
+                    <span className="text-3xl sm:text-4xl font-medium text-white tracking-tight">$30</span>
                     <span className="text-xs text-[#8e909a]">/ video</span>
                   </div>
                 </div>
@@ -1237,7 +1237,7 @@ export default function App() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
-                    <span>24–48h delivery · 2 revisions</span>
+                    <span>48-hour delivery · 2 revisions</span>
                   </li>
                 </ul>
               </div>
@@ -1260,22 +1260,22 @@ export default function App() {
             <div className="relative bg-[#090d15] border border-[#1591DC]/60 hover:border-[#1591DC] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group shadow-[0_0_35px_rgba(21,145,220,0.18)] ring-1 ring-[#1591DC]/30">
               
               {/* Floating MOST POPULAR Badge */}
-              <div className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-[#1591DC] to-[#0ea5e9] text-white text-[10px] font-extrabold tracking-wider uppercase shadow-[0_2px_12px_rgba(21,145,220,0.5)]">
+              <div className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-[#1591DC] to-[#0ea5e9] text-white text-[10px] font-semibold tracking-wider uppercase shadow-[0_2px_12px_rgba(21,145,220,0.5)]">
                 MOST POPULAR
               </div>
 
               <div className="space-y-4">
                 {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/40 text-[10px] font-bold tracking-wider uppercase text-[#60b6ee] flex items-center gap-1">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/40 text-[10px] font-semibold tracking-wider uppercase text-[#60b6ee] flex items-center gap-1">
                     <span>★</span> HIGH-RETENTION
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#1591DC]">02</span>
+                  <span className="text-xs font-mono font-semibold text-[#1591DC]">02</span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="space-y-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Short-Form Premium
                   </h3>
                   <p className="text-xs text-[#8e909a] leading-relaxed">
@@ -1286,7 +1286,7 @@ export default function App() {
                 {/* Price */}
                 <div className="pt-2 pb-1 border-y border-[#1591DC]/20">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-[#38bdf8] tracking-tight">$50 — $70</span>
+                    <span className="text-3xl sm:text-4xl font-medium text-[#38bdf8] tracking-tight">$50 to $70</span>
                     <span className="text-xs text-[#8e909a]">/ video</span>
                   </div>
                 </div>
@@ -1295,7 +1295,7 @@ export default function App() {
                 <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
-                    <span className="font-bold text-white">Engineered for 85%+ 5s retention</span>
+                    <span className="font-semibold text-white">Engineered for 85%+ 5s retention</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
@@ -1331,15 +1331,15 @@ export default function App() {
               <div className="space-y-4">
                 {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-bold tracking-wider uppercase text-[#8e909a]">
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-semibold tracking-wider uppercase text-[#8e909a]">
                     YOUTUBE / PODCAST
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#8e909a]/70">03</span>
+                  <span className="text-xs font-mono font-semibold text-[#8e909a]/70">03</span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="space-y-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Long-Form Editing
                   </h3>
                   <p className="text-xs text-[#8e909a] leading-relaxed">
@@ -1350,7 +1350,7 @@ export default function App() {
                 {/* Price */}
                 <div className="pt-2 pb-1 border-y border-white/[0.06]">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">$15</span>
+                    <span className="text-3xl sm:text-4xl font-medium text-white tracking-tight">$15</span>
                     <span className="text-xs text-[#8e909a]">/ finished minute</span>
                   </div>
                 </div>
@@ -1395,15 +1395,15 @@ export default function App() {
               <div className="space-y-4">
                 {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-bold tracking-wider uppercase text-amber-400">
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-semibold tracking-wider uppercase text-amber-400">
                     HIGH CONVERSION
                   </span>
-                  <span className="text-xs font-mono font-bold text-amber-400/80">04</span>
+                  <span className="text-xs font-mono font-semibold text-amber-400/80">04</span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div className="space-y-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Video Sales Letter (VSL)
                   </h3>
                   <p className="text-xs text-[#8e909a] leading-relaxed">
@@ -1414,7 +1414,7 @@ export default function App() {
                 {/* Price */}
                 <div className="pt-2 pb-1 border-y border-white/[0.06]">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">$200</span>
+                    <span className="text-3xl sm:text-4xl font-medium text-white tracking-tight">$200</span>
                     <span className="text-xs text-[#8e909a]">/ video asset</span>
                   </div>
                 </div>
@@ -1459,16 +1459,16 @@ export default function App() {
           {/* Bottom 3-Pillar Bar */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
             <div className="bg-[#0b0c10] border border-white/[0.06] rounded-xl py-3.5 px-4 text-center">
-              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-semibold">DELIVERY</div>
-              <div className="text-xs sm:text-sm font-bold text-white mt-0.5">48 Hours Fast</div>
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-medium">DELIVERY</div>
+              <div className="text-xs sm:text-sm font-medium text-white mt-0.5">48 Hours Fast</div>
             </div>
             <div className="bg-[#0b0c10] border border-[#1591DC]/30 rounded-xl py-3.5 px-4 text-center">
-              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-semibold">REVISIONS</div>
-              <div className="text-xs sm:text-sm font-bold text-[#38bdf8] mt-0.5">Frame.io Accurate</div>
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-medium">REVISIONS</div>
+              <div className="text-xs sm:text-sm font-medium text-[#38bdf8] mt-0.5">Frame.io Accurate</div>
             </div>
             <div className="bg-[#0b0c10] border border-white/[0.06] rounded-xl py-3.5 px-4 text-center">
-              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-semibold">QUALITY</div>
-              <div className="text-xs sm:text-sm font-bold text-white mt-0.5">4K Rec.709 Color</div>
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#8e909a] font-medium">QUALITY</div>
+              <div className="text-xs sm:text-sm font-medium text-white mt-0.5">4K Rec.709 Color</div>
             </div>
           </div>
 
@@ -1476,11 +1476,11 @@ export default function App() {
           <div className="bg-[#0b0c10]/90 border border-white/[0.08] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-left space-y-0.5">
               <div className="text-xs text-[#8e909a]">Portfolio &amp; Live Showcase:</div>
-              <div className="text-sm sm:text-base font-bold text-white tracking-tight">thomasnguyen.online</div>
+              <div className="text-sm sm:text-base font-medium text-white tracking-tight">thomasnguyen.online</div>
             </div>
             <button
               onClick={handleCalendlyRedirect}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-bold tracking-tight shadow-[0_4px_24px_rgba(21,145,220,0.45)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.65)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold tracking-tight shadow-[0_4px_24px_rgba(21,145,220,0.45)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.65)] transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>BOOK A CALL / ORDER SAMPLE</span>
               <ArrowRight size={14} />
@@ -1511,12 +1511,12 @@ export default function App() {
                 Behind The Craft
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-normal sm:font-medium tracking-tight text-white leading-tight">
                 3 Years in the Trenches. 800+ Reels Crafted Frame by Frame.
               </h2>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                Hi, I'm Thomas — a visual retention strategist and high-ticket video editor partnering with founders, executive coaches, and creators worldwide.
+                Hi, I'm Thomas. I am a visual retention strategist and high-ticket video editor partnering with founders, executive coaches, and creators worldwide.
               </p>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
@@ -1524,7 +1524,7 @@ export default function App() {
               </p>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                I don't use generic CapCut presets or flashy filler. I treat every video as a high-converting inbound asset — engineering the pacing, sound architecture, and motion graphics to turn passive scrollers into paying clients.
+                I don't use generic CapCut presets or flashy filler. I treat every video as a high-converting inbound asset. Every cut, sound effect, and motion graphic is engineered to turn passive scrollers into paying clients.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-[#d4d6e0]">
@@ -1565,7 +1565,7 @@ export default function App() {
         {/* ========================================================================= */}
         <section id="booking" className="space-y-6 pt-4 max-w-3xl mx-auto scroll-mt-20">
           <div className="text-center space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl font-normal sm:font-medium tracking-tight text-white">
               Schedule Your 15-Minute Strategy Call
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
@@ -1739,7 +1739,7 @@ export default function App() {
         {/* ========================================================================= */}
         <section id="faq" className="space-y-6 pt-4 scroll-mt-20">
           <div className="text-center space-y-1 max-w-xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl font-normal sm:font-medium tracking-tight text-white">
               Frequently Asked Questions
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
@@ -1751,11 +1751,11 @@ export default function App() {
             {[
               {
                 q: "What makes your editing different from standard freelance editors?",
-                a: "Most freelance editors simply trim clips and add random template presets. We operate as conversion partners — engineering hook retention in the first 3 seconds, custom keyframing After Effects graphics, and crafting pacing that guides the viewer directly toward your offer."
+                a: "Most freelance editors simply trim clips and add random template presets. We operate as conversion partners, engineering hook retention in the first 3 seconds, custom keyframing After Effects graphics, and crafting pacing that guides the viewer directly toward your offer."
               },
               {
                 q: "How does your 100% money-back guarantee work?",
-                a: "It is an ironclad Hormozi-style commitment. We set explicit view and retention targets prior to kickoff. If we do not hit those benchmarks within the 90-day window, you receive a full refund — no friction, no awkward questions asked."
+                a: "It is an ironclad Hormozi-style commitment. We set explicit view and retention targets prior to kickoff. If we do not hit those benchmarks within the 90-day window, you receive a full refund with zero friction and no awkward questions asked."
               },
               {
                 q: "How fast is the delivery turnaround?",
