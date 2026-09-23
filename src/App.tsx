@@ -751,38 +751,40 @@ export default function App() {
                 {displayedGridVideos.map((video) => (
                   <div 
                     key={video.id}
-                    className="bg-[#0e1017] border border-white/[0.08] rounded-2xl p-3 space-y-3 flex flex-col justify-between hover:border-white/[0.2] transition-colors"
+                    onClick={() => {
+                      const idx = showcaseVideos.findIndex(v => v.id === video.id);
+                      if (idx !== -1) {
+                        setActiveVideoIndex(idx);
+                        setPlayingVideoId(video.id);
+                        setViewMode('carousel');
+                      }
+                    }}
+                    className="group relative w-full aspect-[9/16] bg-black rounded-2xl overflow-hidden border border-white/[0.08] hover:border-white/[0.25] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(21,145,220,0.2)]"
                   >
-                    <div className="w-full aspect-[9/16] relative bg-black rounded-xl overflow-hidden group">
-                      <img 
-                        src={video.thumbnail} 
-                        alt={video.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
-                        <button
-                          onClick={() => {
-                            const idx = showcaseVideos.findIndex(v => v.id === video.id);
-                            if (idx !== -1) {
-                              setActiveVideoIndex(idx);
-                              setPlayingVideoId(video.id);
-                              setViewMode('carousel');
-                            }
-                          }}
-                          className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
-                        >
-                          <Play size={18} fill="currentColor" className="ml-0.5" />
-                        </button>
+                    <img 
+                      src={video.thumbnail} 
+                      alt={video.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    
+                    {/* Subtle Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+
+                    {/* Centered Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity">
+                      <div className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform">
+                        <Play size={18} fill="currentColor" className="ml-0.5" />
                       </div>
-                      <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-black/80 text-[10px] text-white border border-white/10">
-                        {video.tag}
-                      </span>
                     </div>
 
-                    <div className="px-1">
-                      <h4 className="text-sm font-semibold text-white">{video.author}</h4>
-                      <p className="text-[11px] text-[#8e909a]">{video.authorRole}</p>
-                      <span className="inline-block mt-1 text-[11px] text-[#60b6ee] font-medium">{video.metric}</span>
+                    {/* Top Tag & Metric Pill */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
+                      <span className="px-2.5 py-1 rounded-full bg-black/75 text-[10px] text-white/90 border border-white/10 backdrop-blur-md font-medium uppercase tracking-wider">
+                        {video.tag}
+                      </span>
+                      <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
+                        {video.metric}
+                      </span>
                     </div>
                   </div>
                 ))}
