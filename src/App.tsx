@@ -434,75 +434,85 @@ export default function App() {
       <main className="relative z-10 space-y-28 md:space-y-36 pb-24 max-w-[1160px] mx-auto px-4 sm:px-6">
         
         {/* ========================================================================= */}
-        {/* 1. HERO SECTION (ALEX HORMOZI GRAND SLAM OFFER COPYWRITING)               */}
+        {/* 1. HERO SECTION (INSPIRED BY SAAS & TECH ARCHITECTURE - IMAGES 2 & 3)     */}
         {/* ========================================================================= */}
-        <section id="hero" className="pt-16 md:pt-24 text-center max-w-4xl mx-auto space-y-7">
+        <section id="hero" className="pt-14 md:pt-20 text-center max-w-4xl mx-auto space-y-6 sm:space-y-7">
           
-          {/* Availability Indicator */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
+          {/* Top Pill Badge (Refined, Modern Tech Style) */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-normal text-[#d4d6e0] backdrop-blur-sm shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Only 2 Spots Remaining • 48-Hour Turnaround</span>
+            <span className="text-[11px] text-[#8e909a] tracking-wide">Visual Retention Engine:</span>
+            <span className="text-[11px] font-medium text-white">Only 2 Spots Remaining</span>
+            <span className="text-[#8e909a] text-[11px]">· 48H Turnaround</span>
           </div>
           
-          {/* Main Headline (Swiss Contrast - Tech & SaaS Agency Architecture from Images 2 & 3) */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto [text-wrap:balance]">
-            <span className="text-white block">
-              <span className="block">Transform Raw Footage Into</span>
-              <span className="block mt-1">High-Converting Inbound Assets.</span>
-            </span>
-            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-bold">
-              High-Retention Video Systems. Engineered for Founders.
+          {/* Main Headline (2-Line Balanced Layout, NOT Overly Bold - Neue Montreal / Swiss Inter Medium Weight) */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-normal tracking-[-0.035em] leading-[1.12] max-w-4xl mx-auto [text-wrap:balance] text-white">
+            <span className="block">Transform Raw Footage Into</span>
+            <span className="block mt-1 sm:mt-1.5 text-white/95">
+              High-Converting <span className="text-[#1591DC]">Inbound Assets.</span>
             </span>
           </h1>
 
-          {/* Subtitle / Paragraph (Value Proposition & Leverage) */}
-          <p className="text-[#8e909a] text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal">
-            Hit record for 60 minutes. We engineer the hooks, neuro-pacing, and bespoke motion graphics that turn passive scrollers into high-ticket clients. Guaranteed ROI or full refund.
+          {/* Subtitle / Paragraph (Delicate, Compact, 2-3 Lines - Matching Image 3 Syntax) */}
+          <p className="text-sm sm:text-base text-[#8e909a] leading-relaxed max-w-lg mx-auto font-normal">
+            Gain clarity and scale your personal brand with engineered video retention systems. Handcrafted neuro-pacing, bespoke After Effects motion, and 48-hour studio delivery.
           </p>
 
-          {/* Action Buttons */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+          {/* Action Buttons (Dual Pill Layout) */}
+          <div className="pt-1 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <button 
               onClick={handleCalendlyRedirect}
-              className="px-7 py-3.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 transition-all shadow-[0_4px_20px_rgba(21,145,220,0.35)] hover:shadow-[0_6px_28px_rgba(21,145,220,0.5)] cursor-pointer"
+              className="px-7 py-3.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all shadow-[0_4px_24px_rgba(21,145,220,0.35)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.55)] cursor-pointer"
             >
               <span>Book a 15-Min Strategy Call</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </button>
 
             <a 
               href="#work"
-              className="px-6 py-3.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-white text-sm font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
+              className="px-6 py-3.5 bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] hover:border-white/[0.16] text-[#d4d6e0] hover:text-white text-xs sm:text-sm font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>Watch The Work ↓</span>
             </a>
           </div>
 
-          {/* 3-Column Divided Achievement Metric Banner (Matching User Reference Image) */}
-          <div className="pt-6 max-w-3xl mx-auto">
-            <div className="bg-[#0e1017]/90 border border-white/[0.08] rounded-2xl py-6 sm:py-8 px-4 grid grid-cols-3 divide-x divide-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
-              <div className="text-center px-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1591DC] tracking-tight">
-                  20+
+          {/* Glowing Horizon Arc & Refined Metrics Bar (Signature Horizon Motif from Images 2 & 3) */}
+          <div className="relative pt-10 sm:pt-14 pb-2">
+            {/* The Glowing Curved Horizon Arc (Planet / Dome Horizon) */}
+            <div className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] md:w-[1100px] h-[320px] pointer-events-none overflow-hidden">
+              {/* Ambient electric blue radial glow */}
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] h-[180px] bg-[#1591DC]/20 blur-[90px] rounded-full"></div>
+              {/* Crisp curved arc line */}
+              <div className="w-full h-[640px] rounded-[100%] border-t border-[#1591DC]/40 shadow-[0_-12px_45px_rgba(21,145,220,0.25)]"></div>
+            </div>
+
+            {/* Refined 3-Column Metrics (Sleek, Clean, Medium Font Weight - Not Heavy Bold) */}
+            <div className="relative z-10 max-w-2xl mx-auto pt-6">
+              <div className="grid grid-cols-3 divide-x divide-white/[0.08] py-4 px-2">
+                <div className="text-center px-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
+                    20<span className="text-[#1591DC] font-light">+</span>
+                  </div>
+                  <div className="text-[11px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-1">
+                    Clients Worldwide
+                  </div>
                 </div>
-                <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#8e909a] uppercase tracking-wider mt-1.5">
-                  Clients
+                <div className="text-center px-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
+                    800<span className="text-[#1591DC] font-light">+</span>
+                  </div>
+                  <div className="text-[11px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-1">
+                    Reels Engineered
+                  </div>
                 </div>
-              </div>
-              <div className="text-center px-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1591DC] tracking-tight">
-                  800+
-                </div>
-                <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#8e909a] uppercase tracking-wider mt-1.5">
-                  Reels Edited
-                </div>
-              </div>
-              <div className="text-center px-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1591DC] tracking-tight">
-                  48H
-                </div>
-                <div className="text-[11px] sm:text-xs md:text-sm font-semibold text-[#8e909a] uppercase tracking-wider mt-1.5">
-                  Turnaround
+                <div className="text-center px-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
+                    48<span className="text-[#1591DC] font-light">H</span>
+                  </div>
+                  <div className="text-[11px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-1">
+                    Fast Turnaround
+                  </div>
                 </div>
               </div>
             </div>
@@ -1742,20 +1752,17 @@ export default function App() {
             </div>
           </div>
 
-          {/* Headline trắng & Subheadline xanh - Swiss Contrast */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-extrabold tracking-tight leading-[1.15] max-w-4xl mx-auto [text-wrap:balance]">
-            <span className="text-white block">
-              <span className="block">Transform Raw Footage Into</span>
-              <span className="block mt-1">High-Converting Inbound Assets.</span>
-            </span>
-            <span className="text-[#1591DC] block mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold">
-              High-Retention Video Systems. Engineered for Founders.
+          {/* Headline trắng & Điểm nhấn xanh - Swiss Tech Contrast */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-[-0.035em] leading-[1.12] max-w-4xl mx-auto [text-wrap:balance] text-white">
+            <span className="block">Transform Raw Footage Into</span>
+            <span className="block mt-1 sm:mt-1.5 text-white/95">
+              High-Converting <span className="text-[#1591DC]">Inbound Assets.</span>
             </span>
           </h2>
 
           {/* Paragraph (Value Proposition & Leverage) */}
-          <p className="text-[#8e909a] text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal">
-            Hit record for 60 minutes. We engineer the hooks, neuro-pacing, and bespoke motion graphics that turn passive scrollers into high-ticket clients. Guaranteed ROI or full refund.
+          <p className="text-sm sm:text-base text-[#8e909a] leading-relaxed max-w-lg mx-auto font-normal">
+            Gain clarity and scale your personal brand with engineered video retention systems. Handcrafted neuro-pacing, bespoke After Effects motion, and 48-hour studio delivery.
           </p>
 
           {/* Nút CTA */}
