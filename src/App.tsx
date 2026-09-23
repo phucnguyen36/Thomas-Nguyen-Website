@@ -114,22 +114,44 @@ export default function App() {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  // LIVE SHORT-FORM VIDEO CLIPS FOR CAROUSEL & SHOWCASE
+  // LIVE SHORT FORM VIDEO CLIPS FOR CAROUSEL & SHOWCASE
   const showcaseVideos = [
     { 
-      id: "1212586126", 
+      id: "1229475645", 
       tag: "01 / HOOK ENGINE", 
-      title: "Visual Hook & Retention Engine",
+      title: "Visual Hook & Retention Architecture",
+      author: "Online Coach & Creator",
+      authorRole: "FITNESS & LIFESTYLE FOUNDER",
+      company: "COACHING ECOSYSTEM",
+      metric: "+195% Watch Time",
+      thumbnail: "/thumbnails/1229475645.jpg",
+      avatar: "/clients/vlady.jpg"
+    },
+    { 
+      id: "1229475646", 
+      tag: "02 / CONVERSION", 
+      title: "High Energy Conversion Cuts",
       author: "Via Masi",
       authorRole: "CREATOR & AGENCY FOUNDER",
       company: "VIAMASI MEDIA",
       metric: "+210% Inbound Leads",
-      thumbnail: "/thumbnails/1212586126.jpg",
+      thumbnail: "/thumbnails/1229475646.jpg",
       avatar: "/clients/via_masi.jpg"
     },
     { 
+      id: "1229475642", 
+      tag: "03 / KINETIC PACING", 
+      title: "Dynamic Pattern Interrupt & Motion",
+      author: "Executive Brand",
+      authorRole: "VENTURE ADVISOR & FOUNDER",
+      company: "GROWTH SYSTEMS",
+      metric: "3.8x Engagement Lift",
+      thumbnail: "/thumbnails/1229475642.jpg",
+      avatar: "/clients/raul_ocana.jpg"
+    },
+    { 
       id: "1212585180", 
-      tag: "02 / PACING", 
+      tag: "04 / PACING", 
       title: "Motion Pacing & Dynamic Cuts",
       author: "Vlady",
       authorRole: "DIGITAL COURSE CREATOR & BRAND",
@@ -140,7 +162,7 @@ export default function App() {
     },
     { 
       id: "1212585217", 
-      tag: "03 / BRANDING", 
+      tag: "05 / BRANDING", 
       title: "Brand Identity & Aesthetics",
       author: "Hoang Phuc",
       authorRole: "TECH CREATOR & EDUCATOR",
@@ -151,7 +173,7 @@ export default function App() {
     },
     { 
       id: "1212585328", 
-      tag: "04 / STORYTELLING", 
+      tag: "06 / STORYTELLING", 
       title: "Cinematic Visual Storytelling",
       author: "Kaleemix",
       authorRole: "B2B MEDIA AGENCY FOUNDER",
@@ -162,7 +184,7 @@ export default function App() {
     },
     { 
       id: "1190211907", 
-      tag: "05 / RETENTION", 
+      tag: "07 / RETENTION", 
       title: "Hook Mechanics & SFX Architecture",
       author: "Raul Ocana",
       authorRole: "COMMERCIAL PRODUCER",
@@ -172,52 +194,8 @@ export default function App() {
       avatar: "/clients/raul_ocana.jpg"
     },
     { 
-      id: "1185562812", 
-      tag: "06 / MOTION VFX", 
-      title: "Bespoke After Effects Keyframing",
-      author: "Editoz Club",
-      authorRole: "MEDIA COMMUNITY FOUNDER",
-      company: "EDITOZ GLOBAL",
-      metric: "3.8x Engagement Lift",
-      thumbnail: "/thumbnails/1185562812.jpg",
-      avatar: "/clients/editoz.jpg"
-    },
-    { 
-      id: "1185562961", 
-      tag: "07 / CONVERSION", 
-      title: "High Energy Conversion Cuts",
-      author: "Executive Founder",
-      authorRole: "VENTURE ADVISOR",
-      company: "HIGH TICKET ACADEMY",
-      metric: "+210% Leads",
-      thumbnail: "/thumbnails/1185562961.jpg",
-      avatar: "/clients/via_masi.jpg"
-    },
-    { 
-      id: "1185562977", 
-      tag: "08 / SOUND DESIGN", 
-      title: "Multilayered Sound Architecture",
-      author: "Personal Brand",
-      authorRole: "HIGH TICKET CREATOR",
-      company: "COACHING ECOSYSTEM",
-      metric: "1.1M Organic Views",
-      thumbnail: "/thumbnails/1185562977.jpg",
-      avatar: "/clients/vlady.jpg"
-    },
-    { 
-      id: "1185563164", 
-      tag: "09 / B ROLL STRATEGY", 
-      title: "Visual Proof & Narrative B Roll",
-      author: "Growth Agency",
-      authorRole: "AGENCY PRINCIPAL",
-      company: "SCALING SYSTEMS",
-      metric: "4.5x Saves & Shares",
-      thumbnail: "/thumbnails/1185563164.jpg",
-      avatar: "/clients/hoang_phuc.jpg"
-    },
-    { 
       id: "1185563238", 
-      tag: "10 / COLOR GRADE", 
+      tag: "08 / COLOR GRADE", 
       title: "Rec.709 Studio Color Calibration",
       author: "Media Production",
       authorRole: "DIRECTOR OF PHOTOGRAPHY",
