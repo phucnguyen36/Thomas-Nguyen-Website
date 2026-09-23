@@ -477,98 +477,50 @@ export default function App() {
             </a>
           </div>
 
-          {/* Seamless Atmospheric Glowing Horizon (Inspired by Lumine & RedSun in Images 2 & 3) */}
-          <div className="relative pt-8 sm:pt-12 pb-4 overflow-visible">
+          {/* Refined Highlighted Metrics (Swiss Minimalist Glass Pill / Subtle Highlight) */}
+          <div className="relative pt-10 sm:pt-14 pb-2 max-w-2xl mx-auto">
             
-            {/* Ambient Multi-Layer Radial Glow (Softly feathered, 0% hard cuts) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] sm:w-[1100px] h-[340px] pointer-events-none -z-10 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]">
-              {/* Primary vibrant center glow */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] h-[180px] bg-[#1591DC]/25 blur-[70px] rounded-full"></div>
-              {/* Secondary wider atmospheric wash */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] h-[260px] bg-[#1591DC]/10 blur-[110px] rounded-full"></div>
-            </div>
+            {/* Subtle Diffused Ambient Glow Behind Box (Soft, 100% seamless blend, no hard cuts) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] sm:w-[600px] h-[120px] bg-[#1591DC]/15 blur-[65px] rounded-full pointer-events-none -z-10" />
 
-            {/* Precision Curved Horizon Line with Seamless SVG Gradient Fade */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] sm:w-[1000px] md:w-[1200px] h-[120px] pointer-events-none -z-10 overflow-visible [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
-              <svg 
-                viewBox="0 0 1200 120" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="w-full h-full overflow-visible"
-              >
-                <defs>
-                  {/* Horizon Stroke Gradient - 100% transparent at edges, vibrant electric cyan/blue at apex */}
-                  <linearGradient id="horizonLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#1591DC" stopOpacity="0" />
-                    <stop offset="20%" stopColor="#1591DC" stopOpacity="0.3" />
-                    <stop offset="50%" stopColor="#60b6ee" stopOpacity="0.95" />
-                    <stop offset="80%" stopColor="#1591DC" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#1591DC" stopOpacity="0" />
-                  </linearGradient>
+            {/* Glass Container with Subtle Top Hairline Highlight */}
+            <div className="relative rounded-2xl bg-[#0b0d13]/70 border border-white/[0.08] backdrop-blur-md overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+              
+              {/* Top Edge Specular Hairline (Highlight Tinh Tế) */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#60b6ee]/50 to-transparent" />
 
-                  {/* Soft Glow Filter */}
-                  <filter id="horizonGlow" x="-20%" y="-50%" width="140%" height="200%">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1" />
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
-                    <feMerge>
-                      <feMergeNode in="blur2" />
-                      <feMergeNode in="blur1" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                {/* Ambient Soft Glow Stroke behind the line */}
-                <path 
-                  d="M 40 100 Q 600 8 1160 100" 
-                  stroke="url(#horizonLineGrad)" 
-                  strokeWidth="3.5" 
-                  filter="url(#horizonGlow)" 
-                  strokeLinecap="round"
-                  opacity="0.8"
-                />
-
-                {/* Crisp Core Horizon Line */}
-                <path 
-                  d="M 40 100 Q 600 8 1160 100" 
-                  stroke="url(#horizonLineGrad)" 
-                  strokeWidth="1.2" 
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-
-            {/* Seamless Bottom Gradient Fade into Next Section */}
-            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-[#07080b] pointer-events-none -z-10"></div>
-
-            {/* Refined 3-Column Metrics (Sleek, Clean, Medium Font Weight) */}
-            <div className="relative z-10 max-w-2xl mx-auto pt-5 sm:pt-7">
-              <div className="grid grid-cols-3 divide-x divide-white/[0.08] py-4 px-2">
-                <div className="text-center px-2">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
+              {/* 3-Column Metrics Grid */}
+              <div className="grid grid-cols-3 divide-x divide-white/[0.06] py-4 sm:py-6 px-1 sm:px-3">
+                <div className="text-center px-1 sm:px-2">
+                  <div className="text-xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
                     20<span className="text-[#1591DC] font-light">+</span>
                   </div>
-                  <div className="text-[11px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-1">
+                  <div className="text-[10px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-0.5 sm:mt-1">
                     Clients Worldwide
                   </div>
                 </div>
-                <div className="text-center px-2">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
+
+                <div className="text-center px-1 sm:px-2">
+                  <div className="text-xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
                     800<span className="text-[#1591DC] font-light">+</span>
                   </div>
-                  <div className="text-[11px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-1">
+                  <div className="text-[10px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-0.5 sm:mt-1">
                     Reels Engineered
                   </div>
                 </div>
-                <div className="text-center px-2">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
+
+                <div className="text-center px-1 sm:px-2">
+                  <div className="text-xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
                     48<span className="text-[#1591DC] font-light">H</span>
                   </div>
-                  <div className="text-[11px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-1">
+                  <div className="text-[10px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-0.5 sm:mt-1">
                     Fast Turnaround
                   </div>
                 </div>
               </div>
+
+              {/* Ultra-subtle bottom inner reflection */}
+              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none" />
             </div>
 
           </div>
@@ -578,7 +530,7 @@ export default function App() {
         {/* ========================================================================= */}
         {/* 2. INTERACTIVE VIDEO TESTIMONIAL CAROUSEL (IN THEIR OWN WORDS)             */}
         {/* ========================================================================= */}
-        <section id="work" className="space-y-8 pt-4 scroll-mt-20">
+        <section id="work" className="space-y-8 pt-4 scroll-mt-20 overflow-hidden">
           
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
