@@ -580,7 +580,7 @@ export default function App() {
               <div 
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
-                className="relative w-full h-[560px] sm:h-[620px] md:h-[670px] overflow-hidden"
+                className="relative w-full h-[480px] sm:h-[540px] md:h-[610px] overflow-hidden"
               >
                 {showcaseVideos.map((video, idx) => {
                   const len = showcaseVideos.length;
@@ -677,18 +677,6 @@ export default function App() {
                             </div>
                           </>
                         )}
-                      </div>
-
-                      {/* Author & Info Below Card (Matching Image 1 Layout) */}
-                      <div className="mt-3.5 text-center px-2 space-y-1">
-                        <h3 className={`font-medium tracking-tight text-white leading-tight ${
-                          isCenter ? 'text-base sm:text-lg' : 'text-xs sm:text-sm'
-                        }`}>
-                          {video.author}
-                        </h3>
-                        <p className="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#8e909a]">
-                          {video.authorRole}
-                        </p>
                       </div>
 
                     </div>
