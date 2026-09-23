@@ -477,18 +477,72 @@ export default function App() {
             </a>
           </div>
 
-          {/* Glowing Horizon Arc & Refined Metrics Bar (Signature Horizon Motif from Images 2 & 3) */}
-          <div className="relative pt-10 sm:pt-14 pb-2">
-            {/* The Glowing Curved Horizon Arc (Planet / Dome Horizon) */}
-            <div className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] md:w-[1100px] h-[320px] pointer-events-none overflow-hidden">
-              {/* Ambient electric blue radial glow */}
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] sm:w-[750px] h-[180px] bg-[#1591DC]/20 blur-[90px] rounded-full"></div>
-              {/* Crisp curved arc line */}
-              <div className="w-full h-[640px] rounded-[100%] border-t border-[#1591DC]/40 shadow-[0_-12px_45px_rgba(21,145,220,0.25)]"></div>
+          {/* Seamless Atmospheric Glowing Horizon (Inspired by Lumine & RedSun in Images 2 & 3) */}
+          <div className="relative pt-8 sm:pt-12 pb-4 overflow-visible">
+            
+            {/* Ambient Multi-Layer Radial Glow (Softly feathered, 0% hard cuts) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] sm:w-[1100px] h-[340px] pointer-events-none -z-10 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]">
+              {/* Primary vibrant center glow */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[550px] sm:w-[750px] h-[180px] bg-[#1591DC]/25 blur-[70px] rounded-full"></div>
+              {/* Secondary wider atmospheric wash */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] h-[260px] bg-[#1591DC]/10 blur-[110px] rounded-full"></div>
             </div>
 
-            {/* Refined 3-Column Metrics (Sleek, Clean, Medium Font Weight - Not Heavy Bold) */}
-            <div className="relative z-10 max-w-2xl mx-auto pt-6">
+            {/* Precision Curved Horizon Line with Seamless SVG Gradient Fade */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] sm:w-[1000px] md:w-[1200px] h-[120px] pointer-events-none -z-10 overflow-visible [mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]">
+              <svg 
+                viewBox="0 0 1200 120" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="w-full h-full overflow-visible"
+              >
+                <defs>
+                  {/* Horizon Stroke Gradient - 100% transparent at edges, vibrant electric cyan/blue at apex */}
+                  <linearGradient id="horizonLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#1591DC" stopOpacity="0" />
+                    <stop offset="20%" stopColor="#1591DC" stopOpacity="0.3" />
+                    <stop offset="50%" stopColor="#60b6ee" stopOpacity="0.95" />
+                    <stop offset="80%" stopColor="#1591DC" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#1591DC" stopOpacity="0" />
+                  </linearGradient>
+
+                  {/* Soft Glow Filter */}
+                  <filter id="horizonGlow" x="-20%" y="-50%" width="140%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1" />
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
+                    <feMerge>
+                      <feMergeNode in="blur2" />
+                      <feMergeNode in="blur1" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                {/* Ambient Soft Glow Stroke behind the line */}
+                <path 
+                  d="M 40 100 Q 600 8 1160 100" 
+                  stroke="url(#horizonLineGrad)" 
+                  strokeWidth="3.5" 
+                  filter="url(#horizonGlow)" 
+                  strokeLinecap="round"
+                  opacity="0.8"
+                />
+
+                {/* Crisp Core Horizon Line */}
+                <path 
+                  d="M 40 100 Q 600 8 1160 100" 
+                  stroke="url(#horizonLineGrad)" 
+                  strokeWidth="1.2" 
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+
+            {/* Seamless Bottom Gradient Fade into Next Section */}
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-[#07080b] pointer-events-none -z-10"></div>
+
+            {/* Refined 3-Column Metrics (Sleek, Clean, Medium Font Weight) */}
+            <div className="relative z-10 max-w-2xl mx-auto pt-5 sm:pt-7">
               <div className="grid grid-cols-3 divide-x divide-white/[0.08] py-4 px-2">
                 <div className="text-center px-2">
                   <div className="text-2xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
@@ -516,6 +570,7 @@ export default function App() {
                 </div>
               </div>
             </div>
+
           </div>
 
         </section>
