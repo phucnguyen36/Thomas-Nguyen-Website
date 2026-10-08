@@ -550,7 +550,7 @@ export default function App() {
                 type="button"
                 onClick={handlePrevVideo}
                 aria-label="Previous video"
-                className="absolute left-2 sm:left-6 md:left-12 top-[38%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
+                className="absolute left-2 sm:left-6 md:left-12 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
               >
                 <ArrowLeft size={18} />
               </button>
@@ -559,7 +559,7 @@ export default function App() {
                 type="button"
                 onClick={handleNextVideo}
                 aria-label="Next video"
-                className="absolute right-2 sm:right-6 md:right-12 top-[38%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
+                className="absolute right-2 sm:right-6 md:right-12 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
               >
                 <ArrowRight size={18} />
               </button>
@@ -572,7 +572,7 @@ export default function App() {
               <div 
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
-                className="relative w-full h-[590px] sm:h-[650px] md:h-[720px] overflow-hidden"
+                className="relative w-full h-[460px] sm:h-[520px] md:h-[580px] overflow-hidden"
               >
                 {showcaseVideos.map((video, idx) => {
                   const len = showcaseVideos.length;
@@ -658,41 +658,17 @@ export default function App() {
                               </button>
                             </div>
 
-                            {/* Top Category Tag */}
+                            {/* Top Tag & Metric Pill */}
                             <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                              <span className="px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-[9px] sm:text-[10px] font-medium text-white/90 uppercase tracking-wider backdrop-blur-md">
+                              <span className="px-2.5 py-1 rounded-full bg-black/75 border border-white/10 text-[9px] sm:text-[10px] font-medium text-white/90 uppercase tracking-wider backdrop-blur-md">
                                 {video.tag}
+                              </span>
+                              <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[9px] sm:text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
+                                {video.metric}
                               </span>
                             </div>
                           </>
                         )}
-                      </div>
-
-                      {/* CLIENT NAME + PROMINENT BLUE RESULT BANNER RIGHT BELOW CLIENT NAME */}
-                      <div className="w-full mt-3 bg-[#0e1017] border border-white/[0.1] rounded-2xl p-3 space-y-2 shadow-lg">
-                        <div className="flex items-center gap-2.5">
-                          <img 
-                            src={video.avatar} 
-                            alt={video.author} 
-                            className="w-8 h-8 rounded-full object-cover border border-white/20 shrink-0"
-                          />
-                          <div className="text-left min-w-0 flex-1">
-                            <div className="text-xs sm:text-sm font-semibold text-white truncate">
-                              {video.author}
-                            </div>
-                            <div className="text-[10px] text-[#8e909a] truncate">
-                              {video.authorRole}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Big Bold Blue Metric Banner Below Name */}
-                        <div className="w-full py-2 px-3 rounded-xl bg-[#1591DC] border border-[#60b6ee]/50 shadow-[0_4px_16px_rgba(21,145,220,0.4)] flex items-center justify-center gap-1.5">
-                          <Zap size={13} className="text-white fill-white shrink-0" />
-                          <span className="text-xs sm:text-sm font-bold text-white tracking-tight uppercase">
-                            {video.metric}
-                          </span>
-                        </div>
                       </div>
 
                     </div>
@@ -722,7 +698,7 @@ export default function App() {
             </div>
           )}
 
-          {/* GRID VIEW (ALL PROJECTS EXPLORER WITH CLIENT NAME & BLUE RESULT BANNER) */}
+          {/* GRID VIEW (ALL PROJECTS EXPLORER) */}
           {viewMode === 'grid' && (
             <div className="space-y-6">
               {/* Search Bar */}
@@ -751,50 +727,29 @@ export default function App() {
                         setViewMode('carousel');
                       }
                     }}
-                    className="group bg-[#0e1017] border border-white/[0.08] hover:border-[#1591DC]/50 rounded-2xl p-3 flex flex-col gap-3 shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(21,145,220,0.2)]"
+                    className="group relative w-full aspect-[9/16] bg-black rounded-2xl overflow-hidden border border-white/[0.08] hover:border-white/[0.25] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(21,145,220,0.2)]"
                   >
-                    <div className="relative w-full aspect-[9/16] bg-black rounded-xl overflow-hidden">
-                      <img 
-                        src={video.thumbnail} 
-                        alt={video.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                      />
-                      
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+                    <img 
+                      src={video.thumbnail} 
+                      alt={video.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
 
-                      <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity">
-                        <div className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform">
-                          <Play size={18} fill="currentColor" className="ml-0.5" />
-                        </div>
-                      </div>
-
-                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
-                        <span className="px-2.5 py-1 rounded-full bg-black/75 text-[10px] text-white/90 border border-white/10 backdrop-blur-md font-medium uppercase tracking-wider">
-                          {video.tag}
-                        </span>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity">
+                      <div className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform">
+                        <Play size={18} fill="currentColor" className="ml-0.5" />
                       </div>
                     </div>
 
-                    {/* Client Info + Prominent Blue Result Banner Right Below Client Name */}
-                    <div className="space-y-2 pt-0.5">
-                      <div className="flex items-center gap-2.5">
-                        <img 
-                          src={video.avatar} 
-                          alt={video.author} 
-                          className="w-8 h-8 rounded-full object-cover border border-white/15 shrink-0"
-                        />
-                        <div className="text-left min-w-0 flex-1">
-                          <div className="text-sm font-semibold text-white truncate">{video.author}</div>
-                          <div className="text-[11px] text-[#8e909a] truncate">{video.authorRole}</div>
-                        </div>
-                      </div>
-
-                      <div className="w-full py-2 px-3 rounded-xl bg-[#1591DC] border border-[#60b6ee]/50 shadow-[0_4px_15px_rgba(21,145,220,0.35)] flex items-center justify-center gap-1.5">
-                        <Zap size={13} className="text-white fill-white shrink-0" />
-                        <span className="text-xs sm:text-sm font-bold text-white tracking-tight uppercase">
-                          {video.metric}
-                        </span>
-                      </div>
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
+                      <span className="px-2.5 py-1 rounded-full bg-black/75 text-[10px] text-white/90 border border-white/10 backdrop-blur-md font-medium uppercase tracking-wider">
+                        {video.tag}
+                      </span>
+                      <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
+                        {video.metric}
+                      </span>
                     </div>
                   </div>
                 ))}
