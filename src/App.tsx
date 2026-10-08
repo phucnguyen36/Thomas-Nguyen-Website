@@ -43,8 +43,8 @@ export default function App() {
     email: '',
     message: ''
   });
-  const [videoType, setVideoType] = useState('Short-Form Premium');
-  const [budgetRange, setBudgetRange] = useState('$500-$1000');
+  const [videoType, setVideoType] = useState('Short Form Premium');
+  const [budgetRange, setBudgetRange] = useState('$500 to $1,000');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -117,55 +117,55 @@ export default function App() {
   // LIVE SHORT FORM VIDEO CLIPS FOR CAROUSEL & SHOWCASE
   const showcaseVideos = [
     { 
-      id: "1229475645", 
-      tag: "01 / HOOK ENGINE", 
-      title: "Visual Hook & Retention Architecture",
-      author: "Online Coach & Creator",
-      authorRole: "FITNESS & LIFESTYLE FOUNDER",
-      company: "COACHING ECOSYSTEM",
-      metric: "+195% Watch Time",
-      thumbnail: "/thumbnails/1229475645.jpg",
-      avatar: "/clients/vlady.jpg"
-    },
-    { 
       id: "1229475646", 
-      tag: "02 / CONVERSION", 
+      tag: "01 / CONVERSION", 
       title: "High Energy Conversion Cuts",
       author: "Via Masi",
-      authorRole: "CREATOR & AGENCY FOUNDER",
+      authorRole: "Creator & Agency Founder",
       company: "VIAMASI MEDIA",
-      metric: "+210% Inbound Leads",
+      metric: "+210% Inbound Inbox",
       thumbnail: "/thumbnails/1229475646.jpg",
       avatar: "/clients/via_masi.jpg"
     },
     { 
-      id: "1229475642", 
-      tag: "03 / KINETIC PACING", 
-      title: "Dynamic Pattern Interrupt & Motion",
-      author: "Executive Brand",
-      authorRole: "VENTURE ADVISOR & FOUNDER",
-      company: "GROWTH SYSTEMS",
-      metric: "3.8x Engagement Lift",
-      thumbnail: "/thumbnails/1229475642.jpg",
-      avatar: "/clients/raul_ocana.jpg"
-    },
-    { 
       id: "1212585180", 
-      tag: "04 / PACING", 
+      tag: "02 / PACING", 
       title: "Motion Pacing & Dynamic Cuts",
       author: "Vlady",
-      authorRole: "DIGITAL COURSE CREATOR & BRAND",
+      authorRole: "Digital Course Creator & Brand",
       company: "VLADY OFFICIAL",
       metric: "3.2x Product Sales",
       thumbnail: "/thumbnails/1212585180.jpg",
       avatar: "/clients/vlady.jpg"
     },
     { 
+      id: "1229475645", 
+      tag: "03 / HOOK ENGINE", 
+      title: "Visual Hook & Retention Architecture",
+      author: "Online Coach & Creator",
+      authorRole: "Fitness & Lifestyle Founder",
+      company: "COACHING ECOSYSTEM",
+      metric: "+195% Watch Time",
+      thumbnail: "/thumbnails/1229475645.jpg",
+      avatar: "/clients/vlady.jpg"
+    },
+    { 
+      id: "1229475642", 
+      tag: "04 / KINETIC PACING", 
+      title: "Dynamic Pattern Interrupt & Motion",
+      author: "Executive Brand",
+      authorRole: "Venture Advisor & Founder",
+      company: "GROWTH SYSTEMS",
+      metric: "3.8x Engagement Lift",
+      thumbnail: "/thumbnails/1229475642.jpg",
+      avatar: "/clients/raul_ocana.jpg"
+    },
+    { 
       id: "1212585217", 
       tag: "05 / BRANDING", 
       title: "Brand Identity & Aesthetics",
       author: "Hoang Phuc",
-      authorRole: "TECH CREATOR & EDUCATOR",
+      authorRole: "Tech Creator & Educator",
       company: "TECH ECOSYSTEM",
       metric: "84% 5S Retention",
       thumbnail: "/thumbnails/1212585217.jpg",
@@ -176,7 +176,7 @@ export default function App() {
       tag: "06 / STORYTELLING", 
       title: "Cinematic Visual Storytelling",
       author: "Kaleemix",
-      authorRole: "B2B MEDIA AGENCY FOUNDER",
+      authorRole: "B2B Media Agency Founder",
       company: "KALEEMIX MEDIA",
       metric: "1.8M Monthly Views",
       thumbnail: "/thumbnails/1212585328.jpg",
@@ -187,7 +187,7 @@ export default function App() {
       tag: "07 / RETENTION", 
       title: "Hook Mechanics & SFX Architecture",
       author: "Raul Ocana",
-      authorRole: "COMMERCIAL PRODUCER",
+      authorRole: "Commercial Producer",
       company: "CREATIVE PRODUCTION",
       metric: "1.4M Organic Reach",
       thumbnail: "/thumbnails/1190211907.jpg",
@@ -197,12 +197,12 @@ export default function App() {
       id: "1185563238", 
       tag: "08 / COLOR GRADE", 
       title: "Rec.709 Studio Color Calibration",
-      author: "Media Production",
-      authorRole: "DIRECTOR OF PHOTOGRAPHY",
+      author: "Editoz Club",
+      authorRole: "Media Community",
       company: "STUDIO CINEMA",
-      metric: "Studio Standard",
+      metric: "2.4x Brand Authority",
       thumbnail: "/thumbnails/1185563238.jpg",
-      avatar: "/clients/kaleemix.jpg"
+      avatar: "/clients/editoz.jpg"
     },
   ];
 
@@ -295,15 +295,15 @@ export default function App() {
 
   const displayedGridVideos = showAllVideos ? filteredVideos : filteredVideos.slice(0, 4);
 
-  // AUTHENTIC CLIENT REVIEWS FOR THE DUAL-DIRECTION SLIDING MARQUEE
+  // AUTHENTIC CLIENT REVIEWS (ZERO EM-DASHES, ZERO AI SLOP, HIGHLIGHTED METRIC BANNERS)
   const clientReviews = [
     {
       name: "Via Masi",
       handle: "@viamasi_media",
       role: "Creator & Agency Founder",
       avatar: "/clients/via_masi.jpg",
-      metric: "+210% Inbound Leads",
-      comment: "Thomas completely transformed our short form pacing. We went from burning cash on views that went nowhere to generating qualified inbound calls every week. His 48 hour delivery timeline is unmatched.",
+      metric: "+210% Inbound Inbox",
+      comment: "Thomas completely transformed our short form pacing. We went from burning cash on views that went nowhere to generating qualified inbound calls in our inbox every week. His 48 hour delivery timeline is unmatched.",
       stars: 5,
       location: "United States"
     },
@@ -333,7 +333,7 @@ export default function App() {
       role: "B2B Media Agency",
       avatar: "/clients/kaleemix.jpg",
       metric: "1.8M Monthly Views",
-      comment: "Visual hooks and bespoke After Effects keyframing turned our content into an automated client acquisition engine. Zero template slop. Everything is tailor-made for high conversion.",
+      comment: "Visual hooks and bespoke After Effects keyframing turned our content into an automated client acquisition engine. Zero template slop. Everything is custom built for high conversion.",
       stars: 5,
       location: "United Kingdom"
     },
@@ -343,7 +343,7 @@ export default function App() {
       role: "Commercial Producer",
       avatar: "/clients/raul_ocana.jpg",
       metric: "1.4M Organic Reach",
-      comment: "Flawless 48 hour turnaround with cinema-grade Rec.709 color grading and multilayered sound design. The most reliable editor we have worked with.",
+      comment: "Flawless 48 hour turnaround with studio Rec.709 color grading and multilayered sound design. The most reliable editor we have worked with.",
       stars: 5,
       location: "Spain"
     },
@@ -353,7 +353,7 @@ export default function App() {
       role: "Media Community",
       avatar: "/clients/editoz.jpg",
       metric: "3.8x Engagement Lift",
-      comment: "Bespoke motion graphics built from scratch. Zero CapCut template packs used. Our brand authority doubled in 30 days.",
+      comment: "Bespoke motion graphics built from scratch. Zero CapCut template packs used. Our brand authority and inbound messages doubled in 30 days.",
       stars: 5,
       location: "United Kingdom"
     }
@@ -371,7 +371,7 @@ export default function App() {
       </div>
 
       {/* 1. MINIMAL STICKY HEADER */}
-      <header className="sticky top-0 z-40 bg-[#07080b]/80 backdrop-blur-md border-b border-white/[0.06] px-6 md:px-12 py-3.5 flex justify-between items-center max-w-[1200px] mx-auto">
+      <header className="sticky top-0 z-40 bg-[#07080b]/85 backdrop-blur-md border-b border-white/[0.06] px-6 md:px-12 py-3.5 flex justify-between items-center max-w-[1200px] mx-auto">
         <a href="#hero" className="flex items-center gap-3 group">
           <img 
             src="/thomas_portrait.jpg" 
@@ -390,9 +390,9 @@ export default function App() {
 
         <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-[#8e909a] tracking-tight">
           <a href="#work" className="hover:text-white transition-colors">Work</a>
-          <a href="#results" className="hover:text-white transition-colors">Proof</a>
+          <a href="#results" className="hover:text-white transition-colors">Social Proof</a>
           <a href="#process" className="hover:text-white transition-colors">Process</a>
-          <a href="#pricing" className="hover:text-white transition-colors">Rates</a>
+          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#booking" className="hover:text-white transition-colors">Book Call</a>
         </nav>
@@ -400,7 +400,7 @@ export default function App() {
         <div className="flex items-center gap-3">
           <button 
             onClick={handleCalendlyRedirect}
-            className="px-4 py-2 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full transition-all flex items-center gap-1.5 shadow-[0_2px_12px_rgba(21,145,220,0.3)] cursor-pointer"
+            className="px-4 py-2 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full transition-all flex items-center gap-1.5 shadow-[0_2px_12px_rgba(21,145,220,0.35)] cursor-pointer"
           >
             <span>Book Call</span>
             <ArrowRight size={13} />
@@ -409,110 +409,102 @@ export default function App() {
       </header>
 
       {/* MAIN CONTENT */}
-      <main className="relative z-10 space-y-28 md:space-y-36 pb-24 max-w-[1160px] mx-auto px-4 sm:px-6">
+      <main className="relative z-10 space-y-24 md:space-y-32 pb-24 max-w-[1160px] mx-auto px-4 sm:px-6">
         
         {/* ========================================================================= */}
-        {/* 1. HERO SECTION (INSPIRED BY SAAS & TECH ARCHITECTURE - IMAGES 2 & 3)     */}
+        {/* 1. HERO SECTION (DIRECT RESPONSE OFFER FRONT & CENTER ABOVE THE FOLD)     */}
         {/* ========================================================================= */}
-        <section id="hero" className="pt-14 md:pt-20 text-center max-w-4xl mx-auto space-y-6 sm:space-y-7">
+        <section id="hero" className="pt-12 md:pt-18 text-center max-w-4xl mx-auto space-y-6 sm:space-y-7">
           
-          {/* Top Pill Badge (Refined, Modern Tech Style) */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-normal text-[#d4d6e0] backdrop-blur-sm shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            <span className="text-[11px] text-[#8e909a] tracking-wide">Visual Retention Engine</span>
+          {/* Target Audience & Turnaround Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-xs font-medium text-[#d4d6e0] backdrop-blur-sm shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span className="text-[11px] sm:text-xs text-white font-medium tracking-wide">For Founders, Coaches &amp; Creators</span>
             <span className="text-[#8e909a] text-[11px]">·</span>
-            <span className="text-[11px] font-medium text-white">48h Studio Delivery</span>
+            <span className="text-[11px] sm:text-xs font-semibold text-[#60b6ee]">48h Studio Delivery</span>
           </div>
           
-          {/* Main Headline (2-Line Balanced Layout, NOT Overly Bold - Neue Montreal / Swiss Inter Medium Weight) */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-normal tracking-[-0.035em] leading-[1.12] max-w-4xl mx-auto [text-wrap:balance] text-white">
-            <span className="block">Transform Raw Footage Into</span>
+          {/* Main Direct Response Offer Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[62px] font-normal tracking-[-0.035em] leading-[1.12] max-w-4xl mx-auto [text-wrap:balance] text-white">
+            <span className="block">Direct Response Video Assets</span>
             <span className="block mt-1 sm:mt-1.5 text-white/95">
-              High Converting <span className="text-[#1591DC]">Inbound Assets.</span>
+              Designed To Convert Viewers Into <span className="text-[#1591DC]">Paying Clients.</span>
             </span>
           </h1>
 
-          {/* Subtitle / Paragraph (Delicate, Compact, 2-3 Lines - Matching Image 3 Syntax) */}
-          <p className="text-sm sm:text-base text-[#8e909a] leading-relaxed max-w-lg mx-auto font-normal">
-            Gain clarity and scale your personal brand with engineered video retention systems. Handcrafted neuro pacing, bespoke After Effects motion, and 48 hour studio delivery.
+          {/* Clear Target Audience & Result Subheadline */}
+          <p className="text-sm sm:text-base md:text-lg text-[#b0b3c0] leading-relaxed max-w-2xl mx-auto font-normal">
+            We engineer high retention Reels, TikToks, and Video Sales Letters for <strong className="text-white font-medium">founders, executive coaches, and personal brands</strong>. Stop losing viewers in the first 3 seconds and start turning raw footage into qualified inbound calls and product sales.
           </p>
 
-          {/* Action Buttons (Dual Pill Layout) */}
-          <div className="pt-1 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {/* Top-of-Page Action Buttons (CTA #1) */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
             <button 
               onClick={handleCalendlyRedirect}
-              className="px-7 py-3.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all shadow-[0_4px_24px_rgba(21,145,220,0.35)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.55)] cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm sm:text-base font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2.5 transition-all shadow-[0_6px_28px_rgba(21,145,220,0.45)] hover:shadow-[0_8px_36px_rgba(21,145,220,0.65)] hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Book a 15 Min Strategy Call</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={16} />
             </button>
 
             <a 
               href="#work"
-              className="px-6 py-3.5 bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] hover:border-white/[0.16] text-[#d4d6e0] hover:text-white text-xs sm:text-sm font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-6 py-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/[0.2] text-[#d4d6e0] hover:text-white text-sm sm:text-base font-medium rounded-full tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer"
             >
-              <span>Watch The Work ↓</span>
+              <span>Watch Client Results ↓</span>
             </a>
           </div>
 
-          {/* Refined Highlighted Metrics (Swiss Minimalist Glass Pill / Subtle Highlight) */}
-          <div className="relative pt-10 sm:pt-14 pb-2 max-w-2xl mx-auto">
-            
-            {/* Subtle Diffused Ambient Glow Behind Box (Soft, 100% seamless blend, no hard cuts) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] sm:w-[600px] h-[120px] bg-[#1591DC]/15 blur-[65px] rounded-full pointer-events-none -z-10" />
+          {/* Highlighted Social Proof Metrics Bar */}
+          <div className="relative pt-8 sm:pt-12 pb-2 max-w-3xl mx-auto">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] sm:w-[640px] h-[120px] bg-[#1591DC]/15 blur-[65px] rounded-full pointer-events-none -z-10" />
 
-            {/* Glass Container with Subtle Top Hairline Highlight */}
-            <div className="relative rounded-2xl bg-[#0b0d13]/70 border border-white/[0.08] backdrop-blur-md overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-              
-              {/* Top Edge Specular Hairline (Highlight Tinh Tế) */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#60b6ee]/50 to-transparent" />
+            <div className="relative rounded-2xl bg-[#0b0d13]/80 border border-white/[0.1] backdrop-blur-md overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.45)]">
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#60b6ee]/60 to-transparent" />
 
-              {/* 3-Column Metrics Grid */}
-              <div className="grid grid-cols-3 divide-x divide-white/[0.06] py-4 sm:py-6 px-1 sm:px-3">
+              <div className="grid grid-cols-3 divide-x divide-white/[0.08] py-4 sm:py-6 px-2 sm:px-4">
                 <div className="text-center px-1 sm:px-2">
-                  <div className="text-xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
-                    20<span className="text-[#1591DC] font-light">+</span>
+                  <div className="text-xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight">
+                    +210<span className="text-[#1591DC]">%</span>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-0.5 sm:mt-1">
-                    Clients Worldwide
+                  <div className="text-[10px] sm:text-xs text-[#b0b3c0] font-medium tracking-wide mt-1">
+                    Inbound Inbox Lift
                   </div>
                 </div>
 
                 <div className="text-center px-1 sm:px-2">
-                  <div className="text-xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
-                    800<span className="text-[#1591DC] font-light">+</span>
+                  <div className="text-xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight">
+                    3.2<span className="text-[#1591DC]">x</span>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-0.5 sm:mt-1">
+                  <div className="text-[10px] sm:text-xs text-[#b0b3c0] font-medium tracking-wide mt-1">
+                    Client Product Sales
+                  </div>
+                </div>
+
+                <div className="text-center px-1 sm:px-2">
+                  <div className="text-xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight">
+                    800<span className="text-[#1591DC]">+</span>
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-[#b0b3c0] font-medium tracking-wide mt-1">
                     Reels Engineered
-                  </div>
-                </div>
-
-                <div className="text-center px-1 sm:px-2">
-                  <div className="text-xl sm:text-3xl md:text-4xl font-normal text-white tracking-tight">
-                    48<span className="text-[#1591DC] font-light">H</span>
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-[#8e909a] font-normal tracking-wide mt-0.5 sm:mt-1">
-                    Fast Turnaround
                   </div>
                 </div>
               </div>
 
-              {/* Ultra-subtle bottom inner reflection */}
-              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.03] to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent pointer-events-none" />
             </div>
-
           </div>
 
         </section>
 
         {/* ========================================================================= */}
-        {/* 2. INTERACTIVE VIDEO TESTIMONIAL CAROUSEL (IN THEIR OWN WORDS)             */}
+        {/* 2. INTERACTIVE VIDEO TESTIMONIAL CAROUSEL (WITH BLUE RESULT BANNERS)      */}
         {/* ========================================================================= */}
         <section id="work" className="space-y-8 pt-4 scroll-mt-20 overflow-hidden">
           
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              Testimonials
+              Verified Video Portfolio
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
               In Their Own Words
@@ -526,7 +518,7 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => setViewMode('carousel')}
-                className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                   viewMode === 'carousel' 
                     ? 'bg-white text-black font-semibold shadow' 
                     : 'bg-white/[0.04] text-[#8e909a] hover:text-white border border-white/[0.08]'
@@ -537,7 +529,7 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => setViewMode('grid')}
-                className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
+                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer flex items-center gap-1.5 ${
                   viewMode === 'grid' 
                     ? 'bg-white text-black font-semibold shadow' 
                     : 'bg-white/[0.04] text-[#8e909a] hover:text-white border border-white/[0.08]'
@@ -549,16 +541,16 @@ export default function App() {
             </div>
           </div>
 
-          {/* CAROUSEL VIEW (MATCHING IMAGE 1 IN THEIR OWN WORDS) */}
+          {/* CAROUSEL VIEW */}
           {viewMode === 'carousel' && (
-            <div className="relative w-full max-w-5xl mx-auto py-6 select-none">
+            <div className="relative w-full max-w-5xl mx-auto py-4 select-none">
               
               {/* Navigation Arrows */}
               <button
                 type="button"
                 onClick={handlePrevVideo}
                 aria-label="Previous video"
-                className="absolute left-2 sm:left-6 md:left-12 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
+                className="absolute left-2 sm:left-6 md:left-12 top-[38%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
               >
                 <ArrowLeft size={18} />
               </button>
@@ -567,7 +559,7 @@ export default function App() {
                 type="button"
                 onClick={handleNextVideo}
                 aria-label="Next video"
-                className="absolute right-2 sm:right-6 md:right-12 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
+                className="absolute right-2 sm:right-6 md:right-12 top-[38%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
               >
                 <ArrowRight size={18} />
               </button>
@@ -580,7 +572,7 @@ export default function App() {
               <div 
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
-                className="relative w-full h-[480px] sm:h-[540px] md:h-[610px] overflow-hidden"
+                className="relative w-full h-[590px] sm:h-[650px] md:h-[720px] overflow-hidden"
               >
                 {showcaseVideos.map((video, idx) => {
                   const len = showcaseVideos.length;
@@ -644,7 +636,7 @@ export default function App() {
                             {/* Subtle dark gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
 
-                            {/* Centered Play Button (Matching Image 1) */}
+                            {/* Centered Play Button */}
                             <div className="absolute inset-0 flex items-center justify-center z-20">
                               <button
                                 type="button"
@@ -666,17 +658,41 @@ export default function App() {
                               </button>
                             </div>
 
-                            {/* Top Tag & Metric Pill */}
+                            {/* Top Category Tag */}
                             <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                              <span className="px-2.5 py-1 rounded-full bg-black/75 border border-white/10 text-[9px] sm:text-[10px] font-medium text-white/90 uppercase tracking-wider backdrop-blur-md">
+                              <span className="px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-[9px] sm:text-[10px] font-medium text-white/90 uppercase tracking-wider backdrop-blur-md">
                                 {video.tag}
-                              </span>
-                              <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[9px] sm:text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
-                                {video.metric}
                               </span>
                             </div>
                           </>
                         )}
+                      </div>
+
+                      {/* CLIENT NAME + PROMINENT BLUE RESULT BANNER RIGHT BELOW CLIENT NAME */}
+                      <div className="w-full mt-3 bg-[#0e1017] border border-white/[0.1] rounded-2xl p-3 space-y-2 shadow-lg">
+                        <div className="flex items-center gap-2.5">
+                          <img 
+                            src={video.avatar} 
+                            alt={video.author} 
+                            className="w-8 h-8 rounded-full object-cover border border-white/20 shrink-0"
+                          />
+                          <div className="text-left min-w-0 flex-1">
+                            <div className="text-xs sm:text-sm font-semibold text-white truncate">
+                              {video.author}
+                            </div>
+                            <div className="text-[10px] text-[#8e909a] truncate">
+                              {video.authorRole}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Big Bold Blue Metric Banner Below Name */}
+                        <div className="w-full py-2 px-3 rounded-xl bg-[#1591DC] border border-[#60b6ee]/50 shadow-[0_4px_16px_rgba(21,145,220,0.4)] flex items-center justify-center gap-1.5">
+                          <Zap size={13} className="text-white fill-white shrink-0" />
+                          <span className="text-xs sm:text-sm font-bold text-white tracking-tight uppercase">
+                            {video.metric}
+                          </span>
+                        </div>
                       </div>
 
                     </div>
@@ -685,7 +701,7 @@ export default function App() {
               </div>
 
               {/* Dots Indicator */}
-              <div className="flex items-center justify-center gap-1.5 pt-6">
+              <div className="flex items-center justify-center gap-1.5 pt-4">
                 {showcaseVideos.map((_, i) => (
                   <button
                     key={i}
@@ -703,22 +719,10 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Mid-Page Call CTA */}
-              <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-                <span className="text-xs sm:text-sm text-[#8e909a]">Ready to turn your raw footage into high converting reels?</span>
-                <button 
-                  onClick={handleCalendlyRedirect}
-                  className="px-5 py-2 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full tracking-tight inline-flex items-center gap-1.5 shadow-[0_2px_15px_rgba(21,145,220,0.35)] transition-all cursor-pointer"
-                >
-                  <span>Book a 15 Min Call</span>
-                  <ArrowRight size={13} />
-                </button>
-              </div>
-
             </div>
           )}
 
-          {/* GRID VIEW (ALL PROJECTS EXPLORER) */}
+          {/* GRID VIEW (ALL PROJECTS EXPLORER WITH CLIENT NAME & BLUE RESULT BANNER) */}
           {viewMode === 'grid' && (
             <div className="space-y-6">
               {/* Search Bar */}
@@ -747,32 +751,50 @@ export default function App() {
                         setViewMode('carousel');
                       }
                     }}
-                    className="group relative w-full aspect-[9/16] bg-black rounded-2xl overflow-hidden border border-white/[0.08] hover:border-white/[0.25] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(21,145,220,0.2)]"
+                    className="group bg-[#0e1017] border border-white/[0.08] hover:border-[#1591DC]/50 rounded-2xl p-3 flex flex-col gap-3 shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(21,145,220,0.2)]"
                   >
-                    <img 
-                      src={video.thumbnail} 
-                      alt={video.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    />
-                    
-                    {/* Subtle Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+                    <div className="relative w-full aspect-[9/16] bg-black rounded-xl overflow-hidden">
+                      <img 
+                        src={video.thumbnail} 
+                        alt={video.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      />
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
 
-                    {/* Centered Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity">
-                      <div className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform">
-                        <Play size={18} fill="currentColor" className="ml-0.5" />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity">
+                        <div className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform">
+                          <Play size={18} fill="currentColor" className="ml-0.5" />
+                        </div>
+                      </div>
+
+                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
+                        <span className="px-2.5 py-1 rounded-full bg-black/75 text-[10px] text-white/90 border border-white/10 backdrop-blur-md font-medium uppercase tracking-wider">
+                          {video.tag}
+                        </span>
                       </div>
                     </div>
 
-                    {/* Top Tag & Metric Pill */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
-                      <span className="px-2.5 py-1 rounded-full bg-black/75 text-[10px] text-white/90 border border-white/10 backdrop-blur-md font-medium uppercase tracking-wider">
-                        {video.tag}
-                      </span>
-                      <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
-                        {video.metric}
-                      </span>
+                    {/* Client Info + Prominent Blue Result Banner Right Below Client Name */}
+                    <div className="space-y-2 pt-0.5">
+                      <div className="flex items-center gap-2.5">
+                        <img 
+                          src={video.avatar} 
+                          alt={video.author} 
+                          className="w-8 h-8 rounded-full object-cover border border-white/15 shrink-0"
+                        />
+                        <div className="text-left min-w-0 flex-1">
+                          <div className="text-sm font-semibold text-white truncate">{video.author}</div>
+                          <div className="text-[11px] text-[#8e909a] truncate">{video.authorRole}</div>
+                        </div>
+                      </div>
+
+                      <div className="w-full py-2 px-3 rounded-xl bg-[#1591DC] border border-[#60b6ee]/50 shadow-[0_4px_15px_rgba(21,145,220,0.35)] flex items-center justify-center gap-1.5">
+                        <Zap size={13} className="text-white fill-white shrink-0" />
+                        <span className="text-xs sm:text-sm font-bold text-white tracking-tight uppercase">
+                          {video.metric}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -792,64 +814,104 @@ export default function App() {
             </div>
           )}
 
+          {/* REPEATED BOOK CALL CTA #2 (AFTER VIDEO PORTFOLIO) */}
+          <div className="pt-4 max-w-3xl mx-auto">
+            <div className="bg-[#0e1017] border border-[#1591DC]/30 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_8px_30px_rgba(21,145,220,0.12)]">
+              <div className="text-center sm:text-left space-y-1">
+                <div className="text-sm sm:text-base font-semibold text-white">
+                  Ready to turn your raw footage into high converting video assets?
+                </div>
+                <div className="text-xs text-[#8e909a]">
+                  Book a free 15 minute strategy call to audit your current video retention.
+                </div>
+              </div>
+              <button 
+                onClick={handleCalendlyRedirect}
+                className="w-full sm:w-auto shrink-0 px-6 py-3.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.4)] transition-all cursor-pointer"
+              >
+                <span>Book Call Now</span>
+                <ArrowRight size={15} />
+              </button>
+            </div>
+          </div>
+
         </section>
 
         {/* ========================================================================= */}
-        {/* 3. DUAL-DIRECTION CONTINUOUS SLIDING FEEDBACK MARQUEE                     */}
+        {/* 3. CLIENT FEEDBACK & SOCIAL PROOF (BLUE RESULT BANNER UNDER CLIENT NAME)  */}
         {/* ========================================================================= */}
-        <section id="results" className="space-y-6 pt-4 scroll-mt-20 overflow-hidden">
-          <div className="text-center space-y-1 max-w-xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-normal sm:font-medium tracking-tight text-white">
-              Client Feedback
+        <section id="results" className="space-y-8 pt-4 scroll-mt-20 overflow-hidden">
+          <div className="text-center space-y-2 max-w-xl mx-auto">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
+              Proven Client Results
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
+              Client Feedback &amp; ROI
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              What creators and founders say about our visual pacing and 48 hour delivery
+              Real revenue, inbound inbox growth, and retention results from founders and creators worldwide
             </p>
           </div>
 
           {/* Marquee Row 1 (Left Scroll) */}
           <div className="relative w-full overflow-hidden py-1">
-            <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
 
-            <div className="animate-marquee gap-4">
+            <div className="animate-marquee gap-5">
               {marqueeReviewsRow1.map((rev, i) => (
                 <div 
                   key={`r1-${i}`}
-                  className="bg-[#0e1017] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl w-[340px] md:w-[380px] p-5 md:p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-sm select-none transition-colors"
+                  className="bg-[#0e1017] border border-white/[0.1] hover:border-[#1591DC]/50 rounded-2xl w-[350px] md:w-[400px] p-5 md:p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-md select-none transition-colors"
                 >
-                  <div className="space-y-2.5">
+                  <div className="space-y-3.5">
+                    {/* 1. Client Name & Verified Info at Top */}
                     <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <img 
+                          src={rev.avatar} 
+                          alt={rev.name}
+                          className="w-11 h-11 rounded-full object-cover border-2 border-[#1591DC]/50"
+                        />
+                        <div className="text-left">
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-white font-semibold text-sm sm:text-base leading-tight">{rev.name}</span>
+                            <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                          </div>
+                          <span className="text-xs text-[#8e909a] block">{rev.role}</span>
+                        </div>
+                      </div>
+
                       <div className="flex items-center gap-0.5 text-amber-400">
                         {Array.from({ length: rev.stars }).map((_, s) => (
                           <Star key={s} size={13} fill="currentColor" />
                         ))}
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-[10px] font-semibold text-[#60b6ee]">
-                        {rev.metric}
+                    </div>
+
+                    {/* 2. PROMINENT BLUE RESULT BANNER DIRECTLY BELOW CLIENT NAME */}
+                    <div className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#1591DC] to-[#0f7bbd] border border-[#60b6ee]/50 shadow-[0_4px_20px_rgba(21,145,220,0.35)] flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Zap size={16} className="text-white fill-white shrink-0" />
+                        <span className="text-sm sm:text-base font-bold tracking-tight text-white uppercase">
+                          {rev.metric}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-white/95 bg-black/25 px-2.5 py-0.5 rounded-full">
+                        Verified ROI
                       </span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed">
+                    {/* 3. Clean Review Text (Zero Em-Dashes) */}
+                    <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed text-left pt-0.5">
                       "{rev.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3.5 border-t border-white/[0.06] text-xs">
-                    <div className="flex items-center gap-2.5">
-                      <img 
-                        src={rev.avatar} 
-                        alt={rev.name}
-                        className="w-8 h-8 rounded-full object-cover border border-white/10"
-                      />
-                      <div>
-                        <span className="text-white font-medium block leading-tight">{rev.name}</span>
-                        <span className="text-[11px] text-[#8e909a]">{rev.handle}</span>
-                      </div>
-                    </div>
-
-                    <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
-                      <CheckCircle2 size={11} /> Verified
+                  <div className="flex items-center justify-between pt-3 border-t border-white/[0.06] text-[11px] text-[#8e909a]">
+                    <span>{rev.handle}</span>
+                    <span className="text-emerald-400 font-medium flex items-center gap-1">
+                      <CheckCircle2 size={11} /> Verified Client
                     </span>
                   </div>
                 </div>
@@ -859,47 +921,63 @@ export default function App() {
 
           {/* Marquee Row 2 (Right / Reverse Scroll) */}
           <div className="relative w-full overflow-hidden py-1">
-            <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
 
-            <div className="animate-marquee-reverse gap-4">
+            <div className="animate-marquee-reverse gap-5">
               {marqueeReviewsRow2.map((rev, i) => (
                 <div 
                   key={`r2-${i}`}
-                  className="bg-[#0e1017] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl w-[340px] md:w-[380px] p-5 md:p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-sm select-none transition-colors"
+                  className="bg-[#0e1017] border border-white/[0.1] hover:border-[#1591DC]/50 rounded-2xl w-[350px] md:w-[400px] p-5 md:p-6 shrink-0 flex flex-col justify-between space-y-4 shadow-md select-none transition-colors"
                 >
-                  <div className="space-y-2.5">
+                  <div className="space-y-3.5">
+                    {/* 1. Client Name & Verified Info at Top */}
                     <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <img 
+                          src={rev.avatar} 
+                          alt={rev.name}
+                          className="w-11 h-11 rounded-full object-cover border-2 border-[#1591DC]/50"
+                        />
+                        <div className="text-left">
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-white font-semibold text-sm sm:text-base leading-tight">{rev.name}</span>
+                            <CheckCircle2 size={13} className="text-[#1591DC] shrink-0" />
+                          </div>
+                          <span className="text-xs text-[#8e909a] block">{rev.role}</span>
+                        </div>
+                      </div>
+
                       <div className="flex items-center gap-0.5 text-amber-400">
                         {Array.from({ length: rev.stars }).map((_, s) => (
                           <Star key={s} size={13} fill="currentColor" />
                         ))}
                       </div>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-[10px] font-semibold text-[#60b6ee]">
-                        {rev.metric}
+                    </div>
+
+                    {/* 2. PROMINENT BLUE RESULT BANNER DIRECTLY BELOW CLIENT NAME */}
+                    <div className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#1591DC] to-[#0f7bbd] border border-[#60b6ee]/50 shadow-[0_4px_20px_rgba(21,145,220,0.35)] flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Zap size={16} className="text-white fill-white shrink-0" />
+                        <span className="text-sm sm:text-base font-bold tracking-tight text-white uppercase">
+                          {rev.metric}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-white/95 bg-black/25 px-2.5 py-0.5 rounded-full">
+                        Verified ROI
                       </span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed">
+                    {/* 3. Clean Review Text (Zero Em-Dashes) */}
+                    <p className="text-xs sm:text-sm text-[#d4d6e0] leading-relaxed text-left pt-0.5">
                       "{rev.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3.5 border-t border-white/[0.06] text-xs">
-                    <div className="flex items-center gap-2.5">
-                      <img 
-                        src={rev.avatar} 
-                        alt={rev.name}
-                        className="w-8 h-8 rounded-full object-cover border border-white/10"
-                      />
-                      <div>
-                        <span className="text-white font-medium block leading-tight">{rev.name}</span>
-                        <span className="text-[11px] text-[#8e909a]">{rev.handle}</span>
-                      </div>
-                    </div>
-
-                    <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
-                      <CheckCircle2 size={11} /> Verified
+                  <div className="flex items-center justify-between pt-3 border-t border-white/[0.06] text-[11px] text-[#8e909a]">
+                    <span>{rev.handle}</span>
+                    <span className="text-emerald-400 font-medium flex items-center gap-1">
+                      <CheckCircle2 size={11} /> Verified Client
                     </span>
                   </div>
                 </div>
@@ -907,14 +985,14 @@ export default function App() {
             </div>
           </div>
 
-          {/* Marquee CTA */}
-          <div className="pt-6 flex justify-center">
+          {/* REPEATED BOOK CALL CTA #3 (AFTER SOCIAL PROOF) */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button 
               onClick={handleCalendlyRedirect}
-              className="px-6 py-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.12] hover:border-[#1591DC]/50 text-white text-xs font-semibold rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2 shadow-[0_4px_24px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
             >
-              <span>Join 20+ High Growth Creators · Book a Call</span>
-              <ArrowRight size={13} className="text-[#1591DC]" />
+              <span>Join 20+ High Growth Founders · Book Call</span>
+              <ArrowRight size={15} />
             </button>
           </div>
 
@@ -927,13 +1005,13 @@ export default function App() {
           
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              The 3-Phase Retention Engine
+              The 3 Phase Retention Engine
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
-              How We Transform Raw Footage Into Inbound Assets
+              How We Turn Raw Footage Into Paying Clients
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed max-w-xl mx-auto">
-              Most editors cut blindly without understanding drop-off curves. We run every frame through a 3-phase retention framework engineered to stop the scroll, hold attention, and turn viewers into paying clients.
+              Most editors cut blindly without understanding drop off curves. We run every frame through a 3 phase retention framework engineered to stop the scroll, hold attention, and convert viewers into inbound leads.
             </p>
           </div>
 
@@ -943,7 +1021,6 @@ export default function App() {
             {/* PHASE 01: Left-Aligned */}
             <div className="flex justify-start w-full">
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
-                {/* Badge 01 + Dotted Line Down */}
                 <div className="flex flex-col items-center shrink-0">
                   <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-medium text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     01
@@ -951,7 +1028,6 @@ export default function App() {
                   <div className="w-px h-24 sm:h-28 border-l border-dashed border-[#1591DC]/50 mt-2.5"></div>
                 </div>
 
-                {/* Content */}
                 <div className="pt-0.5 text-left space-y-2">
                   <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
                     Phase 01 · Neuro Pacing
@@ -960,7 +1036,7 @@ export default function App() {
                     Hook &amp; Neuro Pacing Architecture
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                    Tight narrative cuts eliminating dead air, breath pauses, and micro-hesitations within the first 3 critical seconds to lock viewers past the 5 second mark.
+                    Tight narrative cuts eliminating dead air, breath pauses, and hesitations within the first 3 critical seconds to lock viewers past the 5 second mark.
                   </p>
                   <div className="space-y-1 pt-1 text-xs text-[#d4d6e0]">
                     <div className="flex items-center gap-2">
@@ -983,7 +1059,6 @@ export default function App() {
             {/* PHASE 02: Right-Aligned */}
             <div className="flex justify-end w-full">
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
-                {/* Content */}
                 <div className="pt-0.5 flex-1 space-y-2">
                   <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
                     Phase 02 · Bespoke Visuals
@@ -992,7 +1067,7 @@ export default function App() {
                     Bespoke Motion Graphics &amp; Sound Mastery
                   </h3>
                   <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                    Handcrafted keyframing in After Effects, kinetic typography, HUD accents, and multitrack audio design (risers, hits, voice leveling). Zero generic CapCut presets.
+                    Handcrafted keyframing in After Effects, kinetic typography, HUD accents, and multitrack audio design. Zero generic CapCut presets.
                   </p>
                   <div className="space-y-1 pt-1 text-xs text-[#d4d6e0] flex flex-col items-end">
                     <div className="flex items-center gap-2">
@@ -1010,7 +1085,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Badge 02 + Dotted Line Down */}
                 <div className="flex flex-col items-center shrink-0">
                   <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-medium text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     02
@@ -1023,14 +1097,12 @@ export default function App() {
             {/* PHASE 03: Left-Aligned */}
             <div className="flex justify-start w-full">
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px]">
-                {/* Badge 03 */}
                 <div className="flex flex-col items-center shrink-0">
                   <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-[#1591DC] text-white font-medium text-sm sm:text-base flex items-center justify-center shadow-[0_0_25px_rgba(21,145,220,0.5)]">
                     03
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="pt-0.5 text-left space-y-2">
                   <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
                     Phase 03 · Studio Delivery
@@ -1059,14 +1131,14 @@ export default function App() {
               </div>
             </div>
 
-            {/* Process CTA Button */}
+            {/* REPEATED BOOK CALL CTA #4 (AFTER PROCESS) */}
             <div className="pt-8 flex justify-center w-full">
               <button 
                 onClick={handleCalendlyRedirect}
-                className="px-7 py-3 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_28px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
+                className="px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_24px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
               >
-                <span>Lock In Your Retention Engine · Book a Call</span>
-                <ArrowRight size={14} />
+                <span>Lock In Your Retention Engine · Book Call</span>
+                <ArrowRight size={15} />
               </button>
             </div>
 
@@ -1074,7 +1146,7 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 5. SERVICES & PRICING (MATCHING USER RATE CARD SPECIFICATION)             */}
+        {/* 5. SERVICES & PRICING                                                     */}
         {/* ========================================================================= */}
         <section id="pricing" className="space-y-8 pt-4 scroll-mt-20 max-w-5xl mx-auto">
           <span id="services" className="sr-only">Services &amp; Rates</span>
@@ -1094,7 +1166,7 @@ export default function App() {
                 Services &amp; Pricing
               </h2>
               <p className="text-xs sm:text-sm text-[#8e909a]">
-                High retention video editing for founders, creators, and brands.
+                Direct response video packages built for founders, coaches, and personal brands.
               </p>
             </div>
 
@@ -1115,7 +1187,6 @@ export default function App() {
             {/* CARD 01: Short Form Standard */}
             <div className="bg-[#0b0c10] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
               <div className="space-y-4">
-                {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
                   <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-semibold tracking-wider uppercase text-[#8e909a]">
                     STANDARD
@@ -1123,17 +1194,15 @@ export default function App() {
                   <span className="text-xs font-mono font-semibold text-[#8e909a]/70">01</span>
                 </div>
 
-                {/* Title & Subtitle */}
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Short Form Standard
                   </h3>
                   <p className="text-xs text-[#8e909a] leading-relaxed">
-                    Clean, fast-paced edits for daily Reels, TikTok &amp; YouTube Shorts.
+                    Clean, fast paced edits for daily Reels, TikTok &amp; YouTube Shorts.
                   </p>
                 </div>
 
-                {/* Price */}
                 <div className="pt-2 pb-1 border-y border-white/[0.06]">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-3xl sm:text-4xl font-medium text-white tracking-tight">$30</span>
@@ -1141,7 +1210,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Features List */}
                 <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
@@ -1168,10 +1236,10 @@ export default function App() {
                     setVideoType('Short Form Standard');
                     handleCalendlyRedirect();
                   }}
-                  className="w-full py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] text-xs font-semibold text-white tracking-tight transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full py-3 rounded-full bg-white/[0.05] hover:bg-[#1591DC] border border-white/[0.12] hover:border-[#1591DC] text-xs font-semibold text-white tracking-tight transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <span>Select Standard</span>
-                  <ArrowRight size={13} className="text-[#8e909a]" />
+                  <span>Book Call for Standard</span>
+                  <ArrowRight size={13} />
                 </button>
               </div>
             </div>
@@ -1179,13 +1247,11 @@ export default function App() {
             {/* CARD 02: Short Form Premium (MOST POPULAR) */}
             <div className="relative bg-[#090d15] border border-[#1591DC]/60 hover:border-[#1591DC] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group shadow-[0_0_35px_rgba(21,145,220,0.18)] ring-1 ring-[#1591DC]/30">
               
-              {/* Floating MOST POPULAR Badge */}
               <div className="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-[#1591DC] to-[#0ea5e9] text-white text-[10px] font-semibold tracking-wider uppercase shadow-[0_2px_12px_rgba(21,145,220,0.5)]">
                 MOST POPULAR
               </div>
 
               <div className="space-y-4">
-                {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
                   <span className="px-2.5 py-0.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/40 text-[10px] font-semibold tracking-wider uppercase text-[#60b6ee] flex items-center gap-1">
                     <span>★</span> HIGH RETENTION
@@ -1193,7 +1259,6 @@ export default function App() {
                   <span className="text-xs font-mono font-semibold text-[#1591DC]">02</span>
                 </div>
 
-                {/* Title & Subtitle */}
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Short Form Premium
@@ -1203,7 +1268,6 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Price */}
                 <div className="pt-2 pb-1 border-y border-[#1591DC]/20">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-3xl sm:text-4xl font-medium text-[#38bdf8] tracking-tight">$50 to $70</span>
@@ -1211,7 +1275,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Features List */}
                 <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
@@ -1238,9 +1301,9 @@ export default function App() {
                     setVideoType('Short Form Premium');
                     handleCalendlyRedirect();
                   }}
-                  className="w-full py-2.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-xs font-semibold text-white tracking-tight transition-all flex items-center justify-center gap-1.5 shadow-[0_2px_15px_rgba(21,145,220,0.4)] cursor-pointer"
+                  className="w-full py-3 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-xs font-semibold text-white tracking-tight transition-all flex items-center justify-center gap-1.5 shadow-[0_2px_15px_rgba(21,145,220,0.4)] cursor-pointer"
                 >
-                  <span>Select Premium (Recommended)</span>
+                  <span>Book Call for Premium (Recommended)</span>
                   <ArrowRight size={13} />
                 </button>
               </div>
@@ -1249,7 +1312,6 @@ export default function App() {
             {/* CARD 03: Long Form Editing */}
             <div className="bg-[#0b0c10] border border-white/[0.08] hover:border-white/[0.18] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
               <div className="space-y-4">
-                {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
                   <span className="px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-[10px] font-semibold tracking-wider uppercase text-[#8e909a]">
                     YOUTUBE / PODCAST
@@ -1257,7 +1319,6 @@ export default function App() {
                   <span className="text-xs font-mono font-semibold text-[#8e909a]/70">03</span>
                 </div>
 
-                {/* Title & Subtitle */}
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Long Form Editing
@@ -1267,7 +1328,6 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Price */}
                 <div className="pt-2 pb-1 border-y border-white/[0.06]">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-3xl sm:text-4xl font-medium text-white tracking-tight">$15</span>
@@ -1275,7 +1335,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Features List */}
                 <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
@@ -1302,10 +1361,10 @@ export default function App() {
                     setVideoType('Long Form Editing');
                     handleCalendlyRedirect();
                   }}
-                  className="w-full py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] text-xs font-semibold text-white tracking-tight transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full py-3 rounded-full bg-white/[0.05] hover:bg-[#1591DC] border border-white/[0.12] hover:border-[#1591DC] text-xs font-semibold text-white tracking-tight transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <span>Select Long Form</span>
-                  <ArrowRight size={13} className="text-[#8e909a]" />
+                  <span>Book Call for Long Form</span>
+                  <ArrowRight size={13} />
                 </button>
               </div>
             </div>
@@ -1313,7 +1372,6 @@ export default function App() {
             {/* CARD 04: Video Sales Letter (VSL) */}
             <div className="bg-[#0b0c10] border border-white/[0.08] hover:border-amber-500/40 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all group">
               <div className="space-y-4">
-                {/* Header Badge & Index */}
                 <div className="flex items-center justify-between">
                   <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-semibold tracking-wider uppercase text-amber-400">
                     HIGH CONVERSION
@@ -1321,7 +1379,6 @@ export default function App() {
                   <span className="text-xs font-mono font-semibold text-amber-400/80">04</span>
                 </div>
 
-                {/* Title & Subtitle */}
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
                     Video Sales Letter (VSL)
@@ -1331,7 +1388,6 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Price */}
                 <div className="pt-2 pb-1 border-y border-white/[0.06]">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-3xl sm:text-4xl font-medium text-white tracking-tight">$200</span>
@@ -1339,7 +1395,6 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Features List */}
                 <ul className="space-y-2.5 text-xs text-[#d4d6e0] pt-1">
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-amber-400 shrink-0 stroke-[2.5]" />
@@ -1366,10 +1421,10 @@ export default function App() {
                     setVideoType('Video Sales Letter (VSL)');
                     handleCalendlyRedirect();
                   }}
-                  className="w-full py-2.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] text-xs font-semibold text-white tracking-tight transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full py-3 rounded-full bg-white/[0.05] hover:bg-[#1591DC] border border-white/[0.12] hover:border-[#1591DC] text-xs font-semibold text-white tracking-tight transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  <span>Select VSL</span>
-                  <ArrowRight size={13} className="text-[#8e909a]" />
+                  <span>Book Call for VSL</span>
+                  <ArrowRight size={13} />
                 </button>
               </div>
             </div>
@@ -1392,15 +1447,15 @@ export default function App() {
             </div>
           </div>
 
-          {/* Bottom Bar Action */}
-          <div className="bg-[#0b0c10]/90 border border-white/[0.08] rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-left space-y-0.5">
-              <div className="text-xs text-[#8e909a]">Portfolio &amp; Live Showcase:</div>
-              <div className="text-sm sm:text-base font-medium text-white tracking-tight">thomasnguyen.online</div>
+          {/* REPEATED BOOK CALL CTA #5 (BOTTOM OF PRICING) */}
+          <div className="bg-[#0e1017] border border-[#1591DC]/30 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_8px_30px_rgba(21,145,220,0.12)]">
+            <div className="text-center sm:text-left space-y-0.5">
+              <div className="text-xs text-[#60b6ee] font-semibold uppercase tracking-wider">Custom Monthly Retainers Available</div>
+              <div className="text-sm sm:text-base font-medium text-white tracking-tight">Need a dedicated editing partner for 15 to 30 videos per month?</div>
             </div>
             <button
               onClick={handleCalendlyRedirect}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold tracking-tight shadow-[0_4px_24px_rgba(21,145,220,0.45)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.65)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto shrink-0 px-7 py-3.5 rounded-full bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold tracking-tight shadow-[0_4px_24px_rgba(21,145,220,0.45)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.65)] transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>BOOK A CALL / ORDER SAMPLE</span>
               <ArrowRight size={14} />
@@ -1414,7 +1469,6 @@ export default function App() {
         <section id="about" className="pt-4 scroll-mt-20 max-w-[880px] mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             
-            {/* Real Studio Portrait */}
             <div className="shrink-0 w-full md:w-[280px] flex justify-center">
               <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0b0c10] shadow-2xl">
                 <img 
@@ -1425,7 +1479,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Bio & Craft */}
             <div className="space-y-4 text-left flex-1">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-[11px] font-semibold uppercase tracking-wider text-[#60b6ee]">
                 Behind The Craft
@@ -1436,15 +1489,15 @@ export default function App() {
               </h2>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                Hi, I'm Thomas. I am a visual retention strategist and high ticket video editor partnering with founders, executive coaches, and creators worldwide.
+                Hi, I'm Thomas. I am a visual retention strategist and direct response video editor partnering with founders, executive coaches, and creators worldwide.
               </p>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                I spent 3 years in the editing trenches, analyzing viewer drop-off curves at 2 a.m. and testing hundreds of hook variations. I realized most creators lose 60% of their audience in the first 3 seconds not because their message is bad, but because generic editing kills momentum.
+                I spent 3 years in the editing trenches, analyzing viewer drop off curves at 2 a.m. and testing hundreds of hook variations. I realized most creators lose 60% of their audience in the first 3 seconds not because their message is bad, but because generic editing kills momentum.
               </p>
 
               <p className="text-xs sm:text-sm text-[#8e909a] leading-relaxed">
-                I don't use generic CapCut presets or flashy filler. I treat every video as a high converting inbound asset. Every cut, sound effect, and motion graphic is engineered to turn passive scrollers into paying clients.
+                I don't use generic CapCut presets or flashy filler. I treat every video as a direct response video asset designed to convert. Every cut, sound effect, and motion graphic is engineered to turn passive scrollers into paying clients.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-[#d4d6e0]">
@@ -1466,10 +1519,11 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="pt-2">
+              {/* REPEATED BOOK CALL CTA #6 (IN ABOUT SECTION) */}
+              <div className="pt-3">
                 <button 
                   onClick={handleCalendlyRedirect}
-                  className="px-6 py-2.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.35)] transition-all cursor-pointer"
+                  className="px-7 py-3.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(21,145,220,0.4)] transition-all cursor-pointer"
                 >
                   <span>Book a 15 Min Strategy Call</span>
                   <ArrowRight size={14} />
@@ -1481,11 +1535,14 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 8. DIRECT BOOKING SECTION (CALENDLY + INQUIRY FORM)                       */}
+        {/* 7. DIRECT BOOKING SECTION (CALENDLY + INQUIRY FORM)                       */}
         {/* ========================================================================= */}
         <section id="booking" className="space-y-6 pt-4 max-w-3xl mx-auto scroll-mt-20">
-          <div className="text-center space-y-1">
-            <h2 className="text-2xl sm:text-3xl font-normal sm:font-medium tracking-tight text-white">
+          <div className="text-center space-y-2">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
+              Direct Onboarding
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-normal sm:font-medium tracking-tight text-white">
               Schedule Your 15 Minute Strategy Call
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
@@ -1497,24 +1554,24 @@ export default function App() {
               <button
                 type="button"
                 onClick={() => setBookingTab('calendly')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   bookingTab === 'calendly'
-                    ? 'bg-[#1591DC] text-white'
+                    ? 'bg-[#1591DC] text-white shadow-[0_2px_12px_rgba(21,145,220,0.4)]'
                     : 'bg-white/[0.03] border border-white/[0.08] text-[#8e909a] hover:text-white'
                 }`}
               >
-                Calendar
+                Book Call on Calendar
               </button>
               <button
                 type="button"
                 onClick={() => setBookingTab('form')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   bookingTab === 'form'
-                    ? 'bg-[#1591DC] text-white'
+                    ? 'bg-[#1591DC] text-white shadow-[0_2px_12px_rgba(21,145,220,0.4)]'
                     : 'bg-white/[0.03] border border-white/[0.08] text-[#8e909a] hover:text-white'
                 }`}
               >
-                Direct Inquiry
+                Send Direct Inquiry
               </button>
             </div>
           </div>
@@ -1541,7 +1598,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="text-[#60b6ee] hover:underline flex items-center gap-1 font-medium"
                 >
-                  <span>Open in new tab</span>
+                  <span>Open Calendar in New Tab</span>
                   <ArrowUpRight size={13} />
                 </a>
               </div>
@@ -1630,7 +1687,7 @@ export default function App() {
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-2.5 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 transition-colors"
+                  className="w-full py-3 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 transition-colors"
                 >
                   {isSubmitting ? (
                     <>
@@ -1655,7 +1712,7 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 9. FAQ                                                                    */}
+        {/* 8. FAQ                                                                    */}
         {/* ========================================================================= */}
         <section id="faq" className="space-y-6 pt-4 scroll-mt-20">
           <div className="text-center space-y-1 max-w-xl mx-auto">
@@ -1671,19 +1728,19 @@ export default function App() {
             {[
               {
                 q: "What makes your editing different from standard freelance editors?",
-                a: "Most freelance editors simply trim clips and add random template presets. We operate as conversion partners, engineering hook retention in the first 3 seconds, custom keyframing After Effects graphics, and crafting pacing that guides the viewer directly toward your offer."
+                a: "Most freelance editors simply trim clips and add random template presets. We operate as direct response conversion partners, engineering hook retention in the first 3 seconds, custom keyframing After Effects graphics, and crafting pacing that guides the viewer directly toward your offer."
               },
               {
                 q: "How does your 100% money back guarantee work?",
-                a: "It is an ironclad Hormozi style commitment. We set explicit view and retention targets prior to kickoff. If we do not hit those benchmarks within the 90-day window, you receive a full refund with zero friction and no awkward questions asked."
+                a: "It is an ironclad commitment. We set explicit view and retention targets prior to kickoff. If we do not hit those benchmarks within the 90 day window, you receive a full refund with zero friction and no awkward questions asked."
               },
               {
                 q: "How fast is the delivery turnaround?",
-                a: "Our standard turnaround time is 48 hours per video. For high-volume partners or urgent campaign deadlines, we also offer 24-hour expedited delivery."
+                a: "Our standard turnaround time is 48 hours per video. For high volume partners or urgent campaign deadlines, we also offer 24 hour expedited delivery."
               },
               {
                 q: "How do we collaborate and send footage?",
-                a: "We set up a dedicated Frame.io project workspace and shared Google Drive/Dropbox for you. You drop in your raw files, and you can leave frame accurate timestamp feedback directly on the video."
+                a: "We set up a dedicated Frame.io project workspace and shared Google Drive or Dropbox for you. You drop in your raw files, and you can leave frame accurate timestamp feedback directly on the video."
               },
               {
                 q: "What if I need changes on the video?",
@@ -1715,11 +1772,10 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 10. FINAL GRAND SLAM OFFER (AFTER FAQ - CLOSING SECTION)                  */}
+        {/* 9. FINAL GRAND SLAM OFFER (END-OF-PAGE BOOK CALL CTA #7)                  */}
         {/* ========================================================================= */}
         <section className="pt-12 pb-6 scroll-mt-20 text-center max-w-4xl mx-auto space-y-7 border-t border-white/[0.06]">
           
-          {/* Pill Badge */}
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -1727,24 +1783,21 @@ export default function App() {
             </div>
           </div>
 
-          {/* Headline trắng & Điểm nhấn xanh - Swiss Tech Contrast */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-normal tracking-[-0.035em] leading-[1.12] max-w-4xl mx-auto [text-wrap:balance] text-white">
-            <span className="block">Transform Raw Footage Into</span>
+            <span className="block">Direct Response Video Assets</span>
             <span className="block mt-1 sm:mt-1.5 text-white/95">
-              High Converting <span className="text-[#1591DC]">Inbound Assets.</span>
+              Designed To Convert Viewers Into <span className="text-[#1591DC]">Paying Clients.</span>
             </span>
           </h2>
 
-          {/* Paragraph (Value Proposition & Leverage) */}
-          <p className="text-sm sm:text-base text-[#8e909a] leading-relaxed max-w-lg mx-auto font-normal">
-            Gain clarity and scale your personal brand with engineered video retention systems. Handcrafted neuro pacing, bespoke After Effects motion, and 48 hour studio delivery.
+          <p className="text-sm sm:text-base text-[#b0b3c0] leading-relaxed max-w-xl mx-auto font-normal">
+            Scale your personal brand with engineered video retention systems. Handcrafted neuro pacing, bespoke After Effects motion, and 48 hour studio delivery.
           </p>
 
-          {/* Nút CTA */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <button 
               onClick={handleCalendlyRedirect}
-              className="px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm sm:text-base font-semibold rounded-full tracking-tight inline-flex items-center gap-2.5 shadow-[0_6px_30px_rgba(21,145,220,0.4)] hover:shadow-[0_8px_40px_rgba(21,145,220,0.6)] hover:-translate-y-0.5 transition-all cursor-pointer"
+              className="px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm sm:text-base font-semibold rounded-full tracking-tight inline-flex items-center gap-2.5 shadow-[0_6px_30px_rgba(21,145,220,0.45)] hover:shadow-[0_8px_40px_rgba(21,145,220,0.65)] hover:-translate-y-0.5 transition-all cursor-pointer"
             >
               <span>Book a 15 Min Strategy Call</span>
               <ArrowRight size={17} />
@@ -1754,7 +1807,7 @@ export default function App() {
               href="#work"
               className="px-6 py-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-white text-sm sm:text-base font-medium rounded-full tracking-tight inline-flex items-center gap-2 transition-all cursor-pointer"
             >
-              <span>Watch The Work ↓</span>
+              <span>Watch Client Results ↑</span>
             </a>
           </div>
 
@@ -1783,7 +1836,7 @@ export default function App() {
               />
             </div>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              Trusted by <strong className="text-white font-medium">Via Masi</strong>, <strong className="text-white font-medium">Vlady</strong>, <strong className="text-white font-medium">Hoang Phuc</strong>, and 20+ founders worldwide.
+              Trusted by <strong className="text-white font-medium">Via Masi (+210% Inbox)</strong>, <strong className="text-white font-medium">Vlady (3.2x Sales)</strong>, <strong className="text-white font-medium">Hoang Phuc (84% Retention)</strong>, and 20+ founders worldwide.
             </p>
           </div>
 
@@ -1791,7 +1844,7 @@ export default function App() {
 
       </main>
 
-      {/* FOOTER (MATCHING MINIMALIST SWISS AESTHETIC FROM IMAGE 2) */}
+      {/* FOOTER */}
       <footer className="border-t border-white/[0.06] bg-[#07080b] py-8 px-6 md:px-12 relative z-20">
         <div className="max-w-[1120px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
