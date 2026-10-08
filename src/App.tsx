@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Search, 
   ArrowUpRight, 
@@ -28,14 +28,28 @@ const XLogo = ({ size = 12 }: { size?: number }) => (
   </svg>
 );
 
+export interface ShowcaseVideoItem {
+  id: string;
+  vimeoId: string;
+  aspect: '9:16' | '16:9';
+  formatLabel: string;
+  tag: string;
+  title: string;
+  author: string;
+  authorRole: string;
+  company: string;
+  metric: string;
+  thumbnail: string;
+  avatar: string;
+}
+
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [bookingTab, setBookingTab] = useState<'calendly' | 'form'>('calendly');
   const [showAllVideos, setShowAllVideos] = useState(false);
   const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
-  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
-  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
+  const [lightboxVideo, setLightboxVideo] = useState<ShowcaseVideoItem | null>(null);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -65,6 +79,7 @@ export default function App() {
   const handleCalendlyRedirect = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
     trackMetaEvent('Schedule');
+    setLightboxVideo(null);
     const bookingSection = document.getElementById('booking');
     if (bookingSection) {
       bookingSection.scrollIntoView({ behavior: 'smooth' });
@@ -114,10 +129,16 @@ export default function App() {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  // LIVE SHORT FORM VIDEO CLIPS FOR CAROUSEL & SHOWCASE
-  const showcaseVideos = [
+  // ============================================================================
+  // VIDEO SHOWCASE COLLECTION (SUPPORTS BOTH 9:16 VERTICAL & 16:9 HORIZONTAL)
+  // To update 16:9 videos later: simply change `vimeoId`, `thumbnail`, and `title`
+  // ============================================================================
+  const showcaseVideos: ShowcaseVideoItem[] = [
     { 
-      id: "1229475646", 
+      id: "reel-01",
+      vimeoId: "1229475646", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "01 / CONVERSION", 
       title: "High Energy Conversion Cuts",
       author: "Via Masi",
@@ -128,7 +149,10 @@ export default function App() {
       avatar: "/clients/via_masi.jpg"
     },
     { 
-      id: "1212585180", 
+      id: "reel-02",
+      vimeoId: "1212585180", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "02 / PACING", 
       title: "Motion Pacing & Dynamic Cuts",
       author: "Vlady",
@@ -139,7 +163,24 @@ export default function App() {
       avatar: "/clients/vlady.jpg"
     },
     { 
-      id: "1229475645", 
+      id: "wide-01",
+      vimeoId: "1212586126", 
+      aspect: "16:9",
+      formatLabel: "VSL Direct Response · 16:9",
+      tag: "VSL / 16:9", 
+      title: "High Ticket VSL Architecture",
+      author: "Via Masi",
+      authorRole: "Creator & Agency Founder",
+      company: "VIAMASI MEDIA",
+      metric: "3.4x Funnel ROAS",
+      thumbnail: "/vision_pro_bg.jpg",
+      avatar: "/clients/via_masi.jpg"
+    },
+    { 
+      id: "reel-03",
+      vimeoId: "1229475645", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "03 / HOOK ENGINE", 
       title: "Visual Hook & Retention Architecture",
       author: "Online Coach & Creator",
@@ -150,7 +191,10 @@ export default function App() {
       avatar: "/clients/vlady.jpg"
     },
     { 
-      id: "1229475642", 
+      id: "reel-04",
+      vimeoId: "1229475642", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "04 / KINETIC PACING", 
       title: "Dynamic Pattern Interrupt & Motion",
       author: "Executive Brand",
@@ -161,7 +205,24 @@ export default function App() {
       avatar: "/clients/raul_ocana.jpg"
     },
     { 
-      id: "1212585217", 
+      id: "wide-02",
+      vimeoId: "1185563164", 
+      aspect: "16:9",
+      formatLabel: "Long-Form YouTube · 16:9",
+      tag: "YOUTUBE / 16:9", 
+      title: "Founder Documentary & Narrative Edit",
+      author: "Hoang Phuc",
+      authorRole: "Tech Creator & Educator",
+      company: "TECH ECOSYSTEM",
+      metric: "68% Avg View Duration",
+      thumbnail: "/glass_3d_fluid.jpg",
+      avatar: "/clients/hoang_phuc.jpg"
+    },
+    { 
+      id: "reel-05",
+      vimeoId: "1212585217", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "05 / BRANDING", 
       title: "Brand Identity & Aesthetics",
       author: "Hoang Phuc",
@@ -172,7 +233,10 @@ export default function App() {
       avatar: "/clients/hoang_phuc.jpg"
     },
     { 
-      id: "1212585328", 
+      id: "reel-06",
+      vimeoId: "1212585328", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "06 / STORYTELLING", 
       title: "Cinematic Visual Storytelling",
       author: "Kaleemix",
@@ -183,7 +247,24 @@ export default function App() {
       avatar: "/clients/kaleemix.jpg"
     },
     { 
-      id: "1190211907", 
+      id: "wide-03",
+      vimeoId: "1185562977", 
+      aspect: "16:9",
+      formatLabel: "Commercial Campaign · 16:9",
+      tag: "COMMERCIAL / 16:9", 
+      title: "B2B Brand Commercial & Motion Systems",
+      author: "Kaleemix",
+      authorRole: "B2B Media Agency Founder",
+      company: "KALEEMIX MEDIA",
+      metric: "4.2x Pipeline Velocity",
+      thumbnail: "/chrome_ring.jpg",
+      avatar: "/clients/kaleemix.jpg"
+    },
+    { 
+      id: "reel-07",
+      vimeoId: "1190211907", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "07 / RETENTION", 
       title: "Hook Mechanics & SFX Architecture",
       author: "Raul Ocana",
@@ -194,7 +275,10 @@ export default function App() {
       avatar: "/clients/raul_ocana.jpg"
     },
     { 
-      id: "1185563238", 
+      id: "reel-08",
+      vimeoId: "1185563238", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
       tag: "08 / COLOR GRADE", 
       title: "Rec.709 Studio Color Calibration",
       author: "Editoz Club",
@@ -204,96 +288,55 @@ export default function App() {
       thumbnail: "/thumbnails/1185563238.jpg",
       avatar: "/clients/editoz.jpg"
     },
+    { 
+      id: "wide-04",
+      vimeoId: "1185562812", 
+      aspect: "16:9",
+      formatLabel: "Keynote & VSL · 16:9",
+      tag: "LONG-FORM / 16:9", 
+      title: "Executive Authority VSL & Motion Proof",
+      author: "Editoz Club",
+      authorRole: "Media Community",
+      company: "STUDIO CINEMA",
+      metric: "+180% High Ticket Bookings",
+      thumbnail: "/skyscraper_night.jpg",
+      avatar: "/clients/editoz.jpg"
+    },
   ];
 
-  const handlePrevVideo = () => {
-    setPlayingVideoId(null);
-    setActiveVideoIndex((prev) => (prev === 0 ? showcaseVideos.length - 1 : prev - 1));
-  };
+  // Row 1 & Row 2 sequences for Dual-Row Opposite Auto-Scrolling Marquee
+  const row1Videos = [...showcaseVideos, ...showcaseVideos];
+  const row2Seed = [...showcaseVideos.slice(5), ...showcaseVideos.slice(0, 5)].reverse();
+  const row2Videos = [...row2Seed, ...row2Seed];
 
-  const handleNextVideo = () => {
-    setPlayingVideoId(null);
-    setActiveVideoIndex((prev) => (prev === showcaseVideos.length - 1 ? 0 : prev + 1));
-  };
-
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX;
-    if (deltaX > 40) {
-      handlePrevVideo();
-    } else if (deltaX < -40) {
-      handleNextVideo();
-    }
-    setTouchStartX(null);
-  };
-
-  const getCardTransform = (diff: number) => {
-    if (diff === 0) {
-      return {
-        transform: 'translateX(-50%) scale(1)',
-        zIndex: 30,
-        opacity: 1,
-        pointerEvents: 'auto' as const,
-        filter: 'brightness(1)'
-      };
-    }
-    if (diff === -1) {
-      return {
-        transform: 'translateX(calc(-50% - min(35vw, 290px))) scale(0.88)',
-        zIndex: 20,
-        opacity: 0.75,
-        pointerEvents: 'auto' as const,
-        filter: 'brightness(0.85)'
-      };
-    }
-    if (diff === 1) {
-      return {
-        transform: 'translateX(calc(-50% + min(35vw, 290px))) scale(0.88)',
-        zIndex: 20,
-        opacity: 0.75,
-        pointerEvents: 'auto' as const,
-        filter: 'brightness(0.85)'
-      };
-    }
-    if (diff === -2) {
-      return {
-        transform: 'translateX(calc(-50% - min(65vw, 500px))) scale(0.76)',
-        zIndex: 10,
-        opacity: 0.35,
-        pointerEvents: 'auto' as const,
-        filter: 'brightness(0.65)'
-      };
-    }
-    if (diff === 2) {
-      return {
-        transform: 'translateX(calc(-50% + min(65vw, 500px))) scale(0.76)',
-        zIndex: 10,
-        opacity: 0.35,
-        pointerEvents: 'auto' as const,
-        filter: 'brightness(0.65)'
-      };
-    }
-    return {
-      transform: `translateX(calc(-50% + ${diff > 0 ? '800px' : '-800px'})) scale(0.5)`,
-      zIndex: 0,
-      opacity: 0,
-      pointerEvents: 'none' as const
+  // Lightbox keyboard navigation (ESC to close, Left/Right arrows to switch)
+  useEffect(() => {
+    if (!lightboxVideo) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxVideo(null);
+      } else if (e.key === 'ArrowRight') {
+        const idx = showcaseVideos.findIndex((v) => v.id === lightboxVideo.id);
+        const nextIdx = (idx + 1) % showcaseVideos.length;
+        setLightboxVideo(showcaseVideos[nextIdx]);
+      } else if (e.key === 'ArrowLeft') {
+        const idx = showcaseVideos.findIndex((v) => v.id === lightboxVideo.id);
+        const prevIdx = (idx - 1 + showcaseVideos.length) % showcaseVideos.length;
+        setLightboxVideo(showcaseVideos[prevIdx]);
+      }
     };
-  };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxVideo]);
 
   const filteredVideos = showcaseVideos.filter(v => 
     v.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     v.tag.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    v.formatLabel.toLowerCase().includes(searchQuery.toLowerCase()) ||
     v.author.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const displayedGridVideos = showAllVideos ? filteredVideos : filteredVideos.slice(0, 4);
+  const displayedGridVideos = showAllVideos ? filteredVideos : filteredVideos.slice(0, 8);
 
   // AUTHENTIC CLIENT REVIEWS (ZERO EM-DASHES, ZERO AI SLOP, HIGHLIGHTED METRIC BANNERS)
   const clientReviews = [
@@ -498,19 +541,19 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 2. INTERACTIVE VIDEO TESTIMONIAL CAROUSEL (WITH BLUE RESULT BANNERS)      */}
+        {/* 2. THE GALLERY — DUAL-ROW AUTO-SCROLL SHOWCASE (9:16 & 16:9 + LIGHTBOX)   */}
         {/* ========================================================================= */}
-        <section id="work" className="space-y-8 pt-4 scroll-mt-20 overflow-hidden">
+        <section id="work" className="space-y-8 pt-4 scroll-mt-20">
           
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              Verified Video Portfolio
+              The Gallery &middot; Selected Works
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
-              In Their Own Words
+              Under The <span className="text-[#1591DC]">Spotlight.</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              Watch real retention breakdowns and campaign results from creators and founders
+              Short-form 9:16 reels and 16:9 VSL campaigns in motion. Hover to pause &middot; click any piece to watch full-screen with sound.
             </p>
 
             {/* View Switcher */}
@@ -524,7 +567,7 @@ export default function App() {
                     : 'bg-white/[0.04] text-[#8e909a] hover:text-white border border-white/[0.08]'
                 }`}
               >
-                Carousel View
+                Gallery Stream
               </button>
               <button
                 type="button"
@@ -541,164 +584,102 @@ export default function App() {
             </div>
           </div>
 
-          {/* CAROUSEL VIEW */}
+          {/* DUAL-ROW AUTO-SCROLL GALLERY STREAM (ART-CELERATOR STYLE) */}
           {viewMode === 'carousel' && (
-            <div className="relative w-full max-w-5xl mx-auto py-4 select-none">
-              
-              {/* Navigation Arrows */}
-              <button
-                type="button"
-                onClick={handlePrevVideo}
-                aria-label="Previous video"
-                className="absolute left-2 sm:left-6 md:left-12 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
-              >
-                <ArrowLeft size={18} />
-              </button>
-
-              <button
-                type="button"
-                onClick={handleNextVideo}
-                aria-label="Next video"
-                className="absolute right-2 sm:right-6 md:right-12 top-[42%] -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-black shadow-[0_6px_25px_rgba(0,0,0,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer border border-black/10"
-              >
-                <ArrowRight size={18} />
-              </button>
-
-              {/* Edge Blur Gradients */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#07080b] to-transparent z-30 pointer-events-none hidden sm:block" />
-              <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#07080b] to-transparent z-30 pointer-events-none hidden sm:block" />
-
-              {/* Centered Absolute Stage Container with Touch Support */}
-              <div 
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-                className="relative w-full h-[460px] sm:h-[520px] md:h-[580px] overflow-hidden"
-              >
-                {showcaseVideos.map((video, idx) => {
-                  const len = showcaseVideos.length;
-                  let diff = (idx - activeVideoIndex) % len;
-                  if (diff > len / 2) diff -= len;
-                  if (diff < -len / 2) diff += len;
-
-                  const isCenter = diff === 0;
-                  const style = getCardTransform(diff);
-
-                  return (
-                    <div
-                      key={video.id}
-                      onClick={() => {
-                        if (!isCenter) {
-                          setPlayingVideoId(null);
-                          setActiveVideoIndex(idx);
-                        }
-                      }}
-                      style={style}
-                      className="absolute top-0 left-1/2 transition-all duration-500 ease-out flex flex-col items-center shrink-0 cursor-pointer w-[250px] sm:w-[280px] md:w-[320px]"
+            <div className="gx-marquee select-none" aria-label="Selected works, auto-scrolling. Hover to pause.">
+              <div className="gx-rows">
+                
+                {/* ROW 1: Auto-scroll Left (Mixed 9:16 & 16:9 Uniform Height) */}
+                <div className="gx-track-left" role="list">
+                  {row1Videos.map((video, idx) => (
+                    <button
+                      key={`r1-${video.id}-${idx}`}
+                      type="button"
+                      role="listitem"
+                      onClick={() => setLightboxVideo(video)}
+                      aria-label={`Play ${video.title} fullscreen`}
+                      className={`group relative shrink-0 cursor-pointer overflow-hidden rounded-lg bg-black border border-white/[0.15] hover:border-[#1591DC]/85 shadow-[0_18px_48px_rgba(0,0,0,0.65)] hover:shadow-[0_24px_64px_rgba(21,145,220,0.3)] transition-all duration-300 h-[185px] sm:h-[225px] md:h-[255px] ${
+                        video.aspect === '16:9' ? 'aspect-[16/9]' : 'aspect-[9/16]'
+                      }`}
                     >
-                      {/* 9:16 Video Poster Card */}
-                      <div className={`w-full aspect-[9/16] relative rounded-2xl sm:rounded-3xl overflow-hidden bg-black transition-all duration-300 ${
-                        isCenter 
-                          ? 'border-2 border-white/40 shadow-[0_12px_45px_rgba(21,145,220,0.35)]' 
-                          : 'border border-white/10 shadow-lg hover:border-white/20'
-                      }`}>
-                        
-                        {/* If this video is currently playing */}
-                        {playingVideoId === video.id ? (
-                          <div className="absolute inset-0 w-full h-full bg-black z-30">
-                            <iframe
-                              src={`https://player.vimeo.com/video/${video.id}?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479`}
-                              className="w-full h-full object-cover"
-                              allow="autoplay; fullscreen; picture-in-picture"
-                              allowFullScreen
-                              title={video.title}
-                            />
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setPlayingVideoId(null);
-                              }}
-                              className="absolute top-3 right-3 z-40 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-white text-[10px] font-semibold border border-white/20 flex items-center gap-1 cursor-pointer"
-                            >
-                              <X size={12} />
-                              <span>Close</span>
-                            </button>
-                          </div>
-                        ) : (
-                          <>
-                            {/* High-res Thumbnail Cover */}
-                            <img
-                              src={video.thumbnail}
-                              alt={video.title}
-                              className="w-full h-full object-cover"
-                              loading="lazy"
-                            />
-                            
-                            {/* Subtle dark gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover brightness-[0.88] saturate-[0.95] group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-[1.03] transition-all duration-500"
+                      />
 
-                            {/* Centered Play Button */}
-                            <div className="absolute inset-0 flex items-center justify-center z-20">
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  if (!isCenter) {
-                                    setActiveVideoIndex(idx);
-                                    setPlayingVideoId(video.id);
-                                  } else {
-                                    setPlayingVideoId(video.id);
-                                  }
-                                }}
-                                className={`rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:scale-110 active:scale-95 transition-transform cursor-pointer ${
-                                  isCenter ? 'w-14 h-14 sm:w-16 sm:h-16' : 'w-11 h-11'
-                                }`}
-                                title="Play Reel"
-                              >
-                                <Play size={isCenter ? 22 : 16} fill="currentColor" className="ml-1" />
-                              </button>
-                            </div>
+                      {/* Minimal Centered Play Button (Revealed Only on Hover) */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-[#1591DC]/90 bg-[#07080b]/55 backdrop-blur-xs text-[#60b6ee] group-hover:bg-[#1591DC] group-hover:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
+                      >
+                        <Play size={16} fill="currentColor" className="ml-0.5" />
+                      </span>
 
-                            {/* Top Tag & Metric Pill */}
-                            <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-                              <span className="px-2.5 py-1 rounded-full bg-black/75 border border-white/10 text-[9px] sm:text-[10px] font-medium text-white/90 uppercase tracking-wider backdrop-blur-md">
-                                {video.tag}
-                              </span>
-                              <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[9px] sm:text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
-                                {video.metric}
-                              </span>
-                            </div>
-                          </>
-                        )}
+                      {/* Bottom Caption Overlay (Slides Up Only on Hover) */}
+                      <div className="absolute inset-x-0 bottom-0 z-10 p-3.5 text-left bg-gradient-to-t from-[#050608]/95 via-[#050608]/55 to-transparent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+                        <div className="text-white font-semibold text-xs sm:text-sm leading-snug truncate">
+                          {video.title}
+                        </div>
+                        <div className="flex items-center gap-1.5 mt-1 text-[10px] uppercase tracking-[0.14em] text-[#60b6ee] font-semibold truncate">
+                          <span>{video.formatLabel}</span>
+                          <span className="text-white/40">&middot;</span>
+                          <span className="text-white">{video.metric}</span>
+                        </div>
                       </div>
+                    </button>
+                  ))}
+                </div>
 
-                    </div>
-                  );
-                })}
+                {/* ROW 2: Auto-scroll Right / Reverse (Mixed 9:16 & 16:9 Uniform Height) */}
+                <div className="gx-track-right" role="list">
+                  {row2Videos.map((video, idx) => (
+                    <button
+                      key={`r2-${video.id}-${idx}`}
+                      type="button"
+                      role="listitem"
+                      onClick={() => setLightboxVideo(video)}
+                      aria-label={`Play ${video.title} fullscreen`}
+                      className={`group relative shrink-0 cursor-pointer overflow-hidden rounded-lg bg-black border border-white/[0.15] hover:border-[#1591DC]/85 shadow-[0_18px_48px_rgba(0,0,0,0.65)] hover:shadow-[0_24px_64px_rgba(21,145,220,0.3)] transition-all duration-300 h-[185px] sm:h-[225px] md:h-[255px] ${
+                        video.aspect === '16:9' ? 'aspect-[16/9]' : 'aspect-[9/16]'
+                      }`}
+                    >
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover brightness-[0.88] saturate-[0.95] group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-[1.03] transition-all duration-500"
+                      />
+
+                      {/* Minimal Centered Play Button (Revealed Only on Hover) */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-[#1591DC]/90 bg-[#07080b]/55 backdrop-blur-xs text-[#60b6ee] group-hover:bg-[#1591DC] group-hover:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
+                      >
+                        <Play size={16} fill="currentColor" className="ml-0.5" />
+                      </span>
+
+                      {/* Bottom Caption Overlay (Slides Up Only on Hover) */}
+                      <div className="absolute inset-x-0 bottom-0 z-10 p-3.5 text-left bg-gradient-to-t from-[#050608]/95 via-[#050608]/55 to-transparent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+                        <div className="text-white font-semibold text-xs sm:text-sm leading-snug truncate">
+                          {video.title}
+                        </div>
+                        <div className="flex items-center gap-1.5 mt-1 text-[10px] uppercase tracking-[0.14em] text-[#60b6ee] font-semibold truncate">
+                          <span>{video.formatLabel}</span>
+                          <span className="text-white/40">&middot;</span>
+                          <span className="text-white">{video.metric}</span>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
               </div>
-
-              {/* Dots Indicator */}
-              <div className="flex items-center justify-center gap-1.5 pt-4">
-                {showcaseVideos.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      setPlayingVideoId(null);
-                      setActiveVideoIndex(i);
-                    }}
-                    className={`transition-all duration-300 rounded-full cursor-pointer ${
-                      activeVideoIndex === i 
-                        ? 'w-6 h-1.5 bg-[#1591DC]' 
-                        : 'w-1.5 h-1.5 bg-white/20 hover:bg-white/40'
-                    }`}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-
             </div>
           )}
 
-          {/* GRID VIEW (ALL PROJECTS EXPLORER) */}
+          {/* GRID VIEW (ALL PROJECTS EXPLORER WITH CLEAN HOVER REVEAL & MIXED ASPECTS) */}
           {viewMode === 'grid' && (
             <div className="space-y-6">
               {/* Search Bar */}
@@ -707,7 +688,7 @@ export default function App() {
                   <Search size={13} className="text-[#8e909a]" />
                   <input 
                     type="text" 
-                    placeholder="Filter projects..." 
+                    placeholder="Filter 9:16 or 16:9 projects..." 
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="bg-transparent border-none outline-none text-xs text-white placeholder:text-[#8e909a]/60 w-full"
@@ -715,47 +696,43 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-center">
                 {displayedGridVideos.map((video) => (
-                  <div 
+                  <button
                     key={video.id}
-                    onClick={() => {
-                      const idx = showcaseVideos.findIndex(v => v.id === video.id);
-                      if (idx !== -1) {
-                        setActiveVideoIndex(idx);
-                        setPlayingVideoId(video.id);
-                        setViewMode('carousel');
-                      }
-                    }}
-                    className="group relative w-full aspect-[9/16] bg-black rounded-2xl overflow-hidden border border-white/[0.08] hover:border-white/[0.25] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(21,145,220,0.2)]"
+                    type="button"
+                    onClick={() => setLightboxVideo(video)}
+                    className={`group relative w-full bg-black rounded-lg overflow-hidden border border-white/[0.14] hover:border-[#1591DC]/80 shadow-[0_18px_48px_rgba(0,0,0,0.6)] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(21,145,220,0.25)] ${
+                      video.aspect === '16:9' ? 'sm:col-span-2 aspect-[16/9]' : 'aspect-[9/16]'
+                    }`}
                   >
                     <img 
                       src={video.thumbnail} 
                       alt={video.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      className="w-full h-full object-cover brightness-[0.88] saturate-[0.95] group-hover:brightness-100 group-hover:saturate-100 group-hover:scale-105 transition-all duration-500" 
                     />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
 
-                    <div className="absolute inset-0 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity">
-                      <div className="w-12 h-12 rounded-full bg-white text-[#1591DC] flex items-center justify-center shadow-[0_4px_25px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform">
-                        <Play size={18} fill="currentColor" className="ml-0.5" />
+                    {/* Minimal Play Button (Hover Reveal) */}
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-[#1591DC]/90 bg-[#07080b]/55 backdrop-blur-xs text-[#60b6ee] group-hover:bg-[#1591DC] group-hover:text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+                      <Play size={17} fill="currentColor" className="ml-0.5" />
+                    </span>
+
+                    {/* Bottom Caption Slide-Up (Hover Reveal) */}
+                    <div className="absolute inset-x-0 bottom-0 z-10 p-3.5 text-left bg-gradient-to-t from-[#050608]/95 via-[#050608]/55 to-transparent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+                      <div className="text-white font-semibold text-xs sm:text-sm leading-snug truncate">
+                        {video.title}
+                      </div>
+                      <div className="flex items-center gap-1.5 mt-1 text-[10px] uppercase tracking-[0.14em] text-[#60b6ee] font-semibold truncate">
+                        <span>{video.formatLabel}</span>
+                        <span className="text-white/40">&middot;</span>
+                        <span className="text-white">{video.metric}</span>
                       </div>
                     </div>
-
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
-                      <span className="px-2.5 py-1 rounded-full bg-black/75 text-[10px] text-white/90 border border-white/10 backdrop-blur-md font-medium uppercase tracking-wider">
-                        {video.tag}
-                      </span>
-                      <span className="px-2.5 py-1 rounded-full bg-[#1591DC]/30 border border-[#1591DC]/50 text-[10px] font-semibold text-[#7ed0ff] backdrop-blur-md">
-                        {video.metric}
-                      </span>
-                    </div>
-                  </div>
+                  </button>
                 ))}
               </div>
 
-              {filteredVideos.length > 4 && (
+              {filteredVideos.length > 8 && (
                 <div className="text-center pt-2">
                   <button
                     onClick={() => setShowAllVideos(!showAllVideos)}
@@ -1864,6 +1841,106 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* FULLSCREEN CINEMA LIGHTBOX MODAL (9:16 & 16:9 SUPPORT + SOUND) */}
+      {lightboxVideo && (
+        <div
+          id="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightboxVideo.title}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setLightboxVideo(null);
+          }}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#050608]/95 backdrop-blur-md p-4 sm:p-6"
+        >
+          {/* Top Right Close Button */}
+          <button
+            type="button"
+            onClick={() => setLightboxVideo(null)}
+            aria-label="Close video lightbox"
+            className="absolute top-4 right-4 sm:top-6 sm:right-7 z-50 w-10 h-10 rounded-full bg-white/[0.06] hover:bg-[#1591DC] border border-white/15 text-white flex items-center justify-center transition-colors cursor-pointer"
+          >
+            <X size={20} />
+          </button>
+
+          {/* Previous Video Button */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              const idx = showcaseVideos.findIndex((v) => v.id === lightboxVideo.id);
+              const prevIdx = (idx - 1 + showcaseVideos.length) % showcaseVideos.length;
+              setLightboxVideo(showcaseVideos[prevIdx]);
+            }}
+            aria-label="Previous piece"
+            className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full bg-white/[0.06] hover:bg-[#1591DC] border border-white/15 text-white items-center justify-center transition-colors cursor-pointer"
+          >
+            <ArrowLeft size={18} />
+          </button>
+
+          {/* Next Video Button */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              const idx = showcaseVideos.findIndex((v) => v.id === lightboxVideo.id);
+              const nextIdx = (idx + 1) % showcaseVideos.length;
+              setLightboxVideo(showcaseVideos[nextIdx]);
+            }}
+            aria-label="Next piece"
+            className="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full bg-white/[0.06] hover:bg-[#1591DC] border border-white/15 text-white items-center justify-center transition-colors cursor-pointer"
+          >
+            <ArrowRight size={18} />
+          </button>
+
+          {/* Video Container Adapting to 9:16 Portrait or 16:9 Landscape */}
+          <div
+            className={`relative bg-black rounded-lg overflow-hidden border border-[#1591DC]/50 shadow-[0_40px_120px_rgba(0,0,0,0.85)] ${
+              lightboxVideo.aspect === '16:9'
+                ? 'w-[min(92vw,960px)] aspect-[16/9]'
+                : 'h-[min(78vh,720px)] aspect-[9/16]'
+            }`}
+          >
+            <iframe
+              key={lightboxVideo.vimeoId}
+              src={`https://player.vimeo.com/video/${lightboxVideo.vimeoId}?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479`}
+              className="w-full h-full object-cover"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title={lightboxVideo.title}
+            />
+          </div>
+
+          {/* Bottom Caption & CTA Strip inside Lightbox */}
+          <div className="mt-4 w-[min(92vw,680px)] flex flex-col sm:flex-row items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[#0e1017]/90 border border-white/10">
+            <div className="flex items-center gap-3 min-w-0">
+              <img
+                src={lightboxVideo.avatar}
+                alt={lightboxVideo.author}
+                className="w-9 h-9 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
+              />
+              <div className="text-left min-w-0">
+                <div className="text-xs sm:text-sm font-semibold text-white truncate">
+                  {lightboxVideo.title}
+                </div>
+                <div className="text-[11px] text-[#8e909a] truncate">
+                  {lightboxVideo.author} &middot; <span className="text-[#60b6ee] font-semibold">{lightboxVideo.formatLabel}</span> &middot; <span className="text-white font-semibold">{lightboxVideo.metric}</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleCalendlyRedirect}
+              className="shrink-0 px-4 py-2 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full inline-flex items-center gap-1.5 transition-all cursor-pointer"
+            >
+              <span>Book Call</span>
+              <ArrowRight size={13} />
+            </button>
+          </div>
+        </div>
+      )}
 
     </div>
   );
