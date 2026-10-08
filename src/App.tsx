@@ -131,7 +131,7 @@ export default function App() {
 
   // ============================================================================
   // VIDEO SHOWCASE COLLECTION (SUPPORTS BOTH 9:16 VERTICAL & 16:9 HORIZONTAL)
-  // To update 16:9 videos later: simply change `vimeoId`, `thumbnail`, and `title`
+  // Temporarily hiding 16:9 items below — uncomment when ready to add horizontal videos
   // ============================================================================
   const showcaseVideos: ShowcaseVideoItem[] = [
     { 
@@ -162,6 +162,7 @@ export default function App() {
       thumbnail: "/thumbnails/1212585180.jpg",
       avatar: "/clients/vlady.jpg"
     },
+    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
     { 
       id: "wide-01",
       vimeoId: "1212586126", 
@@ -176,6 +177,7 @@ export default function App() {
       thumbnail: "/vision_pro_bg.jpg",
       avatar: "/clients/via_masi.jpg"
     },
+    */
     { 
       id: "reel-03",
       vimeoId: "1229475645", 
@@ -204,6 +206,7 @@ export default function App() {
       thumbnail: "/thumbnails/1229475642.jpg",
       avatar: "/clients/raul_ocana.jpg"
     },
+    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
     { 
       id: "wide-02",
       vimeoId: "1185563164", 
@@ -218,6 +221,7 @@ export default function App() {
       thumbnail: "/glass_3d_fluid.jpg",
       avatar: "/clients/hoang_phuc.jpg"
     },
+    */
     { 
       id: "reel-05",
       vimeoId: "1212585217", 
@@ -246,6 +250,7 @@ export default function App() {
       thumbnail: "/thumbnails/1212585328.jpg",
       avatar: "/clients/kaleemix.jpg"
     },
+    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
     { 
       id: "wide-03",
       vimeoId: "1185562977", 
@@ -260,6 +265,7 @@ export default function App() {
       thumbnail: "/chrome_ring.jpg",
       avatar: "/clients/kaleemix.jpg"
     },
+    */
     { 
       id: "reel-07",
       vimeoId: "1190211907", 
@@ -288,6 +294,7 @@ export default function App() {
       thumbnail: "/thumbnails/1185563238.jpg",
       avatar: "/clients/editoz.jpg"
     },
+    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
     { 
       id: "wide-04",
       vimeoId: "1185562812", 
@@ -302,12 +309,15 @@ export default function App() {
       thumbnail: "/skyscraper_night.jpg",
       avatar: "/clients/editoz.jpg"
     },
+    */
   ];
 
   // Row 1 & Row 2 sequences for Dual-Row Opposite Auto-Scrolling Marquee
-  const row1Videos = [...showcaseVideos, ...showcaseVideos];
-  const row2Seed = [...showcaseVideos.slice(5), ...showcaseVideos.slice(0, 5)].reverse();
-  const row2Videos = [...row2Seed, ...row2Seed];
+  const row1Half = [...showcaseVideos, ...showcaseVideos];
+  const row1Videos = [...row1Half, ...row1Half];
+  const row2Base = [...showcaseVideos.slice(4), ...showcaseVideos.slice(0, 4)].reverse();
+  const row2Half = [...row2Base, ...row2Base];
+  const row2Videos = [...row2Half, ...row2Half];
 
   // Lightbox keyboard navigation (ESC to close, Left/Right arrows to switch)
   useEffect(() => {
@@ -553,7 +563,7 @@ export default function App() {
               Under The <span className="text-[#1591DC]">Spotlight.</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              Short-form 9:16 reels and 16:9 VSL campaigns in motion. Hover to pause &middot; click any piece to watch full-screen with sound.
+              The full collection, in motion. Hover to pause &middot; click any piece to watch full-screen with sound.
             </p>
 
             {/* View Switcher */}
