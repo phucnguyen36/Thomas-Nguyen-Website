@@ -351,6 +351,36 @@ export default function App() {
   // AUTHENTIC CLIENT REVIEWS (ZERO EM-DASHES, ZERO AI SLOP, HIGHLIGHTED METRIC BANNERS)
   const clientReviews = [
     {
+      name: "Yoni Smolyar",
+      handle: "@yoniman.mp4",
+      role: "Founder, The Brainrot App",
+      avatar: "/clients/yoni_smolyar.jpg",
+      metric: "+1.2M Organic App Views",
+      comment: "Thomas knows how to engineer visual retention that keeps viewers glued until the last second. Our top of funnel short form hit all-time highs and drove massive app store conversion without dumbing down the product identity.",
+      stars: 5,
+      location: "United States"
+    },
+    {
+      name: "Bryce Haddock",
+      handle: "@northboundmedia",
+      role: "Founder, Northbound Media",
+      avatar: "/clients/bryce_haddock.jpg",
+      metric: "+340% Pipeline Calls",
+      comment: "Turnaround is lightning fast and the visual pacing framework is lethal for direct response. Thomas transformed raw footage into high converting client acquisition assets that bring qualified inbound calls consistently.",
+      stars: 5,
+      location: "United States"
+    },
+    {
+      name: "Eugene Fomin",
+      handle: "@fomineugeneofficial",
+      role: "Founder, Booster.LLC & Creator",
+      avatar: "/clients/eugene_fomin.jpg",
+      metric: "4.5x Organic Views",
+      comment: "Flawless kinetic pacing and custom sound design. He understands organic virality without relying on generic template packs. The highest ROI editing partnership for our ecosystem.",
+      stars: 5,
+      location: "Global"
+    },
+    {
       name: "Via Masi",
       handle: "@viamasi_media",
       role: "Creator & Agency Founder",
@@ -414,6 +444,67 @@ export default function App() {
 
   const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
   const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
+
+  // PARTNER BRANDS & CREATOR STUDIOS FOR LOGO SLIDER
+  const partnerBrands = [
+    { 
+      name: "The Brainrot App", 
+      type: "svg", 
+      src: "/clients/brainrot_wordmark_clean.svg",
+      icon: "/clients/brainrot_logo.svg",
+      tag: "THE BRAINROT APP"
+    },
+    { 
+      name: "Northbound Media", 
+      type: "img", 
+      src: "/clients/logo_northbound_dark.png",
+      tag: "NORTHBOUND MEDIA"
+    },
+    { 
+      name: "Airplane Mode", 
+      type: "img", 
+      src: "/clients/logo_airplane_mode_dark.png",
+      tag: "AIRPLANE MODE"
+    },
+    { 
+      name: "Riddle Marine", 
+      type: "img", 
+      src: "/clients/logo_riddle_marine.png",
+      tag: "RIDDLE MARINE"
+    },
+    { 
+      name: "Booster.LLC", 
+      type: "badge", 
+      tag: "BOOSTER.LLC", 
+      subtitle: "Web3 & SaaS" 
+    },
+    { 
+      name: "Viamasi Media", 
+      type: "badge", 
+      tag: "VIAMASI MEDIA", 
+      subtitle: "Creator Ecosystem" 
+    },
+    { 
+      name: "Vlady Official", 
+      type: "badge", 
+      tag: "VLADY", 
+      subtitle: "Digital Academy" 
+    },
+    { 
+      name: "Editoz Club", 
+      type: "badge", 
+      tag: "EDITOZ CLUB", 
+      subtitle: "Media Collective" 
+    },
+    { 
+      name: "Kaleemix Media", 
+      type: "badge", 
+      tag: "KALEEMIX B2B", 
+      subtitle: "Content Engine" 
+    }
+  ];
+
+  const brandLogosRow = [...partnerBrands, ...partnerBrands, ...partnerBrands];
 
   return (
     <div className="min-h-screen bg-[#07080b] text-[#f1f2f6] relative selection:bg-[#1591DC]/30 selection:text-white">
@@ -548,6 +639,68 @@ export default function App() {
             </div>
           </div>
 
+        </section>
+
+        {/* ========================================================================= */}
+        {/* BRAND LOGO SLIDER (CLIENT BRANDS, AGENCIES & VENTURES)                    */}
+        {/* ========================================================================= */}
+        <section className="pt-2 pb-6 text-center select-none overflow-hidden">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.24em] text-[#8e909a] font-medium mb-6">
+            Trusted By High Growth Brands &amp; Creator Companies
+          </p>
+
+          <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-3 [mask-image:linear-gradient(90deg,transparent_0%,black_15%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(90deg,transparent_0%,black_15%,black_85%,transparent_100%)]">
+            <div className="animate-marquee flex items-center gap-10 sm:gap-14 w-max opacity-75 hover:opacity-100 transition-opacity">
+              {brandLogosRow.map((b, i) => (
+                <div 
+                  key={`brand-${i}`} 
+                  className="flex items-center gap-2.5 shrink-0 group transition-all duration-300 hover:scale-105"
+                  title={b.name}
+                >
+                  {b.type === 'svg' && (
+                    <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#1591DC]/40 transition-colors">
+                      {b.icon && (
+                        <img 
+                          src={b.icon} 
+                          alt="" 
+                          className="w-5 h-5 object-contain" 
+                        />
+                      )}
+                      <img 
+                        src={b.src} 
+                        alt={b.name} 
+                        className="h-4 sm:h-5 w-auto object-contain text-white" 
+                      />
+                    </div>
+                  )}
+
+                  {b.type === 'img' && (
+                    <div className="flex items-center justify-center px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#1591DC]/40 transition-colors h-11">
+                      <img 
+                        src={b.src} 
+                        alt={b.name} 
+                        className="h-6 sm:h-7 w-auto max-w-[130px] sm:max-w-[160px] object-contain filter drop-shadow-sm" 
+                      />
+                    </div>
+                  )}
+
+                  {b.type === 'badge' && (
+                    <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#1591DC]/40 transition-colors h-11">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC]/80 group-hover:scale-125 transition-transform" />
+                      <span className="font-semibold text-xs sm:text-sm tracking-tight text-white/90 group-hover:text-white">
+                        {b.tag}
+                      </span>
+                      {b.subtitle && (
+                        <span className="text-[10px] uppercase tracking-wider text-[#8e909a] font-medium border-l border-white/10 pl-2">
+                          {b.subtitle}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* ========================================================================= */}
