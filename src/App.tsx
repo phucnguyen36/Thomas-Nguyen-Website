@@ -575,7 +575,7 @@ export default function App() {
         {/* ========================================================================= */}
         {/* 1. HERO SECTION (DIRECT RESPONSE OFFER FRONT & CENTER ABOVE THE FOLD)     */}
         {/* ========================================================================= */}
-        <section id="hero" className="pt-12 md:pt-18 text-center max-w-4xl mx-auto space-y-6 sm:space-y-7">
+        <section id="hero" className="pt-12 md:pt-18 text-center max-w-5xl mx-auto space-y-6 sm:space-y-7">
           
           {/* Target Audience & Turnaround Pill Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-xs font-medium text-[#d4d6e0] backdrop-blur-sm shadow-sm">
@@ -585,11 +585,16 @@ export default function App() {
             <span className="text-[11px] sm:text-xs font-semibold text-[#60b6ee]">48h Studio Delivery</span>
           </div>
           
-          {/* Main Direct Response Offer Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[62px] font-normal tracking-[-0.035em] leading-[1.12] max-w-4xl mx-auto [text-wrap:balance] text-white">
-            <span className="block">Direct Response Video Assets</span>
-            <span className="block mt-1 sm:mt-1.5 text-white/95">
-              Designed To Convert Viewers Into <span className="text-[#1591DC]">Paying Clients.</span>
+          {/* Main Direct Response Offer Headline (STRICT 2-LINE LAYOUT WITH SHAPE BOX HIGHLIGHT) */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] font-normal tracking-[-0.035em] leading-[1.2] max-w-5xl mx-auto text-white">
+            <span className="block sm:whitespace-nowrap">
+              Direct Response Video Assets
+            </span>
+            <span className="block mt-1 sm:mt-2 text-white/95 sm:whitespace-nowrap">
+              Designed To Convert Viewers Into{" "}
+              <span className="relative inline-block px-3 sm:px-4 py-0.5 sm:py-1 mx-1 rounded-xl sm:rounded-2xl bg-[#1591DC]/20 border border-[#1591DC]/70 text-[#60b6ee] shadow-[0_0_28px_rgba(21,145,220,0.35)] backdrop-blur-xs align-baseline">
+                Paying Clients.
+              </span>
             </span>
           </h1>
 
