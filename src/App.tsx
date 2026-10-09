@@ -577,11 +577,11 @@ export default function App() {
           </div>
           
           {/* Main Direct Response Offer Headline (CLEAN, CONFIDENT 2-LINE BOLD TYPOGRAPHY) */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[66px] font-bold tracking-tight text-white leading-[1.14] sm:leading-[1.12] max-w-4xl mx-auto text-center">
-            <span className="block sm:whitespace-nowrap">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[52px] font-bold tracking-tight text-white leading-[1.2] sm:leading-[1.16] max-w-5xl mx-auto text-center px-2">
+            <span className="block">
               Direct Response Video Assets
             </span>
-            <span className="block mt-1.5 sm:mt-2 text-white sm:whitespace-nowrap">
+            <span className="block mt-1.5 sm:mt-2 text-white">
               Designed To Convert Viewers Into{" "}
               <span className="text-[#1591DC]">
                 Paying Clients.
