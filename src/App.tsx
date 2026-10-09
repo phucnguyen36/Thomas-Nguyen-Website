@@ -566,52 +566,74 @@ export default function App() {
       <main className="relative z-10 space-y-24 md:space-y-32 pb-24 max-w-[1160px] mx-auto px-4 sm:px-6">
         
         {/* ========================================================================= */}
-        {/* 1. HERO SECTION (DIRECT RESPONSE OFFER FRONT & CENTER ABOVE THE FOLD)     */}
+        {/* 1. HERO SECTION (CLEAN MINIMAL TYPOGRAPHY INSPIRED BY REFERENCE)          */}
         {/* ========================================================================= */}
-        <section id="hero" className="pt-12 md:pt-18 text-center max-w-5xl mx-auto space-y-6 sm:space-y-7">
+        <section id="hero" className="pt-12 md:pt-16 text-center max-w-5xl mx-auto space-y-5 sm:space-y-6">
           
-          {/* Target Audience & Turnaround Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/10 border border-[#1591DC]/30 text-xs font-medium text-[#d4d6e0] backdrop-blur-sm shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span className="text-[11px] sm:text-xs text-white font-medium tracking-wide">For Founders, Coaches &amp; Creators</span>
-            <span className="text-[#8e909a] text-[11px]">·</span>
-            <span className="text-[11px] sm:text-xs font-semibold text-[#60b6ee]">48h Studio Delivery</span>
+          {/* Status Indicator */}
+          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-[#9da0af]">
+            <span className="w-2 h-2 rounded-full bg-[#1591DC] shadow-[0_0_8px_#1591DC] animate-pulse" />
+            <span>3 Spots Available &middot; 48h Studio Delivery</span>
           </div>
           
-          {/* Main Direct Response Offer Headline (BOLD CENTERED 2-LINE TYPOGRAPHY, COLOR-ONLY HIGHLIGHT) */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[62px] font-bold sm:font-extrabold tracking-[-0.03em] leading-[1.2] sm:leading-[1.18] max-w-5xl mx-auto text-center text-white">
+          {/* Main Direct Response Offer Headline (CLEAN, CONFIDENT 2-LINE BOLD TYPOGRAPHY) */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[66px] font-bold tracking-tight text-white leading-[1.14] sm:leading-[1.12] max-w-4xl mx-auto text-center">
             <span className="block sm:whitespace-nowrap">
               Direct Response Video Assets
             </span>
             <span className="block mt-1.5 sm:mt-2 text-white sm:whitespace-nowrap">
               Designed To Convert Viewers Into{" "}
-              <span className="text-[#1591DC] drop-shadow-[0_0_20px_rgba(21,145,220,0.35)]">
+              <span className="text-[#1591DC]">
                 Paying Clients.
               </span>
             </span>
           </h1>
 
-          {/* Clear Target Audience & Result Subheadline */}
-          <p className="text-sm sm:text-base md:text-lg text-[#b0b3c0] leading-relaxed max-w-2xl mx-auto font-normal">
-            We engineer high retention Reels, TikToks, and Video Sales Letters for <strong className="text-white font-medium">founders, executive coaches, and personal brands</strong>. Stop losing viewers in the first 3 seconds and start turning raw footage into qualified inbound calls and product sales.
+          {/* Clean Subheadline */}
+          <p className="text-sm sm:text-base text-[#9da0af] leading-relaxed max-w-xl mx-auto font-normal">
+            High retention Reels, TikToks &amp; Video Sales Letters engineered for founders, executive coaches, and personal brands.
           </p>
 
-          {/* Top-of-Page Action Buttons (CTA #1) */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+          {/* Action Buttons Row */}
+          <div className="pt-1 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
             <button 
               onClick={handleCalendlyRedirect}
-              className="w-full sm:w-auto px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm sm:text-base font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2.5 transition-all shadow-[0_6px_28px_rgba(21,145,220,0.45)] hover:shadow-[0_8px_36px_rgba(21,145,220,0.65)] hover:-translate-y-0.5 cursor-pointer"
+              className="w-full sm:w-auto px-7 py-3 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2 transition-all shadow-[0_4px_20px_rgba(21,145,220,0.35)] hover:shadow-[0_6px_28px_rgba(21,145,220,0.5)] hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Book a 15 Min Strategy Call</span>
-              <ArrowRight size={16} />
+              <ArrowRight size={14} />
             </button>
 
             <a 
               href="#work"
-              className="w-full sm:w-auto px-6 py-4 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/[0.2] text-[#d4d6e0] hover:text-white text-sm sm:text-base font-medium rounded-full tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-4 py-3 text-xs sm:text-sm font-medium text-[#9da0af] hover:text-white transition-colors cursor-pointer inline-flex items-center justify-center gap-1.5"
             >
               <span>Watch Client Results ↓</span>
             </a>
+          </div>
+
+          {/* Overlapping Client Avatars & Social Proof */}
+          <div className="flex items-center justify-center gap-2.5 pt-1">
+            <div className="flex items-center -space-x-2">
+              <img 
+                src="/clients/via_masi.jpg" 
+                alt="Via Masi" 
+                className="w-7 h-7 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+              <img 
+                src="/clients/vlady.jpg" 
+                alt="Vlady" 
+                className="w-7 h-7 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+              <img 
+                src="/clients/eugene_fomin.jpg" 
+                alt="Eugene Fomin" 
+                className="w-7 h-7 rounded-full object-cover border-2 border-[#07080b]" 
+              />
+            </div>
+            <span className="text-xs text-[#8e909a]">
+              <strong className="text-white font-semibold">20+</strong> Founders worldwide
+            </span>
           </div>
 
           {/* Highlighted Social Proof Metrics Bar */}
