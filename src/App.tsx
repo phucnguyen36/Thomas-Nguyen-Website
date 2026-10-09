@@ -958,69 +958,69 @@ export default function App() {
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
 
-            <div className="animate-marquee gap-3.5 sm:gap-4">
+            <div className="animate-marquee gap-3 sm:gap-3.5">
               {marqueeReviewsRow1.map((rev, i) => (
                 <div 
                   key={`r1-${i}`}
-                  className="bg-[#0d0f15]/90 border border-white/[0.08] hover:border-[#1591DC]/40 rounded-xl w-[280px] sm:w-[310px] p-3.5 sm:p-4 shrink-0 flex flex-col justify-between space-y-3 shadow-sm select-none transition-colors"
+                  className="bg-[#0d0f15]/90 border border-white/[0.08] hover:border-[#1591DC]/40 rounded-xl w-[240px] sm:w-[260px] p-3 sm:p-3.5 shrink-0 flex flex-col justify-between space-y-2.5 shadow-sm select-none transition-colors"
                 >
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {/* 1. Client Name & Verified Info at Top */}
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-2">
                         <img 
                           src={rev.avatar} 
                           alt={rev.name}
-                          className="w-8 h-8 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
+                          className="w-7 h-7 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
                         />
                         <div className="text-left">
                           <div className="flex items-center gap-1">
-                            <span className="text-white font-semibold text-xs sm:text-[13px] leading-tight">{rev.name}</span>
-                            <CheckCircle2 size={11} className="text-[#1591DC] shrink-0" />
+                            <span className="text-white font-semibold text-xs leading-tight">{rev.name}</span>
+                            <CheckCircle2 size={10} className="text-[#1591DC] shrink-0" />
                           </div>
-                          <span className="text-[10px] sm:text-[11px] text-[#8e909a] block truncate max-w-[120px]">{rev.role}</span>
+                          <span className="text-[10px] text-[#8e909a] block truncate max-w-[100px]">{rev.role}</span>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-0.5 text-amber-400 shrink-0">
                         {[1, 2, 3, 4, 5].map((s) => {
                           if (rev.stars >= s) {
-                            return <Star key={s} size={11} fill="currentColor" />;
+                            return <Star key={s} size={10} fill="currentColor" />;
                           } else if (rev.stars >= s - 0.5) {
-                            return <StarHalf key={s} size={11} fill="currentColor" />;
+                            return <StarHalf key={s} size={10} fill="currentColor" />;
                           } else {
-                            return <Star key={s} size={11} className="text-amber-400/30" />;
+                            return <Star key={s} size={10} className="text-amber-400/30" />;
                           }
                         })}
-                        <span className="text-[10px] font-semibold text-amber-400/90 ml-0.5">
+                        <span className="text-[9.5px] font-semibold text-amber-400/90 ml-0.5">
                           {rev.stars.toFixed(1)}
                         </span>
                       </div>
                     </div>
 
                     {/* 2. COMPACT BLUE RESULT BANNER */}
-                    <div className="w-full py-1.5 px-3 rounded-lg bg-gradient-to-r from-[#1591DC] to-[#0f7bbd] border border-[#60b6ee]/40 shadow-[0_2px_12px_rgba(21,145,220,0.25)] flex items-center justify-between">
+                    <div className="w-full py-1 px-2.5 rounded-md bg-gradient-to-r from-[#1591DC] to-[#0f7bbd] border border-[#60b6ee]/40 shadow-[0_2px_10px_rgba(21,145,220,0.2)] flex items-center justify-between">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <Zap size={13} className="text-white fill-white shrink-0" />
-                        <span className="text-[11px] sm:text-xs font-bold tracking-tight text-white uppercase truncate">
+                        <Zap size={11} className="text-white fill-white shrink-0" />
+                        <span className="text-[10px] sm:text-[11px] font-bold tracking-tight text-white uppercase truncate">
                           {rev.metric}
                         </span>
                       </div>
-                      <span className="text-[9px] font-semibold uppercase tracking-wider text-white/90 bg-black/25 px-2 py-0.5 rounded-full shrink-0 ml-1.5">
+                      <span className="text-[8px] font-semibold uppercase tracking-wider text-white/90 bg-black/25 px-1.5 py-0.5 rounded-full shrink-0 ml-1">
                         ROI
                       </span>
                     </div>
 
                     {/* 3. Clean Review Text */}
-                    <p className="text-[11px] sm:text-xs text-[#c6c8d4] leading-relaxed text-left">
+                    <p className="text-[10px] sm:text-[11px] text-[#c6c8d4] leading-snug sm:leading-relaxed text-left">
                       "{rev.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-2.5 border-t border-white/[0.06] text-[10px] text-[#8e909a]">
-                    <span className="truncate max-w-[130px]">{rev.handle}</span>
+                  <div className="flex items-center justify-between pt-2 border-t border-white/[0.06] text-[9.5px] text-[#8e909a]">
+                    <span className="truncate max-w-[110px]">{rev.handle}</span>
                     <span className="text-emerald-400 font-medium flex items-center gap-1 shrink-0">
-                      <CheckCircle2 size={10} /> Verified
+                      <CheckCircle2 size={9} /> Verified
                     </span>
                   </div>
                 </div>
@@ -1033,69 +1033,69 @@ export default function App() {
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
 
-            <div className="animate-marquee-reverse gap-3.5 sm:gap-4">
+            <div className="animate-marquee-reverse gap-3 sm:gap-3.5">
               {marqueeReviewsRow2.map((rev, i) => (
                 <div 
                   key={`r2-${i}`}
-                  className="bg-[#0d0f15]/90 border border-white/[0.08] hover:border-[#1591DC]/40 rounded-xl w-[280px] sm:w-[310px] p-3.5 sm:p-4 shrink-0 flex flex-col justify-between space-y-3 shadow-sm select-none transition-colors"
+                  className="bg-[#0d0f15]/90 border border-white/[0.08] hover:border-[#1591DC]/40 rounded-xl w-[240px] sm:w-[260px] p-3 sm:p-3.5 shrink-0 flex flex-col justify-between space-y-2.5 shadow-sm select-none transition-colors"
                 >
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {/* 1. Client Name & Verified Info at Top */}
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-2">
                         <img 
                           src={rev.avatar} 
                           alt={rev.name}
-                          className="w-8 h-8 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
+                          className="w-7 h-7 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
                         />
                         <div className="text-left">
                           <div className="flex items-center gap-1">
-                            <span className="text-white font-semibold text-xs sm:text-[13px] leading-tight">{rev.name}</span>
-                            <CheckCircle2 size={11} className="text-[#1591DC] shrink-0" />
+                            <span className="text-white font-semibold text-xs leading-tight">{rev.name}</span>
+                            <CheckCircle2 size={10} className="text-[#1591DC] shrink-0" />
                           </div>
-                          <span className="text-[10px] sm:text-[11px] text-[#8e909a] block truncate max-w-[120px]">{rev.role}</span>
+                          <span className="text-[10px] text-[#8e909a] block truncate max-w-[100px]">{rev.role}</span>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-0.5 text-amber-400 shrink-0">
                         {[1, 2, 3, 4, 5].map((s) => {
                           if (rev.stars >= s) {
-                            return <Star key={s} size={11} fill="currentColor" />;
+                            return <Star key={s} size={10} fill="currentColor" />;
                           } else if (rev.stars >= s - 0.5) {
-                            return <StarHalf key={s} size={11} fill="currentColor" />;
+                            return <StarHalf key={s} size={10} fill="currentColor" />;
                           } else {
-                            return <Star key={s} size={11} className="text-amber-400/30" />;
+                            return <Star key={s} size={10} className="text-amber-400/30" />;
                           }
                         })}
-                        <span className="text-[10px] font-semibold text-amber-400/90 ml-0.5">
+                        <span className="text-[9.5px] font-semibold text-amber-400/90 ml-0.5">
                           {rev.stars.toFixed(1)}
                         </span>
                       </div>
                     </div>
 
                     {/* 2. COMPACT BLUE RESULT BANNER */}
-                    <div className="w-full py-1.5 px-3 rounded-lg bg-gradient-to-r from-[#1591DC] to-[#0f7bbd] border border-[#60b6ee]/40 shadow-[0_2px_12px_rgba(21,145,220,0.25)] flex items-center justify-between">
+                    <div className="w-full py-1 px-2.5 rounded-md bg-gradient-to-r from-[#1591DC] to-[#0f7bbd] border border-[#60b6ee]/40 shadow-[0_2px_10px_rgba(21,145,220,0.2)] flex items-center justify-between">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <Zap size={13} className="text-white fill-white shrink-0" />
-                        <span className="text-[11px] sm:text-xs font-bold tracking-tight text-white uppercase truncate">
+                        <Zap size={11} className="text-white fill-white shrink-0" />
+                        <span className="text-[10px] sm:text-[11px] font-bold tracking-tight text-white uppercase truncate">
                           {rev.metric}
                         </span>
                       </div>
-                      <span className="text-[9px] font-semibold uppercase tracking-wider text-white/90 bg-black/25 px-2 py-0.5 rounded-full shrink-0 ml-1.5">
+                      <span className="text-[8px] font-semibold uppercase tracking-wider text-white/90 bg-black/25 px-1.5 py-0.5 rounded-full shrink-0 ml-1">
                         ROI
                       </span>
                     </div>
 
                     {/* 3. Clean Review Text */}
-                    <p className="text-[11px] sm:text-xs text-[#c6c8d4] leading-relaxed text-left">
+                    <p className="text-[10px] sm:text-[11px] text-[#c6c8d4] leading-snug sm:leading-relaxed text-left">
                       "{rev.comment}"
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-2.5 border-t border-white/[0.06] text-[10px] text-[#8e909a]">
-                    <span className="truncate max-w-[130px]">{rev.handle}</span>
+                  <div className="flex items-center justify-between pt-2 border-t border-white/[0.06] text-[9.5px] text-[#8e909a]">
+                    <span className="truncate max-w-[110px]">{rev.handle}</span>
                     <span className="text-emerald-400 font-medium flex items-center gap-1 shrink-0">
-                      <CheckCircle2 size={10} /> Verified
+                      <CheckCircle2 size={9} /> Verified
                     </span>
                   </div>
                 </div>
