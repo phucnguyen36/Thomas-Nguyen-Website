@@ -445,66 +445,72 @@ export default function App() {
   const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
   const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
 
-  // PARTNER BRANDS & CREATOR STUDIOS FOR LOGO SLIDER
-  const partnerBrands = [
-    { 
-      name: "The Brainrot App", 
-      type: "svg", 
-      src: "/clients/brainrot_wordmark_clean.svg",
-      icon: "/clients/brainrot_logo.svg",
-      tag: "THE BRAINROT APP"
+  // 10 OFFICIAL CLIENT & PARTNER BRANDS (ALL PURE WHITE FILL)
+  const brandList = [
+    {
+      name: "Fitness Hibrido",
+      src: "/brands/fitness_hibrido_white.png",
+      href: "https://fitnesshibrido.com/",
+      hClass: "h-5 sm:h-6"
     },
-    { 
-      name: "Northbound Media", 
-      type: "img", 
-      src: "/clients/logo_northbound_dark.png",
-      tag: "NORTHBOUND MEDIA"
+    {
+      name: "Kaleemix Media",
+      src: "/brands/kaleemix_white.png",
+      href: "https://kaleemix.com/",
+      hClass: "h-4 sm:h-5"
     },
-    { 
-      name: "Airplane Mode", 
-      type: "img", 
-      src: "/clients/logo_airplane_mode_dark.png",
-      tag: "AIRPLANE MODE"
+    {
+      name: "Daily Motivation",
+      src: "/brands/daily_motivation_white.png",
+      href: "https://goingnorthbound.com/",
+      hClass: "h-4 sm:h-5"
     },
-    { 
-      name: "Riddle Marine", 
-      type: "img", 
-      src: "/clients/logo_riddle_marine.png",
-      tag: "RIDDLE MARINE"
+    {
+      name: "Wizlo",
+      src: "/brands/wizlo_white.svg",
+      href: "https://www.wizlo.com/",
+      hClass: "h-5 sm:h-6"
     },
-    { 
-      name: "Booster.LLC", 
-      type: "badge", 
-      tag: "BOOSTER.LLC", 
-      subtitle: "Web3 & SaaS" 
+    {
+      name: "Editoz Club",
+      src: "/brands/editoz_club_white.png",
+      href: "https://editozclub.com/",
+      hClass: "h-4 sm:h-5"
     },
-    { 
-      name: "Viamasi Media", 
-      type: "badge", 
-      tag: "VIAMASI MEDIA", 
-      subtitle: "Creator Ecosystem" 
+    {
+      name: "Via Masi",
+      src: "/brands/viamasi_white.svg",
+      href: "https://www.viamasi.com/",
+      hClass: "h-3.5 sm:h-4.5"
     },
-    { 
-      name: "Vlady Official", 
-      type: "badge", 
-      tag: "VLADY", 
-      subtitle: "Digital Academy" 
+    {
+      name: "SaaS Navigator",
+      src: "/brands/saas_navigator_white.png",
+      href: "https://saasnavigator.io/",
+      hClass: "h-5 sm:h-6"
     },
-    { 
-      name: "Editoz Club", 
-      type: "badge", 
-      tag: "EDITOZ CLUB", 
-      subtitle: "Media Collective" 
+    {
+      name: "The Brainrot App",
+      src: "/brands/brainrot_white.svg",
+      href: "https://thebrainrotapp.com/",
+      hClass: "h-4 sm:h-5"
     },
-    { 
-      name: "Kaleemix Media", 
-      type: "badge", 
-      tag: "KALEEMIX B2B", 
-      subtitle: "Content Engine" 
+    {
+      name: "CreateMore",
+      src: "/brands/createmore_white.png",
+      href: "https://www.createmore.us/",
+      hClass: "h-5 sm:h-6"
+    },
+    {
+      name: "Checkmate",
+      src: "/brands/checkmate_white.svg",
+      href: "https://www.itsacheckmate.com/",
+      hClass: "h-5 sm:h-6"
     }
   ];
 
-  const brandLogosRow = [...partnerBrands, ...partnerBrands, ...partnerBrands];
+  // Duplicated for seamless infinite marquee loop
+  const brandLogosRow = [...brandList, ...brandList];
 
   return (
     <div className="min-h-screen bg-[#07080b] text-[#f1f2f6] relative selection:bg-[#1591DC]/30 selection:text-white">
@@ -642,62 +648,36 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* BRAND LOGO SLIDER (CLIENT BRANDS, AGENCIES & VENTURES)                    */}
+        {/* BRAND LOGO SLIDER (MATCH REFERENCE DESIGN: PURE WHITE, NO BOXES, DIVIDER)  */}
         {/* ========================================================================= */}
-        <section className="pt-2 pb-6 text-center select-none overflow-hidden">
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.24em] text-[#8e909a] font-medium mb-6">
-            Trusted By High Growth Brands &amp; Creator Companies
-          </p>
+        <section className="pt-6 pb-8 text-center select-none overflow-hidden">
+          {/* Centered Heading with Left & Right Horizontal Divider Rules */}
+          <div className="flex items-center justify-center gap-4 max-w-4xl mx-auto px-6 mb-8">
+            <div className="h-px bg-white/10 flex-1 max-w-[200px] sm:max-w-[280px]" />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#8e909a] font-medium shrink-0">
+              Trusted by Brands Nationwide
+            </span>
+            <div className="h-px bg-white/10 flex-1 max-w-[200px] sm:max-w-[280px]" />
+          </div>
 
+          {/* Seamless Infinite Slider with Edge Gradient Fade */}
           <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-3 [mask-image:linear-gradient(90deg,transparent_0%,black_15%,black_85%,transparent_100%)] [-webkit-mask-image:linear-gradient(90deg,transparent_0%,black_15%,black_85%,transparent_100%)]">
-            <div className="animate-marquee flex items-center gap-10 sm:gap-14 w-max opacity-75 hover:opacity-100 transition-opacity">
+            <div className="animate-marquee flex items-center gap-14 sm:gap-20 md:gap-24 w-max">
               {brandLogosRow.map((b, i) => (
-                <div 
+                <a 
                   key={`brand-${i}`} 
-                  className="flex items-center gap-2.5 shrink-0 group transition-all duration-300 hover:scale-105"
+                  href={b.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center shrink-0 opacity-65 hover:opacity-100 transition-all duration-300 hover:scale-105"
                   title={b.name}
                 >
-                  {b.type === 'svg' && (
-                    <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#1591DC]/40 transition-colors">
-                      {b.icon && (
-                        <img 
-                          src={b.icon} 
-                          alt="" 
-                          className="w-5 h-5 object-contain" 
-                        />
-                      )}
-                      <img 
-                        src={b.src} 
-                        alt={b.name} 
-                        className="h-4 sm:h-5 w-auto object-contain text-white" 
-                      />
-                    </div>
-                  )}
-
-                  {b.type === 'img' && (
-                    <div className="flex items-center justify-center px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#1591DC]/40 transition-colors h-11">
-                      <img 
-                        src={b.src} 
-                        alt={b.name} 
-                        className="h-6 sm:h-7 w-auto max-w-[130px] sm:max-w-[160px] object-contain filter drop-shadow-sm" 
-                      />
-                    </div>
-                  )}
-
-                  {b.type === 'badge' && (
-                    <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#1591DC]/40 transition-colors h-11">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC]/80 group-hover:scale-125 transition-transform" />
-                      <span className="font-semibold text-xs sm:text-sm tracking-tight text-white/90 group-hover:text-white">
-                        {b.tag}
-                      </span>
-                      {b.subtitle && (
-                        <span className="text-[10px] uppercase tracking-wider text-[#8e909a] font-medium border-l border-white/10 pl-2">
-                          {b.subtitle}
-                        </span>
-                      )}
-                    </div>
-                  )}
-                </div>
+                  <img 
+                    src={b.src} 
+                    alt={b.name} 
+                    className={`${b.hClass} w-auto max-w-[150px] sm:max-w-[180px] object-contain filter brightness-0 invert`} 
+                  />
+                </a>
               ))}
             </div>
           </div>
