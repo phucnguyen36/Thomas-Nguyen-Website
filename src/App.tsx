@@ -214,12 +214,12 @@ export default function App() {
       formatLabel: "Short-Form · 9:16",
       tag: "06 / BRANDING", 
       title: "Brand Identity & Aesthetics",
-      author: "Hoang Phuc",
-      authorRole: "Tech Creator & Educator",
-      company: "TECH ECOSYSTEM",
+      author: "CreateMore",
+      authorRole: "Creative Agency & Studio",
+      company: "CREATEMORE",
       metric: "84% 5S Retention",
       thumbnail: "/thumbnails/1212585217.jpg",
-      avatar: "/clients/hoang_phuc.jpg"
+      avatar: "/clients/bryce_haddock.jpg"
     },
     { 
       id: "wide-02",
@@ -319,7 +319,7 @@ export default function App() {
   ];
 
   const row2List = [
-    showcaseVideos[5],  // reel-05 (Hoang Phuc - White Mockup Card B, pushed to far left edge)
+    showcaseVideos[5],  // reel-05 (CreateMore - White Mockup Card B, pushed to far left edge)
     showcaseVideos[7],  // reel-06 (Kaleemix Media - Dark)
     showcaseVideos[6],  // wide-02 (Booster.LLC - 16:9 Landscape Center Anchor)
     showcaseVideos[8],  // reel-07 (Raul Ocana - Dark)
@@ -430,16 +430,6 @@ export default function App() {
       comment: "As a creator myself I'm very picky with audio leveling and color grade. Thomas surprised me with the first draft quality. Helped us sell out our digital cohort without running paid ads.",
       stars: 4.5,
       location: "Global"
-    },
-    {
-      name: "Hoang Phuc",
-      handle: "@hoangphuc_creator",
-      role: "Tech Creator & Motion",
-      avatar: "/clients/hoang_phuc.jpg",
-      metric: "84% 5S Retention",
-      comment: "Hook retention on my YouTube Shorts went from 38% straight to 84%. Frame.io review was super smooth and he delivered every cut a few hours ahead of schedule. Very solid work ethic.",
-      stars: 5,
-      location: "Vietnam"
     },
     {
       name: "Chali Weerakkody",
@@ -1934,8 +1924,8 @@ export default function App() {
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
               />
               <img 
-                src="/clients/hoang_phuc.jpg" 
-                alt="Hoang Phuc" 
+                src="/clients/eugene_fomin.jpg" 
+                alt="Eugene Fomin" 
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-[#07080b]" 
               />
               <img 
@@ -1945,7 +1935,7 @@ export default function App() {
               />
             </div>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              Trusted by <strong className="text-white font-medium">Via Masi (+210% Inbox)</strong>, <strong className="text-white font-medium">Vlady (3.2x Sales)</strong>, <strong className="text-white font-medium">Hoang Phuc (84% Retention)</strong>, and 20+ founders worldwide.
+              Trusted by <strong className="text-white font-medium">Via Masi (+210% Inbox)</strong>, <strong className="text-white font-medium">Vlady (3.2x Sales)</strong>, <strong className="text-white font-medium">Eugene Fomin (4.5x Views)</strong>, and 20+ founders worldwide.
             </p>
           </div>
 
