@@ -576,13 +576,13 @@ export default function App() {
             <span>3 Spots Available &middot; 48h Studio Delivery</span>
           </div>
           
-          {/* Main Direct Response Offer Headline (CLEAN, CONFIDENT 2-LINE BOLD TYPOGRAPHY) */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[52px] font-bold tracking-tight text-white leading-[1.2] sm:leading-[1.16] max-w-5xl mx-auto text-center px-2">
+          {/* Main Direct Response Offer Headline (CONCISE 2-LINE SEMIBOLD TYPOGRAPHY) */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold tracking-[-0.025em] text-white leading-[1.2] sm:leading-[1.18] max-w-4xl mx-auto text-center px-2">
             <span className="block">
-              Direct Response Video Assets
+              Direct Response Videos
             </span>
             <span className="block mt-1.5 sm:mt-2 text-white">
-              Designed To Convert Viewers Into{" "}
+              That Win{" "}
               <span className="text-[#1591DC]">
                 Paying Clients.
               </span>
