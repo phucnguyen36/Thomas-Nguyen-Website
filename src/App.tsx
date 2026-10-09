@@ -141,7 +141,7 @@ export default function App() {
       id: "reel-01",
       vimeoId: "1229475646", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "01 / CONVERSION", 
       title: "High Energy Conversion Cuts",
       author: "Via Masi",
@@ -155,7 +155,7 @@ export default function App() {
       id: "reel-02",
       vimeoId: "1212585180", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "02 / PACING", 
       title: "Motion Pacing & Dynamic Cuts",
       author: "Vlady",
@@ -169,7 +169,7 @@ export default function App() {
       id: "wide-01",
       vimeoId: "1234323889", 
       aspect: "16:9",
-      formatLabel: "Commercial Narrative · 16:9",
+      formatLabel: "Commercial Narrative 16:9",
       tag: "03 / COMMERCIAL 16:9", 
       title: "Commercial Brand Narrative & Motion Systems",
       author: "Northbound Media",
@@ -183,7 +183,7 @@ export default function App() {
       id: "reel-03",
       vimeoId: "1229475645", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "04 / HOOK ENGINE", 
       title: "Visual Hook & Retention Architecture",
       author: "Online Coach & Creator",
@@ -197,7 +197,7 @@ export default function App() {
       id: "reel-04",
       vimeoId: "1229475642", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "05 / KINETIC PACING", 
       title: "Dynamic Pattern Interrupt & Motion",
       author: "Executive Brand",
@@ -211,7 +211,7 @@ export default function App() {
       id: "reel-05",
       vimeoId: "1212585217", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "06 / BRANDING", 
       title: "Brand Identity & Aesthetics",
       author: "CreateMore",
@@ -225,7 +225,7 @@ export default function App() {
       id: "wide-02",
       vimeoId: "1234323845", 
       aspect: "16:9",
-      formatLabel: "VSL Direct Response · 16:9",
+      formatLabel: "VSL Direct Response 16:9",
       tag: "07 / HIGH TICKET VSL", 
       title: "High Ticket VSL Architecture & Editorial",
       author: "Eugene Fomin",
@@ -239,7 +239,7 @@ export default function App() {
       id: "reel-06",
       vimeoId: "1212585328", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "08 / STORYTELLING", 
       title: "Cinematic Visual Storytelling",
       author: "Kaleemix",
@@ -253,7 +253,7 @@ export default function App() {
       id: "reel-07",
       vimeoId: "1190211907", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "09 / RETENTION", 
       title: "Hook Mechanics & SFX Architecture",
       author: "Raul Ocana",
@@ -267,7 +267,7 @@ export default function App() {
       id: "reel-08",
       vimeoId: "1185563238", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "10 / COLOR GRADE", 
       title: "Rec.709 Studio Color Calibration",
       author: "Chali Weerakkody",
@@ -281,7 +281,7 @@ export default function App() {
       id: "reel-09",
       vimeoId: "1234323872", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "11 / APP RETENTION", 
       title: "Visual Pacing & Viral Retention",
       author: "The Brainrot App",
@@ -295,7 +295,7 @@ export default function App() {
       id: "reel-10",
       vimeoId: "1234323843", 
       aspect: "9:16",
-      formatLabel: "Short-Form · 9:16",
+      formatLabel: "Short Form 9:16",
       tag: "12 / DIRECT RESPONSE", 
       title: "High Energy Direct Response Cut",
       author: "Fitness Híbrido",
@@ -570,12 +570,6 @@ export default function App() {
         {/* ========================================================================= */}
         <section id="hero" className="pt-12 md:pt-16 text-center max-w-5xl mx-auto space-y-5 sm:space-y-6">
           
-          {/* Status Indicator */}
-          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-[#9da0af]">
-            <span className="w-2 h-2 rounded-full bg-[#1591DC] shadow-[0_0_8px_#1591DC] animate-pulse" />
-            <span>3 Spots Available &middot; 48h Studio Delivery</span>
-          </div>
-          
           {/* Main Direct Response Offer Headline (CONCISE 2-LINE SEMIBOLD TYPOGRAPHY) */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold tracking-[-0.025em] text-white leading-[1.2] sm:leading-[1.18] max-w-4xl mx-auto text-center px-2">
             <span className="block">
@@ -715,19 +709,19 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 2. THE GALLERY — DUAL-ROW AUTO-SCROLL SHOWCASE (9:16 & 16:9 + LIGHTBOX)   */}
+        {/* 2. THE GALLERY / DUAL-ROW AUTO-SCROLL SHOWCASE (9:16 & 16:9 + LIGHTBOX)   */}
         {/* ========================================================================= */}
         <section id="work" className="space-y-8 pt-4 scroll-mt-20">
           
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              The Gallery &middot; Selected Works
+              The Gallery / Selected Works
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
               Under The <span className="text-[#1591DC]">Spotlight.</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8e909a]">
-              The full collection, in motion. Hover to pause &middot; click any piece to watch full-screen with sound.
+              The full collection, in motion. Hover to pause, click any piece to watch full screen with sound.
             </p>
 
             {/* View Switcher */}
@@ -798,7 +792,7 @@ export default function App() {
                         </div>
                         <div className="flex items-center gap-1.5 mt-1 text-[10px] uppercase tracking-[0.14em] text-[#60b6ee] font-semibold truncate">
                           <span>{video.formatLabel}</span>
-                          <span className="text-white/40">&middot;</span>
+                          <span className="text-white/30">/</span>
                           <span className="text-white">{video.metric}</span>
                         </div>
                       </div>
@@ -841,7 +835,7 @@ export default function App() {
                         </div>
                         <div className="flex items-center gap-1.5 mt-1 text-[10px] uppercase tracking-[0.14em] text-[#60b6ee] font-semibold truncate">
                           <span>{video.formatLabel}</span>
-                          <span className="text-white/40">&middot;</span>
+                          <span className="text-white/30">/</span>
                           <span className="text-white">{video.metric}</span>
                         </div>
                       </div>
@@ -898,7 +892,7 @@ export default function App() {
                       </div>
                       <div className="flex items-center gap-1.5 mt-1 text-[10px] uppercase tracking-[0.14em] text-[#60b6ee] font-semibold truncate">
                         <span>{video.formatLabel}</span>
-                        <span className="text-white/40">&middot;</span>
+                        <span className="text-white/30">/</span>
                         <span className="text-white">{video.metric}</span>
                       </div>
                     </div>
@@ -1115,7 +1109,7 @@ export default function App() {
               onClick={handleCalendlyRedirect}
               className="w-full sm:w-auto px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2 shadow-[0_4px_24px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
             >
-              <span>Join 20+ High Growth Founders · Book Call</span>
+              <span>Join 20+ High Growth Founders / Book Call</span>
               <ArrowRight size={15} />
             </button>
           </div>
@@ -1154,7 +1148,7 @@ export default function App() {
 
                 <div className="pt-0.5 text-left space-y-2">
                   <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
-                    Phase 01 · Neuro Pacing
+                    Phase 01 / Neuro Pacing
                   </div>
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
                     Hook &amp; Neuro Pacing Architecture
@@ -1185,7 +1179,7 @@ export default function App() {
               <div className="flex items-start gap-4 sm:gap-6 max-w-lg md:w-[560px] text-right">
                 <div className="pt-0.5 flex-1 space-y-2">
                   <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
-                    Phase 02 · Bespoke Visuals
+                    Phase 02 / Bespoke Visuals
                   </div>
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
                     Bespoke Motion Graphics &amp; Sound Mastery
@@ -1229,7 +1223,7 @@ export default function App() {
 
                 <div className="pt-0.5 text-left space-y-2">
                   <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#60b6ee]">
-                    Phase 03 · Studio Delivery
+                    Phase 03 / Studio Delivery
                   </div>
                   <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight leading-snug">
                     4K Studio Delivery &amp; Conversion Tracking
@@ -1261,7 +1255,7 @@ export default function App() {
                 onClick={handleCalendlyRedirect}
                 className="px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs sm:text-sm font-semibold rounded-full tracking-tight inline-flex items-center gap-2 shadow-[0_4px_24px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
               >
-                <span>Lock In Your Retention Engine · Book Call</span>
+                <span>Lock In Your Retention Engine / Book Call</span>
                 <ArrowRight size={15} />
               </button>
             </div>
@@ -1349,7 +1343,7 @@ export default function App() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#1591DC] shrink-0 stroke-[2.5]" />
-                    <span>48 hour delivery · 2 revisions</span>
+                    <span>48 hour delivery / 2 revisions</span>
                   </li>
                 </ul>
               </div>
@@ -1414,7 +1408,7 @@ export default function App() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check size={14} className="text-[#38bdf8] shrink-0 stroke-[2.5]" />
-                    <span>Pro color grade · Unlimited revisions</span>
+                    <span>Pro color grade / Unlimited revisions</span>
                   </li>
                 </ul>
               </div>
@@ -1715,7 +1709,7 @@ export default function App() {
               </div>
 
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#8e909a] border-t border-white/[0.06]">
-                <span>100% Free 15 Min Strategy Session · No Sales Pressure</span>
+                <span>100% Free 15 Min Strategy Session / No Sales Pressure</span>
                 <a 
                   href={calendlyBookingUrl} 
                   target="_blank" 
@@ -1903,7 +1897,7 @@ export default function App() {
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>48 Hour Turnaround · Frame.io Review</span>
+              <span>48 Hour Turnaround / Frame.io Review</span>
             </div>
           </div>
 
@@ -1978,7 +1972,7 @@ export default function App() {
               className="w-6 h-6 rounded-full object-cover border border-white/20"
             />
             <p className="text-xs text-[#8e909a]">
-              &copy; 2026 Thomas Nguyen Studio. All rights reserved. &middot; <span className="hover:text-white cursor-pointer">Privacy Policy</span> &middot; <span className="hover:text-white cursor-pointer">Terms &amp; Conditions</span>
+              &copy; 2026 Thomas Nguyen Studio. All rights reserved. / <span className="hover:text-white cursor-pointer">Privacy Policy</span> / <span className="hover:text-white cursor-pointer">Terms &amp; Conditions</span>
             </p>
           </div>
 
@@ -2117,7 +2111,7 @@ export default function App() {
                   {lightboxVideo.title}
                 </div>
                 <div className="text-[11px] text-[#8e909a] truncate">
-                  {lightboxVideo.author} &middot; <span className="text-[#60b6ee] font-semibold">{lightboxVideo.formatLabel}</span> &middot; <span className="text-white font-semibold">{lightboxVideo.metric}</span>
+                  {lightboxVideo.author} / <span className="text-[#60b6ee] font-semibold">{lightboxVideo.formatLabel}</span> / <span className="text-white font-semibold">{lightboxVideo.metric}</span>
                 </div>
               </div>
             </div>
