@@ -132,7 +132,9 @@ export default function App() {
 
   // ============================================================================
   // VIDEO SHOWCASE COLLECTION (SUPPORTS BOTH 9:16 VERTICAL & 16:9 HORIZONTAL)
-  // Temporarily hiding 16:9 items below — uncomment when ready to add horizontal videos
+  // ============================================================================
+  // VIDEO SHOWCASE COLLECTION (SUPPORTS BOTH 9:16 VERTICAL & 16:9 HORIZONTAL)
+  // Curated 12 distinct projects with seamless aspect ratio mixing
   // ============================================================================
   const showcaseVideos: ShowcaseVideoItem[] = [
     { 
@@ -163,28 +165,26 @@ export default function App() {
       thumbnail: "/thumbnails/1212585180.jpg",
       avatar: "/clients/vlady.jpg"
     },
-    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
     { 
       id: "wide-01",
-      vimeoId: "1212586126", 
+      vimeoId: "1234323889", 
       aspect: "16:9",
-      formatLabel: "VSL Direct Response · 16:9",
-      tag: "VSL / 16:9", 
-      title: "High Ticket VSL Architecture",
-      author: "Via Masi",
-      authorRole: "Creator & Agency Founder",
-      company: "VIAMASI MEDIA",
-      metric: "3.4x Funnel ROAS",
-      thumbnail: "/vision_pro_bg.jpg",
-      avatar: "/clients/via_masi.jpg"
+      formatLabel: "Commercial Narrative · 16:9",
+      tag: "03 / COMMERCIAL 16:9", 
+      title: "Commercial Brand Narrative & Motion Systems",
+      author: "Northbound Media",
+      authorRole: "Growth Marketing Agency",
+      company: "NORTHBOUND MEDIA",
+      metric: "+340% Pipeline Calls",
+      thumbnail: "/thumbnails/1234323889.jpg",
+      avatar: "/clients/bryce_haddock.jpg"
     },
-    */
     { 
       id: "reel-03",
       vimeoId: "1229475645", 
       aspect: "9:16",
       formatLabel: "Short-Form · 9:16",
-      tag: "03 / HOOK ENGINE", 
+      tag: "04 / HOOK ENGINE", 
       title: "Visual Hook & Retention Architecture",
       author: "Online Coach & Creator",
       authorRole: "Fitness & Lifestyle Founder",
@@ -198,7 +198,7 @@ export default function App() {
       vimeoId: "1229475642", 
       aspect: "9:16",
       formatLabel: "Short-Form · 9:16",
-      tag: "04 / KINETIC PACING", 
+      tag: "05 / KINETIC PACING", 
       title: "Dynamic Pattern Interrupt & Motion",
       author: "Executive Brand",
       authorRole: "Venture Advisor & Founder",
@@ -207,28 +207,12 @@ export default function App() {
       thumbnail: "/thumbnails/1229475642.jpg",
       avatar: "/clients/raul_ocana.jpg"
     },
-    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
-    { 
-      id: "wide-02",
-      vimeoId: "1185563164", 
-      aspect: "16:9",
-      formatLabel: "Long-Form YouTube · 16:9",
-      tag: "YOUTUBE / 16:9", 
-      title: "Founder Documentary & Narrative Edit",
-      author: "Hoang Phuc",
-      authorRole: "Tech Creator & Educator",
-      company: "TECH ECOSYSTEM",
-      metric: "68% Avg View Duration",
-      thumbnail: "/glass_3d_fluid.jpg",
-      avatar: "/clients/hoang_phuc.jpg"
-    },
-    */
     { 
       id: "reel-05",
       vimeoId: "1212585217", 
       aspect: "9:16",
       formatLabel: "Short-Form · 9:16",
-      tag: "05 / BRANDING", 
+      tag: "06 / BRANDING", 
       title: "Brand Identity & Aesthetics",
       author: "Hoang Phuc",
       authorRole: "Tech Creator & Educator",
@@ -238,11 +222,25 @@ export default function App() {
       avatar: "/clients/hoang_phuc.jpg"
     },
     { 
+      id: "wide-02",
+      vimeoId: "1234323845", 
+      aspect: "16:9",
+      formatLabel: "VSL Direct Response · 16:9",
+      tag: "07 / HIGH TICKET VSL", 
+      title: "High Ticket VSL Architecture & Editorial",
+      author: "Eugene Fomin",
+      authorRole: "Founder, Booster.LLC",
+      company: "BOOSTER.LLC",
+      metric: "4.5x Organic Views",
+      thumbnail: "/thumbnails/1234323845.jpg",
+      avatar: "/clients/eugene_fomin.jpg"
+    },
+    { 
       id: "reel-06",
       vimeoId: "1212585328", 
       aspect: "9:16",
       formatLabel: "Short-Form · 9:16",
-      tag: "06 / STORYTELLING", 
+      tag: "08 / STORYTELLING", 
       title: "Cinematic Visual Storytelling",
       author: "Kaleemix",
       authorRole: "B2B Media Agency Founder",
@@ -251,28 +249,12 @@ export default function App() {
       thumbnail: "/thumbnails/1212585328.jpg",
       avatar: "/clients/kaleemix.jpg"
     },
-    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
-    { 
-      id: "wide-03",
-      vimeoId: "1185562977", 
-      aspect: "16:9",
-      formatLabel: "Commercial Campaign · 16:9",
-      tag: "COMMERCIAL / 16:9", 
-      title: "B2B Brand Commercial & Motion Systems",
-      author: "Kaleemix",
-      authorRole: "B2B Media Agency Founder",
-      company: "KALEEMIX MEDIA",
-      metric: "4.2x Pipeline Velocity",
-      thumbnail: "/chrome_ring.jpg",
-      avatar: "/clients/kaleemix.jpg"
-    },
-    */
     { 
       id: "reel-07",
       vimeoId: "1190211907", 
       aspect: "9:16",
       formatLabel: "Short-Form · 9:16",
-      tag: "07 / RETENTION", 
+      tag: "09 / RETENTION", 
       title: "Hook Mechanics & SFX Architecture",
       author: "Raul Ocana",
       authorRole: "Commercial Producer",
@@ -286,7 +268,7 @@ export default function App() {
       vimeoId: "1185563238", 
       aspect: "9:16",
       formatLabel: "Short-Form · 9:16",
-      tag: "08 / COLOR GRADE", 
+      tag: "10 / COLOR GRADE", 
       title: "Rec.709 Studio Color Calibration",
       author: "Editoz Club",
       authorRole: "Media Community",
@@ -295,30 +277,58 @@ export default function App() {
       thumbnail: "/thumbnails/1185563238.jpg",
       avatar: "/clients/editoz.jpg"
     },
-    /* --- TEMPORARILY HIDDEN 16:9 ITEM (UNCOMMENT WHEN READY) ---
     { 
-      id: "wide-04",
-      vimeoId: "1185562812", 
-      aspect: "16:9",
-      formatLabel: "Keynote & VSL · 16:9",
-      tag: "LONG-FORM / 16:9", 
-      title: "Executive Authority VSL & Motion Proof",
-      author: "Editoz Club",
-      authorRole: "Media Community",
-      company: "STUDIO CINEMA",
-      metric: "+180% High Ticket Bookings",
-      thumbnail: "/skyscraper_night.jpg",
-      avatar: "/clients/editoz.jpg"
+      id: "reel-09",
+      vimeoId: "1234323872", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
+      tag: "11 / APP RETENTION", 
+      title: "Visual Pacing & Viral Retention",
+      author: "The Brainrot App",
+      authorRole: "Consumer Tech App",
+      company: "THE BRAINROT APP",
+      metric: "+1.2M Organic App Views",
+      thumbnail: "/thumbnails/1234323872.jpg",
+      avatar: "/clients/yoni_smolyar.jpg"
     },
-    */
+    { 
+      id: "reel-10",
+      vimeoId: "1234323843", 
+      aspect: "9:16",
+      formatLabel: "Short-Form · 9:16",
+      tag: "12 / DIRECT RESPONSE", 
+      title: "High Energy Direct Response Cut",
+      author: "Fitness Híbrido",
+      authorRole: "Fitness Brand & Coaching",
+      company: "FITNESS HÍBRIDO",
+      metric: "1.4M Organic Reach",
+      thumbnail: "/thumbnails/1234323843.jpg",
+      avatar: "/clients/raul_ocana.jpg"
+    }
   ];
 
   // Row 1 & Row 2 sequences for Dual-Row Opposite Auto-Scrolling Marquee
-  const row1Half = [...showcaseVideos, ...showcaseVideos];
-  const row1Videos = [...row1Half, ...row1Half];
-  const row2Base = [...showcaseVideos.slice(4), ...showcaseVideos.slice(0, 4)].reverse();
-  const row2Half = [...row2Base, ...row2Base];
-  const row2Videos = [...row2Half, ...row2Half];
+  // Balanced mix of 9:16 vertical & 16:9 horizontal with ZERO redundant looping clutter
+  const row1List = [
+    showcaseVideos[0], // reel-01 (9:16)
+    showcaseVideos[1], // reel-02 (9:16)
+    showcaseVideos[2], // wide-01 (16:9)
+    showcaseVideos[3], // reel-03 (9:16)
+    showcaseVideos[4], // reel-04 (9:16)
+    showcaseVideos[10] // reel-09 (9:16)
+  ];
+
+  const row2List = [
+    showcaseVideos[5], // reel-05 (9:16)
+    showcaseVideos[6], // wide-02 (16:9)
+    showcaseVideos[7], // reel-06 (9:16)
+    showcaseVideos[8], // reel-07 (9:16)
+    showcaseVideos[9], // reel-08 (9:16)
+    showcaseVideos[11] // reel-10 (9:16)
+  ];
+
+  const row1Videos = [...row1List, ...row1List];
+  const row2Videos = [...row2List, ...row2List];
 
   // Lightbox keyboard navigation (ESC to close, Left/Right arrows to switch)
   useEffect(() => {
