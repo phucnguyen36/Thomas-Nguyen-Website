@@ -308,23 +308,23 @@ export default function App() {
   ];
 
   // Row 1 & Row 2 sequences for Dual-Row Opposite Auto-Scrolling Marquee
-  // Balanced mix of 9:16 vertical & 16:9 horizontal with ZERO redundant looping clutter
+  // Disperse the 3 white mockup cards to the outer edges/sides ("dạt ra 2 bên") so they never cluster together
   const row1List = [
-    showcaseVideos[0], // reel-01 (9:16)
-    showcaseVideos[1], // reel-02 (9:16)
-    showcaseVideos[2], // wide-01 (16:9)
-    showcaseVideos[3], // reel-03 (9:16)
-    showcaseVideos[4], // reel-04 (9:16)
-    showcaseVideos[10] // reel-09 (9:16)
+    showcaseVideos[0],  // reel-01 (Via Masi - Dark)
+    showcaseVideos[2],  // wide-01 (Northbound Media - 16:9 Landscape Center Anchor)
+    showcaseVideos[3],  // reel-03 (Coaching Ecosystem - Dark)
+    showcaseVideos[4],  // reel-04 (Growth Systems - Dark)
+    showcaseVideos[10], // reel-09 (The Brainrot App - Dark)
+    showcaseVideos[1],  // reel-02 (Vlady - White Mockup Card A, pushed to far outer edge)
   ];
 
   const row2List = [
-    showcaseVideos[5], // reel-05 (9:16)
-    showcaseVideos[6], // wide-02 (16:9)
-    showcaseVideos[7], // reel-06 (9:16)
-    showcaseVideos[8], // reel-07 (9:16)
-    showcaseVideos[9], // reel-08 (9:16)
-    showcaseVideos[11] // reel-10 (9:16)
+    showcaseVideos[5],  // reel-05 (Hoang Phuc - White Mockup Card B, pushed to far left edge)
+    showcaseVideos[7],  // reel-06 (Kaleemix Media - Dark)
+    showcaseVideos[6],  // wide-02 (Booster.LLC - 16:9 Landscape Center Anchor)
+    showcaseVideos[8],  // reel-07 (Raul Ocana - Dark)
+    showcaseVideos[11], // reel-10 (Fitness Híbrido - Dark)
+    showcaseVideos[9],  // reel-08 (Chali / Editoz - White Mockup Card C, pushed to far right edge)
   ];
 
   const row1Videos = [...row1List, ...row1List];
