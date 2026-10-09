@@ -578,14 +578,14 @@ export default function App() {
             <span className="text-[11px] sm:text-xs font-semibold text-[#60b6ee]">48h Studio Delivery</span>
           </div>
           
-          {/* Main Direct Response Offer Headline (STRICT 2-LINE LAYOUT WITH SHAPE BOX HIGHLIGHT) */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[58px] font-normal tracking-[-0.035em] leading-[1.2] max-w-5xl mx-auto text-white">
+          {/* Main Direct Response Offer Headline (BOLD CENTERED 2-LINE TYPOGRAPHY, COLOR-ONLY HIGHLIGHT) */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[62px] font-bold sm:font-extrabold tracking-[-0.03em] leading-[1.2] sm:leading-[1.18] max-w-5xl mx-auto text-center text-white">
             <span className="block sm:whitespace-nowrap">
               Direct Response Video Assets
             </span>
-            <span className="block mt-1 sm:mt-2 text-white/95 sm:whitespace-nowrap">
+            <span className="block mt-1.5 sm:mt-2 text-white sm:whitespace-nowrap">
               Designed To Convert Viewers Into{" "}
-              <span className="relative inline-block px-3 sm:px-4 py-0.5 sm:py-1 mx-1 rounded-xl sm:rounded-2xl bg-[#1591DC]/20 border border-[#1591DC]/70 text-[#60b6ee] shadow-[0_0_28px_rgba(21,145,220,0.35)] backdrop-blur-xs align-baseline">
+              <span className="text-[#1591DC] drop-shadow-[0_0_20px_rgba(21,145,220,0.35)]">
                 Paying Clients.
               </span>
             </span>
