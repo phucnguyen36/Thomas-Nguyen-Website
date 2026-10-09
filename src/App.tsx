@@ -327,8 +327,11 @@ export default function App() {
     showcaseVideos[9],  // reel-08 (Chali / Editoz - White Mockup Card C, pushed to far right edge)
   ];
 
-  const row1Videos = [...row1List, ...row1List];
-  const row2Videos = [...row2List, ...row2List];
+  // 4 cycles (2 identical halves) to guarantee seamless, gap-free infinite scrolling on all screen widths
+  const row1Cycle = [...row1List, ...row1List];
+  const row2Cycle = [...row2List, ...row2List];
+  const row1Videos = [...row1Cycle, ...row1Cycle];
+  const row2Videos = [...row2Cycle, ...row2Cycle];
 
   // Lightbox keyboard navigation (ESC to close, Left/Right arrows to switch)
   useEffect(() => {
