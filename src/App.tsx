@@ -270,12 +270,12 @@ export default function App() {
       formatLabel: "Short-Form · 9:16",
       tag: "10 / COLOR GRADE", 
       title: "Rec.709 Studio Color Calibration",
-      author: "Editoz Club",
-      authorRole: "Media Community",
-      company: "STUDIO CINEMA",
+      author: "Chali Weerakkody",
+      authorRole: "Founder, Editoz Club",
+      company: "EDITOZ CLUB",
       metric: "2.4x Brand Authority",
       thumbnail: "/thumbnails/1185563238.jpg",
-      avatar: "/clients/editoz.jpg"
+      avatar: "/clients/chali_weerakkody.jpg"
     },
     { 
       id: "reel-09",
@@ -442,10 +442,10 @@ export default function App() {
       location: "Vietnam"
     },
     {
-      name: "Editoz Club",
+      name: "Chali Weerakkody",
       handle: "@editozclub",
-      role: "Creator Collective",
-      avatar: "/clients/editoz.jpg",
+      role: "Founder, Editoz Club",
+      avatar: "/clients/chali_weerakkody.jpg",
       metric: "3.8x Engagement Lift",
       comment: "No template slop or recycled presets. Custom motion elements and clean sound effects that match the brand identity. Engagement and comments doubled on our recent series.",
       stars: 4.5,
