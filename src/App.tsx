@@ -152,39 +152,11 @@ export default function App() {
       avatar: "/clients/via_masi.jpg"
     },
     { 
-      id: "reel-02",
-      vimeoId: "1212585180", 
-      aspect: "9:16",
-      formatLabel: "Short Form 9:16",
-      tag: "02 / PACING", 
-      title: "Motion Pacing & Dynamic Cuts",
-      author: "Vlady",
-      authorRole: "Digital Course Creator & Brand",
-      company: "VLADY OFFICIAL",
-      metric: "3.2x Product Sales",
-      thumbnail: "/thumbnails/1212585180.jpg",
-      avatar: "/clients/vlady.jpg"
-    },
-    { 
-      id: "wide-01",
-      vimeoId: "1234323889", 
-      aspect: "16:9",
-      formatLabel: "Commercial Narrative 16:9",
-      tag: "03 / COMMERCIAL 16:9", 
-      title: "Commercial Brand Narrative & Motion Systems",
-      author: "Northbound Media",
-      authorRole: "Growth Marketing Agency",
-      company: "NORTHBOUND MEDIA",
-      metric: "+340% Pipeline Calls",
-      thumbnail: "/thumbnails/1234323889.jpg",
-      avatar: "/clients/bryce_haddock.jpg"
-    },
-    { 
       id: "reel-03",
       vimeoId: "1229475645", 
       aspect: "9:16",
       formatLabel: "Short Form 9:16",
-      tag: "04 / HOOK ENGINE", 
+      tag: "02 / HOOK ENGINE", 
       title: "Visual Hook & Retention Architecture",
       author: "Online Coach & Creator",
       authorRole: "Fitness & Lifestyle Founder",
@@ -198,7 +170,7 @@ export default function App() {
       vimeoId: "1229475642", 
       aspect: "9:16",
       formatLabel: "Short Form 9:16",
-      tag: "05 / KINETIC PACING", 
+      tag: "03 / KINETIC PACING", 
       title: "Dynamic Pattern Interrupt & Motion",
       author: "Executive Brand",
       authorRole: "Venture Advisor & Founder",
@@ -206,6 +178,34 @@ export default function App() {
       metric: "3.8x Engagement Lift",
       thumbnail: "/thumbnails/1229475642.jpg",
       avatar: "/clients/raul_ocana.jpg"
+    },
+    { 
+      id: "reel-02",
+      vimeoId: "1212585180", 
+      aspect: "9:16",
+      formatLabel: "Short Form 9:16",
+      tag: "04 / PACING", 
+      title: "Motion Pacing & Dynamic Cuts",
+      author: "Vlady",
+      authorRole: "Digital Course Creator & Brand",
+      company: "VLADY OFFICIAL",
+      metric: "3.2x Product Sales",
+      thumbnail: "/thumbnails/1212585180.jpg",
+      avatar: "/clients/vlady.jpg"
+    },
+    { 
+      id: "wide-01",
+      vimeoId: "1234323889", 
+      aspect: "16:9",
+      formatLabel: "Commercial Narrative 16:9",
+      tag: "05 / COMMERCIAL 16:9", 
+      title: "Commercial Brand Narrative & Motion Systems",
+      author: "Northbound Media",
+      authorRole: "Growth Marketing Agency",
+      company: "NORTHBOUND MEDIA",
+      metric: "+340% Pipeline Calls",
+      thumbnail: "/thumbnails/1234323889.jpg",
+      avatar: "/clients/bryce_haddock.jpg"
     },
     { 
       id: "reel-05",
@@ -308,14 +308,14 @@ export default function App() {
   ];
 
   // Row 1 & Row 2 sequences for Dual-Row Opposite Auto-Scrolling Marquee
-  // Disperse the 3 white mockup cards to the outer edges/sides ("dạt ra 2 bên") so they never cluster together
+  // 3 priority videos (reel-01, reel-03, reel-04) appear first on Row 1
   const row1List = [
-    showcaseVideos[0],  // reel-01 (Via Masi - Dark)
-    showcaseVideos[2],  // wide-01 (Northbound Media - 16:9 Landscape Center Anchor)
-    showcaseVideos[3],  // reel-03 (Coaching Ecosystem - Dark)
-    showcaseVideos[4],  // reel-04 (Growth Systems - Dark)
+    showcaseVideos[0],  // reel-01 (Via Masi - Six Figure Salary) - First
+    showcaseVideos[1],  // reel-03 (Coaching Ecosystem - Tres Errores) - Second
+    showcaseVideos[2],  // reel-04 (Growth Systems - Dynamic Pattern Interrupt) - Third
+    showcaseVideos[4],  // wide-01 (Northbound Media - 16:9 Landscape Center Anchor)
     showcaseVideos[10], // reel-09 (The Brainrot App - Dark)
-    showcaseVideos[1],  // reel-02 (Vlady - White Mockup Card A, pushed to far outer edge)
+    showcaseVideos[3],  // reel-02 (Vlady - White Mockup Card A, pushed to far outer edge)
   ];
 
   const row2List = [
