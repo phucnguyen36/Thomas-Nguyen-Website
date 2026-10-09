@@ -570,40 +570,6 @@ export default function App() {
         {/* ========================================================================= */}
         <section id="hero" className="pt-12 md:pt-16 text-center max-w-5xl mx-auto space-y-5 sm:space-y-6">
           
-          {/* Trustpilot Social Proof Rating Badge (EYEBROW RATING PILL) */}
-          <div className="flex justify-center">
-            <a 
-              href="#results"
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-[#00b67a]/50 transition-all cursor-pointer shadow-sm group"
-            >
-              {/* Trustpilot Logo */}
-              <div className="flex items-center gap-1.5">
-                <svg className="w-3.5 h-3.5 fill-[#00b67a]" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <span className="text-[11px] font-semibold text-white tracking-tight">Trustpilot</span>
-              </div>
-
-              {/* 5 Green Trustpilot Stars */}
-              <div className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <div key={s} className="w-3.5 h-3.5 bg-[#00b67a] rounded-[2px] flex items-center justify-center">
-                    <svg className="w-2.5 h-2.5 fill-white" viewBox="0 0 24 24">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  </div>
-                ))}
-              </div>
-
-              {/* Rating & Review Count */}
-              <div className="text-[11px] text-[#9da0af] flex items-center gap-1 font-medium">
-                <span className="text-white font-bold">4.9</span>
-                <span className="text-white/30">/</span>
-                <span>20+ reviews</span>
-              </div>
-            </a>
-          </div>
-
           {/* Main Direct Response Offer Headline (CONCISE 2-LINE SEMIBOLD TYPOGRAPHY) */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-semibold tracking-[-0.025em] text-white leading-[1.2] sm:leading-[1.18] max-w-4xl mx-auto text-center px-2">
             <span className="block">
