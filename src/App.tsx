@@ -2026,34 +2026,6 @@ export default function App() {
               title={lightboxVideo.title}
             />
           </div>
-
-          {/* Bottom Caption & CTA Strip inside Lightbox */}
-          <div className="mt-4 w-[min(92vw,680px)] flex flex-col sm:flex-row items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[#0e1017]/90 border border-white/10">
-            <div className="flex items-center gap-3 min-w-0">
-              <img
-                src={lightboxVideo.avatar}
-                alt={lightboxVideo.author}
-                className="w-9 h-9 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
-              />
-              <div className="text-left min-w-0">
-                <div className="text-xs sm:text-sm font-semibold text-white truncate">
-                  {lightboxVideo.title}
-                </div>
-                <div className="text-[11px] text-[#8e909a] truncate">
-                  {lightboxVideo.author} · <span className="text-[#60b6ee] font-semibold">{lightboxVideo.formatLabel}</span> · <span className="text-white font-semibold">{lightboxVideo.metric}</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleCalendlyRedirect}
-              className="shrink-0 px-4 py-2 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full inline-flex items-center gap-1.5 transition-all cursor-pointer"
-            >
-              <span>Book Call</span>
-              <ArrowRight size={13} />
-            </button>
-          </div>
         </div>
       )}
 
