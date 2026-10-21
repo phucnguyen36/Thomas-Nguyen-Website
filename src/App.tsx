@@ -429,6 +429,16 @@ export default function App() {
       location: "United States"
     },
     {
+      name: "James Masi",
+      handle: "@via.masi",
+      role: "Founder, Via Masi Productions",
+      avatar: "/clients/via_masi.jpg",
+      metric: "+210% Inbound Inbox",
+      comment: "Honestly one of the few editors who understands story flow instead of just spamming flashy zooms. Sent him a batch of raw talking head clips and every single hook felt intentional. Saved our team dozens of hours.",
+      stars: 5,
+      location: "United States"
+    },
+    {
       name: "Kaleem Iqbal Hashmi",
       handle: "@kaleemix",
       role: "Founder, Kaleemix Media",
@@ -445,16 +455,6 @@ export default function App() {
       avatar: "/clients/yoni_smolyar.jpg",
       metric: "+1.2M Organic App Views",
       comment: "Dumped raw product demos on Drive and Thomas turned them into hooks that genuinely stopped people from scrolling. Our app downloads spiked within the first week of posting the new series. He just gets short-form pacing.",
-      stars: 5,
-      location: "United States"
-    },
-    {
-      name: "James Masi",
-      handle: "@via.masi",
-      role: "Founder, Via Masi Productions",
-      avatar: "/clients/via_masi.jpg",
-      metric: "+210% Inbound Inbox",
-      comment: "Honestly one of the few editors who understands story flow instead of just spamming flashy zooms. Sent him a batch of raw talking head clips and every single hook felt intentional. Saved our team dozens of hours.",
       stars: 5,
       location: "United States"
     },
