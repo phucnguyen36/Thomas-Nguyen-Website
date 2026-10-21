@@ -1570,9 +1570,9 @@ export default function App() {
         {/* ========================================================================= */}
         {/* 7. DIRECT BOOKING SECTION (CALENDLY + INQUIRY FORM)                       */}
         {/* ========================================================================= */}
-        <section id="booking" className="space-y-6 pt-4 max-w-3xl mx-auto scroll-mt-20">
+        <section id="booking" className="space-y-6 pt-8 max-w-4xl mx-auto scroll-mt-24">
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] font-medium uppercase tracking-widest text-[#8e909a]">
               Direct Onboarding
             </div>
             <h2 className="text-3xl sm:text-4xl font-normal sm:font-medium tracking-tight text-white">
@@ -1583,29 +1583,31 @@ export default function App() {
             </p>
 
             {/* Switcher Tabs */}
-            <div className="pt-4 flex items-center justify-center gap-2">
-              <button
-                type="button"
-                onClick={() => setBookingTab('calendly')}
-                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                  bookingTab === 'calendly'
-                    ? 'bg-[#1591DC] text-white shadow-[0_2px_12px_rgba(21,145,220,0.4)]'
-                    : 'bg-white/[0.03] border border-white/[0.08] text-[#8e909a] hover:text-white'
-                }`}
-              >
-                Book Call on Calendar
-              </button>
-              <button
-                type="button"
-                onClick={() => setBookingTab('form')}
-                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                  bookingTab === 'form'
-                    ? 'bg-[#1591DC] text-white shadow-[0_2px_12px_rgba(21,145,220,0.4)]'
-                    : 'bg-white/[0.03] border border-white/[0.08] text-[#8e909a] hover:text-white'
-                }`}
-              >
-                Send Direct Inquiry
-              </button>
+            <div className="pt-3 flex items-center justify-center">
+              <div className="inline-flex items-center p-1 rounded-full bg-[#0c0d12] border border-white/10">
+                <button
+                  type="button"
+                  onClick={() => setBookingTab('calendly')}
+                  className={`px-5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                    bookingTab === 'calendly'
+                      ? 'bg-white text-black font-semibold shadow-sm'
+                      : 'text-[#8e909a] hover:text-white'
+                  }`}
+                >
+                  Book Call on Calendar
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setBookingTab('form')}
+                  className={`px-5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                    bookingTab === 'form'
+                      ? 'bg-white text-black font-semibold shadow-sm'
+                      : 'text-[#8e909a] hover:text-white'
+                  }`}
+                >
+                  Send Direct Inquiry
+                </button>
+              </div>
             </div>
           </div>
 
@@ -1651,9 +1653,7 @@ export default function App() {
                         key={type}
                         onClick={() => setVideoType(type)}
                         className={`px-3 py-1 rounded-full text-xs font-medium transition-colors cursor-pointer ${
-                          videoType === type 
-                            ? 'bg-[#1591DC] text-white' 
-                            : 'bg-[#07080b] border border-white/[0.08] text-[#8e909a] hover:text-white'
+                          videoType === type ? 'bg-white text-black font-semibold shadow-sm' : 'bg-[#07080b] border border-white/[0.08] text-[#8e909a] hover:text-white'
                         }`}
                       >
                         {type}
@@ -1671,9 +1671,7 @@ export default function App() {
                         key={b}
                         onClick={() => setBudgetRange(b)}
                         className={`px-3 py-1 rounded-full text-xs font-medium transition-colors cursor-pointer ${
-                          budgetRange === b 
-                            ? 'bg-[#1591DC] text-white' 
-                            : 'bg-[#07080b] border border-white/[0.08] text-[#8e909a] hover:text-white'
+                          budgetRange === b ? 'bg-white text-black font-semibold shadow-sm' : 'bg-[#07080b] border border-white/[0.08] text-[#8e909a] hover:text-white'
                         }`}
                       >
                         {b}
@@ -1696,7 +1694,7 @@ export default function App() {
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-xs font-semibold rounded-full tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 transition-colors"
+                  className="w-full py-3 bg-white hover:bg-neutral-200 text-black text-xs font-semibold rounded-full tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 transition-colors"
                 >
                   {isSubmitting ? (
                     <>
