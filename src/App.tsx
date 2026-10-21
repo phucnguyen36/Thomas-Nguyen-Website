@@ -51,6 +51,49 @@ export default function App() {
   const [bookingTab, setBookingTab] = useState<'calendly' | 'form'>('calendly');
   const [showAllVideos, setShowAllVideos] = useState(false);
   const [showAllReviews, setShowAllReviews] = useState(false);
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+  const checkScrollState = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+      
+      const card = carouselRef.current.querySelector('[data-review-card]') as HTMLElement;
+      if (card) {
+        const step = card.offsetWidth + 24;
+        const idx = Math.round(scrollLeft / step);
+        setActiveSlideIndex(Math.min(idx, clientReviews.length - 1));
+      }
+    }
+  };
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const card = carouselRef.current.querySelector('[data-review-card]') as HTMLElement;
+      const step = card ? card.offsetWidth + 24 : 380;
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -step : step,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScrollState, { passive: true });
+      window.addEventListener('resize', checkScrollState);
+      checkScrollState();
+      return () => {
+        el.removeEventListener('scroll', checkScrollState);
+        window.removeEventListener('resize', checkScrollState);
+      };
+    }
+  }, []);
   const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
   const [lightboxVideo, setLightboxVideo] = useState<ShowcaseVideoItem | null>(null);
 
@@ -972,11 +1015,11 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 3. TESTIMONIALS & PROVEN RESULTS (CLEAN 3-CARD GRID · SWISS MINIMALIST)  */}
+        {/* 3. TESTIMONIALS & PROVEN RESULTS (SWISS 3-CARD CAROUSEL · ARROW CONTROLS) */}
         {/* ========================================================================= */}
         <section id="results" className="scroll-mt-24 pt-6 pb-4 max-w-[1200px] mx-auto">
           
-          {/* Header Layout (Matching exact reference screenshot) */}
+          {/* Header Layout (Matching exact reference screenshot with Left/Right Arrows) */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-[11px] font-semibold uppercase tracking-wider text-[#60b6ee] mb-3 shadow-xs">
@@ -987,17 +1030,50 @@ export default function App() {
                 Proven Across High–Growth Teams
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-[#8e909a] max-w-md font-normal leading-relaxed">
-              Real revenue, inbound inbox growth, and retention results from founders and creators worldwide.
-            </p>
+
+            <div className="flex flex-col sm:flex-row sm:items-end md:items-center gap-5">
+              <p className="text-sm sm:text-base text-[#8e909a] max-w-sm font-normal leading-relaxed">
+                Real revenue, inbound pipeline growth, and retention results from founders and creators worldwide.
+              </p>
+
+              {/* Left / Right Carousel Navigation Buttons */}
+              <div className="flex items-center gap-2.5 shrink-0">
+                <button
+                  onClick={() => scrollCarousel('left')}
+                  disabled={!canScrollLeft}
+                  aria-label="Previous testimonial"
+                  className="w-11 h-11 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.12] hover:border-[#1591DC]/60 text-white disabled:opacity-25 disabled:cursor-not-allowed flex items-center justify-center transition-all cursor-pointer shadow-xs active:scale-95"
+                >
+                  <ArrowLeft size={16} />
+                </button>
+
+                {/* Slide Counter */}
+                <span className="text-xs font-mono font-medium text-[#8e909a] px-1 select-none">
+                  <span className="text-white font-bold">{String(activeSlideIndex + 1).padStart(2, '0')}</span> / {String(clientReviews.length).padStart(2, '0')}
+                </span>
+
+                <button
+                  onClick={() => scrollCarousel('right')}
+                  disabled={!canScrollRight}
+                  aria-label="Next testimonial"
+                  className="w-11 h-11 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.12] hover:border-[#1591DC]/60 text-white disabled:opacity-25 disabled:cursor-not-allowed flex items-center justify-center transition-all cursor-pointer shadow-xs active:scale-95"
+                >
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* 3-Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
-            {displayedReviews.map((rev, idx) => (
+          {/* Swipeable & Clickable Carousel Track */}
+          <div 
+            ref={carouselRef}
+            className="flex gap-6 lg:gap-7 overflow-x-auto scroll-smooth snap-x snap-mandatory py-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {clientReviews.map((rev, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-white/[0.08] bg-[#0d0f15]/85 hover:bg-[#11141e]/90 p-7 sm:p-8 flex flex-col justify-between hover:border-[#1591DC]/50 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-[#1591DC]/10 group relative"
+                data-review-card
+                className="w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] min-w-full sm:min-w-[calc((100%-24px)/2)] lg:min-w-[calc((100%-48px)/3)] shrink-0 snap-start rounded-2xl border border-white/[0.08] bg-[#0d0f15]/85 hover:bg-[#11141e]/90 p-7 sm:p-8 flex flex-col justify-between hover:border-[#1591DC]/50 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-[#1591DC]/10 group relative select-none"
               >
                 <div>
                   
@@ -1065,7 +1141,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Verified Tag */}
+                  {/* Verified Tag (100% English) */}
                   <span className="text-[10.5px] font-mono text-emerald-400 font-medium flex items-center gap-1 shrink-0 ml-2">
                     <CheckCircle2 size={10} />
                     <span>Verified</span>
@@ -1077,15 +1153,29 @@ export default function App() {
             ))}
           </div>
 
-          {/* Clean Expand Toggle for Remaining Client Proof */}
-          <div className="pt-8 text-center">
-            <button
-              onClick={() => setShowAllReviews(!showAllReviews)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.12] bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#1591DC]/50 text-xs font-semibold text-[#8e909a] hover:text-white transition-all cursor-pointer shadow-xs"
-            >
-              <span>{showAllReviews ? 'Thu gọn (3 đánh giá nổi bật)' : 'Xem toàn bộ 8 đối tác trong portfolio'}</span>
-              <ChevronDown size={14} className={`transition-transform duration-200 ${showAllReviews ? 'rotate-180' : ''}`} />
-            </button>
+          {/* Carousel Dot Indicators */}
+          <div className="pt-6 flex items-center justify-center gap-2">
+            {clientReviews.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  if (carouselRef.current) {
+                    const card = carouselRef.current.querySelector('[data-review-card]') as HTMLElement;
+                    const step = card ? card.offsetWidth + 24 : 380;
+                    carouselRef.current.scrollTo({
+                      left: idx * step,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                aria-label={`Go to review ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  idx === activeSlideIndex 
+                    ? 'w-6 bg-[#1591DC]' 
+                    : 'w-1.5 bg-white/20 hover:bg-white/40'
+                }`}
+              />
+            ))}
           </div>
 
           {/* REPEATED BOOK CALL CTA #3 (AFTER SOCIAL PROOF) */}
