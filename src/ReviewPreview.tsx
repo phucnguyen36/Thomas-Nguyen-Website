@@ -3,9 +3,9 @@ import {
   ArrowLeft, 
   CheckCircle2, 
   Star, 
+  StarHalf,
   Zap, 
   ArrowRight,
-  ExternalLink,
   ChevronDown
 } from 'lucide-react';
 
@@ -21,7 +21,8 @@ interface TestimonialItem {
   location: string;
 }
 
-const TESTIMONIALS: TestimonialItem[] = [
+// EXACT CLIENT REVIEWS FROM THOMAS NGUYEN PORTFOLIO CHÍNH (01.-Thomas-Nguyen-Portfolio)
+const PORTFOLIO_REVIEWS: TestimonialItem[] = [
   {
     id: 'bryce',
     name: 'Bryce Haddock',
@@ -29,31 +30,20 @@ const TESTIMONIALS: TestimonialItem[] = [
     role: 'Founder, Northbound Media',
     avatar: '/clients/bryce_haddock.jpg',
     metric: '+340% Pipeline Calls',
-    stars: 5,
+    stars: 4.5,
     comment: 'Turnaround is fast and he doesn’t need constant hand-holding on revisions. We tested his cuts against our old agency reels and inbound calls picked up almost immediately. Minor caption tweaks on V1, but V2 was perfect.',
     location: 'United States'
   },
   {
     id: 'kaleemix',
-    name: 'Kaleemix',
+    name: 'Kaleem Iqbal Hashmi',
     handle: '@kaleemix',
-    role: 'Content Creator & Founder',
+    role: 'Founder, Kaleemix Media',
     avatar: '/clients/kaleemix.jpg',
-    metric: '+40K Followers in 30 Days',
+    metric: '1.8M Monthly Views',
     stars: 5,
-    comment: 'Added 40,000+ followers in 30 days after Thomas took over our pacing and hooks. The audience completion rate jumped from 52% to 87%. He knows when to let a moment breathe and when to speed up the cut.',
+    comment: 'Thomas has great creative instincts. He knows when to let a moment breathe and when to speed up the cut. Our clients constantly ask who edits our social clips. Super communicative on Slack too.',
     location: 'United Kingdom'
-  },
-  {
-    id: 'tuan',
-    name: 'Tuấn Lê',
-    handle: '@shortscut.agency',
-    role: 'Founder & CEO, Shortscut Agency',
-    avatar: '/clients/vlady.jpg',
-    metric: 'Flagship Launch Direction',
-    stars: 5,
-    comment: 'Thomas is hands down one of the sharpest visual retention editors I’ve partnered with. His instincts for pacing, dead air trimming, and sound design immediately elevated our launch films.',
-    location: 'Vietnam & Global'
   },
   {
     id: 'yoni',
@@ -67,17 +57,6 @@ const TESTIMONIALS: TestimonialItem[] = [
     location: 'United States'
   },
   {
-    id: 'editoz',
-    name: 'Editoz Club',
-    handle: '@editozclub',
-    role: 'Creative Director, Post-Production',
-    avatar: '/clients/editoz.jpg',
-    metric: '+42% Completion Rate',
-    stars: 5,
-    comment: 'Viewer completion rate jumped by 42% on average across our entire catalogue. Punctual, meticulous with audio leveling, custom motion elements, and zero template fluff.',
-    location: 'United Kingdom'
-  },
-  {
     id: 'masi',
     name: 'James Masi',
     handle: '@via.masi',
@@ -87,19 +66,63 @@ const TESTIMONIALS: TestimonialItem[] = [
     stars: 5,
     comment: 'Honestly one of the few editors who understands story flow instead of just spamming flashy zooms. Sent him a batch of raw talking head clips and every single hook felt intentional. Saved our team dozens of hours.',
     location: 'United States'
+  },
+  {
+    id: 'raul',
+    name: 'Raul Ocana',
+    handle: '@raulteentrena',
+    role: 'Fitness Coach & Personal Brand',
+    avatar: '/clients/raul_ocana.jpg',
+    metric: '1.4M Organic Reach',
+    stars: 4.5,
+    comment: 'My retention graph on Instagram Reels completely changed after Thomas took over the editing. He finds the right b-roll without me having to script every second. 48 hour delivery is real.',
+    location: 'Spain'
+  },
+  {
+    id: 'chali',
+    name: 'Chali Weerakkody',
+    handle: '@editozclub',
+    role: 'Founder, Editoz Club',
+    avatar: '/clients/chali_weerakkody.jpg',
+    metric: '3.8x Engagement Lift',
+    stars: 4.5,
+    comment: 'No template slop or recycled presets. Custom motion elements and clean sound effects that match the brand identity. Engagement and comments doubled on our recent series.',
+    location: 'United Kingdom'
+  },
+  {
+    id: 'eugene',
+    name: 'Eugene Fomin',
+    handle: '@fomineugeneofficial',
+    role: 'Founder, Booster.LLC',
+    avatar: '/clients/eugene_fomin.jpg',
+    metric: '4.5x Organic Views',
+    stars: 5,
+    comment: 'Solid sound design and rhythm. What impressed me most was how quickly he understood our audience tone. Didn’t have to explain basic concepts twice. Easily our best freelance hire this year.',
+    location: 'Global'
+  },
+  {
+    id: 'vlady',
+    name: 'Vlady',
+    handle: '@vladyography',
+    role: 'Filmmaker & Content Creator',
+    avatar: '/clients/vlady.jpg',
+    metric: '3.2x Product Sales',
+    stars: 4.5,
+    comment: 'As a creator myself I’m very picky with audio leveling and color grade. Thomas surprised me with the first draft quality. Helped us sell out our digital cohort without running paid ads.',
+    location: 'Global'
   }
 ];
 
 export default function ReviewPreview() {
   const [showAll, setShowAll] = useState(false);
-  const [variant, setVariant] = useState<'minimal' | 'roi-hybrid'>('roi-hybrid');
+  const [variant, setVariant] = useState<'roi-hybrid' | 'minimal'>('roi-hybrid');
 
-  const displayedList = showAll ? TESTIMONIALS : TESTIMONIALS.slice(0, 3);
+  const displayedList = showAll ? PORTFOLIO_REVIEWS : PORTFOLIO_REVIEWS.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-[#07080b] text-[#ededf3] selection:bg-[#1591DC]/30 selection:text-white font-sans antialiased relative">
       
-      {/* Background Subtle Ambient Glow */}
+      {/* Background Subtle Atmospheric Ambient Glow */}
       <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#1591DC]/8 to-transparent blur-[140px]" />
       </div>
@@ -126,12 +149,12 @@ export default function ReviewPreview() {
               LOCAL PREVIEW MODE
             </span>
             <span className="hidden sm:inline-block text-[11px] text-[#8e909a] font-mono">
-              (Không ghép vào code chính của App.tsx)
+              (100% Data từ Thomas Nguyen Portfolio chính · Code chính chưa ghép)
             </span>
           </div>
         </div>
 
-        {/* Variant Controls */}
+        {/* View Controls */}
         <div className="flex items-center gap-2 text-xs">
           <span className="text-[#8e909a] font-medium hidden md:inline">Kiểu hiển thị:</span>
           
@@ -161,7 +184,7 @@ export default function ReviewPreview() {
       </div>
 
       {/* ===================================================================== */}
-      {/* MAIN PREVIEW SECTION                                                  */}
+      {/* MAIN TESTIMONIALS SECTION (SWISS 3-CARD STRUCTURE + ORIGINAL DATA)     */}
       {/* ===================================================================== */}
       <main className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-10 py-16 sm:py-24">
         
@@ -183,12 +206,12 @@ export default function ReviewPreview() {
 
           {/* Subtext Paragraph */}
           <p className="text-sm sm:text-base text-[#8e909a] max-w-md font-normal leading-relaxed">
-            Real revenue, inbound inbox growth, and retention results from founders and agency directors partnering with Thomas Nguyen for their video pipeline.
+            Real revenue, inbound inbox growth, and retention results from founders and creators worldwide partnering with Thomas Nguyen.
           </p>
 
         </div>
 
-        {/* 3-Card Grid (Image 2 layout with Image 1 dark colors) */}
+        {/* 3-Card Grid (Image 2 Swiss Structure + 100% Original Portfolio Data) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {displayedList.map((item) => (
             <div
@@ -200,12 +223,12 @@ export default function ReviewPreview() {
                 {/* Top Row: Blue Quote Mark + ROI / Stars Badge */}
                 <div className="flex items-start justify-between gap-4 mb-5">
                   
-                  {/* Signature Blue Quote Mark */}
+                  {/* Signature Blue Quote Mark in Brand Color */}
                   <span className="text-4xl font-serif text-[#1591DC] leading-none select-none block">
                     “
                   </span>
 
-                  {/* Optional ROI / Star Badge (Keeps Image 1 client metric strength) */}
+                  {/* Optional ROI / Star Badge (Original Portfolio Data) */}
                   {variant === 'roi-hybrid' && (
                     <div className="flex flex-col items-end gap-1.5">
                       {/* Compact Blue ROI Badge */}
@@ -218,9 +241,18 @@ export default function ReviewPreview() {
 
                       {/* Stars */}
                       <div className="flex items-center gap-0.5 text-amber-400">
-                        {[1, 2, 3, 4, 5].map((s) => (
-                          <Star key={s} size={9} fill="currentColor" />
-                        ))}
+                        {[1, 2, 3, 4, 5].map((s) => {
+                          if (item.stars >= s) {
+                            return <Star key={s} size={9} fill="currentColor" />;
+                          } else if (item.stars >= s - 0.5) {
+                            return <StarHalf key={s} size={9} fill="currentColor" />;
+                          } else {
+                            return <Star key={s} size={9} className="text-amber-400/30" />;
+                          }
+                        })}
+                        <span className="text-[9px] font-mono font-bold text-amber-400/90 ml-1">
+                          {item.stars.toFixed(1)}
+                        </span>
                       </div>
                     </div>
                   )}
@@ -240,7 +272,7 @@ export default function ReviewPreview() {
 
               </div>
 
-              {/* Bottom Author Row with Divider Line */}
+              {/* Bottom Author Row with Hairline Divider */}
               <div className="pt-6 mt-8 border-t border-white/[0.07] flex items-center justify-between">
                 
                 <div className="flex items-center gap-3.5 min-w-0">
@@ -262,7 +294,7 @@ export default function ReviewPreview() {
                   </div>
                 </div>
 
-                {/* Verified Tag */}
+                {/* Verified Tag from Original Portfolio */}
                 <span className="text-[10.5px] font-mono text-emerald-400 font-medium flex items-center gap-1 shrink-0 ml-2">
                   <CheckCircle2 size={10} />
                   <span>Verified</span>
@@ -274,18 +306,18 @@ export default function ReviewPreview() {
           ))}
         </div>
 
-        {/* Expand / Collapse Button */}
+        {/* Expand / Collapse Button (All 8 Original Portfolio Reviews) */}
         <div className="pt-10 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.12] bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#1591DC]/50 text-xs font-semibold text-[#8e909a] hover:text-white transition-all cursor-pointer shadow-xs"
           >
-            <span>{showAll ? 'Thu gọn (3 đánh giá)' : 'Xem thêm các đối tác khác (6 đánh giá)'}</span>
+            <span>{showAll ? 'Thu gọn (3 đánh giá nổi bật)' : 'Xem toàn bộ 8 đối tác trong portfolio chính'}</span>
             <ChevronDown size={14} className={`transition-transform duration-200 ${showAll ? 'rotate-180' : ''}`} />
           </button>
         </div>
 
-        {/* CTA Button below section */}
+        {/* Call To Action below section */}
         <div className="pt-12 text-center">
           <a
             href="https://calendly.com/thomasvisualeditor/30min"
