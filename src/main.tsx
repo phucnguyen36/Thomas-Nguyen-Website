@@ -2,6 +2,7 @@ import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import OfferPage from './OfferPage.tsx';
+import ReviewPreview from './ReviewPreview.tsx';
 import './index.css';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -23,8 +24,11 @@ function RootRouter() {
   }, []);
 
   const isOfferRoute = path === '/offer' || hash === '#/offer' || hash === '#offer';
+  const isPreviewRoute = path === '/preview-reviews' || hash === '#/preview-reviews' || hash === '#preview-reviews' || hash === '#preview';
 
-  return isOfferRoute ? <OfferPage /> : <App />;
+  if (isPreviewRoute) return <ReviewPreview />;
+  if (isOfferRoute) return <OfferPage />;
+  return <App />;
 }
 
 createRoot(document.getElementById('root')!).render(
