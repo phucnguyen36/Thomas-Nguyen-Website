@@ -50,6 +50,7 @@ export default function App() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [bookingTab, setBookingTab] = useState<'calendly' | 'form'>('calendly');
   const [showAllVideos, setShowAllVideos] = useState(false);
+  const [showAllReviews, setShowAllReviews] = useState(false);
   const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
   const [lightboxVideo, setLightboxVideo] = useState<ShowcaseVideoItem | null>(null);
 
@@ -375,16 +376,6 @@ export default function App() {
   // AUTHENTIC CLIENT REVIEWS (NATURAL HUMAN FEEDBACK, ZERO AI SLOP, BALANCED 4.5 & 5.0 STARS)
   const clientReviews = [
     {
-      name: "Yoni Smolyar",
-      handle: "@yoniman.mp4",
-      role: "Founder, The Brainrot App",
-      avatar: "/clients/yoni_smolyar.jpg",
-      metric: "+1.2M Organic App Views",
-      comment: "Dumped raw product demos on Drive and Thomas turned them into hooks that genuinely stopped people from scrolling. Our app downloads spiked within the first week of posting the new series. He just gets short-form pacing.",
-      stars: 5,
-      location: "United States"
-    },
-    {
       name: "Bryce Haddock",
       handle: "@northboundmedia",
       role: "Founder, Northbound Media",
@@ -392,16 +383,6 @@ export default function App() {
       metric: "+340% Pipeline Calls",
       comment: "Turnaround is fast and he doesn't need constant hand-holding on revisions. We tested his cuts against our old agency reels and inbound calls picked up almost immediately. Minor caption tweaks on V1, but V2 was perfect.",
       stars: 4.5,
-      location: "United States"
-    },
-    {
-      name: "James Masi",
-      handle: "@via.masi",
-      role: "Founder, Via Masi Productions",
-      avatar: "/clients/via_masi.jpg",
-      metric: "+210% Inbound Inbox",
-      comment: "Honestly one of the few editors who understands story flow instead of just spamming flashy zooms. Sent him a batch of raw talking head clips and every single hook felt intentional. Saved our team dozens of hours.",
-      stars: 5,
       location: "United States"
     },
     {
@@ -415,6 +396,26 @@ export default function App() {
       location: "United Kingdom"
     },
     {
+      name: "Yoni Smolyar",
+      handle: "@yoniman.mp4",
+      role: "Founder, The Brainrot App",
+      avatar: "/clients/yoni_smolyar.jpg",
+      metric: "+1.2M Organic App Views",
+      comment: "Dumped raw product demos on Drive and Thomas turned them into hooks that genuinely stopped people from scrolling. Our app downloads spiked within the first week of posting the new series. He just gets short-form pacing.",
+      stars: 5,
+      location: "United States"
+    },
+    {
+      name: "James Masi",
+      handle: "@via.masi",
+      role: "Founder, Via Masi Productions",
+      avatar: "/clients/via_masi.jpg",
+      metric: "+210% Inbound Inbox",
+      comment: "Honestly one of the few editors who understands story flow instead of just spamming flashy zooms. Sent him a batch of raw talking head clips and every single hook felt intentional. Saved our team dozens of hours.",
+      stars: 5,
+      location: "United States"
+    },
+    {
       name: "Raul Ocana",
       handle: "@raulteentrena",
       role: "Fitness Coach & Personal Brand",
@@ -423,6 +424,16 @@ export default function App() {
       comment: "My retention graph on Instagram Reels completely changed after Thomas took over the editing. He finds the right b-roll without me having to script every second. 48 hour delivery is real.",
       stars: 4.5,
       location: "Spain"
+    },
+    {
+      name: "Chali Weerakkody",
+      handle: "@editozclub",
+      role: "Founder, Editoz Club",
+      avatar: "/clients/chali_weerakkody.jpg",
+      metric: "3.8x Engagement Lift",
+      comment: "No template slop or recycled presets. Custom motion elements and clean sound effects that match the brand identity. Engagement and comments doubled on our recent series.",
+      stars: 4.5,
+      location: "United Kingdom"
     },
     {
       name: "Eugene Fomin",
@@ -443,21 +454,10 @@ export default function App() {
       comment: "As a creator myself I'm very picky with audio leveling and color grade. Thomas surprised me with the first draft quality. Helped us sell out our digital cohort without running paid ads.",
       stars: 4.5,
       location: "Global"
-    },
-    {
-      name: "Chali Weerakkody",
-      handle: "@editozclub",
-      role: "Founder, Editoz Club",
-      avatar: "/clients/chali_weerakkody.jpg",
-      metric: "3.8x Engagement Lift",
-      comment: "No template slop or recycled presets. Custom motion elements and clean sound effects that match the brand identity. Engagement and comments doubled on our recent series.",
-      stars: 4.5,
-      location: "United Kingdom"
     }
   ];
 
-  const marqueeReviewsRow1 = [...clientReviews, ...clientReviews];
-  const marqueeReviewsRow2 = [...clientReviews.slice().reverse(), ...clientReviews.slice().reverse()];
+  const displayedReviews = showAllReviews ? clientReviews : clientReviews.slice(0, 3);
 
   // 10 OFFICIAL CLIENT & PARTNER BRANDS (ALL PURE WHITE FILL)
   const brandList = [
@@ -972,173 +972,124 @@ export default function App() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 3. CLIENT FEEDBACK & SOCIAL PROOF (BLUE RESULT BANNER UNDER CLIENT NAME)  */}
+        {/* 3. TESTIMONIALS & PROVEN RESULTS (CLEAN 3-CARD GRID · SWISS MINIMALIST)  */}
         {/* ========================================================================= */}
-        <section id="results" className="space-y-8 pt-4 scroll-mt-20 overflow-hidden">
-          <div className="text-center space-y-2 max-w-xl mx-auto">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-xs font-semibold uppercase tracking-wider text-[#60b6ee]">
-              Proven Client Results
+        <section id="results" className="scroll-mt-24 pt-6 pb-4 max-w-[1200px] mx-auto">
+          
+          {/* Header Layout (Matching exact reference screenshot) */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1591DC]/15 border border-[#1591DC]/30 text-[11px] font-semibold uppercase tracking-wider text-[#60b6ee] mb-3 shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1591DC]" />
+                <span>TESTIMONIALS · PROVEN RESULTS</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-white leading-[1.08]">
+                Proven Across High–Growth Teams
+              </h2>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal sm:font-medium tracking-tight text-white">
-              Client Feedback &amp; ROI
-            </h2>
-            <p className="text-xs sm:text-sm text-[#8e909a]">
-              Real revenue, inbound inbox growth, and retention results from founders and creators worldwide
+            <p className="text-sm sm:text-base text-[#8e909a] max-w-md font-normal leading-relaxed">
+              Real revenue, inbound inbox growth, and retention results from founders and creators worldwide.
             </p>
           </div>
 
-          {/* Marquee Row 1 (Left Scroll) */}
-          <div className="relative w-full overflow-hidden py-1">
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
+          {/* 3-Card Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
+            {displayedReviews.map((rev, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl border border-white/[0.08] bg-[#0d0f15]/85 hover:bg-[#11141e]/90 p-7 sm:p-8 flex flex-col justify-between hover:border-[#1591DC]/50 transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-[#1591DC]/10 group relative"
+              >
+                <div>
+                  
+                  {/* Top Row: Blue Quote Mark + ROI Badge & Stars */}
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    
+                    {/* Signature Blue Quote Mark */}
+                    <span className="text-4xl font-serif text-[#1591DC] leading-none select-none block">
+                      “
+                    </span>
 
-            <div className="animate-marquee gap-2.5 sm:gap-3">
-              {marqueeReviewsRow1.map((rev, i) => (
-                <div 
-                  key={`r1-${i}`}
-                  className="bg-[#0d0f15]/90 border border-white/[0.08] hover:border-[#1591DC]/40 rounded-xl w-[205px] sm:w-[215px] p-2.5 sm:p-3 shrink-0 flex flex-col justify-between space-y-2 shadow-sm select-none transition-colors"
-                >
-                  <div className="space-y-1.5">
-                    {/* 1. Client Name & Rating at Top */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <img 
-                          src={rev.avatar} 
-                          alt={rev.name}
-                          className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
-                        />
-                        <div className="text-left min-w-0">
-                          <div className="flex items-center gap-1">
-                            <span className="text-white font-semibold text-[11px] leading-tight truncate">{rev.name}</span>
-                            <CheckCircle2 size={8.5} className="text-[#1591DC] shrink-0" />
-                          </div>
-                          <span className="text-[8.5px] text-[#8e909a] block truncate max-w-[80px]">{rev.role}</span>
-                        </div>
+                    {/* Compact Blue ROI Badge & Stars */}
+                    <div className="flex flex-col items-end gap-1.5">
+                      <div className="py-0.5 px-2.5 rounded bg-gradient-to-r from-[#1591DC]/20 to-[#0f7bbd]/20 border border-[#1591DC]/40 shadow-xs flex items-center gap-1.5">
+                        <Zap size={10} className="text-[#60b6ee] fill-[#60b6ee]" />
+                        <span className="text-[10px] font-mono font-bold tracking-tight text-[#60b6ee] uppercase">
+                          {rev.metric}
+                        </span>
                       </div>
 
-                      <div className="flex items-center gap-0.5 text-amber-400 shrink-0">
+                      <div className="flex items-center gap-0.5 text-amber-400">
                         {[1, 2, 3, 4, 5].map((s) => {
                           if (rev.stars >= s) {
-                            return <Star key={s} size={8} fill="currentColor" />;
+                            return <Star key={s} size={9} fill="currentColor" />;
                           } else if (rev.stars >= s - 0.5) {
-                            return <StarHalf key={s} size={8} fill="currentColor" />;
+                            return <StarHalf key={s} size={9} fill="currentColor" />;
                           } else {
-                            return <Star key={s} size={8} className="text-amber-400/30" />;
+                            return <Star key={s} size={9} className="text-amber-400/30" />;
                           }
                         })}
-                        <span className="text-[8.5px] font-semibold text-amber-400/90 ml-0.5">
+                        <span className="text-[9px] font-mono font-bold text-amber-400/90 ml-1">
                           {rev.stars.toFixed(1)}
                         </span>
                       </div>
                     </div>
 
-                    {/* 2. COMPACT SLIM RESULT BANNER */}
-                    <div className="w-full py-0.5 px-2 rounded bg-gradient-to-r from-[#1591DC]/90 to-[#0f7bbd]/90 border border-[#60b6ee]/30 shadow-xs flex items-center justify-between">
-                      <div className="flex items-center gap-1 min-w-0">
-                        <Zap size={9} className="text-white fill-white shrink-0" />
-                        <span className="text-[9px] font-bold tracking-tight text-white uppercase truncate">
-                          {rev.metric}
-                        </span>
-                      </div>
-                      <span className="text-[7.5px] font-semibold uppercase tracking-wider text-white/90 bg-black/25 px-1 py-0.2 rounded shrink-0 ml-1">
-                        ROI
-                      </span>
-                    </div>
-
-                    {/* 3. Clean Review Text (Line Clamped for neat uniform height) */}
-                    <p className="text-[9.5px] text-[#c6c8d4] leading-snug text-left line-clamp-3">
-                      "{rev.comment}"
-                    </p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-1.5 border-t border-white/[0.06] text-[8.5px] text-[#8e909a]">
-                    <span className="truncate max-w-[95px]">{rev.handle}</span>
-                    <span className="text-emerald-400 font-medium flex items-center gap-1 shrink-0">
-                      <CheckCircle2 size={8} /> Verified
-                    </span>
-                  </div>
+                  {/* Clean, Readable, Well-Spaced Testimonial Text */}
+                  <p className="text-sm sm:text-[14.5px] text-[#c6c8d4] font-normal leading-relaxed group-hover:text-white transition-colors">
+                    "{rev.comment}"
+                  </p>
+
                 </div>
-              ))}
-            </div>
+
+                {/* Author Info Divider & Row */}
+                <div className="pt-6 mt-8 border-t border-white/[0.07] flex items-center justify-between">
+                  
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <img 
+                      src={rev.avatar} 
+                      alt={rev.name}
+                      className="w-10 h-10 rounded-full object-cover border border-white/15 group-hover:border-[#1591DC]/60 transition-colors shrink-0" 
+                    />
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <h4 className="text-sm font-semibold text-white tracking-tight leading-tight truncate">
+                          {rev.name}
+                        </h4>
+                        <CheckCircle2 size={12} className="text-[#1591DC] shrink-0" />
+                      </div>
+                      <p className="text-xs text-[#8e909a] font-normal leading-tight mt-0.5 truncate">
+                        {rev.role}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Verified Tag */}
+                  <span className="text-[10.5px] font-mono text-emerald-400 font-medium flex items-center gap-1 shrink-0 ml-2">
+                    <CheckCircle2 size={10} />
+                    <span>Verified</span>
+                  </span>
+
+                </div>
+
+              </div>
+            ))}
           </div>
 
-          {/* Marquee Row 2 (Right / Reverse Scroll) */}
-          <div className="relative w-full overflow-hidden py-1">
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#07080b] to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#07080b] to-transparent z-20 pointer-events-none" />
-
-            <div className="animate-marquee-reverse gap-2.5 sm:gap-3">
-              {marqueeReviewsRow2.map((rev, i) => (
-                <div 
-                  key={`r2-${i}`}
-                  className="bg-[#0d0f15]/90 border border-white/[0.08] hover:border-[#1591DC]/40 rounded-xl w-[205px] sm:w-[215px] p-2.5 sm:p-3 shrink-0 flex flex-col justify-between space-y-2 shadow-sm select-none transition-colors"
-                >
-                  <div className="space-y-1.5">
-                    {/* 1. Client Name & Rating at Top */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <img 
-                          src={rev.avatar} 
-                          alt={rev.name}
-                          className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-full object-cover border border-[#1591DC]/50 shrink-0"
-                        />
-                        <div className="text-left min-w-0">
-                          <div className="flex items-center gap-1">
-                            <span className="text-white font-semibold text-[11px] leading-tight truncate">{rev.name}</span>
-                            <CheckCircle2 size={8.5} className="text-[#1591DC] shrink-0" />
-                          </div>
-                          <span className="text-[8.5px] text-[#8e909a] block truncate max-w-[80px]">{rev.role}</span>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-0.5 text-amber-400 shrink-0">
-                        {[1, 2, 3, 4, 5].map((s) => {
-                          if (rev.stars >= s) {
-                            return <Star key={s} size={8} fill="currentColor" />;
-                          } else if (rev.stars >= s - 0.5) {
-                            return <StarHalf key={s} size={8} fill="currentColor" />;
-                          } else {
-                            return <Star key={s} size={8} className="text-amber-400/30" />;
-                          }
-                        })}
-                        <span className="text-[8.5px] font-semibold text-amber-400/90 ml-0.5">
-                          {rev.stars.toFixed(1)}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* 2. COMPACT SLIM RESULT BANNER */}
-                    <div className="w-full py-0.5 px-2 rounded bg-gradient-to-r from-[#1591DC]/90 to-[#0f7bbd]/90 border border-[#60b6ee]/30 shadow-xs flex items-center justify-between">
-                      <div className="flex items-center gap-1 min-w-0">
-                        <Zap size={9} className="text-white fill-white shrink-0" />
-                        <span className="text-[9px] font-bold tracking-tight text-white uppercase truncate">
-                          {rev.metric}
-                        </span>
-                      </div>
-                      <span className="text-[7.5px] font-semibold uppercase tracking-wider text-white/90 bg-black/25 px-1 py-0.2 rounded shrink-0 ml-1">
-                        ROI
-                      </span>
-                    </div>
-
-                    {/* 3. Clean Review Text (Line Clamped for neat uniform height) */}
-                    <p className="text-[9.5px] text-[#c6c8d4] leading-snug text-left line-clamp-3">
-                      "{rev.comment}"
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-1.5 border-t border-white/[0.06] text-[8.5px] text-[#8e909a]">
-                    <span className="truncate max-w-[95px]">{rev.handle}</span>
-                    <span className="text-emerald-400 font-medium flex items-center gap-1 shrink-0">
-                      <CheckCircle2 size={8} /> Verified
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Clean Expand Toggle for Remaining Client Proof */}
+          <div className="pt-8 text-center">
+            <button
+              onClick={() => setShowAllReviews(!showAllReviews)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.12] bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#1591DC]/50 text-xs font-semibold text-[#8e909a] hover:text-white transition-all cursor-pointer shadow-xs"
+            >
+              <span>{showAllReviews ? 'Thu gọn (3 đánh giá nổi bật)' : 'Xem toàn bộ 8 đối tác trong portfolio'}</span>
+              <ChevronDown size={14} className={`transition-transform duration-200 ${showAllReviews ? 'rotate-180' : ''}`} />
+            </button>
           </div>
 
           {/* REPEATED BOOK CALL CTA #3 (AFTER SOCIAL PROOF) */}
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button 
               onClick={handleCalendlyRedirect}
               className="w-full sm:w-auto px-8 py-4 bg-[#1591DC] hover:bg-[#0f7bbd] text-white text-sm font-semibold rounded-full tracking-tight inline-flex items-center justify-center gap-2 shadow-[0_4px_24px_rgba(21,145,220,0.4)] hover:shadow-[0_6px_32px_rgba(21,145,220,0.6)] transition-all cursor-pointer"
@@ -1150,7 +1101,6 @@ export default function App() {
 
         </section>
 
-        {/* ========================================================================= */}
         {/* 4. THE 3-PHASE RETENTION ENGINE (PROPRIETARY FRAMEWORK)                   */}
         {/* ========================================================================= */}
         <section id="process" className="space-y-8 pt-6 scroll-mt-20 max-w-5xl mx-auto">
