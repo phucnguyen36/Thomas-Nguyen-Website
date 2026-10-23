@@ -107,6 +107,13 @@ Trang portfolio chuyển đổi cao (High-Ticket B2B Conversion Portfolio) dành
 
 ## 5. LỊCH SỬ CẬP NHẬT & MILESTONE ĐÃ HOÀN THÀNH
 
+### [Milestone 08] Chuẩn hóa Avatar Trắng Đen & Khắc phục Lỗi Viền Vuông Google Favicon
+- **Vấn đề:** Google Search hiển thị icon website dạng ô vuông đen có 4 góc nhọn thô kệch bên trong khung tròn của Google; avatar navbar và các vị trí khác hiển thị ảnh màu chưa đồng bộ phong cách trắng đen chuẩn điện ảnh của web.
+- **Xử lý:**
+  - Chuyển đổi toàn bộ chân dung 	homas_portrait.jpg sang chuẩn trắng đen nghệ thuật Rec.709 (High-Contrast Black & White), đồng bộ trên toàn bộ Header, About, Deliverables, Footer và trang Offer.
+  - Sinh bộ favicon chuẩn SEO đa kích thước (avicon-48x48.png, icon-192.png, icon-512.png, pple-touch-icon.png, avicon.ico) với mặt nạ bo tròn hoàn hảo và nền trong suốt (Alpha = 0).
+  - Khắc phục triệt để lỗi viền vuông trên kết quả tìm kiếm Google (Google Search Snippet) và trên tab trình duyệt/mobile.
+
 ### [Milestone 07] Tinh chỉnh Cinema Lightbox & Deployment Final (`71b8014`)
 - **Vấn đề:** Khi click mở to video để xem trong Lightbox modal, thanh thông tin bên dưới (caption/avatar/metric) hiển thị sai thông tin so với nội dung video đang chiếu.
 - **Xử lý:** Gỡ bỏ toàn bộ thanh caption/thông tin thừa bên dưới video. Chế độ Lightbox chuyển sang chuẩn **Pure Cinema Mode**: tập trung 100% vào khung hình video, giữ lại nút `✕` đóng góc trên và mũi tên chuyển video trái/phải.
