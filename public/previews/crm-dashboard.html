@@ -45,7 +45,7 @@
         </div>
         <div class="text-xs font-mono-tech text-[#4A4F55] flex flex-col sm:items-end gap-1">
           <div>Live Cloud Stream: <strong id="liveSyncStatus" class="text-[#15803D]">CONNECTED (Auto-Refresh 15s)</strong></div>
-          <div>Last Updated: <strong id="lastSyncedTime" class="text-[#141619]">2026-11-03 01:02:20</strong></div>
+          <div>Last Updated: <strong id="lastSyncedTime" class="text-[#141619]">2026-11-03 01:29:55</strong></div>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
         </div>
         <div class="bg-[#F6F4F0] border border-[#DCD7CD] p-3.5">
           <p class="font-mono-tech text-[11px] uppercase text-[#4A4F55]">Dispatched (0 Bounce)</p>
-          <p class="text-2xl font-extrabold font-mono-tech text-[#15803D] mt-1">5 / 5</p>
+          <p class="text-2xl font-extrabold font-mono-tech text-[#15803D] mt-1">64 / 65</p>
         </div>
         <div class="bg-[#F6F4F0] border border-[#DCD7CD] p-3.5">
           <p class="font-mono-tech text-[11px] uppercase text-[#4A4F55]">Email Opens (Live)</p>
@@ -68,7 +68,7 @@
         </div>
         <div class="bg-[#F6F4F0] border border-[#DCD7CD] p-3.5">
           <p class="font-mono-tech text-[11px] uppercase text-[#4A4F55]">Web Preview Visits</p>
-          <p id="kpiTotalVisits" class="text-2xl font-extrabold font-mono-tech text-[#15803D] mt-1">10</p>
+          <p id="kpiTotalVisits" class="text-2xl font-extrabold font-mono-tech text-[#15803D] mt-1">12</p>
         </div>
       </div>
     </div>
@@ -77,10 +77,10 @@
     <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
       <div class="flex flex-wrap gap-2 text-xs font-mono-tech">
         <button onclick="filterRows('all')" class="px-3.5 py-2 bg-[#141619] text-white font-semibold cursor-pointer">All Leads (100)</button>
-        <button onclick="filterRows('sent')" class="px-3.5 py-2 bg-white border border-[#DCD7CD] hover:bg-[#F6F4F0] font-semibold cursor-pointer">Sent Pilot (5)</button>
+        <button onclick="filterRows('sent')" class="px-3.5 py-2 bg-white border border-[#DCD7CD] hover:bg-[#F6F4F0] font-semibold cursor-pointer">Sent Pilot (65)</button>
         <button onclick="filterRows('opened')" class="px-3.5 py-2 bg-white border border-[#DCD7CD] hover:bg-[#F6F4F0] font-semibold cursor-pointer">Opened / Active (<span id="btnOpenedCnt">2</span>)</button>
         <button onclick="filterRows('visited')" class="px-3.5 py-2 bg-white border border-[#DCD7CD] hover:bg-[#F6F4F0] font-semibold cursor-pointer">Clicked / Visited Web</button>
-        <button onclick="filterRows('queued')" class="px-3.5 py-2 bg-white border border-[#DCD7CD] hover:bg-[#F6F4F0] font-semibold cursor-pointer">Queued Ready (95)</button>
+        <button onclick="filterRows('queued')" class="px-3.5 py-2 bg-white border border-[#DCD7CD] hover:bg-[#F6F4F0] font-semibold cursor-pointer">Queued Ready (35)</button>
         <button onclick="syncLiveCloudEvents()" class="px-3.5 py-2 bg-[#1591DC] text-white font-semibold cursor-pointer">Sync Live Opens Now</button>
       </div>
       <div class="text-xs text-[#4A4F55] font-mono-tech">
@@ -150,7 +150,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
             <div>IG/LI Clicks: <b class="js-sig-count">0</b> (<span class="js-sig-links">Chưa click</span>)</div>
-            <div>Web Visits: <b class="js-visit-count">3</b> | CTA: <b class="js-cta-count">0</b></div>
+            <div>Web Visits: <b class="js-visit-count">4</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
             <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial + FU1)</div>
@@ -231,7 +231,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
             <div>IG/LI Clicks: <b class="js-sig-count">0</b> (<span class="js-sig-links">Chưa click</span>)</div>
-            <div>Web Visits: <b class="js-visit-count">3</b> | CTA: <b class="js-cta-count">0</b></div>
+            <div>Web Visits: <b class="js-visit-count">4</b> | CTA: <b class="js-cta-count">1</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
             <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial + FU1)</div>
@@ -239,7 +239,7 @@
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="visionpools22@gmail.com" data-slug="vision-pools-and-concrete">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="visionpools22@gmail.com" data-slug="vision-pools-and-concrete">
           <td class="py-3 px-3 font-mono-tech font-bold">P06</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Vision Pools and Concrete</div>
@@ -252,7 +252,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -261,12 +261,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="texas.pw.solutions@gmail.com" data-slug="levi-and-carlos-ramirez">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="texas.pw.solutions@gmail.com" data-slug="levi-and-carlos-ramirez">
           <td class="py-3 px-3 font-mono-tech font-bold">P07</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Texas Pressure Washing Solutions</div>
@@ -279,7 +279,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://texaspressurewashingsolutions.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -288,12 +288,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="renowisecontracting@gmail.com" data-slug="renowise-contracting-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="renowisecontracting@gmail.com" data-slug="renowise-contracting-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P08</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Renowise Contracting LLC</div>
@@ -306,7 +306,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -315,12 +315,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="ovalvacrs@gmail.com" data-slug="ovalva-construction">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="ovalvacrs@gmail.com" data-slug="ovalva-construction">
           <td class="py-3 px-3 font-mono-tech font-bold">P09</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Ovalva Construction</div>
@@ -333,7 +333,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -342,12 +342,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="priorityremodelingca@gmail.com" data-slug="priority-remodeling">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="priorityremodelingca@gmail.com" data-slug="priority-remodeling">
           <td class="py-3 px-3 font-mono-tech font-bold">P10</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Priority Remodeling</div>
@@ -360,7 +360,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://priorityremodelingca.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -369,12 +369,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="lukewilliams310@gmail.com" data-slug="seventh-dimension-construction">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="lukewilliams310@gmail.com" data-slug="seventh-dimension-construction">
           <td class="py-3 px-3 font-mono-tech font-bold">P11</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Seventh Dimension Construction</div>
@@ -387,7 +387,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -396,12 +396,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="bearpointpainting@gmail.com" data-slug="bear-point-painting">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="bearpointpainting@gmail.com" data-slug="bear-point-painting">
           <td class="py-3 px-3 font-mono-tech font-bold">P12</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Bear Point Painting</div>
@@ -414,7 +414,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -423,12 +423,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="ynotpaintingllc@gmail.com" data-slug="ynotpaintingllc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="ynotpaintingllc@gmail.com" data-slug="ynotpaintingllc">
           <td class="py-3 px-3 font-mono-tech font-bold">P13</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">YnotPaintingLLC</div>
@@ -441,7 +441,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -450,12 +450,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="omarshandywork@gmail.com" data-slug="omar-s-handy-work">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="omarshandywork@gmail.com" data-slug="omar-s-handy-work">
           <td class="py-3 px-3 font-mono-tech font-bold">P14</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Omar's Handy-Work</div>
@@ -468,7 +468,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -477,12 +477,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="indyspaintingpros@gmail.com" data-slug="joshua-rodgers">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="indyspaintingpros@gmail.com" data-slug="joshua-rodgers">
           <td class="py-3 px-3 font-mono-tech font-bold">P15</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Indy's Painting Pros</div>
@@ -495,7 +495,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -504,12 +504,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="statelinemasonry@gmail.com" data-slug="stateline-masonry-waterproofing">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="statelinemasonry@gmail.com" data-slug="stateline-masonry-waterproofing">
           <td class="py-3 px-3 font-mono-tech font-bold">P16</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Stateline Masonry & waterproofing</div>
@@ -522,7 +522,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -531,12 +531,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="primepaversealing@gmail.com" data-slug="prime-paver-sealing">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="primepaversealing@gmail.com" data-slug="prime-paver-sealing">
           <td class="py-3 px-3 font-mono-tech font-bold">P17</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Prime Paver Sealing</div>
@@ -549,7 +549,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -558,12 +558,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="adpavingandmasonry@gmail.com" data-slug="ad-paving-masonry">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="adpavingandmasonry@gmail.com" data-slug="ad-paving-masonry">
           <td class="py-3 px-3 font-mono-tech font-bold">P18</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">AD Paving & Masonry</div>
@@ -576,7 +576,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://adpavingmasonry.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -585,12 +585,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="aceconstructionsvcs1@gmail.com" data-slug="ace-construction-services">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="aceconstructionsvcs1@gmail.com" data-slug="ace-construction-services">
           <td class="py-3 px-3 font-mono-tech font-bold">P19</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Ace Construction Services</div>
@@ -603,7 +603,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://aceconstructionservices.net</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -612,12 +612,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="tncmaintenanceandrepair@gmail.com" data-slug="tnc-maintenance-and-repair">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="tncmaintenanceandrepair@gmail.com" data-slug="tnc-maintenance-and-repair">
           <td class="py-3 px-3 font-mono-tech font-bold">P20</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">TNC Maintenance and Repair</div>
@@ -630,7 +630,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -639,12 +639,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="fencenerdsllc@gmail.com" data-slug="fence-nerds-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="fencenerdsllc@gmail.com" data-slug="fence-nerds-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P21</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Fence Nerds LLC</div>
@@ -657,7 +657,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -666,12 +666,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="longviewfencepro@gmail.com" data-slug="longviewfencepro">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="longviewfencepro@gmail.com" data-slug="longviewfencepro">
           <td class="py-3 px-3 font-mono-tech font-bold">P22</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">LongviewFencePro</div>
@@ -684,7 +684,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://longviewfencepro.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -693,12 +693,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="aruizgrading@gmail.com" data-slug="ruiz-grading-and-landscaping">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="aruizgrading@gmail.com" data-slug="ruiz-grading-and-landscaping">
           <td class="py-3 px-3 font-mono-tech font-bold">P23</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Ruiz Grading and Landscaping</div>
@@ -711,7 +711,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -720,12 +720,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="corsinoglauco@gmail.com" data-slug="corsino-s-landscaping">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="corsinoglauco@gmail.com" data-slug="corsino-s-landscaping">
           <td class="py-3 px-3 font-mono-tech font-bold">P24</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Corsino's Landscaping</div>
@@ -738,7 +738,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://corsinoslandscaping.us</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -747,12 +747,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="torrespremiumdrywall@gmail.com" data-slug="torres-premium-drywall">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="torrespremiumdrywall@gmail.com" data-slug="torres-premium-drywall">
           <td class="py-3 px-3 font-mono-tech font-bold">P25</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Torres Premium Drywall</div>
@@ -765,7 +765,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -774,12 +774,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="masonsneaman@gmail.com" data-slug="native-repair-handyman-services-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="masonsneaman@gmail.com" data-slug="native-repair-handyman-services-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P26</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Native Repair Handyman services LLC</div>
@@ -792,7 +792,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -801,12 +801,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="2guysfencingco@gmail.com" data-slug="two-guys-fencing">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="2guysfencingco@gmail.com" data-slug="two-guys-fencing">
           <td class="py-3 px-3 font-mono-tech font-bold">P27</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Two Guys Fencing</div>
@@ -819,7 +819,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -828,12 +828,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="therivervalleyhandyman@gmail.com" data-slug="river-valley-handyman-boise-idaho">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="therivervalleyhandyman@gmail.com" data-slug="river-valley-handyman-boise-idaho">
           <td class="py-3 px-3 font-mono-tech font-bold">P28</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">River Valley Handyman Boise, Idaho</div>
@@ -846,7 +846,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -855,12 +855,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="immoemoney6@gmail.com" data-slug="all-star-lawn-home-repair">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="immoemoney6@gmail.com" data-slug="all-star-lawn-home-repair">
           <td class="py-3 px-3 font-mono-tech font-bold">P29</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">All-Star Lawn & Home Repair</div>
@@ -873,7 +873,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -882,12 +882,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="bushexcavation@gmail.com" data-slug="bush-excavation-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="bushexcavation@gmail.com" data-slug="bush-excavation-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P30</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Bush Excavation, LLC</div>
@@ -900,7 +900,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://bushexcavation.io</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -909,12 +909,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="gone.junkremovaldemo@gmail.com" data-slug="gone-junk-removal-demolition">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="gone.junkremovaldemo@gmail.com" data-slug="gone-junk-removal-demolition">
           <td class="py-3 px-3 font-mono-tech font-bold">P31</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">GONE. Junk Removal + Demolition</div>
@@ -927,7 +927,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -936,12 +936,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="maelsmightydemo@gmail.com" data-slug="mael-s-mighty-demo">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="maelsmightydemo@gmail.com" data-slug="mael-s-mighty-demo">
           <td class="py-3 px-3 font-mono-tech font-bold">P32</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Mael's Mighty Demo</div>
@@ -954,7 +954,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -963,12 +963,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="rnpaversllc@gmail.com" data-slug="rn-del-sol-pavers-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="rnpaversllc@gmail.com" data-slug="rn-del-sol-pavers-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P33</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">RN DEL SOL PAVERS LLC</div>
@@ -981,7 +981,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -990,12 +990,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="cntreeservice82@gmail.com" data-slug="cn-tree-service">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="cntreeservice82@gmail.com" data-slug="cn-tree-service">
           <td class="py-3 px-3 font-mono-tech font-bold">P34</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">CN TREE SERVICE</div>
@@ -1008,7 +1008,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://cntreeservices.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1017,12 +1017,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="kr.pwsolutions@gmail.com" data-slug="k-r-pressure-washing-solutions">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="kr.pwsolutions@gmail.com" data-slug="k-r-pressure-washing-solutions">
           <td class="py-3 px-3 font-mono-tech font-bold">P35</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">K R Pressure Washing Solutions</div>
@@ -1035,7 +1035,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1044,12 +1044,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="paesanospw@gmail.com" data-slug="paesano-s-powerwashing">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="paesanospw@gmail.com" data-slug="paesano-s-powerwashing">
           <td class="py-3 px-3 font-mono-tech font-bold">P36</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Paesano's Powerwashing</div>
@@ -1062,7 +1062,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1071,12 +1071,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="districtexterior@gmail.com" data-slug="district-exterior-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="districtexterior@gmail.com" data-slug="district-exterior-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P37</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">District Exterior LLC</div>
@@ -1089,7 +1089,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://district-exterior.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1098,12 +1098,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="lopezraullopez18@gmail.com" data-slug="r-l-foundation-repair">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="lopezraullopez18@gmail.com" data-slug="r-l-foundation-repair">
           <td class="py-3 px-3 font-mono-tech font-bold">P38</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">R.L Foundation Repair</div>
@@ -1116,7 +1116,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1125,12 +1125,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="ojedasconstruction8726@gmail.com" data-slug="ojedas-construction">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="ojedasconstruction8726@gmail.com" data-slug="ojedas-construction">
           <td class="py-3 px-3 font-mono-tech font-bold">P39</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">OJEDAS CONSTRUCTION</div>
@@ -1143,7 +1143,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1152,12 +1152,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="ckgsmallconcrete@gmail.com" data-slug="ckg-small-concrete-llc-columbus-ohio">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="ckgsmallconcrete@gmail.com" data-slug="ckg-small-concrete-llc-columbus-ohio">
           <td class="py-3 px-3 font-mono-tech font-bold">P40</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">CKG Small Concrete LLC</div>
@@ -1170,7 +1170,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1179,12 +1179,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="ajhomeimprovementllc1@gmail.com" data-slug="aj-home-improvement-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="ajhomeimprovementllc1@gmail.com" data-slug="aj-home-improvement-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P41</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">AJ HOME IMPROVEMENT LLC</div>
@@ -1197,7 +1197,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1206,12 +1206,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="bmhomerepairs12@gmail.com" data-slug="bm-home-repairs">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="bmhomerepairs12@gmail.com" data-slug="bm-home-repairs">
           <td class="py-3 px-3 font-mono-tech font-bold">P42</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Bm home repairs</div>
@@ -1224,7 +1224,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1233,12 +1233,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="joycompanyw@gmail.com" data-slug="joy-renovations-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="joycompanyw@gmail.com" data-slug="joy-renovations-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P43</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">JOY Renovations LLC</div>
@@ -1251,7 +1251,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1260,12 +1260,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="maganasstarpainting@gmail.com" data-slug="magana-s-star-painting">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="maganasstarpainting@gmail.com" data-slug="magana-s-star-painting">
           <td class="py-3 px-3 font-mono-tech font-bold">P44</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Magana's Star Painting</div>
@@ -1278,7 +1278,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1287,12 +1287,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="proprestigepainting@gmail.com" data-slug="pro-prestige-painting">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="proprestigepainting@gmail.com" data-slug="pro-prestige-painting">
           <td class="py-3 px-3 font-mono-tech font-bold">P45</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Pro Prestige Painting</div>
@@ -1305,7 +1305,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1314,12 +1314,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="adr.cc22@gmail.com" data-slug="adr-construction-concrete-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="adr.cc22@gmail.com" data-slug="adr-construction-concrete-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P46</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Adr Construction Concrete Llc</div>
@@ -1332,7 +1332,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1341,12 +1341,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="superiorconcretedecor@gmail.com" data-slug="superior-concrete-decor-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="superiorconcretedecor@gmail.com" data-slug="superior-concrete-decor-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P47</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Superior Concrete Decor LLC</div>
@@ -1359,7 +1359,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://superiorconcretedecor.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1368,12 +1368,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="davila.magdiel20@gmail.com" data-slug="duarte-painting-and-remodeling-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="davila.magdiel20@gmail.com" data-slug="duarte-painting-and-remodeling-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P48</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Duarte Painting and Remodeling LLC</div>
@@ -1386,7 +1386,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://duartepaintingremodelingllc.com/</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1395,12 +1395,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="coralpaintingllcusa@gmail.com" data-slug="coral-painting-llc-usa">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="coralpaintingllcusa@gmail.com" data-slug="coral-painting-llc-usa">
           <td class="py-3 px-3 font-mono-tech font-bold">P49</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Coral Painting LLC USA</div>
@@ -1413,7 +1413,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1422,12 +1422,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="carlosdeldadono@gmail.com" data-slug="delgado-s-painting-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="carlosdeldadono@gmail.com" data-slug="delgado-s-painting-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P50</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Delgado's Painting Llc</div>
@@ -1440,7 +1440,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://delgadospaintingllc.com/</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1449,12 +1449,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="hmmasonry7@gmail.com" data-slug="hm-masonry-outdoor-services">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="hmmasonry7@gmail.com" data-slug="hm-masonry-outdoor-services">
           <td class="py-3 px-3 font-mono-tech font-bold">P51</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">HM Masonry & Outdoor Services</div>
@@ -1467,7 +1467,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1476,12 +1476,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Bounced</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="reddix.business.inquiries@gmail.com" data-slug="mason-s-roofing-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="reddix.business.inquiries@gmail.com" data-slug="mason-s-roofing-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P52</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Mason's Roofing, LLC</div>
@@ -1494,7 +1494,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1503,12 +1503,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="edison.caroofing@gmail.com" data-slug="edison-california-roofing-inc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="edison.caroofing@gmail.com" data-slug="edison-california-roofing-inc">
           <td class="py-3 px-3 font-mono-tech font-bold">P53</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Edison California Roofing Inc</div>
@@ -1521,7 +1521,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://edisoncaroofing.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1530,12 +1530,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="roofingpasadena@gmail.com" data-slug="star-roofing-contractor-pasadena">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="roofingpasadena@gmail.com" data-slug="star-roofing-contractor-pasadena">
           <td class="py-3 px-3 font-mono-tech font-bold">P54</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Star Roofing Contractor Pasadena</div>
@@ -1548,7 +1548,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://roofing-pasadena.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1557,12 +1557,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="fijiconstruction@gmail.com" data-slug="fiji-construction-incorporated">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="fijiconstruction@gmail.com" data-slug="fiji-construction-incorporated">
           <td class="py-3 px-3 font-mono-tech font-bold">P55</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Fiji Construction Incorporated</div>
@@ -1575,7 +1575,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1584,12 +1584,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="lexingtonguttersinfo@gmail.com" data-slug="lexington-gutters-and-exterior">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="lexingtonguttersinfo@gmail.com" data-slug="lexington-gutters-and-exterior">
           <td class="py-3 px-3 font-mono-tech font-bold">P56</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Lexington Gutters and Exterior</div>
@@ -1602,7 +1602,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://lexingtonguttersandexterior.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1611,12 +1611,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="fenceitforu@gmail.com" data-slug="fenceitforu-raleigh">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="fenceitforu@gmail.com" data-slug="fenceitforu-raleigh">
           <td class="py-3 px-3 font-mono-tech font-bold">P57</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">FenceItForU - Raleigh</div>
@@ -1629,7 +1629,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://fenceitforu.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1638,12 +1638,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="zenpoolsfl@gmail.com" data-slug="zen-pools-and-outdoor-living">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="zenpoolsfl@gmail.com" data-slug="zen-pools-and-outdoor-living">
           <td class="py-3 px-3 font-mono-tech font-bold">P58</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Zen Pools and Outdoor Living</div>
@@ -1656,7 +1656,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1665,12 +1665,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="calslandscapingllc@gmail.com" data-slug="cal-s-landscaping-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="calslandscapingllc@gmail.com" data-slug="cal-s-landscaping-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P59</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Cal's Landscaping LLC</div>
@@ -1683,7 +1683,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1692,12 +1692,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="aguilaralexm@gmail.com" data-slug="nc-marble-and-stone-pavers">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="aguilaralexm@gmail.com" data-slug="nc-marble-and-stone-pavers">
           <td class="py-3 px-3 font-mono-tech font-bold">P60</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">NC Marble and Stone Pavers</div>
@@ -1710,7 +1710,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://ncmarbleandpavers.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1719,12 +1719,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="advanceconcretedesigns@gmail.com" data-slug="advanced-concrete-designs-const">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="advanceconcretedesigns@gmail.com" data-slug="advanced-concrete-designs-const">
           <td class="py-3 px-3 font-mono-tech font-bold">P61</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">ADVANCED CONCRETE DESIGNS & CONST</div>
@@ -1737,7 +1737,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1746,12 +1746,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="wbrumett@yahoo.com" data-slug="american-deck-and-carpentry">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="wbrumett@yahoo.com" data-slug="american-deck-and-carpentry">
           <td class="py-3 px-3 font-mono-tech font-bold">P62</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">American Deck and Carpentry</div>
@@ -1764,7 +1764,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1773,12 +1773,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="circlecitymasonry@gmail.com" data-slug="circle-city-masonry">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="circlecitymasonry@gmail.com" data-slug="circle-city-masonry">
           <td class="py-3 px-3 font-mono-tech font-bold">P63</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Circle City Masonry</div>
@@ -1791,7 +1791,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1800,12 +1800,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="ciro_marquez@yahoo.com" data-slug="marquez-masonry-and-construction-llc">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="ciro_marquez@yahoo.com" data-slug="marquez-masonry-and-construction-llc">
           <td class="py-3 px-3 font-mono-tech font-bold">P64</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Marquez Masonry And Construction  Llc</div>
@@ -1818,7 +1818,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">DEAD: https://marquezmasonryandconstructionllc.com</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1827,12 +1827,12 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
           </td>
         </tr>
         
-        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="queued" data-opened="" data-visited="" data-email="remodelpainter@gmail.com" data-slug="remodel-painter">
+        <tr class="crm-row border-b border-[#DCD7CD] hover:bg-[#FAF8F5] text-xs" data-status="sent" data-opened="" data-visited="" data-email="remodelpainter@gmail.com" data-slug="remodel-painter">
           <td class="py-3 px-3 font-mono-tech font-bold">P65</td>
           <td class="py-3 px-3">
             <div class="font-bold text-[#141619]">Remodel Painter</div>
@@ -1845,7 +1845,7 @@
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">NO WEBSITE</td>
           <td class="py-3 px-3">
-            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#F3F4F6] text-[#4B5563]">⏳ Chưa gửi Email</span>
+            <span class="js-open-badge inline-block px-2 py-1 font-mono-tech font-bold text-[11px] bg-[#DBEAFE] text-[#1E40AF]">📩 Chưa mở (Đã vào Inbox)</span>
             <div class="text-[11px] text-[#4A4F55] mt-1">Opens: <b class="js-open-count">0</b> | Last: <span class="js-last-open">Chưa mở</span></div>
             <div class="text-[10px] text-[#4A4F55] font-mono-tech js-open-device">Chưa xác định</div>
           </td>
@@ -1854,8 +1854,8 @@
             <div>Web Visits: <b class="js-visit-count">0</b> | CTA: <b class="js-cta-count">0</b></div>
           </td>
           <td class="py-3 px-3 font-mono-tech text-[11px]">
-            <div class="font-bold text-[#141619]">Website Live + 0-Bounce Verified</div>
-            <div class="text-[#4A4F55]">job.xuanphuc@gmail.com</div>
+            <div class="font-bold text-[#141619]">Delivered (0 Bounce - Initial Sent)</div>
+            <div class="text-[#4A4F55]">phucnguyen.theshelby@gmail.com</div>
           </td>
         </tr>
         
