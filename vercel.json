@@ -1,7 +1,12 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/previews/:slug",
+      "destination": "/previews/:slug.html"
+    },
+    {
+      "source": "/((?!previews/|api/).*)",
       "destination": "/index.html"
     }
   ]
