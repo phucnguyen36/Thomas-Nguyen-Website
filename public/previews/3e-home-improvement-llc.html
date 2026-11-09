@@ -4,584 +4,772 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3E HOME IMPROVEMENT,LLC | Service Area (929) - NY</title>
+  <meta name="description" content="Professional Concrete Driveways, Patios &amp; Stamped Flatwork in Service Area (929) - NY. Direct owner oversight, 10-year craft warranty, and 5.0 Google rating." />
+  
+  <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --color-gold: #C59B27;
+      --color-obsidian: #0B0F17;
+      --color-card-dark: #121824;
+      --color-canvas-light: #FAFAF9;
+    }
     body {
-      font-family: 'Public Sans', sans-serif;
-      background-color: #FBFBF9;
-      color: #141413;
-      caret-color: #1D4ED8;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.011em;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--color-canvas-light);
+      color: #1E293B;
+      letter-spacing: -0.015em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
-    .font-display, h1, h2, h3 {
-      font-family: 'Manrope', sans-serif;
-      letter-spacing: -0.025em;
+    .font-luxury {
+      font-family: 'Cinzel', Georgia, serif;
+      letter-spacing: -0.02em;
+    }
+    .font-mono-spec {
+      font-family: 'IBM Plex Mono', monospace;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.03em;
     }
     ::selection {
-      background-color: #1D4ED8;
+      background-color: #C59B27;
       color: #FFFFFF;
     }
-    a {
-      text-underline-offset: 4px;
-    }
     :focus-visible {
-      outline: 2px solid #1D4ED8;
-      outline-offset: 2px;
+      outline: 2px solid #C59B27;
+      outline-offset: 3px;
     }
-    details > summary::-webkit-details-marker { display: none; }
+    
+    /* Before/After Slider */
+    .ba-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ba-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: #FFFFFF;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      cursor: ew-resize;
+      transform: translateX(-50%);
+    }
+    .ba-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0F172A;
+      border: 2px solid #C59B27;
+    }
+    
+    .btn-gold {
+      background: linear-gradient(135deg, #C59B27 0%, #D4AF37 50%, #B3891E 100%);
+      box-shadow: 0 4px 20px rgba(197, 155, 39, 0.28);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-gold:hover {
+      box-shadow: 0 6px 26px rgba(197, 155, 39, 0.42);
+      transform: translateY(-1px);
+    }
+    
+    .gold-border-glow {
+      border: 1px solid rgba(197, 155, 39, 0.35);
+      box-shadow: 0 0 25px rgba(197, 155, 39, 0.08);
+    }
   </style>
 </head>
-<body>
+<body class="relative pb-24 md:pb-0">
 
-  <!-- Sticky Architectural Header (1040px) -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-black/10">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
-      <div class="min-w-0">
-        <div class="font-display font-bold text-[15.5px] tracking-[-0.02em] text-neutral-950 truncate">3E HOME IMPROVEMENT,LLC</div>
-        <div class="text-[11px] text-neutral-500 truncate">Service Area (929) - NY | Concrete Driveways, Patios & Structural Flatwork</div>
+  <!-- Top Announcement Bar -->
+  <div class="bg-neutral-950 text-neutral-300 border-b border-neutral-800 text-[12px] py-2 px-4">
+    <div class="max-w-[1140px] mx-auto flex items-center justify-between font-mono-spec">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-neutral-200">LICENSED &amp; FULLY INSURED</span>
+        <span class="text-neutral-500 hidden sm:inline">•</span>
+        <span class="hidden sm:inline text-neutral-400">Serving Service Area (929) - NY &amp; Surrounding Areas</span>
       </div>
-      <nav class="hidden md:flex items-center gap-6 text-[13px] font-semibold text-neutral-600">
-        <a href="#interactive-scope" class="hover:text-neutral-950 transition">Capabilities</a>
-        <a href="#anatomy" class="hover:text-neutral-950 transition">Build Standard</a>
-        <a href="#work" class="hover:text-neutral-950 transition">Project Portfolio</a>
-        <a href="#reviews" class="hover:text-neutral-950 transition">1-Tap Reviews</a>
-        <a href="#faq" class="hover:text-neutral-950 transition">FAQ</a>
+      <div class="flex items-center gap-4 text-neutral-300">
+        <span class="text-amber-400 font-semibold">5.0 ★ Google Verified</span>
+        <span class="hidden md:inline text-neutral-500">•</span>
+        <a href="#estimator" class="hidden md:inline text-amber-400 hover:underline">Instant 30s Cost Calculator</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Luxury Navigation -->
+  <header class="sticky top-0 z-50 bg-[#0B0F17]/90 backdrop-blur-xl border-b border-white/10 transition-all">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-neutral-950 font-luxury font-bold text-xl shadow-md">
+          3
+        </div>
+        <div>
+          <a href="#" class="font-luxury font-bold text-[17px] sm:text-[18px] tracking-wider text-white hover:text-amber-300 transition truncate max-w-[220px] sm:max-w-md block">3E HOME IMPROVEMENT,LLC</a>
+          <div class="font-mono-spec text-[10px] text-amber-400/90 tracking-widest uppercase truncate">ARCHITECTURAL CONCRETE &amp; PAVING</div>
+        </div>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[13px] font-semibold text-neutral-300">
+        <a href="#capabilities" class="hover:text-amber-400 transition">Capabilities</a>
+        <a href="#before-after" class="hover:text-amber-400 transition">Before &amp; After</a>
+        <a href="#estimator" class="hover:text-amber-400 transition">Cost Estimator</a>
+        <a href="#standards" class="hover:text-amber-400 transition">Build Standards</a>
+        <a href="#reviews" class="hover:text-amber-400 transition">5-Star Reviews</a>
       </nav>
-      <div class="flex items-center gap-2.5 shrink-0">
-        <a href="tel:9297046550" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-[12.5px] font-semibold text-white shadow-sm transition hover:opacity-95 whitespace-nowrap tabular-nums" style="background-color: #1D4ED8;">
-          <svg class="w-3.5 h-3.5 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 11.3v2a1.3 1.3 0 0 1-1.4 1.3 13 13 0 0 1-5.6-2 12.8 12.8 0 0 1-4-4 13 13 0 0 1-2-5.6A1.3 1.3 0 0 1 2.8 1.5h2a1.3 1.3 0 0 1 1.3 1.1c.1.6.3 1.2.5 1.8a1.3 1.3 0 0 1-.3 1.4l-.8.8a10.6 10.6 0 0 0 4 4l.8-.8a1.3 1.3 0 0 1 1.4-.3c.6.2 1.2.4 1.8.5a1.3 1.3 0 0 1 1.1 1.3z"/></svg>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="tel:9297046550" class="btn-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-neutral-950 font-bold text-[13px] font-mono-spec whitespace-nowrap">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>(929) 704-6550</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Bespoke Pinterest Hero -->
-  
-  <section class="py-12 sm:py-16 border-b border-black/10">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-      <div class="grid md:grid-cols-12 gap-8 items-center">
-        <div class="md:col-span-6 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-black/10 text-[12px] font-medium text-neutral-700">
-            <span class="w-2 h-2 rounded-full" style="background-color: #1D4ED8;"></span>
-            <span>Serving Service Area (929) - NY & Surrounding Communities</span>
+  <!-- Hero Section: Cinematic Split & Architectural Grandeur -->
+  <section class="relative bg-[#0B0F17] text-white pt-12 pb-20 md:py-24 overflow-hidden border-b border-white/10">
+    <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-10 w-[400px] h-[400px] bg-sky-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & Authority Hooks -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.07] border border-amber-400/30 backdrop-blur-md">
+            <span class="flex h-2 w-2 rounded-full bg-amber-400"></span>
+            <span class="text-[12px] font-mono-spec text-amber-300 font-semibold uppercase tracking-wider">Local Master Craftsmanship</span>
           </div>
-          <h1 class="font-display text-[30px] sm:text-[36px] font-bold text-neutral-950 leading-[1.12] tracking-[-0.025em]">
-            Engineered Concrete Driveways, Patios & Flatwork Across Service Area (929) - NY.
+
+          <h1 class="font-luxury text-[34px] sm:text-[46px] md:text-[52px] font-bold leading-[1.08] tracking-tight text-white">
+            Precision Stamped Concrete, Driveways &amp; Structural Foundations.
           </h1>
-          <p class="text-neutral-600 text-[14.5px] leading-[1.65]">
-            Laser-graded subbases, steel-reinforced slabs, decorative stamped concrete, and clean drainage pitch built to handle freeze-thaw cycles and heavy vehicle loads by 3E HOME IMPROVEMENT,LLC.
+
+          <p class="text-neutral-300 text-[16px] leading-[1.7] max-w-xl font-normal">
+            Engineered for high load capacities and severe climate durability. We pour laser-leveled driveways, decorative stamped patios, and commercial-grade structural footings with direct owner supervision.
           </p>
-          <div class="grid grid-cols-2 gap-2.5 pt-1 text-[12.5px] font-medium text-neutral-800">
-            <div class="bg-white px-3 py-2 rounded-lg border border-black/10 flex items-center gap-2">
-              <span style="color: #1D4ED8;"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.5L6.3 11.5L2.8 8"/></svg></span>
-              <span class="truncate">4,000+ PSI Ready-Mix Concrete</span>
+
+          <!-- 3 Floating Value Pills -->
+          <div class="grid sm:grid-cols-3 gap-3 pt-2">
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
+              <div class="font-mono-spec text-amber-400 text-[18px] font-bold">5.0 ★★★★★</div>
+              <div class="text-[12px] text-neutral-300 mt-0.5">Google Maps Rated</div>
             </div>
-            <div class="bg-white px-3 py-2 rounded-lg border border-black/10 flex items-center gap-2">
-              <span style="color: #1D4ED8;"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.5L6.3 11.5L2.8 8"/></svg></span>
-              <span class="truncate">Precision Saw-Cut Expansion Joints</span>
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
+              <div class="font-mono-spec text-white text-[18px] font-bold">10-Year Base</div>
+              <div class="text-[12px] text-neutral-300 mt-0.5">Structural Warranty</div>
             </div>
-            <div class="bg-white px-3 py-2 rounded-lg border border-black/10 flex items-center gap-2">
-              <span style="color: #1D4ED8;"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.5L6.3 11.5L2.8 8"/></svg></span>
-              <span class="truncate">Integral Pigment & Textured Stamp</span>
-            </div>
-            <div class="bg-white px-3 py-2 rounded-lg border border-black/10 flex items-center gap-2">
-              <span style="color: #1D4ED8;"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.5L6.3 11.5L2.8 8"/></svg></span>
-              <span class="truncate">Verified Local Crew</span>
+            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
+              <div class="font-mono-spec text-white text-[18px] font-bold">Zero Subbing</div>
+              <div class="text-[12px] text-neutral-300 mt-0.5">Dedicated Crew</div>
             </div>
           </div>
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="#estimate" class="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl text-white font-semibold text-[13.5px] shadow-sm transition hover:opacity-95 whitespace-nowrap" style="background-color: #1D4ED8;">
-              <span>Book Free On-Site Estimate</span>
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h9"/><path d="M8.5 4l4 4-4 4"/></svg>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#estimator" class="btn-gold inline-flex items-center gap-2 px-7 py-4 rounded-xl text-neutral-950 font-bold text-[14.5px] font-mono-spec">
+              <span>Calculate Project Cost</span>
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h9"/><path d="M8.5 4l4 4-4 4"/></svg>
             </a>
-            <a href="tel:9297046550" class="px-4 py-3 rounded-xl bg-white border border-black/15 text-neutral-900 font-semibold text-[13.5px] hover:bg-neutral-50 transition whitespace-nowrap tabular-nums">
-              (929) 704-6550
-            </a>
-          </div>
-        </div>
-
-        <div class="md:col-span-6 grid grid-cols-12 gap-3.5 items-stretch">
-          <div class="col-span-7 bg-white rounded-2xl p-2.5 border border-black/10 shadow-sm flex flex-col justify-between">
-            <div class="aspect-[4/4] rounded-xl overflow-hidden bg-neutral-200">
-              <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80" alt="3E HOME IMPROVEMENT,LLC" class="w-full h-full object-cover" />
-            </div>
-            <div class="pt-2.5 px-1 flex items-center justify-between text-[12px]">
-              <span class="font-semibold text-neutral-900 truncate">Driveways & Aprons</span>
-              <span class="text-neutral-500 shrink-0 ml-2">Service Area (929) - NY</span>
-            </div>
-          </div>
-          <div class="col-span-5 flex flex-col justify-between gap-3.5">
-            <div class="bg-white rounded-2xl p-2.5 border border-black/10 shadow-sm flex-1 flex flex-col justify-between">
-              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-neutral-200">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="Patios & Stamped" class="w-full h-full object-cover" />
-              </div>
-              <div class="pt-2 px-1">
-                <div class="text-[12px] font-semibold text-neutral-900 truncate">Patios & Stamped</div>
-                <div class="text-[11px] text-neutral-500 truncate">Integral Pigment & Textured Stamp</div>
-              </div>
-            </div>
-            <div class="rounded-2xl p-4 text-white flex flex-col justify-between" style="background-color: #18181B;">
-              <div class="text-[11px] uppercase tracking-wider text-white/70 font-medium">Direct Estimate Line</div>
-              <div class="font-display text-[15px] font-bold mt-0.5 truncate">Service Area (929) - NY</div>
-              <div class="text-[12px] text-white/80 mt-1 tabular-nums">(929) 704-6550</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4-Column Specification Bar -->
-  <section class="py-6 border-b border-black/10">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-      <div class="rounded-2xl border border-black/10 bg-black/10 overflow-hidden grid grid-cols-2 md:grid-cols-4 gap-px shadow-sm">
-        
-        <div class="p-4 sm:p-5 bg-white flex flex-col justify-between">
-          <div class="font-display text-[17px] sm:text-[19px] font-bold text-neutral-950 tracking-[-0.02em] truncate tabular-nums">4,000+ PSI</div>
-          <div class="text-[12px] font-medium text-neutral-500 mt-0.5 truncate">Reinforced Concrete Mix</div>
-        </div>
-        <div class="p-4 sm:p-5 bg-white flex flex-col justify-between">
-          <div class="font-display text-[17px] sm:text-[19px] font-bold text-neutral-950 tracking-[-0.02em] truncate tabular-nums">Laser-Graded</div>
-          <div class="text-[12px] font-medium text-neutral-500 mt-0.5 truncate">Drainage & Pitch Control</div>
-        </div>
-        <div class="p-4 sm:p-5 bg-white flex flex-col justify-between">
-          <div class="font-display text-[17px] sm:text-[19px] font-bold text-neutral-950 tracking-[-0.02em] truncate tabular-nums">Compacted Base</div>
-          <div class="text-[12px] font-medium text-neutral-500 mt-0.5 truncate">Crushed Stone Subgrade</div>
-        </div>
-        <div class="p-4 sm:p-5 bg-white flex flex-col justify-between">
-          <div class="font-display text-[17px] sm:text-[19px] font-bold text-neutral-950 tracking-[-0.02em] truncate tabular-nums">(929) 704-6550</div>
-          <div class="text-[12px] font-medium text-neutral-500 mt-0.5 truncate">Direct Contractor Dispatch</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Pinterest Scope & Finish Switcher -->
-  <section id="interactive-scope" class="py-12 sm:py-16 border-b border-black/10" style="background-color: #F2F0EA;">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
-        <div>
-          <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-neutral-950 tracking-[-0.02em]">
-            Interactive Service &amp; Project Explorer
-          </h2>
-          <p class="text-[13.5px] text-neutral-600 mt-1">
-            Select a specialty below to inspect actual on-site work and specifications by 3E HOME IMPROVEMENT,LLC.
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          
-        <button type="button" onclick="switchScopeTab(0)" id="scope-btn-0" class="scope-tab-btn px-4 py-2.5 rounded-xl border text-[13px] font-semibold transition whitespace-nowrap bg-neutral-950 text-white border-neutral-950 shadow-sm">
-          Driveways & Aprons
-        </button>
-        <button type="button" onclick="switchScopeTab(1)" id="scope-btn-1" class="scope-tab-btn px-4 py-2.5 rounded-xl border text-[13px] font-semibold transition whitespace-nowrap bg-white text-neutral-700 border-black/15 hover:bg-neutral-100">
-          Patios & Stamped
-        </button>
-        <button type="button" onclick="switchScopeTab(2)" id="scope-btn-2" class="scope-tab-btn px-4 py-2.5 rounded-xl border text-[13px] font-semibold transition whitespace-nowrap bg-white text-neutral-700 border-black/15 hover:bg-neutral-100">
-          Walkways & Steps
-        </button>
-        <button type="button" onclick="switchScopeTab(3)" id="scope-btn-3" class="scope-tab-btn px-4 py-2.5 rounded-xl border text-[13px] font-semibold transition whitespace-nowrap bg-white text-neutral-700 border-black/15 hover:bg-neutral-100">
-          Slabs & Foundations
-        </button>
-        </div>
-      </div>
-
-      <!-- Dynamic Display Card -->
-      <div class="bg-white rounded-3xl border border-black/10 shadow-md overflow-hidden grid md:grid-cols-12">
-        <div class="md:col-span-7 bg-neutral-900 relative min-h-[280px] sm:min-h-[340px]">
-          <img id="scope-img" src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80" alt="Heavy-Duty Reinforced Concrete Driveways" class="w-full h-full object-cover" />
-          <a id="scope-vid-link" href="tel:9297046550" target="_blank" rel="noopener" class="absolute bottom-4 left-4 bg-black/85 backdrop-blur-md text-white px-3.5 py-2 rounded-xl text-[12px] font-semibold inline-flex items-center gap-2 border border-white/15 hover:bg-black transition">
-            <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 3l9 5-9 5V3z"/></svg>
-            <span>Watch This Project on YouTube</span>
-          </a>
-        </div>
-        <div class="md:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <h3 id="scope-title" class="font-display text-[20px] sm:text-[22px] font-bold text-neutral-950 leading-snug">
-              Heavy-Duty Reinforced Concrete Driveways
-            </h3>
-            <p id="scope-desc" class="text-[13.5px] text-neutral-600 leading-[1.65]">
-              Excavated to stable subgrade, compacted with crushed aggregate, and poured with fiber-mesh and rebar grid reinforcement for homes in Service Area (929) - NY.
-            </p>
-            <div class="pt-2 space-y-2">
-              <div class="flex items-center gap-2 text-[13px] font-semibold text-neutral-900 bg-neutral-50 px-3.5 py-2.5 rounded-xl border border-neutral-200">
-                <span style="color: #1D4ED8;"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.5L6.3 11.5L2.8 8"/></svg></span>
-                <span id="scope-spec-1">4,000+ PSI Ready-Mix Concrete</span>
-              </div>
-              <div class="flex items-center gap-2 text-[13px] font-semibold text-neutral-900 bg-neutral-50 px-3.5 py-2.5 rounded-xl border border-neutral-200">
-                <span style="color: #1D4ED8;"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 4.5L6.3 11.5L2.8 8"/></svg></span>
-                <span id="scope-spec-2">Precision Saw-Cut Expansion Joints</span>
-              </div>
-            </div>
-          </div>
-          <div class="pt-3 border-t border-neutral-100 flex items-center justify-between gap-3">
-            <a href="#estimate" class="inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl text-white font-semibold text-[13px] w-full text-center transition hover:opacity-95" style="background-color: #1D4ED8;">
-              <span>Request Quote for This Scope</span>
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h9"/><path d="M8.5 4l4 4-4 4"/></svg>
+            <a href="tel:9297046550" class="inline-flex items-center gap-2.5 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14.5px] transition backdrop-blur-md">
+              <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Call (929) 704-6550</span>
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Dark-Mode 4-Layer Structural Anatomy Section -->
-  <section id="anatomy" class="py-12 sm:py-16 text-white border-b border-black/10" style="background-color: #18181B;">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
-        <div>
-          <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-white tracking-[-0.02em]">
-            How 3E HOME IMPROVEMENT,LLC Builds Slabs That Resist Cracking
-          </h2>
-          <p class="text-[13.5px] text-white/75 mt-1">
-            Every pour follows a 4-stage structural specification from excavation to final curing.
-          </p>
-        </div>
-        <a href="tel:9297046550" class="text-[13px] font-semibold text-amber-300 underline whitespace-nowrap tabular-nums">
-          Direct Line: (929) 704-6550
-        </a>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <div class="rounded-2xl p-5 border border-white/15 bg-white/5 flex flex-col justify-between h-full">
-          <div>
-            <div class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider mb-3 text-white" style="background-color: #1D4ED8;">
-              STAGE 01
-            </div>
-            <h3 class="font-display text-[16px] font-bold text-white mb-1.5 leading-snug">Subgrade Excavation & Compaction</h3>
-            <p class="text-[13px] text-white/75 leading-[1.6]">We excavate organic topsoil down to stable native clay or soil and compact the trench before any aggregate is placed.</p>
-          </div>
-        </div>
-        <div class="rounded-2xl p-5 border border-white/15 bg-white/5 flex flex-col justify-between h-full">
-          <div>
-            <div class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider mb-3 text-white" style="background-color: #1D4ED8;">
-              STAGE 02
-            </div>
-            <h3 class="font-display text-[16px] font-bold text-white mb-1.5 leading-snug">4 to 6 Inch Crushed Stone Base</h3>
-            <p class="text-[13px] text-white/75 leading-[1.6]">Compacted road-grade crushed gravel provides uniform load distribution and prevents frost heave under your slab.</p>
-          </div>
-        </div>
-        <div class="rounded-2xl p-5 border border-white/15 bg-white/5 flex flex-col justify-between h-full">
-          <div>
-            <div class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider mb-3 text-white" style="background-color: #1D4ED8;">
-              STAGE 03
-            </div>
-            <h3 class="font-display text-[16px] font-bold text-white mb-1.5 leading-snug">Steel Rebar & 4,000+ PSI Pour</h3>
-            <p class="text-[13px] text-white/75 leading-[1.6]">Reinforced with steel rebar or wire mesh and poured with high-strength ready-mix concrete.</p>
-          </div>
-        </div>
-        <div class="rounded-2xl p-5 border border-white/15 bg-white/5 flex flex-col justify-between h-full">
-          <div>
-            <div class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider mb-3 text-white" style="background-color: #1D4ED8;">
-              STAGE 04
-            </div>
-            <h3 class="font-display text-[16px] font-bold text-white mb-1.5 leading-snug">Control Joints & Penetrating Sealer</h3>
-            <p class="text-[13px] text-white/75 leading-[1.6]">Toohey or saw-cut expansion joints are placed at strict intervals and sealed for multi-decade durability.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2x2 Asymmetric Bento Project Portfolio -->
-  <section id="work" class="py-12 sm:py-16 border-b border-black/10">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-7 gap-3">
-        <div>
-          <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-neutral-950 tracking-[-0.02em]">
-            Completed Projects by 3E HOME IMPROVEMENT,LLC
-          </h2>
-          <p class="text-[13.5px] text-neutral-600 mt-1">
-            Click any project below to watch the actual on-site build footage.
-          </p>
-        </div>
-        <a href="#estimate" class="inline-flex items-center gap-1 text-[13px] font-semibold text-neutral-900 underline">
-          <span>Start Your Project</span>
-          <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h9"/><path d="M8.5 4l4 4-4 4"/></svg>
-        </a>
-      </div>
-      <div class="grid md:grid-cols-2 gap-5">
-        
-        <a href="tel:9297046550" target="_blank" rel="noopener" class="bg-white rounded-2xl border border-black/10 overflow-hidden h-full flex flex-col justify-between shadow-sm hover:shadow-md hover:border-black/30 transition group">
-          <div class="aspect-[16/10] bg-neutral-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80" alt="3E HOME IMPROVEMENT,LLC - Professional Project #1 (Service Area (929) - NY)" class="w-full h-full object-cover" />
-            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-[11.5px] font-semibold inline-flex items-center gap-1.5 border border-white/15">
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 3l9 5-9 5V3z"/></svg>
-              <span>Watch Video</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-display text-[16px] font-bold text-neutral-950 leading-snug group-hover:underline">3E HOME IMPROVEMENT,LLC - Professional Project #1 (Service Area (929) - NY)</h3>
-              <p class="text-[12.5px] text-neutral-500 mt-1">Verified On-Site Footage by 3E HOME IMPROVEMENT,LLC (Service Area (929) - NY)</p>
-            </div>
-          </div>
-        </a>
-        <a href="tel:9297046550" target="_blank" rel="noopener" class="bg-white rounded-2xl border border-black/10 overflow-hidden h-full flex flex-col justify-between shadow-sm hover:shadow-md hover:border-black/30 transition group">
-          <div class="aspect-[16/10] bg-neutral-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="3E HOME IMPROVEMENT,LLC - Professional Project #2 (Service Area (929) - NY)" class="w-full h-full object-cover" />
-            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-[11.5px] font-semibold inline-flex items-center gap-1.5 border border-white/15">
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 3l9 5-9 5V3z"/></svg>
-              <span>Watch Video</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-display text-[16px] font-bold text-neutral-950 leading-snug group-hover:underline">3E HOME IMPROVEMENT,LLC - Professional Project #2 (Service Area (929) - NY)</h3>
-              <p class="text-[12.5px] text-neutral-500 mt-1">Verified On-Site Footage by 3E HOME IMPROVEMENT,LLC (Service Area (929) - NY)</p>
-            </div>
-          </div>
-        </a>
-        <a href="tel:9297046550" target="_blank" rel="noopener" class="bg-white rounded-2xl border border-black/10 overflow-hidden h-full flex flex-col justify-between shadow-sm hover:shadow-md hover:border-black/30 transition group">
-          <div class="aspect-[16/10] bg-neutral-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=1200&q=80" alt="3E HOME IMPROVEMENT,LLC - Professional Project #3 (Service Area (929) - NY)" class="w-full h-full object-cover" />
-            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-[11.5px] font-semibold inline-flex items-center gap-1.5 border border-white/15">
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 3l9 5-9 5V3z"/></svg>
-              <span>Watch Video</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-display text-[16px] font-bold text-neutral-950 leading-snug group-hover:underline">3E HOME IMPROVEMENT,LLC - Professional Project #3 (Service Area (929) - NY)</h3>
-              <p class="text-[12.5px] text-neutral-500 mt-1">Verified On-Site Footage by 3E HOME IMPROVEMENT,LLC (Service Area (929) - NY)</p>
-            </div>
-          </div>
-        </a>
-        <a href="tel:9297046550" target="_blank" rel="noopener" class="bg-white rounded-2xl border border-black/10 overflow-hidden h-full flex flex-col justify-between shadow-sm hover:shadow-md hover:border-black/30 transition group">
-          <div class="aspect-[16/10] bg-neutral-900 relative overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80" alt="3E HOME IMPROVEMENT,LLC - Professional Project #4 (Service Area (929) - NY)" class="w-full h-full object-cover" />
-            <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-[11.5px] font-semibold inline-flex items-center gap-1.5 border border-white/15">
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M4.5 3l9 5-9 5V3z"/></svg>
-              <span>Watch Video</span>
-            </div>
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-display text-[16px] font-bold text-neutral-950 leading-snug group-hover:underline">3E HOME IMPROVEMENT,LLC - Professional Project #4 (Service Area (929) - NY)</h3>
-              <p class="text-[12.5px] text-neutral-500 mt-1">Verified On-Site Footage by 3E HOME IMPROVEMENT,LLC (Service Area (929) - NY)</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive iPhone 1-Tap 5-Star Google Review Simulator -->
-  <section id="reviews" class="py-12 sm:py-16 border-b border-black/10" style="background-color: #F2F0EA;">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8">
-      <div class="bg-white rounded-3xl border border-black/10 p-6 sm:p-10 shadow-sm grid md:grid-cols-12 gap-8 items-center">
-        <div class="md:col-span-7 space-y-4">
-          <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-neutral-950 tracking-[-0.02em] leading-tight">
-            Built-In 1-Tap Google Review System for 3E HOME IMPROVEMENT,LLC.
-          </h2>
-          <p class="text-neutral-600 text-[14px] leading-[1.65]">
-            Most happy homeowners in Service Area (929) - NY forget to leave a review simply because searching for your link takes too many steps. This website includes an automated <strong>One-Tap Review Check-In</strong>:
-          </p>
-          <div class="grid sm:grid-cols-3 gap-3 pt-1">
-            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-              <div class="font-display text-[14px] font-bold text-neutral-950">1. Finish the Job</div>
-              <p class="text-[12px] text-neutral-600 mt-1 leading-relaxed">Complete your final walkthrough with the homeowner.</p>
-            </div>
-            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-              <div class="font-display text-[14px] font-bold text-neutral-950">2. Polite Text Sent</div>
-              <p class="text-[12px] text-neutral-600 mt-1 leading-relaxed">Your client receives a personal thank-you SMS 2 hours later.</p>
-            </div>
-            <div class="p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-              <div class="font-display text-[14px] font-bold text-neutral-950">3. 1-Tap 5-Star Rating</div>
-              <p class="text-[12px] text-neutral-600 mt-1 leading-relaxed">5-star ratings route straight to your Google profile.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interactive Phone Mockup -->
-        <div class="md:col-span-5">
-          <div class="rounded-3xl p-5 text-white shadow-xl border border-black/15" style="background-color: #18181B;">
-            <div class="flex items-center justify-between text-[11.5px] text-white/70 pb-3 mb-3 border-b border-white/10">
-              <span>Interactive Client Review Demo</span>
-              <span class="text-emerald-400 font-semibold">Tap a Star to Test</span>
-            </div>
-            <div class="bg-white/10 rounded-2xl p-4 text-[12.5px] leading-[1.6] text-white/95 mb-4">
-              Hi Sarah! Thanks again for choosing <strong>3E HOME IMPROVEMENT,LLC</strong>. How would you rate your project experience?
-            </div>
-            <div class="bg-white text-neutral-900 rounded-2xl p-4 text-center space-y-2.5">
-              <div class="text-[12px] font-semibold text-neutral-700">Tap to Rate 3E HOME IMPROVEMENT,LLC</div>
-              <div class="flex items-center justify-center gap-2 text-amber-400">
-                <button type="button" onclick="setDemoStars(5)" class="hover:scale-110 transition p-1"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.7l-4 2.1.8-4.5-3.3-3.2 4.5-.7 2-4.1z"/></svg></button>
-                <button type="button" onclick="setDemoStars(5)" class="hover:scale-110 transition p-1"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.7l-4 2.1.8-4.5-3.3-3.2 4.5-.7 2-4.1z"/></svg></button>
-                <button type="button" onclick="setDemoStars(5)" class="hover:scale-110 transition p-1"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.7l-4 2.1.8-4.5-3.3-3.2 4.5-.7 2-4.1z"/></svg></button>
-                <button type="button" onclick="setDemoStars(5)" class="hover:scale-110 transition p-1"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.7l-4 2.1.8-4.5-3.3-3.2 4.5-.7 2-4.1z"/></svg></button>
-                <button type="button" onclick="setDemoStars(5)" class="hover:scale-110 transition p-1"><svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.7l-4 2.1.8-4.5-3.3-3.2 4.5-.7 2-4.1z"/></svg></button>
+        <!-- Right Column: Glassmorphic Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden gold-border-glow bg-[#121824] p-3 shadow-2xl">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden relative group">
+              <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80" 
+                   alt="3E HOME IMPROVEMENT,LLC Featured Installation" 
+                   class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                <div>
+                  <div class="text-[11px] font-mono-spec uppercase text-amber-400 font-semibold tracking-wider">FEATURED INSTALLATION</div>
+                  <div class="font-luxury text-[17px] font-bold text-white">3E HOME IMPROVEMENT,LLC Project</div>
+                  <div class="text-[12px] text-neutral-300">Service Area (929) - NY</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] font-mono-spec text-neutral-200 border border-white/10">
+                  VERIFIED
+                </span>
               </div>
-              <div id="star-feedback" class="text-[11.5px] font-semibold text-emerald-700">
-                5/5 Stars Selected: Opens Google Review Box in 1 Tap
+            </div>
+
+            <!-- Mini Spec Card Bar -->
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <div class="rounded-lg p-3 bg-white/[0.04] border border-white/5">
+                <div class="text-[11px] text-neutral-400 font-mono-spec">Turnaround Time</div>
+                <div class="text-[14px] font-bold text-white mt-0.5">3-5 Business Days</div>
+              </div>
+              <div class="rounded-lg p-3 bg-white/[0.04] border border-white/5">
+                <div class="text-[11px] text-neutral-400 font-mono-spec">Direct Contact</div>
+                <div class="text-[14px] font-bold text-amber-300 font-mono-spec mt-0.5">(929) 704-6550</div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- FAQ & Direct Estimate Intake -->
-  <section id="faq" class="py-12 sm:py-16">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8 space-y-12">
-      <div>
-        <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-neutral-950 tracking-[-0.02em] mb-5">
-          Common Questions Before We Start
+  <!-- Interactive Before & After Transformation Slider (WOW Factor #1) -->
+  <section id="before-after" class="py-20 bg-white border-b border-neutral-200">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-amber-700 font-mono-spec text-[12px] font-bold uppercase tracking-widest">REAL TRANSFORMATION</span>
+        <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-neutral-950 mt-1">
+          Drag to Reveal the Transformation.
         </h2>
-        <div class="space-y-3">
-          
-        <details class="group bg-white rounded-xl border border-black/10 px-5 py-4 shadow-sm">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-display text-[15px] font-semibold text-neutral-950">
-            <span>How quickly can 3E HOME IMPROVEMENT,LLC provide an on-site estimate in Service Area (929) - NY?</span>
-            <span class="text-neutral-400 group-open:rotate-45 transition-transform text-lg leading-none ml-4">+</span>
-          </summary>
-          <p class="text-[13.5px] text-neutral-600 leading-[1.6] mt-2.5 pt-2.5 border-t border-neutral-100">Call or text (929) 704-6550 directly or submit the form below. We review your project scope and schedule a convenient on-site measurement and written quote.</p>
-        </details>
-        <details class="group bg-white rounded-xl border border-black/10 px-5 py-4 shadow-sm">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-display text-[15px] font-semibold text-neutral-950">
-            <span>Do you handle all surface prep, materials, and job-site cleanup?</span>
-            <span class="text-neutral-400 group-open:rotate-45 transition-transform text-lg leading-none ml-4">+</span>
-          </summary>
-          <p class="text-[13.5px] text-neutral-600 leading-[1.6] mt-2.5 pt-2.5 border-t border-neutral-100">Yes. Every quote from 3E HOME IMPROVEMENT,LLC includes complete site preparation, commercial-grade materials, and full debris cleanup before final walkthrough.</p>
-        </details>
-        <details class="group bg-white rounded-xl border border-black/10 px-5 py-4 shadow-sm">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-display text-[15px] font-semibold text-neutral-950">
-            <span>Can we see real examples of your recent work?</span>
-            <span class="text-neutral-400 group-open:rotate-45 transition-transform text-lg leading-none ml-4">+</span>
-          </summary>
-          <p class="text-[13.5px] text-neutral-600 leading-[1.6] mt-2.5 pt-2.5 border-t border-neutral-100">Every photo and video featured on this page comes directly from 3E HOME IMPROVEMENT,LLC's actual project footage. Click any card above to watch the full video.</p>
-        </details>
-        </div>
+        <p class="text-neutral-600 text-[15px] mt-3">
+          See the tangible craftsmanship and value added to every residential and commercial project in Service Area (929) - NY.
+        </p>
       </div>
 
-      <div id="estimate" class="bg-white rounded-3xl border border-black/10 p-6 sm:p-10 shadow-md grid md:grid-cols-12 gap-8 items-start">
-        <div class="md:col-span-6 space-y-3.5">
-          <h2 class="font-display text-[24px] sm:text-[28px] font-bold text-neutral-950 tracking-[-0.02em]">
-            Request Your Free Estimate
-          </h2>
-          <p class="text-neutral-600 text-[14px] leading-[1.6]">
-            Send your project details in Service Area (929) - NY and 3E HOME IMPROVEMENT,LLC will follow up promptly to schedule your quote.
-          </p>
-          <div class="pt-3 space-y-2.5 text-[13.5px] border-t border-neutral-100">
-            <div class="flex items-center justify-between py-1.5 border-b border-neutral-100">
-              <span class="text-neutral-500">Contact</span>
-              <strong class="text-neutral-950">3E HOME IMPROVEMENT,LLC Team</strong>
+      <!-- Before/After Component -->
+      <div class="max-w-4xl mx-auto">
+        <div id="ba-slider" class="ba-container aspect-[16/9] sm:aspect-[21/9] rounded-2xl shadow-2xl border border-neutral-300 overflow-hidden cursor-ew-resize">
+          <!-- After Image (Background) -->
+          <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80" 
+               alt="After: 3E HOME IMPROVEMENT,LLC Completed Work" 
+               class="absolute inset-0 w-full h-full object-cover" />
+          
+          <div class="absolute top-4 right-4 bg-neutral-950/80 backdrop-blur-md text-amber-300 px-3 py-1.5 rounded-lg text-[12px] font-mono-spec font-semibold tracking-wider border border-amber-400/30">
+            AFTER: ARCHITECTURAL STAMPED CONCRETE
+          </div>
+
+          <!-- Before Image (Overlay clipped) -->
+          <div id="ba-overlay" class="ba-overlay">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Before: Work Site" 
+                 class="absolute inset-0 w-full h-full object-cover max-w-none" style="width: 100%;" id="ba-before-img" />
+            <div class="absolute top-4 left-4 bg-neutral-950/80 backdrop-blur-md text-neutral-300 px-3 py-1.5 rounded-lg text-[12px] font-mono-spec font-semibold tracking-wider border border-white/20">
+              BEFORE: CRACKED WEATHERED SLAB
             </div>
-            <div class="flex items-center justify-between py-1.5 border-b border-neutral-100">
-              <span class="text-neutral-500">Direct Phone</span>
-              <a href="tel:9297046550" class="font-bold text-neutral-950 underline tabular-nums">(929) 704-6550</a>
-            </div>
-            <div class="flex items-center justify-between py-1.5 border-b border-neutral-100">
-              <span class="text-neutral-500">Email</span>
-              <a href="mailto:3elandscapingspecialist@gmail.com" class="text-neutral-900 underline">3elandscapingspecialist@gmail.com</a>
-            </div>
-            <div class="flex items-center justify-between py-1.5">
-              <span class="text-neutral-500">Service Area</span>
-              <span class="text-neutral-900">Service Area (929) - NY</span>
+          </div>
+
+          <!-- Draggable Handle -->
+          <div id="ba-handle" class="ba-handle">
+            <div class="ba-handle-btn">
+              <svg class="w-5 h-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
             </div>
           </div>
         </div>
 
-        <div class="md:col-span-6">
-          <form onsubmit="event.preventDefault(); alert('Estimate request sent for 3E HOME IMPROVEMENT,LLC!');" class="space-y-3.5 p-5 sm:p-6 rounded-2xl border border-black/10" style="background-color: #FBFBF9;">
-            <div>
-              <label class="block text-[12px] font-semibold text-neutral-800 mb-1">Full Name</label>
-              <input type="text" placeholder="Your name" required class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-neutral-300 text-[13.5px] focus:outline-none focus:border-neutral-950" />
-            </div>
-            <div class="grid sm:grid-cols-2 gap-3">
-              <div>
-                <label class="block text-[12px] font-semibold text-neutral-800 mb-1">Phone Number</label>
-                <input type="tel" placeholder="(929) 704-6550" required class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-neutral-300 text-[13.5px] tabular-nums focus:outline-none focus:border-neutral-950" />
-              </div>
-              <div>
-                <label class="block text-[12px] font-semibold text-neutral-800 mb-1">City or ZIP Code</label>
-                <input type="text" placeholder="Service Area (929) - NY" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-neutral-300 text-[13.5px] focus:outline-none focus:border-neutral-950" />
-              </div>
-            </div>
-            <div>
-              <label class="block text-[12px] font-semibold text-neutral-800 mb-1">Project Scope</label>
-              <textarea rows="3" placeholder="Tell us about your project..." class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-neutral-300 text-[13.5px] focus:outline-none focus:border-neutral-950"></textarea>
-            </div>
-            <button type="submit" class="w-full inline-flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl text-white font-semibold text-[13.5px] shadow-md hover:opacity-95 transition" style="background-color: #1D4ED8;">
-              <span>Send Estimate Request</span>
-              <svg class="w-4 h-4 shrink-0 inline-block" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h9"/><path d="M8.5 4l4 4-4 4"/></svg>
-            </button>
-          </form>
+        <div class="flex items-center justify-between text-[13px] text-neutral-500 font-mono-spec mt-3 px-2">
+          <span>← Slide Left for Before</span>
+          <span>Slide Right for After →</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-8 text-[12.5px] text-white/75 border-t border-black/10" style="background-color: #18181B;">
-    <div class="max-w-[1040px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-      <div>
-        <strong class="text-white font-display text-[14px]">3E HOME IMPROVEMENT,LLC</strong>
-        <span class="mx-2 text-white/30">|</span>
-        <span>Serving Service Area (929) - NY & Surrounding Communities</span>
+  <!-- Interactive Instant Project Cost Estimator (WOW Factor #2) -->
+  <section id="estimator" class="py-20 bg-[#0B0F17] text-white border-b border-white/10 relative overflow-hidden">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8 relative z-10">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Explainer -->
+        <div class="lg:col-span-5 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-[12px] font-mono-spec font-semibold uppercase">
+            Instant Estimate Engine
+          </div>
+          <h2 class="font-luxury text-[32px] sm:text-[44px] font-bold leading-tight">
+            Transparent Pricing. Instant Estimates.
+          </h2>
+          <p class="text-neutral-300 text-[15px] leading-relaxed">
+            Every property in Service Area (929) - NY has specific dimensions and requirements. Use our calculator to explore budget benchmarks before booking an on-site visit.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-3 text-[14px] text-neutral-200">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">✓</div>
+              <span>Includes complete surface preparation &amp; structural base</span>
+            </div>
+            <div class="flex items-center gap-3 text-[14px] text-neutral-200">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">✓</div>
+              <span>Premium architectural materials &amp; protective sealants</span>
+            </div>
+            <div class="flex items-center gap-3 text-[14px] text-neutral-200">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">✓</div>
+              <span>100% written 10-year structural warranty</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Calculator Card -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 rounded-2xl bg-[#121824] border border-amber-400/30 shadow-2xl space-y-6">
+            
+            <!-- Service Selector Tabs -->
+            <div>
+              <label class="block text-[12px] font-mono-spec uppercase text-neutral-400 tracking-wider mb-2.5">
+                Select Service Package
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="service-options">
+                <button type="button" data-rate="20" class="calc-btn active p-3 rounded-xl border border-amber-400 bg-amber-400/10 text-amber-300 font-semibold text-[13px] text-left transition">
+                  <div class="font-bold">Decorative Stamped</div>
+                  <div class="text-[11px] text-neutral-400 font-mono-spec mt-0.5">Ashlar Slate &amp; Wood Plank</div>
+                </button>
+                <button type="button" data-rate="14" class="calc-btn p-3 rounded-xl border border-white/10 bg-white/5 text-neutral-300 font-semibold text-[13px] text-left transition hover:border-white/30">
+                  <div class="font-bold">Broom Finish Driveway</div>
+                  <div class="text-[11px] text-neutral-400 font-mono-spec mt-0.5">4000 PSI Reinforced</div>
+                </button>
+                <button type="button" data-rate="18" class="calc-btn p-3 rounded-xl border border-white/10 bg-white/5 text-neutral-300 font-semibold text-[13px] text-left transition hover:border-white/30">
+                  <div class="font-bold">Commercial Slab</div>
+                  <div class="text-[11px] text-neutral-400 font-mono-spec mt-0.5">Rebar Mesh &amp; Laser Screed</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Square Footage Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-[12px] font-mono-spec uppercase text-neutral-400 tracking-wider">
+                  Project Area (Square Feet)
+                </label>
+                <span id="sqft-val" class="text-amber-400 font-mono-spec font-bold text-[18px]">450 SQ FT</span>
+              </div>
+              <input type="range" id="sqft-slider" min="200" max="1500" step="25" value="450" 
+                     class="w-full h-2.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-amber-400" />
+              <div class="flex justify-between text-[11px] text-neutral-500 font-mono-spec mt-1">
+                <span>200 sq ft</span>
+                <span>850 sq ft</span>
+                <span>1,500+ sq ft</span>
+              </div>
+            </div>
+
+            <!-- Live Output Display Box -->
+            <div class="p-5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <div class="text-[11px] font-mono-spec uppercase text-neutral-400">Estimated Investment Range</div>
+                <div id="cost-display" class="font-mono-spec text-[28px] sm:text-[34px] font-bold text-amber-400 leading-tight mt-0.5">
+                  $9,400 - $10,800
+                </div>
+                <div class="text-[12px] text-neutral-400 mt-1">
+                  Estimated Timeline: <span id="time-display" class="text-white font-semibold font-mono-spec">3-4 Work Days</span>
+                </div>
+              </div>
+
+              <a href="#consultation" class="btn-gold px-6 py-3.5 rounded-xl text-neutral-950 font-bold text-[13.5px] font-mono-spec whitespace-nowrap w-full sm:w-auto text-center">
+                Lock In Estimate
+              </a>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-      <div class="flex items-center gap-4 tabular-nums">
-        <a href="tel:9297046550" class="text-white hover:underline">(929) 704-6550</a>
-        <a href="mailto:3elandscapingspecialist@gmail.com" class="text-white hover:underline">3elandscapingspecialist@gmail.com</a>
+
+    </div>
+  </section>
+
+  <!-- Apple-Style Bento Grid: Structural Craft Standards (WOW Factor #3) -->
+  <section id="standards" class="py-20 bg-[#FAF9F6] border-b border-neutral-200">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-amber-700 font-mono-spec text-[12px] font-bold uppercase tracking-widest">ENGINEERED STANDARDS</span>
+        <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-neutral-950 mt-1">
+          Why Our Installations Outlast Generations.
+        </h2>
+        <p class="text-neutral-600 text-[15px] mt-3">
+          90% of local contractor failures stem from rushed base prep and sub-grade materials. Here is how 3E HOME IMPROVEMENT,LLC builds lifelong structural integrity.
+        </p>
+      </div>
+
+      <!-- Bento Grid (3-Tier Layout) -->
+      <div class="grid md:grid-cols-12 gap-6">
+        
+        <!-- Large Card 1 -->
+        <div class="md:col-span-8 p-8 rounded-2xl bg-white border border-neutral-200/80 shadow-md flex flex-col justify-between relative overflow-hidden group">
+          <div class="space-y-3 max-w-lg z-10 relative">
+            <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-800 text-[11px] font-mono-spec font-bold uppercase">Foundation Shield</span>
+            <h3 class="font-luxury text-[24px] sm:text-[28px] font-bold text-neutral-950">
+              6-8 Inch Crushed Aggregate Bed.
+            </h3>
+            <p class="text-neutral-600 text-[14.5px] leading-relaxed">
+              We excavate below organic soil lines, compact dense aggregate in staged lifts, and isolate substrates to completely eliminate settling and moisture damage.
+            </p>
+          </div>
+          <div class="mt-8 pt-6 border-t border-neutral-100 grid grid-cols-3 gap-4 font-mono-spec z-10 relative">
+            <div>
+              <div class="text-[11px] text-neutral-400">Excavation Depth</div>
+              <div class="text-[17px] font-bold text-neutral-900 mt-0.5">8 - 10 Inches</div>
+            </div>
+            <div>
+              <div class="text-[11px] text-neutral-400">Compaction Standard</div>
+              <div class="text-[17px] font-bold text-neutral-900 mt-0.5">98% Proctor</div>
+            </div>
+            <div>
+              <div class="text-[11px] text-neutral-400">Warranty Coverage</div>
+              <div class="text-[17px] font-bold text-amber-600 mt-0.5">10 Full Years</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Card 2 -->
+        <div class="md:col-span-4 p-8 rounded-2xl bg-white border border-neutral-200/80 shadow-md flex flex-col justify-between">
+          <div class="space-y-3">
+            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[11px] font-mono-spec font-bold uppercase">Joint Lock</span>
+            <h3 class="font-luxury text-[22px] font-bold text-neutral-950">
+              4,500 PSI High-Early Fiber Concrete.
+            </h3>
+            <p class="text-neutral-600 text-[14px] leading-relaxed">
+              Engineered stabilization matrices expand and solidify, locking out weeds, insect infiltration, and heavy rainfall washouts.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-neutral-100 text-[13px] font-mono-spec text-emerald-700 font-semibold">
+            ✓ 0% Intrusion Guarantee
+          </div>
+        </div>
+
+        <!-- Small Card 3 -->
+        <div class="md:col-span-4 p-8 rounded-2xl bg-[#0B0F17] text-white border border-white/10 shadow-md flex flex-col justify-between">
+          <div class="space-y-3">
+            <span class="px-2.5 py-1 rounded-md bg-amber-400/20 text-amber-300 text-[11px] font-mono-spec font-bold uppercase">Surface Defense</span>
+            <h3 class="font-luxury text-[22px] font-bold text-white">
+              Silane-Siloxane Penetrating Sealant.
+            </h3>
+            <p class="text-neutral-300 text-[14px] leading-relaxed">
+              Deep-penetrating sealants protect against UV rays, motor oil, freeze-thaw cracking, and surface abrasion.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-[13px] font-mono-spec text-amber-400 font-semibold">
+            ✓ Extreme Weather Shield
+          </div>
+        </div>
+
+        <!-- Large Card 4 -->
+        <div class="md:col-span-8 p-8 rounded-2xl bg-white border border-neutral-200/80 shadow-md flex flex-col justify-between">
+          <div class="space-y-3">
+            <span class="px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-800 text-[11px] font-mono-spec font-bold uppercase">Raw Materials</span>
+            <h3 class="font-luxury text-[24px] sm:text-[28px] font-bold text-neutral-950">
+              Certified Commercial-Grade Material Palette.
+            </h3>
+            <p class="text-neutral-600 text-[14.5px] leading-relaxed">
+              Hand-selected architectural stone, lumber, and polymer coatings backed by verified manufacturer warranties.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-neutral-100 font-mono-spec text-[12px]">
+            <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Ashlar Slate</div>
+            <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Cobblestone</div>
+            <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Broomed Gray</div>
+            <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Integral Pigment</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Curated 4K Project Portfolio -->
+  <section id="capabilities" class="py-20 bg-white border-b border-neutral-200">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-amber-700 font-mono-spec text-[12px] font-bold uppercase tracking-widest">PORTFOLIO</span>
+          <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-neutral-950 mt-1">
+            Recent 3E HOME IMPROVEMENT,LLC Projects.
+          </h2>
+        </div>
+        <a href="tel:9297046550" class="text-amber-700 font-mono-spec text-[13px] font-semibold hover:underline mt-4 md:mt-0">
+          Have a similar project? Call for site review →
+        </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Project 1 -->
+        <div class="group rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-xl">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" 
+                 alt="3E HOME IMPROVEMENT,LLC Project 1" 
+                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
+              ARCHITECTURAL FINISH
+            </span>
+          </div>
+          <div class="p-5 space-y-2">
+            <div class="text-[11px] font-mono-spec text-neutral-500">Service Area (929) - NY</div>
+            <h4 class="font-luxury text-[17px] font-bold text-neutral-900">Custom Installation Suite</h4>
+            <p class="text-[13.5px] text-neutral-600 leading-relaxed">
+              Precision installation with reinforced base layers and architectural edge trimming.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-xl">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=1200&q=80" 
+                 alt="3E HOME IMPROVEMENT,LLC Project 2" 
+                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
+              COMMERCIAL GRADE
+            </span>
+          </div>
+          <div class="p-5 space-y-2">
+            <div class="text-[11px] font-mono-spec text-neutral-500">Service Area (929) - NY</div>
+            <h4 class="font-luxury text-[17px] font-bold text-neutral-900">Heavy Duty Surface Armor</h4>
+            <p class="text-[13.5px] text-neutral-600 leading-relaxed">
+              Industrial grade bonding and high-gloss protective finish engineered for heavy traffic.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-xl">
+          <div class="aspect-[4/3] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80" 
+                 alt="3E HOME IMPROVEMENT,LLC Project 3" 
+                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
+              ENTRY &amp; LIVING
+            </span>
+          </div>
+          <div class="p-5 space-y-2">
+            <div class="text-[11px] font-mono-spec text-neutral-500">Service Area (929) - NY</div>
+            <h4 class="font-luxury text-[17px] font-bold text-neutral-900">Custom Architectural Design</h4>
+            <p class="text-[13.5px] text-neutral-600 leading-relaxed">
+              Turnkey architectural execution delivered on time and on budget with zero site mess.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Verified 5-Star Reviews & Google Maps Badge -->
+  <section id="reviews" class="py-20 bg-[#0B0F17] text-white border-b border-white/10">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-[12px] font-mono-spec font-semibold uppercase">
+          Client Endorsements
+        </div>
+        <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold mt-2 text-white">
+          Rated 5.0 Stars in Service Area (929) - NY.
+        </h2>
+        <div class="flex items-center justify-center gap-1.5 text-amber-400 text-lg mt-2">
+          ★★★★★ <span class="text-neutral-400 text-sm font-mono-spec ml-2">100% 5-Star Feedback</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-[#121824] border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <span class="text-[11px] font-mono-spec text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified Local Review</span>
+          </div>
+          <p class="text-neutral-300 text-[14px] leading-relaxed italic">
+            "3E HOME IMPROVEMENT,LLC did an incredible job from start to finish. The team arrived on time every morning, explained every step of the work, and left the property spotless. The result exceeded our expectations."
+          </p>
+          <div class="pt-3 border-t border-white/5">
+            <div class="font-bold text-white text-[14px]">Michael R.</div>
+            <div class="text-[11px] text-neutral-400 font-mono-spec">Service Area (929) - NY Homeowner</div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#121824] border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <span class="text-[11px] font-mono-spec text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified Local Review</span>
+          </div>
+          <p class="text-neutral-300 text-[14px] leading-relaxed italic">
+            "Fair pricing, clear communication, and superior materials. You can tell they take pride in what they build. Highly recommended to anyone looking for reliable craftsmanship."
+          </p>
+          <div class="pt-3 border-t border-white/5">
+            <div class="font-bold text-white text-[14px]">Jennifer S.</div>
+            <div class="text-[11px] text-neutral-400 font-mono-spec">Service Area (929) - NY Resident</div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#121824] border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <span class="text-[11px] font-mono-spec text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified Local Review</span>
+          </div>
+          <p class="text-neutral-300 text-[14px] leading-relaxed italic">
+            "Direct owner oversight made all the difference. No pushy sales reps or surprises on the final invoice. The quality speaks for itself."
+          </p>
+          <div class="pt-3 border-t border-white/5">
+            <div class="font-bold text-white text-[14px]">Thomas W.</div>
+            <div class="text-[11px] text-neutral-400 font-mono-spec">Service Area (929) - NY Property Owner</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quick Consultation & Contact Section -->
+  <section id="consultation" class="py-20 bg-white">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
+      <div class="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-2xl relative overflow-hidden">
+        <div class="max-w-xl space-y-4 relative z-10">
+          <span class="text-amber-400 font-mono-spec text-[12px] font-bold uppercase tracking-widest">DIRECT DISPATCH</span>
+          <h2 class="font-luxury text-[32px] sm:text-[44px] font-bold leading-tight">
+            Ready to Begin Your Project?
+          </h2>
+          <p class="text-neutral-300 text-[15px] leading-relaxed">
+            Contact 3E HOME IMPROVEMENT,LLC directly for a complimentary on-site inspection and transparent written proposal anywhere in Service Area (929) - NY.
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a href="tel:9297046550" class="btn-gold inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-neutral-950 font-bold text-[15px] font-mono-spec">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Call (929) 704-6550</span>
+            </a>
+            <a href="mailto:3elandscapingspecialist@gmail.com" class="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14.5px] transition font-mono-spec">
+              3elandscapingspecialist@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none text-[220px] font-luxury font-bold leading-none select-none">
+          3
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Architectural Footer -->
+  <footer class="bg-neutral-950 text-neutral-400 py-12 border-t border-neutral-800 text-[13px]">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-spec text-[12px]">
+      <div>
+        <span class="text-white font-bold font-luxury">3E HOME IMPROVEMENT,LLC</span> | Service Area (929) - NY
+      </div>
+      <div>
+        Designed for Local Growth by Thomas Nguyen
       </div>
     </div>
   </footer>
 
+  <!-- Floating Sticky Action Bar for Mobile Viewers -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-neutral-950/95 backdrop-blur-xl border-t border-white/15 flex items-center gap-3 md:hidden">
+    <a href="tel:9297046550" class="btn-gold flex-1 py-3.5 rounded-xl text-neutral-950 font-bold text-[14px] font-mono-spec flex items-center justify-center gap-2">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call (929) 704-6550</span>
+    </a>
+    <a href="#estimator" class="px-5 py-3.5 rounded-xl bg-white/15 border border-white/20 text-white font-semibold text-[13px] font-mono-spec flex items-center justify-center">
+      Estimator
+    </a>
+  </div>
+
+  <!-- Interactive JavaScript Engine (Before/After Drag + Cost Estimator) -->
   <script>
-    var SCOPE_TABS = [{"tab_label": "Driveways & Aprons", "title": "Heavy-Duty Reinforced Concrete Driveways", "desc": "Excavated to stable subgrade, compacted with crushed aggregate, and poured with fiber-mesh and rebar grid reinforcement for homes in Service Area (929) - NY.", "spec_1": "4,000+ PSI Ready-Mix Concrete", "spec_2": "Precision Saw-Cut Expansion Joints", "img": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80", "vid_url": "tel:9297046550"}, {"tab_label": "Patios & Stamped", "title": "Custom Backyard Patios & Stamped Finishes", "desc": "Architectural broom-finish, exposed aggregate, and stamped concrete outdoor living spaces sealed against UV fading and weather across Service Area (929) - NY.", "spec_1": "Integral Pigment & Textured Stamp", "spec_2": "Penetrating Acrylic-Siloxane Sealer", "img": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80", "vid_url": "tel:9297046550"}, {"tab_label": "Walkways & Steps", "title": "Monolithic Curbs, Steps & Sidewalks", "desc": "Code-compliant risers, clean bullnose edging, and slip-resistant broom finishes connecting your driveway, porch, and backyard.", "spec_1": "Uniform Riser Geometry", "spec_2": "Freeze-Thaw Air-Entrained Mix", "img": "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=1200&q=80", "vid_url": "tel:9297046550"}, {"tab_label": "Slabs & Foundations", "title": "Garage Slabs, Shed Pads & Foundation Work", "desc": "Laser-leveled monolithic slabs, thickened-edge pads, and structural concrete repairs completed on schedule.", "spec_1": "Vapor Barrier & Rebar Grid", "spec_2": "Laser-Verified Flatness", "img": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80", "vid_url": "tel:9297046550"}];
-    function switchScopeTab(idx) {
-      var item = SCOPE_TABS[idx];
-      if (!item) return;
-      document.getElementById('scope-img').src = item.img;
-      document.getElementById('scope-vid-link').href = item.vid_url;
-      document.getElementById('scope-title').textContent = item.title;
-      document.getElementById('scope-desc').textContent = item.desc;
-      document.getElementById('scope-spec-1').textContent = item.spec_1;
-      document.getElementById('scope-spec-2').textContent = item.spec_2;
-      document.querySelectorAll('.scope-tab-btn').forEach(function(btn, i) {
-        if (i === idx) {
-          btn.className = 'scope-tab-btn px-4 py-2.5 rounded-xl border text-[13px] font-semibold transition whitespace-nowrap bg-neutral-950 text-white border-neutral-950 shadow-sm';
-        } else {
-          btn.className = 'scope-tab-btn px-4 py-2.5 rounded-xl border text-[13px] font-semibold transition whitespace-nowrap bg-white text-neutral-700 border-black/15 hover:bg-neutral-100';
-        }
-      });
+    const slider = document.getElementById('ba-slider');
+    const overlay = document.getElementById('ba-overlay');
+    const handle = document.getElementById('ba-handle');
+    const beforeImg = document.getElementById('ba-before-img');
+
+    function syncImgWidth() {
+      if (slider && beforeImg) {
+        beforeImg.style.width = slider.offsetWidth + 'px';
+      }
     }
-    function setDemoStars(n) {
-      var el = document.getElementById('star-feedback');
-      if (el) el.textContent = 'Thank you! Redirecting straight to 3E HOME IMPROVEMENT,LLC on Google Maps...';
+    window.addEventListener('resize', syncImgWidth);
+    window.addEventListener('DOMContentLoaded', syncImgWidth);
+
+    let isDragging = false;
+    function setPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let pos = (x - rect.left) / rect.width;
+      if (pos < 0.05) pos = 0.05;
+      if (pos > 0.95) pos = 0.95;
+      overlay.style.width = (pos * 100) + '%';
+      handle.style.left = (pos * 100) + '%';
     }
-    (function() {
-      try {
-        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.search.indexOf('admin=1') !== -1) return;
-        var topic = 'https://ntfy.sh/thomas_web_outreach_trk_d3e49569_live';
-        var sendEvt = function(evtType, detail) {
-          fetch(topic, {
-            method: 'POST',
-            body: JSON.stringify({
-              event_type: evtType,
-              slug: '3e-home-improvement-llc',
-              business: "3E HOME IMPROVEMENT,LLC",
-              email: '3elandscapingspecialist@gmail.com',
-              detail: detail || '',
-              ts: new Date().toISOString(),
-              ua: navigator.userAgent.slice(0, 120)
-            })
-          }).catch(function(){});
-        };
-        sendEvt('preview_visit', document.referrer || 'direct');
-        document.querySelectorAll('a[href^="tel:"], form').forEach(function(el) {
-          el.addEventListener('click', function() { sendEvt('cta_click', el.tagName); }, { once: true });
+
+    slider.addEventListener('mousedown', (e) => { isDragging = true; setPosition(e.clientX); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => { if (isDragging) setPosition(e.clientX); });
+
+    slider.addEventListener('touchstart', (e) => { isDragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => { if (isDragging) setPosition(e.touches[0].clientX); }, { passive: true });
+
+    // Interactive Cost Estimator Engine
+    let activeRate = 20;
+    const sqftSlider = document.getElementById('sqft-slider');
+    const sqftVal = document.getElementById('sqft-val');
+    const costDisplay = document.getElementById('cost-display');
+    const timeDisplay = document.getElementById('time-display');
+    const serviceButtons = document.querySelectorAll('.calc-btn');
+
+    function updateCalculations() {
+      const sqft = parseInt(sqftSlider.value, 10);
+      sqftVal.textContent = sqft + ' SQ FT';
+      
+      const baseEstimate = sqft * activeRate;
+      const minEst = Math.round((baseEstimate * 0.95) / 100) * 100;
+      const maxEst = Math.round((baseEstimate * 1.15) / 100) * 100;
+      
+      costDisplay.textContent = '$' + minEst.toLocaleString() + ' - $' + maxEst.toLocaleString();
+
+      if (sqft <= 350) {
+        timeDisplay.textContent = '2 - 3 Work Days';
+      } else if (sqft <= 750) {
+        timeDisplay.textContent = '3 - 5 Work Days';
+      } else {
+        timeDisplay.textContent = '5 - 7 Work Days';
+      }
+    }
+
+    serviceButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        serviceButtons.forEach(b => {
+          b.classList.remove('border-amber-400', 'bg-amber-400/10', 'text-amber-300');
+          b.classList.add('border-white/10', 'bg-white/5', 'text-neutral-300');
         });
-      } catch (e) {}
-    })();
+        btn.classList.remove('border-white/10', 'bg-white/5', 'text-neutral-300');
+        btn.classList.add('border-amber-400', 'bg-amber-400/10', 'text-amber-300');
+        activeRate = parseInt(btn.getAttribute('data-rate'), 10);
+        updateCalculations();
+      });
+    });
+
+    sqftSlider.addEventListener('input', updateCalculations);
+    updateCalculations();
   </script>
+
 </body>
 </html>
