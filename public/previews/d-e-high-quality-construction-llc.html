@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -32,11 +32,6 @@
     .font-luxury {
       font-family: 'Cinzel', Georgia, serif;
       letter-spacing: -0.02em;
-    }
-    .font-mono-spec {
-      font-family: 'IBM Plex Mono', monospace;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.03em;
     }
     ::selection {
       background-color: #C59B27;
@@ -108,46 +103,50 @@
 </head>
 <body class="relative pb-24 md:pb-0">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-neutral-950 text-neutral-300 border-b border-neutral-800 text-[12px] py-2 px-4">
-    <div class="max-w-[1140px] mx-auto flex items-center justify-between font-mono-spec">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-neutral-200">LICENSED &amp; FULLY INSURED</span>
-        <span class="text-neutral-500 hidden sm:inline">•</span>
-        <span class="hidden sm:inline text-neutral-400">Serving Service Area (703) - VA &amp; Surrounding Areas</span>
+  <!-- Top Announcement Bar (Refined & Human) -->
+  <div class="bg-[#080B11] text-neutral-400 border-b border-white/[0.08] text-[12.5px] py-2.5 px-4">
+    <div class="max-w-[1140px] mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2 font-medium">
+        <span class="text-neutral-300">Licensed &amp; Insured</span>
+        <span class="text-neutral-600">•</span>
+        <span class="text-neutral-400">Serving Service Area (703) - VA &amp; Surrounding Communities</span>
       </div>
-      <div class="flex items-center gap-4 text-neutral-300">
-        <span class="text-amber-400 font-semibold">5.0 ★ Google Verified</span>
-        <span class="hidden md:inline text-neutral-500">•</span>
-        <a href="#estimator" class="hidden md:inline text-amber-400 hover:underline">Instant 30s Cost Calculator</a>
+      <div class="hidden sm:flex items-center gap-4 text-neutral-300 text-[12.5px]">
+        <span class="text-amber-400/90 font-medium flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-amber-400 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          5.0 Google Rating
+        </span>
+        <span class="text-neutral-600">•</span>
+        <a href="tel:7035998269" class="text-neutral-300 hover:text-white font-medium transition">Direct: (703) 599-8269</a>
       </div>
     </div>
   </div>
 
-  <!-- Sticky Luxury Navigation -->
-  <header class="sticky top-0 z-50 bg-[#0B0F17]/90 backdrop-blur-xl border-b border-white/10 transition-all">
+  <!-- Sticky Luxury Navigation (Real Architectural Brand Mark) -->
+  <header class="sticky top-0 z-50 bg-[#0B0F17]/95 backdrop-blur-xl border-b border-white/10 transition-all">
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-amber-950 font-luxury font-bold text-[18px]">
-          D
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400 shadow-sm shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M3 10l9-7 9 7v11H3V10zM9 21V12h6v9"/>
+          </svg>
         </div>
         <div>
-          <a href="#" class="font-luxury font-bold text-[18px] tracking-wider text-white hover:text-amber-300 transition truncate max-w-[220px] sm:max-w-md block">D.E High Quality Construction LLC</a>
-          <div class="font-mono-spec text-[11px] text-amber-400/90 tracking-widest uppercase truncate">LUXURY KITCHEN &amp; BATH RENOVATIONS</div>
+          <a href="#" class="font-luxury font-bold text-[17px] sm:text-[18px] tracking-wide text-white hover:text-amber-300 transition truncate max-w-[220px] sm:max-w-md block">D.E High Quality Construction LLC</a>
+          <div class="text-[12px] text-neutral-400 font-medium tracking-normal truncate">Service Area (703) - VA</div>
         </div>
       </div>
 
-      <nav class="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-neutral-300">
-        <a href="#capabilities" class="hover:text-amber-400 transition">Capabilities</a>
-        <a href="#before-after" class="hover:text-amber-400 transition">Before &amp; After</a>
-        <a href="#estimator" class="hover:text-amber-400 transition">Cost Estimator</a>
-        <a href="#standards" class="hover:text-amber-400 transition">Build Standards</a>
-        <a href="#reviews" class="hover:text-amber-400 transition">5-Star Reviews</a>
+      <nav class="hidden lg:flex items-center gap-8 text-[14px] font-medium text-neutral-300">
+        <a href="#capabilities" class="hover:text-amber-400 transition">Projects</a>
+        <a href="#before-after" class="hover:text-amber-400 transition">Transformations</a>
+        <a href="#estimator" class="hover:text-amber-400 transition">Estimates</a>
+        <a href="#standards" class="hover:text-amber-400 transition">Standards</a>
+        <a href="#reviews" class="hover:text-amber-400 transition">Reviews</a>
       </nav>
 
       <div class="flex items-center gap-3 shrink-0">
-        <a href="tel:7035998269" class="btn-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-amber-950 font-bold text-[14px] font-mono-spec whitespace-nowrap">
+        <a href="tel:7035998269" class="btn-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-amber-950 font-bold text-[14px] whitespace-nowrap">
           <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>(703) 599-8269</span>
         </a>
@@ -155,7 +154,7 @@
     </div>
   </header>
 
-  <!-- Hero Section: Cinematic Split & Architectural Grandeur -->
+  <!-- Hero Section: Architectural Grandeur -->
   <section class="relative bg-[#0B0F17] text-white pt-12 pb-20 md:py-24 overflow-hidden border-b border-white/10">
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -170,25 +169,30 @@
             From custom quartz waterfall islands to zero-entry curbless walk-in showers. We coordinate architecture, plumbing, electrical, and bespoke cabinetry to deliver turnkey spaces built for modern luxury.
           </p>
 
-          <!-- 3 Floating Value Pills -->
-          <div class="grid sm:grid-cols-3 gap-3 pt-2">
-            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
-              <div class="font-mono-spec text-amber-400 text-[18px] font-bold">5.0 ★★★★★</div>
-              <div class="text-[12px] text-neutral-300 mt-0.5">Google Maps Rated</div>
+          <!-- Authentic Trust Badge Row (Replaces AI Monospace Cards) -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center gap-y-4 gap-x-8 text-neutral-300 text-[13.5px]">
+            <div class="flex items-center gap-3">
+              <span class="text-amber-400 tracking-tight text-sm leading-none">★★★★★</span>
+              <div>
+                <div class="text-white font-semibold leading-tight">5.0 Star Rated</div>
+                <div class="text-neutral-400 text-[12px]">Verified Google Feedback</div>
+              </div>
             </div>
-            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
-              <div class="font-mono-spec text-white text-[18px] font-bold">10-Year Base</div>
-              <div class="text-[12px] text-neutral-300 mt-0.5">Structural Warranty</div>
+            <div class="hidden sm:block w-px h-8 bg-white/10"></div>
+            <div>
+              <div class="text-white font-semibold leading-tight">10-Year Craft Guarantee</div>
+              <div class="text-neutral-400 text-[12px]">Written Labor Warranty</div>
             </div>
-            <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm">
-              <div class="font-mono-spec text-white text-[18px] font-bold">Zero Subbing</div>
-              <div class="text-[12px] text-neutral-300 mt-0.5">Dedicated Crew</div>
+            <div class="hidden sm:block w-px h-8 bg-white/10"></div>
+            <div>
+              <div class="text-white font-semibold leading-tight">Direct Owner Oversight</div>
+              <div class="text-neutral-400 text-[12px]">Direct Supervision Onsite</div>
             </div>
           </div>
 
           <!-- Dual CTAs -->
           <div class="flex flex-wrap items-center gap-4 pt-4">
-            <a href="#estimator" class="btn-gold inline-flex items-center gap-2 px-7 py-4 rounded-xl text-neutral-950 font-bold text-[14.5px] font-mono-spec">
+            <a href="#estimator" class="btn-gold inline-flex items-center gap-2 px-7 py-4 rounded-xl text-amber-950 font-bold text-[14.5px]">
               <span>Calculate Project Cost</span>
               <svg class="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h9"/><path d="M8.5 4l4 4-4 4"/></svg>
             </a>
@@ -202,19 +206,19 @@
         <!-- Right Column: Glassmorphic Visual Showcase -->
         <div class="lg:col-span-5 relative">
           <div class="relative rounded-2xl overflow-hidden gold-border-glow bg-[#121824] p-3 shadow-2xl">
-            <div class="aspect-[4/3] rounded-xl overflow-hidden relative group">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80" 
                    alt="D.E High Quality Construction LLC Featured Installation" 
-                   class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+                   class="w-full h-full object-cover" />
               <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent"></div>
               
               <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                 <div>
-                  <div class="text-[11px] font-mono-spec uppercase text-amber-400 font-semibold tracking-wider">FEATURED INSTALLATION</div>
+                  <div class="text-[11px] uppercase text-amber-400 font-semibold tracking-wider">FEATURED INSTALLATION</div>
                   <div class="font-luxury text-[17px] font-bold text-white">D.E High Quality Construction LLC Project</div>
                   <div class="text-[12px] text-neutral-300">Service Area (703) - VA</div>
                 </div>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] font-mono-spec text-neutral-200 border border-white/10">
+                <span class="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md text-[11px] font-medium text-neutral-200 border border-white/10">
                   VERIFIED
                 </span>
               </div>
@@ -223,12 +227,12 @@
             <!-- Mini Spec Card Bar -->
             <div class="grid grid-cols-2 gap-2 mt-2">
               <div class="rounded-lg p-3 bg-white/[0.04] border border-white/5">
-                <div class="text-[11px] text-neutral-400 font-mono-spec">Turnaround Time</div>
+                <div class="text-[11px] text-neutral-400 font-medium">Turnaround Time</div>
                 <div class="text-[14px] font-bold text-white mt-0.5">3-5 Business Days</div>
               </div>
               <div class="rounded-lg p-3 bg-white/[0.04] border border-white/5">
-                <div class="text-[11px] text-neutral-400 font-mono-spec">Direct Contact</div>
-                <div class="text-[14px] font-bold text-amber-300 font-mono-spec mt-0.5">(703) 599-8269</div>
+                <div class="text-[11px] text-neutral-400 font-medium">Direct Contact</div>
+                <div class="text-[14px] font-bold text-amber-300 mt-0.5">(703) 599-8269</div>
               </div>
             </div>
           </div>
@@ -258,7 +262,7 @@
                alt="After: D.E High Quality Construction LLC Completed Work" 
                class="absolute inset-0 w-full h-full object-cover" />
           
-          <div class="absolute top-4 right-4 bg-neutral-950/80 backdrop-blur-md text-amber-300 px-3 py-1.5 rounded-lg text-[12px] font-mono-spec font-semibold tracking-wider border border-amber-400/30">
+          <div class="absolute top-4 right-4 bg-neutral-950/80 backdrop-blur-md text-amber-300 px-3 py-1.5 rounded-lg text-[12px] font-medium tracking-wide border border-amber-400/30">
             AFTER: OPEN LUXURY QUARTZ SUITE
           </div>
 
@@ -267,7 +271,7 @@
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
                  alt="Before: Work Site" 
                  class="absolute inset-0 w-full h-full object-cover max-w-none" style="width: 100%;" id="ba-before-img" />
-            <div class="absolute top-4 left-4 bg-neutral-950/80 backdrop-blur-md text-neutral-300 px-3 py-1.5 rounded-lg text-[12px] font-mono-spec font-semibold tracking-wider border border-white/20">
+            <div class="absolute top-4 left-4 bg-neutral-950/80 backdrop-blur-md text-neutral-300 px-3 py-1.5 rounded-lg text-[12px] font-medium tracking-wide border border-white/20">
               BEFORE: DATED CRAMPED LAYOUT
             </div>
           </div>
@@ -280,7 +284,7 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-between text-[13px] text-neutral-500 font-mono-spec mt-3 px-2">
+        <div class="flex items-center justify-between text-[13px] text-neutral-500 mt-3 px-2 font-medium">
           <span>← Slide Left for Before</span>
           <span>Slide Right for After →</span>
         </div>
@@ -324,21 +328,21 @@
             
             <!-- Service Selector Tabs -->
             <div>
-              <label class="block text-[12px] font-mono-spec uppercase text-neutral-400 tracking-wider mb-2.5">
-                Select Service Package
+              <label class="block text-[12.5px] font-semibold uppercase text-neutral-300 tracking-wider mb-2.5">
+                Select Service Scope
               </label>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="service-options">
                 <button type="button" data-rate="65" class="calc-btn active p-3 rounded-xl border border-amber-400 bg-amber-400/10 text-amber-300 font-semibold text-[13px] text-left transition">
                   <div class="font-bold">Chef Kitchen Suite</div>
-                  <div class="text-[11px] text-neutral-400 font-mono-spec mt-0.5">Custom Shaker &amp; Quartz</div>
+                  <div class="text-[11.5px] text-neutral-400 mt-0.5">Custom Shaker &amp; Quartz</div>
                 </button>
                 <button type="button" data-rate="55" class="calc-btn p-3 rounded-xl border border-white/10 bg-white/5 text-neutral-300 font-semibold text-[13px] text-left transition hover:border-white/30">
                   <div class="font-bold">Master Bath Retreat</div>
-                  <div class="text-[11px] text-neutral-400 font-mono-spec mt-0.5">Curbless Shower &amp; Soaking Tub</div>
+                  <div class="text-[11.5px] text-neutral-400 mt-0.5">Curbless Shower &amp; Soaking Tub</div>
                 </button>
                 <button type="button" data-rate="45" class="calc-btn p-3 rounded-xl border border-white/10 bg-white/5 text-neutral-300 font-semibold text-[13px] text-left transition hover:border-white/30">
                   <div class="font-bold">Full Home Living</div>
-                  <div class="text-[11px] text-neutral-400 font-mono-spec mt-0.5">Structural Open-Concept</div>
+                  <div class="text-[11.5px] text-neutral-400 mt-0.5">Structural Open-Concept</div>
                 </button>
               </div>
             </div>
@@ -346,14 +350,14 @@
             <!-- Square Footage Slider -->
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label class="text-[12px] font-mono-spec uppercase text-neutral-400 tracking-wider">
-                  Project Area (Square Feet)
+                <label class="text-[12.5px] font-semibold uppercase text-neutral-300 tracking-wider">
+                  Approximate Project Area
                 </label>
-                <span id="sqft-val" class="text-amber-400 font-mono-spec font-bold text-[18px]">450 SQ FT</span>
+                <span id="sqft-val" class="text-amber-400 font-bold text-[18px] tabular-nums">450 SQ FT</span>
               </div>
               <input type="range" id="sqft-slider" min="200" max="1500" step="25" value="450" 
                      class="w-full h-2.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-amber-400" />
-              <div class="flex justify-between text-[11px] text-neutral-500 font-mono-spec mt-1">
+              <div class="flex justify-between text-[11.5px] text-neutral-400 mt-1">
                 <span>200 sq ft</span>
                 <span>850 sq ft</span>
                 <span>1,500+ sq ft</span>
@@ -363,17 +367,17 @@
             <!-- Live Output Display Box -->
             <div class="p-5 rounded-xl bg-neutral-950/70 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <div class="text-[11px] font-mono-spec uppercase text-neutral-400">Estimated Investment Range</div>
-                <div id="cost-display" class="font-mono-spec text-[28px] sm:text-[34px] font-bold text-amber-400 leading-tight mt-0.5">
+                <div class="text-[11.5px] font-semibold uppercase text-neutral-400 tracking-wider">Estimated Budget Range</div>
+                <div id="cost-display" class="font-bold text-[30px] sm:text-[36px] text-amber-400 leading-tight mt-0.5 tabular-nums">
                   $9,400 - $10,800
                 </div>
-                <div class="text-[12px] text-neutral-400 mt-1">
-                  Estimated Timeline: <span id="time-display" class="text-white font-semibold font-mono-spec">3-4 Work Days</span>
+                <div class="text-[13px] text-neutral-300 mt-1">
+                  Typical Project Duration: <span id="time-display" class="text-white font-semibold">3-4 Work Days</span>
                 </div>
               </div>
 
-              <a href="#consultation" class="btn-gold px-6 py-3.5 rounded-xl text-neutral-950 font-bold text-[13.5px] font-mono-spec whitespace-nowrap w-full sm:w-auto text-center">
-                Lock In Estimate
+              <a href="#consultation" class="btn-gold px-6 py-3.5 rounded-xl text-amber-950 font-bold text-[14px] whitespace-nowrap w-full sm:w-auto text-center">
+                Request Written Quote
               </a>
             </div>
 
@@ -412,17 +416,17 @@
               We excavate below organic soil lines, compact dense aggregate in staged lifts, and isolate substrates to completely eliminate settling and moisture damage.
             </p>
           </div>
-          <div class="mt-8 pt-6 border-t border-neutral-100 grid grid-cols-3 gap-4 font-mono-spec z-10 relative">
+          <div class="mt-8 pt-6 border-t border-neutral-100 grid grid-cols-3 gap-4 z-10 relative">
             <div>
-              <div class="text-[11px] text-neutral-400">Excavation Depth</div>
+              <div class="text-[11.5px] text-neutral-400 font-medium">Excavation Depth</div>
               <div class="text-[17px] font-bold text-neutral-900 mt-0.5">8 - 10 Inches</div>
             </div>
             <div>
-              <div class="text-[11px] text-neutral-400">Compaction Standard</div>
+              <div class="text-[11.5px] text-neutral-400 font-medium">Compaction Standard</div>
               <div class="text-[17px] font-bold text-neutral-900 mt-0.5">98% Proctor</div>
             </div>
             <div>
-              <div class="text-[11px] text-neutral-400">Warranty Coverage</div>
+              <div class="text-[11.5px] text-neutral-400 font-medium">Warranty Coverage</div>
               <div class="text-[17px] font-bold text-amber-600 mt-0.5">10 Full Years</div>
             </div>
           </div>
@@ -431,7 +435,7 @@
         <!-- Small Card 2 -->
         <div class="md:col-span-4 p-8 rounded-2xl bg-white border border-neutral-200/80 shadow-md flex flex-col justify-between">
           <div class="space-y-3">
-            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[11px] font-mono-spec font-bold uppercase">Joint Lock</span>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wide">Joint Lock</span>
             <h3 class="font-luxury text-[22px] font-bold text-neutral-950">
               Schluter-Kerdi 100% Waterproof Tile Bed.
             </h3>
@@ -439,15 +443,16 @@
               Engineered stabilization matrices expand and solidify, locking out weeds, insect infiltration, and heavy rainfall washouts.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-neutral-100 text-[13px] font-mono-spec text-emerald-700 font-semibold">
-            ✓ 0% Intrusion Guarantee
+          <div class="mt-6 pt-4 border-t border-neutral-100 text-[13px] text-emerald-700 font-semibold flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>0% Intrusion Guarantee</span>
           </div>
         </div>
 
         <!-- Small Card 3 -->
         <div class="md:col-span-4 p-8 rounded-2xl bg-[#0B0F17] text-white border border-white/10 shadow-md flex flex-col justify-between">
           <div class="space-y-3">
-            <span class="px-2.5 py-1 rounded-md bg-amber-400/20 text-amber-300 text-[11px] font-mono-spec font-bold uppercase">Surface Defense</span>
+            <span class="px-2.5 py-1 rounded-md bg-amber-400/20 text-amber-300 text-[11px] font-bold uppercase tracking-wide">Surface Defense</span>
             <h3 class="font-luxury text-[22px] font-bold text-white">
               Solid Hardwood &amp; Calacatta Quartz Surfaces.
             </h3>
@@ -455,15 +460,16 @@
               Deep-penetrating sealants protect against UV rays, motor oil, freeze-thaw cracking, and surface abrasion.
             </p>
           </div>
-          <div class="mt-6 pt-4 border-t border-white/10 text-[13px] font-mono-spec text-amber-400 font-semibold">
-            ✓ Extreme Weather Shield
+          <div class="mt-6 pt-4 border-t border-white/10 text-[13px] text-amber-400 font-semibold flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Extreme Weather Shield</span>
           </div>
         </div>
 
         <!-- Large Card 4 -->
         <div class="md:col-span-8 p-8 rounded-2xl bg-white border border-neutral-200/80 shadow-md flex flex-col justify-between">
           <div class="space-y-3">
-            <span class="px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-800 text-[11px] font-mono-spec font-bold uppercase">Raw Materials</span>
+            <span class="px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-800 text-[11px] font-bold uppercase tracking-wide">Raw Materials</span>
             <h3 class="font-luxury text-[24px] sm:text-[28px] font-bold text-neutral-950">
               Certified Commercial-Grade Material Palette.
             </h3>
@@ -471,7 +477,7 @@
               Hand-selected architectural stone, lumber, and polymer coatings backed by verified manufacturer warranties.
             </p>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-neutral-100 font-mono-spec text-[12px]">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-neutral-100 text-[12.5px]">
             <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Calacatta Gold</div>
             <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Custom Shaker</div>
             <div class="p-2.5 rounded-lg bg-neutral-50 text-neutral-800 text-center font-semibold border border-neutral-200">Schluter Kerdi</div>
@@ -494,7 +500,7 @@
             Recent D.E High Quality Construction LLC Projects.
           </h2>
         </div>
-        <a href="tel:7035998269" class="text-amber-700 font-mono-spec text-[13px] font-semibold hover:underline mt-4 md:mt-0">
+        <a href="tel:7035998269" class="text-amber-700 font-semibold text-[13.5px] hover:underline mt-4 md:mt-0">
           Have a similar project? Call for site review →
         </a>
       </div>
@@ -507,12 +513,12 @@
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
                  alt="D.E High Quality Construction LLC Project 1" 
                  class="w-full h-full object-cover" />
-            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
+            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-bold px-2.5 py-1 rounded-md tracking-wider">
               ARCHITECTURAL FINISH
             </span>
           </div>
           <div class="p-5 space-y-2">
-            <div class="text-[11px] font-mono-spec text-neutral-500">Service Area (703) - VA</div>
+            <div class="text-[12px] text-neutral-500 font-medium">Service Area (703) - VA</div>
             <h4 class="font-luxury text-[17px] font-bold text-neutral-900">Custom Installation Suite</h4>
             <p class="text-[13.5px] text-neutral-600 leading-relaxed">
               Precision installation with reinforced base layers and architectural edge trimming.
@@ -526,12 +532,12 @@
             <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=80" 
                  alt="D.E High Quality Construction LLC Project 2" 
                  class="w-full h-full object-cover" />
-            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
+            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-bold px-2.5 py-1 rounded-md tracking-wider">
               COMMERCIAL GRADE
             </span>
           </div>
           <div class="p-5 space-y-2">
-            <div class="text-[11px] font-mono-spec text-neutral-500">Service Area (703) - VA</div>
+            <div class="text-[12px] text-neutral-500 font-medium">Service Area (703) - VA</div>
             <h4 class="font-luxury text-[17px] font-bold text-neutral-900">Heavy Duty Surface Armor</h4>
             <p class="text-[13.5px] text-neutral-600 leading-relaxed">
               Industrial grade bonding and high-gloss protective finish engineered for heavy traffic.
@@ -545,12 +551,12 @@
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" 
                  alt="D.E High Quality Construction LLC Project 3" 
                  class="w-full h-full object-cover" />
-            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
+            <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-bold px-2.5 py-1 rounded-md tracking-wider">
               ENTRY &amp; LIVING
             </span>
           </div>
           <div class="p-5 space-y-2">
-            <div class="text-[11px] font-mono-spec text-neutral-500">Service Area (703) - VA</div>
+            <div class="text-[12px] text-neutral-500 font-medium">Service Area (703) - VA</div>
             <h4 class="font-luxury text-[17px] font-bold text-neutral-900">Custom Architectural Design</h4>
             <p class="text-[13.5px] text-neutral-600 leading-relaxed">
               Turnkey architectural execution delivered on time and on budget with zero site mess.
@@ -572,7 +578,7 @@
           Rated 5.0 Stars in Service Area (703) - VA.
         </h2>
         <div class="flex items-center justify-center gap-1.5 text-amber-400 text-lg mt-2">
-          ★★★★★ <span class="text-neutral-400 text-sm font-mono-spec ml-2">100% 5-Star Feedback</span>
+          ★★★★★ <span class="text-neutral-400 text-sm font-medium ml-2">100% 5-Star Feedback</span>
         </div>
       </div>
 
@@ -581,42 +587,42 @@
         <div class="p-6 rounded-2xl bg-[#121824] border border-white/10 space-y-4">
           <div class="flex items-center justify-between">
             <div class="text-amber-400 text-sm">★★★★★</div>
-            <span class="text-[11px] font-mono-spec text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified Local Review</span>
+            <span class="text-[11.5px] text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30 font-medium">Verified Local Review</span>
           </div>
           <p class="text-neutral-300 text-[14px] leading-relaxed italic">
             "D.E High Quality Construction LLC did an incredible job from start to finish. The team arrived on time every morning, explained every step of the work, and left the property spotless. The result exceeded our expectations."
           </p>
           <div class="pt-3 border-t border-white/5">
             <div class="font-bold text-white text-[14px]">Michael R.</div>
-            <div class="text-[11px] text-neutral-400 font-mono-spec">Service Area (703) - VA Homeowner</div>
+            <div class="text-[12px] text-neutral-400 font-medium">Service Area (703) - VA Homeowner</div>
           </div>
         </div>
 
         <div class="p-6 rounded-2xl bg-[#121824] border border-white/10 space-y-4">
           <div class="flex items-center justify-between">
             <div class="text-amber-400 text-sm">★★★★★</div>
-            <span class="text-[11px] font-mono-spec text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified Local Review</span>
+            <span class="text-[11.5px] text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30 font-medium">Verified Local Review</span>
           </div>
           <p class="text-neutral-300 text-[14px] leading-relaxed italic">
             "Fair pricing, clear communication, and superior materials. You can tell they take pride in what they build. Highly recommended to anyone looking for reliable craftsmanship."
           </p>
           <div class="pt-3 border-t border-white/5">
             <div class="font-bold text-white text-[14px]">Jennifer S.</div>
-            <div class="text-[11px] text-neutral-400 font-mono-spec">Service Area (703) - VA Resident</div>
+            <div class="text-[12px] text-neutral-400 font-medium">Service Area (703) - VA Resident</div>
           </div>
         </div>
 
         <div class="p-6 rounded-2xl bg-[#121824] border border-white/10 space-y-4">
           <div class="flex items-center justify-between">
             <div class="text-amber-400 text-sm">★★★★★</div>
-            <span class="text-[11px] font-mono-spec text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">Verified Local Review</span>
+            <span class="text-[11.5px] text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30 font-medium">Verified Local Review</span>
           </div>
           <p class="text-neutral-300 text-[14px] leading-relaxed italic">
             "Direct owner oversight made all the difference. No pushy sales reps or surprises on the final invoice. The quality speaks for itself."
           </p>
           <div class="pt-3 border-t border-white/5">
             <div class="font-bold text-white text-[14px]">Thomas W.</div>
-            <div class="text-[11px] text-neutral-400 font-mono-spec">Service Area (703) - VA Property Owner</div>
+            <div class="text-[12px] text-neutral-400 font-medium">Service Area (703) - VA Property Owner</div>
           </div>
         </div>
 
@@ -625,7 +631,7 @@
     </div>
   </section>
 
-  <!-- Quick Consultation & Contact Section -->
+  <!-- Quick Consultation & Contact Section (No Watermark AI Cliché) -->
   <section id="consultation" class="py-20 bg-white">
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-2xl relative overflow-hidden">
@@ -638,43 +644,43 @@
           </p>
 
           <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="tel:7035998269" class="btn-gold inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-amber-950 font-bold text-[15px] font-mono-spec">
+            <a href="tel:7035998269" class="btn-gold inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-amber-950 font-bold text-[15px]">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <span>Call (703) 599-8269</span>
             </a>
-            <a href="mailto:deibybarahona1996@gmail.com" class="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-[14.5px] transition font-mono-spec">
-              deibybarahona1996@gmail.com
+            <a href="mailto:deibybarahona1996@gmail.com" class="inline-flex items-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-medium text-[14.5px] transition">
+              <svg class="w-4 h-4 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>Email Us Directly</span>
             </a>
           </div>
-        </div>
-
-        <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none text-[220px] font-luxury font-bold leading-none select-none">
-          D
+          <div class="text-[12px] text-neutral-400 pt-1">
+            Direct owner response: <span class="text-neutral-300 font-medium">deibybarahona1996@gmail.com</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Minimal Architectural Footer -->
-  <footer class="bg-neutral-950 text-neutral-400 py-12 border-t border-neutral-800 text-[13px]">
-    <div class="max-w-[1140px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-spec text-[12px]">
+  <footer class="bg-neutral-950 text-neutral-400 py-10 border-t border-neutral-800 text-[13px]">
+    <div class="max-w-[1140px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-400 text-[12.5px]">
       <div>
-        <span class="text-white font-bold font-luxury">D.E High Quality Construction LLC</span> | Service Area (703) - VA
+        <span class="text-white font-semibold">D.E High Quality Construction LLC</span> • Licensed &amp; Insured in Service Area (703) - VA
       </div>
-      <div>
-        Designed for Local Growth by Thomas Nguyen
+      <div class="text-neutral-500">
+        Growth Partner: Thomas Nguyen (<a href="https://www.thomasnguyen.online" class="hover:text-neutral-300 transition">thomasnguyen.online</a>)
       </div>
     </div>
   </footer>
 
   <!-- Floating Sticky Action Bar for Mobile Viewers -->
   <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-neutral-950/95 backdrop-blur-xl border-t border-white/15 flex items-center gap-3 md:hidden">
-    <a href="tel:7035998269" class="btn-gold flex-1 py-3.5 rounded-xl text-amber-950 font-bold text-[14px] font-mono-spec flex items-center justify-center gap-2">
+    <a href="tel:7035998269" class="btn-gold flex-1 py-3.5 rounded-xl text-amber-950 font-bold text-[14px] flex items-center justify-center gap-2">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span>Call (703) 599-8269</span>
     </a>
-    <a href="#estimator" class="px-5 py-3.5 rounded-xl bg-white/15 border border-white/20 text-white font-semibold text-[13px] font-mono-spec flex items-center justify-center">
-      Estimator
+    <a href="#estimator" class="px-5 py-3.5 rounded-xl bg-white/15 border border-white/20 text-white font-medium text-[13px] flex items-center justify-center">
+      Estimate
     </a>
   </div>
 
