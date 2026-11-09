@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -20,13 +20,14 @@
       --color-canvas-light: #FAFAF9;
     }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--color-canvas-light);
       color: #1E293B;
       letter-spacing: -0.015em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      caret-color: #C59B27;
     }
     .font-luxury {
       font-family: 'Cinzel', Georgia, serif;
@@ -39,11 +40,11 @@
     }
     ::selection {
       background-color: #C59B27;
-      color: #FFFFFF;
+      color: #0B0F17;
     }
     :focus-visible {
       outline: 2px solid #C59B27;
-      outline-offset: 3px;
+      outline-offset: 2px;
     }
     
     /* Before/After Slider */
@@ -67,7 +68,7 @@
       left: 50%;
       width: 3px;
       background: #FFFFFF;
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
       cursor: ew-resize;
       transform: translateX(-50%);
     }
@@ -89,18 +90,19 @@
     }
     
     .btn-gold {
-      background: linear-gradient(135deg, #C59B27 0%, #D4AF37 50%, #B3891E 100%);
-      box-shadow: 0 4px 20px rgba(197, 155, 39, 0.28);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      background: #C59B27;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s ease;
     }
     .btn-gold:hover {
-      box-shadow: 0 6px 26px rgba(197, 155, 39, 0.42);
+      background: #D4AF37;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
       transform: translateY(-1px);
     }
     
     .gold-border-glow {
-      border: 1px solid rgba(197, 155, 39, 0.35);
-      box-shadow: 0 0 25px rgba(197, 155, 39, 0.08);
+      border: 1px solid rgba(197, 155, 39, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     }
   </style>
 </head>
@@ -127,16 +129,16 @@
   <header class="sticky top-0 z-50 bg-[#0B0F17]/90 backdrop-blur-xl border-b border-white/10 transition-all">
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-neutral-950 font-luxury font-bold text-xl shadow-md">
+        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-amber-950 font-luxury font-bold text-[18px]">
           W
         </div>
         <div>
-          <a href="#" class="font-luxury font-bold text-[17px] sm:text-[18px] tracking-wider text-white hover:text-amber-300 transition truncate max-w-[220px] sm:max-w-md block">Wade &amp; Wells Seamless Gutters</a>
-          <div class="font-mono-spec text-[10px] text-amber-400/90 tracking-widest uppercase truncate">MASTER ARCHITECTURAL ROOFING</div>
+          <a href="#" class="font-luxury font-bold text-[18px] tracking-wider text-white hover:text-amber-300 transition truncate max-w-[220px] sm:max-w-md block">Wade &amp; Wells Seamless Gutters</a>
+          <div class="font-mono-spec text-[11px] text-amber-400/90 tracking-widest uppercase truncate">MASTER ARCHITECTURAL ROOFING</div>
         </div>
       </div>
 
-      <nav class="hidden lg:flex items-center gap-8 text-[13px] font-semibold text-neutral-300">
+      <nav class="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-neutral-300">
         <a href="#capabilities" class="hover:text-amber-400 transition">Capabilities</a>
         <a href="#before-after" class="hover:text-amber-400 transition">Before &amp; After</a>
         <a href="#estimator" class="hover:text-amber-400 transition">Cost Estimator</a>
@@ -145,7 +147,7 @@
       </nav>
 
       <div class="flex items-center gap-3 shrink-0">
-        <a href="tel:5012596789" class="btn-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-neutral-950 font-bold text-[13px] font-mono-spec whitespace-nowrap">
+        <a href="tel:5012596789" class="btn-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-amber-950 font-bold text-[14px] font-mono-spec whitespace-nowrap">
           <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>(501) 259-6789</span>
         </a>
@@ -155,20 +157,12 @@
 
   <!-- Hero Section: Cinematic Split & Architectural Grandeur -->
   <section class="relative bg-[#0B0F17] text-white pt-12 pb-20 md:py-24 overflow-hidden border-b border-white/10">
-    <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-0 left-10 w-[400px] h-[400px] bg-sky-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left Column: Copy & Authority Hooks -->
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.07] border border-amber-400/30 backdrop-blur-md">
-            <span class="flex h-2 w-2 rounded-full bg-amber-400"></span>
-            <span class="text-[12px] font-mono-spec text-amber-300 font-semibold uppercase tracking-wider">Local Master Craftsmanship</span>
-          </div>
-
-          <h1 class="font-luxury text-[34px] sm:text-[46px] md:text-[52px] font-bold leading-[1.08] tracking-tight text-white">
+          <h1 class="font-luxury text-[36px] sm:text-[48px] md:text-[54px] font-bold leading-[1.08] tracking-tight text-white">
             Lifetime Architectural Shingle, Metal &amp; Tile Roofing Systems.
           </h1>
 
@@ -248,7 +242,6 @@
   <section id="before-after" class="py-20 bg-white border-b border-neutral-200">
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-amber-700 font-mono-spec text-[12px] font-bold uppercase tracking-widest">REAL TRANSFORMATION</span>
         <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-neutral-950 mt-1">
           Drag to Reveal the Transformation.
         </h2>
@@ -302,9 +295,6 @@
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         <!-- Left: Explainer -->
         <div class="lg:col-span-5 space-y-5">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-[12px] font-mono-spec font-semibold uppercase">
-            Instant Estimate Engine
-          </div>
           <h2 class="font-luxury text-[32px] sm:text-[44px] font-bold leading-tight">
             Transparent Pricing. Instant Estimates.
           </h2>
@@ -314,15 +304,15 @@
 
           <div class="space-y-3 pt-2">
             <div class="flex items-center gap-3 text-[14px] text-neutral-200">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">✓</div>
+              <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>Includes complete surface preparation &amp; structural base</span>
             </div>
             <div class="flex items-center gap-3 text-[14px] text-neutral-200">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">✓</div>
+              <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>Premium architectural materials &amp; protective sealants</span>
             </div>
             <div class="flex items-center gap-3 text-[14px] text-neutral-200">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">✓</div>
+              <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
               <span>100% written 10-year structural warranty</span>
             </div>
           </div>
@@ -400,7 +390,6 @@
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-amber-700 font-mono-spec text-[12px] font-bold uppercase tracking-widest">ENGINEERED STANDARDS</span>
         <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-neutral-950 mt-1">
           Why Our Installations Outlast Generations.
         </h2>
@@ -501,7 +490,6 @@
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-amber-700 font-mono-spec text-[12px] font-bold uppercase tracking-widest">PORTFOLIO</span>
           <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-neutral-950 mt-1">
             Recent Wade &amp; Wells Seamless Gutters Projects.
           </h2>
@@ -514,11 +502,11 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Project 1 -->
-        <div class="group rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-xl">
+        <div class="rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-md hover:border-neutral-300">
           <div class="aspect-[4/3] overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" 
                  alt="Wade &amp; Wells Seamless Gutters Project 1" 
-                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+                 class="w-full h-full object-cover" />
             <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
               ARCHITECTURAL FINISH
             </span>
@@ -533,11 +521,11 @@
         </div>
 
         <!-- Project 2 -->
-        <div class="group rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-xl">
+        <div class="rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-md hover:border-neutral-300">
           <div class="aspect-[4/3] overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
                  alt="Wade &amp; Wells Seamless Gutters Project 2" 
-                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+                 class="w-full h-full object-cover" />
             <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
               COMMERCIAL GRADE
             </span>
@@ -552,11 +540,11 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="group rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-xl">
+        <div class="rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-50 shadow-sm transition hover:shadow-md hover:border-neutral-300">
           <div class="aspect-[4/3] overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" 
                  alt="Wade &amp; Wells Seamless Gutters Project 3" 
-                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+                 class="w-full h-full object-cover" />
             <span class="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md text-amber-300 text-[10.5px] font-mono-spec font-bold px-2.5 py-1 rounded-md">
               ENTRY &amp; LIVING
             </span>
@@ -580,10 +568,7 @@
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-[12px] font-mono-spec font-semibold uppercase">
-          Client Endorsements
-        </div>
-        <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold mt-2 text-white">
+        <h2 class="font-luxury text-[32px] sm:text-[42px] font-bold text-white">
           Rated 5.0 Stars in Service Area (501) - AR.
         </h2>
         <div class="flex items-center justify-center gap-1.5 text-amber-400 text-lg mt-2">
@@ -645,7 +630,6 @@
     <div class="max-w-[1140px] mx-auto px-5 sm:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-2xl relative overflow-hidden">
         <div class="max-w-xl space-y-4 relative z-10">
-          <span class="text-amber-400 font-mono-spec text-[12px] font-bold uppercase tracking-widest">DIRECT DISPATCH</span>
           <h2 class="font-luxury text-[32px] sm:text-[44px] font-bold leading-tight">
             Ready to Begin Your Project?
           </h2>
@@ -654,7 +638,7 @@
           </p>
 
           <div class="pt-4 flex flex-wrap items-center gap-4">
-            <a href="tel:5012596789" class="btn-gold inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-neutral-950 font-bold text-[15px] font-mono-spec">
+            <a href="tel:5012596789" class="btn-gold inline-flex items-center gap-2.5 px-8 py-4 rounded-xl text-amber-950 font-bold text-[15px] font-mono-spec">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <span>Call (501) 259-6789</span>
             </a>
@@ -685,7 +669,7 @@
 
   <!-- Floating Sticky Action Bar for Mobile Viewers -->
   <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-neutral-950/95 backdrop-blur-xl border-t border-white/15 flex items-center gap-3 md:hidden">
-    <a href="tel:5012596789" class="btn-gold flex-1 py-3.5 rounded-xl text-neutral-950 font-bold text-[14px] font-mono-spec flex items-center justify-center gap-2">
+    <a href="tel:5012596789" class="btn-gold flex-1 py-3.5 rounded-xl text-amber-950 font-bold text-[14px] font-mono-spec flex items-center justify-center gap-2">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span>Call (501) 259-6789</span>
     </a>
