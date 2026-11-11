@@ -12,7 +12,13 @@ export default async function handler(req, res) {
   const email = (query.u || query.email || '').trim().toLowerCase();
   const campaign = (query.c || 'outreach').trim();
   const target = (query.t || 'portfolio').trim().toLowerCase();
-  const destUrl = DESTINATIONS[target] || DESTINATIONS.portfolio;
+  const slugParam = (query.slug || query.p || '').trim().replace(/\.html$/i, '').replace(/[^a-zA-Z0-9-]+/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
+  let destUrl = DESTINATIONS[target] || DESTINATIONS.portfolio;
+  if (slugParam) {
+    destUrl = `https://www.thomasnguyen.online/previews/${slugParam}`;
+  } else if (!DESTINATIONS[target] && target && target !== 'preview' && /^[a-z0-9-]+$/.test(target)) {
+    destUrl = `https://www.thomasnguyen.online/previews/${target}`;
+  }
 
   try {
     if (email && email.includes('@')) {

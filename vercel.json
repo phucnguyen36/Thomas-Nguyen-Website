@@ -2,8 +2,8 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/previews/:slug",
-      "destination": "/previews/:slug.html"
+      "source": "/previews/:slug*",
+      "destination": "/api/preview-fallback?slug=:slug*"
     },
     {
       "source": "/((?!previews/|api/).*)",
