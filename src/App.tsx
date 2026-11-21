@@ -1907,7 +1907,7 @@ export default function App() {
 
           <div className="flex items-center gap-2">
             <a 
-              href="https://x.com/thomaseditor_vn" 
+              href="https://x.com/thomasnguyenMOV" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="w-7 h-7 rounded-full bg-white/[0.03] border border-white/[0.08] text-[#8e909a] hover:text-[#1591DC] transition-colors flex items-center justify-center"
